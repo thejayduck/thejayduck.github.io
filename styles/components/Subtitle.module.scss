@@ -1,0 +1,19 @@
+.subtitle {
+  overflow-wrap: break-word;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+
+  justify-self: center;
+
+  user-select: none;
+
+  display: flex;
+
+  margin-top: 6px;
+  margin-bottom: 6px;
+
+  i {
+    margin: auto;
+  }
+}

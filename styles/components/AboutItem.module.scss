@@ -1,0 +1,17 @@
+.about {
+  padding: 0.5rem;
+  display: block;
+
+  i {
+    color: var(--accent);
+
+    vertical-align: middle;
+  }
+  p {
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+
+    vertical-align: middle;
+  }
+}
