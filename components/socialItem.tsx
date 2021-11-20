@@ -1,4 +1,4 @@
-import styles from "../styles/components/SocialItem.module.scss"
+import styles from "../styles/components/SocialItem.module.scss";
 
 interface SocialItemProps{
     icon: string,
@@ -7,11 +7,11 @@ interface SocialItemProps{
 }
 
 export default function SocialItem({ icon, title, url }: SocialItemProps) {
-    return (
-        <li className={`cardItem ${styles.social}`}>
-            <a aria-label={title} target="_blank" title={title} href={url} rel="noreferrer">
-                <i className={icon} />
-            </a>
-        </li>
-    )
-}
+  return (
+    <li className={`cardItem ${styles.social}`}>
+      <a aria-label={title} target="_blank" title={title} href={url} rel="noreferrer">
+        <i className={icon} />
+      </a>
+    </li>
+  );
+}   

@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import PageBase from '../components/pageBase'
-import Project from '../components/project'
-import SkillBar from '../components/skillBar'
-import Subtitle from '../components/subtitle'
-import styles from '../styles/Home.module.scss'
+import styles from "../styles/Home.module.scss";
+
+import PageBase from "../components/pageBase";
+import Project from "../components/project";
+import SkillBar from "../components/skillBar";
+import SocialItem from "../components/socialItem";
+import Subtitle from "../components/subtitle";
 
 interface HomeProps{
   data: any[]
@@ -43,7 +43,7 @@ const skills = [
     title: "SASS",
     icon: "devicon-sass-original",
   }
-]
+];
 
 const tools = [
   {
@@ -62,10 +62,10 @@ const tools = [
     title: "Figma",
     icon: "devicon-figma-plain",
   }
-]
+];
 
 export async function getStaticProps() {
-  const res = await fetch('https://gist.githubusercontent.com/thejayduck/274ef60be752e3bcd3dc677dc3423933/raw')
+  const res = await fetch("https://gist.githubusercontent.com/thejayduck/274ef60be752e3bcd3dc677dc3423933/raw");
   const data = await res.json();
 
   return {
@@ -73,7 +73,7 @@ export async function getStaticProps() {
       data
     },
     revalidate: 10
-  }
+  };
 }
 
 export default function Home({ data }: HomeProps) {
@@ -95,7 +95,7 @@ export default function Home({ data }: HomeProps) {
                 Hi there
                 <span className={styles.wave}>👋🏻</span>!
                 <br/>
-                I'm <span>Arda Fevzi Armutcu</span>
+                I&apos;m <span>Arda Fevzi Armutcu</span>
               </h1>
               <p>
                 I am a 2nd year <span>English Language and Literature</span> student in Turkey. It might feel odd that a literature student has an enormous hobby like programming. 
@@ -131,5 +131,5 @@ export default function Home({ data }: HomeProps) {
         </div>
       </section>
     </PageBase>
-  )
+  );
 }
