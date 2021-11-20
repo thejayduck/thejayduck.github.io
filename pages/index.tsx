@@ -3,7 +3,6 @@ import Image from 'next/image'
 import PageBase from '../components/pageBase'
 import Project from '../components/project'
 import SkillBar from '../components/skillBar'
-import SocialItem from '../components/socialItem'
 import Subtitle from '../components/subtitle'
 import styles from '../styles/Home.module.scss'
 
