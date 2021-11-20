@@ -14,9 +14,10 @@
   .details {
     flex: 1;
 
-    .about {
+    .panel {
       margin-bottom: var(--padding-normal);
       padding: var(--padding-medium);
+
       h1 {
         margin: 0 0 var(--padding-normal) 0;
         text-align: center;
@@ -38,22 +39,14 @@
         transform-origin: 70% 70%;
         display: inline-block;
       }
-    }
-    .worksWrap {
-      padding: var(--padding-medium);
-      h1 {
-        margin: 0 0 var(--padding-normal) 0;
-        text-align: center;
-        font-weight: lighter;
-        font-size: var(--font-larger);
-      }
-      span {
-        color: var(--accent);
-      }
 
       .works {
         align-items: flex-start;
         flex-wrap: wrap;
+
+        p {
+          font-size: var(--font-normal);
+        }
       }
     }
 

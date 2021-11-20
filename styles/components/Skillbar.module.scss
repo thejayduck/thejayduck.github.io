@@ -9,7 +9,7 @@
   border: 1.7px solid var(--accent);
 
   transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
-  flex: 1 0 21%;
+  flex: 0 0 21%;
 
   &:hover,
   &:active {
@@ -50,6 +50,7 @@
     -moz-transition: none !important;
     -o-transition: none !important;
     transition: none !important;
+    flex: 1 0 21%;
 
     &:hover,
     &:active {
