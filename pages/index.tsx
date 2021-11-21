@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.scss";
 
-import CardPanel from "../components/CardPanel";
+import CardPanel from "../components/cardPanel";
 import PageBase from "../components/pageBase";
 import Project from "../components/project";
 import SkillBar from "../components/skillBar";
