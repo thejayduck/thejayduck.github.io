@@ -11,6 +11,7 @@ export default function SocialItem({ icon, title, href }: SocialItemProps) {
     <li className={`cardItem ${styles.social}`}>
       <a aria-label={title} target="_blank" title={title} href={href} rel="noreferrer">
         <i className={icon} />
+        <span>{title}</span>
       </a>
     </li>
   );

@@ -1,6 +1,25 @@
 .social {
+  max-height: 50px;
+  min-width: 50px;
+
   a {
     display: inline-block;
     padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .social {
+    span {
+      display: none;
+    }
   }
 }
