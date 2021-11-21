@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
 
 :root {
   // Fonts
@@ -43,16 +43,15 @@ body {
   padding: 0;
   margin: 0;
 
-  font-family: "Source Sans Pro";
+  font-family: "Nunito", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   font-size: var(--font-normal);
 
-  background-image: url("/bg-1.svg");
+  background-image: url("/shape.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 a {
