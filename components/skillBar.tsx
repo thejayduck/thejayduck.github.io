@@ -5,14 +5,18 @@ import { motion } from "framer-motion";
 interface SkillBarProps{
     title: string,
     icon: string,
+    href?: string,
 }
 
-export default function SkillBar({ title, icon }: SkillBarProps) {
+export default function SkillBar({ title, icon, href }: SkillBarProps) {
   return (
-    <motion.div
+    <motion.a
       className={`${styles.skillWrap} cardItem`}
 
       title={`${title}`}
+      href={href}
+      target="_blank"
+      rel="noreferrer"
 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 0.5 } }}
@@ -25,6 +29,6 @@ export default function SkillBar({ title, icon }: SkillBarProps) {
       <div>
         <span className={styles.title}>{title}</span>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
