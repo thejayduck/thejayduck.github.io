@@ -14,7 +14,13 @@ interface ProjectProps{
 export default function Project({ data }: ProjectProps) {
 
   return (
-    <motion.div title={data.title} className={`cardItem ${styles.projectWrap}`}>
+    <motion.a 
+      title={data.title} 
+      href={data.links[0].url} 
+      target="_blank"
+      rel="noreferrer"
+      className={`cardItem ${styles.projectWrap}`}
+    >
       <div className={styles.social} >
         <ul onClick={(e) => e.stopPropagation()}>
           {
@@ -33,7 +39,7 @@ export default function Project({ data }: ProjectProps) {
         </ul>
       </div>
 
-      <div className={styles.imageWrap}>
+      <div className={`flex ${styles.imageWrap}`}>
         <img
           className={styles.image}
           alt={`${data.title} Cover`}
@@ -57,6 +63,6 @@ export default function Project({ data }: ProjectProps) {
           </p>
         </motion.div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
