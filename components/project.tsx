@@ -1,8 +1,6 @@
 import styles from "../styles/components/Project.module.scss";
 
-import { AnimatePresence, motion } from "framer-motion";
-
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 interface ProjectProps{
     data: {
@@ -14,10 +12,9 @@ interface ProjectProps{
 }
 
 export default function Project({ data }: ProjectProps) {
-  const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <motion.div title={showDetails ? `${data.title} - Shrink Details` : `${data.title} - Expand Details`} onClick={() => setShowDetails(prev => !prev)} className={styles.projectWrap}>
+    <motion.div title={data.title} className={`cardItem ${styles.projectWrap}`}>
       <div className={styles.social} >
         <ul onClick={(e) => e.stopPropagation()}>
           {
@@ -46,31 +43,19 @@ export default function Project({ data }: ProjectProps) {
 
         />
       </div>
-      <motion.div
-        className={`${styles.showDetails} desktop`}
-
-        initial={{ rotate: 0 }}
-        animate={{ rotate: showDetails ? 180 : 0 }}
-      >
-        <i className='bx bxs-down-arrow' />
-      </motion.div>
       <div className={styles.details}>
         <h2>{data.title ?? "No Title"}</h2>
-        <AnimatePresence>
-          {showDetails &&
-                        <motion.div
-                          layout
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "max-content", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ type: "spring", duration: 0.4 }}
-                        >
-                          <p>
-                            {data.description}
-                          </p>
-                        </motion.div>
-          }
-        </AnimatePresence>
+        <motion.div
+          layout
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "max-content", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ type: "spring", duration: 0.4 }}
+        >
+          <p>
+            {data.description}
+          </p>
+        </motion.div>
       </div>
     </motion.div>
   );

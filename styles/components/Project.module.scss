@@ -3,11 +3,7 @@
 
   height: auto;
   position: relative;
-  border-radius: var(--border);
-  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
-  overflow: hidden;
   margin-bottom: 2rem;
-  background-color: white;
   will-change: transform;
   flex: 0 0 450px;
 
@@ -24,12 +20,6 @@
       top: 0;
       transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
     }
-  }
-  .showDetails {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    color: var(--accent);
   }
 
   .details {
