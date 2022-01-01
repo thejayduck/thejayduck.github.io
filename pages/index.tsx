@@ -36,7 +36,6 @@ export default function Home({ data }: HomeProps) {
             <SocialItem icon="bx bxs-store" title="Itch.io" href="https://thejayduck.itch.io/" />
             <SocialItem icon="bx bxl-twitter" title="Twitter" href="https://twitter.com/thejayduck" />
             <SocialItem icon="bx bxl-instagram-alt" title="Instagram" href="https://www.instagram.com/ardafevzi.armutcu/" />
-
           </ul>
         </div>        
         <div className={`${styles.details}`}>
@@ -48,7 +47,8 @@ export default function Home({ data }: HomeProps) {
                 <br/>
                 I&apos;m <span>Arda Fevzi Armutcu</span>
               </>
-            }>
+            }
+          >
             <p>
                 I am a 2nd year <span>English Language and Literature</span> student in Turkey. It might feel odd that a literature student has an enormous hobby like programming. 
                 Although programming is just a hobby for me, I have always been passionate about creating my projects.
@@ -81,4 +81,3 @@ export default function Home({ data }: HomeProps) {
     </PageBase>
   );
 }
-
