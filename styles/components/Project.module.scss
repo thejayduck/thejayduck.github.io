@@ -7,16 +7,11 @@
   will-change: transform;
   flex: 0 0 450px;
 
-  .imageWrap {
-    position: relative;
-    height: 256px;
-    overflow: hidden;
-    .image {
-      position: absolute;
-      object-fit: cover;
-      top: 0;
-      transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
-    }
+  .image {
+    width: 100%;
+    object-fit: cover;
+    transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+    border-radius: 0;
   }
 
   .details {

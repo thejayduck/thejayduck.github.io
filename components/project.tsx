@@ -39,16 +39,13 @@ export default function Project({ data }: ProjectProps) {
         </ul>
       </div>
 
-      <div className={`flex ${styles.imageWrap}`}>
-        <img
-          className={styles.image}
-          alt={`${data.title} Cover`}
-          height={256}
-          width={500}
-          src={data.image}
-
-        />
-      </div>
+      <img
+        className={styles.image}
+        alt={`${data.title} Cover`}
+        height={256}
+        width={500}
+        src={data.image}
+      />
       <div className={styles.details}>
         <h2>{data.title ?? "No Title"}</h2>
         <motion.div

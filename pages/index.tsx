@@ -32,7 +32,7 @@ export default function Home({ data }: HomeProps) {
           <img src="profileLarge.png" width={256} />
           <ul>
             <SocialItem icon="bx bxl-github" title="Github" href="https://github.com/thejayduck" />
-            <SocialItem icon="bx bxl-gmail" title="Email" href="mailto:ardafevzi.armutcu@gmail.com" />
+            <SocialItem icon="bx bxl-gmail" title="Gmail" href="mailto:ardafevzi.armutcu@gmail.com" />
             <SocialItem icon="bx bxs-store" title="Itch.io" href="https://thejayduck.itch.io/" />
             <SocialItem icon="bx bxl-twitter" title="Twitter" href="https://twitter.com/thejayduck" />
             <SocialItem icon="bx bxl-instagram-alt" title="Instagram" href="https://www.instagram.com/ardafevzi.armutcu/" />
