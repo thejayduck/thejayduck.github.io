@@ -1,12 +1,17 @@
 .introductionWrap {
   width: 100%;
   justify-content: stretch;
-  align-items: stretch;
+  align-items: flex-start;
 
   .profile {
-    flex: 0;
     justify-content: start;
     align-items: stretch;
+
+    position: sticky !important;
+    position: -webkit-sticky; /* Safari */
+    top: 0;
+    padding: 10px 0;
+    flex: 0;
     ul {
       flex-wrap: wrap;
       flex-direction: column;
@@ -15,6 +20,7 @@
   }
 
   .details {
+    padding: 10px 0;
     flex: 1;
 
     .panel {
@@ -92,6 +98,8 @@
     align-items: stretch;
 
     .profile {
+      padding: 0;
+      position: relative !important;
       align-items: center;
       ul {
         flex-direction: row;

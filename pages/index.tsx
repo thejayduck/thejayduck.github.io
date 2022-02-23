@@ -8,8 +8,9 @@ import SocialItem from "../components/socialItem";
 import Subtitle from "../components/subtitle";
 import skillset from "../skillset.json";
 
-interface HomeProps{
-  data: any[]
+interface HomeProps {
+  projects: any[]
+  drawings: any[]
 }
 
 export async function getStaticProps() {
@@ -18,13 +19,14 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data
+      projects: data.projects,
+      drawings: data.drawings,
     },
     revalidate: 10
   };
 }
 
-export default function Home({ data }: HomeProps) {
+export default function Home({ projects, drawings }: HomeProps) {
   return (
     <PageBase>
       <section className={`${styles.introductionWrap} flex`}>
@@ -37,42 +39,48 @@ export default function Home({ data }: HomeProps) {
             <SocialItem icon="bx bxl-twitter" title="Twitter" href="https://twitter.com/thejayduck" />
             <SocialItem icon="bx bxl-instagram-alt" title="Instagram" href="https://www.instagram.com/ardafevzi.armutcu/" />
           </ul>
-        </div>        
+        </div>
         <div className={`${styles.details}`}>
-          <CardPanel 
+          <CardPanel
             title={
               <>
                 Hi there
                 <span className={styles.wave}>👋🏻</span>!
-                <br/>
+                <br />
                 I&apos;m <span>Arda Fevzi Armutcu</span>
               </>
             }
           >
             <p>
-                I am a 2nd year <span>English Language and Literature</span> student in Turkey. It might feel odd that a literature student has an enormous hobby like programming. 
-                Although programming is just a hobby for me, I have always been passionate about creating my projects.
-                Mostly because I have the freedom to create whatever I wish to.
+              I am a 2nd year <span>English Language and Literature</span> student in Turkey. It might feel odd that a literature student has an enormous hobby like programming.
+              Although programming is just a hobby for me, I have always been passionate about creating my projects.
             </p>
           </CardPanel>
           <CardPanel title="Skill Set 🔧">
-            <Subtitle text="Languages"/>           
+            <Subtitle text="Languages" />
             <div className={`${styles.skills} flex`}>
               {skillset.skills.map(q =>
                 <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
-              )}   
+              )}
             </div>
-            <Subtitle text="Tools"/>           
+            <Subtitle text="Tools" />
             <div className={`${styles.skills} flex`}>
               {skillset.tools.map(q =>
                 <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
-              )}   
-            </div>  
+              )}
+            </div>
           </CardPanel>
           <CardPanel title="Recent Projects 💻">
             <div className={`flex ${styles.works}`}>
               {
-                data.map(q => <Project key={q.title} data={q} />)
+                projects.map(q => <Project key={q.title} data={q} details={true} />)
+              }
+            </div>
+          </CardPanel>
+          <CardPanel title="Recent Drawings 🖌️">
+            <div className={`flex ${styles.works}`}>
+              {
+                drawings.map(q => <Project key={q.title} data={q} details={false} />)
               }
             </div>
           </CardPanel>

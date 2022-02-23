@@ -1,7 +1,5 @@
 import styles from "../styles/components/Project.module.scss";
 
-import { motion } from "framer-motion";
-
 interface ProjectProps{
     data: {
         title: string,
@@ -9,21 +7,22 @@ interface ProjectProps{
         image: string,
         description: string,    
     }
+    details: boolean,
 }
 
-export default function Project({ data }: ProjectProps) {
+export default function Project({ data, details = true }: ProjectProps) {
 
   return (
-    <motion.a 
+    <a 
       title={data.title} 
-      href={data.links[0].url} 
+      href={details ? data.links[0].url : ""} 
       target="_blank"
       rel="noreferrer"
       className={`cardItem ${styles.projectWrap}`}
     >
       <div className={styles.social} >
         <ul onClick={(e) => e.stopPropagation()}>
-          {
+          {details &&
             data.links.map(q =>
               <li key={q.title}>
                 <a
@@ -46,20 +45,16 @@ export default function Project({ data }: ProjectProps) {
         width={500}
         src={data.image}
       />
-      <div className={styles.details}>
-        <h2>{data.title ?? "No Title"}</h2>
-        <motion.div
-          layout
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "max-content", opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          transition={{ type: "spring", duration: 0.4 }}
-        >
-          <p>
-            {data.description}
-          </p>
-        </motion.div>
-      </div>
-    </motion.a>
+      {details && 
+        <div className={styles.details}>
+          <h2>{data.title ?? "No Title"}</h2>
+          <div>
+            <p>
+              {data.description}
+            </p>
+          </div>
+        </div>
+      }
+    </a>
   );
 }
