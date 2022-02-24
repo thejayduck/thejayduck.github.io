@@ -1,5 +1,7 @@
 import styles from "../styles/components/Project.module.scss";
 
+import Image from "next/image";
+
 interface ProjectProps{
     data: {
         title: string,
@@ -38,12 +40,13 @@ export default function Project({ data, details = true }: ProjectProps) {
         </ul>
       </div>
 
-      <img
+      <Image 
         className={styles.image}
-        alt={`${data.title} Cover`}
+        src={data.image}
+        layout="responsive"
+        objectFit="cover"
         height={256}
         width={500}
-        src={data.image}
       />
       {details && 
         <div className={styles.details}>

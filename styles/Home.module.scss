@@ -110,6 +110,7 @@
 
     .works {
       flex-direction: column;
+      flex-wrap: unset !important;
       align-items: stretch !important;
     }
   }
