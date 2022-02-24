@@ -40,12 +40,10 @@ export default function Project({ data, details = true }: ProjectProps) {
         </ul>
       </div>
 
-      <Image 
+      <img
         className={styles.image}
-        src={data.image}
         alt={`${data.title} Cover`}
-        layout="responsive"
-        objectFit="cover"
+        src={data.image}
         height={256}
         width={500}
       />

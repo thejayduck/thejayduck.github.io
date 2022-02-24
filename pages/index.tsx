@@ -34,14 +34,7 @@ export default function Home({ projects, drawings }: HomeProps) {
     <PageBase>
       <section className={`${styles.introductionWrap} flex`}>
         <div className={`flex flexColumn ${styles.profile}`}>
-          <Image 
-            alt="That's Me"
-            src={"/profileLarge.png"}
-            layout="fixed"
-            objectFit="cover"
-            height={336}
-            width={256}
-          />
+          <img src="profileLarge.png" width={256} />
           <ul>
             <SocialItem icon="bx bxl-github" title="Github" href="https://github.com/thejayduck" />
             <SocialItem icon="bx bxl-gmail" title="Gmail" href="mailto:ardafevzi.armutcu@gmail.com" />
