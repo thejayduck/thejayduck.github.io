@@ -51,21 +51,34 @@ export default function Home({ projects, drawings }: HomeProps) {
               </>
             }
           >
+            <Subtitle text="About Me" />
             <p>
               I am a 2nd year <span>English Language and Literature</span> student in Turkey. It might feel odd that a literature student has an enormous hobby like programming.
-              Although programming is just a hobby for me, I have always been passionate about creating my projects.
+              Although programming is just a hobby for me, I have always been passionate working on new projects.
             </p>
           </CardPanel>
           <CardPanel title="Skill Set 🔧">
             <Subtitle text="Languages" />
             <div className={`${styles.skills} flex`}>
-              {skillset.skills.map(q =>
+              {skillset.languages.map(q =>
                 <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
               )}
             </div>
-            <Subtitle text="Tools" />
+            <Subtitle text="Software" />
             <div className={`${styles.skills} flex`}>
-              {skillset.tools.map(q =>
+              {skillset.software.map(q =>
+                <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
+              )}
+            </div>
+            <Subtitle text="Databases" />
+            <div className={`${styles.skills} flex`}>
+              {skillset.database.map(q =>
+                <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
+              )}
+            </div>
+            <Subtitle text="Others" />
+            <div className={`${styles.skills} flex`}>
+              {skillset.other.map(q =>
                 <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
               )}
             </div>

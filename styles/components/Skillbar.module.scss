@@ -36,6 +36,7 @@
 }
 
 .title {
+  z-index: var(--z-front);
   display: flex;
   align-items: center;
   display: -webkit-box;

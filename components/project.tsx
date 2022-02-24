@@ -15,7 +15,7 @@ export default function Project({ data, details = true }: ProjectProps) {
   return (
     <a 
       title={data.title} 
-      href={details ? data.links[0].url : ""} 
+      href={details ? data.links[0].url : data.image} 
       target="_blank"
       rel="noreferrer"
       className={`cardItem ${styles.projectWrap}`}

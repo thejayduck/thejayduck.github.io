@@ -1,5 +1,5 @@
 {
-    "tools": [
+    "software": [
         {
             "title": "Visual Studio Code",
             "icon": "devicon-visualstudio-plain",
@@ -11,26 +11,16 @@
             "href": "https://unity.com/"
         },
         {
-            "title": "Heroku",
-            "icon": "devicon-heroku-original",
-            "href": "https://heroku.com/"
-        },
-        {
             "title": "Figma",
             "icon": "devicon-figma-plain",
             "href": "https://www.figma.com/"
         }
     ],
-    "skills": [
+    "languages": [
         {
             "title": "C#",
             "icon": "devicon-csharp-plain",
             "href": "https://www.w3schools.com/cs/index.php"
-        },
-        {
-            "title": "Next.js",
-            "icon": "devicon-nextjs-plain",
-            "href": "https://nextjs.org/"
         },
         {
             "title": "JavaScript",
@@ -63,6 +53,18 @@
             "href": "https://www.php.net/"
         },
         {
+            "title": "Node.js",
+            "icon": "devicon-nodejs-plain",
+            "href": "https://nodejs.org/en/"
+        },
+        {
+            "title": "Next.js",
+            "icon": "devicon-nextjs-plain",
+            "href": "https://nextjs.org/"
+        }
+    ],
+    "database": [
+        {
             "title": "Postgresql",
             "icon": "devicon-postgresql-plain",
             "href": "https://www.postgresql.org/"
@@ -71,6 +73,13 @@
             "title": "MongoDB",
             "icon": "devicon-mongodb-plain-wordmark",
             "href": "https://www.mongodb.com/"
+        }
+    ],
+    "other": [
+        {
+            "title": "Heroku",
+            "icon": "devicon-heroku-original",
+            "href": "https://heroku.com/"
         }
     ]
 }
