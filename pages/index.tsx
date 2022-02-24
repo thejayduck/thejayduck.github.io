@@ -35,6 +35,7 @@ export default function Home({ projects, drawings }: HomeProps) {
       <section className={`${styles.introductionWrap} flex`}>
         <div className={`flex flexColumn ${styles.profile}`}>
           <Image 
+            alt="That's Me"
             src={"/profileLarge.png"}
             layout="fixed"
             objectFit="cover"

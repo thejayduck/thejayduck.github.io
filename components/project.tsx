@@ -43,6 +43,7 @@ export default function Project({ data, details = true }: ProjectProps) {
       <Image 
         className={styles.image}
         src={data.image}
+        alt={`${data.title} Cover`}
         layout="responsive"
         objectFit="cover"
         height={256}
