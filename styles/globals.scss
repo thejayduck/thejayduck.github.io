@@ -49,6 +49,9 @@ body {
 
   font-size: var(--font-normal);
 
+  scroll-behavior: smooth;
+  scroll-padding-top: 10px;
+
   background-image: url("/shape.svg");
   background-repeat: no-repeat;
   background-size: cover;

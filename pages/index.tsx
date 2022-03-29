@@ -42,9 +42,16 @@ export default function Home({ projects, drawings }: HomeProps) {
             <SocialItem icon="bx bxl-twitter" title="Twitter" href="https://twitter.com/thejayduck" />
             <SocialItem icon="bx bxl-instagram-alt" title="Instagram" href="https://www.instagram.com/ardafevzi.armutcu/" />
           </ul>
+          <ul className={styles.quickLinks}>
+            <SocialItem icon="bx bxs-home" newPage={false} href="#home" />
+            <SocialItem icon="bx bxs-wrench" newPage={false} href="#skills" />
+            <SocialItem icon="bx bx-laptop" newPage={false} href="#projects" />
+            <SocialItem icon="bx bxs-brush" newPage={false} href="#drawings" />
+          </ul>
         </div>
         <div className={`${styles.details}`}>
           <CardPanel
+            id="home"
             title={
               <>
                 Hi there
@@ -60,7 +67,7 @@ export default function Home({ projects, drawings }: HomeProps) {
               Although programming is just a hobby for me, I have always been passionate working on new projects.
             </p>
           </CardPanel>
-          <CardPanel title="Skill Set 🔧">
+          <CardPanel id="skills" title="Skill Set 🔧">
             <Subtitle text="Languages" icon="bx bx-code-alt" />
             <div className={`${styles.skills} flex`}>
               {skillset.languages.map(q =>
@@ -89,14 +96,14 @@ export default function Home({ projects, drawings }: HomeProps) {
               )}
             </div>
           </CardPanel>
-          <CardPanel title="Recent Projects 💻">
+          <CardPanel id="projects" title="Recent Projects 💻">
             <div className={`flex ${styles.works}`}>
               {
                 projects.map(q => <Project key={q.title} data={q} details={true} />)
               }
             </div>
           </CardPanel>
-          <CardPanel title="Recent Drawings 🖌️">
+          <CardPanel id="drawings" title="Recent Drawings 🖌️">
             <div className={`flex ${styles.works}`}>
               {
                 drawings.map(q => <Project key={q.title} data={q} details={false} />)

@@ -17,6 +17,20 @@
       flex-direction: column;
       align-items: stretch;
     }
+
+    .quickLinks
+    {
+      flex-direction: row;
+
+      li {
+        flex: 1;
+
+        a {
+          justify-content: center;
+        }
+
+      }
+    }
   }
 
   .details {
@@ -105,6 +119,10 @@
       ul {
         flex-direction: row;
         align-items: center;
+      }
+
+      .quickLinks {
+        display: none;
       }
     }
 
