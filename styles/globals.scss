@@ -52,7 +52,7 @@ body {
   scroll-behavior: smooth;
   scroll-padding-top: 10px;
 
-  background-image: url("/shape.svg");
+  background-image: url("/circle-scatter-haikei.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -118,27 +118,35 @@ ul {
 
   gap: 10px;
 }
+
 .flexRight {
   justify-content: flex-start;
 }
+
 .flexLeft {
   justify-content: flex-end;
 }
+
 .flexAround {
   justify-content: space-around;
 }
+
 .flexEvenly {
   justify-content: space-evenly;
 }
+
 .flexBetween {
   justify-content: space-between;
 }
+
 .flexColumn {
   flex-direction: column;
 }
+
 .flexRow {
   flex-direction: row;
 }
+
 .flexWrap {
   flex-wrap: wrap;
 }
@@ -149,15 +157,19 @@ ul {
 .fontSmaller {
   font-size: var(--font-smaller);
 }
+
 .fontSmall {
   font-size: var(--font-small);
 }
+
 .fontMedium {
   font-size: var(--font-medium);
 }
+
 .fontLarge {
   font-size: var(--font-large);
 }
+
 .fontLarger {
   font-size: var(--font-larger);
 }
