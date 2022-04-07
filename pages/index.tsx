@@ -68,6 +68,13 @@ export default function Home({ projects, drawings }: HomeProps) {
             </p>
           </CardPanel>
           <CardPanel id="skills" title="Skill Set 🔧">
+            <Subtitle text="Hobbies" icon="bx bx-hive" />
+            <div className={`${styles.skills} flex`}>
+              {skillset.hobbies.map(q =>
+                <SkillBar key={q.title} title={q.title} icon={q.icon} />
+              )}
+            </div>
+            <hr />
             <Subtitle text="Languages" icon="bx bx-code-alt" />
             <div className={`${styles.skills} flex`}>
               {skillset.languages.map(q =>

@@ -81,5 +81,19 @@
             "icon": "devicon-heroku-original",
             "href": "https://heroku.com/"
         }
+    ],
+    "hobbies": [
+        {
+            "title": "Programming",
+            "icon": "bx bx-code-curly"
+        },
+        {
+            "title": "Drawing",
+            "icon": "bx bxs-pencil"
+        },
+        {
+            "title": "Writing",
+            "icon": "bx bxs-pen"
+        }
     ]
 }
