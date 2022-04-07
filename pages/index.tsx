@@ -34,19 +34,19 @@ export default function Home({ projects, drawings }: HomeProps) {
     <PageBase>
       <section className={`${styles.introductionWrap} flex`}>
         <div className={`flex flexColumn ${styles.profile}`}>
-          <img src="profileAlt.jpg" width={256} />
+          <img alt="Profile Picture" src="profileAlt.jpg" width={256} />
           <ul>
-            <SocialItem icon="bx bxl-github" title="Github" href="https://github.com/thejayduck" />
-            <SocialItem icon="bx bxl-gmail" title="Gmail" href="mailto:ardafevzi.armutcu@gmail.com" />
-            <SocialItem icon="bx bxs-store" title="Itch.io" href="https://thejayduck.itch.io/" />
-            <SocialItem icon="bx bxl-twitter" title="Twitter" href="https://twitter.com/thejayduck" />
-            <SocialItem icon="bx bxl-instagram-alt" title="Instagram" href="https://www.instagram.com/ardafevzi.armutcu/" />
+            <SocialItem icon="bx bxl-github" label="github" title="Github" href="https://github.com/thejayduck" />
+            <SocialItem icon="bx bxl-gmail" label="gmail" title="Gmail" href="mailto:ardafevzi.armutcu@gmail.com" />
+            <SocialItem icon="bx bxs-store" label="itch.io" title="Itch.io" href="https://thejayduck.itch.io/" />
+            <SocialItem icon="bx bxl-twitter" label="twitter" title="Twitter" href="https://twitter.com/thejayduck" />
+            <SocialItem icon="bx bxl-instagram-alt" label="instagram" title="Instagram" href="https://www.instagram.com/ardafevzi.armutcu/" />
           </ul>
           <ul className={styles.quickLinks}>
-            <SocialItem icon="bx bxs-home" newPage={false} href="#home" />
-            <SocialItem icon="bx bxs-wrench" newPage={false} href="#skills" />
-            <SocialItem icon="bx bx-laptop" newPage={false} href="#projects" />
-            <SocialItem icon="bx bxs-brush" newPage={false} href="#drawings" />
+            <SocialItem icon="bx bxs-home" label="home" newPage={false} href="#home" />
+            <SocialItem icon="bx bxs-wrench" label="skills" newPage={false} href="#skills" />
+            <SocialItem icon="bx bx-laptop" label="projects" newPage={false} href="#projects" />
+            <SocialItem icon="bx bxs-brush" label="drawings" newPage={false} href="#drawings" />
           </ul>
         </div>
         <div className={`${styles.details}`}>
