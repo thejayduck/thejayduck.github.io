@@ -1,7 +1,5 @@
 import styles from "../styles/Home.module.scss";
 
-import Image from "next/image";
-
 import CardPanel from "../components/cardPanel";
 import PageBase from "../components/pageBase";
 import Project from "../components/project";
@@ -113,7 +111,7 @@ export default function Home({ projects, drawings }: HomeProps) {
           <CardPanel id="drawings" title="Recent Drawings 🖌️">
             <div className={`flex ${styles.works}`}>
               {
-                drawings.map(q => <Project key={q.title} data={q} details={false} />)
+                drawings.map(q => <Project smaller={true} key={q.title} data={q} details={false} />)
               }
             </div>
           </CardPanel>
