@@ -32,7 +32,7 @@ export default function Home({ projects, drawings }: HomeProps) {
     <PageBase>
       <section className={`${styles.introductionWrap} flex`}>
         <div className={`flex flexColumn ${styles.profile}`}>
-          <img alt="Profile Picture" src="profileAlt.jpg" width={256} />
+          <img alt="Profile Picture" src="/profileAlt.jpg" width={256} />
           <ul>
             <SocialItem icon="bx bxl-github" label="github" title="Github" href="https://github.com/thejayduck" />
             <SocialItem icon="bx bxl-gmail" label="gmail" title="Gmail" href="mailto:ardafevzi.armutcu@gmail.com" />

@@ -1,0 +1,38 @@
+.projectWrap {
+    cursor: pointer;
+    height: auto;
+    margin-bottom: 2rem;
+    will-change: transform;
+    padding: var(--padding-small);
+    display: flex;
+
+    .image {
+        width: 20%;
+        height: 20%;
+        flex: 0.5;
+    }
+
+    .details {
+        padding-left: var(--padding-normal);
+
+        .description {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            /* number of lines to show */
+            line-clamp: 5;
+            -webkit-box-orient: vertical;
+
+            * {
+                all: revert;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .image {
+        display: none;
+    }
+}

@@ -4,7 +4,7 @@ import { PropsWithChildren } from "react";
 
 interface CardPanelProps{
   id?: any,
-  title: any,
+  title?: any,
 }
 
 export default function CardPanel({ id, title, children }: PropsWithChildren<CardPanelProps>) {
