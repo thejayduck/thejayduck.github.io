@@ -1,0 +1,79 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><html lang="en"></html><title>Arda Fevzi Armutcu</title><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content="Arda Fevzi Armutcu&#x27;s Portfolio"/><link rel="preload" as="font"/><link rel="icon" href="/favicon.ico"/><meta name="next-head-count" content="7"/><link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"/>      <link rel="preload" href="/_next/static/css/095b6b258c18ce26.css" as="style"/><link rel="stylesheet" href="/_next/static/css/095b6b258c18ce26.css" data-n-g=""/><link rel="preload" href="/_next/static/css/0d4cf078ee6a4c6f.css" as="style"/><link rel="stylesheet" href="/_next/static/css/0d4cf078ee6a4c6f.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-69bfa6990bb9e155.js" defer=""></script><script src="/_next/static/chunks/framework-5f4595e5518b5600.js" defer=""></script><script src="/_next/static/chunks/main-81f4fb35f4507347.js" defer=""></script><script src="/_next/static/chunks/pages/_app-842cf081dc21ecb6.js" defer=""></script><script src="/_next/static/chunks/978-ecf6dd2316c07cba.js" defer=""></script><script src="/_next/static/chunks/pages/blog-4564da1e3ca2b73f.js" defer=""></script><script src="/_next/static/A5QslDfCD4qlh4blhnikJ/_buildManifest.js" defer=""></script><script src="/_next/static/A5QslDfCD4qlh4blhnikJ/_ssgManifest.js" defer=""></script><script src="/_next/static/A5QslDfCD4qlh4blhnikJ/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><main class="PageBase_container__Y3eAZ"><div class="flex flexColumn undefined"><div class="cardItem Home_panel__1noHF"><h1> <!-- --> </h1><a title="Dummy Blog" href="/blog/0" target="_self" rel="noreferrer" class="BlogItem_projectWrap__Jqj_e"><img class="BlogItem_image__Xy8Jq" alt="Dummy Blog Cover" src="https://i.ibb.co/VHggRnc/project.jpg" height="256" width="500"/><div class="BlogItem_details__af7sn"><h2>Dummy Blog</h2><div class="BlogItem_description__PS_Vf"><h1>A demo of <code>react-markdown</code></h1>
+<p><code>react-markdown</code> is a markdown component for React.</p>
+<p>👉 Changes are re-rendered as you type.</p>
+<p>👈 Try writing some markdown on the left.</p>
+<h2>Overview</h2>
+<p></p>
+<ul>
+<li>Follows <a href="https://commonmark.org">CommonMark</a></li>
+<li>Optionally follows <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a></li>
+<li>Renders actual React elements instead of using <code>dangerouslySetInnerHTML</code></li>
+<li>Lets you define your own components (to render <code>MyHeading</code> instead of <code>h1</code>)</li>
+<li>Has a lot of plugins</li>
+</ul>
+<h2>Table of contents</h2>
+<p>Here is an example of a plugin in action
+(<a href="https://github.com/remarkjs/remark-toc"><code>remark-toc</code></a>).
+This section is replaced by an actual table of contents.</p>
+<h2>Syntax highlighting</h2>
+<p>Here is an example of a plugin to highlight code:
+<a href="https://github.com/rehypejs/rehype-highlight"><code>rehype-highlight</code></a>.</p>
+<pre><code class="language-js">import React from &#x27;react&#x27;
+import ReactDOM from &#x27;react-dom&#x27;
+import ReactMarkdown from &#x27;react-markdown&#x27;
+import rehypeHighlight from &#x27;rehype-highlight&#x27;
+
+ReactDOM.render(
+  &lt;ReactMarkdown rehypePlugins={[rehypeHighlight]}&gt;{&#x27;# Your markdown here&#x27;}&lt;/ReactMarkdown&gt;,
+  document.querySelector(&#x27;#content&#x27;)
+)
+</code></pre>
+<p>Pretty neat, eh?</p>
+<h2>GitHub flavored markdown (GFM)</h2>
+<p>For GFM, you can <em>also</em> use a plugin:
+<a href="https://github.com/remarkjs/react-markdown#use"><code>remark-gfm</code></a>.
+It adds support for GitHub-specific extensions to the language:
+tables, strikethrough, tasklists, and literal URLs.</p>
+<p>These features <strong>do not work by default</strong>.
+👆 Use the toggle above to add the plugin.</p>
+<table><thead><tr><th style="text-align:right">Feature</th><th style="text-align:left">Support</th></tr></thead><tbody><tr><td style="text-align:right">CommonMark</td><td style="text-align:left">100%</td></tr><tr><td style="text-align:right">GFM</td><td style="text-align:left">100% w/ <code>remark-gfm</code></td></tr></tbody></table>
+<p><del>strikethrough</del></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled=""/> <!-- -->task list</li>
+<li class="task-list-item"><input type="checkbox" checked="" disabled=""/> <!-- -->checked item</li>
+</ul>
+<p><a href="https://example.com">https://example.com</a></p>
+<h2>HTML in markdown</h2>
+<p>⚠️ HTML in markdown is quite unsafe, but if you want to support it, you can
+use <a href="https://github.com/rehypejs/rehype-raw"><code>rehype-raw</code></a>.
+You should probably combine it with
+<a href="https://github.com/rehypejs/rehype-sanitize"><code>rehype-sanitize</code></a>.</p>
+<!-- -->&lt;blockquote&gt;
+  👆 Use the toggle above to add the plugin.
+&lt;/blockquote&gt;<!-- -->
+<h2>Components</h2>
+<p>You can pass components to change things:</p>
+<pre><code class="language-js">import React from &#x27;react&#x27;
+import ReactDOM from &#x27;react-dom&#x27;
+import ReactMarkdown from &#x27;react-markdown&#x27;
+import MyFancyRule from &#x27;./components/my-fancy-rule.js&#x27;
+
+ReactDOM.render(
+  &lt;ReactMarkdown
+    components={{
+      // Use h2s instead of h1s
+      h1: &#x27;h2&#x27;,
+      // Use a component instead of hrs
+      hr: ({node, ...props}) =&gt; &lt;MyFancyRule {...props} /&gt;
+    }}
+  &gt;
+    # Your markdown here
+  &lt;/ReactMarkdown&gt;,
+  document.querySelector(&#x27;#content&#x27;)
+)
+</code></pre>
+<h2>More info?</h2>
+<p>Much more info is available in the
+<a href="https://github.com/remarkjs/react-markdown">readme on GitHub</a>!</p>
+<hr/>
+<p>A component by <a href="https://espen.codes/">Espen Hovlandsdal</a></p></div></div></a></div></div></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"posts":[{"title":"Dummy Blog","image":"https://i.ibb.co/VHggRnc/project.jpg","data":"# A demo of `react-markdown`\n\n`react-markdown` is a markdown component for React.\n\n👉 Changes are re-rendered as you type.\n\n👈 Try writing some markdown on the left.\n\n## Overview\n![alt text](https://i.ibb.co/VHggRnc/project.jpg)\n* Follows [CommonMark](https://commonmark.org)\n* Optionally follows [GitHub Flavored Markdown](https://github.github.com/gfm/)\n* Renders actual React elements instead of using `dangerouslySetInnerHTML`\n* Lets you define your own components (to render `MyHeading` instead of `h1`)\n* Has a lot of plugins\n\n## Table of contents\n\nHere is an example of a plugin in action\n([`remark-toc`](https://github.com/remarkjs/remark-toc)).\nThis section is replaced by an actual table of contents.\n\n## Syntax highlighting\n\nHere is an example of a plugin to highlight code:\n[`rehype-highlight`](https://github.com/rehypejs/rehype-highlight).\n\n```js\nimport React from 'react'\nimport ReactDOM from 'react-dom'\nimport ReactMarkdown from 'react-markdown'\nimport rehypeHighlight from 'rehype-highlight'\n\nReactDOM.render(\n  \u003cReactMarkdown rehypePlugins={[rehypeHighlight]}\u003e{'# Your markdown here'}\u003c/ReactMarkdown\u003e,\n  document.querySelector('#content')\n)\n```\n\nPretty neat, eh?\n\n## GitHub flavored markdown (GFM)\n\nFor GFM, you can *also* use a plugin:\n[`remark-gfm`](https://github.com/remarkjs/react-markdown#use).\nIt adds support for GitHub-specific extensions to the language:\ntables, strikethrough, tasklists, and literal URLs.\n\nThese features **do not work by default**.\n👆 Use the toggle above to add the plugin.\n\n| Feature    | Support              |\n| ---------: | :------------------- |\n| CommonMark | 100%                 |\n| GFM        | 100% w/ `remark-gfm` |\n\n~~strikethrough~~\n\n* [ ] task list\n* [x] checked item\n\nhttps://example.com\n\n## HTML in markdown\n\n⚠️ HTML in markdown is quite unsafe, but if you want to support it, you can\nuse [`rehype-raw`](https://github.com/rehypejs/rehype-raw).\nYou should probably combine it with\n[`rehype-sanitize`](https://github.com/rehypejs/rehype-sanitize).\n\n\u003cblockquote\u003e\n  👆 Use the toggle above to add the plugin.\n\u003c/blockquote\u003e\n\n## Components\n\nYou can pass components to change things:\n\n```js\nimport React from 'react'\nimport ReactDOM from 'react-dom'\nimport ReactMarkdown from 'react-markdown'\nimport MyFancyRule from './components/my-fancy-rule.js'\n\nReactDOM.render(\n  \u003cReactMarkdown\n    components={{\n      // Use h2s instead of h1s\n      h1: 'h2',\n      // Use a component instead of hrs\n      hr: ({node, ...props}) =\u003e \u003cMyFancyRule {...props} /\u003e\n    }}\n  \u003e\n    # Your markdown here\n  \u003c/ReactMarkdown\u003e,\n  document.querySelector('#content')\n)\n```\n\n## More info?\n\nMuch more info is available in the\n[readme on GitHub](https://github.com/remarkjs/react-markdown)!\n\n***\n\nA component by [Espen Hovlandsdal](https://espen.codes/)"}]},"__N_SSG":true},"page":"/blog","query":{},"buildId":"A5QslDfCD4qlh4blhnikJ","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
