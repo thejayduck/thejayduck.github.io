@@ -10,7 +10,7 @@ import ReactMarkdown from "react-markdown";
 
 import CardPanel from "../../components/cardPanel";
 import PageBase from "../../components/pageBase";
-import GetPosts from "../getPosts";
+import GetPosts from "../../lib/getPosts";
 
 interface BlogProps {
   posts: BlogPostProps[]

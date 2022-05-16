@@ -4,8 +4,7 @@ import { GetStaticPropsResult } from "next/types";
 
 import BlogItem from "../components/blogItem";
 import PageBase from "../components/pageBase";
-
-import GetPosts from "./getPosts";
+import GetPosts from "../lib/getPosts";
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>> {
   const postsData = GetPosts();
