@@ -8,7 +8,6 @@ import SocialItem from "../components/socialItem";
 import Subtitle from "../components/subtitle";
 import skillset from "../skillset.json";
 
-
 interface HomeProps {
   projects: any[]
   drawings: any[]
@@ -34,10 +33,11 @@ export default function Home({ projects, drawings }: HomeProps) {
         <div className={`flex flexColumn ${styles.profile}`}>
           <img alt="Profile Picture" src="/profileAlt.jpg" width={256} />
           <ul>
+            <SocialItem icon="bx bx-repost" label="blog" title="Blogs" href="/blog" newPage={false} />
             <SocialItem icon="bx bxl-github" label="github" title="Github" href="https://github.com/thejayduck" />
             <SocialItem icon="bx bxl-gmail" label="gmail" title="Gmail" href="mailto:ardafevzi.armutcu@gmail.com" />
             <SocialItem icon="bx bxs-store" label="itch.io" title="Itch.io" href="https://thejayduck.itch.io/" />
-            <SocialItem icon="bx bxl-twitter" label="twitter" title="Twitter" href="https://twitter.com/thejayduck" />
+            {/* <SocialItem icon="bx bxl-twitter" label="twitter" title="Twitter" href="https://twitter.com/thejayduck" /> */}
             <SocialItem icon="bx bxl-instagram-alt" label="instagram" title="Instagram" href="https://www.instagram.com/ardafevzi.armutcu/" />
           </ul>
           <ul className={styles.quickLinks}>

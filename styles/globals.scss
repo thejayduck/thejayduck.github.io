@@ -54,12 +54,11 @@ body {
 
   background-image: url("/circle-scatter-haikei.svg");
   background-repeat: no-repeat;
-  background-size: cover;
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 * {
@@ -70,22 +69,6 @@ h1,
 h2,
 p {
   margin: 0;
-}
-
-img {
-  border-radius: var(--border);
-  object-fit: cover;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  color: black;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
 }
 
 // li {

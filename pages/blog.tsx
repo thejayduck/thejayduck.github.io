@@ -1,31 +1,41 @@
-import styles from "../styles/Blogs.module.scss";
+import styles from "../styles/Blog.module.scss";
+
+import { GetStaticPropsResult } from "next/types";
 
 import BlogItem from "../components/blogItem";
-import CardPanel from "../components/cardPanel";
 import PageBase from "../components/pageBase";
 
-export async function getStaticProps() {
-  const res = await fetch("https://gist.githubusercontent.com/thejayduck/f5c8e6b26e6ca02953eee1c4c9b9fe01/raw");
-  const data = await res.json();
+import GetPosts from "./getPosts";
 
+export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>> {
+  const postsData = GetPosts();
+  
   return {
     props: {
-      posts: data.posts,
+      posts: postsData,
     },
-    revalidate: 10
+    revalidate: 60,
   };
+
 }
 
 interface BlogProps {
-    posts: any[]
+    posts: BlogPostProps[] 
+}
+
+interface BlogPostProps {
+  slug: string,
+  title: string,
+  image: string,
+  content: string,
 }
 
 export default function Blog ({posts}: BlogProps) {
   return (
     <PageBase>
-      <div className={`flex flexColumn ${styles.posts}`}>
-        {posts.map((q, idx) =>
-          <BlogItem key={idx} id={idx} title={q.title} description={q.data} image={q.image} />
+      <div className={`flex flexColumn flexWrap ${styles.main}`}>
+        {posts.map(q =>
+          <BlogItem key={q.slug} id={q.slug} title={q.title} description={q.content} image={q.image} />
         )}
       </div>
     </PageBase>

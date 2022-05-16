@@ -3,6 +3,9 @@ module.exports = {
   images: {
     domains: ["i.ibb.co", "i.imgur.com"],
   },
+  node: {
+    fs: "empty",
+  },
   module: {
     rules: [
       {

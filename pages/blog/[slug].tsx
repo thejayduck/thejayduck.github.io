@@ -1,7 +1,8 @@
 import styles from "../../styles/BlogPost.module.scss";
 
 import { useRouter } from "next/router";
-import { GetStaticPaths } from "next/types";
+import { GetStaticPaths, GetStaticPropsResult } from "next/types";
+import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
 import React from "react";
@@ -9,9 +10,17 @@ import ReactMarkdown from "react-markdown";
 
 import CardPanel from "../../components/cardPanel";
 import PageBase from "../../components/pageBase";
+import GetPosts from "../getPosts";
 
 interface BlogProps {
-  posts: any[]
+  posts: BlogPostProps[]
+}
+
+interface BlogPostProps {
+  slug: string,
+  title: string,
+  image: string,
+  content: string,
 }
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
@@ -22,29 +31,33 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   };
 };
 
-export async function getStaticProps() {
-  const res = await fetch("https://gist.githubusercontent.com/thejayduck/f5c8e6b26e6ca02953eee1c4c9b9fe01/raw");
-  const data = await res.json();
+export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>> {
+  const postsData = GetPosts();
 
   return {
     props: {
-      posts: data.posts,
+      posts: postsData,
     },
-    revalidate: 10
+    revalidate: 60,
   };
+
 }
 
 export default function Blog({posts}: BlogProps){
   const router = useRouter();
-  const { id } = router.query;
-  const post = posts[Number.parseInt(id as string)].data;
+  const { slug } = router.query;
+
+  const post = posts.find(({slug: targetSlug}) => targetSlug == slug);
+
+  if(!post)
+    throw new Error("Unable to find post.");
 
   return (
     <PageBase>
       <CardPanel id="post">
-        <div className={`flex ${styles.main}`}>
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {post}
+        <div className={`${styles.main}`}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+            {post.content}
           </ReactMarkdown>
         </div>
       </CardPanel>

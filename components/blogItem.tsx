@@ -1,5 +1,6 @@
 import styles from "../styles/components/BlogItem.module.scss";
 
+import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
 import React from "react";
@@ -11,7 +12,7 @@ interface BlogItemProps {
     title: string,
     description: string,
     image?: string
-    id: number
+    id: string
 }
 
 export default function BlogItem({title, description, image, id}: BlogItemProps){
@@ -22,7 +23,7 @@ export default function BlogItem({title, description, image, id}: BlogItemProps)
         href={`/blog/${id}`}
         target="_self"
         rel="noreferrer"
-        className={`${styles.projectWrap}`}
+        className={`flex flexRight ${styles.projectWrap}`}
       >
         <img
           className={styles.image}
@@ -32,9 +33,8 @@ export default function BlogItem({title, description, image, id}: BlogItemProps)
           width={500}
         />
         <div className={styles.details}>
-          <h2>{title ?? "No Title"}</h2>
           <div className={styles.description}>
-            <ReactMarkdown disallowedElements={["img"]} remarkPlugins={[remarkGfm]}>
+            <ReactMarkdown disallowedElements={["img"]} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
               {description}
             </ReactMarkdown>
           </div>
