@@ -1,6 +1,5 @@
 .projectWrap {
     cursor: pointer;
-    height: auto;
     padding: var(--padding-small) var(--padding-normal);
     margin: 0;
 
@@ -8,15 +7,13 @@
     text-decoration: none;
 
     .image {
-        width: 20%;
-        height: 20%;
+        // width: 30%;
         object-fit: cover;
         border-radius: var(--border);
     }
 
     .details {
         padding-left: var(--padding-normal);
-        max-width: 80%;
 
         .description {
             overflow: hidden;

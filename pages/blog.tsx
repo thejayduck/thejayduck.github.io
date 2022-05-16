@@ -32,7 +32,7 @@ interface BlogPostProps {
 export default function Blog ({posts}: BlogProps) {
   return (
     <PageBase>
-      <div className={`flex flexColumn flexWrap ${styles.main}`}>
+      <div className={`flex flexColumn ${styles.main}`}>
         {posts.map(q =>
           <BlogItem key={q.slug} id={q.slug} title={q.title} description={q.content} image={q.image} />
         )}
