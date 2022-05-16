@@ -3,9 +3,6 @@ module.exports = {
   images: {
     domains: ["i.ibb.co", "i.imgur.com"],
   },
-  node: {
-    fs: "empty",
-  },
   module: {
     rules: [
       {
@@ -13,5 +10,9 @@ module.exports = {
         use: "raw-loader"
       }
     ]
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) config.resolve.fallback.fs = false;
+    return config;
   }
 };
