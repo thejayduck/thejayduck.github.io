@@ -10,28 +10,24 @@
     .image {
         width: 20%;
         height: 20%;
-        flex: 0.5;
+        object-fit: cover;
         border-radius: var(--border);
     }
 
-
     .details {
         padding-left: var(--padding-normal);
+        max-width: 80%;
 
         .description {
             overflow: hidden;
             overflow-wrap: break-word;
             text-overflow: ellipsis;
             display: -webkit-box;
+            -webkit-box-orient: vertical;
             -webkit-line-clamp: 5;
 
             /* number of lines to show */
             line-clamp: 5;
-            -webkit-box-orient: vertical;
-
-            * {
-                all: revert;
-            }
         }
     }
 }
@@ -39,5 +35,9 @@
 @media screen and (max-width: 1024px) {
     .image {
         display: none;
+    }
+
+    .details {
+        max-width: initial;
     }
 }

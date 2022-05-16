@@ -33,7 +33,7 @@ export default function Home({ projects, drawings }: HomeProps) {
         <div className={`flex flexColumn ${styles.profile}`}>
           <img alt="Profile Picture" src="/profileAlt.jpg" width={256} />
           <ul>
-            <SocialItem icon="bx bx-repost" label="blog" title="Blogs" href="/blog" newPage={false} />
+            <SocialItem icon="bx bx-repost" label="blog" title="Blog" href="/blog" newPage={false} />
             <SocialItem icon="bx bxl-github" label="github" title="Github" href="https://github.com/thejayduck" />
             <SocialItem icon="bx bxl-gmail" label="gmail" title="Gmail" href="mailto:ardafevzi.armutcu@gmail.com" />
             <SocialItem icon="bx bxs-store" label="itch.io" title="Itch.io" href="https://thejayduck.itch.io/" />
