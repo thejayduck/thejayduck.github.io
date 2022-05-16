@@ -1,14 +1,15 @@
-import fs from "fs";
 import matter from "gray-matter";
-import path from "path";
-
-const directoryPath = path.join(process.cwd(), "docs");
 
 export default function GetPosts() {
-
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const path = require("path");
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const fs = require("fs");
+  
+  const directoryPath = path.join(process.cwd(), "docs");
   const files = fs.readdirSync(directoryPath);
 
-  const data = files.map((file) => {
+  const data = files.map((file: string) => {
     const filePath = path.join(directoryPath, file);
     const fileContents = fs.readFileSync(filePath, "utf8");
     const obj = matter(fileContents);
