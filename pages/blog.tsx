@@ -4,6 +4,7 @@ import { GetStaticPropsResult } from "next/types";
 
 import BlogItem from "../components/blogItem";
 import PageBase from "../components/pageBase";
+import SocialItem from "../components/socialItem";
 import GetPosts from "../lib/getPosts";
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>> {
@@ -32,7 +33,10 @@ interface BlogPostProps {
 export default function Blog ({posts}: BlogProps) {
   return (
     <PageBase>
-      <div className={`flex flexColumn ${styles.main}`}>
+      <ul className={`flex flexRight ${styles.backButton}`}>
+        <SocialItem icon="bx bx-undo" label="back" title="Back to Homepage" href="/" newPage={false} />
+      </ul>
+      <div className={`flex flexColumn ${styles.posts}`}>
         {posts.map(q =>
           <BlogItem key={q.slug} id={q.slug} title={q.title} description={q.content} image={q.image} />
         )}

@@ -10,6 +10,7 @@ import ReactMarkdown from "react-markdown";
 
 import CardPanel from "../../components/cardPanel";
 import PageBase from "../../components/pageBase";
+import SocialItem from "../../components/socialItem";
 import GetPosts from "../../lib/getPosts";
 
 interface BlogProps {
@@ -54,8 +55,11 @@ export default function Blog({posts}: BlogProps){
 
   return (
     <PageBase>
+      <ul className={`flex flexRight ${styles.backButton}`}>
+        <SocialItem icon="bx bx-undo" label="back" title="Back to Posts" href="/blog" newPage={false} />
+      </ul>
       <CardPanel id="post">
-        <div className={`${styles.main}`}>
+        <div className={`${styles.post}`}>
           <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
             {post.content}
           </ReactMarkdown>
