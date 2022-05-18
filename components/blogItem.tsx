@@ -16,17 +16,16 @@ interface BlogItemProps {
 }
 
 function CountWords (str: string): number {
-  str = str.replace(/(^\s*)|(\s*$)/gi, "");
-  str = str.replace(/[ ]{2,}/gi, "");
-  str = str.replace(/\n /, "\n");
-
+  str = str.replace(/\b(\w+)\/(\w+(?!#\d+))\b/, "\n");
+  str = str.replace(/<[^>]*>/g, " ");
+  str = str.trim();
   return str.split(" ").length;
 }
 
-function ReadTime (input: number): number {
+function ReadTime (words: number): number {
   const wpm = 200;
 
-  return Math.ceil(input / wpm);
+  return Math.ceil(words / wpm);
 }
 
 export default function BlogItem({title, date, description, image, id}: BlogItemProps){
@@ -45,16 +44,15 @@ export default function BlogItem({title, date, description, image, id}: BlogItem
           src={image}
         />
         <div className={styles.details}>
-          <span>
-            {date} 🗓️
-            <br/>
-            {wordCount} Words 📄 - {readTime} Minutes ⏱️
-          </span>
           <div className={styles.description}>
             <ReactMarkdown disallowedElements={["img"]} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
               {description}
             </ReactMarkdown>
           </div>
+          <hr/>
+          <span>
+            {date} 🗓️ - {wordCount} Words 📄 - {readTime} Minutes ⏱️
+          </span>
         </div>
       </a>
     </Link>
