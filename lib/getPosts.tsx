@@ -13,6 +13,7 @@ export default function GetPosts() {
     return {
       slug: file.replace(".md", ""),
       title: obj.data["title"],
+      date: obj.data["date"],
       image: obj.data["image"],
       content: obj.content,
     };

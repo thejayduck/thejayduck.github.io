@@ -26,6 +26,7 @@ interface BlogProps {
 interface BlogPostProps {
   slug: string,
   title: string,
+  date: string,
   image: string,
   content: string,
 }
@@ -38,7 +39,7 @@ export default function Blog ({posts}: BlogProps) {
       </ul>
       <div className={`flex flexColumn ${styles.posts}`}>
         {posts.map(q =>
-          <BlogItem key={q.slug} id={q.slug} title={q.title} description={q.content} image={q.image} />
+          <BlogItem key={q.slug} id={q.slug} title={q.title} date={q.date} description={q.content} image={q.image} />
         )}
       </div>
     </PageBase>
