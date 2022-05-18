@@ -1,5 +1,6 @@
 import styles from "../styles/Blog.module.scss";
 
+import Head from "next/head";
 import { GetStaticPropsResult } from "next/types";
 
 import BlogItem from "../components/blogItem";
@@ -33,15 +34,21 @@ interface BlogPostProps {
 
 export default function Blog ({posts}: BlogProps) {
   return (
-    <PageBase>
-      <ul className={`flex flexRight ${styles.backButton}`}>
-        <SocialItem icon="bx bx-undo" label="back" title="Back to Homepage" href="/" newPage={false} />
-      </ul>
-      <div className={`flex flexColumn ${styles.posts}`}>
-        {posts.map(q =>
-          <BlogItem key={q.slug} id={q.slug} title={q.title} date={q.date} description={q.content} image={q.image} />
-        )}
-      </div>
-    </PageBase>
+    <>
+      <Head>
+        <title>Blog · Arda Fevzi Armutcu</title>
+      </Head>
+      
+      <PageBase>
+        <ul className={`flex flexRight ${styles.backButton}`}>
+          <SocialItem icon="bx bx-undo" label="back" title="Back to Homepage" href="/" newPage={false} />
+        </ul>
+        <div className={`flex flexColumn ${styles.posts}`}>
+          {posts.map(q =>
+            <BlogItem key={q.slug} id={q.slug} title={q.title} date={q.date} description={q.content} image={q.image} />
+          )}
+        </div>
+      </PageBase>
+    </>
   );
 }

@@ -14,7 +14,7 @@
     }
 
     .details {
-        padding-left: var(--padding-normal);
+        padding: 0 var(--padding-normal) 0 var(--padding-normal);
 
         .description {
             overflow: hidden;

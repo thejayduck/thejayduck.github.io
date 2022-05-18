@@ -1,5 +1,6 @@
 import styles from "../../styles/BlogPost.module.scss";
 
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticPropsResult } from "next/types";
 import rehypeRaw from "rehype-raw";
@@ -54,17 +55,24 @@ export default function Blog({posts}: BlogProps){
     throw new Error("Unable to find post.");
 
   return (
-    <PageBase>
-      <ul className={`flex flexRight ${styles.backButton}`}>
-        <SocialItem icon="bx bx-undo" label="back" title="Back to Posts" href="/blog" newPage={false} />
-      </ul>
-      <CardPanel id="post">
-        <div className={`${styles.post}`}>
-          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-            {post.content}
-          </ReactMarkdown>
-        </div>
-      </CardPanel>
-    </PageBase>
+    <>
+      <Head>
+        <title>{post.title} · Arda Fevzi Armutcu</title>
+      </Head>
+    
+      <PageBase>
+        <ul className={`flex flexRight ${styles.backButton}`}>
+          <SocialItem icon="bx bx-undo" label="back" title="Back to Posts" href="/blog" newPage={false} />
+        </ul>
+        <CardPanel id="post">
+          <div className={`${styles.post}`}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+              {post.content}
+            </ReactMarkdown>
+          </div>
+        </CardPanel>
+      </PageBase>
+    </>
+
   );
 }
