@@ -7,6 +7,8 @@ import remarkGfm from "remark-gfm";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
+import { countWords, readTime } from "../lib/helper";
+
 interface BlogItemProps {
     title: string,
     date: string,
@@ -15,22 +17,9 @@ interface BlogItemProps {
     id: string
 }
 
-function CountWords (str: string): number {
-  str = str.replace(/\b(\w+)\/(\w+(?!#\d+))\b/, "\n");
-  str = str.replace(/<[^>]*>/g, " ");
-  str = str.trim();
-  return str.split(" ").length;
-}
-
-function ReadTime (words: number): number {
-  const wpm = 200;
-
-  return Math.ceil(words / wpm);
-}
-
 export default function BlogItem({title, date, description, image, id}: BlogItemProps){
-  const wordCount = CountWords(description);
-  const readTime = ReadTime(wordCount);
+  const wordCount = countWords(description);
+  const avgTime = readTime(wordCount);
 
   return (
     <Link href={`/blog/${id}`}>
@@ -51,7 +40,7 @@ export default function BlogItem({title, date, description, image, id}: BlogItem
           </div>
           <hr/>
           <span>
-            {date} 🗓️ - {wordCount} Words 📄 - {readTime} Minutes ⏱️
+            {date} 🗓️ - {wordCount} Words 📄 - {avgTime} Minutes ⏱️
           </span>
         </div>
       </a>
