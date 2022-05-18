@@ -43,7 +43,7 @@ export default function BlogItem({title, date, description, image, id}: BlogItem
           </ReactMarkdown>
           <hr/>
           <span>
-            {date} 🗓️ - {wordCount} Words 📄 - {avgTime} Minutes ⏱️
+            {date} 🗓️ | {wordCount} Words 📄 | {avgTime}
           </span>
         </div>
       </a>

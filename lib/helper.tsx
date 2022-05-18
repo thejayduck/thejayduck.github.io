@@ -5,8 +5,10 @@ export function countWords(str: string): number {
   return str.split(" ").length;
 }
 
-export function readTime(words: number): number {
+export function readTime(words: number): string {
   const wpm = 200;
+  console.log(words / wpm);
+  const result = Math.ceil(words / wpm);
 
-  return Math.ceil(words / wpm);
+  return `~${result} Minutes ⏱️`;
 }

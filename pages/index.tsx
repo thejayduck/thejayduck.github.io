@@ -79,21 +79,21 @@ export default function Home({ projects, drawings }: HomeProps) {
                 <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
               )}
             </div>
-            <hr/>
+            <hr />
             <Subtitle text="Software" icon="bx bx-terminal" />
             <div className={`${styles.skills} flex`}>
               {skillset.software.map(q =>
                 <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
               )}
             </div>
-            <hr/>
+            <hr />
             <Subtitle text="Databases" icon="bx bx-data" />
             <div className={`${styles.skills} flex`}>
               {skillset.database.map(q =>
                 <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
               )}
             </div>
-            <hr/>
+            <hr />
             <Subtitle text="Others" icon="bx bx-box" />
             <div className={`${styles.skills} flex`}>
               {skillset.other.map(q =>
