@@ -65,11 +65,13 @@ export default function Blog({posts}: BlogProps){
           <SocialItem icon="bx bx-undo" label="back" title="Back to Posts" href="/blog" newPage={false} />
         </ul>
         <CardPanel id="post">
-          <div className={`${styles.post}`}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-              {post.content}
-            </ReactMarkdown>
-          </div>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+            className={styles.post}
+          >
+            {post.content}
+          </ReactMarkdown>
         </CardPanel>
       </PageBase>
     </>

@@ -33,11 +33,14 @@ export default function BlogItem({title, date, description, image, id}: BlogItem
           src={image}
         />
         <div className={styles.details}>
-          <div className={styles.description}>
-            <ReactMarkdown disallowedElements={["img"]} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-              {description}
-            </ReactMarkdown>
-          </div>
+          <ReactMarkdown 
+            className={styles.description}
+            disallowedElements={["img"]}
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+          >
+            {description}
+          </ReactMarkdown>
           <hr/>
           <span>
             {date} 🗓️ - {wordCount} Words 📄 - {avgTime} Minutes ⏱️
