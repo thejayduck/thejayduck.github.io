@@ -5,13 +5,13 @@ export function countWords(str: string): number {
   return str.split(" ").length;
 }
 
-export function readTime(n: number): string {
+export function readTime(n: number): number {
   const wpm = 200;
   const result = Math.ceil(n / wpm);
 
-  return `~${result} Minutes ⏱️`;
+  return result;
 }
 
 export function truncate(str:string, n: number): string{
-  return (str.length > n) ? `${str.substring(0, n - 1)  }... <b>CLICK TO READ MORE</b>` : str;
+  return (str.length > n) ? `${str.substring(0, n - 1)  }...` : str;
 } 

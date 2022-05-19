@@ -4,4 +4,14 @@
 
 .post {
     padding: var(--padding-normal);
+
+    table,
+    th,
+    td {
+        border: thin solid black;
+        border-collapse: collapse;
+        padding: 0.4em;
+    }
+
+    overflow-y: scroll;
 }

@@ -12,14 +12,15 @@ import { countWords, readTime, truncate } from "../lib/helper";
 interface BlogItemProps {
     title: string,
     date: string,
-    description: string,
+    content: string,
     image?: string
     id: string
 }
 
-export default function BlogItem({title, date, description, image, id}: BlogItemProps){
-  const wordCount = countWords(description);
+export default function BlogItem({title, date, content, image, id}: BlogItemProps){
+  const wordCount = countWords(content);
   const avgTime = readTime(wordCount);
+  const truncatedDesc = truncate(content, 400);
 
   return (
     <Link href={`/blog/${id}`}>
@@ -39,11 +40,11 @@ export default function BlogItem({title, date, description, image, id}: BlogItem
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw]}
           >
-            {truncate(description, 300)}
+            {truncatedDesc}
           </ReactMarkdown>
           <hr/>
           <span>
-            {date} 🗓️ | {wordCount} Words 📄 | {avgTime}
+            {date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
           </span>
         </div>
       </a>

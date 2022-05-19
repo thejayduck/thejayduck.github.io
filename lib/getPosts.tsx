@@ -13,11 +13,11 @@ export default function GetPosts() {
     return {
       slug: file.replace(".md", ""),
       title: obj.data["title"],
-      date: obj.data["date"],
+      date: new Date(obj.data["date"]).toDateString(),
       image: obj.data["image"],
       content: obj.content,
     };
-  });
+  }).reverse();
 
   return data;
 }

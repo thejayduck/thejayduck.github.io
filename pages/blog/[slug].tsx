@@ -13,6 +13,7 @@ import CardPanel from "../../components/cardPanel";
 import PageBase from "../../components/pageBase";
 import SocialItem from "../../components/socialItem";
 import GetPosts from "../../lib/getPosts";
+import { countWords, readTime } from "../../lib/helper";
 
 interface BlogProps {
   posts: BlogPostProps[]
@@ -21,6 +22,7 @@ interface BlogProps {
 interface BlogPostProps {
   slug: string,
   title: string,
+  date: string,
   image: string,
   content: string,
 }
@@ -54,6 +56,9 @@ export default function Blog({posts}: BlogProps){
   if(!post)
     throw new Error("Unable to find post.");
 
+  const wordCount = countWords(post.content);
+  const avgTime = readTime(wordCount);
+
   return (
     <>
       <Head>
@@ -64,14 +69,20 @@ export default function Blog({posts}: BlogProps){
         <ul className={`flex flexRight ${styles.backButton}`}>
           <SocialItem icon="bx bx-undo" label="back" title="Back to Posts" href="/blog" newPage={false} />
         </ul>
+
         <CardPanel id="post">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeRaw]}
-            className={styles.post}
-          >
-            {post.content}
-          </ReactMarkdown>
+          <div className={styles.post}>
+            <span>
+              {post.date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
+            </span>
+            <hr/>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw]}
+            >
+              {post.content}
+            </ReactMarkdown>
+          </div>
         </CardPanel>
       </PageBase>
     </>
