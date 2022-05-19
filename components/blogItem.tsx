@@ -1,6 +1,7 @@
 import styles from "../styles/components/BlogItem.module.scss";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
@@ -24,9 +25,13 @@ export default function BlogItem({title, date, content, image, id}: BlogItemProp
 
   return (
     <Link href={`/blog/${id}`}>
-      <a
-        title={`${title} - Click to Read More`}
+      <motion.a
+        layoutId={id}
+        initial={false}
+        transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
+
         className={`cardItem flex ${styles.projectWrap}`}
+        title={`${title} - Click to Read More`}
       >
         <img
           className={styles.image}
@@ -47,7 +52,7 @@ export default function BlogItem({title, date, content, image, id}: BlogItemProp
             {date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
           </span>
         </div>
-      </a>
+      </motion.a>
     </Link>
   );
 }

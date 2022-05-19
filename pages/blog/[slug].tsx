@@ -3,13 +3,13 @@ import styles from "../../styles/BlogPost.module.scss";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticPropsResult } from "next/types";
+import { motion } from "framer-motion";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
-import CardPanel from "../../components/cardPanel";
 import PageBase from "../../components/pageBase";
 import SocialItem from "../../components/socialItem";
 import GetPosts from "../../lib/getPosts";
@@ -69,21 +69,23 @@ export default function Blog({posts}: BlogProps){
         <ul className={`flex flexRight ${styles.backButton}`}>
           <SocialItem icon="bx bx-undo" label="back" title="Back to Posts" href="/blog" newPage={false} />
         </ul>
-
-        <CardPanel id="post">
-          <div className={styles.post}>
-            <span>
-              {post.date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
-            </span>
-            <hr/>
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeRaw]}
-            >
-              {post.content}
-            </ReactMarkdown>
-          </div>
-        </CardPanel>
+        <motion.div 
+          className={`cardItem ${styles.post}`}
+          initial={false}
+          layoutId={post.slug}
+          transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
+        >
+          <span>
+            {post.date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
+          </span>
+          <hr/>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+          >
+            {post.content}
+          </ReactMarkdown>
+        </motion.div>
       </PageBase>
     </>
 
