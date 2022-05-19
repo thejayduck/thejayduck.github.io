@@ -17,7 +17,7 @@ export default function GetPosts() {
       image: obj.data["image"],
       content: obj.content,
     };
-  }).sort((a, b) => b.date - a.date);
+  });
 
   return data;
 }

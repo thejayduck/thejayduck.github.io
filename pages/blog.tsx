@@ -17,7 +17,6 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>>
     },
     revalidate: 60,
   };
-
 }
 
 interface BlogProps {

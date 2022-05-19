@@ -7,7 +7,7 @@ import remarkGfm from "remark-gfm";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
-import { countWords, readTime } from "../lib/helper";
+import { countWords, readTime, truncate } from "../lib/helper";
 
 interface BlogItemProps {
     title: string,
@@ -39,7 +39,7 @@ export default function BlogItem({title, date, description, image, id}: BlogItem
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw]}
           >
-            {description}
+            {truncate(description, 300)}
           </ReactMarkdown>
           <hr/>
           <span>

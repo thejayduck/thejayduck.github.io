@@ -21,13 +21,12 @@
         .description {
             overflow: hidden;
             overflow-wrap: break-word;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 5;
+            // text-overflow: ellipsis;
+            // display: -webkit-box;
+            // -webkit-box-orient: vertical;
+            // -webkit-line-clamp: 5;
 
-            /* number of lines to show */
-            line-clamp: 5;
+            // line-clamp: 5;
         }
     }
 }
