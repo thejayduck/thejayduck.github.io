@@ -70,21 +70,29 @@ export default function Blog({posts}: BlogProps){
           <SocialItem icon="bx bx-undo" label="back" title="Back to Posts" href="/blog" newPage={false} />
         </ul>
         <motion.div 
-          className={`cardItem ${styles.post}`}
-          initial={false}
           layoutId={post.slug}
           transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
+          initial={false}
+
+          className={`cardItem ${styles.post}`}
         >
-          <span>
-            {post.date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
-          </span>
-          <hr/>
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeRaw]}
+          <motion.div
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
           >
-            {post.content}
-          </ReactMarkdown>
+            <span>
+              {post.date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
+            </span>
+            <hr />
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw]}
+            >
+              {post.content}
+            </ReactMarkdown>
+          </motion.div>
         </motion.div>
       </PageBase>
     </>

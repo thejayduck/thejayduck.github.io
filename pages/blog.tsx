@@ -47,7 +47,6 @@ export default function Blog ({posts}: BlogProps) {
             <BlogItem key={q.slug} id={q.slug} title={q.title} date={q.date} content={q.content} image={q.image} />
           )}
         </div>
-
       </PageBase>
     </>
   );

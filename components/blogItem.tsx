@@ -30,28 +30,37 @@ export default function BlogItem({title, date, content, image, id}: BlogItemProp
         initial={false}
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
 
-        className={`cardItem flex ${styles.projectWrap}`}
+        className={"cardItem"}
         title={`${title} - Click to Read More`}
       >
-        <img
-          className={styles.image}
-          alt={`${title} Cover`}
-          src={image}
-        />
-        <div className={styles.details}>
-          <ReactMarkdown 
-            className={styles.description}
-            disallowedElements={["img"]}
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeRaw]}
-          >
-            {truncatedDesc}
-          </ReactMarkdown>
-          <hr/>
-          <span>
-            {date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
-          </span>
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          layout
+          transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
+
+          className={`flex ${styles.projectWrap}`}
+        >
+          <img
+            className={styles.image}
+            alt={`${title} Cover`}
+            src={image}
+          />
+          <div className={styles.details}>
+            <ReactMarkdown 
+              className={styles.description}
+              disallowedElements={["img"]}
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw]}
+            >
+              {truncatedDesc}
+            </ReactMarkdown>
+            <hr/>
+            <span>
+              {date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
+            </span>
+          </div>
+        </motion.div>
       </motion.a>
     </Link>
   );
