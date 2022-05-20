@@ -21,7 +21,7 @@ interface BlogItemProps {
 export default function BlogItem({title, date, content, image, id}: BlogItemProps){
   const wordCount = countWords(content);
   const avgTime = readTime(wordCount);
-  const truncatedDesc = truncate(content, 400);
+  const truncatedDesc = truncate(content, 200);
 
   return (
     <Link href={`/blog/${id}`}>
@@ -30,7 +30,7 @@ export default function BlogItem({title, date, content, image, id}: BlogItemProp
         initial={false}
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
 
-        className={"cardItem"}
+        className={`cardItem ${styles.projectWrap}`}
         title={`${title} - Click to Read More`}
       >
         <motion.div
@@ -39,7 +39,7 @@ export default function BlogItem({title, date, content, image, id}: BlogItemProp
           layout
           transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
 
-          className={`flex ${styles.projectWrap}`}
+          className={`flex flexColumn flexWrap ${styles.project}`}
         >
           <img
             className={styles.image}

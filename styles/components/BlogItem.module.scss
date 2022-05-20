@@ -5,11 +5,15 @@
 
     color: inherit;
     text-decoration: none;
-    align-items: stretch;
-    justify-content: stretch;
+    flex: 0 0 48.99999%;
+
+    .project {
+        align-items: stretch;
+    }
 
     .image {
         // width: 30%;
+        height: 100px;
         object-fit: cover;
         border-radius: var(--border);
     }

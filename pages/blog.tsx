@@ -42,7 +42,7 @@ export default function Blog ({posts}: BlogProps) {
         <ul className={`flex flexRight ${styles.backButton}`}>
           <SocialItem icon="bx bx-undo" label="back" title="Back to Homepage" href="/" newPage={false} />
         </ul>
-        <div className={`flex flexColumn ${styles.posts}`}>
+        <div className={`flex flexRow flexWrap ${styles.posts}`}>
           {posts.map(q =>
             <BlogItem key={q.slug} id={q.slug} title={q.title} date={q.date} content={q.content} image={q.image} />
           )}

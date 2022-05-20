@@ -4,4 +4,14 @@
 
 .posts {
     min-width: 10px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+@media screen and (max-width: 1024px) {
+    .posts {
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: stretch;
+    }
 }
