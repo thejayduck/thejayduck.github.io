@@ -44,7 +44,7 @@ export default function BlogItem({title, date, content, image, id}: BlogItemProp
           <img
             className={styles.image}
             alt={`${title} Cover`}
-            src={image}
+            src={image || "/default.png"}
           />
           <div className={styles.details}>
             <ReactMarkdown 

@@ -4,14 +4,14 @@
 
 .posts {
     min-width: 10px;
-    justify-content: space-between;
-    align-items: stretch;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
 }
 
 @media screen and (max-width: 1024px) {
     .posts {
-        flex-direction: column;
-        justify-content: stretch;
-        align-items: stretch;
+        grid-template-columns: 1fr;
     }
 }

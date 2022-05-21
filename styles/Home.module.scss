@@ -151,11 +151,12 @@
     .profile {
       padding: 0;
       position: relative !important;
-      align-items: center;
+      align-items: flex-start;
+      flex-direction: row;
+      justify-content: center;
 
       ul {
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
       }
 
       .quickLinks {

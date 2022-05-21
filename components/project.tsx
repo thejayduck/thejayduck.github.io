@@ -43,7 +43,7 @@ export default function Project({smaller = false, data, details = true }: Projec
       <img
         className={styles.image}
         alt={`${data.title} Cover`}
-        src={data.image}
+        src={data?.image || "/default.png"}
         height={256}
         width={500}
       />
