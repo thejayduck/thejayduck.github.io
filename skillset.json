@@ -94,6 +94,10 @@
         {
             "title": "Writing",
             "icon": "bx bxs-pen"
+        },
+        {
+            "title": "Cooking",
+            "icon": "bx bxs-bowl-hot"
         }
     ]
 }

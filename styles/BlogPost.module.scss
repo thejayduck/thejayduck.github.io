@@ -4,6 +4,7 @@
 
 .post {
     padding: var(--padding-normal);
+    overflow-x: auto;
 
     table,
     th,
@@ -13,5 +14,4 @@
         padding: 0.4em;
     }
 
-    overflow-y: scroll;
 }
