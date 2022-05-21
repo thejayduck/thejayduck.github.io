@@ -6,6 +6,10 @@
     padding: var(--padding-normal);
     overflow-x: auto;
 
+    table tr:nth-child(2n) {
+        background-color: hsla(var(--accent-raw), 0.2);
+    }
+
     table,
     th,
     td {
