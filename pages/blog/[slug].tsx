@@ -101,6 +101,7 @@ export default function Blog({posts}: BlogProps){
           <motion.section
             className={styles.anchorList}
             animate={{ flex: sidebar ? "1 0 250px": 0 }}
+            
             transition={{ stiffness: 200 }}
           >
             <ul>
@@ -121,7 +122,8 @@ export default function Blog({posts}: BlogProps){
                   
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
+                  exit={{ opacity: 0, width: 0 }}
+                  transition={{ stiffness: 200 }}
                 >
                   {anchors.map(q =>
                     <SocialItem
