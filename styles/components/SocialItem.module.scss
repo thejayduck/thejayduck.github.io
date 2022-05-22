@@ -17,6 +17,8 @@
     span {
       font-weight: bold;
       margin: 5px;
+      overflow: hidden;
+      white-space: nowrap;
     }
 
     &:hover {

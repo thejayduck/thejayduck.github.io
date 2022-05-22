@@ -61,17 +61,6 @@ export default function Blog({posts}: BlogProps){
 
   const [sidebar, setSideBar] = useState(true);
 
-  const animation = {
-    show: {
-      opacity: 1, 
-      transition: {
-        type: "tween",
-        duration: 0.5,
-        ease: "easeInOut"
-      } 
-    }
-  };
-
   return (
     <>
       <Head>
@@ -85,16 +74,16 @@ export default function Blog({posts}: BlogProps){
         <section className={`flex ${styles.mainSection}`}> 
           <motion.div
             layoutId={post.slug}
-            transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
             initial={false}
 
             className={`cardItem ${styles.post}`}
           >
             <motion.div
               layout="size"
+
               initial={{ opacity: 0 }}
-              variants={animation}
-              animate={"show"}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
             >
               <span>
                 {post.date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
@@ -108,33 +97,46 @@ export default function Blog({posts}: BlogProps){
               </ReactMarkdown>
             </motion.div>
           </motion.div>
-          <motion.ul 
-            className={`flex flexColumn ${styles.anchors}`} 
-            style={{ flex: sidebar ? "1 0 250px" : "0" }}
 
-            initial={{ opacity: 0 }}
-            variants={animation}
-            animate={"show"}
+          <motion.section
+            className={styles.anchorList}
+            animate={{ flex: sidebar ? "1 0 250px": 0 }}
+            transition={{ stiffness: 200 }}
           >
-            {sidebar && anchors.map(q =>
-              <SocialItem 
-                key={q.id} 
-                icon="bx bx-link-alt" 
-                label={q.id} 
-                title={truncate(q.content, 25)} 
-                href={`#${q.id}`} 
-                newPage={false} 
+            <ul>
+              <SocialItem
+                icon={sidebar ? "bx bx-arrow-from-left" : "bx bx-arrow-from-right"}
+                label="hide"
+                title={sidebar ? "Hide Sidebar" : ""}
+                href={"#"}
+                onClick={() => setSideBar(prev => !prev)}
+                newPage={false}
               />
-            )}
-            <SocialItem 
-              icon={sidebar ? "bx bx-arrow-from-left" : "bx bx-arrow-from-right"} 
-              label="hide" 
-              title={sidebar ? "Hide Sidebar" : ""} 
-              href={"#"} 
-              onClick={() => setSideBar(prev => !prev)}
-              newPage={false} 
-            />
-          </motion.ul>
+            </ul>
+
+            <AnimatePresence>
+              {sidebar &&
+                <motion.ul
+                  className={`${styles.anchors}`}
+                  
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  {anchors.map(q =>
+                    <SocialItem
+                      key={q.id}
+                      icon="bx bxs-chevron-right"
+                      label={q.id}
+                      title={truncate(q.content, 25)}
+                      href={`#${q.id}`}
+                      newPage={false}
+                    />
+                  )}
+                </motion.ul>
+              }
+            </AnimatePresence>
+          </motion.section>
         </section>
       </PageBase>
     </>
