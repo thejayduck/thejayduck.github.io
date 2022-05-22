@@ -98,7 +98,7 @@ export default function Blog({posts}: BlogProps){
             </motion.div>
           </motion.div>
 
-          <motion.section
+          <motion.div
             className={styles.anchorList}
             animate={{ flex: sidebar ? "1 0 250px": 0 }}
             
@@ -138,7 +138,7 @@ export default function Blog({posts}: BlogProps){
                 </motion.ul>
               }
             </AnimatePresence>
-          </motion.section>
+          </motion.div>
         </section>
       </PageBase>
     </>
