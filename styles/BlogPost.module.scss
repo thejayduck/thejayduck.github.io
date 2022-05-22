@@ -55,7 +55,9 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .anchors {
-        display: none;
+    .mainSection {
+        .anchorList {
+            display: none;
+        }
     }
 }
