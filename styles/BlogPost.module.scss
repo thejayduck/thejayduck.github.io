@@ -34,7 +34,6 @@
 
     .post {
         padding: var(--padding-normal);
-        overflow-x: auto;
         margin-top: 10px;
         will-change: transform;
 
@@ -42,10 +41,19 @@
             background-color: hsla(var(--accent-raw), 0.2);
         }
 
-        table,
+        table {
+            margin: 10px 0 15px 0;
+            border-collapse: collapse;
+            border-spacing: 0;
+            display: inherit;
+            width: 100%;
+            overflow: auto;
+            word-break: keep-all;
+        }
+
         th,
         td {
-            border: thin solid black;
+            border: 1px solid #d6d6d6;
             border-collapse: collapse;
             padding: 0.4em;
         }
