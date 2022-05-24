@@ -1,8 +1,12 @@
 export function countWords(str: string): number {
-  str = str.replace(/\b(\w+)\/(\w+(?!#\d+))\b/, "\n");
+  
   str = str.replace(/<[^>]*>/g, " ");
-  str = str.trim();
-  return str.split(" ").length;
+  const wordCount = (str.match(/(?:http(?:s)?:\/\/[^\s]*|\w)+/g) || []);
+  // str = str.replace(/\b(\w+)\/(\w+(?!#\d+))\b/, "\n");
+  // str = str.replace(/(\[[^\]]*\]:.*)|(\s*\|([^|]-*\|)*)|(#*)/gm, "");
+  // str = str.trim();
+  console.log(wordCount);
+  return wordCount.length;
 }
 
 export function readTime(n: number): number {

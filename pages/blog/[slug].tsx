@@ -114,7 +114,6 @@ export default function Blog({posts}: BlogProps){
                 newPage={false}
               />
             </ul>
-
             <AnimatePresence>
               {sidebar &&
                 <motion.ul
