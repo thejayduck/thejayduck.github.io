@@ -5,7 +5,6 @@ export function countWords(str: string): number {
   // str = str.replace(/\b(\w+)\/(\w+(?!#\d+))\b/, "\n");
   // str = str.replace(/(\[[^\]]*\]:.*)|(\s*\|([^|]-*\|)*)|(#*)/gm, "");
   // str = str.trim();
-  console.log(wordCount);
   return wordCount.length;
 }
 
