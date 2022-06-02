@@ -30,12 +30,11 @@
         }
     }
 
-
-
     .post {
         padding: var(--padding-normal);
         margin-top: 10px;
         will-change: transform;
+        flex: 100%;
 
         table tr:nth-child(2n) {
             background-color: hsla(var(--accent-raw), 0.2);

@@ -15,6 +15,7 @@ export default function GetPosts() {
       title: obj.data["title"],
       date: new Date(obj.data["date"]).toDateString(),
       image: obj.data["image"],
+      // categories: obj.data["categories"],
       content: obj.content,
     };
   }).reverse();

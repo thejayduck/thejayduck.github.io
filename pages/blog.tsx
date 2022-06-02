@@ -10,7 +10,7 @@ import GetPosts from "../lib/getPosts";
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>> {
   const postsData = GetPosts();
-  
+
   return {
     props: {
       posts: postsData,
@@ -20,7 +20,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>>
 }
 
 interface BlogProps {
-    posts: BlogPostProps[] 
+  posts: BlogPostProps[]
 }
 
 interface BlogPostProps {
@@ -31,21 +31,26 @@ interface BlogPostProps {
   content: string,
 }
 
-export default function Blog ({posts}: BlogProps) {
+export default function Blog({ posts }: BlogProps) {
+  // const tagSet = new Set<string>();
+  // posts.flatMap(p => p.categories).forEach(e => tagSet.add(e));
+
   return (
     <>
       <Head>
         <title>Blog · Arda Fevzi Armutcu</title>
       </Head>
-      
+
       <PageBase>
         <ul className={`flex flexRight ${styles.backButton}`}>
           <SocialItem icon="bx bx-undo" label="back" title="Back to Homepage" href="/" newPage={false} />
         </ul>
+
         <div className={` ${styles.posts}`}>
           {posts.map(q =>
             <BlogItem key={q.slug} id={q.slug} title={q.title} date={q.date} content={q.content} image={q.image} />
           )}
+
         </div>
       </PageBase>
     </>
