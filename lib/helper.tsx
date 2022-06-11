@@ -25,7 +25,7 @@ export function truncate(str: string, n: number): string{
 }
 
 export function getAnchors(str: string): AnchorItemProps[] {    
-  const regex = /<h[1-6]+.*?id="([^"]*?)".*?>(.+?)<\/h[1-6]>/gi;
+  const regex = /<h3+.*?id="([^"]*?)".*?>(.+?)<\/h3>/gi;
   let match;
 
   const results = [];
