@@ -43,8 +43,14 @@
 
         blockquote {
             color: #5c5c5c;
-            background-color: #f0f0f0;
-            border-left: 4px solid #d6d6d6;
+            background-color: hsla(var(--accent-raw), 0.2);
+            border-left: 4px solid var(--accent);
+            margin-left: 0;
+            margin-right: 0;
+
+            p {
+                padding: 10px;
+            }
         }
 
         table tr:nth-child(2n) {
