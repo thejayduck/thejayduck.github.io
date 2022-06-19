@@ -67,51 +67,51 @@ export default function Home({ projects, drawings }: HomeProps) {
           </CardPanel>
           <CardPanel id="skills" title="Skill Set 🔧">
             <Subtitle text="Hobbies" icon="bx bx-hive" />
-            <div className={`${styles.skills} flex`}>
+            <div className={`${styles.skills}`}>
               {skillset.hobbies.map(q =>
                 <SkillBar key={q.title} title={q.title} icon={q.icon} />
               )}
             </div>
             <hr />
             <Subtitle text="Languages" icon="bx bx-code-alt" />
-            <div className={`${styles.skills} flex`}>
+            <div className={`${styles.skills}`}>
               {skillset.languages.map(q =>
                 <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
               )}
             </div>
             <hr />
             <Subtitle text="Software" icon="bx bx-terminal" />
-            <div className={`${styles.skills} flex`}>
+            <div className={`${styles.skills}`}>
               {skillset.software.map(q =>
                 <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
               )}
             </div>
             <hr />
             <Subtitle text="Databases" icon="bx bx-data" />
-            <div className={`${styles.skills} flex`}>
+            <div className={`${styles.skills}`}>
               {skillset.database.map(q =>
                 <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
               )}
             </div>
             <hr />
             <Subtitle text="Others" icon="bx bx-box" />
-            <div className={`${styles.skills} flex`}>
+            <div className={`${styles.skills}`}>
               {skillset.other.map(q =>
                 <SkillBar key={q.title} title={q.title} icon={q.icon} href={q.href} />
               )}
             </div>
           </CardPanel>
           <CardPanel id="projects" title="Recent Projects 💻">
-            <div className={`flex ${styles.works}`}>
+            <div className={`${styles.works}`}>
               {
                 projects.map(q => <Project key={q.title} data={q} details={true} />)
               }
             </div>
           </CardPanel>
           <CardPanel id="drawings" title="Recent Drawings 🖌️">
-            <div className={`flex ${styles.works}`}>
+            <div className={`${styles.works} ${styles.smallGrid}`}>
               {
-                drawings.map(q => <Project smaller={true} key={q.title} data={q} details={false} />)
+                drawings.map(q => <Project key={q.title} data={q} details={false} />)
               }
             </div>
           </CardPanel>

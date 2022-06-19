@@ -1,7 +1,6 @@
 import styles from "../styles/components/Project.module.scss";
 
 interface ProjectProps{
-    smaller?: boolean,
     data: {
         title: string,
         links: any[],
@@ -11,7 +10,7 @@ interface ProjectProps{
     details: boolean,
 }
 
-export default function Project({smaller = false, data, details = true }: ProjectProps) {
+export default function Project({data, details = true }: ProjectProps) {
 
   return (
     <a 
@@ -20,7 +19,6 @@ export default function Project({smaller = false, data, details = true }: Projec
       target="_blank"
       rel="noreferrer"
       className={`cardItem ${styles.projectWrap}`}
-      style={{flex: `0 0 ${smaller ? "200px" : "450px"}`}}
     >
       <div className={styles.social} >
         <ul onClick={(e) => e.stopPropagation()}>
