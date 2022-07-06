@@ -2,7 +2,7 @@ import styles from "../styles/components/SocialItem.module.scss";
 
 import Link from "next/link";
 
-interface SocialItemProps{
+interface SocialItemProps {
   icon: string,
   title?: string,
   label?: string,

@@ -104,14 +104,14 @@ export default function Home({ projects, drawings }: HomeProps) {
           <CardPanel id="projects" title="Recent Projects 💻">
             <div className={`${styles.works}`}>
               {
-                projects.map(q => <Project key={q.title} data={q} details={true} />)
+                projects.map(q => <Project key={q.title} data={q} header={true} />)
               }
             </div>
           </CardPanel>
           <CardPanel id="drawings" title="Recent Drawings 🖌️">
             <div className={`${styles.works} ${styles.smallGrid}`}>
               {
-                drawings.map(q => <Project key={q.title} data={q} details={false} />)
+                drawings.map(q => <Project key={q.title} data={q} header={false} />)
               }
             </div>
           </CardPanel>
