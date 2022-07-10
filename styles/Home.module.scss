@@ -1,4 +1,4 @@
-.introductionWrap {
+.mainSection {
   width: 100%;
   justify-content: stretch;
   align-items: flex-start;
@@ -13,10 +13,8 @@
     padding: 0;
     margin: 0;
     color: black;
-    display: flex;
     gap: 1rem;
-    align-items: center;
-    justify-content: center;
+    display: grid;
   }
 
   a {
@@ -24,7 +22,7 @@
     text-decoration: none;
   }
 
-  .profile {
+  .profileWrap {
     justify-content: start;
     align-items: stretch;
 
@@ -35,27 +33,20 @@
     padding: 10px 0;
     flex: 0;
 
-    ul {
-      flex-wrap: wrap;
-      flex-direction: column;
-      align-items: stretch;
+    .pageList {
+      grid-template-columns: repeat(auto-fill, minmax(50px, 100%));
+
+      li:target {
+        animation: blink 1.2s ease-out 2;
+      }
     }
 
-    .quickLinks {
-      flex-direction: row;
-
-      li {
-        flex: 1;
-
-        a {
-          justify-content: center;
-        }
-
-      }
+    .socialList {
+      grid-template-columns: repeat(auto-fill, 50px);
     }
   }
 
-  .details {
+  .panelsWrap {
     padding: 10px 0;
     flex: 1;
 
@@ -66,12 +57,12 @@
       h1 {
         margin: 0 0 var(--padding-normal) 0;
         text-align: center;
-        font-weight: lighter;
-        font-size: var(--font-larger);
+        // font-weight: lighter;
+        // font-size: var(--font-larger);
       }
 
       p {
-        font-size: var(--font-medium);
+        // font-size: var(--font-medium);
       }
 
       span {
@@ -90,11 +81,6 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
         gap: 10px;
-
-
-        p {
-          font-size: var(--font-normal);
-        }
       }
 
       .smallGrid {
@@ -112,6 +98,22 @@
         margin-top: 0;
       }
     }
+  }
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: none;
+  }
+
+  50% {
+    -webkit-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.76);
+    -moz-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.76);
+    box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.76);
+  }
+
+  100% {
+    box-shadow: none;
   }
 }
 
@@ -150,23 +152,20 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .introductionWrap {
+  .mainSection {
     flex-direction: column;
     align-items: stretch;
 
-    .profile {
+    .profileWrap {
       padding: 0;
       position: relative !important;
       align-items: flex-start;
       flex-direction: row;
       justify-content: center;
+      display: flex;
 
-      ul {
+      .socialMedia {
         flex-direction: column;
-      }
-
-      .quickLinks {
-        display: none;
       }
     }
 

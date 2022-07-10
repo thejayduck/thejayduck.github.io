@@ -13,7 +13,7 @@ interface SocialItemProps {
 
 export default function SocialItem({ icon, title, label, href, onClick, newPage = true }: SocialItemProps) {
   return (
-    <li className={`cardItem ${styles.social}`}>
+    <li id={label} className={`cardItem ${styles.social}`}>
       <Link href={href}>
         <a onClick={onClick} aria-label={label} target={newPage ? "_blank" : "_self"} title={title} rel="noreferrer">
           <i className={icon} />

@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import path from "path";
 
 export default function GetPosts() {
-  const directoryPath = path.join(process.cwd(), "docs");
+  const directoryPath = path.join(process.cwd(), "docs/posts");
   const files = fs.readdirSync(directoryPath);
 
   const data = files.map((file) => {

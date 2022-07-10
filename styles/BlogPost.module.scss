@@ -41,6 +41,14 @@
             font-weight: var(--font-bold);
         }
 
+        figure {
+            margin: 0;
+
+            figcaption {
+                font-size: var(--font-small);
+            }
+        }
+
         blockquote {
             color: #5c5c5c;
             background-color: hsla(var(--accent-raw), 0.2);
