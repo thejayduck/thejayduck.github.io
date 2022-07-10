@@ -7,28 +7,27 @@ interface ProjectProps{
         image: string,
         description: string,    
     }
-    header: boolean,
 }
 
-export default function Project({data, header = true }: ProjectProps) {
+export default function Project({data }: ProjectProps) {
 
   return (
     <a 
       title={data.title} 
-      href={header ? data.links[0]?.url : data.image} 
+      href={data.links[0].url} 
       target="_blank"
       rel="noreferrer"
       className={`cardItem ${styles.projectWrap}`}
     >
       <div className={styles.social} >
         <ul onClick={(e) => e.stopPropagation()}>
-          {data?.links.map(q =>
-            <li key={q?.title}>
+          {data.links.map(q =>
+            <li key={q.title}>
               <a
-                aria-label={q?.title}
-                title={q?.title}
-                href={q?.url}
-                className={`${q?.icon} bx-tada-hover`}
+                aria-label={q.title}
+                title={q.title}
+                href={q.url}
+                className={`${q.icon} bx-tada-hover`}
                 target="_blank"
                 rel="noreferrer"
               />
@@ -44,16 +43,14 @@ export default function Project({data, header = true }: ProjectProps) {
         height={256}
         width={500}
       />
-      {header && 
-        <div className={styles.details}>
-          <h2>{data.title ?? "No Title"}</h2>
-          <div>
-            <p>
-              {data.description}
-            </p>
-          </div>
+      <div className={styles.details}>
+        <h2>{data.title ?? "No Title"}</h2>
+        <div>
+          <p>
+            {data.description}
+          </p>
         </div>
-      }
+      </div>
     </a>
   );
 }

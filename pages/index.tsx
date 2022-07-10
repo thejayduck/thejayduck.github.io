@@ -40,7 +40,7 @@ export default function Home() {
           <CardPanel title="Recent Projects 💻">
             <div className={`${styles.works}`}>
               {
-                projects.data.map(q => <Project key={q.title} data={q} header={true} />)
+                projects.data.map(q => <Project key={q.title} data={q} />)
               }
             </div>
           </CardPanel>
