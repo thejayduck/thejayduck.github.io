@@ -15,6 +15,9 @@ export default function Home() {
     <>
       <Head>
         <title>Arda Fevzi Armutcu</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Arda Fevzi Armutcu's Portfolio" />
       </Head>
 
       <PageBase>

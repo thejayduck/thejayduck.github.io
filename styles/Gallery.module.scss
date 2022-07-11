@@ -45,12 +45,22 @@
             }
 
             &:hover {
-
                 figcaption {
                     opacity: 1;
                 }
             }
 
+            &:hover>img {
+                filter: grayscale(1);
+            }
+
+            &:hover>img:hover {
+                filter: grayscale(0);
+            }
+
+            &:hover~img {
+                filter: grayscale(1);
+            }
         }
 
         li:last-child {

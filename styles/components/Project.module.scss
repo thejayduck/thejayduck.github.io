@@ -1,6 +1,4 @@
 .projectWrap {
-  cursor: pointer;
-
   height: auto;
   position: relative;
   margin-bottom: 2rem;
@@ -26,6 +24,7 @@
     position: absolute;
     z-index: var(--z-front);
     box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+    transition: 0.2s ease-in;
 
     ul {
       gap: 0;
@@ -34,6 +33,13 @@
 
   &:hover,
   &:active {
+    .social {
+      -webkit-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
+      -moz-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
+      box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
+      transform: scale(1.1);
+    }
+
     .image {
       transform: scale(1.1);
     }
@@ -44,8 +50,17 @@
   .projectWrap {
     flex: 1 !important;
 
+    .social {
+      -webkit-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
+      -moz-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
+      box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
+      transform: scale(1.1);
+    }
+
     &:hover,
     &:active {
+
+
       .image {
         transform: none;
       }

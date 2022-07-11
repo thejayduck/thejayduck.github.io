@@ -65,8 +65,11 @@ export default function Blog({posts}: BlogProps){
     <>
       <Head>
         <title>{post.title} · Arda Fevzi Armutcu</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Arda Fevzi Armutcu's Blog Post" />
       </Head>
-    
+      
       <PageBase>
         <ul className={`flex flexRight ${styles.backButton}`}>
           <SocialItem icon="bx bx-undo" label="back" title="Back to Posts" href="/blog" newPage={false} />
