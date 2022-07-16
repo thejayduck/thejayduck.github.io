@@ -25,7 +25,7 @@ export default function Home() {
 
           <ProfileWrap />
 
-          <div className={`${styles.panelsWrap}`}>
+          <section className={`${styles.panelsWrap}`}>
             <CardPanel
               title={
                 <>
@@ -48,13 +48,13 @@ export default function Home() {
             <SkillsWrap />
 
             <CardPanel title="Recent Projects 💻">
-              <div className={`${styles.works}`}>
+              <div className={`${styles.works} grid`}>
                 {
                   projects.data.map(q => <Project key={q.title} data={q} />)
                 }
               </div>
             </CardPanel>
-          </div>
+          </section>
         </div>
       </PageBase>
     </>

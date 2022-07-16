@@ -1,11 +1,7 @@
 .social {
-  max-height: 50px;
-  min-width: 50px;
-
   a {
     transition: 0.2s ease-in-out;
 
-    display: inline-block;
     padding: 0.5rem;
     width: 100%;
     display: flex;
@@ -15,22 +11,17 @@
     text-decoration: none;
 
     span {
-      font-weight: bold;
+      font-weight: var(--font-bold);
+
       margin: 5px;
       overflow: hidden;
       white-space: nowrap;
+
+      text-overflow: ellipsis;
     }
 
     &:hover {
       color: var(--accent);
-    }
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .social {
-    span {
-      display: none;
     }
   }
 }

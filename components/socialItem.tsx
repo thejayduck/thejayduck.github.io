@@ -15,9 +15,9 @@ export default function SocialItem({ icon, title, label, href, onClick, newPage 
   return (
     <li id={label} className={`cardItem ${styles.social}`}>
       <Link href={href}>
-        <a onClick={onClick} aria-label={label} target={newPage ? "_blank" : "_self"} title={title} rel="noreferrer">
+        <a onClick={onClick} aria-label={label} target={newPage ? "_blank" : "_self"} title={label} rel="noreferrer">
           <i className={icon} />
-          {title ? <span>{title}</span> : <></>}
+          {title && <span>{title}</span>}
         </a>
       </Link>
     </li>

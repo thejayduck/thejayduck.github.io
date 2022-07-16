@@ -14,12 +14,9 @@ export default function Project({ data }: ProjectProps) {
   return (
     <div 
       title={data.title} 
-      // href={data?.links[0].url} 
-      // target="_blank"
-      // rel="noreferrer"
       className={`cardItem ${styles.projectWrap}`}
     >
-      <div className={styles.social} >
+      <div className={styles.social}>
         <ul onClick={(e) => e.stopPropagation()}>
           {data.links.map((q, idx) =>
             <li key={idx}>
@@ -45,11 +42,9 @@ export default function Project({ data }: ProjectProps) {
       />
       <div className={styles.details}>
         <h2>{data?.title ?? "No Title"}</h2>
-        <div>
-          <p>
-            {data?.description}
-          </p>
-        </div>
+        <p>
+          {data?.description}
+        </p>
       </div>
     </div>
   );

@@ -1,9 +1,6 @@
 .projectWrap {
-  height: auto;
-  position: relative;
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
   will-change: transform;
-  flex: 0 0 450px;
 
   .image {
     width: 100%;
@@ -11,10 +8,11 @@
     transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
     transform: scale(1.05);
     border-radius: 0;
+    margin: 0;
   }
 
   .details {
-    padding: 10px;
+    padding: var(--padding-small);
     text-align: center;
   }
 
@@ -37,7 +35,6 @@
       -webkit-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
       -moz-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
       box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
-      transform: scale(1.1);
     }
 
     .image {
@@ -48,13 +45,10 @@
 
 @media screen and (max-width: 1024px) {
   .projectWrap {
-    flex: 1 !important;
-
     .social {
       -webkit-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
       -moz-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
       box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.9);
-      transform: scale(1.1);
     }
 
     &:hover,

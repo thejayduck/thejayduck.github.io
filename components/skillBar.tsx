@@ -21,14 +21,11 @@ export default function SkillBar({ title, icon, href }: SkillBarProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 0.5 } }}
     >
-      <div className={styles.icon}>
-        <i
-          className={`${icon}`}
-        />
-      </div>
-      <div>
-        <span className={styles.title}>{title}</span>
-      </div>
+      <i
+        className={`${icon}`}
+      />
+      <span className={styles.title}>{title}</span>
+
     </motion.a>
   );
 }

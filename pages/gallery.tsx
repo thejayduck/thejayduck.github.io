@@ -49,19 +49,27 @@ export default function Gallery () {
         </ul>
         
         <section className={`${styles.mainSection} cardItem`}>
+
+          <header>
+            <h1>Drawing Gallery</h1>
+            <p><b>{gallery.data.length}</b> Images</p>
+          </header>
+
+          <hr/>
+
           <motion.ul
             variants={list}
             initial={"initial"}
             animate={"animate"}
           >
             {gallery.data.map((q, idx) =>
-              <motion.li 
+              <motion.li
                 key={idx}
                 variants={imageElement}
               >
                 <a href={q.url ?? q.image} target="_blank" rel="noreferrer">
                   <img src={q.image} />
-                  <figcaption>{q.title}</figcaption>
+                  <figcaption>[{q.date}] {q.title}</figcaption>
                 </a>
               </motion.li>
             )}

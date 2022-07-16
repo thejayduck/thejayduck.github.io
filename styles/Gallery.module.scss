@@ -3,13 +3,15 @@
 }
 
 .mainSection {
+    padding: var(--padding-small);
+
     ul {
         list-style: none;
         display: flex;
         margin: 0;
 
         box-sizing: border-box;
-        padding: var(--padding-small);
+        padding: 0;
         flex-flow: row wrap;
 
         li {

@@ -1,15 +1,20 @@
 .skillWrap {
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
-  align-items: center;
-  position: relative;
-  padding: 0.7rem 1rem;
+  font-weight: var(--font-bold);
+  padding: var(--padding-normal) var(--padding-small);
   box-shadow: none;
   border: 1.7px solid var(--accent);
 
   transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
-  flex: 0 0 21%;
+  flex: 1;
+
+  i {
+    color: var(--accent);
+    font-size: var(--font-medium);
+
+    transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  }
 
   &:hover,
   &:active {
@@ -21,58 +26,27 @@
     }
   }
 
-  .icon {
-    display: flex;
-    z-index: var(--z-front);
-    color: var(--accent);
-
-    i {
-      font-size: 2rem;
-      margin-right: 1rem;
-
-      transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
-    }
+  .title {
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
-}
-
-.title {
-  z-index: var(--z-front);
-  display: flex;
-  align-items: center;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 1024px) {
   .skillWrap {
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -o-transition: none !important;
-    transition: none !important;
-    flex: 1 0 21%;
 
     &:hover,
     &:active {
       transform: none;
       box-shadow: none;
-
-      i {
-        -webkit-transition: none !important;
-        -moz-transition: none !important;
-        -o-transition: none !important;
-        transition: none !important;
-      }
     }
 
-    .icon {
-      i {
-        -webkit-transition: none !important;
-        -moz-transition: none !important;
-        -o-transition: none !important;
-        transition: none !important;
-      }
+    i {
+      -webkit-transition: none !important;
+      -moz-transition: none !important;
+      -o-transition: none !important;
+      transition: none !important;
     }
   }
 }
