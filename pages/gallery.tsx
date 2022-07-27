@@ -52,7 +52,8 @@ export default function Gallery () {
 
           <header>
             <h1>Drawing Gallery</h1>
-            <p><b>{gallery.data.length}</b> Images</p>
+            <p><b>{gallery.data.length}</b> Posts</p>
+            <p>Here I post my sketches and finished drawings.</p>
           </header>
 
           <hr/>
