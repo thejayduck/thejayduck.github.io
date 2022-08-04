@@ -49,34 +49,36 @@ export default function Gallery () {
         </ul>
         
         <section className={`${styles.mainSection} cardItem`}>
+          <div>
+            <header>
+              <h1>Drawing Gallery</h1>
+              <p><b>{gallery.data.length}</b> Posts</p>
+              <p>Here I post my sketches and finished drawings.</p>
+            </header>
 
-          <header>
-            <h1>Drawing Gallery</h1>
-            <p><b>{gallery.data.length}</b> Posts</p>
-            <p>Here I post my sketches and finished drawings.</p>
-          </header>
+            <hr />
 
-          <hr/>
-
-          <motion.ul
-            variants={list}
-            initial={"initial"}
-            animate={"animate"}
-          >
-            {gallery.data.map((q, idx) =>
-              <motion.li
-                key={idx}
-                variants={imageElement}
-              >
-                <a href={q.url ?? q.image} target="_blank" rel="noreferrer">
-                  <img src={q.image} />
-                  <figcaption>[{q.date}] {q.title}</figcaption>
-                </a>
-              </motion.li>
-            )}
-            <li></li>
-          </motion.ul>
+            <motion.ul
+              variants={list}
+              initial={"initial"}
+              animate={"animate"}
+            >
+              {gallery.data.map((q, idx) =>
+                <motion.li
+                  key={idx}
+                  variants={imageElement}
+                >
+                  <a href={q.url ?? q.image} target="_blank" rel="noreferrer">
+                    <img src={q.image} />
+                    <figcaption>[{q.date}] {q.title}</figcaption>
+                  </a>
+                </motion.li>
+              )}
+              <li></li>
+            </motion.ul>
+          </div>
         </section>
+
       </PageBase>
     </>
   );
