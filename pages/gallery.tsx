@@ -52,7 +52,7 @@ export default function Gallery () {
           <div>
             <header>
               <h1>Drawing Gallery</h1>
-              <p><b>{gallery.data.length}</b> Posts</p>
+              <p><b>{gallery.length}</b> Posts</p>
               <p>Here I post my sketches and finished drawings.</p>
             </header>
 
@@ -63,16 +63,19 @@ export default function Gallery () {
               initial={"initial"}
               animate={"animate"}
             >
-              {gallery.data.map((q, idx) =>
-                <motion.li
-                  key={idx}
-                  variants={imageElement}
-                >
-                  <a href={q.url ?? q.image} target="_blank" rel="noreferrer">
-                    <img src={q.image} />
-                    <figcaption>[{q.date}] {q.title}</figcaption>
-                  </a>
-                </motion.li>
+              {gallery.map((q, idx) => {
+
+                return (
+                  <motion.li
+                    key={idx}
+                    variants={imageElement}
+                  >
+                    <a href={q.url ?? q.image} target="_blank" rel="noreferrer">
+                      <img src={q.image} />
+                      <figcaption>[{q.date}] {q.title}</figcaption>
+                    </a>
+                  </motion.li>
+                );}
               )}
               <li></li>
             </motion.ul>
