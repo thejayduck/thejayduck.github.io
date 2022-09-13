@@ -16,7 +16,7 @@
         position: -webkit-sticky;
         /* Safari */
         top: 0;
-        padding: 0 0 10px 0;
+        padding: 10px 0 10px 0;
 
         ul {
             list-style: none;
@@ -32,7 +32,7 @@
 
     .post {
         padding: var(--padding-normal);
-        // margin-top: 10px;
+        margin-top: 10px;
         will-change: transform;
         flex: 100%;
 
