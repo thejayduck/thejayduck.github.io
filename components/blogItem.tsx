@@ -21,11 +21,11 @@ interface BlogItemProps {
 export default function BlogItem({title, date, content, image, id}: BlogItemProps){
   const wordCount = countWords(content);
   const avgTime = readTime(wordCount);
-  const truncatedDesc = truncate(content, 200);
+  const truncatedDesc = `${truncate(content, 200)} <p style="color:var(--accent)"> **Click to Read More** ►</p>`;
 
   return (
     <Link href={`/blog/${id}`}>
-      <motion.a
+      <motion.div
         layoutId={id}
         initial={false}
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
@@ -61,7 +61,7 @@ export default function BlogItem({title, date, content, image, id}: BlogItemProp
             </span>
           </div>
         </motion.div>
-      </motion.a>
+      </motion.div>
     </Link>
   );
 }

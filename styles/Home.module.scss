@@ -102,16 +102,17 @@
     align-items: stretch;
 
     .profileWrap {
-      padding: 0;
       position: relative !important;
-
-      .picture {
-        display: none;
-      }
+      display: flex;
 
       .navigation {
+        padding-left: var(--padding-small);
+        flex: 1;
+
         .socialList {
-          justify-content: flex-start;
+          grid-template-columns: none;
+          align-items: stretch;
+          justify-content: stretch;
         }
       }
     }

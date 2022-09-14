@@ -1,0 +1,51 @@
+.ScrollTop {
+    position: fixed;
+    list-style: none;
+
+    bottom: 0;
+    right: 0;
+    padding: var(--padding-medium) var(--padding-small);
+    z-index: var(--z-absolute);
+    text-align: center;
+
+    .progressWrap {
+        cursor: pointer;
+        text-align: center;
+        position: relative;
+        width: 70px;
+        height: 70px;
+
+        i {
+            position: absolute;
+            display: inline-block;
+            margin: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            color: inherit;
+        }
+
+        svg {
+            margin: 0 auto;
+            display: block;
+
+            rect {
+                stroke-dashoffset: 0;
+                stroke-width: 5%;
+                fill: none;
+            }
+        }
+
+        .bg {
+            stroke: var(--accent);
+            opacity: 0.2;
+        }
+
+        .indicator {
+            stroke: var(--accent);
+            fill: white;
+        }
+    }
+
+}
