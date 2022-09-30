@@ -1,4 +1,4 @@
-import styles from "../styles/Home.module.scss";
+import styles from "../styles/components/CardPanel.module.scss";
 
 import { PropsWithChildren } from "react";
 

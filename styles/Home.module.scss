@@ -50,37 +50,26 @@
     padding: 10px 0;
     flex: 1;
 
-    .panel {
-      margin-bottom: var(--padding-normal);
-      padding: var(--padding-medium);
+    span {
+      color: var(--accent);
+    }
 
-      h1 {
-        margin: 0 0 var(--padding-normal) 0;
-        text-align: center;
-        font-size: var(--font-large);
-      }
+    .wave {
+      animation-name: wave-animation;
+      animation-duration: 2.5s;
+      animation-iteration-count: infinite;
+      transform-origin: 70% 70%;
+      display: inline-block;
+    }
 
-      span {
-        color: var(--accent);
-      }
+    .works {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      gap: 10px;
+    }
 
-      .wave {
-        animation-name: wave-animation;
-        animation-duration: 2.5s;
-        animation-iteration-count: infinite;
-        transform-origin: 70% 70%;
-        display: inline-block;
-      }
-
-      .works {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-        gap: 10px;
-      }
-
-      .smallGrid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      }
+    .smallGrid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
     .skills {

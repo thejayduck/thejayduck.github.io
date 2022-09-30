@@ -1,6 +1,5 @@
 import styles from "../styles/components/ScrollManager.module.scss";
 
-import Link from "next/link";
 import { AnimatePresence, motion, useViewportScroll } from "framer-motion";
 
 import { useState } from "react";
@@ -32,7 +31,6 @@ export default function ScrollManager () {
                       
                       className={styles.progressWrap}
                     >
-                        
                       <i className={`${styles.icon} bx bxs-upvote`}/>
 
                       <svg id="progress" width="100%" height="100%" viewBox="0 0 100 100">

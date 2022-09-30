@@ -1,8 +1,12 @@
 import styles from "../styles/Gallery.module.scss";
 
 import Head from "next/head";
-import { motion } from "framer-motion";
+import { AnimateSharedLayout, motion } from "framer-motion";
 
+import React, { useState } from "react";
+
+import CardPanel from "../components/cardPanel";
+import { ImagePreviewComponent } from "../components/imagePreviewComponent";
 import PageBase from "../components/pageBase";
 import SocialItem from "../components/socialItem";
 import gallery from "../docs/json/gallery.json";
@@ -13,27 +17,16 @@ const list = {
   },
   animate: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    }
-  }
-};
-
-const imageElement = {
-  initial: {
-    opacity: 0,
-    x: -50,
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.85,
-    }
   }
 };
 
 export default function Gallery () {
+  const [targetImage, setTargetImage] = useState(null);
+
+  const imagePreviewState = (target: any) => {
+    setTargetImage(target);
+  };
+
   return (
     <>
       <Head>
@@ -48,41 +41,46 @@ export default function Gallery () {
           <SocialItem icon="bx bx-undo" label="back" title="Back to Homepage" href="/" newPage={false} />
         </ul>
         
-        <section className={`${styles.mainSection} cardItem`}>
-          <div>
-            <header>
-              <h1>Drawing Gallery</h1>
-              <p><b>{gallery.length}</b> Posts</p>
-              <p>Here I post my sketches and finished drawings.</p>
-            </header>
+        <section className={`${styles.mainSection} flex flexColumn`}>
+          <CardPanel title={"Gallery 🖌️"}>
+            <p>📮<b>{gallery.length}</b> Posts</p>
+            <p>❗Here I post my sketches and finished drawings. All of the images down below are downscaled!</p>
+            <hr/>
 
-            <hr />
-
-            <motion.ul
-              variants={list}
-              initial={"initial"}
-              animate={"animate"}
-            >
-              {gallery.map((q, idx) => {
-
-                return (
+            <AnimateSharedLayout>
+              <motion.ul
+                variants={list}
+                initial={"initial"}
+                animate={"animate"}
+              >
+                {gallery.map((q, idx) => (
                   <motion.li
                     key={idx}
-                    variants={imageElement}
+                    layout
+                    layoutId={`image-${q.title}`}
+                    onClick={() => imagePreviewState(q)}
                   >
-                    <a href={q.url ?? q.image} target="_blank" rel="noreferrer">
-                      <img src={q.image} />
-                      <figcaption>[{q.date}] {q.title}</figcaption>
+                    <a target="_blank" rel="noreferrer">
+                      <motion.img alt={`Drawing - ${q.title}`} src={q.image} />
+                      <figcaption>
+                        [{q.date}]
+                        <br />
+                        {q.title}
+                      </figcaption>
                     </a>
                   </motion.li>
-                );}
-              )}
-              <li></li>
-            </motion.ul>
-          </div>
-        </section>
+                )
+                )}
+                <li></li>
+              </motion.ul>
 
+              {targetImage && <ImagePreviewComponent imageData={targetImage} onClickOutside={() => imagePreviewState(null)} />}
+
+            </AnimateSharedLayout>
+          </CardPanel>
+        </section>
       </PageBase>
     </>
   );
 }
+
