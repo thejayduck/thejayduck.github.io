@@ -5,7 +5,7 @@
   --font-larger: 2.5em;
   --font-large: 2em;
   --font-medium: 1.5rem;
-  --font-normal: 1rem;
+  --font-regular: 1rem;
   --font-small: 0.8rem;
   --font-smaller: 0.5rem;
 
@@ -50,7 +50,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-size: var(--font-normal);
+  font-size: var(--font-regular);
 
   scroll-behavior: smooth;
   scroll-padding-top: 10px;
