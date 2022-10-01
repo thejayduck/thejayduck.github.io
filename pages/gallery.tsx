@@ -75,7 +75,11 @@ export default function Gallery () {
                 <li></li>
               </motion.ul>
 
-              {targetImage && <ImagePreviewComponent imageData={targetImage} onClickOutside={() => imagePreviewState(null)} />}
+              {targetImage && 
+              <ImagePreviewComponent 
+                imageData={targetImage} 
+                onClickOutside={() => imagePreviewState(null)} 
+              />}
 
             </AnimateSharedLayout>
           </CardPanel>
