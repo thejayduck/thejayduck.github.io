@@ -36,7 +36,7 @@ export function ImagePreviewComponent({ imageData, onClickOutside }: ImagePrevie
             animate={{y: -30}}
             transition={{ delay: .85, duration: .4, type: "spring"}}
             
-            title={imageData.url ? "Click to View This Image on Deviant!" : imageData.title}
+            title={imageData.url ? "Click to View This Image on DeviantArt!" : imageData.title}
             href={imageData.url}
             target="_blank"
             rel="noreferrer"
