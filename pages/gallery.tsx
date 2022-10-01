@@ -59,6 +59,7 @@ export default function Gallery () {
                     layout
                     layoutId={`image-${q.title}`}
                     onClick={() => imagePreviewState(q)}
+                    title="Expand Image"
                   >
                     <a target="_blank" rel="noreferrer">
                       <motion.img alt={`Drawing - ${q.title}`} src={q.image} />
