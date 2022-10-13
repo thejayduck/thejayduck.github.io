@@ -74,6 +74,15 @@ p {
   margin: 0;
 }
 
+select {
+  // width: 100%;
+  // border-radius: var(--border);
+
+  padding: var(--padding-mini) var(--padding-small);
+  box-sizing: border-box;
+  border: 2px solid var(--accent);
+}
+
 .bx {
   margin: 5px;
   font-size: var(--font-medium);

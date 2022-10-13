@@ -3,7 +3,7 @@ import styles from "../styles/Gallery.module.scss";
 import Head from "next/head";
 import { AnimateSharedLayout, motion } from "framer-motion";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import CardPanel from "../components/cardPanel";
 import { ImagePreviewComponent } from "../components/imagePreviewComponent";
@@ -21,11 +21,17 @@ const list = {
 };
 
 export default function Gallery () {
+  const [images, setImages] : any[] = useState([]);
   const [targetImage, setTargetImage] = useState(null);
+  const [filter, setFilter] = useState("");
 
   const imagePreviewState = (target: any) => {
     setTargetImage(target);
   };
+
+  useEffect(() => {
+    setImages(!filter ? gallery : gallery.filter(e => e.tag == filter));
+  }, [filter]);
 
   return (
     <>
@@ -47,15 +53,23 @@ export default function Gallery () {
             <p>❗Here I post my sketches and finished drawings. All of the images down below are downscaled!</p>
             <hr/>
 
+            <label htmlFor="filter">Filter: </label>
+
+            <select name="filter" id="filter" onChange={e => setFilter(e.target.value)}>
+              <option value="">All</option>
+              <option value="sketch">Sketches</option>
+              <option value="color">Colored</option>
+            </select>
+
             <AnimateSharedLayout>
               <motion.ul
                 variants={list}
                 initial={"initial"}
                 animate={"animate"}
               >
-                {gallery.map((q, idx) => (
+                {images.map((q: any) => (
                   <motion.li
-                    key={idx}
+                    key={q.title}
                     layout
                     layoutId={`image-${q.title}`}
                     onClick={() => imagePreviewState(q)}
@@ -88,4 +102,3 @@ export default function Gallery () {
     </>
   );
 }
-
