@@ -6,7 +6,7 @@ import CardPanel from "../components/cardPanel";
 import ProfileWrap from "../components/home/profileWrap";
 import SkillsWrap from "../components/home/skillsWrap";
 import PageBase from "../components/pageBase";
-import Project from "../components/project";
+import ProjectCell from "../components/projectCell";
 import Subtitle from "../components/subtitle";
 import projects from "../docs/json/projects.json";
 
@@ -48,9 +48,9 @@ export default function Home() {
             <SkillsWrap />
 
             <CardPanel title="Recent Projects 💻">
-              <div className={`${styles.works} grid`}>
+              <div className={`${styles.projects} grid`}>
                 {
-                  projects.data.map(q => <Project key={q.title} data={q} />)
+                  projects.data.map(q => <ProjectCell key={q.title} data={q} />)
                 }
               </div>
             </CardPanel>

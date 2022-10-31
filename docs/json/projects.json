@@ -4,6 +4,8 @@
             "title": "Night Time Visit",
             "image": "https://i.imgur.com/ux4JRUT.png",
             "description": "Submission to Spooky 2D Jam '22",
+            "type": "Game",
+            "genre": "Horror",
             "links": [
                 {
                     "title": "Itch.io",
@@ -16,6 +18,8 @@
             "title": "Project BioBot",
             "image": "https://i.imgur.com/qg7amM4.png",
             "description": "Submission to GoedWare Game Jam #5",
+            "type": "Game",
+            "genre": "Puzzle",
             "links": [
                 {
                     "title": "Itch.io",
@@ -28,6 +32,8 @@
             "title": "Tamagochi",
             "image": "https://i.imgur.com/aCb5I5y.png",
             "description": "A Tamagochi game as a birthday present for my friend.",
+            "type": "Game",
+            "genre": "Strategy",
             "links": [
                 {
                     "title": "Github",
@@ -40,6 +46,8 @@
             "title": "Portfolio",
             "image": "https://i.imgur.com/JgO4l5D.jpg",
             "description": "My Portfolio. You are looking at it right now!",
+            "type": "Website",
+            "genre": "Portfolio",
             "links": [
                 {
                     "title": "Github",
@@ -52,6 +60,8 @@
             "title": "Novel Tracker",
             "image": "https://i.imgur.com/1fMUa8n.png",
             "description": "Novel Tracker is a simple novel and light novel tracker.",
+            "type": "Website",
+            "genre": "Book Tracking",
             "links": [
                 {
                     "title": "Website",
@@ -74,6 +84,8 @@
             "title": "Lunar Lander",
             "image": "https://i.imgur.com/KPo55xN.png",
             "description": "A simple remake of Lunar Lander for a game jam.",
+            "type": "Game",
+            "genre": "Platformer",
             "links": [
                 {
                     "title": "Itch.io",
