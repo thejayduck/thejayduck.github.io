@@ -1,6 +1,20 @@
 {
     "data": [
         {
+            "title": "A Noble Pursuit",
+            "image": "https://i.imgur.com/dd2cTyJ.png",
+            "description": "Submission to Winter VN Jam '22",
+            "type": "Game",
+            "genre": "Visual Novel",
+            "links": [
+                {
+                    "title": "Itch.io",
+                    "url": "https://thejayduck.itch.io/a-noble-pursuit",
+                    "icon": "bx bxs-store"
+                }
+            ]
+        },
+        {
             "title": "Night Time Visit",
             "image": "https://i.imgur.com/WwCry3P.png",
             "description": "Submission to Spooky 2D Jam '22",
