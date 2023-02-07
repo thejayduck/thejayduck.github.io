@@ -38,6 +38,7 @@ export default function SkillsWrap(){
       <div className={`${styles.skills} grid`}>
         <SkillBar title="Visual Studio Code" icon="devicon-visualstudio-plain" href="https://code.visualstudio.com/" />
         <SkillBar title="Unity Engine" icon="devicon-unity-original" href="https://unity.com/" />
+        <SkillBar title="Godot Engine" icon="devicon-godot-plain" href="https://godotengine.org/" />
         <SkillBar title="Figma" icon="devicon-figma-plain" href="https://www.figma.com/" />
         <SkillBar title="Blender" icon="devicon-blender-original" href="https://www.blender.org/" />
         <SkillBar title="Premiere Pro" icon="devicon-premierepro-plain" href="https://www.adobe.com/products/premiere.html" />
