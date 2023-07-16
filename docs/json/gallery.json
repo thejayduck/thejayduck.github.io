@@ -1,275 +1,371 @@
 [
     {
+        "title": "Clip Studio Practice #2",
+        "date": "2023/07",
+        "url": null,
+        "image": "https://i.imgur.com/5MTwUfo.png",
+        "tag": "sketch",
+        "width": 500,
+        "height": 500
+    },
+    {
+        "title": "Clip Studio Practice #1",
+        "date": "2023/07",
+        "url": null,
+        "image": "https://i.imgur.com/Ywc2fxj.png",
+        "tag": "sketch",
+        "width": 500,
+        "height": 500
+    },
+    {
         "title": "A Noble Pursuit - CG",
         "date": "2022/12",
         "url": null,
         "image": "https://i.imgur.com/qVOkbZl.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 960,
+        "height": 540
     },
     {
         "title": "Benjamin",
         "date": "2022/12",
         "url": null,
         "image": "https://i.imgur.com/Xe57hfc.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 590,
+        "height": 1000
     },
     {
         "title": "Ubel",
         "date": "2022/12",
         "url": null,
         "image": "https://i.imgur.com/tl8bEYx.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 590,
+        "height": 1000
     },
     {
         "title": "Alexandra",
         "date": "2022/12",
         "url": null,
         "image": "https://i.imgur.com/aWVf6a9.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 590,
+        "height": 1000
     },
     {
         "title": "Hulderic",
         "date": "2022/12",
         "url": null,
         "image": "https://i.imgur.com/Sjaw3Bz.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 590,
+        "height": 1000
     },
     {
         "title": "Carolina",
         "date": "2022/12",
         "url": null,
         "image": "https://i.imgur.com/eqbTHIm.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 590,
+        "height": 1000
     },
     {
         "title": "Irie Color Preview",
         "date": "2022/10",
         "url": null,
         "image": "https://i.imgur.com/xBDLhO8.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Ducks",
         "date": "2022/09",
         "url": null,
         "image": "https://i.imgur.com/nOmDaG6.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 1000,
+        "height": 590
     },
     {
         "title": "Keiichi Color Preview",
         "date": "2022/09",
         "url": null,
         "image": "https://i.imgur.com/VfUaU7L.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Oryou Color Preview",
         "date": "2022/09",
         "url": null,
         "image": "https://i.imgur.com/3665n2P.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Takano Color Preview",
         "date": "2022/09",
         "url": null,
         "image": "https://i.imgur.com/i1pBt6c.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Rena Color",
         "date": "2022/08",
         "url": "https://www.deviantart.com/thejayduck/art/Ryuugu-Rena-color-931456906",
         "image": "https://i.imgur.com/GcWyYCs.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Shion Color",
         "date": "2022/08",
         "url": null,
         "image": "https://i.imgur.com/U7RWxaQ.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Chie Color",
         "date": "2022/08",
         "url": null,
         "image": "https://i.imgur.com/ULmNf9R.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Rika Color",
         "date": "2022/08",
         "url": null,
         "image": "https://i.imgur.com/pA77QoF.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Hanyuu Color",
         "date": "2022/08",
         "url": null,
         "image": "https://i.imgur.com/eh0Fuj0.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Satoko Color",
         "date": "2022/08",
         "url": "https://www.deviantart.com/thejayduck/art/Houjou-Satoko-color-931166747",
         "image": "https://i.imgur.com/Efg8h1b.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Mion Color",
         "date": "2022/08",
         "url": null,
         "image": "https://i.imgur.com/8FewsZT.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 617,
+        "height": 1000
     },
     {
         "title": "Satoshi Sketch",
         "date": "2022/08",
         "url": null,
         "image": "https://i.imgur.com/ZudaZKl.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 600,
+        "height": 990
     },
     {
         "title": "Ooishi Sketch",
         "date": "2022/08",
         "url": null,
         "image": "https://i.imgur.com/XyWi7Y1.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 600,
+        "height": 990
     },
     {
         "title": "Tomitake Sketch",
         "date": "2022/08",
         "url": null,
         "image": "https://i.imgur.com/VG0sWp1.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Irie Sketch",
         "date": "2022/08",
         "url": null,
         "image": "https://i.imgur.com/DXhD0oo.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Keiichi Sketch",
         "date": "2022/07",
         "url": null,
         "image": "https://i.imgur.com/cPXSxob.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Mion's Birthday",
         "date": "2022/07",
         "url": "https://www.deviantart.com/thejayduck/art/Mion-Sonozaki-Birthday-923781589",
         "image": "https://i.imgur.com/7eiABsE.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 1080,
+        "height": 1080
     },
     {
         "title": "Rena Sketch",
         "date": "2022/07",
         "url": "https://www.deviantart.com/thejayduck/art/Rena-Sketch-921637601",
         "image": "https://i.imgur.com/TEgObUM.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 600,
+        "height": 971
     },
     {
         "title": "Oryou Sketch",
         "date": "2022/06",
         "url": null,
         "image": "https://i.imgur.com/YWEfXxV.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 450,
+        "height": 728
     },
     {
         "title": "Takano Sketch",
         "date": "2022/06",
         "url": null,
         "image": "https://i.imgur.com/EExSOLc.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 450,
+        "height": 728
     },
     {
         "title": "Shion Sketch",
         "date": "2022/06",
         "url": null,
         "image": "https://i.imgur.com/N2iuoC6.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 450,
+        "height": 728
     },
     {
         "title": "Mion | Catch the Beat",
         "date": "2022/06",
         "url": null,
         "image": "https://i.imgur.com/H5njXcv.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 1238,
+        "height": 1942
     },
     {
         "title": "Chie Sketch",
         "date": "2022/05",
         "url": null,
         "image": "https://i.imgur.com/5cR7Yk8.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 450,
+        "height": 728
     },
     {
         "title": "Rika Sketch",
         "date": "2022/05",
         "url": null,
         "image": "https://i.imgur.com/lT1ED93.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 450,
+        "height": 729
     },
     {
         "title": "Hanyuu Sketch",
         "date": "2022/05",
         "url": null,
         "image": "https://i.imgur.com/pItxQav.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 450,
+        "height": 729
     },
     {
         "title": "Satoko Sketch",
         "date": "2022/05",
         "url": null,
         "image": "https://i.imgur.com/IHEVonk.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 450,
+        "height": 729
     },
     {
         "title": "Mion Sketch",
         "date": "2022/04",
         "url": null,
         "image": "https://i.imgur.com/dy8uNCh.png",
-        "tag": "sketch"
+        "tag": "sketch",
+        "width": 450,
+        "height": 729
     },
     {
         "title": "Shiba Inu",
         "date": "2022/04",
         "url": null,
         "image": "https://i.imgur.com/Gn4yuLz.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 2160,
+        "height": 2160
     },
     {
         "title": "Sculpture",
         "date": "2022/02",
         "url": null,
         "image": "https://i.imgur.com/eIC80G5.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 2160,
+        "height": 2160
     },
     {
         "title": "Dread",
         "date": "2021/10",
         "url": null,
         "image": "https://i.imgur.com/HRMHc5D.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 1080,
+        "height": 1080
     },
     {
         "title": "Subway",
         "date": "2021/09",
         "url": null,
         "image": "https://i.imgur.com/A490JMy.png",
-        "tag": "color"
+        "tag": "color",
+        "width": 1000,
+        "height": 600
     },
     {
         "title": "Some Character",
         "date": "2021/06",
         "url": "https://www.deviantart.com/thejayduck/art/Some-Character-1-881177115",
         "image": "https://i.imgur.com/yN3LiOd.jpg",
-        "tag": "color"
+        "tag": "color",
+        "width": 1280,
+        "height": 1280
     }
 ]

@@ -1,19 +1,19 @@
 import styles from "../styles/components/ProjectCell.module.scss";
 
+import Image from "next/image";
 
 interface ProjectProps {
-    data: {
-        title: string,
-        links: any[],
-        image: string,
-        description: string,
-        type: string,
-        genre: string
-    }
+  data: {
+    title: string;
+    links: any[];
+    image: string;
+    description: string;
+    type: string;
+    genre: string;
+  };
 }
 
 export default function ProjectCell({ data }: ProjectProps) {
-
   return (
     <div
       title={`Project - ${data.title}`}
@@ -21,7 +21,7 @@ export default function ProjectCell({ data }: ProjectProps) {
     >
       <div className={styles.projectThumb}>
         <a href={data.links[0].url} target="_blank" rel="noreferrer">
-          <img
+          <Image
             className={styles.image}
             alt={`${data?.title} Cover`}
             src={data?.image || "/default.png"}
@@ -37,10 +37,7 @@ export default function ProjectCell({ data }: ProjectProps) {
             {data.title}
           </a>
         </div>
-        <div className={styles.projectText}>
-          {data.description}
-
-        </div>
+        <div className={styles.projectText}>{data.description}</div>
 
         <div className={styles.projectGenre}>
           {data.type} {">"} {data.genre}
@@ -48,7 +45,7 @@ export default function ProjectCell({ data }: ProjectProps) {
 
         <div className={styles.projectLinks}>
           <ul>
-            {data.links.map((q, idx) =>
+            {data.links.map((q, idx) => (
               <li key={idx}>
                 <a
                   aria-label={q.title}
@@ -59,7 +56,7 @@ export default function ProjectCell({ data }: ProjectProps) {
                   rel="noreferrer"
                 ></a>
               </li>
-            )}
+            ))}
           </ul>
         </div>
       </div>

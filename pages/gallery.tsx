@@ -1,37 +1,45 @@
 import styles from "../styles/Gallery.module.scss";
 
 import Head from "next/head";
-import { AnimateSharedLayout, motion } from "framer-motion";
+import Image from "next/image";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 import CardPanel from "../components/cardPanel";
-import { ImagePreviewComponent } from "../components/imagePreviewComponent";
 import PageBase from "../components/pageBase";
 import SocialItem from "../components/socialItem";
 import gallery from "../docs/json/gallery.json";
 
-const list = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-  }
-};
-
-export default function Gallery () {
-  const [images, setImages] : any[] = useState([]);
-  const [targetImage, setTargetImage] = useState(null);
-  const [filter, setFilter] = useState("");
-
-  const imagePreviewState = (target: any) => {
-    setTargetImage(target);
-  };
+export default function Gallery() {
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setImages(!filter ? gallery : gallery.filter(e => e.tag == filter));
-  }, [filter]);
+    const calculateColumnSpan = () => {
+      const galleryItems = Array.from(
+        containerRef.current?.querySelectorAll("div") || []
+      );
+
+      galleryItems.forEach((item: HTMLElement, index) => {
+        // console.log(
+        //   `${gallery[index].title}: ${gallery[index].width}/${gallery[index].height}`
+        // );
+
+        const ratio = gallery[index].width / gallery[index].height;
+
+        item.style.flexBasis = `calc(${ratio} * 15em)`;
+        item.style.flexGrow = `calc(${ratio} * 100)`;
+      });
+    };
+
+    calculateColumnSpan();
+    window.addEventListener("resize", calculateColumnSpan);
+    window.addEventListener("load", calculateColumnSpan);
+
+    return () => {
+      window.removeEventListener("resize", calculateColumnSpan);
+      window.removeEventListener("load", calculateColumnSpan);
+    };
+  }, []);
 
   return (
     <>
@@ -44,58 +52,48 @@ export default function Gallery () {
 
       <PageBase>
         <ul className={`flex flexRight ${styles.backButton}`}>
-          <SocialItem icon="bx bx-undo" label="back" title="Back to Homepage" href="/" newPage={false} />
+          <SocialItem
+            icon="bx bx-undo"
+            label="back"
+            title="Back to Homepage"
+            href="/"
+            newPage={false}
+          />
         </ul>
-        
+
         <section className={`${styles.mainSection} flex flexColumn`}>
           <CardPanel title={"Gallery 🖌️"}>
-            <p>📮<b>{gallery.length}</b> Posts</p>
-            <p>❗Here I post my sketches and finished drawings. All of the images down below are downscaled!</p>
-            <hr/>
+            <p>
+              📮<b>{gallery.length}</b> Posts
+            </p>
+            <p>
+              ❗Here I post my sketches and finished drawings. All of the images
+              down below are downscaled!
+            </p>
 
-            <label htmlFor="filter">Filter: </label>
+            <hr />
 
-            <select name="filter" id="filter" onChange={e => setFilter(e.target.value)}>
-              <option value="">All</option>
-              <option value="sketch">Sketches</option>
-              <option value="color">Colored</option>
-            </select>
-
-            <AnimateSharedLayout>
-              <motion.ul
-                variants={list}
-                initial={"initial"}
-                animate={"animate"}
-              >
-                {images.map((q: any) => (
-                  <motion.li
-                    key={q.title}
-                    layout
-                    layoutId={`image-${q.title}`}
-                    onClick={() => imagePreviewState(q)}
-                    title="Expand Image"
-                  >
-                    <a target="_blank" rel="noreferrer">
-                      <motion.img alt={`Drawing - ${q.title}`} src={q.image} />
-                      <figcaption>
-                        [{q.date}]
-                        <br />
-                        {q.title}
-                      </figcaption>
-                    </a>
-                  </motion.li>
-                )
-                )}
-                <li></li>
-              </motion.ul>
-
-              {targetImage && 
-              <ImagePreviewComponent 
-                imageData={targetImage} 
-                onClickOutside={() => imagePreviewState(null)} 
-              />}
-
-            </AnimateSharedLayout>
+            <div className={styles.gallery} ref={containerRef}>
+              {gallery.map((q: any, idx: number) => (
+                <div className={styles.galleryItem} key={idx}>
+                  <figure>
+                    <Image
+                      src={q.image}
+                      alt={`Drawing ${q.title}`}
+                      layout="responsive"
+                      width={q.width}
+                      height={q.height}
+                      quality={65}
+                    />
+                    <figcaption>
+                      [{q.date}]
+                      <br />
+                      {q.title}
+                    </figcaption>
+                  </figure>
+                </div>
+              ))}
+            </div>
           </CardPanel>
         </section>
       </PageBase>

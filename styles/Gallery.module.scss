@@ -1,152 +1,76 @@
 .backButton {
-    padding: 0;
+  padding: 0;
 }
 
 .mainSection {
-    align-items: stretch;
+  align-items: stretch;
 
-    ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-
-        box-sizing: border-box;
-        padding: 0;
-        flex-flow: row wrap;
-        // display: grid;
-        // grid-gap: 5px;
-        // grid-template-columns: repeat(auto-fit, minmax(165px, 2fr));
-        // padding: 0;
-
-        li {
-            position: relative;
-            overflow: hidden;
-            height: 30vh;
-            margin: var(--padding-mini);
-            border-radius: var(--border);
-            font-weight: bold;
-            text-shadow: 0 0 5px black;
-
-
-            img {
-                // height: 100%;
-                // min-width: 100%;
-                // object-fit: cover;
-                // vertical-align: bottom;
-                object-position: top;
-
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                cursor: pointer;
-            }
-
-            figcaption {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                padding: 15px 10px 10px;
-                width: 100%;
-                font-size: 16px;
-
-                color: white;
-                background: linear-gradient(0deg, rgba(0, 0, 0, .8) 0%, rgba(255, 255, 255, 0) 100%);
-                opacity: 0;
-                transition: 255ms;
-            }
-
-            &:hover {
-                figcaption {
-                    opacity: 1;
-                }
-            }
-        }
-
-        li:last-child {
-            flex-grow: 10;
-            border: 0;
-        }
-    }
-
-    blockquote {
-        color: #5c5c5c;
-        background-color: hsla(var(--accent-raw), 0.2);
-        border-left: 4px solid var(--accent);
-        margin-left: 0;
-        margin-right: 0;
-
-        p {
-            padding: 10px;
-        }
-    }
-}
-
-.imagePreviewWrap {
-    position: fixed;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+  .gallery {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
-    background-color: hsl(0, 0%, 0%, 75%);
-    text-align: center;
-    z-index: var(--z-absolute);
+    flex-wrap: wrap;
 
-    .imagePreview {
+    .galleryItem {
+      margin: 0 0.35em 0.45em 0.35em;
+
+      figure {
+        display: block;
+        position: relative;
+        margin: 0;
+        padding: 0;
         border-radius: var(--border);
-        max-height: 90%;
-        max-width: 80%;
-        margin: auto;
-    }
+        overflow: hidden;
 
-    a {
-        position: fixed;
-        bottom: 0;
-        transform: translate(-50%, -50%);
-        padding: var(--padding-small);
+        figcaption {
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          padding: 15px 10px 10px;
 
-        font-size: var(--font-regular);
-        font-weight: var(--font-bold);
-        text-decoration: none;
-        color: black;
+          font-size: 16px;
+          font-weight: bold;
 
-        i {
-            font-size: var(--font-regular);
-            margin: 0;
+          color: white;
+          text-shadow: 1px 1px 5px #000000;
+          background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          opacity: 0;
+          transition: 255ms;
         }
 
+        &:hover {
+          figcaption {
+            opacity: 1;
+          }
+        }
+      }
+      img {
+        display: block;
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%;
+
+        // cursor: pointer;
+      }
     }
+    &::after {
+      content: "";
+      flex-basis: calc(0.5 * 12em);
+      flex-grow: 1000000;
+    }
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    .mainSection {
-        ul {
-            justify-content: center;
-
-            li {
-                flex-grow: 1;
-
-                figcaption {
-                    opacity: 1;
-                }
-            }
-        }
+  .mainSection {
+    .gallery .galleryItem figure {
+      figcaption {
+        opacity: 1;
+      }
     }
-
-    .imagePreviewWrap {
-        background-color: hsl(0, 0%, 0%, 85%);
-
-        .imagePreview {
-            object-position: top;
-            margin: 0;
-            max-width: 100%;
-            width: 100%;
-            object-fit: contain;
-            border-radius: 0;
-        }
-    }
+  }
 }
