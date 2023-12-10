@@ -1,7 +1,7 @@
 import styles from "../styles/components/AboutItem.module.scss";
 
-interface AboutItemProps{
-    description: string,
+interface AboutItemProps {
+  description: string;
 }
 
 export default function AboutItem({ description }: AboutItemProps) {

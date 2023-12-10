@@ -11,25 +11,33 @@ import ReactMarkdown from "react-markdown";
 import { countWords, readTime, truncate } from "../lib/helper";
 
 interface BlogItemProps {
-    title: string,
-    date: string,
-    content: string,
-    image?: string
-    id: string
+  title: string;
+  date: string;
+  content: string;
+  image?: string;
+  id: string;
 }
 
-export default function BlogItem({title, date, content, image, id}: BlogItemProps){
+export default function BlogItem({
+  title,
+  date,
+  content,
+  image,
+  id,
+}: BlogItemProps) {
   const wordCount = countWords(content);
   const avgTime = readTime(wordCount);
-  const truncatedDesc = `${truncate(content, 200)} <p style="color:var(--accent)"> **Click to Read More** ►</p>`;
+  const truncatedDesc = `${truncate(
+    content,
+    200
+  )} <p style="color:var(--accent)"> **Click to Read More** ►</p>`;
 
   return (
-    <Link href={`/blog/${id}`}>
+    <Link href={`/blog/${id}`} passHref>
       <motion.div
         layoutId={id}
         initial={false}
         transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-
         className={`cardItem ${styles.projectWrap}`}
         title={`${title} - Click to Read More`}
       >
@@ -38,7 +46,6 @@ export default function BlogItem({title, date, content, image, id}: BlogItemProp
           animate={{ opacity: 1 }}
           layout
           transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
-
           className={`flex flexColumn flexWrap ${styles.project}`}
         >
           <img
@@ -47,7 +54,7 @@ export default function BlogItem({title, date, content, image, id}: BlogItemProp
             src={image || "/default.png"}
           />
           <div className={styles.details}>
-            <ReactMarkdown 
+            <ReactMarkdown
               className={styles.description}
               disallowedElements={["img"]}
               remarkPlugins={[remarkGfm]}
@@ -55,7 +62,7 @@ export default function BlogItem({title, date, content, image, id}: BlogItemProp
             >
               {truncatedDesc}
             </ReactMarkdown>
-            <hr/>
+            <hr />
             <span>
               {date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
             </span>

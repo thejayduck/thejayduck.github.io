@@ -91,7 +91,7 @@ select {
 // CARD ITEM
 .cardItem {
   box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
-  overflow: hidden;
+  overflow: auto;
   background-color: white;
   border-radius: var(--border);
   // padding: 0 var(--padding-small) 0 var(--padding-small);

@@ -3,15 +3,38 @@ import styles from "../styles/Gallery.module.scss";
 import Head from "next/head";
 import Image from "next/image";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import CardPanel from "../components/cardPanel";
+import { ImagePreview } from "../components/imagePreview";
 import PageBase from "../components/pageBase";
 import SocialItem from "../components/socialItem";
 import gallery from "../docs/json/gallery.json";
 
+type ImageData = {
+  title: string;
+  date: string;
+  url: string;
+  image: string;
+  width: number;
+  height: number;
+  index: number;
+};
+
 export default function Gallery() {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
+
+  const handleImageClick = (imageData: ImageData) => {
+    setSelectedImage(imageData);
+    document.body.style.overflow = "hidden";
+  };
+
+  const handleClosePreview = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = "auto";
+  };
 
   useEffect(() => {
     const calculateColumnSpan = () => {
@@ -20,10 +43,6 @@ export default function Gallery() {
       );
 
       galleryItems.forEach((item: HTMLElement, index) => {
-        // console.log(
-        //   `${gallery[index].title}: ${gallery[index].width}/${gallery[index].height}`
-        // );
-
         const ratio = gallery[index].width / gallery[index].height;
 
         item.style.flexBasis = `calc(${ratio} * 15em)`;
@@ -33,11 +52,9 @@ export default function Gallery() {
 
     calculateColumnSpan();
     window.addEventListener("resize", calculateColumnSpan);
-    window.addEventListener("load", calculateColumnSpan);
 
     return () => {
       window.removeEventListener("resize", calculateColumnSpan);
-      window.removeEventListener("load", calculateColumnSpan);
     };
   }, []);
 
@@ -54,7 +71,7 @@ export default function Gallery() {
         <ul className={`flex flexRight ${styles.backButton}`}>
           <SocialItem
             icon="bx bx-undo"
-            label="back"
+            label="back to homepage"
             title="Back to Homepage"
             href="/"
             newPage={false}
@@ -75,7 +92,21 @@ export default function Gallery() {
 
             <div className={styles.gallery} ref={containerRef}>
               {gallery.map((q: any, idx: number) => (
-                <div className={styles.galleryItem} key={idx}>
+                <div
+                  className={styles.galleryItem}
+                  key={idx}
+                  onClick={() =>
+                    handleImageClick({
+                      title: q.title,
+                      date: q.date,
+                      url: q.url,
+                      image: q.image,
+                      width: q.width,
+                      height: q.height,
+                      index: idx,
+                    })
+                  }
+                >
                   <figure>
                     <Image
                       src={q.image}
@@ -84,6 +115,8 @@ export default function Gallery() {
                       width={q.width}
                       height={q.height}
                       quality={65}
+                      blurDataURL={q.image}
+                      placeholder="blur"
                     />
                     <figcaption>
                       [{q.date}]
@@ -95,6 +128,13 @@ export default function Gallery() {
               ))}
             </div>
           </CardPanel>
+          {selectedImage && (
+            <ImagePreview
+              imageData={selectedImage}
+              imageList={gallery}
+              onClose={handleClosePreview}
+            />
+          )}
         </section>
       </PageBase>
     </>

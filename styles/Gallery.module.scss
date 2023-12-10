@@ -65,6 +65,77 @@
   }
 }
 
+.imagePreview {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  z-index: var(--z-absolute);
+
+  .imagePreviewWrapper {
+    width: 95%;
+    height: 95%;
+    overflow: hidden;
+    position: relative;
+
+    object-position: top;
+    flex: 1;
+  }
+
+  .thumbnails {
+    display: flex;
+    align-items: flex-end;
+
+    width: 100%;
+    white-space: nowrap;
+    margin-top: 16px;
+    overflow-x: auto;
+    cursor: grab;
+    flex-shrink: 0;
+
+    .thumbnailWrapper {
+      object-fit: cover;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+
+      margin: 0 var(--padding-mini);
+      object-position: top;
+      border-radius: var(--border);
+      border: 3px solid transparent;
+
+      flex: 0 0 auto;
+
+      &:hover {
+        border-color: white;
+      }
+    }
+    .selected,
+    .selected:hover {
+      border-color: var(--accent);
+    }
+  }
+
+  .cardItem {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+
+    span {
+      display: block;
+      margin-top: 8px;
+    }
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .mainSection {
     .gallery .galleryItem figure {
