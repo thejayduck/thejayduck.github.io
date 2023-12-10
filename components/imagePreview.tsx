@@ -48,16 +48,15 @@ export function ImagePreview({
       {imageData && (
         <div key="preview" className={styles.imagePreview} onClick={onClose}>
           {/* Preview */}
+          {/* TODO fix image preview loading (broken with new nextjs version) */}
           <div className={styles.imagePreviewWrapper}>
             <Image
               src={imageList[selectedIndex || 0].image}
-              width={imageData.width}
-              height={imageData.height}
               alt={imageData.title}
               blurDataURL={imageList[selectedIndex || 0].image}
               placeholder="blur"
-              objectFit="contain"
-              layout="fill"
+              style={{ objectFit: "contain" }}
+              fill
             />
           </div>
 
@@ -77,13 +76,12 @@ export function ImagePreview({
               >
                 <Image
                   className={`${styles.thumbnail}`}
-                  quality={25}
+                  quality={35}
                   src={thumbnail.image}
+                  width={100}
+                  height={100}
                   alt={`Thumbnail ${index + 1}`}
-                  width="100%"
-                  height="100%"
-                  objectFit="cover"
-                  objectPosition="top"
+                  style={{ objectFit: "cover", objectPosition: "top" }}
                   onClick={() => handleThumbnailClick(index)}
                 />
               </div>

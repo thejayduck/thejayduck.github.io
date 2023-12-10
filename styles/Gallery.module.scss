@@ -86,7 +86,6 @@
     overflow: hidden;
     position: relative;
 
-    object-position: top;
     flex: 1;
   }
 
@@ -102,13 +101,11 @@
     flex-shrink: 0;
 
     .thumbnailWrapper {
-      object-fit: cover;
       width: 100px;
       height: 100px;
       overflow: hidden;
 
       margin: 0 var(--padding-mini);
-      object-position: top;
       border-radius: var(--border);
       border: 3px solid transparent;
 

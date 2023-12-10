@@ -33,7 +33,7 @@ export default function BlogItem({
   )} <p style="color:var(--accent)"> **Click to Read More** ►</p>`;
 
   return (
-    <Link href={`/blog/${id}`} passHref>
+    <Link href={`/blog/${id}`} passHref legacyBehavior>
       <motion.div
         layoutId={id}
         initial={false}

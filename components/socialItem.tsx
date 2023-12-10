@@ -21,7 +21,7 @@ export default function SocialItem({
 }: SocialItemProps) {
   return (
     <li id={label} className={`cardItem ${styles.social}`}>
-      <Link href={href}>
+      <Link href={href} legacyBehavior>
         <a
           onClick={onClick}
           aria-label={label}

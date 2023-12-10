@@ -111,7 +111,6 @@ export default function Gallery() {
                     <Image
                       src={q.image}
                       alt={`Drawing ${q.title}`}
-                      layout="responsive"
                       width={q.width}
                       height={q.height}
                       quality={65}
