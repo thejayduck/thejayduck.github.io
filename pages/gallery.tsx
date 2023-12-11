@@ -2,7 +2,7 @@ import styles from "../styles/Gallery.module.scss";
 
 import Head from "next/head";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import React, { useEffect, useRef, useState } from "react";
 
