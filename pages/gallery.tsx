@@ -2,6 +2,7 @@ import styles from "../styles/Gallery.module.scss";
 
 import Head from "next/head";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 
 import React, { useEffect, useRef, useState } from "react";
 
@@ -11,42 +12,38 @@ import PageBase from "../components/pageBase";
 import SocialItem from "../components/socialItem";
 import gallery from "../docs/json/gallery.json";
 
-type ImageData = {
-  title: string;
-  date: string;
-  url: string;
-  image: string;
-  width: number;
-  height: number;
-  index: number;
-};
-
 export default function Gallery() {
+  // Ref for gallery container
   const containerRef = useRef<HTMLDivElement>(null);
+  // State to track selected image index for preview
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
+    null
+  );
 
-  const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
-
-  const handleImageClick = (imageData: ImageData) => {
-    setSelectedImage(imageData);
+  // Handler for image click
+  const handleImageClick = (index: number) => {
+    setSelectedImageIndex(index);
     document.body.style.overflow = "hidden";
   };
 
+  // Handler for closing image preview
   const handleClosePreview = () => {
-    setSelectedImage(null);
+    setSelectedImageIndex(null);
     document.body.style.overflow = "auto";
   };
 
+  // Effect to calculate and update column span on window resize
   useEffect(() => {
     const calculateColumnSpan = () => {
       const galleryItems = Array.from(
         containerRef.current?.querySelectorAll("div") || []
       );
 
-      galleryItems.forEach((item: HTMLElement, index) => {
+      galleryItems.forEach((galleryItem: HTMLElement, index) => {
         const ratio = gallery[index].width / gallery[index].height;
 
-        item.style.flexBasis = `calc(${ratio} * 15em)`;
-        item.style.flexGrow = `calc(${ratio} * 100)`;
+        galleryItem.style.flexBasis = `calc(${ratio} * 15em)`;
+        galleryItem.style.flexGrow = `calc(${ratio} * 100)`;
       });
     };
 
@@ -68,6 +65,7 @@ export default function Gallery() {
       </Head>
 
       <PageBase>
+        {/* Back to Homepage button */}
         <ul className={`flex flexRight ${styles.backButton}`}>
           <SocialItem
             icon="bx bx-undo"
@@ -78,6 +76,7 @@ export default function Gallery() {
           />
         </ul>
 
+        {/* Main Gallery Section */}
         <section className={`${styles.mainSection} flex flexColumn`}>
           <CardPanel title={"Gallery 🖌️"}>
             <p>
@@ -90,50 +89,43 @@ export default function Gallery() {
 
             <hr />
 
+            {/* Gallery Items */}
             <div className={styles.gallery} ref={containerRef}>
-              {gallery.map((q: any, idx: number) => (
+              {gallery.map((galleryItem: any, index: number) => (
                 <div
                   className={styles.galleryItem}
-                  key={idx}
-                  onClick={() =>
-                    handleImageClick({
-                      title: q.title,
-                      date: q.date,
-                      url: q.url,
-                      image: q.image,
-                      width: q.width,
-                      height: q.height,
-                      index: idx,
-                    })
-                  }
+                  key={index}
+                  onClick={() => handleImageClick(index)}
                 >
                   <figure>
                     <Image
-                      src={q.image}
-                      alt={`Drawing ${q.title}`}
-                      width={q.width}
-                      height={q.height}
+                      src={galleryItem.image}
+                      alt={`Drawing ${galleryItem.title}`}
+                      width={galleryItem.width}
+                      height={galleryItem.height}
                       quality={65}
-                      blurDataURL={q.image}
-                      placeholder="blur"
                     />
                     <figcaption>
-                      [{q.date}]
+                      [{galleryItem.date}]
                       <br />
-                      {q.title}
+                      {galleryItem.title}
                     </figcaption>
                   </figure>
                 </div>
               ))}
             </div>
           </CardPanel>
-          {selectedImage && (
-            <ImagePreview
-              imageData={selectedImage}
-              imageList={gallery}
-              onClose={handleClosePreview}
-            />
-          )}
+
+          {/* Image Preview Component */}
+          <AnimatePresence>
+            {selectedImageIndex && (
+              <ImagePreview
+                key={"imagePreviewModal"}
+                imageIndex={selectedImageIndex}
+                onClose={handleClosePreview}
+              />
+            )}
+          </AnimatePresence>
         </section>
       </PageBase>
     </>
