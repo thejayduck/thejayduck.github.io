@@ -118,7 +118,7 @@ export default function Gallery() {
 
           {/* Image Preview Component */}
           <AnimatePresence>
-            {selectedImageIndex && (
+            {selectedImageIndex !== null && (
               <ImagePreview
                 key={"imagePreviewModal"}
                 imageIndex={selectedImageIndex}

@@ -17,7 +17,6 @@ export function ImagePreview({ imageIndex, onClose }: ImagePreviewProps) {
   // Thumbnail drag state
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState<number | null>(null);
-
   // State for selected thumbnail index
   const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState<
     number | null
@@ -52,11 +51,11 @@ export function ImagePreview({ imageIndex, onClose }: ImagePreviewProps) {
 
   // Thumbnail scroll wheel event handler
   const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    const scrollAmount = 0.5; // Adjust the scroll amount as needed
+    const scrollSpeed = 0.5; // Adjusts Horizontal Scroll Speed
 
     if (thumbnailsContainerRef.current) {
-      e.preventDefault(); // Prevent vertical scroll
-      thumbnailsContainerRef.current.scrollLeft += e.deltaY * scrollAmount;
+      // e.preventDefault(); //* Prevent vertical scroll (disabled due to errors)
+      thumbnailsContainerRef.current.scrollLeft += e.deltaY * scrollSpeed;
     }
   };
 
