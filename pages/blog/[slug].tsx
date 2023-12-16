@@ -16,25 +16,27 @@ import GetPosts from "../../lib/getPosts";
 import { countWords, getAnchors, readTime, truncate } from "../../lib/helper";
 
 interface BlogProps {
-  posts: BlogPostProps[]
+  posts: BlogPostProps[];
 }
 
 interface BlogPostProps {
-  slug: string,
-  title: string,
-  date: string,
-  image: string,
-  content: string,
+  slug: string;
+  title: string;
+  date: string;
+  image: string;
+  content: string;
 }
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   return {
     paths: [], //indicates that no page needs be created at build time
-    fallback: "blocking" //indicates the type of fallback
+    fallback: "blocking", //indicates the type of fallback
   };
 };
 
-export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>> {
+export async function getStaticProps(): Promise<
+  GetStaticPropsResult<BlogProps>
+> {
   const postsData = GetPosts();
 
   return {
@@ -43,17 +45,15 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>>
     },
     revalidate: 60,
   };
-
 }
 
-export default function Blog({posts}: BlogProps){
+export default function Blog({ posts }: BlogProps) {
   const router = useRouter();
   const { slug } = router.query;
 
-  const post = posts.find(({slug: targetSlug}) => targetSlug == slug);
+  const post = posts.find(({ slug: targetSlug }) => targetSlug == slug);
 
-  if(!post)
-    throw new Error("Unable to find post.");
+  if (!post) throw new Error("Unable to find post.");
 
   const wordCount = countWords(post.content);
   const avgTime = readTime(wordCount);
@@ -68,21 +68,25 @@ export default function Blog({posts}: BlogProps){
 
         <meta name="description" content="Arda Fevzi Armutcu's Blog Post" />
       </Head>
-      
+
       <PageBase>
         <ul className={`flex flexRight ${styles.backButton}`}>
-          <SocialItem icon="bx bx-undo" label="back" title="Back to Posts" href="/blog" newPage={false} />
+          <SocialItem
+            icon="bx bx-undo"
+            label="back to posts"
+            title="Back to Posts"
+            href="/blog"
+            newPage={false}
+          />
         </ul>
-        <section className={`flex ${styles.mainSection}`}> 
+        <section className={`flex ${styles.mainSection}`}>
           <motion.div
             layoutId={post.slug}
             initial={false}
-
             className={`cardItem ${styles.post}`}
           >
             <motion.div
               layout="size"
-
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -103,30 +107,30 @@ export default function Blog({posts}: BlogProps){
           <motion.div
             className={styles.anchorList}
             animate={{ flex: sidebar ? "1 0 250px" : 0, width: "0px" }}
-            
             transition={{ stiffness: 200 }}
           >
             <ul>
               <SocialItem
-                icon={sidebar ? "bx bx-arrow-from-left" : "bx bx-arrow-from-right"}
+                icon={
+                  sidebar ? "bx bx-arrow-from-left" : "bx bx-arrow-from-right"
+                }
                 label="hide"
                 title={sidebar ? "Hide Sidebar" : ""}
                 href={"#"}
-                onClick={() => setSideBar(prev => !prev)}
+                onClick={() => setSideBar((prev) => !prev)}
                 newPage={false}
               />
             </ul>
             <AnimatePresence>
-              {sidebar &&
+              {sidebar && (
                 <motion.ul
                   className={`${styles.anchors}`}
-                  
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0, width: 0 }}
                   transition={{ stiffness: 200 }}
                 >
-                  {anchors.map(q =>
+                  {anchors.map((q) => (
                     <SocialItem
                       key={q.id}
                       icon="bx bxs-chevron-right"
@@ -135,14 +139,13 @@ export default function Blog({posts}: BlogProps){
                       href={`#${q.id}`}
                       newPage={false}
                     />
-                  )}
+                  ))}
                 </motion.ul>
-              }
+              )}
             </AnimatePresence>
           </motion.div>
         </section>
       </PageBase>
     </>
-
   );
 }
