@@ -5,6 +5,26 @@
 .mainSection {
   align-items: stretch;
 
+  .filterTags {
+    .tagButton {
+      background-color: var(--primary-opaque);
+      border: none;
+      color: black;
+      padding: var(--padding-small);
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 2px;
+      box-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &.selected {
+        color: white;
+        background-color: var(--accent);
+      }
+    }
+  }
   .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -53,8 +73,6 @@
         max-height: 100%;
         max-width: 100%;
         width: 100%;
-
-        // cursor: pointer;
       }
     }
     &::after {
@@ -89,16 +107,49 @@
     flex: 1;
   }
 
+  .previewInformation {
+    background: linear-gradient(
+      0deg,
+      rgb(0, 0, 0, 1) 55%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    text-shadow: 1px 1px 5px #000000;
+
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    color: white;
+
+    margin-top: var(--padding-small);
+    padding: var(--padding-small);
+    border-radius: 0;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 111px;
+
+    .title {
+      font-weight: var(--font-bold);
+      font-size: var(--font-medium);
+    }
+    .tag {
+      font-size: var(--font-small);
+      margin-right: 10px;
+      color: rgba(185, 185, 185, 0.5);
+    }
+  }
+
   .thumbnails {
     display: flex;
     align-items: flex-end;
 
     width: 100%;
     white-space: nowrap;
-    margin-top: 16px;
+    margin-top: var(--padding-mini);
     padding-bottom: 5px;
 
     overflow-x: auto;
+    position: relative;
 
     cursor: grab;
     flex-shrink: 0;
@@ -109,7 +160,7 @@
     }
 
     .thumbnailWrapper {
-      width: 100px;
+      width: 110px;
       height: 100px;
       overflow: hidden;
 

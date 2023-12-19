@@ -11,14 +11,29 @@ import { ImagePreview } from "../components/imagePreview";
 import PageBase from "../components/pageBase";
 import SocialItem from "../components/socialItem";
 import gallery from "../docs/json/gallery.json";
+import { formatDate } from "../lib/helper";
 
 export default function Gallery() {
-  // Ref for gallery container
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
-  // State to track selected image index for preview
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
+
+  const toggleTag = (tag: string) => {
+    setSelectedTags((prevSelectedTags) =>
+      prevSelectedTags.includes(tag)
+        ? prevSelectedTags.filter((selectedTag) => selectedTag !== tag)
+        : [...prevSelectedTags, tag]
+    );
+  };
+
+  const filteredGallery =
+    selectedTags.length > 0
+      ? gallery.filter((item) =>
+          item.tags.some((tag) => selectedTags.includes(tag))
+        )
+      : gallery;
 
   // Handler for image click
   const handleImageClick = (index: number) => {
@@ -40,7 +55,8 @@ export default function Gallery() {
       );
 
       galleryItems.forEach((galleryItem: HTMLElement, index) => {
-        const ratio = gallery[index].width / gallery[index].height;
+        const ratio =
+          filteredGallery[index].width / filteredGallery[index].height;
 
         galleryItem.style.flexBasis = `calc(${ratio} * 15em)`;
         galleryItem.style.flexGrow = `calc(${ratio} * 100)`;
@@ -49,11 +65,13 @@ export default function Gallery() {
 
     calculateColumnSpan();
     window.addEventListener("resize", calculateColumnSpan);
+    window.addEventListener("load", calculateColumnSpan);
 
     return () => {
       window.removeEventListener("resize", calculateColumnSpan);
+      window.addEventListener("load", calculateColumnSpan);
     };
-  }, []);
+  }, [filteredGallery]);
 
   return (
     <>
@@ -80,7 +98,11 @@ export default function Gallery() {
         <section className={`${styles.mainSection} flex flexColumn`}>
           <CardPanel title={"Gallery 🖌️"}>
             <p>
-              📮<b>{gallery.length}</b> Posts
+              📮
+              <b>{gallery.length} </b> Posts{" "}
+              {selectedTags.length > 0
+                ? `(Filtered: ${filteredGallery.length})`
+                : ""}
             </p>
             <p>
               ❗Here I post my sketches and finished drawings. All of the images
@@ -88,10 +110,27 @@ export default function Gallery() {
             </p>
 
             <hr />
-
+            <div className={styles.filterTags}>
+              <div className={styles.tagButtons}>
+                {Array.from(new Set(gallery.flatMap((item) => item.tags))).map(
+                  (tag) => (
+                    <button
+                      key={tag}
+                      className={`cardItem ${styles.tagButton} ${
+                        selectedTags.includes(tag) ? styles.selected : ""
+                      } `}
+                      onClick={() => toggleTag(tag)}
+                    >
+                      #{tag}
+                    </button>
+                  )
+                )}
+              </div>
+            </div>
+            <br />
             {/* Gallery Items */}
             <div className={styles.gallery} ref={containerRef}>
-              {gallery.map((galleryItem: any, index: number) => (
+              {filteredGallery.map((galleryItem: any, index: number) => (
                 <div
                   className={styles.galleryItem}
                   key={index}
@@ -106,7 +145,7 @@ export default function Gallery() {
                       quality={65}
                     />
                     <figcaption>
-                      [{galleryItem.date}]
+                      [{formatDate(galleryItem.date)}]
                       <br />
                       {galleryItem.title}
                     </figcaption>
@@ -122,6 +161,7 @@ export default function Gallery() {
               <ImagePreview
                 key={"imagePreviewModal"}
                 imageIndex={selectedImageIndex}
+                filteredGallery={filteredGallery}
                 onClose={handleClosePreview}
               />
             )}

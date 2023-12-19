@@ -5,15 +5,31 @@ import { motion } from "framer-motion";
 
 import React, { useEffect, useRef, useState } from "react";
 
-import gallery from "../docs/json/gallery.json";
+import { formatDate } from "../lib/helper";
 
-// TODO Cleanup
+// TODO Separate CSS and Thumbnail(?)
+
+interface GalleryItem {
+  title: string;
+  date: string;
+  url: string | null;
+  image: string;
+  tags: string[];
+  width: number;
+  height: number;
+}
+
 interface ImagePreviewProps {
   imageIndex: number | null;
+  filteredGallery: GalleryItem[];
   onClose?: () => void;
 }
 
-export function ImagePreview({ imageIndex, onClose }: ImagePreviewProps) {
+export function ImagePreview({
+  imageIndex,
+  filteredGallery,
+  onClose,
+}: ImagePreviewProps) {
   // Thumbnail drag state
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState<number | null>(null);
@@ -88,7 +104,7 @@ export function ImagePreview({ imageIndex, onClose }: ImagePreviewProps) {
           {/* TODO fix image preview loading (broken with new nextjs version) */}
           <motion.div
             className={styles.imagePreviewWrapper}
-            key={`${gallery[selectedThumbnailIndex || 0].image} `}
+            key={`${filteredGallery[selectedThumbnailIndex || 0].image} `}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -99,16 +115,37 @@ export function ImagePreview({ imageIndex, onClose }: ImagePreviewProps) {
           >
             <Image
               key={"Image"}
-              src={gallery[selectedThumbnailIndex || 0].image}
-              alt={gallery[selectedThumbnailIndex || 0].title}
+              src={filteredGallery[selectedThumbnailIndex || 0].image}
+              alt={filteredGallery[selectedThumbnailIndex || 0].title}
               style={{
                 objectFit: "contain",
               }}
               fill
             />
           </motion.div>
+
+          {/* Preview Information */}
+          <div className={`${styles.previewInformation}`}>
+            <span className={styles.title}>
+              {filteredGallery[selectedThumbnailIndex || 0].title}
+            </span>
+            <br />
+            <span>
+              {formatDate(filteredGallery[selectedThumbnailIndex || 0].date)}
+            </span>
+            <br />
+            <div className={styles.tags}>
+              {filteredGallery[selectedThumbnailIndex || 0].tags.map(
+                (tag, index) => (
+                  <span key={index} className={styles.tag}>
+                    #{tag}
+                  </span>
+                )
+              )}
+            </div>
+          </div>
+
           {/* Thumbnails */}
-          {/* TODO Animate */}
           <div
             key="thumbnails"
             className={styles.thumbnails}
@@ -120,7 +157,7 @@ export function ImagePreview({ imageIndex, onClose }: ImagePreviewProps) {
             onMouseLeave={handleMouseUp}
             onWheel={handleWheel}
           >
-            {gallery.map((thumbnail, index) => (
+            {filteredGallery.map((thumbnail, index) => (
               <div
                 className={`
                   ${styles.thumbnailWrapper} 
@@ -135,13 +172,12 @@ export function ImagePreview({ imageIndex, onClose }: ImagePreviewProps) {
                   alt={`Thumbnail ${index + 1}`}
                   style={{ objectFit: "cover", objectPosition: "top" }}
                   quality={35}
-                  width={100}
+                  width={110}
                   height={100}
                 />
               </div>
             ))}
           </div>
-          {/* TODO Add Image Information */}
         </motion.div>
       )}
     </>

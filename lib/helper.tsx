@@ -1,7 +1,6 @@
 export function countWords(str: string): number {
-  
   str = str.replace(/<[^>]*>/g, " ");
-  const wordCount = (str.match(/(?:http(?:s)?:\/\/[^\s]*|\w)+/g) || []);
+  const wordCount = str.match(/(?:http(?:s)?:\/\/[^\s]*|\w)+/g) || [];
   // str = str.replace(/\b(\w+)\/(\w+(?!#\d+))\b/, "\n");
   // str = str.replace(/(\[[^\]]*\]:.*)|(\s*\|([^|]-*\|)*)|(#*)/gm, "");
   // str = str.trim();
@@ -16,23 +15,32 @@ export function readTime(n: number): number {
 }
 
 interface AnchorItemProps {
-  id: string,
-  content: string,
+  id: string;
+  content: string;
 }
 
-export function truncate(str: string, n: number): string{
-  return (str.length > n) ? `${str.substring(0, n - 1)  }...` : str;
+export function truncate(str: string, n: number): string {
+  return str.length > n ? `${str.substring(0, n - 1)}...` : str;
 }
 
-export function getAnchors(str: string): AnchorItemProps[] {    
+export function getAnchors(str: string): AnchorItemProps[] {
   const regex = /<h3+.*?id="([^"]*?)".*?>(.+?)<\/h3>/gi;
   let match;
 
   const results = [];
 
   while ((match = regex.exec(str)) !== null) {
-    results.push({ id: match[1], content: match[2]});
+    results.push({ id: match[1], content: match[2] });
   }
 
   return results;
+}
+
+export function formatDate(str: string): string {
+  const date = new Date(`${str}-01`);
+  const options: Intl.DateTimeFormatOptions = {
+    month: "short",
+    year: "numeric",
+  };
+  return new Intl.DateTimeFormat("en-US", options).format(date);
 }
