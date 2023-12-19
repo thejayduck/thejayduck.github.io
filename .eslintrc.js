@@ -70,10 +70,7 @@ module.exports = {
     "prefer-template": "error",
     "prefer-arrow-callback": "error",
     "object-shorthand": "error",
-    "indent": [
-      "error",
-      2
-    ]
+    "indent": "off"
   },
   ignorePatterns: [
     "public/**/*.js"
