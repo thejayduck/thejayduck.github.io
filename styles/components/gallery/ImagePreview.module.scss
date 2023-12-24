@@ -1,0 +1,54 @@
+.imagePreview {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  z-index: var(--z-absolute);
+
+  .imagePreviewWrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    flex: 1;
+  }
+
+  .previewInformation {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.8) 55%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    text-shadow: 1px 1px 5px #000000;
+
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    color: white;
+
+    padding: var(--padding-small);
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 111px;
+
+    .title {
+      font-weight: var(--font-bold);
+      font-size: var(--font-medium);
+    }
+    .tag {
+      font-size: var(--font-small);
+      margin-right: 10px;
+      color: rgba(185, 185, 185, 0.5);
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.thumbnails {
+  display: flex;
+  align-items: flex-end;
+
+  width: 100%;
+  white-space: nowrap;
+  margin-top: var(--padding-mini);
+  padding-bottom: 5px;
+
+  overflow-x: auto;
+  position: relative;
+
+  cursor: grab;
+  flex-shrink: 0;
+  user-select: none;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  .thumbnailWrapper {
+    width: 110px;
+    height: 100px;
+    overflow: hidden;
+
+    margin: 0 var(--padding-mini);
+    border-radius: var(--border);
+    border: 3px solid transparent;
+
+    flex: 0 0 auto;
+    transition: transform 0.2s ease;
+
+    .thumbnail {
+      pointer-events: none;
+    }
+
+    &:hover {
+      border-color: white;
+    }
+  }
+  .selected,
+  .selected:hover {
+    border-color: var(--accent);
+    transform: scale(0.9);
+  }
+}

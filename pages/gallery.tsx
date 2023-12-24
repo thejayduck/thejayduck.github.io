@@ -7,11 +7,11 @@ import { AnimatePresence } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 import CardPanel from "../components/cardPanel";
-import { ImagePreview } from "../components/imagePreview";
 import PageBase from "../components/pageBase";
 import SocialItem from "../components/socialItem";
 import gallery from "../docs/json/gallery.json";
 import { formatDate } from "../lib/helper";
+import { ImagePreview } from "../components/gallery/imagePreview";
 
 export default function Gallery() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -121,7 +121,7 @@ export default function Gallery() {
                       } `}
                       onClick={() => toggleTag(tag)}
                     >
-                      #{tag}
+                      {tag}
                     </button>
                   )
                 )}
@@ -160,9 +160,9 @@ export default function Gallery() {
             {selectedImageIndex !== null && (
               <ImagePreview
                 key={"imagePreviewModal"}
-                imageIndex={selectedImageIndex}
-                filteredGallery={filteredGallery}
-                onClose={handleClosePreview}
+                targetIndex={selectedImageIndex}
+                images={filteredGallery}
+                onOutsideClick={handleClosePreview}
               />
             )}
           </AnimatePresence>
