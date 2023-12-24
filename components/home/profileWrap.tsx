@@ -4,6 +4,8 @@ import Image from "next/image";
 
 import SocialItem from "../socialItem";
 
+// TODO remake & improve mobile compatibility
+
 export default function ProfileWrap() {
   return (
     <section className={`${styles.profileWrap}`}>
