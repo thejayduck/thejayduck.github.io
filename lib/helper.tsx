@@ -8,8 +8,8 @@ export function countWords(str: string): number {
 }
 
 export function readTime(n: number): number {
-  const wpm = 200;
-  const result = Math.ceil(n / wpm);
+  const wordsPerMinute = 200;
+  const result = Math.ceil(n / wordsPerMinute); // In minutes
 
   return result;
 }
@@ -20,7 +20,7 @@ interface AnchorItemProps {
 }
 
 export function truncate(str: string, n: number): string {
-  return str.length > n ? `${str.substring(0, n - 1)}...` : str;
+  return str.length > n ? `${str.substring(0, n)}...` : str;
 }
 
 export function getAnchors(str: string): AnchorItemProps[] {

@@ -8,7 +8,9 @@ import PageBase from "../components/pageBase";
 import SocialItem from "../components/socialItem";
 import GetPosts from "../lib/getPosts";
 
-export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>> {
+export async function getStaticProps(): Promise<
+  GetStaticPropsResult<BlogProps>
+> {
   const postsData = GetPosts();
 
   return {
@@ -19,22 +21,22 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>>
   };
 }
 
+//? Combine blog.tsx and blogitem.tsx props
 interface BlogProps {
-  posts: BlogPostProps[]
+  posts: BlogPostProps[];
 }
 
 interface BlogPostProps {
-  slug: string,
-  title: string,
-  date: string,
-  image: string,
-  content: string,
+  slug: string;
+  title: string;
+  date: string;
+  image: string;
+  content: string;
+  summary: string;
+  tags: string[];
 }
 
 export default function Blog({ posts }: BlogProps) {
-  // const tagSet = new Set<string>();
-  // posts.flatMap(p => p.categories).forEach(e => tagSet.add(e));
-
   return (
     <>
       <Head>
@@ -45,15 +47,30 @@ export default function Blog({ posts }: BlogProps) {
       </Head>
       <PageBase>
         <ul className={`flex flexRight ${styles.backButton}`}>
-          <SocialItem icon="bx bx-undo" label="back" title="Back to Homepage" href="/" newPage={false} />
+          <SocialItem
+            icon="bx bx-undo"
+            label="back to homepage"
+            title="Back to Homepage"
+            href="/"
+            newPage={false}
+          />
         </ul>
 
         <section>
-          <div className={` ${styles.posts}`}>
-            {posts.map(q =>
-              <BlogItem key={q.slug} id={q.slug} title={q.title} date={q.date} content={q.content} image={q.image} />
-            )}
-          </div>
+          <ul className={` ${styles.posts}`}>
+            {posts.map((q) => (
+              <BlogItem
+                key={q.slug}
+                id={q.slug}
+                title={q.title}
+                date={q.date}
+                image={q.image}
+                content={q.content}
+                summary={q.summary}
+                tags={q.tags}
+              />
+            ))}
+          </ul>
         </section>
       </PageBase>
     </>

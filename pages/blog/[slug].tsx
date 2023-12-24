@@ -104,7 +104,8 @@ export default function Blog({ posts }: BlogProps) {
             </motion.div>
           </motion.div>
 
-          <motion.div
+          {/* ? Remove */}
+          {/* <motion.div
             className={styles.anchorList}
             animate={{ flex: sidebar ? "1 0 250px" : 0, width: "0px" }}
             transition={{ stiffness: 200 }}
@@ -143,7 +144,7 @@ export default function Blog({ posts }: BlogProps) {
                 </motion.ul>
               )}
             </AnimatePresence>
-          </motion.div>
+          </motion.div> */}
         </section>
       </PageBase>
     </>
