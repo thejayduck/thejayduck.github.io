@@ -39,10 +39,10 @@ export default function Home() {
               <p>
                 I am a... former 3rd year{" "}
                 <span>English Language and Literature</span> student in Turkey.
-                I am committed to learn new skills, and try out new stuff
-                whenever I have the time to do so. Hence the reason this website
-                is about everything except my university major 😅. Anyways,
-                don&apos;t forget to check my{" "}
+                Currently living in Germany. I am committed to learn new skills,
+                and try out new stuff whenever I have the time to do so. Hence
+                the reason this website is about everything except my university
+                major 😅. Anyways, don&apos;t forget to check my{" "}
                 <span>
                   <a href="#blog">Blog Page</a>
                 </span>{" "}
