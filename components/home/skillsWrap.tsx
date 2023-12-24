@@ -6,7 +6,7 @@ import Subtitle from "../subtitle";
 
 export default function SkillsWrap() {
   return (
-    <CardPanel title="Skill Set 🔧">
+    <CardPanel title="Toolbox 🧰">
       <Subtitle text="Hobbies" icon="bx bx-hive" />
       <div className={`${styles.skills} grid`}>
         <SkillBar title="Programming" icon="bx bx-code-curly" />
@@ -104,6 +104,11 @@ export default function SkillsWrap() {
           title="Premiere Pro"
           icon="devicon-premierepro-plain"
           href="https://www.adobe.com/products/premiere.html"
+        />
+        <SkillBar
+          title="Linux (Arch Linux)"
+          icon="devicon-linux-plain"
+          href="https://archlinux.org/"
         />
       </div>
 
