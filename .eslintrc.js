@@ -12,7 +12,8 @@ module.exports = {
   extends: [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "prettier"
   ],
   plugins: [
     "simple-import-sort",
