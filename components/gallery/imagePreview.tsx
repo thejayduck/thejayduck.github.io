@@ -55,7 +55,7 @@ export function ImagePreview({
                 objectFit: "contain",
               }}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" //? Not sure if this helps at all
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 75vw" //? Not sure if this helps at all
               priority={false}
             />
           </motion.div>
