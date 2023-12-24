@@ -1,7 +1,10 @@
-import { useEffect, useRef, useState } from "react";
 import styles from "../../styles/components/gallery/ImagePreviewThumbnail.module.scss";
 
 import Image from "next/image";
+
+import { useEffect, useRef, useState } from "react";
+
+import IImagePreview from "./IImagePreview";
 
 export default function ImageThumbnail({
   targetIndex,

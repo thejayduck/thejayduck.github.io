@@ -1,13 +1,11 @@
 import styles from "../styles/components/BlogItem.module.scss";
 
 import Image from "next/image";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 import React from "react";
 
-import { countWords, readTime, truncate } from "../lib/helper";
+import { countWords, readTime } from "../lib/helper";
 
 interface BlogProps {
   id: string;
@@ -44,7 +42,7 @@ export default function BlogItem({
       </div>
       <div className={styles.postContainer}>
         <article>
-          <Link href={`/blog/${id}`}>
+          <Link href={`/blog/${id}`} passHref>
             <h2>{title}</h2>
           </Link>
           <div className={styles.tags}>
@@ -55,7 +53,7 @@ export default function BlogItem({
             ))}
           </div>
           <p>{summary}</p>
-          <Link href={`/blog/${id}`}>
+          <Link href={`/blog/${id}`} passHref>
             <p className={styles.readMore} title={`${title} - Read More`}>
               Read More ►
             </p>

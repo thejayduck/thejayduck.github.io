@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 
 import { formatDate } from "../../lib/helper";
+
+import IImagePreview from "./IImagePreview";
 import ImageThumbnail from "./imageThumbnail";
 
 export function ImagePreview({

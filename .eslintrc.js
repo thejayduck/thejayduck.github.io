@@ -12,8 +12,7 @@ module.exports = {
   extends: [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "next/core-web-vitals",
-    "prettier"
+    "next/core-web-vitals"
   ],
   plugins: [
     "simple-import-sort",
@@ -58,10 +57,7 @@ module.exports = {
         ]
       }
     ],
-    "semi": [
-      "error",
-      "always"
-    ],
+    "semi": 0,
     "quotes": [
       "error",
       "double"
