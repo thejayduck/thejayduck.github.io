@@ -21,17 +21,16 @@ export default function SocialItem({
 }: SocialItemProps) {
   return (
     <li id={label} className={`cardItem ${styles.social}`}>
-      <Link href={href} legacyBehavior>
-        <a
-          onClick={onClick}
-          aria-label={label}
-          target={newPage ? "_blank" : "_self"}
-          title={label}
-          rel="noreferrer"
-        >
-          <i className={icon} />
-          {title && <span>{title}</span>}
-        </a>
+      <Link
+        href={href}
+        onClick={onClick}
+        aria-label={label}
+        target={newPage ? "_blank" : "_self"}
+        title={label}
+        rel="noreferrer"
+      >
+        <i className={icon} />
+        {title && <span>{title}</span>}
       </Link>
     </li>
   );
