@@ -32,7 +32,6 @@
 
     position: absolute;
     user-select: none;
-    pointer-events: none;
     color: white;
 
     padding: var(--padding-small);
@@ -44,6 +43,39 @@
     .title {
       font-weight: var(--font-bold);
       font-size: var(--font-medium);
+    }
+    .external {
+      text-decoration: none;
+      text-align: center;
+      color: inherit;
+      color: var(--accent);
+      padding: 5px;
+      background-color: white;
+      text-shadow: none;
+      box-shadow: 1px 1px 10px #000000;
+
+      border-radius: var(--border);
+      -webkit-animation: breathing 5s ease-in-out infinite;
+      animation: breathing 5s ease-in-out infinite;
+
+      @keyframes breathing {
+        0% {
+          background-color: white;
+          color: var(--accent);
+        }
+        25% {
+          background-color: var(--accent);
+          color: white;
+        }
+        60% {
+          background-color: white;
+          color: var(--accent);
+        }
+        100% {
+          background-color: white;
+          color: var(--accent);
+        }
+      }
     }
     .tag {
       font-size: var(--font-small);

@@ -1,6 +1,7 @@
 import styles from "../../styles/components/gallery/ImagePreview.module.scss";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 import React, { useState } from "react";
@@ -62,6 +63,16 @@ export function ImagePreview({
 
           {/* Preview Information */}
           <div className={`${styles.previewInformation}`}>
+            {images[selectedThumbnailIndex || 0]?.url && (
+              <Link
+                title="View in DeviantArt"
+                passHref
+                target="_blank"
+                href={images[selectedThumbnailIndex || 0]?.url || ""}
+                className={`${styles.external} bx bxl-deviantart`}
+                onClick={(e) => e.stopPropagation}
+              />
+            )}
             <span className={styles.title}>
               {images[selectedThumbnailIndex || 0].title}
             </span>
