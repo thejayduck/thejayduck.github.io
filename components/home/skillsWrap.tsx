@@ -110,6 +110,11 @@ export default function SkillsWrap() {
           icon="devicon-linux-plain"
           href="https://archlinux.org/"
         />
+        <SkillBar
+          title="Infinite Painter"
+          icon="bx bxs-palette"
+          href="https://infinitestudio.art/"
+        />
       </div>
 
       <hr />
