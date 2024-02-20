@@ -41,7 +41,7 @@ export default function Home() {
                 skills, and try out new stuff whenever I have the time to do so.
                 Anyways, don&apos;t forget to check my{" "}
                 <span>
-                  <Link href="/blog">Blog Page</Link>
+                  <Link href="/blog">Blog</Link>
                 </span>
                 ,{" "}
                 <span>
