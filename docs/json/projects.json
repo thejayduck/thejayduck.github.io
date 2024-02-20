@@ -15,7 +15,8 @@
             "Narrative",
             "Singleplayer",
             "Story Rich",
-            "GameJam"
+            "GameJam",
+            "Ren'Py"
         ],
         "year": 2022,
         "links": [
@@ -41,8 +42,9 @@
             "Horror",
             "Monsters",
             "Mystery",
-            "Pixel Art",
-            "GameJam"
+            "Pixel-Art",
+            "GameJam",
+            "Unity"
         ],
         "year": 2022,
         "links": [
@@ -67,7 +69,8 @@
             "Short",
             "Singleplayer",
             "Unity",
-            "GameJam"
+            "GameJam",
+            "Unity"
         ],
         "year": 2022,
         "links": [
@@ -89,7 +92,9 @@
             "Pet",
             "Simulator",
             "Idle",
-            "Minigames"
+            "Minigames",
+            "Unity",
+            "Open-Source"
         ],
         "year": 2022,
         "links": [
@@ -110,7 +115,8 @@
             "NextJS",
             "TypeScript",
             "Portfolio",
-            "Website"
+            "Website",
+            "Open-Source"
         ],
         "year": 2021,
         "links": [
@@ -131,7 +137,8 @@
             "Book Tracker",
             "Light Novel",
             "NextJS",
-            "Abandoned"
+            "Abandoned",
+            "Open-Source"
         ],
         "year": 2021,
         "links": [
@@ -141,14 +148,14 @@
                 "icon": "bx bxl-github"
             },
             {
-                "title": "Website (Inactive)",
-                "url": "https://novel-tracker.vercel.app",
-                "icon": "bx bx-globe"
-            },
-            {
                 "title": "Trello",
                 "url": "https://trello.com/b/dPv92vJW/novel-tracker",
                 "icon": "bx bxl-trello"
+            },
+            {
+                "title": "Website (Inactive)",
+                "url": "https://novel-tracker.vercel.app",
+                "icon": "bx bx-globe"
             }
         ]
     },
@@ -163,7 +170,8 @@
             "Space",
             "GameJam",
             "Arcade",
-            "Remake"
+            "Remake",
+            "Unity"
         ],
         "year": 2019,
         "links": [
