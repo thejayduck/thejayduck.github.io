@@ -162,7 +162,7 @@
     {
         "title": "Lunar Lander",
         "image": "https://i.imgur.com/HCmCHFf.png",
-        "description": "A simple remake of Lunar Lander for a game jam.",
+        "description": "A simple remake of Lunar Lander for Polyrealm Game Jam.",
         "type": "Game",
         "genre": "Platformer",
         "tags": [
