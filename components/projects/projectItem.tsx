@@ -15,7 +15,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
       <div className={styles.imageContainer}>
         <Image
           src={project.image}
-          alt={""}
+          alt={"Project Image"}
           width={128}
           height={128}
           quality={75}
@@ -24,11 +24,11 @@ export default function ProjectItem({ project }: ProjectItemProps) {
           {project.links.map((link) => (
             <Link
               className={styles.link}
-              href={link.url}
               key={link.title}
-              passHref
+              href={link.url}
               title={link.title}
               aria-label={link.title}
+              passHref
             >
               <i className={link.icon}></i>
             </Link>
@@ -48,19 +48,6 @@ export default function ProjectItem({ project }: ProjectItemProps) {
             ))}
           </div>
           <p>{project.description}</p>
-          {/* {project.links.map((link) => (
-            <Link
-              className={styles.link}
-              href={link.url}
-              key={link.title}
-              passHref
-              title={link.title}
-              aria-label={link.title}
-            >
-              <i className={link.icon}></i>
-            </Link>
-          ))} */}
-
           <hr />
           <span className={styles.stats}>
             <b>Release Date</b>: {project.year} 🗓️ | <b>Genre</b>:{" "}

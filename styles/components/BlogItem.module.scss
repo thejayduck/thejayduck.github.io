@@ -16,12 +16,12 @@
     margin-top: var(--padding-small);
 
     .tag {
+      display: inline-block;
       font-size: var(--font-small);
       margin-right: 10px;
       color: var(--accent);
       text-transform: uppercase;
       font-weight: bold;
-      font-size: var(--font-small);
     }
 
     a {
