@@ -1,4 +1,4 @@
-import styles from "../../styles/components/projects/ProjectItem.module.scss";
+import styles from "../../styles/components/ProjectItem.module.scss";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -44,14 +44,15 @@ export default function ProjectItem({ project }: ProjectItemProps) {
             {project.tags.map((tag, index) => (
               <span key={index} className={styles.tag}>
                 {tag}
+                {index !== project.tags.length - 1 && ","}
               </span>
             ))}
           </div>
           <p>{project.description}</p>
           <hr />
           <span className={styles.stats}>
-            <b>Release Date</b>: {project.year} 🗓️ | <b>Genre</b>:{" "}
-            {project.genre}
+            {project.type} | {project.genre ? `${project.genre} | ` : ""}
+            {project.year}
           </span>
         </article>
       </div>

@@ -105,7 +105,7 @@
         "image": "https://i.imgur.com/JgO4l5D.jpg",
         "description": "My Portfolio. You are looking at it right now!",
         "type": "Website",
-        "genre": "Portfolio",
+        "genre": null,
         "tags": [
             "NextJS",
             "TypeScript",
@@ -126,7 +126,7 @@
         "image": "https://i.imgur.com/1fMUa8n.png",
         "description": "Novel Tracker is a simple novel and light novel tracker.",
         "type": "Website",
-        "genre": "Book Tracking",
+        "genre": null,
         "tags": [
             "Book Tracker",
             "Light Novel",

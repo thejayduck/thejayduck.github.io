@@ -97,6 +97,11 @@ select {
   // padding: 0 var(--padding-small) 0 var(--padding-small);
 }
 
+// Back button
+.backButton {
+  padding: 0;
+}
+
 // Flex
 .flex {
   display: flex;

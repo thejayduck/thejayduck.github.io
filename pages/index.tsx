@@ -7,7 +7,6 @@ import CardPanel from "../components/cardPanel";
 import ProfileWrap from "../components/home/profileWrap";
 import SkillsWrap from "../components/home/skillsWrap";
 import PageBase from "../components/pageBase";
-import ProjectPanel from "../components/projects/projectPanel";
 import Subtitle from "../components/subtitle";
 
 export default function Home() {
@@ -43,22 +42,20 @@ export default function Home() {
                 Anyways, don&apos;t forget to check my{" "}
                 <span>
                   <Link href="/blog">Blog Page</Link>
+                </span>
+                ,{" "}
+                <span>
+                  <Link href="/gallery">Gallery</Link>
                 </span>{" "}
                 and{" "}
                 <span>
-                  <Link href="/gallery">Gallery</Link>
+                  <Link href="/projects">Projects</Link>
                 </span>{" "}
                 for more content!
               </p>
             </CardPanel>
 
             <SkillsWrap />
-
-            <CardPanel title="Projects 💻">
-              <div className={`${styles.projects}`}>
-                <ProjectPanel />
-              </div>
-            </CardPanel>
           </section>
         </div>
       </PageBase>

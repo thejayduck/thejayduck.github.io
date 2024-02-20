@@ -27,6 +27,13 @@ export default function ProfileWrap() {
             href="/blog"
             newPage={false}
           />
+          <Button // projects
+            icon="bx bxs-bulb"
+            label="projects"
+            title="Projects"
+            href="/projects"
+            newPage={false}
+          />
           <Button // gallery
             icon="bx bxs-image"
             label="gallery"

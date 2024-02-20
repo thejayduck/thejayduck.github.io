@@ -3,7 +3,7 @@ import styles from "../../styles/BlogPost.module.scss";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticPropsResult } from "next/types";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
@@ -70,12 +70,12 @@ export default function Blog({ posts }: BlogProps) {
       </Head>
 
       <PageBase>
-        <ul className={`flex flexRight ${styles.backButton}`}>
+        <ul className={"flex flexRight backButton"}>
           <Button
             icon="bx bx-undo"
-            label="back to posts"
-            title="Back to Posts"
-            href="/blog"
+            label="back to homepage"
+            title="Back to Homepage"
+            href="/"
             newPage={false}
           />
         </ul>

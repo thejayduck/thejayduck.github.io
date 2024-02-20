@@ -84,7 +84,7 @@ export default function Gallery() {
 
       <PageBase>
         {/* Back to Homepage button */}
-        <ul className={`flex flexRight ${styles.backButton}`}>
+        <ul className={"flex flexRight backButton"}>
           <Button
             icon="bx bx-undo"
             label="back to homepage"

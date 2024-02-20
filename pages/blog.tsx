@@ -46,7 +46,7 @@ export default function Blog({ posts }: BlogProps) {
         <meta name="description" content="Arda Fevzi Armutcu's Blog" />
       </Head>
       <PageBase>
-        <ul className={`flex flexRight ${styles.backButton}`}>
+        <ul className={"flex flexRight backButton"}>
           <Button
             icon="bx bx-undo"
             label="back to homepage"

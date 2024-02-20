@@ -38,7 +38,7 @@ export default function BlogItem({
       className={`cardItem ${styles.blogItem}`}
     >
       <div className={styles.imageContainer}>
-        <Image src={image} alt={""} fill objectFit="cover" />
+        <Image src={image} alt={""} fill />
       </div>
       <div className={styles.postContainer}>
         <article>
@@ -49,6 +49,7 @@ export default function BlogItem({
             {tags.map((tag, index) => (
               <span key={index} className={styles.tag}>
                 {tag}
+                {index !== tags.length - 1 && ","}
               </span>
             ))}
           </div>
@@ -60,8 +61,7 @@ export default function BlogItem({
           </Link>
           <hr />
           <span className={styles.stats}>
-            <b>Stats</b>: {date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes
-            ⏱️
+            {date} | {wordCount} Words | ~{avgTime} Minutes
           </span>
         </article>
       </div>

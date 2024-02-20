@@ -3,7 +3,7 @@ export default interface IProjectItem {
   image: string;
   description: string;
   type: string;
-  genre: string;
+  genre?: string | null;
   year: number;
   tags: string[];
   links: {
