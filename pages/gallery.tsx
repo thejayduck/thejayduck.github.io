@@ -6,10 +6,10 @@ import { AnimatePresence } from "framer-motion";
 
 import React, { useEffect, useRef, useState } from "react";
 
+import Button from "../components/button";
 import CardPanel from "../components/cardPanel";
 import { ImagePreview } from "../components/gallery/imagePreview";
 import PageBase from "../components/pageBase";
-import SocialItem from "../components/socialItem";
 import gallery from "../docs/json/gallery.json";
 import { formatDate } from "../lib/helper";
 
@@ -85,7 +85,7 @@ export default function Gallery() {
       <PageBase>
         {/* Back to Homepage button */}
         <ul className={`flex flexRight ${styles.backButton}`}>
-          <SocialItem
+          <Button
             icon="bx bx-undo"
             label="back to homepage"
             title="Back to Homepage"

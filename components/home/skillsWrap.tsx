@@ -82,7 +82,7 @@ export default function SkillsWrap() {
         />
         <SkillBar
           title="Unity Engine"
-          icon="devicon-unity-original"
+          icon="devicon-unity-plain"
           href="https://unity.com/"
         />
         <SkillBar
@@ -141,6 +141,11 @@ export default function SkillsWrap() {
           title="Heroku"
           icon="devicon-heroku-original"
           href="https://heroku.com/"
+        />
+        <SkillBar
+          title="Vercel"
+          icon="devicon-vercel-original"
+          href="https://vercel.com/"
         />
       </div>
     </CardPanel>

@@ -1,0 +1,28 @@
+.button {
+  min-width: 50px;
+
+  transition: 0.2s ease-in-out;
+
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: inherit;
+  text-decoration: none;
+  overflow: hidden;
+
+  span {
+    font-weight: var(--font-bold);
+
+    margin: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+  }
+
+  &:hover {
+    color: var(--accent);
+  }
+}

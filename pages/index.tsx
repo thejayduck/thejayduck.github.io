@@ -1,14 +1,14 @@
 import styles from "../styles/Home.module.scss";
 
 import Head from "next/head";
+import Link from "next/link";
 
 import CardPanel from "../components/cardPanel";
 import ProfileWrap from "../components/home/profileWrap";
 import SkillsWrap from "../components/home/skillsWrap";
 import PageBase from "../components/pageBase";
-import ProjectCell from "../components/projectCell";
+import ProjectPanel from "../components/projects/projectPanel";
 import Subtitle from "../components/subtitle";
-import projects from "../docs/json/projects.json";
 
 export default function Home() {
   return (
@@ -37,18 +37,16 @@ export default function Home() {
             >
               <Subtitle text="About Me" icon="bx bx-detail" />
               <p>
-                I am a... former 3rd year{" "}
-                <span>English Language and Literature</span> student in Turkey.
-                Currently living in Germany. I am committed to learn new skills,
-                and try out new stuff whenever I have the time to do so. Hence
-                the reason this website is about everything except my university
-                major 😅. Anyways, don&apos;t forget to check my{" "}
+                I am a student in <span>University of Bremen</span>, studying
+                linguistics and computer science. I am committed to learn new
+                skills, and try out new stuff whenever I have the time to do so.
+                Anyways, don&apos;t forget to check my{" "}
                 <span>
-                  <a href="#blog">Blog Page</a>
+                  <Link href="/blog">Blog Page</Link>
                 </span>{" "}
                 and{" "}
                 <span>
-                  <a href="#gallery">Gallery</a>
+                  <Link href="/gallery">Gallery</Link>
                 </span>{" "}
                 for more content!
               </p>
@@ -56,11 +54,9 @@ export default function Home() {
 
             <SkillsWrap />
 
-            <CardPanel title="Recent Projects 💻">
-              <div className={`${styles.projects} grid`}>
-                {projects.data.map((q) => (
-                  <ProjectCell key={q.title} data={q} />
-                ))}
+            <CardPanel title="Projects 💻">
+              <div className={`${styles.projects}`}>
+                <ProjectPanel />
               </div>
             </CardPanel>
           </section>

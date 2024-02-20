@@ -10,8 +10,8 @@ import remarkGfm from "remark-gfm";
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
+import Button from "../../components/button";
 import PageBase from "../../components/pageBase";
-import SocialItem from "../../components/socialItem";
 import GetPosts from "../../lib/getPosts";
 import { countWords, getAnchors, readTime, truncate } from "../../lib/helper";
 
@@ -71,7 +71,7 @@ export default function Blog({ posts }: BlogProps) {
 
       <PageBase>
         <ul className={`flex flexRight ${styles.backButton}`}>
-          <SocialItem
+          <Button
             icon="bx bx-undo"
             label="back to posts"
             title="Back to Posts"

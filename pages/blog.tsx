@@ -4,8 +4,8 @@ import Head from "next/head";
 import { GetStaticPropsResult } from "next/types";
 
 import BlogItem from "../components/blogItem";
+import Button from "../components/button";
 import PageBase from "../components/pageBase";
-import SocialItem from "../components/socialItem";
 import GetPosts from "../lib/getPosts";
 
 export async function getStaticProps(): Promise<
@@ -47,7 +47,7 @@ export default function Blog({ posts }: BlogProps) {
       </Head>
       <PageBase>
         <ul className={`flex flexRight ${styles.backButton}`}>
-          <SocialItem
+          <Button
             icon="bx bx-undo"
             label="back to homepage"
             title="Back to Homepage"

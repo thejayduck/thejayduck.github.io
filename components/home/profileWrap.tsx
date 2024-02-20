@@ -1,8 +1,9 @@
 import styles from "../../styles/Home.module.scss";
 
 import Image from "next/image";
+import Link from "next/link";
 
-import SocialItem from "../socialItem";
+import Button from "../button";
 
 // TODO remake & improve mobile compatibility
 
@@ -13,28 +14,20 @@ export default function ProfileWrap() {
         className={styles.picture}
         alt="Profile Picture"
         src="/profileAlt.jpg"
-        layout="fixed"
         width={256}
         height={446}
-        quality={65}
+        quality={85}
       />
       <div className={styles.navigation}>
         <ul className={`${styles.pageList}`}>
-          <SocialItem
+          <Button // blog
             icon="bx bxs-box"
             label="blog"
             title="Blog"
             href="/blog"
             newPage={false}
           />
-          {/* <SocialItem
-            icon="bx bxs-detail"
-            label="resume"
-            title="Resume"
-            href="/resume"
-            newPage={false}
-          /> */}
-          <SocialItem
+          <Button // gallery
             icon="bx bxs-image"
             label="gallery"
             title="Gallery"
@@ -42,36 +35,47 @@ export default function ProfileWrap() {
             newPage={false}
           />
         </ul>
-        <ul className={`${styles.socialList}`}>
-          <SocialItem
-            icon="bx bxl-github"
-            label="github"
-            title="Github"
+        <ul className={`cardItem ${styles.externalLinks}`}>
+          <Link // github
             href="https://github.com/thejayduck"
-          />
-          <SocialItem
-            icon="bx bxs-store"
-            label="itch.io"
-            title="Itch.io"
+            passHref
+            aria-label="github"
+            title="github"
+          >
+            <i className="bx bxl-github" />
+          </Link>
+          <Link // itch.io
             href="https://thejayduck.itch.io/"
-          />
-          {/* <SocialItem
-            icon="bx bxl-deviantart"
-            label="deviantart"
+            passHref
+            aria-label="itch.io"
+            title="itch.io"
+          >
+            <i className="bx bxs-store" />
+          </Link>
+          <Link // deviantart
             href="https://www.deviantart.com/thejayduck/"
-          /> */}
-          <SocialItem
-            icon="bx bxl-instagram-alt"
-            label="instagram"
-            title="Instagram"
+            passHref
+            aria-label="deviantart"
+            title="deviantart"
+          >
+            <i className="bx bxl-deviantart" />
+          </Link>
+          <Link // instagram
             href="https://www.instagram.com/ardafevzi.armutcu/"
-          />
-          <SocialItem
-            icon="bx bxl-gmail"
-            label="gmail"
-            title="Gmail"
-            href="mailto:ardafevzi.armutcu@gmail.com"
-          />
+            passHref
+            aria-label="instagram"
+            title="instagram"
+          >
+            <i className="bx bxl-instagram-alt" />
+          </Link>
+          <Link // gmail
+            href="mailto:portfolio.remember014@slmail.me"
+            passHref
+            aria-label="gmail (alias)"
+            title="gmail (alias)"
+          >
+            <i className="bx bxl-gmail" />
+          </Link>
         </ul>
       </div>
     </section>
