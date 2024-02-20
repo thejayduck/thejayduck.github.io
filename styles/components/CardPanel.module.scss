@@ -1,10 +1,10 @@
 .panel {
-    margin-bottom: var(--padding-normal);
-    padding: var(--padding-normal);
+  margin-bottom: var(--spacing-normal);
+  padding: var(--spacing-normal);
 
-    h1 {
-        margin: 0 0 var(--padding-normal) 0;
-        text-align: center;
-        font-size: var(--font-large);
-    }
+  h1 {
+    margin: 0 0 var(--spacing-normal) 0;
+    text-align: center;
+    font-size: var(--font-large);
+  }
 }

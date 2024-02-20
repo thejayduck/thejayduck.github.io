@@ -27,7 +27,7 @@
   }
 
   .post {
-    padding: var(--padding-normal);
+    padding: var(--spacing-normal);
     margin-top: 10px;
     will-change: transform;
     flex: 100%;
@@ -75,7 +75,7 @@
     td {
       border: 1px solid #d6d6d6;
       border-collapse: collapse;
-      padding: 0.4em;
+      padding: var(--spacing-small);
     }
   }
 }

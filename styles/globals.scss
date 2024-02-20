@@ -33,12 +33,12 @@
   --border: 0.7em;
   --blur: 10px;
 
-  // Padding
-  --padding-mini: 0.1rem;
-  --padding-small: 0.5rem;
-  --padding-normal: 1rem;
-  --padding-medium: 2rem;
-  --padding-large: 5rem;
+  // Spacing
+  --spacing-mini: 0.1rem;
+  --spacing-small: 0.5rem;
+  --spacing-normal: 1rem;
+  --spacing-medium: 2rem;
+  --spacing-large: 5rem;
 }
 
 html,
@@ -78,7 +78,7 @@ select {
   // width: 100%;
   // border-radius: var(--border);
 
-  padding: var(--padding-mini) var(--padding-small);
+  padding: var(--spacing-mini) var(--spacing-small);
   box-sizing: border-box;
   border: 2px solid var(--accent);
 }
@@ -88,13 +88,13 @@ select {
   font-size: var(--font-medium);
 }
 
-// CARD ITEM
+// Card Item
 .cardItem {
   box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
   overflow: auto;
   background-color: white;
   border-radius: var(--border);
-  // padding: 0 var(--padding-small) 0 var(--padding-small);
+  // padding: 0 var(--spacing-small) 0 var(--spacing-small);
 }
 
 // Back button
@@ -102,12 +102,12 @@ select {
   padding: 0;
 }
 
+//? Might get rid of this
 // Flex
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;
-  // width: 100%;
 
   gap: 10px;
 }

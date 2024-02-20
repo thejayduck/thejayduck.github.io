@@ -73,9 +73,9 @@ export default function Blog({ posts }: BlogProps) {
         <ul className={"flex flexRight backButton"}>
           <Button
             icon="bx bx-undo"
-            label="back to homepage"
-            title="Back to Homepage"
-            href="/"
+            label="back to posts"
+            title="Back to Posts"
+            href="/blog"
             newPage={false}
           />
         </ul>

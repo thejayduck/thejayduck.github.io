@@ -1,6 +1,4 @@
 .container {
-  // width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -8,12 +6,12 @@
 
   flex: 1 1;
 
-  padding: 1rem 15rem;
+  padding: var(--spacing-normal) 15rem;
 }
 
 @media screen and (max-width: 1280px) {
   .container {
-    padding: 1rem;
+    padding: var(--spacing-normal);
   }
 }
 

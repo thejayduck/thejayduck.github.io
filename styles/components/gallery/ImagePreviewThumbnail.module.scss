@@ -4,7 +4,7 @@
 
   width: 100%;
   white-space: nowrap;
-  margin-top: var(--padding-mini);
+  margin-top: var(--spacing-mini);
   padding-bottom: 5px;
 
   overflow-x: auto;
@@ -23,7 +23,7 @@
     height: 100px;
     overflow: hidden;
 
-    margin: 0 var(--padding-mini);
+    margin: 0 var(--spacing-mini);
     border-radius: var(--border);
     border: 3px solid transparent;
 

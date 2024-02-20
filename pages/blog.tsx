@@ -57,7 +57,7 @@ export default function Blog({ posts }: BlogProps) {
         </ul>
 
         <section>
-          <ul className={` ${styles.posts}`}>
+          <ul className={styles.posts}>
             {posts.map((q) => (
               <BlogItem
                 key={q.slug}

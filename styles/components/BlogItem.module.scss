@@ -1,8 +1,8 @@
 .blogItem {
   color: inherit;
-  padding: var(--padding-small);
-  margin-top: var(--padding-normal);
-  margin-bottom: var(--padding-normal);
+  padding: var(--spacing-small);
+  margin-top: var(--spacing-normal);
+  margin-bottom: var(--spacing-normal);
   display: flex;
   will-change: transform;
   transition: transform 0.3s;
@@ -13,7 +13,7 @@
 
   .postContainer {
     flex: 1;
-    margin-top: var(--padding-small);
+    margin-top: var(--spacing-small);
 
     .tag {
       display: inline-block;
@@ -34,10 +34,10 @@
       margin-top: 1.2rem;
     }
     .readMore {
-      margin-top: var(--padding-small);
+      margin-top: var(--spacing-small);
       color: var(--accent);
       font-weight: bold;
-      padding: var(--padding-small);
+      padding: var(--spacing-small);
       border-radius: var(--border);
       transition: all 0.3s;
 
@@ -69,7 +69,7 @@
     position: relative;
     overflow: hidden;
     border-radius: var(--border);
-    margin-right: var(--padding-normal);
+    margin-right: var(--spacing-normal);
 
     img {
       object-fit: cover;

@@ -1,15 +1,15 @@
 .projectItem {
   color: inherit;
-  padding: 0 var(--padding-small) 0 var(--padding-small);
-  margin-bottom: var(--padding-normal);
+  padding: 0 var(--spacing-small) 0 var(--spacing-small);
+  margin-bottom: var(--spacing-normal);
   display: flex;
 
   .imageContainer {
     position: relative;
-    margin-right: var(--padding-normal);
+    margin-right: var(--spacing-normal);
 
     .link {
-      margin-top: var(--padding-small);
+      margin-top: var(--spacing-small);
       color: var(--accent);
     }
 
@@ -19,6 +19,9 @@
       pointer-events: none;
       border-radius: var(--border);
       object-fit: cover;
+    }
+    i {
+      margin: auto;
     }
   }
   .postContainer {
