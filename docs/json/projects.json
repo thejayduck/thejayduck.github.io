@@ -151,6 +151,11 @@
                 "title": "Trello",
                 "url": "https://trello.com/b/dPv92vJW/novel-tracker",
                 "icon": "bx bxl-trello"
+            },
+            {
+                "title": "Website (Inactive)",
+                "url": "https://novel-tracker.vercel.app",
+                "icon": "bx bx-globe"
             }
         ]
     },
