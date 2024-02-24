@@ -69,6 +69,11 @@ export default function SkillsWrap() {
           icon="devicon-nextjs-plain"
           href="https://nextjs.org/"
         />
+        <SkillBar
+          title="Bash"
+          icon="devicon-bash-plain"
+          href="https://www.gnu.org/software/bash/"
+        />
       </div>
 
       <hr />
@@ -77,7 +82,7 @@ export default function SkillsWrap() {
       <div className={`${styles.skills} grid`}>
         <SkillBar
           title="Visual Studio Code"
-          icon="devicon-visualstudio-plain"
+          icon="devicon-vscode-plain"
           href="https://code.visualstudio.com/"
         />
         <SkillBar
@@ -107,13 +112,18 @@ export default function SkillsWrap() {
         />
         <SkillBar
           title="Linux (Arch Linux)"
-          icon="devicon-linux-plain"
+          icon="devicon-archlinux-plain"
           href="https://archlinux.org/"
         />
         <SkillBar
           title="Infinite Painter"
           icon="bx bxs-palette"
           href="https://infinitestudio.art/"
+        />
+        <SkillBar
+          title="Notion"
+          icon="devicon-notion-plain"
+          href="https://www.notion.so/"
         />
       </div>
 
