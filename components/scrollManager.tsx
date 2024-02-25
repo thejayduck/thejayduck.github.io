@@ -1,14 +1,19 @@
 import styles from "../styles/components/ScrollManager.module.scss";
 
-import { AnimatePresence, motion, useViewportScroll } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 
 import { useState } from "react";
 
 export default function ScrollManager() {
-  const { scrollYProgress } = useViewportScroll();
+  const { scrollYProgress } = useScroll();
   const [isVisible, setVisibility] = useState(false);
 
-  scrollYProgress.onChange((v) => {
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
     setVisibility(v >= 0.3);
   });
 
