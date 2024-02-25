@@ -5,8 +5,6 @@ import Link from "next/link";
 
 import Button from "../button";
 
-// TODO remake & improve mobile compatibility
-
 export default function ProfileWrap() {
   return (
     <section className={`${styles.profileWrap}`}>
