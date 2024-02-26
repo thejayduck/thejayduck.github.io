@@ -1,0 +1,15 @@
+.streamNotification {
+  background-color: var(--notification);
+  border-radius: var(--border);
+  padding: var(--spacing-small);
+  overflow: hidden;
+
+  a {
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    line-height: 20px;
+    display: block;
+  }
+}
