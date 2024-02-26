@@ -12,7 +12,7 @@ export default function StreamNotification() {
     const fetchStreamStatus = async () => {
       try {
         const response = await fetch(
-          "http://livestream.ardarmutcu.com/status.php"
+          "https://livestream.ardarmutcu.com/status.php"
         );
         if (!response.ok) {
           throw new Error("Network responded with an error.");
