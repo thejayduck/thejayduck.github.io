@@ -129,7 +129,7 @@ export default function SkillsWrap() {
 
       <hr />
 
-      <Subtitle text="Databases" icon="bx bx-data" />
+      <Subtitle text="Others" icon="bx bx-box" />
       <div className={`${styles.skills} grid`}>
         <SkillBar
           title="Postgresql"
@@ -141,12 +141,6 @@ export default function SkillsWrap() {
           icon="devicon-mongodb-plain-wordmark"
           href="https://www.mongodb.com/"
         />
-      </div>
-
-      <hr />
-
-      <Subtitle text="Others" icon="bx bx-box" />
-      <div className={`${styles.skills} grid`}>
         <SkillBar
           title="Heroku"
           icon="devicon-heroku-original"
@@ -156,6 +150,11 @@ export default function SkillsWrap() {
           title="Vercel"
           icon="devicon-vercel-original"
           href="https://vercel.com/"
+        />
+        <SkillBar
+          title="nginx"
+          icon="devicon-nginx-original"
+          href="https://nginx.org/"
         />
       </div>
     </CardPanel>
