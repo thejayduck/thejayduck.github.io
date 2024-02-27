@@ -37,6 +37,9 @@ export default function ProjectItem({ project }: ProjectItemProps) {
       </div>
       <div className={styles.postContainer}>
         <article>
+          <span className={styles.stats}>
+            {project.type} {project.genre ? `| ${project.genre}` : ""}
+          </span>
           <Link href={project.links[0].url} passHref>
             <h2>{project.title}</h2>
           </Link>
@@ -49,11 +52,6 @@ export default function ProjectItem({ project }: ProjectItemProps) {
             ))}
           </div>
           <p>{project.description}</p>
-          <hr />
-          <span className={styles.stats}>
-            {project.type} | {project.genre ? `${project.genre} | ` : ""}
-            {project.year}
-          </span>
         </article>
       </div>
     </li>

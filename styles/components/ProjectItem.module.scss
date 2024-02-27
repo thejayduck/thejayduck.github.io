@@ -1,8 +1,11 @@
 .projectItem {
   color: inherit;
   padding: 0 var(--spacing-small) 0 var(--spacing-small);
-  margin-bottom: var(--spacing-normal);
   display: flex;
+
+  &:last-child {
+    margin-bottom: var(--spacing-normal);
+  }
 
   .imageContainer {
     position: relative;
@@ -25,8 +28,6 @@
     }
   }
   .postContainer {
-    flex: 1;
-
     .tag {
       display: inline-block;
       font-size: var(--font-small);
@@ -34,10 +35,6 @@
       color: var(--accent);
       text-transform: uppercase;
       font-weight: bold;
-    }
-
-    p {
-      margin-top: 1.2rem;
     }
 
     .stats {
