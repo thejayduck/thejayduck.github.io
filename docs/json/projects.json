@@ -1,6 +1,38 @@
 [
     {
-        "title": " Streaming Website",
+        "title": "Fractured Divergence",
+        "image": "https://i.imgur.com/LXlcn6G.gif",
+        "description": "Submission to Acerola Jam 0. I tried to go out of my comfort zone in this project as much as possible. Be it, drawing backgrounds, a lot of CGs and writing a different genre of story.",
+        "type": "Game",
+        "genre": "Visual Novel",
+        "tags": [
+            "Acerola Jam 0",
+            "Visual Novel",
+            "Ren'Py",
+            "Python",
+            "Game Jam",
+            "Multiple Endings",
+            "Story Rich",
+            "2D",
+            "Surreal",
+            "Open-Source"
+        ],
+        "year": 2024,
+        "links": [
+            {
+                "title": "Itch.io",
+                "url": "https://thejayduck.itch.io/fractured-divergence",
+                "icon": "bx bxs-store"
+            },
+            {
+                "title": "Github",
+                "url": "https://github.com/thejayduck/acerola-0-jam/",
+                "icon": "bx bxl-github"
+            }
+        ]
+    },
+    {
+        "title": "Streaming Website",
         "image": "https://i.imgur.com/L8NzsFXb.png",
         "description": "A livestreaming website/server for occasional programming and drawing streams.",
         "type": "Website & Server",
