@@ -13,6 +13,7 @@ export default function SkillsWrap() {
         <SkillBar title="Drawing" icon="bx bxs-pencil" />
         <SkillBar title="Writing" icon="bx bxs-pen" />
         <SkillBar title="Cooking" icon="bx bxs-bowl-hot" />
+        <SkillBar title="Reading" icon="bx bxs-book" />
       </div>
 
       <hr />
