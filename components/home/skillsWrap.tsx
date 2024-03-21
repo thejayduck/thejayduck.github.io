@@ -97,6 +97,11 @@ export default function SkillsWrap() {
           href="https://godotengine.org/"
         />
         <SkillBar
+          title="Ren'Py"
+          icon="devicon-renpy-plain"
+          href="https://www.renpy.org/"
+        />
+        <SkillBar
           title="Figma"
           icon="devicon-figma-plain"
           href="https://www.figma.com/"

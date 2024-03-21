@@ -4,14 +4,15 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["i.ibb.co", "i.imgur.com", "images.unsplash.com"],
-  },
-  module: {
-    rules: [
+    remotePatterns: [
       {
-        test: /.md$/,
-        use: "raw-loader"
-      }
+        protocol: "https",
+        hostname: "i.imgur.com"
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com"
+      },
     ]
   },
   webpack: (config, { isServer }) => {
