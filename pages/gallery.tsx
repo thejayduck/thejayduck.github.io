@@ -31,7 +31,7 @@ export default function Gallery() {
   const filteredGallery =
     selectedTags.length > 0
       ? gallery.filter((item) =>
-          item.tags.some((tag) => selectedTags.includes(tag))
+          selectedTags.every((selectedTag) => item.tags.includes(selectedTag))
         )
       : gallery;
 
