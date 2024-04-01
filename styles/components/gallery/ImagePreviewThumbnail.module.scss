@@ -40,6 +40,14 @@
       border-color: white;
     }
   }
+  .suggestiveFilter {
+    filter: blur(3px);
+    transition: 255ms;
+
+    &:hover {
+      filter: blur(0);
+    }
+  }
   .selected,
   .selected:hover {
     border-color: var(--accent);

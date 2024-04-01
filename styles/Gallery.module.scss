@@ -25,6 +25,15 @@
     display: flex;
     flex-wrap: wrap;
 
+    .suggestiveFilter img {
+      filter: blur(3px);
+      transition: 255ms;
+
+      &:hover {
+        filter: blur(0);
+      }
+    }
+
     .galleryItem {
       margin: 0 0.3em 0.45em 0.3em;
       cursor: pointer;

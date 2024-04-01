@@ -82,6 +82,7 @@ export default function ImageThumbnail({
           className={`
                   ${styles.thumbnailWrapper} 
                   ${index === targetIndex ? styles.selected : ""}
+                  ${thumbnail.suggestive ? styles.suggestiveFilter : ""}
                 `}
           key={index}
           onClick={() => handleThumbnailClick(index)}

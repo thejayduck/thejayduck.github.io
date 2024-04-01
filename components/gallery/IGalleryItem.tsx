@@ -3,6 +3,7 @@ export default interface IImageItem {
   date: string;
   url: string | null;
   image: string;
+  suggestive?: boolean;
   tags: string[];
   width: number;
   height: number;

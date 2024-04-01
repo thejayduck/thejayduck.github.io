@@ -112,19 +112,19 @@ export default function Gallery() {
             <hr />
             <div className={styles.filterTags}>
               <div className={styles.tagButtons}>
-                {Array.from(new Set(gallery.flatMap((item) => item.tags))).map(
-                  (tag) => (
-                    <button
-                      key={tag}
-                      className={`cardItem ${styles.tagButton} ${
-                        selectedTags.includes(tag) ? styles.selected : ""
-                      } `}
-                      onClick={() => toggleTag(tag)}
-                    >
-                      {tag}
-                    </button>
-                  )
-                )}
+                {Array.from(
+                  new Set(filteredGallery.flatMap((item) => item.tags))
+                ).map((tag) => (
+                  <button
+                    key={tag}
+                    className={`cardItem ${styles.tagButton} ${
+                      selectedTags.includes(tag) ? styles.selected : ""
+                    } `}
+                    onClick={() => toggleTag(tag)}
+                  >
+                    {tag}
+                  </button>
+                ))}
               </div>
             </div>
             <br />
@@ -132,7 +132,9 @@ export default function Gallery() {
             <div className={styles.gallery} ref={containerRef}>
               {filteredGallery.map((galleryItem: any, index: number) => (
                 <div
-                  className={styles.galleryItem}
+                  className={`${styles.galleryItem} ${
+                    galleryItem.suggestive ? styles.suggestiveFilter : ""
+                  }`}
                   key={index}
                   onClick={() => handleImageClick(index)}
                 >
