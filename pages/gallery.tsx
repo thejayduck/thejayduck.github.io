@@ -106,8 +106,10 @@ export default function Gallery() {
                 : ""}
             </p>
             <p>
-              ❗Here I post my sketches and finished drawings. All of the images
-              down below are downscaled!
+              ❗All of the drawings down below are downscaled!
+              <br />
+              📽️ Some drawings also include a process video if you hover over
+              them.
             </p>
 
             <hr />
