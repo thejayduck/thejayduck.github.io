@@ -110,6 +110,8 @@ export default function Gallery() {
               <br />
               📽️ Some drawings also include a process video if you hover over
               them.
+              <br />✋ Blurred images are suggestive, the blur is removed if
+              hovered.
             </p>
 
             <hr />
