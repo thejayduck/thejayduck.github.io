@@ -14,6 +14,8 @@
   flex-shrink: 0;
   user-select: none;
 
+  // mask: linear-gradient(to left, transparent, black 220px, black 100%);
+
   &:active {
     cursor: grabbing;
   }
