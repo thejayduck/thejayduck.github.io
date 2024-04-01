@@ -4,6 +4,11 @@
         "date": "2024/04",
         "url": null,
         "image": "https://i.imgur.com/mMorN9w.png",
+        "process": {
+            "video": "https://i.imgur.com/ge5PtAg.mp4",
+            "width": 720,
+            "height": 720
+        },
         "suggestive": true,
         "tags": [
             "characterdesign",

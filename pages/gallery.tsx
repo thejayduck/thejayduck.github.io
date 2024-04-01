@@ -8,6 +8,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import Button from "../components/button";
 import CardPanel from "../components/cardPanel";
+import IGalleryItem from "../components/gallery/IGalleryItem";
 import { ImagePreview } from "../components/gallery/imagePreview";
 import PageBase from "../components/pageBase";
 import gallery from "../docs/json/gallery.json";
@@ -130,30 +131,46 @@ export default function Gallery() {
             <br />
             {/* Gallery Items */}
             <div className={styles.gallery} ref={containerRef}>
-              {filteredGallery.map((galleryItem: any, index: number) => (
-                <div
-                  className={`${styles.galleryItem} ${
-                    galleryItem.suggestive ? styles.suggestiveFilter : ""
-                  }`}
-                  key={index}
-                  onClick={() => handleImageClick(index)}
-                >
-                  <figure>
-                    <Image
-                      src={galleryItem.image}
-                      alt={`Drawing ${galleryItem.title}`}
-                      width={galleryItem.width}
-                      height={galleryItem.height}
-                      quality={65}
-                    />
-                    <figcaption>
-                      [{formatDate(galleryItem.date)}]
-                      <br />
-                      {galleryItem.title}
-                    </figcaption>
-                  </figure>
-                </div>
-              ))}
+              {filteredGallery.map(
+                (galleryItem: IGalleryItem, index: number) => (
+                  <div
+                    className={`${styles.galleryItem} ${
+                      galleryItem.suggestive ? styles.suggestiveFilter : ""
+                    }`}
+                    key={index}
+                    onClick={() => handleImageClick(index)}
+                  >
+                    <figure>
+                      <Image
+                        src={galleryItem.image}
+                        alt={`Drawing ${galleryItem.title}`}
+                        width={galleryItem.width}
+                        height={galleryItem.height}
+                        quality={65}
+                      />
+                      {galleryItem.process && (
+                        <video
+                          className={styles.processVideo}
+                          autoPlay
+                          muted
+                          loop
+                        >
+                          <source
+                            src={galleryItem.process.video}
+                            type="video/mp4"
+                          />
+                          The video tag is not supported in your browser.
+                        </video>
+                      )}
+                      <figcaption>
+                        [{formatDate(galleryItem.date)}]
+                        <br />
+                        {galleryItem.title}
+                      </figcaption>
+                    </figure>
+                  </div>
+                )
+              )}
             </div>
           </CardPanel>
 
