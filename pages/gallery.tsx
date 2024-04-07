@@ -2,7 +2,7 @@ import styles from "../styles/Gallery.module.scss";
 
 import Head from "next/head";
 import Image from "next/image";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import React, { useEffect, useRef, useState } from "react";
 
@@ -15,12 +15,28 @@ import gallery from "../docs/json/gallery.json";
 import { formatDate } from "../lib/helper";
 
 export default function Gallery() {
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
-    null
-  );
+  const containerRef = useRef<HTMLDivElement>(null); // Reference to the gallery container
+  const [selectedTags, setSelectedTags] = useState<string[]>([]); // Selected tags for filtering
+  const [focusedImage, setFocusedImage] = useState<number | null>(null); // Index of the clicked image
+  const [hoveredImage, setHoveredImage] = useState<number | null>(null); // Index of the hovered image
+  const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
 
+  // Handler for hover
+  const handleMouseEnter = (index: number) => {
+    setHoveredImage(null);
+    setTimer(
+      setTimeout(() => {
+        setHoveredImage(index);
+      }, 2000)
+    );
+  };
+
+  const handleMouseLeave = () => {
+    clearTimeout(timer as NodeJS.Timeout);
+    setHoveredImage(null);
+  };
+
+  // Handler for tag selection
   const toggleTag = (tag: string) => {
     setSelectedTags((prevSelectedTags) =>
       prevSelectedTags.includes(tag)
@@ -38,13 +54,13 @@ export default function Gallery() {
 
   // Handler for image click
   const handleImageClick = (index: number) => {
-    setSelectedImageIndex(index);
+    setFocusedImage(index);
     document.body.style.overflow = "hidden";
   };
 
   // Handler for closing image preview
   const handleClosePreview = () => {
-    setSelectedImageIndex(null);
+    setFocusedImage(null);
     document.body.style.overflow = "auto";
   };
 
@@ -106,12 +122,10 @@ export default function Gallery() {
                 : ""}
             </p>
             <p>
-              ❗All of the drawings down below are downscaled!
+              ❗All of the drawings down below are downscaled and compressed!
               <br />
-              📽️ Some drawings also include a process video if you hover over
-              them.
-              <br />✋ Blurred images are suggestive, the blur is removed if
-              hovered.
+              📽️ Some drawings also play a process video when hovered.
+              <br />✋ Blurred posts are suggestive, hovering will reveal it.
             </p>
 
             <hr />
@@ -143,6 +157,8 @@ export default function Gallery() {
                     }`}
                     key={index}
                     onClick={() => handleImageClick(index)}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
                   >
                     <figure>
                       <Image
@@ -152,19 +168,33 @@ export default function Gallery() {
                         height={galleryItem.height}
                         quality={65}
                       />
+
                       {galleryItem.process && (
-                        <video
-                          className={styles.processVideo}
-                          autoPlay
-                          muted
-                          loop
-                        >
-                          <source
-                            src={galleryItem.process.video}
-                            type="video/mp4"
-                          />
-                          The video tag is not supported in your browser.
-                        </video>
+                        <>
+                          <i
+                            className={`${styles.processIndicator} bx bxs-camera-movie`}
+                          ></i>
+                          <AnimatePresence>
+                            {hoveredImage === index && (
+                              <motion.video
+                                className={styles.processVideo}
+                                autoPlay
+                                muted
+                                loop
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.5 }}
+                              >
+                                <source
+                                  src={galleryItem.process.video}
+                                  type="video/mp4"
+                                />
+                                The video tag is not supported in your browser.
+                              </motion.video>
+                            )}
+                          </AnimatePresence>
+                        </>
                       )}
                       <figcaption>
                         [{formatDate(galleryItem.date)}]
@@ -180,10 +210,10 @@ export default function Gallery() {
 
           {/* Image Preview Component */}
           <AnimatePresence>
-            {selectedImageIndex !== null && (
+            {focusedImage !== null && (
               <ImagePreview
                 key={"imagePreviewModal"}
-                targetIndex={selectedImageIndex}
+                targetIndex={focusedImage}
                 images={filteredGallery}
                 onOutsideClick={handleClosePreview}
               />
