@@ -1,11 +1,25 @@
 [
     {
-        "title": "Okita Souji - Fate/Grand Order",
+        "title": "Face Practice",
         "date": "2024-04",
         "url": null,
-        "image": "https://i.imgur.com/mMorN9w.png",
+        "image": "https://i.imgur.com/ISVK5bn.png",
+        "suggestive": false,
+        "tags": [
+            "characterdesign",
+            "sketch",
+            "oc"
+        ],
+        "width": 1080,
+        "height": 1080
+    },
+    {
+        "title": "Okita Souji (Lying) - Fate/Grand Order",
+        "date": "2024-04",
+        "url": null,
+        "image": "https://i.imgur.com/vMja4vu.png",
         "process": {
-            "video": "https://i.imgur.com/ge5PtAg.mp4",
+            "video": "https://i.imgur.com/5ZyBtbO.mp4",
             "width": 720,
             "height": 720
         },
@@ -14,7 +28,29 @@
             "characterdesign",
             "fanart",
             "sketch",
-            "suggestive"
+            "suggestive",
+            "process"
+        ],
+        "width": 1080,
+        "height": 1080
+    },
+    {
+        "title": "Okita Souji (Sitting) - Fate/Grand Order",
+        "date": "2024-04",
+        "url": null,
+        "image": "https://i.imgur.com/mMorN9w.png",
+        "process": {
+            "video": "https://i.imgur.com/pwjkVqI.mp4",
+            "width": 720,
+            "height": 720
+        },
+        "suggestive": true,
+        "tags": [
+            "characterdesign",
+            "fanart",
+            "sketch",
+            "suggestive",
+            "process"
         ],
         "width": 1080,
         "height": 1080
