@@ -29,7 +29,8 @@
       filter: blur(3px);
       transition: 255ms;
 
-      &:hover {
+      &:hover,
+      &:focus {
         filter: blur(0);
       }
     }

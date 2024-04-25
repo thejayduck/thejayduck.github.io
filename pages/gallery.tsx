@@ -158,6 +158,7 @@ export default function Gallery() {
                     key={index}
                     onClick={() => handleImageClick(index)}
                     onMouseEnter={() => handleMouseEnter(index)}
+                    onTouchStart={() => handleMouseEnter(index)}
                     onMouseLeave={handleMouseLeave}
                   >
                     <figure>
