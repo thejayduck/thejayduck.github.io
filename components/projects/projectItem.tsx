@@ -20,29 +20,30 @@ export default function ProjectItem({ project }: ProjectItemProps) {
           height={128}
           quality={75}
         />
-        <div>
-          {project.links.map((link) => (
-            <Link
-              className={styles.link}
-              key={link.title}
-              href={link.url}
-              title={link.title}
-              aria-label={link.title}
-              passHref
-            >
-              <i className={link.icon}></i>
-            </Link>
-          ))}
-        </div>
       </div>
       <div className={styles.postContainer}>
         <article>
           <span className={styles.stats}>
             {project.type} {project.genre ? `| ${project.genre}` : ""}
           </span>
-          <Link href={project.links[0].url} passHref>
-            <h2>{project.title}</h2>
-          </Link>
+          <div className={styles.header}>
+            <Link href={project.links[0].url} passHref>
+              <h2>{project.title}</h2>
+            </Link>
+            {project.links.map((link) => (
+              <Link
+                className={styles.link}
+                key={link.title}
+                href={link.url}
+                title={link.title}
+                aria-label={link.title}
+                passHref
+              >
+                <i className={`${link.icon} bx-tada-hover`}></i>
+              </Link>
+            ))}
+          </div>
+
           <div className={styles.tags}>
             {project.tags.map((tag, index) => (
               <span key={index} className={styles.tag}>

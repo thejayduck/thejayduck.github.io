@@ -12,7 +12,6 @@
     margin-right: var(--spacing-normal);
 
     .link {
-      margin-top: var(--spacing-small);
       color: var(--accent);
     }
 
@@ -45,6 +44,14 @@
 
       &:hover {
         color: black;
+      }
+    }
+    .header {
+      .link {
+        color: var(--accent);
+      }
+      a {
+        display: inline-block;
       }
     }
   }
