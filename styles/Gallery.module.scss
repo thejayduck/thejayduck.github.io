@@ -3,16 +3,20 @@
 
   .filterTags {
     .tagButton {
-      background-color: var(--primary-opaque);
-      border: none;
-      color: black;
-      padding: var(--spacing-small);
-      text-align: center;
-      text-decoration: none;
       display: inline-block;
+      padding: var(--spacing-small);
       margin: 4px 2px;
+
+      text-decoration: none;
+      text-align: center;
+
+      background-color: var(--primary-opaque);
       box-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
+      color: black;
+      border: none;
+
       cursor: pointer;
+
       transition: all 0.3s;
 
       &:disabled {
@@ -53,9 +57,11 @@
       }
 
       .processVideo {
+        position: absolute;
+
         pointer-events: none;
         user-select: none;
-        position: absolute;
+
         top: 0;
         left: 0;
         width: 100%;
@@ -69,15 +75,19 @@
         position: relative;
         margin: 0;
         padding: 0;
-        border-radius: var(--border);
         overflow: hidden;
 
+        border-radius: var(--border);
+
         figcaption {
-          width: 100%;
           position: absolute;
+          padding: 15px 10px 10px;
+          width: 100%;
           bottom: 0;
           left: 0;
-          padding: 15px 10px 10px;
+
+          user-select: none;
+          pointer-events: none;
 
           font-size: 16px;
           font-weight: bold;
@@ -90,6 +100,7 @@
             rgba(255, 255, 255, 0) 100%
           );
           opacity: 0;
+
           transition: 255ms;
         }
 
