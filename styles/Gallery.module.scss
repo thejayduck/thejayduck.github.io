@@ -15,6 +15,12 @@
       cursor: pointer;
       transition: all 0.3s;
 
+      &:disabled {
+        cursor: not-allowed;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0.5;
+      }
+
       &.selected {
         color: white;
         background-color: var(--accent);
