@@ -127,6 +127,10 @@ export default function Gallery() {
               <br />
               📽️ Some drawings also play a process video when hovered.
               <br />✋ Blurred posts are suggestive, hovering will reveal it.
+              <br />
+              🎨 In this page, you can view my drawings. Most of my posts
+              consist of sketches, I just prefer the way they look over clean
+              lines.
             </p>
 
             <hr />
@@ -171,7 +175,11 @@ export default function Gallery() {
                         height={galleryItem.height}
                         quality={65}
                       />
-
+                      <figcaption>
+                        [{formatDate(galleryItem.date)}]
+                        <br />
+                        {galleryItem.title}
+                      </figcaption>
                       {galleryItem.process && (
                         <>
                           <i
@@ -199,11 +207,6 @@ export default function Gallery() {
                           </AnimatePresence>
                         </>
                       )}
-                      <figcaption>
-                        [{formatDate(galleryItem.date)}]
-                        <br />
-                        {galleryItem.title}
-                      </figcaption>
                     </figure>
                   </div>
                 )
