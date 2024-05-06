@@ -13,6 +13,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com"
       },
+      {
+        protocol: "https",
+        hostname: "livestream.ardarmutcu.com"
+      },
     ]
   },
   webpack: (config, { isServer }) => {

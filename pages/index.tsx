@@ -1,15 +1,28 @@
 import styles from "../styles/Home.module.scss";
 
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Link from "next/link";
 
 import CardPanel from "../components/cardPanel";
+import IStreamItem from "../components/home/IStreamItem";
 import ProfileWrap from "../components/home/profileWrap";
 import SkillsWrap from "../components/home/skillsWrap";
 import PageBase from "../components/pageBase";
+import StreamNotification from "../components/streamNotification";
 import Subtitle from "../components/subtitle";
 
-export default function Home() {
+export const getStaticProps = (async (context) => {
+  const res = await fetch("https://livestream.ardarmutcu.com/status.php");
+  const streamStatus = await res.json();
+  return { props: { streamStatus } };
+}) satisfies GetStaticProps<{
+  streamStatus: IStreamItem;
+}>;
+
+export default function Home({
+  streamStatus,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Head>
@@ -20,6 +33,7 @@ export default function Home() {
       </Head>
 
       <PageBase>
+        {streamStatus.is_active && <StreamNotification {...streamStatus} />}
         <div className={`${styles.mainSection} flex`}>
           <ProfileWrap />
 

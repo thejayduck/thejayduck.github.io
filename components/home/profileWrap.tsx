@@ -12,6 +12,7 @@ export default function ProfileWrap() {
         className={styles.picture}
         alt="Profile Picture"
         src="/profileAlt.jpg"
+        priority
         width={256}
         height={446}
         quality={85}

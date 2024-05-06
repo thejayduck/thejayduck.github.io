@@ -9,7 +9,7 @@ export default function Document() {
         <link href='https://unpkg.com/boxicons@latest/css/boxicons.min.css' rel='stylesheet' />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-        <link rel="preload" as="font" />
+        {/* <link rel="preload" as="font" /> */}
         <link rel="icon" href="/favicon.ico" />
 
         {/* <meta property="og:type" content="website" />

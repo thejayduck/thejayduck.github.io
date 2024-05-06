@@ -2,43 +2,49 @@ import styles from "../styles/components/StreamNotification.module.scss";
 
 import Link from "next/link";
 
-import { useEffect, useState } from "react";
+import IStreamItem from "./home/IStreamItem";
 
-export default function StreamNotification() {
-  const [streamStatus, setStreamStatus] = useState(false);
-  const [streamTitle, setStreamTitle] = useState(null);
-
-  useEffect(() => {
-    const fetchStreamStatus = async () => {
-      try {
-        const response = await fetch(
-          "https://livestream.ardarmutcu.com/status.php"
-        );
-        if (!response.ok) {
-          throw new Error("Network responded with an error.");
-        }
-        const data = await response.json();
-
-        setStreamStatus(data.is_active);
-        setStreamTitle(data.stream_title);
-      } catch (error) {
-        console.error("Error fetching status:", error);
-      }
-    };
-    fetchStreamStatus();
-  }, []);
-
+export default function StreamNotification(stream: IStreamItem) {
+  // const [collapsed, setCollapsed] = useState(false);
   return (
-    <>
-      {streamStatus && (
-        <div className={styles.streamNotification}>
-          <Link href="https://livestream.ardarmutcu.com" passHref>
-            <span>
-              ⏺ Live Now: {streamTitle} - Click here to join the stream!
-            </span>
-          </Link>
-        </div>
-      )}
-    </>
+    <div className={styles.streamNotification}>
+      <Link href="https://livestream.ardarmutcu.com" passHref>
+        ⏺ Live Now: <span>{stream.stream_title}</span> - Click on banner to join
+        the stream!
+      </Link>
+    </div>
+    // TODO Disabled until I find a better way to handle thumbnail preview
+    //? or maybe just remove it
+    // <motion.div className={styles.streamNotification}>
+    //   <div className={styles.notificationHeader}>
+    //     <Link href="https://livestream.ardarmutcu.com" passHref>
+    //       ⏺ Live Now: <span>{stream.stream_title}</span> - Click here to join
+    //       the stream!
+    //     </Link>
+    //     <motion.i
+    //       animate={{ rotate: collapsed ? 180 : 0 }}
+    //       className="bx bxs-down-arrow"
+    //       onClick={() => setCollapsed(!collapsed)}
+    //     ></motion.i>
+    //   </div>
+    //   <AnimatePresence>
+    //     {collapsed && (
+    //       <motion.div
+    //         initial={{ height: 0 }}
+    //         animate={{ height: "auto" }}
+    //         exit={{ height: 0 }}
+    //         transition={{ duration: 0.3 }}
+    //       >
+    //         <Image
+    //           src="https://livestream.ardarmutcu.com/thumbnail.jpg"
+    //           width={1280}
+    //           height={720}
+    //           quality={65}
+    //           alt="Stream Thumbnail"
+    //         />
+    //       </motion.div>
+    //     )}
+    //   </AnimatePresence>
+    // </motion.div>
   );
 }
