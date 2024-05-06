@@ -33,7 +33,7 @@ export default function Home({
       </Head>
 
       <PageBase>
-        {streamStatus.is_active && <StreamNotification {...streamStatus} />}
+        {/* {streamStatus.is_active && <StreamNotification {...streamStatus} />} */}
         <div className={`${styles.mainSection} flex`}>
           <ProfileWrap />
 
