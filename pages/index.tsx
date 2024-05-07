@@ -12,7 +12,7 @@ import PageBase from "../components/pageBase";
 import StreamNotification from "../components/streamNotification";
 import Subtitle from "../components/subtitle";
 
-export const getStaticProps = (async (context) => {
+export const getStaticProps = (async () => {
   const res = await fetch("https://livestream.ardarmutcu.com/status.php");
   const streamStatus = await res.json();
   return { props: { streamStatus } };
@@ -33,7 +33,7 @@ export default function Home({
       </Head>
 
       <PageBase>
-        {/* {streamStatus.is_active && <StreamNotification {...streamStatus} />} */}
+        {streamStatus.is_active && <StreamNotification {...streamStatus} />}
         <div className={`${styles.mainSection} flex`}>
           <ProfileWrap />
 
