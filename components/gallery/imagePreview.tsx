@@ -13,13 +13,13 @@ import IImagePreview from "./IImagePreview";
 import ImageThumbnail from "./imageThumbnail";
 
 export function ImagePreview({
-  initialIndex, //? Find a better name
+  activeIndex, //? Find a better name
   images,
   onOutsideClick,
 }: IImagePreview) {
   const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState<
     number | null
-  >(initialIndex);
+  >(activeIndex);
   const [prevIndex, setPrevIndex] = useState<number>(0);
 
   const onThumbnailClick = (index: number) => {
@@ -113,7 +113,12 @@ export function ImagePreview({
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.2 },
               }}
-              style={{ overflow: "hidden", display: "block", width: "100%" }}
+              style={{
+                overflow: "hidden",
+                display: "block",
+                width: "100%",
+                height: "100%",
+              }}
             >
               <div className={`${styles.previewInformation}`}>
                 {selectedImage?.url && (
@@ -141,7 +146,7 @@ export function ImagePreview({
 
               {/* Thumbnails */}
               <ImageThumbnail
-                initialIndex={selectedThumbnailIndex}
+                activeIndex={selectedThumbnailIndex}
                 images={images}
                 onThumbnailClick={(index) => {
                   onThumbnailClick(index || 0);
