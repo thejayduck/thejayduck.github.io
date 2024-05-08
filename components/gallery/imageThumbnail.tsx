@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import IImagePreview from "./IImagePreview";
 
 export default function ImageThumbnail({
-  targetIndex,
+  initialIndex, //? Find a better name
   images,
   onThumbnailClick,
 }: IImagePreview) {
@@ -53,9 +53,9 @@ export default function ImageThumbnail({
 
   // Scroll to selected thumbnail on change
   useEffect(() => {
-    if (thumbnailsContainerRef.current && targetIndex !== null) {
+    if (thumbnailsContainerRef.current && initialIndex !== null) {
       const selectedThumbnail =
-        thumbnailsContainerRef.current.children[targetIndex];
+        thumbnailsContainerRef.current.children[initialIndex];
       if (selectedThumbnail) {
         selectedThumbnail.scrollIntoView({
           behavior: "smooth",
@@ -63,7 +63,7 @@ export default function ImageThumbnail({
         });
       }
     }
-  }, [targetIndex]);
+  }, [initialIndex]);
 
   return (
     <div
@@ -81,7 +81,7 @@ export default function ImageThumbnail({
         <div
           className={`
                   ${styles.thumbnailWrapper} 
-                  ${index === targetIndex ? styles.selected : ""}
+                  ${index === initialIndex ? styles.selected : ""}
                   ${thumbnail.suggestive ? styles.suggestiveFilter : ""}
                 `}
           key={index}

@@ -1,8 +1,8 @@
-import IImageItem from "./IGalleryItem";
+import IGalleryEntry from "./IGalleryEntry";
 
 export default interface IImagePreview {
-  targetIndex: number | null;
-  images: IImageItem[];
+  initialIndex: number | null;
+  images: IGalleryEntry[];
   onThumbnailClick?: (index: number) => void;
   onOutsideClick?: () => void;
 }

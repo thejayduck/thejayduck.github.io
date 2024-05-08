@@ -1,4 +1,4 @@
-export default interface IImageItem {
+export default interface IGalleryEntry {
   title: string;
   date: string;
   url?: string | null;

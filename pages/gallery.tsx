@@ -1,40 +1,22 @@
 import styles from "../styles/Gallery.module.scss";
 
 import Head from "next/head";
-import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import React, { useEffect, useRef, useState } from "react";
 
 import Button from "../components/button";
 import CardPanel from "../components/cardPanel";
-import IGalleryItem from "../components/gallery/IGalleryItem";
+import GalleryItem from "../components/gallery/galleryItem";
+import IGalleryEntry from "../components/gallery/IGalleryEntry";
 import { ImagePreview } from "../components/gallery/imagePreview";
 import PageBase from "../components/pageBase";
 import gallery from "../docs/json/gallery.json";
-import { formatDate } from "../lib/helper";
 
 export default function Gallery() {
   const containerRef = useRef<HTMLDivElement>(null); // Reference to the gallery container
   const [selectedTags, setSelectedTags] = useState<string[]>([]); // Selected tags for filtering
   const [focusedImage, setFocusedImage] = useState<number | null>(null); // Index of the clicked image
-  const [hoveredImage, setHoveredImage] = useState<number | null>(null); // Index of the hovered image
-  const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
-
-  // Handler for hover
-  const handleMouseEnter = (index: number) => {
-    setHoveredImage(null);
-    setTimer(
-      setTimeout(() => {
-        setHoveredImage(index);
-      }, 2000)
-    );
-  };
-
-  const handleMouseLeave = () => {
-    clearTimeout(timer as NodeJS.Timeout);
-    setHoveredImage(null);
-  };
 
   // Handler for tag selection
   const toggleTag = (tag: string) => {
@@ -156,59 +138,13 @@ export default function Gallery() {
             {/* Gallery Items */}
             <div className={styles.gallery} ref={containerRef}>
               {filteredGallery.map(
-                (galleryItem: IGalleryItem, index: number) => (
-                  <div
-                    className={`${styles.galleryItem} ${
-                      galleryItem.suggestive ? styles.suggestiveFilter : ""
-                    }`}
+                (galleryEntry: IGalleryEntry, index: number) => (
+                  <GalleryItem
                     key={index}
-                    onClick={() => handleImageClick(index)}
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}
-                    onTouchStart={() => handleMouseEnter(index)}
-                  >
-                    <figure>
-                      <Image
-                        src={galleryItem.image}
-                        alt={`Drawing ${galleryItem.title}`}
-                        width={galleryItem.width}
-                        height={galleryItem.height}
-                        quality={65}
-                      />
-                      <figcaption>
-                        [{formatDate(galleryItem.date)}]
-                        <br />
-                        {galleryItem.title}
-                      </figcaption>
-                      {galleryItem.process && (
-                        <>
-                          <i
-                            className={`${styles.processIndicator} bx bxs-camera-movie`}
-                          ></i>
-                          <AnimatePresence>
-                            {hoveredImage === index && (
-                              <motion.video
-                                className={styles.processVideo}
-                                autoPlay
-                                muted
-                                loop
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.5 }}
-                              >
-                                <source
-                                  src={galleryItem.process.video}
-                                  type="video/mp4"
-                                />
-                                The video tag is not supported in your browser.
-                              </motion.video>
-                            )}
-                          </AnimatePresence>
-                        </>
-                      )}
-                    </figure>
-                  </div>
+                    entry={galleryEntry}
+                    index={index}
+                    handleImageClick={handleImageClick}
+                  />
                 )
               )}
             </div>
@@ -219,7 +155,7 @@ export default function Gallery() {
             {focusedImage !== null && (
               <ImagePreview
                 key={"imagePreviewModal"}
-                targetIndex={focusedImage}
+                initialIndex={focusedImage}
                 images={filteredGallery}
                 onOutsideClick={handleClosePreview}
               />
