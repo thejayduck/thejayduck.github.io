@@ -155,7 +155,7 @@ export default function Gallery() {
             {focusedImage !== null && (
               <ImagePreview
                 key={"imagePreviewModal"}
-                initialIndex={focusedImage}
+                activeIndex={focusedImage}
                 images={filteredGallery}
                 onOutsideClick={handleClosePreview}
               />
