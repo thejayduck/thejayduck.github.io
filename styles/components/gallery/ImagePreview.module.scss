@@ -1,4 +1,4 @@
-.imagePreview {
+.imagePreviewWrapper {
   display: flex;
   position: fixed;
   top: 0;
@@ -14,74 +14,65 @@
 
   z-index: var(--z-absolute);
 
-  .imagePreviewWrapper {
+  .external {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    padding: var(--spacing-small);
+    margin: 0;
+    list-style-type: none;
+    list-style: none;
+  }
+
+  .imagePreview {
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: relative;
 
     flex: 1;
+
+    img {
+      object-fit: contain;
+    }
   }
 
-  .previewInformation {
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.8) 55%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    text-shadow: 1px 1px 5px #000000;
-
-    position: absolute;
-    user-select: none;
-    color: white;
-
-    padding: var(--spacing-small);
-    text-align: center;
+  .previewInformationWrapper {
+    overflow: hidden;
+    display: block;
     width: 100%;
-    bottom: 0;
-    padding-bottom: 111px;
+    height: 100%;
 
-    .title {
-      font-weight: var(--font-bold);
-      font-size: var(--font-medium);
-    }
-    .external {
-      text-decoration: none;
+    .previewInformation {
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.8) 55%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      text-shadow: 1px 1px 5px #000000;
+
+      position: absolute;
+      user-select: none;
+      color: white;
+
+      padding: var(--spacing-small);
       text-align: center;
-      color: inherit;
-      color: var(--accent);
-      padding: 5px;
-      background-color: white;
-      text-shadow: none;
-      box-shadow: 1px 1px 10px #000000;
+      width: 100%;
+      bottom: 0;
+      padding-bottom: 111px;
 
-      border-radius: var(--border);
-      -webkit-animation: breathing 5s ease-in-out infinite;
-      animation: breathing 5s ease-in-out infinite;
-
-      @keyframes breathing {
-        0% {
-          background-color: white;
-          color: var(--accent);
-        }
-        25% {
-          background-color: var(--accent);
-          color: white;
-        }
-        60% {
-          background-color: white;
-          color: var(--accent);
-        }
-        100% {
-          background-color: white;
-          color: var(--accent);
-        }
+      .title {
+        font-weight: var(--font-bold);
+        font-size: var(--font-medium);
       }
-    }
-    .tag {
-      font-size: var(--font-small);
-      margin-right: 10px;
-      color: rgba(185, 185, 185, 0.5);
+
+      .tag {
+        font-size: var(--font-small);
+        margin-right: 10px;
+        color: rgba(185, 185, 185, 0.5);
+      }
     }
   }
 }

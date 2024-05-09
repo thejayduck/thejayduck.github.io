@@ -206,7 +206,13 @@
     {
         "title": "Kita Ikuyo",
         "date": "2024-01",
-        "url": "https://www.deviantart.com/thejayduck/art/Ikuyo-Kita-Fanart-1009265067",
+        "external": [
+            {
+                "url": "https://www.deviantart.com/thejayduck/art/Ikuyo-Kita-Fanart-1009265067",
+                "alt": "DeviantArt",
+                "icon": "bx bxl-deviantart"
+            }
+        ],
         "image": "https://i.imgur.com/JYD44VP.png",
         "tags": [
             "fullcolor",
@@ -219,7 +225,13 @@
     {
         "title": "Marin Kitagawa - Commission",
         "date": "2024-01",
-        "url": "https://www.deviantart.com/thejayduck/art/My-Dress-Up-Darling-Fanart-1007491907",
+        "external": [
+            {
+                "url": "https://www.deviantart.com/thejayduck/art/My-Dress-Up-Darling-Fanart-1007491907",
+                "alt": "DeviantArt",
+                "icon": "bx bxl-deviantart"
+            }
+        ],
         "image": "https://i.imgur.com/xlRl6Y8.png",
         "tags": [
             "fullcolor",
@@ -417,7 +429,13 @@
     {
         "title": "Rena Color",
         "date": "2022-08",
-        "url": "https://www.deviantart.com/thejayduck/art/Ryuugu-Rena-color-931456906",
+        "external": [
+            {
+                "url": "https://www.deviantart.com/thejayduck/art/Ryuugu-Rena-color-9314569060",
+                "alt": "DeviantArt",
+                "icon": "bx bxl-deviantart"
+            }
+        ],
         "image": "https://i.imgur.com/GcWyYCs.png",
         "tags": [
             "characterdesign",
@@ -478,7 +496,13 @@
     {
         "title": "Satoko Color",
         "date": "2022-08",
-        "url": "https://www.deviantart.com/thejayduck/art/Houjou-Satoko-color-931166747",
+        "external": [
+            {
+                "url": "https://www.deviantart.com/thejayduck/art/Houjou-Satoko-color-931166747",
+                "alt": "DeviantArt",
+                "icon": "bx bxl-deviantart"
+            }
+        ],
         "image": "https://i.imgur.com/Efg8h1b.png",
         "tags": [
             "characterdesign",
@@ -563,7 +587,13 @@
     {
         "title": "Mion's Birthday",
         "date": "2022-07",
-        "url": "https://www.deviantart.com/thejayduck/art/Mion-Sonozaki-Birthday-923781589",
+        "external": [
+            {
+                "url": "https://www.deviantart.com/thejayduck/art/Mion-Sonozaki-Birthday-923781589",
+                "alt": "DeviantArt",
+                "icon": "bx bxl-deviantart"
+            }
+        ],
         "image": "https://i.imgur.com/7eiABsE.png",
         "tags": [
             "characterdesign",
@@ -576,7 +606,13 @@
     {
         "title": "Rena Sketch",
         "date": "2022-07",
-        "url": "https://www.deviantart.com/thejayduck/art/Rena-Sketch-921637601",
+        "external": [
+            {
+                "url": "https://www.deviantart.com/thejayduck/art/Rena-Sketch-921637601",
+                "alt": "DeviantArt",
+                "icon": "bx bxl-deviantart"
+            }
+        ],
         "image": "https://i.imgur.com/TEgObUM.png",
         "tags": [
             "characterdesign",
@@ -743,7 +779,13 @@
     {
         "title": "Some Character",
         "date": "2021-06",
-        "url": "https://www.deviantart.com/thejayduck/art/Some-Character-1-881177115",
+        "external": [
+            {
+                "url": "https://www.deviantart.com/thejayduck/art/Some-Character-1-881177115",
+                "alt": "DeviantArt",
+                "icon": "bx bxl-deviantart"
+            }
+        ],
         "image": "https://i.imgur.com/yN3LiOd.jpg",
         "tags": [
             "characterdesign",
