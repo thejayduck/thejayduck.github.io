@@ -3,9 +3,9 @@
 
   .filterTags {
     .tagButton {
-      &:not(:disabled):hover {
-        transform: translateY(-5px);
-      }
+      // &:not(:disabled):hover {
+      //   transform: translateY(-5px);
+      // }
 
       display: inline-block;
       padding: var(--spacing-small);

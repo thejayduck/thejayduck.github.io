@@ -43,6 +43,7 @@ export default function GalleryItem({
       className={`${styles.galleryItem} ${
         entry.suggestive ? styles.suggestiveFilter : ""
       }`}
+      title="Click to view image"
       onClick={() => handleImageClick(index)}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={handleMouseLeave}

@@ -127,6 +127,7 @@ export default function Gallery() {
                       }`}
                       onClick={() => toggleTag(tag)}
                       disabled={!filteredTags.has(tag)}
+                      title={`Filter by ${tag}`}
                     >
                       {tag}
                     </button>
