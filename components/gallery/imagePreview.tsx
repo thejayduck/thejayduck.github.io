@@ -120,6 +120,10 @@ export function ImagePreview({
           src={selectedImage.image}
           alt={selectedImage.title}
           fill
+          style={{
+            // For some reason animation gets messed up if I don't set this style in tsx
+            objectFit: "contain",
+          }}
           placeholder={`data:image/svg+xml;base64,${toBase64(
             shimmer(selectedImage.width, selectedImage.height)
           )}`}
