@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Button from "../button";
+import { placeholderImage } from "../imageShimmer";
 
 export default function ProfileWrap() {
   return (
@@ -13,6 +14,7 @@ export default function ProfileWrap() {
         alt="Profile Picture"
         src="/profileAlt.jpg"
         priority
+        placeholder={placeholderImage(256, 446)}
         width={256}
         height={446}
         quality={85}

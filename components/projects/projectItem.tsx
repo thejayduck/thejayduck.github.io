@@ -3,6 +3,8 @@ import styles from "../../styles/components/ProjectItem.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
+import { placeholderImage } from "../imageShimmer";
+
 import IProjectItem from "./IProjectItem";
 
 interface ProjectItemProps {
@@ -18,6 +20,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
           alt={"Project Image"}
           width={128}
           height={128}
+          placeholder={placeholderImage(128, 128)}
           quality={75}
         />
       </div>
