@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
 
-  z-index: var(--z-fixed);
+  z-index: var(--z-absolute);
 
   .external {
     position: absolute;
@@ -77,48 +77,5 @@
         color: rgba(185, 185, 185, 0.5);
       }
     }
-  }
-}
-
-.arrow {
-  top: 0;
-  position: absolute;
-  // background: white;
-  color: white;
-  width: 20%;
-  height: 85%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-  cursor: pointer;
-  z-index: 101;
-  transition: transform 0.2s ease;
-
-  i {
-    border-radius: var(--border);
-
-    font-size: var(--font-larger);
-    padding: 5px;
-    transition: color 0.2s ease, background-color 0.2s ease;
-  }
-
-  &.leftArrow {
-    left: 0;
-
-    &:hover {
-      transform: translateX(-20px);
-    }
-  }
-  &.rightArrow {
-    right: 0;
-    &:hover {
-      transform: translateX(20px);
-    }
-  }
-
-  &:hover > i {
-    color: var(--accent);
-    background-color: white;
   }
 }

@@ -1,4 +1,4 @@
-.thumbnails {
+.thumbnailWrapper {
   display: flex;
   align-items: flex-end;
 
@@ -20,7 +20,7 @@
     cursor: grabbing;
   }
 
-  .thumbnailWrapper {
+  .thumbnails {
     width: 110px;
     height: 100px;
     overflow: hidden;
@@ -52,5 +52,52 @@
   .selected:hover {
     border-color: var(--accent);
     transform: scale(0.9);
+  }
+}
+
+.arrow {
+  box-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
+
+  bottom: 15%;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: var(--border);
+  color: white;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  z-index: 1001;
+
+  &:hover {
+    background-color: white;
+  }
+
+  i {
+    border-radius: var(--border);
+
+    font-size: var(--font-larger);
+    padding: 5px;
+    transition: color 0.2s ease;
+  }
+
+  &.leftArrow {
+    left: 50px;
+  }
+  &.rightArrow {
+    right: 50px;
+  }
+
+  &:hover > i {
+    color: var(--accent);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .arrow {
+    display: none;
   }
 }

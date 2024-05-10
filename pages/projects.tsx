@@ -8,6 +8,7 @@ import IProjectItem from "../components/projects/IProjectItem";
 import ProjectItem from "../components/projects/projectItem";
 import projects from "../docs/json/projects.json";
 
+//? Improve the layout of the page
 export default function Projects() {
   const groupByYear: { [year: number]: IProjectItem[] } = projects.reduce(
     (acc, project) => {
