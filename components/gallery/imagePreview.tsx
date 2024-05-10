@@ -1,7 +1,7 @@
 import styles from "../../styles/components/gallery/ImagePreview.module.scss";
 
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, wrap } from "framer-motion";
 
 import React, { useEffect, useState } from "react";
 
@@ -25,6 +25,13 @@ export function ImagePreview({
   images,
   onOutsideClick,
 }: IImagePreview) {
+  const [[index, direction], setIndex] = useState([0, 0]);
+  const imageIndex = wrap(0, images.length, index);
+
+  const updateIndex = (newIndex: number) => {
+    setIndex([index + newIndex, newIndex]);
+  };
+
   const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState<
     number | null
   >(activeIndex);
@@ -64,114 +71,140 @@ export function ImagePreview({
   }, []);
 
   return (
-    <motion.div
-      key="preview"
-      className={styles.imagePreviewWrapper}
-      onClick={onOutsideClick}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <AnimatePresence>
-        {!isIdle && (
-          <motion.ul
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className={styles.external}
-          >
-            {selectedImage.external &&
-              selectedImage.external.map(
-                (post) =>
-                  post && (
-                    <li key={post.alt}>
-                      <Button
-                        icon={post.icon}
-                        title={`View on ${post.alt}`}
-                        href={post.url}
-                        newPage={true}
-                      />
-                    </li>
-                  )
-              )}
-          </motion.ul>
-        )}
-      </AnimatePresence>
-
-      {/* Preview */}
-      <motion.div
-        className={styles.imagePreview}
-        key={`${selectedImage.image} `}
-        // Animations
-        variants={variants(
-          selectedThumbnailIndex != null && prevIndex > selectedThumbnailIndex,
-          activeIndex == selectedThumbnailIndex
-        )}
-        initial="swipe"
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0 }}
-        transition={{
-          x: { type: "spring", stiffness: 300, damping: 30 },
-          opacity: { duration: 0.2 },
+    <>
+      {/* Arrows */}
+      <div
+        className={`${styles.arrow} ${styles.leftArrow}`}
+        onClick={(e) => {
+          const newIndex = (selectedThumbnailIndex || 0) - 1;
+          setSelectedThumbnailIndex(
+            newIndex >= 0 ? newIndex : images.length - 1
+          );
+          e.stopPropagation();
         }}
       >
-        <Image
-          key={"Image"}
-          src={selectedImage.image}
-          alt={selectedImage.title}
-          fill
-          style={{
-            // For some reason animation gets messed up if I don't set this style in tsx
-            objectFit: "contain",
+        <i className="bx bx-left-arrow-alt" />
+      </div>
+      <div
+        className={`${styles.arrow} ${styles.rightArrow}`}
+        onClick={(e) => {
+          const newIndex = (selectedThumbnailIndex || 0) + 1;
+          setSelectedThumbnailIndex(
+            newIndex >= 0 ? newIndex : images.length - 1
+          );
+          e.stopPropagation();
+        }}
+      >
+        <i className="bx bx-right-arrow-alt" />
+      </div>
+      <motion.div
+        key="preview"
+        className={styles.imagePreviewWrapper}
+        onClick={onOutsideClick}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <AnimatePresence>
+          {!isIdle && selectedImage.external && (
+            <motion.ul
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className={styles.external}
+            >
+              {selectedImage.external &&
+                selectedImage.external.map(
+                  (post) =>
+                    post && (
+                      <li key={post.alt}>
+                        <Button
+                          icon={post.icon}
+                          title={`View on ${post.alt}`}
+                          label={`View on ${post.alt}`}
+                          href={post.url}
+                          newPage={true}
+                        />
+                      </li>
+                    )
+                )}
+            </motion.ul>
+          )}
+        </AnimatePresence>
+
+        {/* Preview */}
+        <motion.div
+          className={styles.imagePreview}
+          key={`${selectedImage.image} `}
+          // Animations
+          variants={variants(
+            selectedThumbnailIndex != null &&
+              prevIndex > selectedThumbnailIndex,
+            activeIndex == selectedThumbnailIndex
+          )}
+          initial="swipe"
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
           }}
-          placeholder={`data:image/svg+xml;base64,${toBase64(
-            shimmer(selectedImage.width, selectedImage.height)
-          )}`}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 75vw"
-          priority={false}
-        />
-      </motion.div>
+        >
+          <Image
+            key={"Image"}
+            src={selectedImage.image}
+            alt={selectedImage.title}
+            width={selectedImage.width}
+            height={selectedImage.height}
+            placeholder={`data:image/svg+xml;base64,${toBase64(
+              shimmer(selectedImage.width, selectedImage.height)
+            )}`}
+            // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 75vw"
+            priority={false}
+          />
+        </motion.div>
 
-      {/* Preview Information */}
-      <AnimatePresence>
-        {!isIdle && (
-          <motion.div
-            className={styles.previewInformationWrapper}
-            // Animations
-            variants={variants()}
-            initial="infoHidden"
-            animate={{ opacity: 1, height: "auto" }}
-            exit="infoHidden"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
-            }}
-          >
-            <div className={`${styles.previewInformation}`}>
-              <span className={styles.title}>{selectedImage.title}</span>
-              <br />
-              <span>{formatDate(selectedImage.date)}</span>
-              <br />
-              <div className={styles.tags}>
-                {selectedImage.tags.map((tag, index) => (
-                  <span key={index} className={styles.tag}>
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Thumbnails */}
-            <ImageThumbnail
-              activeIndex={selectedThumbnailIndex}
-              images={images}
-              onThumbnailClick={(index) => {
-                onThumbnailClick(index || 0);
+        {/* Preview Information */}
+        <AnimatePresence>
+          {!isIdle && (
+            <motion.div
+              className={styles.previewInformationWrapper}
+              // Animations
+              variants={variants()}
+              initial="infoHidden"
+              animate={{ opacity: 1, height: "auto" }}
+              exit="infoHidden"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 },
               }}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+            >
+              <div className={`${styles.previewInformation}`}>
+                <span className={styles.title}>{selectedImage.title}</span>
+                <br />
+                <span>{formatDate(selectedImage.date)}</span>
+                <br />
+                <div className={styles.tags}>
+                  {selectedImage.tags.map((tag, index) => (
+                    <span key={index} className={styles.tag}>
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Thumbnails */}
+              <ImageThumbnail
+                activeIndex={selectedThumbnailIndex}
+                images={images}
+                onThumbnailClick={(index) => {
+                  onThumbnailClick(index || 0);
+                }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </>
   );
 }
