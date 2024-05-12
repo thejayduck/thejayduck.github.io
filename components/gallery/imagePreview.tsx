@@ -112,7 +112,7 @@ export function ImagePreview({
       <div
         className={styles.closeButton}
         onClick={onOutsideClick}
-        title={"Close preview"}
+        title={"Exit preview"}
       >
         <i className="bx bx-x" />
       </div>
