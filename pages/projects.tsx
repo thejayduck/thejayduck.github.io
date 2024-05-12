@@ -69,12 +69,12 @@ export default function Projects() {
             {sortedYears.map((year) => (
               <div className={`${styles.yearOrder} cardItem`} key={year}>
                 <h2 className={styles.yearTitle}>{year}</h2>
-                <ul>
+                <ul key={`${year}-projects`}>
                   {groupByYear[parseInt(year)].map((project, index, array) => (
-                    <>
-                      <ProjectItem project={project} key={index} />
+                    <div key={project.title}>
+                      <ProjectItem project={project} />
                       {index !== array.length - 1 && <hr />}
-                    </>
+                    </div>
                   ))}
                 </ul>
               </div>
