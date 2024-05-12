@@ -5,7 +5,6 @@ import { AnimatePresence, motion, wrap } from "framer-motion";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
-import { formatDate } from "../../lib/helper";
 import Button from "../button";
 import { placeholderImage } from "../imageShimmer";
 
@@ -32,6 +31,7 @@ export function ImagePreview({
   images,
   onOutsideClick,
 }: IImagePreview) {
+  const [toggleProcess, setToggleProcess] = useState(false);
   // Image Thumbnail Handler
   const [[thumbnailIndex, direction], setThumbnailIndex] = useState([
     startIndex || 0,
@@ -43,6 +43,7 @@ export function ImagePreview({
   const updateThumbnail = useCallback(
     (index: number) => {
       setThumbnailIndex([thumbnailIndex + index, index]);
+      setToggleProcess(false);
     },
     [thumbnailIndex]
   );
@@ -118,13 +119,25 @@ export function ImagePreview({
       </div>
 
       <AnimatePresence>
-        {!isIdle && selectedImage.external && (
+        {!isIdle && (
           <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className={styles.external}
           >
+            {selectedImage.process && (
+              <li onClick={(e) => e.stopPropagation()}>
+                <Button
+                  icon="bx bxs-camera-movie"
+                  title="Toggle Process"
+                  label="Toggle Process"
+                  href={""}
+                  newPage={false}
+                  onClick={() => setToggleProcess((prev) => !prev)}
+                />
+              </li>
+            )}
             {selectedImage.external &&
               selectedImage.external.map(
                 (post) =>
@@ -148,7 +161,6 @@ export function ImagePreview({
       <motion.div
         className={styles.imagePreview}
         key={`${selectedImage.image} `}
-        onClick={(e) => e.stopPropagation()}
         // Animations
         custom={direction}
         variants={variants}
@@ -160,18 +172,38 @@ export function ImagePreview({
           opacity: { duration: 0.2 },
         }}
       >
-        <Image
-          key={"Image"}
-          src={selectedImage.image}
-          alt={selectedImage.title}
-          width={selectedImage.width}
-          height={selectedImage.height}
-          placeholder={placeholderImage(
-            selectedImage.width,
-            selectedImage.height
+        <AnimatePresence>
+          {toggleProcess && selectedImage.process ? (
+            <motion.video
+              className={styles.processVideo}
+              autoPlay
+              muted
+              loop
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <source src={selectedImage.process?.video} type="video/mp4" />
+              The video tag is not supported in your browser.
+            </motion.video>
+          ) : (
+            <Image
+              key={"Image"}
+              src={selectedImage.image}
+              alt={selectedImage.title}
+              width={selectedImage.width}
+              height={selectedImage.height}
+              onClick={(e) => e.stopPropagation()}
+              placeholder={placeholderImage(
+                selectedImage.width,
+                selectedImage.height
+              )}
+              priority={false}
+            />
           )}
-          priority={false}
-        />
+        </AnimatePresence>
       </motion.div>
 
       {/* Preview Information */}
@@ -207,6 +239,7 @@ export function ImagePreview({
               onThumbnailClick={(index) => {
                 // TODO Fix direction
                 setThumbnailIndex([index, index]);
+                setToggleProcess(false);
               }}
               onDirectionClick={(direction) => updateThumbnail(direction)}
             />
