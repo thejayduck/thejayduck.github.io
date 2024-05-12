@@ -40,12 +40,10 @@
       border-color: white;
     }
   }
-  .suggestiveFilter > img {
-    filter: blur(3px);
-    transition: 255ms;
-
-    &:hover {
-      filter: blur(0);
+  .suggestiveFilter {
+    &:not(.selected) > img {
+      filter: blur(3px);
+      transition: 255ms;
     }
   }
   .selected,
