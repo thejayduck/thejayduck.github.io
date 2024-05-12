@@ -21,7 +21,3 @@ export const toBase64 = (str: string) =>
 
 export const placeholderImage = (w: number, h: number) =>
   `data:image/svg+xml;base64,${toBase64(shimmer(w, h))}` as PlaceholderValue;
-
-//  placeholder={`data:image/svg+xml;base64,${toBase64(
-//             shimmer(selectedImage.width, selectedImage.height)
-//           )}`}
