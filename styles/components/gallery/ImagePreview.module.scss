@@ -18,11 +18,22 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: var(--spacing-small);
-    cursor: pointer;
+
+    margin: var(--spacing-small);
     color: white;
+    border-radius: var(--border);
+    cursor: pointer;
+
+    transition: all 0.3s;
+
     i {
+      text-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
       font-size: var(--font-larger);
+    }
+
+    &:hover {
+      background-color: white;
+      color: var(--accent);
     }
   }
 
