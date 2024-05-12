@@ -110,7 +110,7 @@ export function ImagePreview({
       exit={{ opacity: 0 }}
     >
       <div
-        className={styles.closeButton}
+        className={styles.exitButton}
         onClick={onOutsideClick}
         title={"Exit preview"}
       >
