@@ -71,8 +71,11 @@
   user-select: none;
   cursor: pointer;
   z-index: 1001;
+  opacity: 0.5;
+  transition: all 0.2s ease;
 
   &:hover {
+    opacity: 1;
     background-color: white;
   }
 

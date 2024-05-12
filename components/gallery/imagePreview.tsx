@@ -3,7 +3,7 @@ import styles from "../../styles/components/gallery/ImagePreview.module.scss";
 import Image from "next/image";
 import { AnimatePresence, motion, wrap } from "framer-motion";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { formatDate } from "../../lib/helper";
 import Button from "../button";
@@ -19,11 +19,6 @@ const variants = {
       opacity: 0,
     };
   },
-  infoHidden: { opacity: 0, height: 0 },
-  center: {
-    x: 0,
-    opacity: 1,
-  },
   exit: (direction: number) => {
     return {
       x: direction == 0 ? 0 : direction < 0 ? 100 : -100,
@@ -37,26 +32,57 @@ export function ImagePreview({
   images,
   onOutsideClick,
 }: IImagePreview) {
+  // Image Thumbnail Handler
   const [[thumbnailIndex, direction], setThumbnailIndex] = useState([
     startIndex || 0,
     0,
   ]);
   const imageIndex = wrap(0, images.length, thumbnailIndex);
-
-  const updateThumbnail = (index: number) => {
-    setThumbnailIndex([thumbnailIndex + index, index]);
-  };
   const selectedImage = images[imageIndex || 0];
 
-  // Idle Detector
-  const [isIdle, setIsIdle] = useState(false);
-  let idleTimeout: NodeJS.Timeout;
+  const updateThumbnail = useCallback(
+    (index: number) => {
+      setThumbnailIndex([thumbnailIndex + index, index]);
+    },
+    [thumbnailIndex]
+  );
 
-  const resetIdle = () => {
-    clearTimeout(idleTimeout);
+  // Keyboard Navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.defaultPrevented) return;
+
+      switch (e.code) {
+        case "Escape":
+          onOutsideClick && onOutsideClick();
+          break;
+        case "KeyA":
+        case "ArrowLeft":
+          updateThumbnail(-1);
+          break;
+        case "KeyD":
+        case "ArrowRight":
+          updateThumbnail(1);
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onOutsideClick, updateThumbnail]);
+
+  // Idle Detector
+  const idleTimeout = useRef<NodeJS.Timeout>();
+  const [isIdle, setIsIdle] = useState(false);
+
+  const resetIdle = useCallback(() => {
+    clearTimeout(idleTimeout.current);
     setIsIdle(false);
-    idleTimeout = setTimeout(() => setIsIdle(true), 3000);
-  };
+    idleTimeout.current = setTimeout(() => setIsIdle(true), 3000);
+  }, []);
 
   useEffect(() => {
     window.addEventListener("mousemove", resetIdle);
@@ -72,8 +98,7 @@ export function ImagePreview({
       window.removeEventListener("mousedown", resetIdle);
       window.removeEventListener("scroll", resetIdle);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [thumbnailIndex, images.length, resetIdle]);
 
   return (
     <motion.div
@@ -84,6 +109,14 @@ export function ImagePreview({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
+      <div
+        className={styles.closeButton}
+        onClick={onOutsideClick}
+        title={"Close preview"}
+      >
+        <i className="bx bx-x" />
+      </div>
+
       <AnimatePresence>
         {!isIdle && selectedImage.external && (
           <motion.ul
@@ -96,7 +129,7 @@ export function ImagePreview({
               selectedImage.external.map(
                 (post) =>
                   post && (
-                    <li key={post.alt}>
+                    <li key={post.alt} onClick={(e) => e.stopPropagation()}>
                       <Button
                         icon={post.icon}
                         title={`View on ${post.alt}`}
@@ -115,11 +148,12 @@ export function ImagePreview({
       <motion.div
         className={styles.imagePreview}
         key={`${selectedImage.image} `}
+        onClick={(e) => e.stopPropagation()}
         // Animations
         custom={direction}
         variants={variants}
         initial="swipe"
-        animate="center"
+        animate={{ x: 0, opacity: 1 }}
         exit="exit"
         transition={{
           x: { type: "spring", stiffness: 300, damping: 30 },
@@ -136,7 +170,6 @@ export function ImagePreview({
             selectedImage.width,
             selectedImage.height
           )}
-          // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 75vw"
           priority={false}
         />
       </motion.div>
@@ -147,10 +180,9 @@ export function ImagePreview({
           <motion.div
             className={styles.previewInformationWrapper}
             // Animations
-            variants={variants}
-            initial="infoHidden"
+            initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
-            exit="infoHidden"
+            exit={{ opacity: 0, height: 0 }}
             transition={{
               x: { type: "spring", stiffness: 300, damping: 30 },
               opacity: { duration: 0.2 },
@@ -158,8 +190,6 @@ export function ImagePreview({
           >
             <div className={`${styles.previewInformation}`}>
               <span className={styles.title}>{selectedImage.title}</span>
-              <br />
-              <span>{formatDate(selectedImage.date)}</span>
               <br />
               <div className={styles.tags}>
                 {selectedImage.tags.map((tag, index) => (
