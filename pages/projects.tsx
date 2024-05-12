@@ -1,8 +1,10 @@
 import styles from "../styles/Projects.module.scss";
 
 import Head from "next/head";
+import Link from "next/link";
 
 import Button from "../components/button";
+import CardPanel from "../components/cardPanel";
 import PageBase from "../components/pageBase";
 import IProjectItem from "../components/projects/IProjectItem";
 import ProjectItem from "../components/projects/projectItem";
@@ -45,6 +47,24 @@ export default function Projects() {
           />
         </ul>
         <div>
+          <CardPanel title={"Projects 💡"}>
+            <p>
+              📮
+              <b>{projects.length} </b> Projects
+              <br />
+              ❗As the name suggests, this page is dedicated to my released
+              projects.
+              <br />
+              🔓Majority of them are open-source, and can be found on my{" "}
+              <Link
+                href="https://github.com/thejayduck/"
+                aria-label="Github profile link"
+              >
+                GitHub profile
+              </Link>
+              . Feel free to check them out!
+            </p>
+          </CardPanel>
           <div className={styles.projects}>
             {sortedYears.map((year) => (
               <div className={`${styles.yearOrder} cardItem`} key={year}>
