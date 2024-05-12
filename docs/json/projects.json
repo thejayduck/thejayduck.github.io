@@ -35,8 +35,8 @@
         "title": "Streaming Website",
         "image": "https://i.imgur.com/L8NzsFXb.png",
         "description": "A livestreaming website/server for occasional programming and drawing streams.",
-        "type": "Website & Server",
-        "genre": null,
+        "type": "Website",
+        "genre": "Server",
         "tags": [
             "Bash",
             "Apache",
