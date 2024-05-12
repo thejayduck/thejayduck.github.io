@@ -8,7 +8,7 @@ import { placeholderImage } from "../imageShimmer";
 
 import IImagePreview from "./IImagePreview";
 
-// TODO fix thumbnail scroll when an image is selected from gallery
+// TODO fix thumbnail scroll when an image is selected from gallery (issue is caused by height change during initial & idle animation)
 export default function ImageThumbnail({
   activeIndex, //? Find a better name
   images,
