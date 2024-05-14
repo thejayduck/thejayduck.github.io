@@ -5,11 +5,16 @@ import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticPropsResult } from "next/types";
 import { AnimatePresence, motion } from "framer-motion";
 import rehypeRaw from "rehype-raw";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Markdown from "react-markdown";
 
+import {
+  AnchorItemProps,
+  TableOfContent,
+} from "../../components/blog/tableOfContent";
 import Button from "../../components/button";
 import PageBase from "../../components/pageBase";
 import GetPosts from "../../lib/getPosts";
@@ -18,7 +23,6 @@ import {
   getAnchors,
   groupTreeBy,
   readTime,
-  truncate,
 } from "../../lib/helper";
 
 interface BlogProps {
@@ -31,13 +35,6 @@ interface BlogPostProps {
   date: string;
   image: string;
   content: string;
-}
-
-interface AnchorItemProps {
-  level: number;
-  id: string;
-  content: string;
-  children?: AnchorItemProps[];
 }
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
@@ -76,23 +73,7 @@ export default function Blog({ posts }: BlogProps) {
     (el) => el.level
   ) as AnchorItemProps[];
 
-  // useEffect(() => {
-  //   console.log(anchors);
-  //   console.log(groupedAnchors);
-  // }, []);
-
-  const [sidebar, setSideBar] = useState(true);
-
-  const RenderTree = ({ nodes }: { nodes: AnchorItemProps[] }) => (
-    <ul>
-      {nodes.map((node) => (
-        <li key={node.id}>
-          <a href={`#${node.id}`}>{node.content}</a>
-          {node.children && <RenderTree nodes={node.children} />}
-        </li>
-      ))}
-    </ul>
-  );
+  const [anchorToggle, setAnchorToggle] = useState(false);
 
   return (
     <>
@@ -112,13 +93,8 @@ export default function Blog({ posts }: BlogProps) {
           />
         </ul>
         <section className={`flex ${styles.mainSection}`}>
-          <motion.div
-            layoutId={post.slug}
-            initial={false}
-            className={`cardItem ${styles.post}`}
-          >
+          <div className={`cardItem ${styles.post}`}>
             <motion.div
-              layout="size"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -127,39 +103,40 @@ export default function Blog({ posts }: BlogProps) {
                 {post.date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
               </span>
               <hr />
-              <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+              <Markdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw, rehypeSlug]}
+              >
                 {post.content}
               </Markdown>
             </motion.div>
-          </motion.div>
+          </div>
         </section>
       </PageBase>
-      <div
-        className={styles.anchorList}
-        // animate={{ flex: sidebar ? "1 0 250px" : 0, width: "0px" }}
-        // transition={{ stiffness: 200 }}
-      >
+      <div className={styles.anchorWrapper}>
         <AnimatePresence>
-          {sidebar && (
-            <motion.div
-              className={`${styles.anchors}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0, width: 0 }}
-              transition={{ stiffness: 200 }}
+          {anchorToggle && (
+            <motion.div // Anchors
+              className={`${styles.anchorList}`}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{
+                height: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 },
+              }}
             >
-              <RenderTree nodes={groupedAnchors} />
+              <TableOfContent anchors={groupedAnchors} />
             </motion.div>
           )}
         </AnimatePresence>
-        {/* <Button
-          icon={sidebar ? "bx bx-arrow-from-left" : "bx bx-arrow-from-right"}
-          label="hide"
-          title={sidebar ? "Hide Sidebar" : ""}
-          href={"#"}
-          onClick={() => setSideBar((prev) => !prev)}
-          newPage={false}
-        /> */}
+        <div // Toggle Table of Content
+          className={styles.anchorToggle}
+          onClick={() => setAnchorToggle((prev) => !prev)}
+          title={"Table of Content"}
+        >
+          <i className={anchorToggle ? "bx bx-x" : "bx bx-menu"} />
+        </div>
       </div>
     </>
   );

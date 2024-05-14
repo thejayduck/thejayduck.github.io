@@ -1,11 +1,11 @@
-import styles from "../styles/components/BlogItem.module.scss";
+import styles from "../../styles/components/BlogItem.module.scss";
 
 import Image from "next/image";
 import Link from "next/link";
 
 import React from "react";
 
-import { countWords, readTime } from "../lib/helper";
+import { countWords, readTime } from "../../lib/helper";
 
 interface BlogProps {
   id: string;
@@ -30,15 +30,14 @@ export default function BlogItem({
   const avgTime = readTime(wordCount);
 
   return (
-    <li
-      //? Reanimate
-      // layoutId={id}
-      // initial={false}
-      // transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-      className={`cardItem ${styles.blogItem}`}
-    >
+    <li className={`cardItem ${styles.blogItem}`}>
       <div className={styles.imageContainer}>
-        <Image src={image} alt={""} fill />
+        <Image
+          src={image}
+          alt={""}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
       <div className={styles.postContainer}>
         <article>

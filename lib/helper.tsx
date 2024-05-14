@@ -51,7 +51,8 @@ export function getAnchors(str: string): AnchorItemProps[] {
           : groups.html_content
         )
           .toLowerCase()
-          .replace(/\s+/g, "-"),
+          .replace(/\s+/g, "-")
+          .replace(/[^a-z0-9-]/g, ""), // Removes special characters
         content:
           groups.md_content != undefined
             ? groups.md_content
@@ -66,6 +67,7 @@ export function getAnchors(str: string): AnchorItemProps[] {
 type Tree<T> = (Tree<T> | T)[];
 export function groupTreeBy<T>(input: T[], key: (el: T) => number): Tree<T> {
   const children: Tree<T> = [];
+
   for (
     let currIndex = 0;
     currIndex != -1 && currIndex < input.length;
@@ -76,7 +78,10 @@ export function groupTreeBy<T>(input: T[], key: (el: T) => number): Tree<T> {
       (el, idx) => idx > currIndex && key(el) == key(curr)
     );
     if (nextIndex - currIndex != 1 || nextIndex == -1) {
-      const childTree = groupTreeBy(input.slice(currIndex + 1, nextIndex), key);
+      const childTree = groupTreeBy(
+        input.slice(currIndex + 1, nextIndex == -1 ? undefined : nextIndex),
+        key
+      );
       children.push({ ...curr, children: childTree });
     } else {
       children.push(curr);

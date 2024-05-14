@@ -3,7 +3,7 @@ import styles from "../styles/Blog.module.scss";
 import Head from "next/head";
 import { GetStaticPropsResult } from "next/types";
 
-import BlogItem from "../components/blogItem";
+import BlogItem from "../components/blog/blogItem";
 import Button from "../components/button";
 import PageBase from "../components/pageBase";
 import GetPosts from "../lib/getPosts";
