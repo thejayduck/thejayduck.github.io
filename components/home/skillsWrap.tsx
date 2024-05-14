@@ -75,6 +75,16 @@ export default function SkillsWrap() {
           icon="devicon-bash-plain"
           href="https://www.gnu.org/software/bash/"
         />
+        <SkillBar
+          title="Java"
+          icon="devicon-java-plain"
+          href="https://www.java.com/"
+        />
+        <SkillBar
+          title="LaTeX"
+          icon="devicon-latex-plain"
+          href="https://www.latex-project.org/"
+        />
       </div>
 
       <hr />

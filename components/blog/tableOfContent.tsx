@@ -11,7 +11,7 @@ export const TableOfContent = ({ anchors }: { anchors: AnchorItemProps[] }) => (
       <li key={anchor.id}>
         <a
           style={{ paddingLeft: `${20 * anchor.level}px` }}
-          href={`#${anchor.id}`}
+          href={`#user-content-${anchor.id}`}
         >
           {anchor.content}
         </a>

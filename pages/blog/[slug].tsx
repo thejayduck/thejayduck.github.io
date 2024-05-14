@@ -24,6 +24,7 @@ import {
   groupTreeBy,
   readTime,
 } from "../../lib/helper";
+import rehypeSanitize from "rehype-sanitize";
 
 interface BlogProps {
   posts: BlogPostProps[];
@@ -105,7 +106,7 @@ export default function Blog({ posts }: BlogProps) {
               <hr />
               <Markdown
                 remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeRaw, rehypeSlug]}
+                rehypePlugins={[rehypeRaw, rehypeSlug, rehypeSanitize]}
               >
                 {post.content}
               </Markdown>
