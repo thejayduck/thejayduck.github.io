@@ -25,14 +25,6 @@ export function truncate(str: string, n: number): string {
 }
 
 export function getAnchors(str: string): AnchorItemProps[] {
-  //   const text = `
-  // # Heading1
-  // ## Heading2
-  // ### Heading3
-  // <h1>HTML Heading1</h1>
-  // <h2>HTML Heading2</h2>
-  // <h3>HTML Heading3</h3>`;
-
   const regex =
     /(?:^(?<md_level>#{1,3})\s(?<md_content>.*))|(?:<h(?<html_level>[1-3]).*?>(?<html_content>.*?)<\/h[1-3]>)/gm;
 

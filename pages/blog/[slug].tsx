@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticPropsResult } from "next/types";
 import { AnimatePresence, motion } from "framer-motion";
 import rehypeRaw from "rehype-raw";
+import rehypeSanitize from "rehype-sanitize";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
@@ -24,7 +25,6 @@ import {
   groupTreeBy,
   readTime,
 } from "../../lib/helper";
-import rehypeSanitize from "rehype-sanitize";
 
 interface BlogProps {
   posts: BlogPostProps[];
