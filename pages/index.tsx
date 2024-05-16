@@ -3,28 +3,13 @@ import styles from "../styles/Home.module.scss";
 import Head from "next/head";
 import Link from "next/link";
 
-import { useEffect, useState } from "react";
-
 import CardPanel from "../components/cardPanel";
-import IStreamItem from "../components/home/IStreamItem";
 import ProfileWrap from "../components/home/profileWrap";
 import SkillsWrap from "../components/home/skillsWrap";
 import PageBase from "../components/pageBase";
-import StreamNotification from "../components/streamNotification";
 import Subtitle from "../components/subtitle";
 
 export default function Home() {
-  const [streamData, setStreamData] = useState<IStreamItem | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/fetchStreamData");
-      const data = await response.json();
-      setStreamData(data);
-    };
-
-    fetchData();
-  }, []);
   return (
     <>
       <Head>
@@ -35,7 +20,6 @@ export default function Home() {
       </Head>
 
       <PageBase>
-        <StreamNotification {...streamData} />
         <div className={`${styles.mainSection} flex`}>
           <ProfileWrap />
 
