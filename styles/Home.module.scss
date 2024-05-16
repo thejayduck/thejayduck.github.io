@@ -38,10 +38,6 @@
           }
         }
       }
-
-      li:target {
-        animation: blink 1.2s ease-out 2;
-      }
     }
   }
 
@@ -64,7 +60,7 @@
     .skills {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 10px;
+      gap: var(--spacing-small);
 
       i {
         margin-bottom: 0;
@@ -95,22 +91,6 @@
         padding-left: var(--spacing-small);
       }
     }
-  }
-}
-
-@keyframes blink {
-  0% {
-    box-shadow: none;
-  }
-
-  50% {
-    -webkit-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.76);
-    -moz-box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.76);
-    box-shadow: 0px 0px 40px 9px rgba(115, 95, 242, 0.76);
-  }
-
-  100% {
-    box-shadow: none;
   }
 }
 
