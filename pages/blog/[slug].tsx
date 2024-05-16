@@ -93,7 +93,7 @@ export default function Blog({ posts }: BlogProps) {
             newPage={false}
           />
         </ul>
-        <section className={`flex ${styles.mainSection}`}>
+        <section className={`${styles.mainSection}`}>
           <div className={`cardItem ${styles.post}`}>
             <motion.div
               initial={{ opacity: 0 }}

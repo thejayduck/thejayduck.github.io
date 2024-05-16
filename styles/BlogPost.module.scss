@@ -1,12 +1,6 @@
 .mainSection {
-  justify-content: stretch;
-  align-items: flex-start;
-
   .post {
     padding: var(--spacing-normal);
-    margin-top: 10px;
-    will-change: transform;
-    flex: 100%;
 
     a {
       color: var(--accent);
@@ -115,8 +109,6 @@
       color: inherit;
       display: block;
       padding-right: 10px;
-      // padding-top: var(--spacing-small);
-      // padding-bottom: var(--spacing-small);
 
       transition: all 0.1s;
 
@@ -131,7 +123,6 @@
 
     ul {
       padding: 0;
-      // padding-left: var(--spacing-medium);
       margin: var(--spacing-small) 0 0 0;
     }
     li {
@@ -149,9 +140,3 @@
     }
   }
 }
-
-// @media screen and (max-width: 1024px) {
-//   .mainSection .anchorList {
-//     display: none !important;
-//   }
-// }

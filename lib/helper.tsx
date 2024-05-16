@@ -1,9 +1,6 @@
 export function countWords(str: string): number {
   str = str.replace(/<[^>]*>/g, " ");
   const wordCount = str.match(/(?:http(?:s)?:\/\/[^\s]*|\w)+/g) || [];
-  // str = str.replace(/\b(\w+)\/(\w+(?!#\d+))\b/, "\n");
-  // str = str.replace(/(\[[^\]]*\]:.*)|(\s*\|([^|]-*\|)*)|(#*)/gm, "");
-  // str = str.trim();
   return wordCount.length;
 }
 
