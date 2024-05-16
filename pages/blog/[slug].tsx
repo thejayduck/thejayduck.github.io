@@ -9,7 +9,7 @@ import rehypeSanitize from "rehype-sanitize";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Markdown from "react-markdown";
 
 import { IBlogPostProps } from "../../components/blog/IBlogProps";
@@ -65,6 +65,24 @@ export default function Blog({ posts }: IBlogPostProps) {
 
   const [anchorToggle, setAnchorToggle] = useState(false);
 
+  const anchorRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        anchorRef.current &&
+        !(anchorRef.current as HTMLElement).contains(event.target as Node)
+      ) {
+        setAnchorToggle(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -107,6 +125,7 @@ export default function Blog({ posts }: IBlogPostProps) {
         <AnimatePresence>
           {anchorToggle && (
             <motion.div // Anchors
+              ref={anchorRef}
               className={`${styles.anchorList}`}
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
@@ -122,7 +141,11 @@ export default function Blog({ posts }: IBlogPostProps) {
         </AnimatePresence>
         <div // Toggle Table of Content
           className={styles.anchorToggle}
-          onClick={() => setAnchorToggle((prev) => !prev)}
+          ref={anchorRef}
+          onClick={(e) => {
+            e.preventDefault();
+            setAnchorToggle((prev) => !prev);
+          }}
           title={"Table of Content"}
         >
           <i className={anchorToggle ? "bx bx-x" : "bx bx-menu"} />
