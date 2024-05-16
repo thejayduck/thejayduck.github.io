@@ -66,12 +66,17 @@ export default function Blog({ posts }: IBlogPostProps) {
   const [anchorToggle, setAnchorToggle] = useState(false);
 
   const anchorRef = useRef(null);
+  const outsideClickIgnore = useRef(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
         anchorRef.current &&
-        !(anchorRef.current as HTMLElement).contains(event.target as Node)
+        !(anchorRef.current as HTMLElement).contains(event.target as Node) &&
+        (!outsideClickIgnore.current || //? Not sure if there is a better way to do this
+          !(outsideClickIgnore.current as HTMLElement).contains(
+            event.target as Node
+          ))
       ) {
         setAnchorToggle(false);
       }
@@ -140,12 +145,9 @@ export default function Blog({ posts }: IBlogPostProps) {
           )}
         </AnimatePresence>
         <div // Toggle Table of Content
+          ref={outsideClickIgnore}
           className={styles.anchorToggle}
-          ref={anchorRef}
-          onClick={(e) => {
-            e.preventDefault();
-            setAnchorToggle((prev) => !prev);
-          }}
+          onClick={() => setAnchorToggle((prev) => !prev)}
           title={"Table of Content"}
         >
           <i className={anchorToggle ? "bx bx-x" : "bx bx-menu"} />
