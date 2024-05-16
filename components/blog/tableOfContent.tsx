@@ -7,12 +7,13 @@ export interface AnchorItemProps {
 
 export const TableOfContent = ({ anchors }: { anchors: AnchorItemProps[] }) => (
   <ul>
-    {anchors.map((anchor, idx) => (
+    {anchors.map((anchor) => (
       <li key={anchor.id}>
         <a
-          style={{ paddingLeft: `${20 * anchor.level}px` }}
+          style={{ paddingLeft: `${15 * anchor.level}px` }}
           href={`#user-content-${anchor.id}`}
         >
+          {anchor.level > 1 ? "- " : "◯ "}
           {anchor.content}
         </a>
         {anchor.children && <TableOfContent anchors={anchor.children} />}
