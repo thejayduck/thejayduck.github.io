@@ -75,15 +75,6 @@ p {
   margin: 0;
 }
 
-select {
-  // width: 100%;
-  // border-radius: var(--border);
-
-  padding: var(--spacing-mini) var(--spacing-small);
-  box-sizing: border-box;
-  border: 2px solid var(--accent);
-}
-
 .bx {
   margin: 5px;
   font-size: var(--font-medium);
@@ -143,27 +134,6 @@ select {
 
 .flexWrap {
   flex-wrap: wrap;
-}
-
-// Font
-.fontSmaller {
-  font-size: var(--font-smaller);
-}
-
-.fontSmall {
-  font-size: var(--font-small);
-}
-
-.fontMedium {
-  font-size: var(--font-medium);
-}
-
-.fontLarge {
-  font-size: var(--font-large);
-}
-
-.fontLarger {
-  font-size: var(--font-larger);
 }
 
 /* Width / Height */

@@ -50,7 +50,6 @@
 
   .imagePreview {
     overflow: hidden;
-    position: block;
 
     flex: 1;
 
@@ -93,7 +92,7 @@
       }
 
       .tag {
-        margin-right: 10px;
+        margin-right: var(--spacing-small);
         color: rgba(255, 255, 255, 0.75);
       }
     }

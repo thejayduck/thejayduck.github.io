@@ -15,13 +15,15 @@
     flex: 1;
     margin-top: var(--spacing-small);
 
-    .tag {
-      display: inline-block;
-      font-size: var(--font-small);
-      margin-right: 8px;
-      color: var(--accent);
-      text-transform: uppercase;
-      font-weight: bold;
+    .tags {
+      span {
+        display: inline-block;
+        font-size: var(--font-small);
+        margin-right: var(--spacing-small);
+        color: var(--accent);
+        text-transform: uppercase;
+        font-weight: bold;
+      }
     }
 
     a {
