@@ -4,15 +4,15 @@ import Head from "next/head";
 import { GetStaticPropsResult } from "next/types";
 
 import BlogItem from "../components/blog/blogItem";
+import IBlogProps, { IBlogPostProps } from "../components/blog/IBlogProps";
 import Button from "../components/button";
 import PageBase from "../components/pageBase";
 import GetPosts from "../lib/getPosts";
 
 export async function getStaticProps(): Promise<
-  GetStaticPropsResult<BlogProps>
+  GetStaticPropsResult<IBlogPostProps>
 > {
   const postsData = GetPosts();
-
   return {
     props: {
       posts: postsData,
@@ -21,22 +21,7 @@ export async function getStaticProps(): Promise<
   };
 }
 
-//? Combine blog.tsx and blogitem.tsx props
-interface BlogProps {
-  posts: BlogPostProps[];
-}
-
-interface BlogPostProps {
-  slug: string;
-  title: string;
-  date: string;
-  image: string;
-  content: string;
-  summary: string;
-  tags: string[];
-}
-
-export default function Blog({ posts }: BlogProps) {
+export default function Blog({ posts }: IBlogPostProps) {
   return (
     <>
       <Head>
@@ -58,17 +43,8 @@ export default function Blog({ posts }: BlogProps) {
 
         <section>
           <ul className={styles.posts}>
-            {posts.map((q) => (
-              <BlogItem
-                key={q.slug}
-                id={q.slug}
-                title={q.title}
-                date={q.date}
-                image={q.image}
-                content={q.content}
-                summary={q.summary}
-                tags={q.tags}
-              />
+            {posts.map((post: IBlogProps, index: number) => (
+              <BlogItem key={index} {...post} />
             ))}
           </ul>
         </section>

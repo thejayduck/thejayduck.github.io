@@ -7,33 +7,17 @@ import React from "react";
 
 import { countWords, readTime } from "../../lib/helper";
 
-interface BlogProps {
-  id: string;
-  title: string;
-  date: string;
-  content: string;
-  image: string;
-  summary: string;
-  tags: string[];
-}
+import IBlogProps from "./IBlogProps";
 
-export default function BlogItem({
-  id,
-  title,
-  date,
-  content,
-  summary,
-  image,
-  tags,
-}: BlogProps) {
-  const wordCount = countWords(content);
+export default function BlogItem(blog: IBlogProps) {
+  const wordCount = countWords(blog.content);
   const avgTime = readTime(wordCount);
 
   return (
     <li className={`cardItem ${styles.blogItem}`}>
       <div className={styles.imageContainer}>
         <Image
-          src={image}
+          src={blog.image}
           alt={""}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -41,26 +25,26 @@ export default function BlogItem({
       </div>
       <div className={styles.postContainer}>
         <article>
-          <Link href={`/blog/${id}`} passHref>
-            <h2>{title}</h2>
+          <Link href={`/blog/${blog.slug}`} passHref>
+            <h2>{blog.title}</h2>
           </Link>
           <div className={styles.tags}>
-            {tags.map((tag, index) => (
-              <span key={index} className={styles.tag}>
+            {blog.tags.map((tag: string, index: number) => (
+              <span key={index} className={tag}>
                 {tag}
-                {index !== tags.length - 1 && ","}
+                {index !== blog.tags.length - 1 && ","}
               </span>
             ))}
           </div>
-          <p>{summary}</p>
-          <Link href={`/blog/${id}`} passHref>
-            <p className={styles.readMore} title={`${title} - Read More`}>
+          <p>{blog.summary}</p>
+          <Link href={`/blog/${blog.slug}`} passHref>
+            <p className={styles.readMore} title={`${blog.title} - Read More`}>
               Read More ►
             </p>
           </Link>
           <hr />
           <span className={styles.stats}>
-            {date} | {wordCount} Words | ~{avgTime} Minutes
+            {blog.date} | {wordCount} Words | ~{avgTime} Minutes
           </span>
         </article>
       </div>
