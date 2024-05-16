@@ -7,11 +7,7 @@ import { placeholderImage } from "../imageShimmer";
 
 import IProjectItem from "./IProjectItem";
 
-interface ProjectItemProps {
-  project: IProjectItem;
-}
-
-export default function ProjectItem({ project }: ProjectItemProps) {
+export default function ProjectItem(project: IProjectItem) {
   return (
     <li className={`${styles.projectItem}`}>
       <div className={styles.imageContainer}>

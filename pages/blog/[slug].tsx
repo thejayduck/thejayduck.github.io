@@ -12,6 +12,7 @@ import remarkGfm from "remark-gfm";
 import React, { useState } from "react";
 import Markdown from "react-markdown";
 
+import { IBlogPostProps } from "../../components/blog/IBlogProps";
 import {
   AnchorItemProps,
   TableOfContent,
@@ -26,18 +27,6 @@ import {
   readTime,
 } from "../../lib/helper";
 
-interface BlogProps {
-  posts: BlogPostProps[];
-}
-
-interface BlogPostProps {
-  slug: string;
-  title: string;
-  date: string;
-  image: string;
-  content: string;
-}
-
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   return {
     paths: [], //indicates that no page needs be created at build time
@@ -46,7 +35,7 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
 };
 
 export async function getStaticProps(): Promise<
-  GetStaticPropsResult<BlogProps>
+  GetStaticPropsResult<IBlogPostProps>
 > {
   const postsData = GetPosts();
 
@@ -58,7 +47,7 @@ export async function getStaticProps(): Promise<
   };
 }
 
-export default function Blog({ posts }: BlogProps) {
+export default function Blog({ posts }: IBlogPostProps) {
   const router = useRouter();
   const { slug } = router.query;
 

@@ -10,7 +10,6 @@ import IProjectItem from "../components/projects/IProjectItem";
 import ProjectItem from "../components/projects/projectItem";
 import projects from "../docs/json/projects.json";
 
-//? Improve the layout of the page
 export default function Projects() {
   const groupByYear: { [year: number]: IProjectItem[] } = projects.reduce(
     (acc, project) => {
@@ -70,12 +69,14 @@ export default function Projects() {
               <div className={`${styles.yearOrder} cardItem`} key={year}>
                 <h2 className={styles.yearTitle}>{year}</h2>
                 <ul key={`${year}-projects`}>
-                  {groupByYear[parseInt(year)].map((project, index, array) => (
-                    <div key={project.title}>
-                      <ProjectItem project={project} />
-                      {index !== array.length - 1 && <hr />}
-                    </div>
-                  ))}
+                  {groupByYear[parseInt(year)].map(
+                    (project: IProjectItem, index, array) => (
+                      <div key={project.title}>
+                        <ProjectItem {...project} />
+                        {index !== array.length - 1 && <hr />}
+                      </div>
+                    )
+                  )}
                 </ul>
               </div>
             ))}
