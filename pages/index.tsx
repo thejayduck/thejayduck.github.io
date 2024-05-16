@@ -1,8 +1,9 @@
 import styles from "../styles/Home.module.scss";
 
-import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Link from "next/link";
+
+import { useEffect, useState } from "react";
 
 import CardPanel from "../components/cardPanel";
 import IStreamItem from "../components/home/IStreamItem";
@@ -12,17 +13,18 @@ import PageBase from "../components/pageBase";
 import StreamNotification from "../components/streamNotification";
 import Subtitle from "../components/subtitle";
 
-export const getStaticProps = (async () => {
-  const res = await fetch("https://livestream.ardarmutcu.com/status.php");
-  const streamStatus = await res.json();
-  return { props: { streamStatus } };
-}) satisfies GetStaticProps<{
-  streamStatus: IStreamItem;
-}>;
+export default function Home() {
+  const [streamData, setStreamData] = useState<IStreamItem | null>(null);
 
-export default function Home({
-  streamStatus,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/api/fetchStreamData");
+      const data = await response.json();
+      setStreamData(data);
+    };
+
+    fetchData();
+  }, []);
   return (
     <>
       <Head>
@@ -33,7 +35,7 @@ export default function Home({
       </Head>
 
       <PageBase>
-        {streamStatus.is_active && <StreamNotification {...streamStatus} />}
+        <StreamNotification {...streamData} />
         <div className={`${styles.mainSection} flex`}>
           <ProfileWrap />
 
