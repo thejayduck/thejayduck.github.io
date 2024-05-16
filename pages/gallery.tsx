@@ -129,9 +129,19 @@ export default function Gallery() {
                       disabled={!filteredTags.has(tag)}
                       title={`Filter by ${tag}`}
                     >
-                      {tag}
+                      <span>{tag}</span>
                     </button>
                   )
+                )}
+                {selectedTags.length > 0 && ( // Clear tags button
+                  <button
+                    className={`cardItem ${styles.tagButton} ${styles.clearTags}`}
+                    onClick={() => setSelectedTags([])}
+                    title="Clear selected tags"
+                  >
+                    <i className="bx bx-x" />
+                    <span>Clear Tags</span>
+                  </button>
                 )}
               </div>
             </div>
