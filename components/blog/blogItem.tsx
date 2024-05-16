@@ -18,7 +18,7 @@ export default function BlogItem(blog: IBlogProps) {
       <div className={styles.imageContainer}>
         <Image
           src={blog.image}
-          alt={""}
+          alt={"Blog Post Accent Image"}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
@@ -36,10 +36,13 @@ export default function BlogItem(blog: IBlogProps) {
               </span>
             ))}
           </div>
-          <p>{blog.summary}</p>
+          <p className={styles.summary}>{blog.summary}</p>
           <Link href={`/blog/${blog.slug}`} passHref>
-            <p className={styles.readMore} title={`${blog.title} - Read More`}>
-              Read More ►
+            <p
+              className={styles.readMore}
+              title={`Click to read more about ${blog.title}`}
+            >
+              Click to Read More <i className="bx bx-right-arrow-alt" />
             </p>
           </Link>
           <hr />

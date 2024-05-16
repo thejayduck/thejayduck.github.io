@@ -1,19 +1,32 @@
 .blogItem {
   color: inherit;
   padding: var(--spacing-small);
-  margin-top: var(--spacing-normal);
   margin-bottom: var(--spacing-normal);
   display: flex;
+  // Attempt to fix blurriness on hover
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  transform: translateZ(0);
   will-change: transform;
   transition: transform 0.3s;
 
   &:hover {
     transform: scale(1.02);
+
+    .stats {
+      color: rgba(0, 0, 0, 1) !important;
+    }
   }
 
   .postContainer {
     flex: 1;
     margin-top: var(--spacing-small);
+
+    .summary {
+      margin-top: var(--spacing-normal);
+      margin-bottom: var(--spacing-small);
+    }
 
     .tags {
       span {
@@ -30,18 +43,23 @@
       text-decoration: none;
       color: inherit;
       display: inline-block;
-      width: auto;
+      width: 100%;
     }
-    p {
-      margin-top: 1.2rem;
-    }
+
     .readMore {
-      margin-top: var(--spacing-small);
       color: var(--accent);
       font-weight: bold;
       padding: var(--spacing-small);
       border-radius: var(--border);
+      border: 2px solid var(--accent);
       transition: all 0.3s;
+
+      i,
+      & {
+        text-align: center;
+        vertical-align: middle;
+        margin: 0;
+      }
 
       &:hover {
         color: white;
@@ -56,16 +74,12 @@
       user-select: none;
       color: rgba(0, 0, 0, 0.5);
       transition: color 0.3s;
-
-      &:hover {
-        color: black;
-      }
     }
   }
 
   .imageContainer {
     flex: 0.13;
-    max-width: 15%;
+    max-width: 10%;
     user-select: none;
     pointer-events: none;
     position: relative;
