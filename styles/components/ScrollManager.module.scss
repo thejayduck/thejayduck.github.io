@@ -4,7 +4,7 @@
 
   bottom: 0;
   right: 0;
-  padding: 0 var(--spacing-small) var(--spacing-medium) 0;
+  margin: 0 0 64px 0;
   z-index: var(--z-absolute);
   text-align: center;
 
@@ -12,8 +12,8 @@
     cursor: pointer;
     text-align: center;
     position: relative;
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
 
     i {
       position: absolute;

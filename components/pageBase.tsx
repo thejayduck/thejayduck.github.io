@@ -1,13 +1,11 @@
-// @ts-nocheck
 import styles from "../styles/PageBase.module.scss";
 
 import { useEffect, useState } from "react";
 
 import IStreamItem from "./home/IStreamItem";
-import ScrollManager from "./scrollManager";
 import StreamNotification from "./streamNotification";
 
-export default function PageBase({ children }) {
+export default function PageBase({ children }: { children: React.ReactNode }) {
   const [streamData, setStreamData] = useState<IStreamItem | null>(null);
 
   useEffect(() => {
@@ -23,7 +21,6 @@ export default function PageBase({ children }) {
   return (
     <main className={styles.container}>
       <StreamNotification {...streamData} />
-      <ScrollManager />
       {children}
     </main>
   );
