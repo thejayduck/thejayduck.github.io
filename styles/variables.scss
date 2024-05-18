@@ -37,9 +37,13 @@
   --secondary-opaque: hsl(0, 0%, 100%);
   --tertiary: hsl(0, 0%, 100%);
   --notification: hsl(350, 79%, 47%);
+
   --font-default: hsl(0, 0%, 0%);
+  --font-skillbar: var(--primary);
+
   --box-shadow: 0 4px 10px hsla(202, 56%, 12%, 0.15);
   --card-box-shadow: 0 4px 25px hsla(202, 56%, 12%, 0.15);
+  --border-skillbar: var(--primary);
 
   color-scheme: dark;
 }
@@ -51,9 +55,13 @@
   --secondary-opaque: hsl(251, 17%, 12%);
   --tertiary: hsl(251, 17%, 25%);
   --notification: hsl(350, 79%, 47%);
-  --font-default: hsl(0, 0%, 100%);
+
+  --font-default: hsl(247, 81%, 96%);
+  --font-skillbar: var(--font-default);
+
   --box-shadow: 0 4px 10px hsla(291, 4%, 64%, 0.15);
   --card-box-shadow: 0 4px 25px hsla(291, 4%, 64%, 0.15);
+  --border-skillbar: var(--tertiary);
 }
 
 html[data-theme="light"],
@@ -70,7 +78,7 @@ body[data-theme="light"] {
 html[data-theme="dark"],
 body[data-theme="dark"] {
   background: rgb(0, 0, 0);
-  background: radial-gradient(circle, rgb(42, 41, 49) 0%, rgb(0, 0, 0) 100%);
+  background: hsl(248, 8%, 17%);
 
   color-scheme: dark;
 }

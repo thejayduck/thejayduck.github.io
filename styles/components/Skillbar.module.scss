@@ -4,14 +4,14 @@
   font-weight: var(--font-bold);
   padding: var(--spacing-normal) var(--spacing-small);
   box-shadow: none;
-  border: 1.7px solid var(--primary);
-  background-color: var(--tertiary);
+  border: 1.7px solid var(--border-skillbar);
+  background-color: hsla(var(--primary-hsla), 0.08);
 
   transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   flex: 1;
 
   i {
-    color: var(--primary);
+    color: var(--font-skillbar);
     font-size: var(--font-medium);
 
     transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
@@ -31,6 +31,7 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    color: var(--font-skillbar) !important;
   }
 }
 
