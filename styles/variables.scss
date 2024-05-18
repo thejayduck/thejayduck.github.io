@@ -71,4 +71,6 @@ html[data-theme="dark"],
 body[data-theme="dark"] {
   background: rgb(0, 0, 0);
   background: radial-gradient(circle, rgb(42, 41, 49) 0%, rgb(0, 0, 0) 100%);
+
+  color-scheme: dark;
 }
