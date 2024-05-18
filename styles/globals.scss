@@ -6,8 +6,14 @@ body {
   margin: 0;
 
   font-family: "Nunito", sans-serif;
+
+  // Safari & Firefox
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
 
   font-size: var(--font-regular);
 
