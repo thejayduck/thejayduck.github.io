@@ -6,6 +6,8 @@
   display: inline-block;
   padding: var(--spacing-small);
   margin: 0 20px 110px 0;
+  overflow: hidden;
+  user-select: none;
 
   text-decoration: none;
   text-align: center;

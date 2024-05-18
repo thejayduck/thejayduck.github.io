@@ -1,6 +1,25 @@
 import styles from "../styles/components/ThemeToggle.module.scss";
 
+import { AnimatePresence, motion } from "framer-motion";
+
 import { useEffect, useState } from "react";
+
+const iconVariants = {
+  initial: {
+    y: -20,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 260, damping: 20 },
+  },
+  exit: {
+    y: 20,
+    opacity: 0,
+    transition: { duration: 0.2 },
+  },
+};
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState(() => {
@@ -34,11 +53,17 @@ export default function ThemeToggle() {
       data-theme={theme}
       title="Toggle theme (WIP)"
     >
-      {theme === "dark" ? (
-        <i className="bx bxs-sun" />
-      ) : (
-        <i className="bx bxs-moon" />
-      )}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={theme}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={iconVariants}
+        >
+          <i className={`${theme === "dark" ? "bx bxs-sun" : "bx bxs-moon"}`} />
+        </motion.div>
+      </AnimatePresence>
     </button>
   );
 }
