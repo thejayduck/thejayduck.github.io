@@ -32,7 +32,7 @@ export default function ThemeToggle() {
       key="themeToggle"
       onClick={toggleTheme}
       data-theme={theme}
-      title="Toggle theme"
+      title="Toggle theme (WIP)"
     >
       {theme === "dark" ? (
         <i className="bx bxs-sun" />
