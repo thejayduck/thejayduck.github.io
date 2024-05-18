@@ -4,13 +4,14 @@
   font-weight: var(--font-bold);
   padding: var(--spacing-normal) var(--spacing-small);
   box-shadow: none;
-  border: 1.7px solid var(--accent);
+  border: 1.7px solid var(--primary);
+  background-color: var(--tertiary);
 
   transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   flex: 1;
 
   i {
-    color: var(--accent);
+    color: var(--primary);
     font-size: var(--font-medium);
 
     transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
@@ -19,7 +20,7 @@
   &:hover,
   &:active {
     transform: scale(1.02);
-    box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+    box-shadow: var(--card-box-shadow);
 
     i {
       transform: rotate(360deg);

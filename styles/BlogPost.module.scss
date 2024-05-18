@@ -1,11 +1,7 @@
 .mainSection {
   .post {
     padding: var(--spacing-normal);
-
-    a {
-      color: var(--accent);
-      font-weight: var(--font-bold);
-    }
+    color: var(--font-default);
 
     figure {
       margin: 0;
@@ -17,18 +13,19 @@
 
     blockquote {
       color: #5c5c5c;
-      background-color: hsla(var(--accent-raw), 0.2);
-      border-left: 4px solid var(--accent);
+      background-color: hsla(var(--primary-hsla), 0.2);
+      border-left: 4px solid var(--primary);
       margin-left: 0;
       margin-right: 0;
 
       p {
         padding: 10px;
+        color: var(--font-default);
       }
     }
 
     table tr:nth-child(2n) {
-      background-color: hsla(var(--accent-raw), 0.2);
+      background-color: hsla(var(--primary-hsla), 0.2);
     }
 
     table {
@@ -68,24 +65,25 @@
   left: 0;
   bottom: 0;
   padding: var(--spacing-medium) var(--spacing-medium);
+  color: var(--font-default);
 
   .anchorToggle {
     float: left;
     margin-top: var(--spacing-small);
     border-radius: var(--border);
     cursor: pointer;
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
+    background-color: var(--secondary-opaque);
+    box-shadow: var(--box-shadow);
     padding: var(--spacing-small);
 
     i {
       font-size: var(--font-large);
-      text-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
+      text-shadow: var(--box-shadow);
       color: inherit;
     }
 
     &:hover {
-      color: var(--accent);
+      color: var(--primary);
     }
   }
 
@@ -98,25 +96,24 @@
     display: block;
     min-width: 25vw;
     overflow: hidden;
-    background-color: white;
+    background-color: var(--secondary-opaque);
     border-radius: var(--border);
-    box-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
+    box-shadow: var(--box-shadow);
 
     a {
       overflow: hidden;
       text-overflow: ellipsis;
       text-decoration: none;
-      color: inherit;
+      color: var(--font-default);
       display: block;
       padding-right: 10px;
 
       transition: all 0.1s;
 
       &:hover {
-        color: black;
-        background-color: hsla(var(--accent-raw), 0.2);
+        background-color: hsla(var(--primary-hsla), 0.2);
         border-left-style: solid;
-        border-left-color: var(--accent);
+        border-left-color: var(--primary);
         border-left-width: 3px;
       }
     }

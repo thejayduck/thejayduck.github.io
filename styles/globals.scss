@@ -1,47 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
 
-:root {
-  // Fonts
-  --font-larger: 2.5em;
-  --font-large: 2em;
-  --font-medium: 1.5rem;
-  --font-regular: 1rem;
-  --font-small: 0.875rem;
-  --font-smaller: 0.5rem;
-
-  --font-bold: 600;
-  --font-normal: 400;
-
-  // Z Index
-  --z-back: -10;
-  --z-normal: 1;
-  --z-front: 10;
-  --z-fixed: 100;
-  --z-absolute: 999;
-
-  // Colors
-  --accent-raw: 248, 85%, 66%;
-  --accent: hsl(248, 85%, 66%);
-  --accent-dark: hsl(248, 85%, 60%);
-  --primary: hsl(0, 0%, 100%, 0.5);
-  --primary-opaque: hsl(0, 0%, 100%);
-  --footer: hsl(0, 0%, 0%);
-  --notification: hsl(350, 79%, 47%);
-
-  /* #002233 #0066FF */
-
-  // Other
-  --border: 0.7em;
-  --blur: 10px;
-
-  // Spacing
-  --spacing-mini: 0.1rem;
-  --spacing-small: 0.5rem;
-  --spacing-normal: 1rem;
-  --spacing-medium: 2rem;
-  --spacing-large: 5rem;
-}
-
 html,
 body {
   padding: 0;
@@ -56,13 +14,13 @@ body {
   scroll-behavior: smooth;
   scroll-padding-top: 10px;
 
-  background-image: url("/circle-scatter-haikei.svg");
-  background-repeat: repeat;
+  // background-image: url("/background-light.svg");
+  // background-repeat: repeat;
 
-  -webkit-background-size: auto;
-  -moz-background-size: auto;
-  -o-background-size: auto;
-  background-size: auto;
+  // -webkit-background-size: auto;
+  // -moz-background-size: auto;
+  // -o-background-size: auto;
+  // background-size: auto;
 }
 
 * {
@@ -75,6 +33,11 @@ p {
   margin: 0;
 }
 
+a {
+  color: var(--primary);
+  font-weight: var(--font-bold);
+}
+
 .bx {
   margin: 5px;
   font-size: var(--font-medium);
@@ -82,15 +45,16 @@ p {
 
 // Card Item
 .cardItem {
-  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+  box-shadow: var(--card-box-shadow);
   overflow: auto;
-  background-color: white;
+  background-color: var(--secondary-opaque);
   border-radius: var(--border);
   padding: var(--spacing-normal);
 }
 
 // Back button
 .backButton {
+  color: var(--font-default);
   padding: 0;
 }
 
@@ -144,10 +108,10 @@ p {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: var(--primary);
 }
 
 /* Background Color */
 ::-webkit-scrollbar-track {
-  background-color: white;
+  background-color: var(--secondary-opaque);
 }

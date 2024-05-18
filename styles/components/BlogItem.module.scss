@@ -1,5 +1,5 @@
 .blogItem {
-  color: inherit;
+  color: var(--font-default);
   padding: var(--spacing-small);
   margin-bottom: var(--spacing-normal);
   display: flex;
@@ -13,10 +13,6 @@
 
   &:hover {
     transform: scale(1.02);
-
-    .stats {
-      color: rgba(0, 0, 0, 1) !important;
-    }
   }
 
   .postContainer {
@@ -33,7 +29,7 @@
         display: inline-block;
         font-size: var(--font-small);
         margin-right: var(--spacing-small);
-        color: var(--accent);
+        color: var(--primary);
         text-transform: uppercase;
         font-weight: bold;
       }
@@ -47,32 +43,33 @@
     }
 
     .readMore {
-      color: var(--accent);
+      color: var(--primary);
       font-weight: bold;
       padding: var(--spacing-small);
       border-radius: var(--border);
-      border: 2px solid var(--accent);
+      border: 2px solid var(--primary);
       transition: all 0.3s;
 
       i,
       & {
+        -webkit-font-smoothing: subpixel-antialiased;
         text-align: center;
         vertical-align: middle;
         margin: 0;
       }
 
       &:hover {
-        color: white;
+        color: var(--font-default);
 
-        background-color: var(--accent);
-        box-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
+        background-color: var(--primary);
+        box-shadow: var(--box-shadow);
       }
     }
 
     .stats {
       font-size: var(--font-small);
       user-select: none;
-      color: rgba(0, 0, 0, 0.5);
+      color: var(--font-default);
       transition: color 0.3s;
     }
   }
@@ -104,8 +101,8 @@
     display: none;
   }
   .readMore {
-    color: white !important;
-    background-color: var(--accent);
-    box-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
+    color: var(--secondary-opaque) !important;
+    background-color: var(--primary);
+    box-shadow: var(--box-shadow);
   }
 }

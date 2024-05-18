@@ -1,0 +1,28 @@
+.toggle {
+  bottom: 0;
+  right: 0;
+  z-index: var(--z-absolute);
+  position: fixed;
+  display: inline-block;
+  padding: var(--spacing-small);
+  margin: 0 20px 110px 0;
+
+  text-decoration: none;
+  text-align: center;
+
+  background-color: var(--tertiary);
+  box-shadow: var(--box-shadow);
+  color: var(--font-default);
+  border: none;
+  border-radius: var(--border);
+
+  cursor: pointer;
+
+  opacity: 0.5;
+
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}

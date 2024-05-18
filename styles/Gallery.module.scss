@@ -1,5 +1,6 @@
 .mainSection {
   align-items: stretch;
+  color: var(--font-default);
 
   .filterTags {
     .tagButton {
@@ -10,9 +11,9 @@
       text-decoration: none;
       text-align: center;
 
-      background-color: var(--primary-opaque);
-      box-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
-      color: black;
+      background-color: var(--tertiary);
+      box-shadow: var(--box-shadow);
+      color: var(--font-default);
       border: none;
 
       cursor: pointer;
@@ -24,14 +25,15 @@
       }
 
       &:disabled {
+        color: black;
         cursor: not-allowed;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: var(--primary);
         opacity: 0.5;
       }
 
       &.selected {
-        color: white;
-        background-color: var(--accent);
+        color: var(--secondary-opaque);
+        background-color: var(--primary);
       }
     }
 
@@ -67,10 +69,10 @@
       margin: 0 0.3em 0.45em 0.3em;
       cursor: pointer;
       position: relative;
+      color: white;
 
       .processIndicator {
         position: absolute;
-        color: white;
         top: 0;
         text-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
       }
@@ -111,7 +113,6 @@
           font-size: 16px;
           font-weight: bold;
 
-          color: white;
           text-shadow: 1px 1px 5px #000000;
           background: linear-gradient(
             0deg,

@@ -12,11 +12,11 @@
     margin-right: var(--spacing-normal);
 
     .link {
-      color: var(--accent);
+      color: var(--primary);
     }
 
     img {
-      box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+      box-shadow: var(--box-shadow);
       user-select: none;
       pointer-events: none;
       border-radius: var(--border);
@@ -31,7 +31,7 @@
       display: inline-block;
       font-size: var(--font-small);
       margin-right: 8px;
-      color: var(--accent);
+      color: var(--primary);
       text-transform: uppercase;
       font-weight: bold;
     }
@@ -41,14 +41,10 @@
       user-select: none;
       color: rgba(0, 0, 0, 0.5);
       transition: color 0.3s;
-
-      &:hover {
-        color: black;
-      }
     }
     .header {
       .link {
-        color: var(--accent);
+        color: var(--primary);
       }
       a {
         display: inline-block;

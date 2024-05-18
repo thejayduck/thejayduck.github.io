@@ -1,8 +1,14 @@
 import "../styles/globals.scss";
+import "../styles/variables.scss";
+
+import ThemeToggle from "../components/themeToggle";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps} />
+    <>
+      <ThemeToggle />
+      <Component {...pageProps} />
+    </>
   );
 }
 
