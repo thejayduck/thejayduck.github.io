@@ -185,7 +185,7 @@ export function ImagePreview({
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <source src={selectedImage.process?.video} type="video/mp4" />
+              <source src={selectedImage.process} type="video/mp4" />
               The video tag is not supported in your browser.
             </motion.video>
           ) : (

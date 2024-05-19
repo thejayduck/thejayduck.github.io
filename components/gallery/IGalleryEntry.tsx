@@ -9,11 +9,7 @@ export default interface IGalleryEntry {
   date: string;
   external?: IExternal[];
   image: string;
-  process?: {
-    video: string;
-    width: number;
-    height: number;
-  };
+  process?: string;
   suggestive?: boolean;
   tags: string[];
   width: number;
