@@ -3,29 +3,20 @@ import styles from "../../styles/BlogPost.module.scss";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticPropsResult } from "next/types";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
-import React, { useEffect, useRef, useState } from "react";
 import Markdown from "react-markdown";
 
 import { IBlogPostProps } from "../../components/blog/IBlogProps";
-import {
-  AnchorItemProps,
-  TableOfContent,
-} from "../../components/blog/tableOfContent";
+import TableOfContentToggle from "../../components/blog/tableOfContentToggle";
 import Button from "../../components/button";
 import PageBase from "../../components/pageBase";
 import GetPosts from "../../lib/getPosts";
-import {
-  countWords,
-  getAnchors,
-  groupTreeBy,
-  readTime,
-} from "../../lib/helper";
+import { countWords, readTime } from "../../lib/helper";
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   return {
@@ -57,36 +48,6 @@ export default function Blog({ posts }: IBlogPostProps) {
 
   const wordCount = countWords(post.content);
   const avgTime = readTime(wordCount);
-  const anchors = getAnchors(post.content);
-  const groupedAnchors = groupTreeBy(
-    anchors,
-    (el) => el.level
-  ) as AnchorItemProps[];
-
-  const [anchorToggle, setAnchorToggle] = useState(false);
-
-  const anchorRef = useRef(null);
-  const outsideClickIgnore = useRef(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        anchorRef.current &&
-        !(anchorRef.current as HTMLElement).contains(event.target as Node) &&
-        (!outsideClickIgnore.current || //? Not sure if there is a better way to do this
-          !(outsideClickIgnore.current as HTMLElement).contains(
-            event.target as Node
-          ))
-      ) {
-        setAnchorToggle(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   return (
     <>
@@ -125,34 +86,8 @@ export default function Blog({ posts }: IBlogPostProps) {
             </motion.div>
           </div>
         </section>
+        <TableOfContentToggle content={post.content} />
       </PageBase>
-      <div className={styles.anchorWrapper}>
-        <AnimatePresence>
-          {anchorToggle && (
-            <motion.div // Anchors
-              ref={anchorRef}
-              className={`${styles.anchorList}`}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{
-                height: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 },
-              }}
-            >
-              <TableOfContent anchors={groupedAnchors} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <div // Toggle Table of Content
-          ref={outsideClickIgnore}
-          className={styles.anchorToggle}
-          onClick={() => setAnchorToggle((prev) => !prev)}
-          title={"Table of Content"}
-        >
-          <i className={anchorToggle ? "bx bx-x" : "bx bx-menu"} />
-        </div>
-      </div>
     </>
   );
 }

@@ -49,6 +49,7 @@
 }
 
 :root[data-theme="dark"] {
+  // Colors
   --primary-hsla: 248, 85%, 66%;
   --primary: hsl(248, 85%, 66%);
   --secondary: hsl(0, 0%, 100%, 0.5);
@@ -77,7 +78,6 @@ body[data-theme="light"] {
 
 html[data-theme="dark"],
 body[data-theme="dark"] {
-  background: rgb(0, 0, 0);
   background: hsl(248, 8%, 17%);
 
   color-scheme: dark;

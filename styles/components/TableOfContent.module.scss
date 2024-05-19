@@ -1,0 +1,79 @@
+.anchorWrapper {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 0 0 15px 10px;
+
+  .anchorToggle {
+    cursor: pointer;
+
+    float: left;
+    padding: var(--spacing-small);
+    margin-top: var(--spacing-small);
+
+    border-radius: var(--border);
+    background-color: var(--tertiary);
+    box-shadow: var(--box-shadow);
+    color: var(--font-default);
+
+    i {
+      text-shadow: var(--box-shadow);
+      color: inherit;
+    }
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  .anchorList {
+    display: block;
+    overflow: hidden;
+    min-width: 25vw;
+
+    background-color: var(--tertiary);
+    border-radius: var(--border);
+    box-shadow: var(--box-shadow);
+
+    a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-decoration: none;
+      color: var(--font-default);
+      display: block;
+      padding-right: 10px;
+
+      transition: all 0.1s;
+
+      &:hover {
+        background-color: hsla(var(--primary-hsla), 0.2);
+        border-left-style: solid;
+        border-left-color: var(--primary);
+        border-left-width: 3px;
+      }
+    }
+
+    ul {
+      padding: 0;
+      margin: var(--spacing-small) 0 0 0;
+    }
+    li {
+      &:not(:first-child) {
+        margin-top: 5px;
+      }
+    }
+
+    & > ul:not(:first-of-type) a {
+      color: #5c5c5c;
+    }
+
+    & > ul:first-of-type {
+      padding: 0;
+    }
+  }
+}

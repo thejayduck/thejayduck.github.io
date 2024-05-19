@@ -13,20 +13,12 @@ body {
   -webkit-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
   text-rendering: optimizeLegibility;
-  font-synthesis: none;
+  font-synthesis: none; //! prevents bold font FIX
 
   font-size: var(--font-regular);
 
   scroll-behavior: smooth;
   scroll-padding-top: 10px;
-
-  // background-image: url("/background-light.svg");
-  // background-repeat: repeat;
-
-  // -webkit-background-size: auto;
-  // -moz-background-size: auto;
-  // -o-background-size: auto;
-  // background-size: auto;
 }
 
 * {
@@ -119,5 +111,5 @@ a {
 
 /* Background Color */
 ::-webkit-scrollbar-track {
-  background-color: var(--secondary-opaque);
+  background-color: var(--tertiary);
 }
