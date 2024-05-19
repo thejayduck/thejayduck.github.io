@@ -36,22 +36,24 @@ export default function Home() {
             >
               <Subtitle text="About Me" icon="bx bx-detail" />
               <p>
-                I am a student in <span>University of Bremen</span>, studying
-                linguistics and computer science. I am committed to learn new
-                skills, and try out new stuff whenever I have the time to do so.
-                Anyways, don&apos;t forget to check my{" "}
+                I am a student at the <span>University of Bremen</span>,
+                studying linguistics and computer science. I&apos;m always on
+                the lookout for new skills to learn, from diving into a new
+                programming language to honing my drawing skills. In my free
+                time, I like to occupy myself with my projects and hobbies.
+                Curious to see what I&apos;m working on? Check out my latest{" "}
                 <span>
                   <Link href="/blog">Blog</Link>
                 </span>
-                ,{" "}
+                , explore some of my drawings in the{" "}
                 <span>
                   <Link href="/gallery">Gallery</Link>
-                </span>{" "}
-                and{" "}
+                </span>
+                , or take a look at my released{" "}
                 <span>
                   <Link href="/projects">Projects</Link>
-                </span>{" "}
-                for more content!
+                </span>
+                !
               </p>
             </CardPanel>
 
