@@ -36,6 +36,11 @@ a {
   font-weight: var(--font-bold);
 }
 
+hr {
+  border: 2px solid var(--hr-color);
+  border-radius: 5px;
+}
+
 .bx {
   margin: 5px;
   font-size: var(--font-medium);
