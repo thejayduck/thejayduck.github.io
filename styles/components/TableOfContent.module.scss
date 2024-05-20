@@ -16,6 +16,10 @@
     box-shadow: var(--box-shadow);
     color: var(--font-default);
 
+    opacity: 0.5;
+
+    transition: all 0.3s;
+
     i {
       text-shadow: var(--box-shadow);
       color: inherit;
@@ -23,6 +27,7 @@
 
     &:hover {
       color: var(--primary);
+      opacity: 1;
     }
   }
 
