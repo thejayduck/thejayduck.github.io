@@ -159,6 +159,12 @@ export default function Gallery() {
                 )
               )}
             </div>
+            <hr />
+            <center className={styles.endNotice}>
+              <span>You&apos;ve reached the end </span>
+
+              <i className="bx bxs-sad"></i>
+            </center>
           </CardPanel>
 
           {/* Image Preview Component */}

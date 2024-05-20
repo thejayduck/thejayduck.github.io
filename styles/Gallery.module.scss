@@ -2,6 +2,15 @@
   align-items: stretch;
   color: var(--font-default);
 
+  .endNotice {
+    span,
+    i {
+      vertical-align: middle;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
   .filterTags {
     .tagButton {
       display: inline-block;
