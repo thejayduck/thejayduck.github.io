@@ -137,10 +137,10 @@ export default function Gallery() {
                   <button
                     className={`cardItem ${styles.tagButton} ${styles.clearTags}`}
                     onClick={() => setSelectedTags([])}
-                    title="Clear selected tags"
+                    title="Clear Filter"
                   >
                     <i className="bx bx-x" />
-                    <span>Clear Tags</span>
+                    <span>Clear Filter</span>
                   </button>
                 )}
               </div>
