@@ -57,7 +57,7 @@
     },
     {
       "title": "Java",
-      "icon": "devicon-9java-plain",
+      "icon": "devicon-java-plain",
       "href": "https://www.java.com/"
     },
     {
@@ -153,6 +153,11 @@
       "title": "nginx",
       "icon": "devicon-nginx-original",
       "href": "https://nginx.org/"
+    },
+    {
+      "title": "Apache",
+      "icon": "devicon-apache-plain",
+      "href": "https://apache.org/"
     }
   ]
 }
