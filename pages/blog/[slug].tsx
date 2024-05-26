@@ -3,6 +3,8 @@ import styles from "../../styles/BlogPost.module.scss";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticPropsResult } from "next/types";
+// @ts-ignore
+import rehypeFigure from "@microflash/rehype-figure";
 import { motion } from "framer-motion";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
@@ -68,18 +70,30 @@ export default function Blog({ posts }: IBlogPostProps) {
         </ul>
         <section className={`${styles.mainSection}`}>
           <div className={`cardItem ${styles.post}`}>
+            {/* <div className={styles.stats}>
+              <span>
+                {post.date} <i className="bx bxs-calendar" />
+              </span>
+              <span>
+                {wordCount} Words <i className="bx bxs-book" />
+              </span>
+              <span>
+                ~{avgTime} Minutes <i className="bx bxs-stopwatch" />
+              </span>
+            </div> */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <span>
-                {post.date} 🗓️ | {wordCount} Words 📄 | ~{avgTime} Minutes ⏱️
-              </span>
-              <hr />
               <Markdown
                 remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeRaw, rehypeSlug, rehypeSanitize]}
+                rehypePlugins={[
+                  rehypeRaw,
+                  rehypeSlug,
+                  rehypeSanitize,
+                  rehypeFigure,
+                ]}
               >
                 {post.content}
               </Markdown>

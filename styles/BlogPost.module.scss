@@ -1,13 +1,25 @@
 .mainSection {
   .post {
-    padding: var(--spacing-normal);
     color: var(--font-default);
+    padding: var(--spacing-small) 230px var(--spacing-medium) 230px;
+
+    img {
+      border-radius: var(--border);
+      max-width: 100%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      height: auto;
+    }
 
     figure {
-      margin: 0;
+      margin-bottom: 0.5rem;
+      margin: 5px 0 0 0;
 
       figcaption {
         font-size: var(--font-small);
+        text-align: center;
       }
     }
 
@@ -24,6 +36,12 @@
       }
     }
 
+    pre {
+      background-color: hsla(var(--primary-hsla), 0.2);
+      border-radius: var(--border);
+      padding: var(--spacing-normal);
+    }
+
     table tr:nth-child(2n) {
       background-color: hsla(var(--primary-hsla), 0.2);
     }
@@ -36,6 +54,10 @@
       width: 100%;
       overflow: auto;
       word-break: keep-all;
+
+      img {
+        max-width: fit-content;
+      }
     }
 
     th,
@@ -56,6 +78,14 @@
     }
     h1 {
       font-size: 2em;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mainSection {
+    .post {
+      padding: var(--spacing-medium) 10px;
     }
   }
 }
