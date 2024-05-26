@@ -1,22 +1,11 @@
 import styles from "../styles/PageBase.module.scss";
 
-import { useEffect, useState } from "react";
+import useStreamData from "../lib/getStreamData";
 
-import IStreamItem from "./home/IStreamItem";
 import StreamNotification from "./streamNotification";
 
 export default function PageBase({ children }: { children: React.ReactNode }) {
-  const [streamData, setStreamData] = useState<IStreamItem | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/fetchStreamData");
-      const data = await response.json();
-      setStreamData(data);
-    };
-
-    fetchData();
-  }, []);
+  const [streamData] = useStreamData();
 
   return (
     <main className={styles.container}>
