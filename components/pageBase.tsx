@@ -1,6 +1,6 @@
 import styles from "../styles/PageBase.module.scss";
 
-import useStreamData from "../lib/getStreamData";
+import useStreamData from "../lib/useStreamData";
 
 import StreamNotification from "./streamNotification";
 
