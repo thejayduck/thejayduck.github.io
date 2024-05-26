@@ -59,13 +59,14 @@ export default function Gallery() {
 
       galleryItems.forEach((galleryItem: HTMLElement, index) => {
         //? Improve
-        const item = streamData?.is_active
-          ? filteredGallery[index - 1]
-          : filteredGallery[index] || {
-              // Fallback for the first item
-              width: 1920,
-              height: 1080,
-            };
+        const item = filteredGallery[index];
+        // const item = streamData?.is_active
+        //   ? filteredGallery[index - 1]
+        //   : filteredGallery[index] || {
+        //       // Fallback for the first item
+        //       width: 1920,
+        //       height: 1080,
+        //     };
 
         const ratio = item.width / item.height;
 
@@ -159,7 +160,7 @@ export default function Gallery() {
             <br />
             {/* Gallery Items */}
             <div className={styles.gallery} ref={containerRef}>
-              {streamData?.is_active && (
+              {/* {streamData?.is_active && (
                 <GalleryItem
                   key={"sLivetream Thumbnail"}
                   entry={{
@@ -175,7 +176,7 @@ export default function Gallery() {
                     window.open("https://livestream.ardarmutcu.com", "_blank")
                   }
                 />
-              )}
+              )} */}
               {filteredGallery.map(
                 (galleryEntry: IGalleryEntry, index: number) => (
                   <GalleryItem
