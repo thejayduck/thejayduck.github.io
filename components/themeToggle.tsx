@@ -22,6 +22,7 @@ const iconVariants = {
 };
 
 export default function ThemeToggle() {
+  const [mount, setMount] = useState(false);
   const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme");
@@ -43,27 +44,34 @@ export default function ThemeToggle() {
       document.documentElement.dataset.theme = theme;
       localStorage.setItem("theme", theme);
     }
+    setMount(true);
   }, [theme]);
 
   return (
-    <button
-      className={styles.toggle}
-      key="themeToggle"
-      onClick={toggleTheme}
-      data-theme={theme}
-      title="Toggle theme (WIP)"
-    >
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={theme}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          variants={iconVariants}
+    <>
+      {mount && (
+        <button
+          className={styles.toggle}
+          key="themeToggle"
+          onClick={toggleTheme}
+          data-theme={theme}
+          title="Toggle theme (WIP)"
         >
-          <i className={`${theme === "dark" ? "bx bxs-sun" : "bx bxs-moon"}`} />
-        </motion.div>
-      </AnimatePresence>
-    </button>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={theme}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              variants={iconVariants}
+            >
+              <i
+                className={`${theme === "dark" ? "bx bxs-sun" : "bx bxs-moon"}`}
+              />
+            </motion.div>
+          </AnimatePresence>
+        </button>
+      )}
+    </>
   );
 }
