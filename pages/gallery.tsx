@@ -12,8 +12,11 @@ import IGalleryEntry from "../components/gallery/IGalleryEntry";
 import { ImagePreview } from "../components/gallery/imagePreview";
 import PageBase from "../components/pageBase";
 import gallery from "../docs/json/gallery.json";
+import useStreamData from "../lib/useStreamData";
 
 export default function Gallery() {
+  const [streamData] = useStreamData();
+
   const containerRef = useRef<HTMLDivElement>(null); // Reference to the gallery container
   const [selectedTags, setSelectedTags] = useState<string[]>([]); // Selected tags for filtering
   const [focusedImage, setFocusedImage] = useState<number | null>(null); // Index of the clicked image
@@ -55,8 +58,16 @@ export default function Gallery() {
       );
 
       galleryItems.forEach((galleryItem: HTMLElement, index) => {
-        const ratio =
-          filteredGallery[index].width / filteredGallery[index].height;
+        //? Improve
+        const item = streamData?.is_active
+          ? filteredGallery[index - 1]
+          : filteredGallery[index] || {
+              // Fallback for the first item
+              width: 1920,
+              height: 1080,
+            };
+
+        const ratio = item.width / item.height;
 
         galleryItem.style.flexBasis = `calc(${ratio} * 15em)`;
         galleryItem.style.flexGrow = `calc(${ratio} * 100)`;
@@ -71,7 +82,7 @@ export default function Gallery() {
       window.removeEventListener("resize", calculateColumnSpan);
       window.addEventListener("load", calculateColumnSpan);
     };
-  }, [filteredGallery]);
+  }, [filteredGallery, streamData?.is_active]);
 
   return (
     <>
@@ -148,6 +159,23 @@ export default function Gallery() {
             <br />
             {/* Gallery Items */}
             <div className={styles.gallery} ref={containerRef}>
+              {streamData?.is_active && (
+                <GalleryItem
+                  key={"sLivetream Thumbnail"}
+                  entry={{
+                    tags: ["Livestream"],
+                    width: 1920,
+                    height: 1080,
+                    title: "Live Now! 🎥 - Click to Watch",
+                    date: "2024-05",
+                    image: "https://livestream.ardarmutcu.com/thumbnail.jpg",
+                  }}
+                  index={-1}
+                  handleImageClick={() =>
+                    window.open("https://livestream.ardarmutcu.com", "_blank")
+                  }
+                />
+              )}
               {filteredGallery.map(
                 (galleryEntry: IGalleryEntry, index: number) => (
                   <GalleryItem
