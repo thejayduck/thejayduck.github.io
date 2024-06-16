@@ -2,6 +2,7 @@ import styles from "../../styles/components/BlogItem.module.scss";
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import React from "react";
 
@@ -14,7 +15,19 @@ export default function BlogItem(blog: IBlogProps) {
   const avgTime = readTime(wordCount);
 
   return (
-    <li className={`cardItem ${styles.blogItem}`}>
+    <motion.li
+      className={`cardItem ${styles.blogItem}`}
+      // Animation
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      }}
+      whileHover={{ scale: 1.02 }}
+      transition={{
+        opacity: { duration: 0.4 },
+        scale: { duration: 0.02, type: "tween" },
+      }}
+    >
       <div className={styles.imageContainer}>
         <Image
           src={blog.image}
@@ -51,6 +64,6 @@ export default function BlogItem(blog: IBlogProps) {
           </span>
         </article>
       </div>
-    </li>
+    </motion.li>
   );
 }

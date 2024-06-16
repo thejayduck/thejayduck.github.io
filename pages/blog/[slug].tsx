@@ -54,7 +54,7 @@ export default function Blog({ posts }: IBlogPostProps) {
   return (
     <>
       <Head>
-        <title>{post.title} · Arda Fevzi Armutcu</title>
+        <title>{`${post.title} · Arda Fevzi Armutcu`}</title>
         <meta name="description" content="Arda Fevzi Armutcu's Blog Post" />
       </Head>
 

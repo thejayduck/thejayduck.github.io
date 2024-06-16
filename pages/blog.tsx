@@ -2,6 +2,7 @@ import styles from "../styles/Blog.module.scss";
 
 import Head from "next/head";
 import { GetStaticPropsResult } from "next/types";
+import { AnimatePresence, motion } from "framer-motion";
 
 import BlogItem from "../components/blog/blogItem";
 import IBlogProps, { IBlogPostProps } from "../components/blog/IBlogProps";
@@ -42,11 +43,20 @@ export default function Blog({ posts }: IBlogPostProps) {
         </ul>
 
         <section>
-          <ul className={styles.posts}>
+          <motion.ul
+            className={styles.posts}
+            initial="hidden"
+            animate="visible"
+            layout
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+            }}
+          >
             {posts.map((post: IBlogProps, index: number) => (
               <BlogItem key={index} {...post} />
             ))}
-          </ul>
+          </motion.ul>
         </section>
       </PageBase>
     </>
