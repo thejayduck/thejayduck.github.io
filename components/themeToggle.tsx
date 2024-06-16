@@ -55,7 +55,7 @@ export default function ThemeToggle() {
           key="themeToggle"
           onClick={toggleTheme}
           data-theme={theme}
-          title="Toggle theme (WIP)"
+          title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >
           <AnimatePresence mode="wait">
             <motion.div
