@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@microflash/rehype-figure": "^2.1.0",
-    "framer-motion": "^11.1.7",
+    "framer-motion": "^11.2.10",
     "gray-matter": "^4.0.3",
     "next": "^14.2.3",
     "react": "^18.2.0",
@@ -29,7 +29,7 @@
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
     "eslint": "^8.56.0",
-    "eslint-config-next": "14.2.3",
+    "eslint-config-next": "^14.2.3",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "eslint-plugin-unused-imports": "^3.1.0",
     "raw-loader": "^4.0.2",
