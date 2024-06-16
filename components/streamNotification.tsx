@@ -1,13 +1,22 @@
 import styles from "../styles/components/StreamNotification.module.scss";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import IStreamItem from "./home/IStreamItem";
 
 export default function StreamNotification(stream: IStreamItem) {
   return (
     stream.is_active && (
-      <div className={styles.streamNotification}>
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: "55px", opacity: 1 }}
+        transition={{
+          height: { type: "spring", stiffness: 300, damping: 30 },
+          opacity: { duration: 0.4 },
+        }}
+        className={styles.streamNotification}
+      >
         <i className="bx bxs-video-recording" />
         <span>{stream.stream_title} Live!</span>
         <Link
@@ -17,7 +26,7 @@ export default function StreamNotification(stream: IStreamItem) {
         >
           <p className={styles.redirect}>Join Stream!</p>
         </Link>
-      </div>
+      </motion.div>
     )
   );
 }
