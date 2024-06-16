@@ -1,9 +1,10 @@
 import styles from "../styles/Gallery.module.scss";
 
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import Button from "../components/button";
 import CardPanel from "../components/cardPanel";
@@ -15,6 +16,16 @@ import gallery from "../docs/json/gallery.json";
 import useStreamData from "../lib/useStreamData";
 
 export default function Gallery() {
+  const router = useRouter();
+  const { id } = router.query;
+
+  useEffect(() => {
+    if (id) {
+      const image = gallery.find((item) => item.id === id);
+      setFocusedImage(image ? gallery.indexOf(image) : null);
+    }
+  }, [id]);
+
   const [streamData] = useStreamData();
 
   const containerRef = useRef<HTMLDivElement>(null); // Reference to the gallery container
@@ -39,14 +50,19 @@ export default function Gallery() {
   const filteredTags = new Set(filteredGallery.flatMap((item) => item.tags)); // Used to disable unavailable tags.
 
   // Handler for image click
-  const handleImageClick = (index: number) => {
-    setFocusedImage(index);
-    document.body.style.overflow = "hidden";
-  };
+  const handleImageClick = useCallback(
+    (index: number, id: string) => {
+      setFocusedImage(index);
+      router.push(`/gallery/?id=${id}`);
+      document.body.style.overflow = "hidden";
+    },
+    [router]
+  );
 
   // Handler for closing image preview
   const handleClosePreview = () => {
     setFocusedImage(null);
+    router.push("/gallery");
     document.body.style.overflow = "auto";
   };
 
@@ -183,7 +199,9 @@ export default function Gallery() {
                     key={index}
                     entry={galleryEntry}
                     index={index}
-                    handleImageClick={handleImageClick}
+                    handleImageClick={() =>
+                      handleImageClick(index, galleryEntry.id)
+                    }
                   />
                 )
               )}

@@ -14,4 +14,5 @@ export default interface IGalleryEntry {
   tags: string[];
   width: number;
   height: number;
+  id: string;
 }
