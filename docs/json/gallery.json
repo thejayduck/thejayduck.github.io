@@ -17,11 +17,20 @@
     {
         "title": "Mion Sonozaki - Higurashi",
         "date": "2024-06",
+        "external": [
+            {
+                "url": "https://www.deviantart.com/thejayduck/art/Mion-Sonozaki-1064170364",
+                "alt": "DeviantArt",
+                "icon": "bx bxl-deviantart"
+            }
+        ],
         "image": "https://i.imgur.com/xfDgmBI.png",
+        "process": "https://i.imgur.com/yl0YCyA.mp4",
         "tags": [
             "characterdesign",
             "sketch",
-            "fanart"
+            "fanart",
+            "process"
         ],
         "width": 1080,
         "height": 960,
