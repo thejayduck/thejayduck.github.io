@@ -82,12 +82,10 @@ export default function Gallery() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Arda Fevzi Armutcu's Gallery" />
 
-        {id != undefined && (
-          <meta
-            property="og:image"
-            content={gallery.find((image) => image.id == id)?.image}
-          />
-        )}
+        <meta
+          property="og:image"
+          content={gallery.find((image) => image.id == id)?.image}
+        />
       </Head>
 
       <PageBase>
