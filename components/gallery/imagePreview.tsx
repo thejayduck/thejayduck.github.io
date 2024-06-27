@@ -151,19 +151,36 @@ export function ImagePreview({
           opacity: { duration: 0.2 },
         }}
       >
-        <Image
-          key={"Image"}
-          src={currentImage.image}
-          alt={currentImage.title}
-          width={currentImage.width}
-          height={currentImage.height}
-          onClick={(e) => e.stopPropagation()}
-          placeholder={placeholderImage(
-            currentImage.width,
-            currentImage.height
-          )}
-          priority={false}
-        />
+        {isIdle && currentImage.process ? (
+          <motion.video
+            className={styles.processVideo}
+            autoPlay
+            muted
+            loop
+            onClick={(e) => e.stopPropagation()}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <source src={currentImage.process} type="video/mp4" />
+            The video tag is not supported in your browser.
+          </motion.video>
+        ) : (
+          <Image
+            key={"Image"}
+            src={currentImage.image}
+            alt={currentImage.title}
+            width={currentImage.width}
+            height={currentImage.height}
+            onClick={(e) => e.stopPropagation()}
+            placeholder={placeholderImage(
+              currentImage.width,
+              currentImage.height
+            )}
+            priority={false}
+          />
+        )}
       </motion.div>
 
       {/* Preview Information */}

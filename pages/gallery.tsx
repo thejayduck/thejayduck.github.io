@@ -4,7 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 
 import Button from "../components/button";
 import CardPanel from "../components/cardPanel";
@@ -33,7 +33,7 @@ export default function Gallery() {
 
   // Handler for image click
   const handleImageClick = useCallback(
-    (index: number, id: string) => {
+    (id: string) => {
       router.push(`/gallery/?id=${id}`);
       document.body.style.overflow = "hidden";
     },
@@ -81,6 +81,13 @@ export default function Gallery() {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Arda Fevzi Armutcu's Gallery" />
+
+        {id != undefined && (
+          <meta
+            property="og:image"
+            content={gallery.find((image) => image.id == id)?.image}
+          />
+        )}
       </Head>
 
       <PageBase>

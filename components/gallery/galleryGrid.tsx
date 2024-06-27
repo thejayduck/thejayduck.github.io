@@ -5,7 +5,7 @@ import IGalleryEntry from "./IGalleryEntry";
 
 interface IGalleryGridProps {
   containerRef: React.RefObject<HTMLDivElement>;
-  handleImageClick: (index: number, id: string) => void;
+  handleImageClick: (id: string) => void;
   gallery: IGalleryEntry[];
 }
 
@@ -22,7 +22,7 @@ export const GalleryGrid: React.FC<IGalleryGridProps> = ({
             key={index}
             entry={galleryEntry}
             index={index}
-            handleImageClick={() => handleImageClick(index, galleryEntry.id)}
+            handleImageClick={() => handleImageClick(galleryEntry.id)}
           />
         ))}
       </div>
