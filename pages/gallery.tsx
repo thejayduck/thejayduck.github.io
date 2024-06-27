@@ -8,9 +8,9 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import Button from "../components/button";
 import CardPanel from "../components/cardPanel";
-import GalleryItem from "../components/gallery/galleryItem";
-import IGalleryEntry from "../components/gallery/IGalleryEntry";
+import { GalleryGrid } from "../components/gallery/galleryGrid";
 import { ImagePreview } from "../components/gallery/imagePreview";
+import { TagButtons } from "../components/gallery/tagButtons";
 import PageBase from "../components/pageBase";
 import gallery from "../docs/json/gallery.json";
 import useStreamData from "../lib/useStreamData";
@@ -19,28 +19,7 @@ export default function Gallery() {
   const router = useRouter();
   const { id } = router.query;
 
-  useEffect(() => {
-    if (id) {
-      const image = gallery.find((item) => item.id === id);
-      setFocusedImage(image ? gallery.indexOf(image) : null);
-    }
-  }, [id]);
-
-  const [streamData] = useStreamData();
-
-  const containerRef = useRef<HTMLDivElement>(null); // Reference to the gallery container
-  const [selectedTags, setSelectedTags] = useState<string[]>([]); // Selected tags for filtering
-  const [focusedImage, setFocusedImage] = useState<number | null>(null); // Index of the clicked image
-
-  // Handler for tag selection
-  const toggleTag = (tag: string) => {
-    setSelectedTags((prevSelectedTags) =>
-      prevSelectedTags.includes(tag)
-        ? prevSelectedTags.filter((selectedTag) => selectedTag !== tag)
-        : [...prevSelectedTags, tag]
-    );
-  };
-
+  const { selectedTags, component: TagButtonsComponent } = TagButtons();
   const filteredGallery =
     selectedTags.length > 0
       ? gallery.filter((item) =>
@@ -49,10 +28,12 @@ export default function Gallery() {
       : gallery;
   const filteredTags = new Set(filteredGallery.flatMap((item) => item.tags)); // Used to disable unavailable tags.
 
+  const [streamData] = useStreamData();
+  const containerRef = useRef<HTMLDivElement>(null); // Reference to the gallery container
+
   // Handler for image click
   const handleImageClick = useCallback(
     (index: number, id: string) => {
-      setFocusedImage(index);
       router.push(`/gallery/?id=${id}`);
       document.body.style.overflow = "hidden";
     },
@@ -61,12 +42,12 @@ export default function Gallery() {
 
   // Handler for closing image preview
   const handleClosePreview = () => {
-    setFocusedImage(null);
     router.push("/gallery");
     document.body.style.overflow = "auto";
   };
 
   // Effect to calculate and update column span on window resize
+  //? Move to galleryGrid.tsx
   useEffect(() => {
     const calculateColumnSpan = () => {
       const galleryItems = Array.from(
@@ -76,14 +57,6 @@ export default function Gallery() {
       galleryItems.forEach((galleryItem: HTMLElement, index) => {
         //? Improve
         const item = filteredGallery[index];
-        // const item = streamData?.is_active
-        //   ? filteredGallery[index - 1]
-        //   : filteredGallery[index] || {
-        //       // Fallback for the first item
-        //       width: 1920,
-        //       height: 1080,
-        //     };
-
         const ratio = item.width / item.height;
 
         galleryItem.style.flexBasis = `calc(${ratio} * 15em)`;
@@ -144,82 +117,23 @@ export default function Gallery() {
             </p>
 
             <hr />
-            <div className={styles.filterTags}>
-              <div className={styles.tagButtons}>
-                {Array.from(new Set(gallery.flatMap((item) => item.tags))).map(
-                  (tag) => (
-                    <button
-                      key={tag}
-                      className={`cardItem ${styles.tagButton} ${
-                        selectedTags.includes(tag) ? styles.selected : ""
-                      }`}
-                      onClick={() => toggleTag(tag)}
-                      disabled={!filteredTags.has(tag)}
-                      title={`Filter by ${tag}`}
-                    >
-                      <span>{tag}</span>
-                    </button>
-                  )
-                )}
-                {selectedTags.length > 0 && ( // Clear tags button
-                  <button
-                    className={`cardItem ${styles.tagButton} ${styles.clearTags}`}
-                    onClick={() => setSelectedTags([])}
-                    title="Clear Filter"
-                  >
-                    <i className="bx bx-x" />
-                    <span>Clear Filter</span>
-                  </button>
-                )}
-              </div>
-            </div>
+            {TagButtonsComponent}
             <br />
-            {/* Gallery Items */}
-            <div className={styles.gallery} ref={containerRef}>
-              {/* {streamData?.is_active && (
-                <GalleryItem
-                  key={"sLivetream Thumbnail"}
-                  entry={{
-                    tags: ["Livestream"],
-                    width: 1920,
-                    height: 1080,
-                    title: "Live Now! 🎥 - Click to Watch",
-                    date: "2024-05",
-                    image: "https://livestream.ardarmutcu.com/thumbnail.jpg",
-                  }}
-                  index={-1}
-                  handleImageClick={() =>
-                    window.open("https://livestream.ardarmutcu.com", "_blank")
-                  }
-                />
-              )} */}
-              {filteredGallery.map(
-                (galleryEntry: IGalleryEntry, index: number) => (
-                  <GalleryItem
-                    key={index}
-                    entry={galleryEntry}
-                    index={index}
-                    handleImageClick={() =>
-                      handleImageClick(index, galleryEntry.id)
-                    }
-                  />
-                )
-              )}
-            </div>
-            <hr />
-            <center className={styles.endNotice}>
-              <span>You&apos;ve reached the end </span>
-
-              <i className="bx bxs-sad"></i>
-            </center>
+            <GalleryGrid
+              containerRef={containerRef}
+              handleImageClick={handleImageClick}
+              gallery={filteredGallery}
+            />
           </CardPanel>
 
           {/* Image Preview Component */}
           <AnimatePresence>
-            {focusedImage !== null && (
+            {id != undefined && (
               <ImagePreview
                 key={"imagePreviewModal"}
-                activeIndex={focusedImage}
+                activeIndex={filteredGallery.findIndex(
+                  (image) => image.id == id
+                )}
                 images={filteredGallery}
                 onOutsideClick={handleClosePreview}
               />

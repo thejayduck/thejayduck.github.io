@@ -1,6 +1,7 @@
 import styles from "../../styles/components/gallery/ImagePreview.module.scss";
 
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { AnimatePresence, motion, wrap } from "framer-motion";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
@@ -18,34 +19,24 @@ const variants = {
       opacity: 0,
     };
   },
-  exit: (direction: number) => {
-    return {
-      x: direction == 0 ? 0 : direction < 0 ? 100 : -100,
-      opacity: 0,
-    };
-  },
 };
 
 export function ImagePreview({
-  activeIndex: startIndex, //? Find a better name
   images,
   onOutsideClick,
+  activeIndex,
 }: IImagePreview) {
-  const [toggleProcess, setToggleProcess] = useState(false);
-  // Image Thumbnail Handler
-  const [[thumbnailIndex, direction], setThumbnailIndex] = useState([
-    startIndex || 0,
-    0,
-  ]);
-  const imageIndex = wrap(0, images.length, thumbnailIndex);
-  const selectedImage = images[imageIndex || 0];
+  const router = useRouter();
+  const [[imageIndex, direction], setImageIndex] = useState([activeIndex, 0]);
+  const currentImage = images[imageIndex];
 
-  const updateThumbnail = useCallback(
-    (index: number) => {
-      setThumbnailIndex([thumbnailIndex + index, index]);
-      setToggleProcess(false);
+  const updateImageIndex = useCallback(
+    (direction: number) => {
+      const wrappedImageIndex = wrap(0, images.length, imageIndex + direction);
+      setImageIndex([wrappedImageIndex, direction]);
+      router.push(`/gallery/?id=${images[wrappedImageIndex].id}`);
     },
-    [thumbnailIndex]
+    [images, router, imageIndex]
   );
 
   // Keyboard Navigation
@@ -59,11 +50,11 @@ export function ImagePreview({
           break;
         case "KeyA":
         case "ArrowLeft":
-          updateThumbnail(-1);
+          updateImageIndex(-1);
           break;
         case "KeyD":
         case "ArrowRight":
-          updateThumbnail(1);
+          updateImageIndex(1);
           break;
       }
     };
@@ -73,7 +64,7 @@ export function ImagePreview({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [onOutsideClick, updateThumbnail]);
+  }, [onOutsideClick, updateImageIndex]);
 
   // Idle Detector
   const idleTimeout = useRef<NodeJS.Timeout>();
@@ -99,7 +90,7 @@ export function ImagePreview({
       window.removeEventListener("mousedown", resetIdle);
       window.removeEventListener("scroll", resetIdle);
     };
-  }, [thumbnailIndex, images.length, resetIdle]);
+  }, [images.length, resetIdle]);
 
   return (
     <motion.div
@@ -126,20 +117,8 @@ export function ImagePreview({
             exit={{ opacity: 0 }}
             className={styles.external}
           >
-            {selectedImage.process && (
-              <li onClick={(e) => e.stopPropagation()}>
-                <Button
-                  icon="bx bxs-camera-movie"
-                  title="Toggle Process"
-                  label="Toggle Process"
-                  href={""}
-                  newPage={false}
-                  onClick={() => setToggleProcess((prev) => !prev)}
-                />
-              </li>
-            )}
-            {selectedImage.external &&
-              selectedImage.external.map(
+            {currentImage.external &&
+              currentImage.external.map(
                 (post) =>
                   post && (
                     <li key={post.alt} onClick={(e) => e.stopPropagation()}>
@@ -160,8 +139,8 @@ export function ImagePreview({
       {/* Preview */}
       <motion.div
         className={styles.imagePreview}
-        key={`${selectedImage.image} `}
-        // Animations
+        key={`${currentImage.id} `}
+        // Animation
         custom={direction}
         variants={variants}
         initial="swipe"
@@ -172,38 +151,19 @@ export function ImagePreview({
           opacity: { duration: 0.2 },
         }}
       >
-        <AnimatePresence>
-          {toggleProcess && selectedImage.process ? (
-            <motion.video
-              className={styles.processVideo}
-              autoPlay
-              muted
-              loop
-              onClick={(e) => e.stopPropagation()}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <source src={selectedImage.process} type="video/mp4" />
-              The video tag is not supported in your browser.
-            </motion.video>
-          ) : (
-            <Image
-              key={"Image"}
-              src={selectedImage.image}
-              alt={selectedImage.title}
-              width={selectedImage.width}
-              height={selectedImage.height}
-              onClick={(e) => e.stopPropagation()}
-              placeholder={placeholderImage(
-                selectedImage.width,
-                selectedImage.height
-              )}
-              priority={false}
-            />
+        <Image
+          key={"Image"}
+          src={currentImage.image}
+          alt={currentImage.title}
+          width={currentImage.width}
+          height={currentImage.height}
+          onClick={(e) => e.stopPropagation()}
+          placeholder={placeholderImage(
+            currentImage.width,
+            currentImage.height
           )}
-        </AnimatePresence>
+          priority={false}
+        />
       </motion.div>
 
       {/* Preview Information */}
@@ -221,10 +181,10 @@ export function ImagePreview({
             }}
           >
             <div className={`${styles.previewInformation}`}>
-              <span className={styles.title}>{selectedImage.title}</span>
+              <span className={styles.title}>{currentImage.title}</span>
               <br />
               <div className={styles.tags}>
-                {selectedImage.tags.map((tag, index) => (
+                {currentImage.tags.map((tag, index) => (
                   <span key={index} className={styles.tag}>
                     #{tag}
                   </span>
@@ -237,11 +197,9 @@ export function ImagePreview({
               activeIndex={imageIndex}
               images={images}
               onThumbnailClick={(index) => {
-                // TODO Fix direction
-                setThumbnailIndex([index, index]);
-                setToggleProcess(false);
+                updateImageIndex(index - imageIndex);
               }}
-              onDirectionClick={(direction) => updateThumbnail(direction)}
+              onDirectionClick={(direction) => updateImageIndex(direction)}
             />
           </motion.div>
         )}

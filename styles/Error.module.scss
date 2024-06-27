@@ -24,8 +24,8 @@
   }
   img {
     margin-top: var(--spacing-normal);
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border);
+    box-shadow: 0 4px 10px hsla(202, 56%, 12%, 0.15);
+    border-radius: 0.7em;
     width: 100%;
     object-fit: cover;
   }
