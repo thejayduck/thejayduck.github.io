@@ -1,5 +1,6 @@
 import styles from "../styles/Gallery.module.scss";
 
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
@@ -15,14 +16,14 @@ import PageBase from "../components/pageBase";
 import gallery from "../docs/json/gallery.json";
 import useStreamData from "../lib/useStreamData";
 
-export async function getServerSideProps(context) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const id = context.query.id;
   return {
     props: {
       id: id || null,
     },
   };
-}
+};
 
 export default function Gallery({ id }: { id: string }) {
   const router = useRouter();
