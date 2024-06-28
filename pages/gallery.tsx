@@ -82,10 +82,7 @@ export default function Gallery() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Arda Fevzi Armutcu's Gallery" />
 
-        <meta
-          property="og:image"
-          content={`https://ardarmutcu.com/api/og?id=${id}`}
-        />
+        <meta property="og:image" content="https://ardarmutcu.com/api/og" />
       </Head>
 
       <PageBase>
