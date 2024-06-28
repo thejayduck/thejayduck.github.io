@@ -15,11 +15,18 @@ import PageBase from "../components/pageBase";
 import gallery from "../docs/json/gallery.json";
 import useStreamData from "../lib/useStreamData";
 
-export default function Gallery() {
-  const router = useRouter();
-  const { id } = router.query;
+export async function getServerSideProps(context) {
+  const id = context.query.id;
+  return {
+    props: {
+      id: id || null,
+    },
+  };
+}
 
-  const ogImage = `https://ardarmutcu.com/api/og?id=${id}`;
+export default function Gallery({ id }: { id: string }) {
+  const router = useRouter();
+  // const { id } = router.query;
 
   const { selectedTags, component: TagButtonsComponent } = TagButtons();
   const filteredGallery =
@@ -84,7 +91,10 @@ export default function Gallery() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Arda Fevzi Armutcu's Gallery" />
 
-        <meta property="og:image" content={ogImage} />
+        <meta
+          property="og:image"
+          content={`https://ardarmutcu.com/api/og?id=${id}`}
+        />
       </Head>
 
       <PageBase>
