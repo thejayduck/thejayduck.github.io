@@ -84,7 +84,7 @@ export default function Gallery() {
 
         <meta
           property="og:image"
-          content={gallery.find((image) => image.id == id)?.image}
+          content={`https://ardarmutcu.com/api/og?id=${id}`}
         />
       </Head>
 
