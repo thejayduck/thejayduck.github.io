@@ -30,6 +30,10 @@ export default function Blog({ posts }: IBlogPostProps) {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Arda Fevzi Armutcu's Blog" />
+        <meta
+          property="og:image"
+          content="https://ardarmutcu.com/api/og?title=blog"
+        />
       </Head>
       <PageBase>
         <ul className={"flex flexRight backButton"}>

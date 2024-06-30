@@ -34,6 +34,10 @@ export default function Projects() {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Arda Fevzi Armutcu's Projects" />
+        <meta
+          property="og:image"
+          content="https://ardarmutcu.com/api/og?title=projects"
+        />
       </Head>
       <PageBase>
         <ul className={"flex flexRight backButton"}>

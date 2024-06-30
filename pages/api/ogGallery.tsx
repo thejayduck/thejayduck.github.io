@@ -8,7 +8,7 @@ export const config = {
 
 export default async function handler(request: NextRequest) {
   const { searchParams } = request.nextUrl;
-  const title = searchParams.get("title");
+  const id = searchParams.get("id");
 
   return new ImageResponse(
     (
@@ -26,6 +26,20 @@ export default async function handler(request: NextRequest) {
           alignItems: "center",
         }}
       >
+        {id != "null" && (
+          <img
+            width="100%"
+            height="100%"
+            alt="Preview Image"
+            src={`https://i.imgur.com/${id}.jpg`}
+            style={{
+              objectFit: "cover",
+              verticalAlign: "top",
+              position: "absolute",
+              filter: "blur(10px)",
+            }}
+          />
+        )}
         <img
           width="256"
           height="256"
@@ -37,7 +51,11 @@ export default async function handler(request: NextRequest) {
           }}
         />
 
-        <p>Care to visit my {title}?</p>
+        {id ? (
+          <p>Open link to view image.</p>
+        ) : (
+          <p>Care to visit my gallery?</p>
+        )}
       </div>
     ),
     {

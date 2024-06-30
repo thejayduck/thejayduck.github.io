@@ -94,7 +94,9 @@ export default function Gallery({ id }: { id: string }) {
 
         <meta
           property="og:image"
-          content={`https://ardarmutcu.com/api/og?id=${id}`}
+          content={`https://ardarmutcu.com/api/ogGallery${
+            id ? `?id=${id}` : ""
+          }`}
         />
       </Head>
 
