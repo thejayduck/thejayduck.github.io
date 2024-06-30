@@ -63,6 +63,7 @@ export default function ImageThumbnail({
       if (selectedThumbnail) {
         selectedThumbnail.scrollIntoView({
           inline: "center",
+          behavior: "instant", //* For some reason smooth doesn't work as expected
         });
       }
     }

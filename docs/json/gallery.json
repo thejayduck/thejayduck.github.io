@@ -1,5 +1,27 @@
 [
     {
+        "title": "Kita Ikuyo - Bocchi the Rock",
+        "date": "2024-06",
+        "external": [
+            {
+                "url": "https://www.deviantart.com/thejayduck/art/Ikuyo-Kita-Bocchi-the-Rock-Lineart-1069145665",
+                "alt": "DeviantArt",
+                "icon": "bx bxl-deviantart"
+            }
+        ],
+        "image": "https://i.imgur.com/xW1Twhf.png",
+        "process": "https://i.imgur.com/vXKRviD.mp4",
+        "tags": [
+            "characterdesign",
+            "sketch",
+            "fanart",
+            "process"
+        ],
+        "width": 1080,
+        "height": 960,
+        "id": "xW1Twhf"
+    },
+    {
         "title": "Angel",
         "date": "2024-06",
         "image": "https://i.imgur.com/oXyoKvw.png",
@@ -524,6 +546,7 @@
             }
         ],
         "image": "https://i.imgur.com/GcWyYCs.png",
+        "suggestive": true,
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -714,6 +737,7 @@
             }
         ],
         "image": "https://i.imgur.com/TEgObUM.png",
+        "suggestive": true,
         "tags": [
             "characterdesign",
             "sketch",

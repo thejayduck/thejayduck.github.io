@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
 
-  z-index: var(--z-absolute);
+  z-index: var(--z-fixed);
 
   .exitButton {
     position: absolute;
@@ -25,6 +25,7 @@
     cursor: pointer;
 
     transition: all 0.3s;
+    z-index: 1;
 
     i {
       text-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
@@ -49,9 +50,11 @@
   }
 
   .imagePreview {
-    overflow: hidden;
-
     flex: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    will-change: transform, opacity;
 
     img,
     video {

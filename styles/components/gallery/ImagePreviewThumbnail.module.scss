@@ -8,7 +8,8 @@
   padding-bottom: 5px;
 
   overflow-x: auto;
-  position: relative;
+  position: absolute;
+  bottom: 0;
 
   cursor: grab;
   flex-shrink: 0;

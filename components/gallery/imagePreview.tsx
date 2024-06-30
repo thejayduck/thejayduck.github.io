@@ -6,6 +6,7 @@ import { AnimatePresence, motion, wrap } from "framer-motion";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
+import { dragHandler } from "../../lib/helper";
 import Button from "../button";
 import { placeholderImage } from "../imageShimmer";
 
@@ -13,12 +14,17 @@ import IImagePreview from "./IImagePreview";
 import ImageThumbnail from "./imageThumbnail";
 
 const variants = {
-  swipe: (direction: number) => {
-    return {
-      x: direction == 0 ? 0 : direction > 0 ? 100 : -100,
-      opacity: 0,
-    };
-  },
+  initial: (direction: number) => ({
+    x: direction > 0 ? "100%" : "-100%",
+    scale: 1,
+    opacity: 0,
+  }),
+  animate: { x: 0, scale: 1, opacity: 1 },
+  exit: (direction: number) => ({
+    x: direction > 0 ? "-100%" : "100%",
+    scale: 0.8,
+    opacity: 0.2,
+  }),
 };
 
 export function ImagePreview({
@@ -137,36 +143,27 @@ export function ImagePreview({
       </AnimatePresence>
 
       {/* Preview */}
-      <motion.div
-        className={styles.imagePreview}
-        key={`${currentImage.id} `}
-        // Animation
-        custom={direction}
-        variants={variants}
-        initial="swipe"
-        animate={{ x: 0, opacity: 1 }}
-        exit="exit"
-        transition={{
-          x: { type: "spring", stiffness: 300, damping: 30 },
-          opacity: { duration: 0.2 },
-        }}
-      >
-        {isIdle && currentImage.process ? (
-          <motion.video
-            className={styles.processVideo}
-            autoPlay
-            muted
-            loop
-            onClick={(e) => e.stopPropagation()}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <source src={currentImage.process} type="video/mp4" />
-            The video tag is not supported in your browser.
-          </motion.video>
-        ) : (
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          className={styles.imagePreview}
+          key={currentImage.id}
+          // Animation
+          variants={variants}
+          custom={direction}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
+          }}
+          // Drag Event
+          drag="x"
+          dragSnapToOrigin
+          onDragEnd={(_, info) => {
+            dragHandler(_, info, updateImageIndex);
+          }}
+        >
           <Image
             key={"Image"}
             src={currentImage.image}
@@ -180,8 +177,8 @@ export function ImagePreview({
             )}
             priority={false}
           />
-        )}
-      </motion.div>
+        </motion.div>
+      </AnimatePresence>
 
       {/* Preview Information */}
       <AnimatePresence>

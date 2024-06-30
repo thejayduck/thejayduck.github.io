@@ -1,3 +1,5 @@
+import { PanInfo } from "framer-motion";
+
 export function countWords(str: string): number {
   str = str.replace(/<[^>]*>/g, " ");
   const wordCount = str.match(/(?:http(?:s)?:\/\/[^\s]*|\w)+/g) || [];
@@ -87,4 +89,16 @@ export function formatDate(str: string): string {
     year: "numeric",
   };
   return new Intl.DateTimeFormat("en-US", options).format(date);
+}
+
+export function dragHandler(
+  _: MouseEvent | TouchEvent | PointerEvent,
+  info: PanInfo,
+  callback: (swipeDirection: number) => void
+) {
+  const dragDistance = info.offset.x;
+  const dragThreshold = 150;
+
+  if (dragDistance > dragThreshold) callback(-1);
+  else if (dragDistance < -dragThreshold) callback(1);
 }
