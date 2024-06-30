@@ -56,6 +56,10 @@ export default function Blog({ posts }: IBlogPostProps) {
       <Head>
         <title>{`${post.title} · Arda Fevzi Armutcu`}</title>
         <meta name="description" content="Arda Fevzi Armutcu's Blog Post" />
+        <meta
+          property="og:image"
+          content={`https://ardarmutcu.com/api/ogPost?title=${post.title}&date=${post.date}&content=${post.summary}`}
+        />
       </Head>
 
       <PageBase>
