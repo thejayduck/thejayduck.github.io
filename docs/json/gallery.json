@@ -149,12 +149,12 @@
         "date": "2024-04",
         "image": "https://i.imgur.com/vMja4vu.png",
         "process": "https://i.imgur.com/5ZyBtbO.mp4",
-        "suggestive": true,
+        "mature": true,
         "tags": [
             "characterdesign",
             "fanart",
             "sketch",
-            "suggestive",
+            "mature",
             "process"
         ],
         "width": 1080,
@@ -166,12 +166,12 @@
         "date": "2024-04",
         "image": "https://i.imgur.com/mMorN9w.png",
         "process": "https://i.imgur.com/pwjkVqI.mp4",
-        "suggestive": true,
+        "mature": true,
         "tags": [
             "characterdesign",
             "fanart",
             "sketch",
-            "suggestive",
+            "mature",
             "process"
         ],
         "width": 1080,
@@ -561,10 +561,11 @@
             }
         ],
         "image": "https://i.imgur.com/GcWyYCs.png",
-        "suggestive": true,
+        "mature": true,
         "tags": [
             "characterdesign",
             "fullcolor",
+            "mature",
             "fanart"
         ],
         "width": 600,
@@ -752,10 +753,11 @@
             }
         ],
         "image": "https://i.imgur.com/TEgObUM.png",
-        "suggestive": true,
+        "mature": true,
         "tags": [
             "characterdesign",
             "sketch",
+            "mature",
             "fanart"
         ],
         "width": 600,

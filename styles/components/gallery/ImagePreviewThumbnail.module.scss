@@ -41,7 +41,7 @@
       border-color: var(--secondary-opaque);
     }
   }
-  .suggestiveFilter {
+  .matureFilter {
     &:not(.selected) > img {
       filter: blur(3px);
       transition: 255ms;

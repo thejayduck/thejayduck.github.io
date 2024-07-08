@@ -109,7 +109,7 @@ export default function ImageThumbnail({
             className={`
                   ${styles.thumbnails} 
                   ${index === activeIndex ? styles.selected : ""}
-                  ${thumbnail.suggestive ? styles.suggestiveFilter : ""}
+                  ${thumbnail.mature ? styles.matureFilter : ""}
                 `}
             key={index}
             onClick={() => handleThumbnailClick(index)}

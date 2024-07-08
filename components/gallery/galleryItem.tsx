@@ -41,7 +41,7 @@ export default function GalleryItem({
   return (
     <div
       className={`${styles.galleryItem} ${
-        entry.suggestive ? styles.suggestiveFilter : ""
+        entry.mature ? styles.matureFilter : ""
       }`}
       title="Click to view image"
       onClick={() => handleImageClick(index)}

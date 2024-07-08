@@ -10,7 +10,7 @@ export default interface IGalleryEntry {
   external?: IExternal[];
   image: string;
   process?: string;
-  suggestive?: boolean;
+  mature?: boolean;
   tags: string[];
   width: number;
   height: number;

@@ -129,7 +129,8 @@ export default function Gallery({ id }: { id: string }) {
               ❗All of the drawings down below are downscaled and compressed!
               <br />
               📽️ Some drawings also play a process video when hovered.
-              <br />✋ Blurred posts are suggestive, hovering will reveal it.
+              <br />✋ Blurred posts are mature (sensitive or suggestive),
+              hovering will reveal it.
               <br />
               🎨 In this page, you can view my drawings. Most of my posts
               consist of sketches, I just prefer the way they look over clean
