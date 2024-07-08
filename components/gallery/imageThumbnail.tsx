@@ -62,12 +62,13 @@ export default function ImageThumbnail({
         thumbnailsContainerRef.current.children[activeIndex];
       if (selectedThumbnail) {
         selectedThumbnail.scrollIntoView({
+          block: "end",
           inline: "center",
-          behavior: "instant", //* For some reason smooth doesn't work as expected
+          behavior: "smooth", //* For some reason smooth doesn't work as expected
         });
       }
     }
-  }, [activeIndex]);
+  });
 
   return (
     <>

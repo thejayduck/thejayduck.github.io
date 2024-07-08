@@ -23,7 +23,7 @@ const variants = {
   exit: (direction: number) => ({
     x: direction > 0 ? "-100%" : "100%",
     scale: 0.8,
-    opacity: 0.2,
+    opacity: 0,
   }),
 };
 
@@ -40,7 +40,7 @@ export function ImagePreview({
     (direction: number) => {
       const wrappedImageIndex = wrap(0, images.length, imageIndex + direction);
       setImageIndex([wrappedImageIndex, direction]);
-      router.push(`/gallery/?id=${images[wrappedImageIndex].id}`);
+      router.replace(`/gallery/?id=${images[wrappedImageIndex].id}`);
     },
     [images, router, imageIndex]
   );
@@ -72,31 +72,7 @@ export function ImagePreview({
     };
   }, [onOutsideClick, updateImageIndex]);
 
-  // Idle Detector
-  const idleTimeout = useRef<NodeJS.Timeout>();
-  const [isIdle, setIsIdle] = useState(false);
-
-  const resetIdle = useCallback(() => {
-    clearTimeout(idleTimeout.current);
-    setIsIdle(false);
-    idleTimeout.current = setTimeout(() => setIsIdle(true), 3000);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("mousemove", resetIdle);
-    window.addEventListener("touchmove", resetIdle);
-    window.addEventListener("mousedown", resetIdle);
-    window.addEventListener("scroll", resetIdle);
-
-    resetIdle();
-
-    return () => {
-      window.removeEventListener("mousemove", resetIdle);
-      window.removeEventListener("touchmove", resetIdle);
-      window.removeEventListener("mousedown", resetIdle);
-      window.removeEventListener("scroll", resetIdle);
-    };
-  }, [images.length, resetIdle]);
+  const [isHidden, setIsHidden] = useState(false);
 
   return (
     <motion.div
@@ -116,7 +92,7 @@ export function ImagePreview({
       </div>
 
       <AnimatePresence>
-        {!isIdle && (
+        {!isHidden && (
           <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -170,7 +146,10 @@ export function ImagePreview({
             alt={currentImage.title}
             width={currentImage.width}
             height={currentImage.height}
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsHidden(!isHidden);
+            }}
             placeholder={placeholderImage(
               currentImage.width,
               currentImage.height
@@ -182,7 +161,7 @@ export function ImagePreview({
 
       {/* Preview Information */}
       <AnimatePresence>
-        {!isIdle && (
+        {!isHidden && (
           <motion.div
             className={styles.previewInformationWrapper}
             // Animations

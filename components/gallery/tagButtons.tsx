@@ -6,6 +6,7 @@ import gallery from "../../docs/json/gallery.json";
 
 export const TagButtons = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
   const toggleTag = (tag: string) => {
     setSelectedTags((prevSelectedTags) =>
       prevSelectedTags.includes(tag)
@@ -14,7 +15,17 @@ export const TagButtons = () => {
     );
   };
 
+  const filteredGallery =
+    selectedTags.length > 0
+      ? gallery.filter((item) =>
+          selectedTags.every((selectedTag) => item.tags.includes(selectedTag))
+        )
+      : gallery;
+
+  const filteredTags = new Set(filteredGallery.flatMap((item) => item.tags)); // Used to disable unavailable tags.
+
   return {
+    filteredGallery,
     selectedTags,
     component: (
       <div className={styles.filterTags}>
@@ -27,7 +38,7 @@ export const TagButtons = () => {
                   selectedTags.includes(tag) ? styles.selected : ""
                 }`}
                 onClick={() => toggleTag(tag)}
-                // disabled={!filteredTags.has(tag)}
+                disabled={!filteredTags.has(tag)}
                 title={`Filter by ${tag}`}
               >
                 <span>{tag}</span>

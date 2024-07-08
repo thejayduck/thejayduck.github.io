@@ -97,7 +97,7 @@ export function dragHandler(
   callback: (swipeDirection: number) => void
 ) {
   const dragDistance = info.offset.x;
-  const dragThreshold = 150;
+  const dragThreshold = 100;
 
   if (dragDistance > dragThreshold) callback(-1);
   else if (dragDistance < -dragThreshold) callback(1);
