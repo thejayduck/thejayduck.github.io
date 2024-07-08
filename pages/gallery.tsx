@@ -27,16 +27,19 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 export default function Gallery({ id }: { id: string }) {
   const router = useRouter();
-  // const { id } = router.query;
 
-  const { selectedTags, component: TagButtonsComponent } = TagButtons();
-  const filteredGallery =
-    selectedTags.length > 0
-      ? gallery.filter((item) =>
-          selectedTags.every((selectedTag) => item.tags.includes(selectedTag))
-        )
-      : gallery;
-  const filteredTags = new Set(filteredGallery.flatMap((item) => item.tags)); // Used to disable unavailable tags.
+  const {
+    filteredGallery,
+    selectedTags,
+    component: TagButtonsComponent,
+  } = TagButtons();
+  // const filteredGallery =
+  //   selectedTags.length > 0
+  //     ? gallery.filter((item) =>
+  //         selectedTags.every((selectedTag) => item.tags.includes(selectedTag))
+  //       )
+  //     : gallery;
+  // const filteredTags = new Set(filteredGallery.flatMap((item) => item.tags)); // Used to disable unavailable tags.
 
   const [streamData] = useStreamData();
   const containerRef = useRef<HTMLDivElement>(null); // Reference to the gallery container
@@ -44,7 +47,7 @@ export default function Gallery({ id }: { id: string }) {
   // Handler for image click
   const handleImageClick = useCallback(
     (id: string) => {
-      router.push(`/gallery/?id=${id}`);
+      router.replace(`/gallery/?id=${id}`);
       document.body.style.overflow = "hidden";
     },
     [router]
@@ -52,7 +55,7 @@ export default function Gallery({ id }: { id: string }) {
 
   // Handler for closing image preview
   const handleClosePreview = () => {
-    router.push("/gallery");
+    router.replace("/gallery");
     document.body.style.overflow = "auto";
   };
 
