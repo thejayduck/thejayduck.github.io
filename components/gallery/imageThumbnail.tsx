@@ -62,9 +62,9 @@ export default function ImageThumbnail({
         thumbnailsContainerRef.current.children[activeIndex];
       if (selectedThumbnail) {
         selectedThumbnail.scrollIntoView({
-          block: "end",
+          block: "center",
           inline: "center",
-          behavior: "smooth", //* For some reason smooth doesn't work as expected
+          behavior: "smooth",
         });
       }
     }

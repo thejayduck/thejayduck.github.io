@@ -99,6 +99,14 @@ export function dragHandler(
   const dragDistance = info.offset.x;
   const dragThreshold = 100;
 
-  if (dragDistance > dragThreshold) callback(-1);
-  else if (dragDistance < -dragThreshold) callback(1);
+  const dragVelocity = info.velocity.x;
+  const dragVelocityThreshold = 500;
+
+  if (dragVelocity > dragVelocityThreshold || dragDistance > dragThreshold)
+    callback(-1);
+  else if (
+    dragVelocity < -dragVelocityThreshold ||
+    dragDistance < -dragThreshold
+  )
+    callback(1);
 }
