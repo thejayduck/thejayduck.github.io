@@ -1,5 +1,25 @@
 [
     {
+        "title": "Ranma 1/2",
+        "date": "2024-10",
+        "external": [
+            {
+                "url": "https://www.deviantart.com/thejayduck/art/Ranma-1-2-1111031594",
+                "alt": "DeviantArt",
+                "icon": "bx bxl-deviantart"
+            }
+        ],
+        "image": "https://i.imgur.com/reLNcLT.png",
+        "tags": [
+            "characterdesign",
+            "sketch",
+            "fanart"
+        ],
+        "width": 1616,
+        "height": 1333,
+        "id": "reLNcLT"
+    },
+    {
         "title": "Okita Souji - Kimono",
         "date": "2024-10",
         "image": "https://i.imgur.com/rTu7dYu.png",
