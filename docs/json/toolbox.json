@@ -64,6 +64,11 @@
       "title": "LaTeX",
       "icon": "devicon-latex-plain",
       "href": "https://www.latex-project.org/"
+    },
+    {
+      "title": "GDScript",
+      "icon": "devicon-godot-plain",
+      "href": "https://godotengine.org/"
     }
   ],
   "software": [
