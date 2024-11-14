@@ -17,6 +17,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "livestream.ardarmutcu.com"
       },
+      {
+        protocol: "https",
+        hostname: "utfs.io",
+        pathname: "/a/hj5xs4m6pg/*",
+      },
     ]
   },
   webpack: (config, { isServer }) => {

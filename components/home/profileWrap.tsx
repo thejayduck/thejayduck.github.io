@@ -12,7 +12,7 @@ export default function ProfileWrap() {
       <Image
         className={styles.picture}
         alt="Profile Picture"
-        src="/profileAlt.jpg"
+        src="https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCSifPjnRJBnDwh9l4xkuN2T7qp3LbvZdHVfIi"
         priority
         placeholder={placeholderImage(256, 446)}
         width={256}
