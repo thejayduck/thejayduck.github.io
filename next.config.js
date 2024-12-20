@@ -22,6 +22,11 @@ const nextConfig = {
         hostname: "utfs.io",
         pathname: "/a/hj5xs4m6pg/*",
       },
+      {
+        protocol: "https",
+        hostname: "utfs.io",
+        pathname: "/a/41l64ami3u/*",
+      }
     ]
   },
   webpack: (config, { isServer }) => {

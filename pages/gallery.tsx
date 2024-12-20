@@ -14,7 +14,6 @@ import { ImagePreview } from "../components/gallery/imagePreview";
 import { TagButtons } from "../components/gallery/tagButtons";
 import PageBase from "../components/pageBase";
 import gallery from "../docs/json/gallery.json";
-import useStreamData from "../lib/useStreamData";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const id = context.query.id;
@@ -41,7 +40,6 @@ export default function Gallery({ id }: { id: string }) {
   //     : gallery;
   // const filteredTags = new Set(filteredGallery.flatMap((item) => item.tags)); // Used to disable unavailable tags.
 
-  const [streamData] = useStreamData();
   const containerRef = useRef<HTMLDivElement>(null); // Reference to the gallery container
 
   // Handler for image click
@@ -85,7 +83,7 @@ export default function Gallery({ id }: { id: string }) {
       window.removeEventListener("resize", calculateColumnSpan);
       window.addEventListener("load", calculateColumnSpan);
     };
-  }, [filteredGallery, streamData?.is_active]);
+  }, [filteredGallery]);
 
   return (
     <>
