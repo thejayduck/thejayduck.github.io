@@ -31,7 +31,7 @@ export default async function handler(request: NextRequest) {
             width="100%"
             height="100%"
             alt="Preview Image"
-            src={`https://i.imgur.com/${id}.jpg`}
+            src={`https://utfs.io/a/41l64ami3u/${id}`}
             style={{
               objectFit: "cover",
               verticalAlign: "top",
