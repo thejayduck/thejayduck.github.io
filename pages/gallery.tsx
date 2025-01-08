@@ -32,13 +32,6 @@ export default function Gallery({ id }: { id: string }) {
     selectedTags,
     component: TagButtonsComponent,
   } = TagButtons();
-  // const filteredGallery =
-  //   selectedTags.length > 0
-  //     ? gallery.filter((item) =>
-  //         selectedTags.every((selectedTag) => item.tags.includes(selectedTag))
-  //       )
-  //     : gallery;
-  // const filteredTags = new Set(filteredGallery.flatMap((item) => item.tags)); // Used to disable unavailable tags.
 
   const containerRef = useRef<HTMLDivElement>(null); // Reference to the gallery container
 

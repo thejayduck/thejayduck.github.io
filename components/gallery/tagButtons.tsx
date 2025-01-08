@@ -30,8 +30,9 @@ export const TagButtons = () => {
     component: (
       <div className={styles.filterTags}>
         <div className={styles.tagButtons}>
-          {Array.from(new Set(gallery.flatMap((item) => item.tags))).map(
-            (tag) => (
+          {Array.from(new Set(gallery.flatMap((item) => item.tags)))
+            .sort((a, b) => a.localeCompare(b)) // Alphabetical Order
+            .map((tag) => (
               <button
                 key={tag}
                 className={`cardItem ${styles.tagButton} ${
@@ -43,8 +44,7 @@ export const TagButtons = () => {
               >
                 <span>{tag}</span>
               </button>
-            )
-          )}
+            ))}
           {selectedTags.length > 0 && ( // Clear tags button
             <button
               className={`cardItem ${styles.tagButton} ${styles.clearTags}`}
