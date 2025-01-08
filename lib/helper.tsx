@@ -110,3 +110,9 @@ export function dragHandler(
   )
     callback(1);
 }
+
+export function getImageUrl(id: string) {
+  const BASE_URL = "https://utfs.io/a/41l64ami3u/";
+
+  return `${BASE_URL}${id}`;
+}

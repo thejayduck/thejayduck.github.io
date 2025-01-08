@@ -6,7 +6,7 @@ import { AnimatePresence, motion, wrap } from "framer-motion";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
-import { dragHandler } from "../../lib/helper";
+import { dragHandler, getImageUrl } from "../../lib/helper";
 import Button from "../button";
 import { placeholderImage } from "../imageShimmer";
 
@@ -142,7 +142,7 @@ export function ImagePreview({
         >
           <Image
             key={"Image"}
-            src={currentImage.image}
+            src={getImageUrl(currentImage.id)}
             alt={currentImage.title}
             width={currentImage.width}
             height={currentImage.height}

@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
 
+import { getImageUrl } from "../../lib/helper";
 import { placeholderImage } from "../imageShimmer";
 
 import IImagePreview from "./IImagePreview";
@@ -116,7 +117,7 @@ export default function ImageThumbnail({
           >
             <Image
               className={`${styles.thumbnail}`}
-              src={thumbnail.image}
+              src={getImageUrl(thumbnail.id)}
               alt={`Thumbnail ${index + 1}`}
               style={{ objectFit: "cover", objectPosition: "top" }}
               quality={35}

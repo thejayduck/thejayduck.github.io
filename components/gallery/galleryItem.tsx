@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useState } from "react";
 
-import { formatDate } from "../../lib/helper";
+import { formatDate, getImageUrl } from "../../lib/helper";
 import { shimmer, toBase64 } from "../imageShimmer";
 
 import IGalleryEntry from "./IGalleryEntry";
@@ -51,7 +51,7 @@ export default function GalleryItem({
     >
       <figure>
         <Image
-          src={entry.image}
+          src={getImageUrl(entry.id)}
           alt={`Drawing ${entry.title}`}
           width={entry.width}
           loading="lazy"
