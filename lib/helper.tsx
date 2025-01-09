@@ -116,3 +116,9 @@ export function getImageUrl(id: string) {
 
   return `${BASE_URL}${id}`;
 }
+
+export function getProcessUrl(id: string) {
+  const BASE_URL = "https://utfs.io/a/fal25h328h/";
+
+  return `${BASE_URL}${id}`;
+}

@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useState } from "react";
 
-import { formatDate, getImageUrl } from "../../lib/helper";
+import { formatDate, getImageUrl, getProcessUrl } from "../../lib/helper";
 import { shimmer, toBase64 } from "../imageShimmer";
 
 import IGalleryEntry from "./IGalleryEntry";
@@ -81,7 +81,7 @@ export default function GalleryItem({
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <source src={entry.process} type="video/mp4" />
+                  <source src={getProcessUrl(entry.process)} type="video/mp4" />
                   The video tag is not supported in your browser.
                 </motion.video>
               )}

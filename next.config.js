@@ -17,15 +17,20 @@ const nextConfig = {
         protocol: "https",
         hostname: "livestream.ardarmutcu.com"
       },
-      {
+      { // assets
         protocol: "https",
         hostname: "utfs.io",
         pathname: "/a/hj5xs4m6pg/*",
       },
-      {
+      { // gallery
         protocol: "https",
         hostname: "utfs.io",
         pathname: "/a/41l64ami3u/*",
+      },
+      { // speedpaints
+        protocol: "https",
+        hostname: "utfs.io",
+        pathname: "/a/fal25h328h/*",
       }
     ]
   },
