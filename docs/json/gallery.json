@@ -996,7 +996,7 @@
     },
     {
         "title": "Some Character",
-        "date": "2021-06",
+        "date": "2021-05",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/Some-Character-1-881177115",
@@ -1012,5 +1012,53 @@
         "width": 1280,
         "height": 1280,
         "id": "tzMdx3pvN1orMFCaTyN7TYrOdMZuEqLy0XpNjw5vcbthQkVi"
+    },
+    {
+        "title": "Nun",
+        "date": "2021-07",
+        "tags": [
+            "characterdesign",
+            "fullcolor",
+            "oc"
+        ],
+        "width": 1080,
+        "height": 1080,
+        "id": "tzMdx3pvN1orZShIveEiqO37avS20UgbE9Qmtj6lHJupnXTs"
+    },
+    {
+        "title": "Smoke",
+        "date": "2021-06",
+        "tags": [
+            "characterdesign",
+            "fullcolor",
+            "oc"
+        ],
+        "width": 1080,
+        "height": 1080,
+        "id": "tzMdx3pvN1orvsVSlQcMTyObBPzitVLZcd916YHhUKsJofup"
+    },
+    {
+        "title": "Beanie",
+        "date": "2021-05",
+        "tags": [
+            "characterdesign",
+            "fullcolor",
+            "oc"
+        ],
+        "width": 1080,
+        "height": 1080,
+        "id": "tzMdx3pvN1orNaQ6AUPkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0"
+    },
+    {
+        "title": "Mascot Character",
+        "date": "2021-01",
+        "tags": [
+            "characterdesign",
+            "fullcolor",
+            "oc"
+        ],
+        "width": 1350,
+        "height": 955,
+        "id": "tzMdx3pvN1or1AR8PqhHWdGIrxvn7oUQXhjzyCV0PKELqpcD"
     }
 ]
