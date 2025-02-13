@@ -1,12 +1,19 @@
 .panelsWrap {
-  padding: 10px 0;
+  padding: var(--spacing-normal);
   flex: 1;
   width: 35%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    text-align: center;
+    color: var(--font-default);
+  }
 
   .linkList {
     padding: 0;
-    margin: 0;
+    margin: var(--spacing-normal) 0 0 0;
     color: var(--font-default);
   }
 
@@ -24,9 +31,6 @@
 
 @media screen and (max-width: 1024px) {
   .panelsWrap {
-    padding: 10px 0;
-    flex: 1;
     width: 100%;
-    margin: 0 auto;
   }
 }
