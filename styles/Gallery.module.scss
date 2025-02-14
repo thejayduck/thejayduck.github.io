@@ -6,10 +6,6 @@
     vertical-align: middle;
   }
 
-  .matureWarning {
-    pointer-events: none;
-  }
-
   .endNotice {
     span,
     i {
@@ -100,6 +96,8 @@
         backdrop-filter: blur(16px) brightness(60%);
         text-align: center;
         transition: 255ms;
+
+        pointer-events: none;
 
         @supports (-webkit-appearance: none) {
           // for chromium

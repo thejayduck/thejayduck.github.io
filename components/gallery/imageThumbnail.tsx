@@ -110,11 +110,15 @@ export default function ImageThumbnail({
             className={`
                   ${styles.thumbnails} 
                   ${index === activeIndex ? styles.selected : ""}
-                  ${thumbnail.mature ? styles.matureFilter : ""}
                 `}
             key={index}
             onClick={() => handleThumbnailClick(index)}
           >
+            {thumbnail?.mature && (
+              <div className={styles.matureWarning}>
+                <i className="bx bx-low-vision" />
+              </div>
+            )}
             <Image
               className={`${styles.thumbnail}`}
               src={getImageUrl(thumbnail.id)}
