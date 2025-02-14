@@ -14,7 +14,11 @@ export default function ScrollManager() {
   const [isVisible, setVisibility] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
-    setVisibility(v >= 0.3);
+    // ! Button lingers when a page is loaded. example: opening a blog post.
+    const canScroll =
+      document.documentElement.scrollHeight >
+      document.documentElement.clientHeight;
+    setVisibility(canScroll && v >= 0.3);
   });
 
   return (
