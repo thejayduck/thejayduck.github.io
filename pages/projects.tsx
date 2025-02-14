@@ -49,24 +49,28 @@ export default function Projects() {
             newPage={false}
           />
         </ul>
-        <div>
+        <section className={`${styles.mainSection}`}>
           <CardPanel title={"Projects 💡"}>
             <p>
-              📮
+              <i className="bx bxs-briefcase" />
               <b>{projects.length} </b> Projects
-              <br />
-              ❗As the name suggests, this page is dedicated to my released
-              projects.
-              <br />
-              🔓Majority of them are open-source, and can be found on my{" "}
-              <Link
-                href="https://github.com/thejayduck/"
-                aria-label="Github profile link"
-              >
-                GitHub profile
-              </Link>
-              . Feel free to check them out!
             </p>
+            <blockquote>
+              <p>
+                <i className="bx bxs-error" /> As the name suggests, this page
+                is dedicated to my released projects.
+                <br />
+                <i className="bx bxs-lock-open-alt" /> Majority of them are
+                open-source, and can be found on my{" "}
+                <Link
+                  href="https://github.com/thejayduck/"
+                  aria-label="Github profile link"
+                >
+                  GitHub profile
+                </Link>
+                . Feel free to check them out!
+              </p>
+            </blockquote>
           </CardPanel>
           <div className={styles.projects}>
             {sortedYears.map((year) => (
@@ -85,7 +89,7 @@ export default function Projects() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
       </PageBase>
     </>
   );

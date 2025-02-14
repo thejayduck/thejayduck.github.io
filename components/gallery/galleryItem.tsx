@@ -40,15 +40,21 @@ export default function GalleryItem({
   };
   return (
     <div
-      className={`${styles.galleryItem} ${
-        entry.mature ? styles.matureFilter : ""
-      }`}
+      className={`${styles.galleryItem}`}
       title="Click to view image"
       onClick={() => handleImageClick(index)}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={handleMouseLeave}
       onTouchStart={() => handleMouseEnter(index)}
     >
+      {entry?.mature && (
+        <div className={styles.matureWarning}>
+          <i className="bx bx-low-vision" />
+          Content Warning
+          <br />
+          Hover to View
+        </div>
+      )}
       <figure>
         <Image
           src={getImageUrl(entry.id)}

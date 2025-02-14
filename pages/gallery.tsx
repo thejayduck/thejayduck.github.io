@@ -55,16 +55,21 @@ export default function Gallery({ id }: { id: string }) {
   useEffect(() => {
     const calculateColumnSpan = () => {
       const galleryItems = Array.from(
-        containerRef.current?.querySelectorAll("div") || []
+        containerRef.current?.querySelectorAll(`.${styles.galleryItem}`) || []
       );
+      // const galleryItems = Array.from(
+      //   containerRef.current?.querySelectorAll("div") || []
+      // );
 
-      galleryItems.forEach((galleryItem: HTMLElement, index) => {
-        //? Improve
+      galleryItems.forEach((element, index) => {
+        const galleryItem = element as HTMLElement;
         const item = filteredGallery[index];
-        const ratio = item.width / item.height;
 
-        galleryItem.style.flexBasis = `calc(${ratio} * 15em)`;
-        galleryItem.style.flexGrow = `calc(${ratio} * 100)`;
+        // Calculate the ratio and apply styles
+        const ratio = item.width / item.height;
+        const baseSize = 15; // em
+        galleryItem.style.flexBasis = `calc(${ratio} * ${baseSize}em)`;
+        galleryItem.style.flexGrow = `${ratio * 100}`;
       });
     };
 
@@ -110,23 +115,25 @@ export default function Gallery({ id }: { id: string }) {
         <section className={`${styles.mainSection} flex flexColumn`}>
           <CardPanel title={"Gallery 🖌️"}>
             <p>
-              📮
+              <i className="bx bx-image-alt" />
               <b>{gallery.length} </b> Posts{" "}
               {selectedTags.length > 0
                 ? `(Filtered: ${filteredGallery.length})`
                 : ""}
             </p>
-            <p>
-              ❗All of the drawings down below are downscaled and compressed!
-              <br />
-              📽️ Some drawings also play a process video when hovered.
-              <br />✋ Blurred posts are mature (sensitive or suggestive),
-              hovering will reveal it.
-              <br />
-              🎨 In this page, you can view my drawings. Most of my posts
-              consist of sketches, I just prefer the way they look over clean
-              lines.
-            </p>
+            <blockquote>
+              <p>
+                <i className="bx bxs-error" /> All of the drawings down below
+                are downscaled and compressed! <strong>DO NOT</strong>{" "}
+                redistribute, print, or use without explicit permission.
+                <br />
+                <i className="bx bxs-video-recording" /> Some drawings also play
+                a process video when hovered.
+                <br />
+                <i className="bx bxs-hand" /> Blurred posts are mature
+                (sensitive or suggestive), hovering will reveal it.
+              </p>
+            </blockquote>
 
             <hr />
             {TagButtonsComponent}
