@@ -38,7 +38,7 @@ export default function Gallery({ id }: { id: string }) {
   // Handler for image click
   const handleImageClick = useCallback(
     (id: string) => {
-      router.replace(`/gallery/?id=${id}`);
+      router.replace(`/gallery/?id=${id}`, undefined, { scroll: false });
       document.body.style.overflow = "hidden";
     },
     [router]
@@ -46,7 +46,7 @@ export default function Gallery({ id }: { id: string }) {
 
   // Handler for closing image preview
   const handleClosePreview = () => {
-    router.replace("/gallery");
+    router.replace("/gallery", undefined, { scroll: false });
     document.body.style.overflow = "auto";
   };
 
