@@ -41,6 +41,19 @@ hr {
   border-radius: 5px;
 }
 
+blockquote {
+  color: #5c5c5c;
+  background-color: hsla(var(--primary-hsla), 0.2);
+  border-left: 4px solid var(--primary);
+  margin-left: 0;
+  margin-right: 0;
+
+  p {
+    padding: 10px;
+    color: var(--font-default);
+  }
+}
+
 .bx {
   margin: 5px;
   font-size: var(--font-medium);
