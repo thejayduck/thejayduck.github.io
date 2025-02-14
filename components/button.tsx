@@ -6,7 +6,7 @@ interface ButtonProps {
   icon: string;
   title?: string;
   label?: string;
-  href: string;
+  href?: string;
   onClick?: () => void;
   newPage?: boolean;
 }
@@ -15,11 +15,12 @@ export default function Button({
   icon,
   title,
   label,
-  href,
+  href = "#",
   onClick,
   newPage = true,
 }: ButtonProps) {
   return (
+    // TODO make alternative button for stuff that won't redirect to a page
     <Link
       href={href}
       passHref
