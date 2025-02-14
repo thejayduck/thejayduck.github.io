@@ -74,7 +74,9 @@ export default function GalleryItem({
         </figcaption>
         {entry.process && (
           <>
-            <i className={`${styles.processIndicator} bx bxs-camera-movie`}></i>
+            <i
+              className={`${styles.processIndicator} bx bxs-video-recording`}
+            />
             <AnimatePresence>
               {hoveredImage === index && (
                 <motion.video
