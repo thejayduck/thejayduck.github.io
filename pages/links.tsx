@@ -35,9 +35,19 @@ export default function Links() {
               height={128}
               quality={85}
             />
-            <h1>Find Me On</h1>
+            <h1>@thejayduck</h1>
           </div>
           <ul className={`${styles.linkList}`}>
+            <Button
+              icon="bx bx-link"
+              label="copy"
+              title="Share Page"
+              newPage={false}
+              onClick={() => {
+                navigator.clipboard.writeText(window.location.href);
+                alert("Link copied to clipboard!"); // TODO make a custom notification like system
+              }}
+            />
             <Button // linkedin
               icon="bx bxl-linkedin-square"
               label="linkedin"
