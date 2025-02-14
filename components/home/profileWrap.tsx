@@ -42,6 +42,13 @@ export default function ProfileWrap() {
             href="/gallery"
             newPage={false}
           />
+          {/* <Button // links
+            icon="bx bx-link"
+            label="links"
+            title="Links"
+            href="/links"
+            newPage={false}
+          /> */}
         </ul>
         <ul className={`cardItem ${styles.externalLinks}`}>
           <Link // github
@@ -60,22 +67,22 @@ export default function ProfileWrap() {
           >
             <i className="bx bxs-store" />
           </Link>
-          <Link // deviantart
+          {/* <Link // deviantart
             href="https://www.deviantart.com/thejayduck/"
             passHref
             aria-label="deviantart"
             title="deviantart"
           >
             <i className="bx bxl-deviantart" />
-          </Link>
-          <Link // instagram
+          </Link> */}
+          {/* <Link // instagram
             href="https://www.instagram.com/ardafevzi.armutcu/"
             passHref
             aria-label="instagram"
             title="instagram"
           >
             <i className="bx bxl-instagram-alt" />
-          </Link>
+          </Link> */}
           <Link // gmail
             href="mailto:portfolio.remember014@slmail.me"
             passHref
@@ -83,6 +90,14 @@ export default function ProfileWrap() {
             title="gmail (alias)"
           >
             <i className="bx bxl-gmail" />
+          </Link>
+          <Link // links
+            href="/links"
+            passHref
+            aria-label="links"
+            title="links"
+          >
+            <i className="bx bx-dots-horizontal-rounded" />
           </Link>
         </ul>
       </div>
