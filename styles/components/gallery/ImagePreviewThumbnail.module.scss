@@ -43,7 +43,7 @@
   }
   .matureFilter {
     &:not(.selected) > img {
-      filter: blur(3px);
+      filter: blur(16px);
       transition: 255ms;
     }
   }
