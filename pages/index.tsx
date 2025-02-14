@@ -45,6 +45,7 @@ export default function Home() {
                 the lookout for new skills to learn, from diving into a new
                 programming language to honing my drawing skills. In my free
                 time, I like to occupy myself with my projects and hobbies.
+                <hr />
                 Curious to see what I&apos;m working on? Check out my latest{" "}
                 <span>
                   <Link href="/blog">Blog</Link>
