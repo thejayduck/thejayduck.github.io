@@ -93,6 +93,7 @@ export function ImagePreview({
             <motion.div
               className={styles.image}
               key={currentImage.id}
+              // ? Fix transition animations
               // Animation
               // variants={variants}
               // custom={direction}
