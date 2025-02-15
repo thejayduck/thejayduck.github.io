@@ -1,17 +1,16 @@
 import styles from "../../styles/components/gallery/ImagePreview.module.scss";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion, wrap } from "framer-motion";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
-import { dragHandler, getImageUrl } from "../../lib/helper";
-import Button from "../button";
+import { dragHandler, formatDate, getImageUrl } from "../../lib/helper";
 import { placeholderImage } from "../imageShimmer";
 
 import IImagePreview from "./IImagePreview";
-import ImageThumbnail from "./imageThumbnail";
 
 const variants = {
   initial: (direction: number) => ({
@@ -40,7 +39,11 @@ export function ImagePreview({
     (direction: number) => {
       const wrappedImageIndex = wrap(0, images.length, imageIndex + direction);
       setImageIndex([wrappedImageIndex, direction]);
-      router.replace(`/gallery/?id=${images[wrappedImageIndex].id}`);
+      router.replace(
+        `/gallery/?id=${images[wrappedImageIndex].id}`,
+        undefined,
+        { scroll: false }
+      );
     },
     [images, router, imageIndex]
   );
@@ -83,120 +86,162 @@ export function ImagePreview({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div
-        className={styles.exitButton}
-        onClick={onOutsideClick}
-        title={"Exit preview"}
-      >
-        <i className="bx bx-x" />
-      </div>
+      {/* Preview */}
+      <div className={styles.imagePreview}>
+        <div className={styles.imageSection}>
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              className={styles.image}
+              key={currentImage.id}
+              // Animation
+              // variants={variants}
+              // custom={direction}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              // transition={{
+              //   x: { type: "spring", stiffness: 300, damping: 30 },
+              //   opacity: { duration: 0.2 },
+              // }}
+              // Drag Event
+              drag="x"
+              dragSnapToOrigin
+              onDragEnd={(_, info) => {
+                dragHandler(_, info, updateImageIndex);
+              }}
+            >
+              <Image
+                key={"Image"}
+                src={getImageUrl(currentImage.id)}
+                alt={currentImage.title}
+                width={currentImage.width}
+                height={currentImage.height}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsHidden(!isHidden);
+                }}
+                placeholder={placeholderImage(
+                  currentImage.width,
+                  currentImage.height
+                )}
+                priority={false}
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
-      <AnimatePresence>
-        {!isHidden && (
-          <motion.ul
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className={styles.external}
-          >
+        {/* Preview Information */}
+        <div
+          className={styles.previewInformationWrapper}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <span>@thejayduck</span>
+          <hr />
+          <span className={styles.title}>{currentImage?.title}</span>
+
+          {/* Stats */}
+          <div className={styles.imageStats}>
+            <ul>
+              <li>
+                <i className="bx bx-ruler" /> {currentImage?.width}x
+                {currentImage?.height}px (Downscaled)
+              </li>
+              <li>
+                <i className="bx bx-calendar" /> Created:{" "}
+                {formatDate(currentImage?.date)}
+              </li>
+              {currentImage?.software && (
+                <li>
+                  <i className="bx bx-paint" /> Software:{" "}
+                  {currentImage.software}
+                </li>
+              )}
+            </ul>
+          </div>
+
+          {/* Related Images */}
+          <div className={styles.relatedImages}>
+            <h3>
+              <i className="bx bx-images" /> Related
+            </h3>
+            <div className={styles.thumbnailGrid}>
+              {images
+                .filter(
+                  (img) =>
+                    img.id !== currentImage.id &&
+                    img.tags.some((tag) => currentImage.tags.includes(tag))
+                )
+                .slice(0, 9)
+                .map((img) => (
+                  <div key={img.id} className={styles.thumbnail}>
+                    {img?.mature && (
+                      <div className={styles.matureWarning}>
+                        <i className="bx bx-low-vision" />
+                      </div>
+                    )}
+                    <Image
+                      src={getImageUrl(img.id)}
+                      alt={img.title}
+                      width={110}
+                      height={100}
+                      quality={40}
+                      onClick={() =>
+                        updateImageIndex(images.indexOf(img) - imageIndex)
+                      }
+                    />
+                  </div>
+                ))}
+            </div>
+          </div>
+
+          <br />
+
+          {/* Links */}
+          <div className={styles.links}>
+            <hr />
             {currentImage.external &&
               currentImage.external.map(
                 (post) =>
                   post && (
-                    <li key={post.alt} onClick={(e) => e.stopPropagation()}>
-                      <Button
-                        icon={post.icon}
-                        title={`View on ${post.alt}`}
-                        label={`View on ${post.alt}`}
-                        href={post.url}
-                        newPage={true}
-                      />
-                    </li>
+                    <Link
+                      key={post.alt}
+                      onClick={(e) => e.stopPropagation()}
+                      title={`View on ${post.alt}`}
+                      aria-label={`View on ${post.alt}`}
+                      href={post.url}
+                      passHref
+                      target="_blank"
+                    >
+                      <i className={post.icon} />
+                    </Link>
                   )
               )}
-          </motion.ul>
-        )}
-      </AnimatePresence>
-
-      {/* Preview */}
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.div
-          className={styles.imagePreview}
-          key={currentImage.id}
-          // Animation
-          variants={variants}
-          custom={direction}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 },
-          }}
-          // Drag Event
-          drag="x"
-          dragSnapToOrigin
-          onDragEnd={(_, info) => {
-            dragHandler(_, info, updateImageIndex);
-          }}
-        >
-          <Image
-            key={"Image"}
-            src={getImageUrl(currentImage.id)}
-            alt={currentImage.title}
-            width={currentImage.width}
-            height={currentImage.height}
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsHidden(!isHidden);
-            }}
-            placeholder={placeholderImage(
-              currentImage.width,
-              currentImage.height
-            )}
-            priority={false}
-          />
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Preview Information */}
-      <AnimatePresence>
-        {!isHidden && (
-          <motion.div
-            className={styles.previewInformationWrapper}
-            // Animations
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
-            }}
-          >
-            <div className={`${styles.previewInformation}`}>
-              <span className={styles.title}>{currentImage.title}</span>
-              <br />
-              <div className={styles.tags}>
-                {currentImage.tags.map((tag, index) => (
-                  <span key={index} className={styles.tag}>
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Thumbnails */}
-            <ImageThumbnail
-              activeIndex={imageIndex}
-              images={images}
-              onThumbnailClick={(index) => {
-                updateImageIndex(index - imageIndex);
+            <Link
+              onClick={(e) => {
+                e.stopPropagation();
+                navigator.clipboard.writeText(window.location.href);
               }}
-              onDirectionClick={(direction) => updateImageIndex(direction)}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+              title="Copy Link"
+              aria-label="Copy Link"
+              href="#"
+              passHref
+            >
+              <i className="bx bx-link" />
+            </Link>
+          </div>
+          <hr />
+
+          {/* Tags */}
+          <h3>Tags</h3>
+          <div className={styles.tags}>
+            {currentImage.tags.map((tag, index) => (
+              <span key={index} className={styles.tag}>
+                #{tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 }

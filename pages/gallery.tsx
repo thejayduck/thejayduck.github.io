@@ -57,9 +57,6 @@ export default function Gallery({ id }: { id: string }) {
       const galleryItems = Array.from(
         containerRef.current?.querySelectorAll(`.${styles.galleryItem}`) || []
       );
-      // const galleryItems = Array.from(
-      //   containerRef.current?.querySelectorAll("div") || []
-      // );
 
       galleryItems.forEach((element, index) => {
         const galleryItem = element as HTMLElement;

@@ -1,102 +1,201 @@
 .imagePreviewWrapper {
-  display: flex;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(5px);
-
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  right: 0;
+  bottom: 0;
 
   z-index: var(--z-absolute);
 
-  .exitButton {
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    margin: var(--spacing-small);
-    color: white;
-    border-radius: var(--border);
-    cursor: pointer;
-
-    transition: all 0.3s;
-    z-index: 1;
-
-    i {
-      text-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
-      font-size: var(--font-larger);
-    }
-
-    &:hover {
-      background-color: var(--secondary-opaque);
-      color: var(--primary);
-    }
-  }
-
-  .external {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    padding: var(--spacing-small);
-    margin: 0;
-    list-style-type: none;
-    list-style: none;
-  }
-
   .imagePreview {
-    flex: 1;
-    position: absolute;
-    height: 100%;
-    will-change: transform, opacity;
+    position: relative;
+    display: flex;
 
-    img,
-    video {
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-      user-select: none;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px) brightness(50%);
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .imageSection {
+    position: relative;
+
+    height: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+    .image {
+      position: relative;
+
+      height: max-content;
+      height: -moz-max-content;
+      width: max-content;
+      height: -moz-max-content;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      will-change: transform, opacity;
+
+      img,
+      video {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        max-height: calc(-85px + 100vh);
+        max-width: 100%;
+
+        object-fit: contain;
+        object-position: center;
+        user-select: none;
+      }
     }
   }
 
   .previewInformationWrapper {
-    overflow: hidden;
-    display: block;
-    width: 100%;
+    width: 25rem;
     height: 100%;
+    flex-shrink: 0;
+    background-color: var(--secondary-opaque);
 
-    .previewInformation {
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.8) 55%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      text-shadow: 1px 1px 5px #000000;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    padding: var(--spacing-normal);
 
-      position: absolute;
-      user-select: none;
-      color: white;
+    .imageStats {
+      ul {
+        list-style: none;
+        padding: 0;
 
-      padding: var(--spacing-small);
-      text-align: center;
-      width: 100%;
-      bottom: 0;
-      padding-bottom: 115px;
-
-      .title {
-        font-weight: var(--font-bold);
-        font-size: var(--font-medium);
+        li {
+          margin: var(--spacing-small) 0;
+          i {
+            margin-right: var(--spacing-small);
+          }
+        }
       }
+    }
+
+    .thumbnailGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-small);
+      margin: var(--spacing-normal) 0;
+
+      .thumbnail {
+        position: relative;
+        overflow: hidden;
+        width: 110px;
+        height: 100px;
+        border-radius: var(--border);
+
+        .matureWarning {
+          // TODO make a global style
+          position: absolute;
+
+          width: 100%;
+          height: 100%;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          font-weight: var(--font-bold);
+          text-align: center;
+
+          backdrop-filter: blur(16px) brightness(60%);
+          z-index: var(--z-normal);
+          pointer-events: none;
+          transition: 255ms;
+        }
+
+        img {
+          border-radius: var(--border);
+          object-fit: cover;
+          cursor: pointer;
+          transition: opacity 255ms;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
+    hr {
+      width: 100%;
+    }
+
+    h3 {
+      margin-bottom: var(--spacing-small);
+    }
+
+    .title {
+      font-weight: var(--font-bold);
+      font-size: var(--font-medium);
+    }
+
+    .links {
+      a {
+        color: var(--font-default);
+        i {
+          font-size: var(--font-large);
+        }
+      }
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-small);
 
       .tag {
-        margin-right: var(--spacing-small);
+        display: inline-block;
+
         color: rgba(255, 255, 255, 0.75);
+        background-color: var(--tertiary);
+        border-radius: var(--border);
+        padding: var(--spacing-mini) var(--spacing-small);
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .imagePreviewWrapper {
+    .imagePreview {
+      flex-direction: column;
+      overflow: auto;
+
+      .imageSection {
+        overflow: initial;
+        min-height: min-content;
+        height: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .previewInformationWrapper {
+        height: auto;
+        width: 100%;
+      }
+    }
+    .thumbnailGrid {
+      display: none;
     }
   }
 }

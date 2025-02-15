@@ -7,6 +7,7 @@ interface IExternal {
 export default interface IGalleryEntry {
   title: string;
   date: string;
+  software?: string;
   external?: IExternal[];
   process?: string;
   mature?: boolean;

@@ -5,11 +5,16 @@
   width: 100%;
   white-space: nowrap;
   margin-top: var(--spacing-mini);
-  padding-bottom: 5px;
 
   overflow-x: auto;
   position: absolute;
   bottom: 0;
+
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
 
   cursor: grab;
   flex-shrink: 0;

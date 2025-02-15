@@ -2,6 +2,19 @@
     {
         "title": "Mion Character Sheet - Sketch",
         "date": "2025-02",
+        "software": "Infinite Painter",
+        "external": [
+            {
+                "url": "https://www.deviantart.com/thejayduck/art/1158821248",
+                "alt": "DeviantArt",
+                "icon": "bx bxl-deviantart"
+            },
+            {
+                "url": "https://cara.app/post/ca1fa75c-9601-441e-8054-cd0d4d6bb1f2",
+                "alt": "Cara",
+                "icon": "bx bxs-copyright"
+            }
+        ],
         "tags": [
             "characterdesign",
             "sketch",
@@ -14,6 +27,7 @@
     {
         "title": "Succubus",
         "date": "2024-12",
+        "software": "Infinite Painter",
         "mature": true,
         "tags": [
             "characterdesign",
@@ -28,6 +42,7 @@
     {
         "title": "Office Lady",
         "date": "2024-12",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -40,6 +55,7 @@
     {
         "title": "How I Attended an All-Guy's Mixer - Male Ver.",
         "date": "2024-10",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/1115078943",
@@ -59,6 +75,7 @@
     {
         "title": "How I Attended an All-Guy's Mixer - Female Ver.",
         "date": "2024-10",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/1113979209",
@@ -78,6 +95,7 @@
     {
         "title": "Ranma 1/2",
         "date": "2024-10",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/Ranma-1-2-1111031594",
@@ -97,6 +115,7 @@
     {
         "title": "Okita Souji - Kimono",
         "date": "2024-10",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -109,6 +128,7 @@
     {
         "title": "Mion Sonozaki x Yu-Gi-Oh!",
         "date": "2024-07",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -121,11 +141,17 @@
     {
         "title": "Mion Sonozaki (Birthday) - Higurashi",
         "date": "2024-07",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/Happy-Birthday-Mion-July-10-2024-1073311034",
                 "alt": "DeviantArt",
                 "icon": "bx bxl-deviantart"
+            },
+            {
+                "url": "https://cara.app/post/7a7f0e28-1abe-4486-b574-87983407becf",
+                "alt": "Cara",
+                "icon": "bx bxs-copyright"
             }
         ],
         "tags": [
@@ -140,6 +166,7 @@
     {
         "title": "Kita Ikuyo - Bocchi the Rock",
         "date": "2024-07",
+        "software": "Infinite Painter",
         "process": "hVqhIiDgTUsm79Jsz2p47TdVjXxGn2IO9ZyHuW3oRQD6PBEs",
         "tags": [
             "characterdesign",
@@ -154,6 +181,7 @@
     {
         "title": "Kita Ikuyo - Bocchi the Rock",
         "date": "2024-06",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/Ikuyo-Kita-Bocchi-the-Rock-Lineart-1069145665",
@@ -175,6 +203,7 @@
     {
         "title": "Angel",
         "date": "2024-06",
+        "software": "Infinite Painter",
         "process": "hVqhIiDgTUsme3t6tP047NSJniZUo3FACTK2X85Lmx0DBWtP",
         "tags": [
             "characterdesign",
@@ -189,6 +218,7 @@
     {
         "title": "Mion Sonozaki - Higurashi",
         "date": "2024-06",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/Mion-Sonozaki-1064170364",
@@ -210,6 +240,7 @@
     {
         "title": "More Random Characters",
         "date": "2024-05",
+        "software": "Infinite Painter",
         "process": "hVqhIiDgTUsmcRtu1rOeB80koQa3g5if6IYtS7wHPRcEz1lv",
         "tags": [
             "characterdesign",
@@ -224,6 +255,7 @@
     {
         "title": "Rose - The Wrong Way to Use Healing Magic",
         "date": "2024-05",
+        "software": "Infinite Painter",
         "process": "hVqhIiDgTUsm5WBwBkjWj70YgDBLdqUVxXPsnwCNQSo8Eeav",
         "tags": [
             "characterdesign",
@@ -238,6 +270,7 @@
     {
         "title": "May Warmup",
         "date": "2024-05",
+        "software": "Infinite Painter",
         "process": "hVqhIiDgTUsmPvgfYVHQxTuRhg5jyIY093SorcmvaLUEGpBn",
         "tags": [
             "characterdesign",
@@ -252,6 +285,7 @@
     {
         "title": "Cute Piercings",
         "date": "2024-04",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -264,6 +298,7 @@
     {
         "title": "Face Practice",
         "date": "2024-04",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -276,6 +311,7 @@
     {
         "title": "Okita Souji (Lying) - Fate/Grand Order",
         "date": "2024-04",
+        "software": "Infinite Painter",
         "process": "hVqhIiDgTUsmoobeGLCET8PwM3Ht96xWZGrgNzApm1JiODe7",
         "mature": true,
         "tags": [
@@ -292,6 +328,7 @@
     {
         "title": "Okita Souji (Sitting) - Fate/Grand Order",
         "date": "2024-04",
+        "software": "Infinite Painter",
         "process": "hVqhIiDgTUsmcjJpTkOeB80koQa3g5if6IYtS7wHPRcEz1lv",
         "mature": true,
         "tags": [
@@ -308,6 +345,7 @@
     {
         "title": "Character Practice",
         "date": "2024-03",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "oc",
@@ -320,6 +358,7 @@
     {
         "title": "Lara Sketch - Rune Factory",
         "date": "2024-03",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fanart",
@@ -332,6 +371,7 @@
     {
         "title": "Mion Sonozaki - Higurashi",
         "date": "2024-03",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fanart",
@@ -344,6 +384,7 @@
     {
         "title": "Mion Sonozaki - Higurashi",
         "date": "2024-03",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fanart",
@@ -356,6 +397,7 @@
     {
         "title": "Maike - Fractured Divergence",
         "date": "2024-03",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -369,6 +411,7 @@
     {
         "title": "Franz - Fractured Divergence",
         "date": "2024-03",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -382,6 +425,7 @@
     {
         "title": " CG #3 - Fractured Divergence",
         "date": "2024-03",
+        "software": "Infinite Painter",
         "tags": [
             "cg",
             "oc",
@@ -394,6 +438,7 @@
     {
         "title": "CG #2 - Fractured Divergence",
         "date": "2024-03",
+        "software": "Infinite Painter",
         "tags": [
             "cg",
             "oc",
@@ -406,6 +451,7 @@
     {
         "title": "CG #1 - Fractured Divergence",
         "date": "2024-03",
+        "software": "Infinite Painter",
         "tags": [
             "cg",
             "oc",
@@ -418,6 +464,7 @@
     {
         "title": "Kurisu Makise - Steins;Gate",
         "date": "2024-02",
+        "software": "Infinite Painter",
         "tags": [
             "fullcolor",
             "fanart",
@@ -430,6 +477,7 @@
     {
         "title": "Kita Ikuyo",
         "date": "2024-01",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/Ikuyo-Kita-Fanart-1009265067",
@@ -449,6 +497,7 @@
     {
         "title": "Marin Kitagawa - Commission",
         "date": "2024-01",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/My-Dress-Up-Darling-Fanart-1007491907",
@@ -469,6 +518,7 @@
     {
         "title": "Mion with Qin F21 Pro",
         "date": "2023-12",
+        "software": "Infinite Painter",
         "tags": [
             "fullcolor",
             "fanart",
@@ -481,6 +531,7 @@
     {
         "title": "Mion with Qin F21 Pro Sketch/Lineart",
         "date": "2023-12",
+        "software": "Infinite Painter",
         "tags": [
             "sketch",
             "fanart",
@@ -493,6 +544,7 @@
     {
         "title": "Clip Studio Practice #2",
         "date": "2023-07",
+        "software": "Clip Studio Paint",
         "tags": [
             "sketch",
             "oc",
@@ -505,6 +557,7 @@
     {
         "title": "Clip Studio Practice #1",
         "date": "2023-07",
+        "software": "Clip Studio Paint",
         "tags": [
             "sketch",
             "oc",
@@ -517,6 +570,7 @@
     {
         "title": "A Noble Pursuit - CG",
         "date": "2022-12",
+        "software": "Infinite Painter",
         "tags": [
             "cg",
             "fullcolor",
@@ -530,6 +584,7 @@
     {
         "title": "Benjamin",
         "date": "2022-12",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -543,6 +598,7 @@
     {
         "title": "Ubel",
         "date": "2022-12",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -556,6 +612,7 @@
     {
         "title": "Alexandra",
         "date": "2022-12",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -569,6 +626,7 @@
     {
         "title": "Hulderic",
         "date": "2022-12",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -582,6 +640,7 @@
     {
         "title": "Carolina",
         "date": "2022-12",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -595,6 +654,7 @@
     {
         "title": "Irie Color",
         "date": "2022-10",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -607,6 +667,7 @@
     {
         "title": "Ducks",
         "date": "2022-09",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -619,6 +680,7 @@
     {
         "title": "Keiichi Color",
         "date": "2022-09",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -631,6 +693,7 @@
     {
         "title": "Oryou Color",
         "date": "2022-09",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -643,6 +706,7 @@
     {
         "title": "Takano Color",
         "date": "2022-09",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -655,6 +719,7 @@
     {
         "title": "Rena Color",
         "date": "2022-08",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/Ryuugu-Rena-color-9314569060",
@@ -676,6 +741,7 @@
     {
         "title": "Shion Color",
         "date": "2022-08",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -688,6 +754,7 @@
     {
         "title": "Chie Color",
         "date": "2022-08",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -700,6 +767,7 @@
     {
         "title": "Rika Color",
         "date": "2022-08",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -712,6 +780,7 @@
     {
         "title": "Hanyuu Color",
         "date": "2022-08",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -724,6 +793,7 @@
     {
         "title": "Satoko Color",
         "date": "2022-08",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/Houjou-Satoko-color-931166747",
@@ -743,6 +813,7 @@
     {
         "title": "Mion Color",
         "date": "2022-08",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -755,6 +826,7 @@
     {
         "title": "Satoshi Sketch",
         "date": "2022-08",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -767,6 +839,7 @@
     {
         "title": "Ooishi Sketch",
         "date": "2022-08",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -779,6 +852,7 @@
     {
         "title": "Tomitake Sketch",
         "date": "2022-08",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -791,6 +865,7 @@
     {
         "title": "Irie Sketch",
         "date": "2022-08",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -803,6 +878,7 @@
     {
         "title": "Keiichi Sketch",
         "date": "2022-07",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -815,6 +891,7 @@
     {
         "title": "Mion's Birthday",
         "date": "2022-07",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/Mion-Sonozaki-Birthday-923781589",
@@ -834,6 +911,7 @@
     {
         "title": "Rena Sketch",
         "date": "2022-07",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/Rena-Sketch-921637601",
@@ -855,6 +933,7 @@
     {
         "title": "Oryou Sketch",
         "date": "2022-06",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -867,6 +946,7 @@
     {
         "title": "Takano Sketch",
         "date": "2022-06",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -879,6 +959,7 @@
     {
         "title": "Shion Sketch",
         "date": "2022-06",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -891,6 +972,7 @@
     {
         "title": "Mion | Catch the Beat",
         "date": "2022-06",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -903,6 +985,7 @@
     {
         "title": "Chie Sketch",
         "date": "2022-05",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -915,6 +998,7 @@
     {
         "title": "Rika Sketch",
         "date": "2022-05",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -927,6 +1011,7 @@
     {
         "title": "Hanyuu Sketch",
         "date": "2022-05",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -939,6 +1024,7 @@
     {
         "title": "Satoko Sketch",
         "date": "2022-05",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -951,6 +1037,7 @@
     {
         "title": "Mion Sketch",
         "date": "2022-04",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "sketch",
@@ -963,6 +1050,7 @@
     {
         "title": "Shiba Inu",
         "date": "2022-04",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -975,6 +1063,7 @@
     {
         "title": "Sculpture",
         "date": "2022-02",
+        "software": "Infinite Painter",
         "tags": [
             "fullcolor"
         ],
@@ -985,6 +1074,7 @@
     {
         "title": "Dread",
         "date": "2021-10",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -997,6 +1087,7 @@
     {
         "title": "Subway",
         "date": "2021-09",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -1009,6 +1100,7 @@
     {
         "title": "Some Character",
         "date": "2021-05",
+        "software": "Infinite Painter",
         "external": [
             {
                 "url": "https://www.deviantart.com/thejayduck/art/Some-Character-1-881177115",
@@ -1028,6 +1120,7 @@
     {
         "title": "Nun",
         "date": "2021-07",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -1040,6 +1133,7 @@
     {
         "title": "Smoke",
         "date": "2021-06",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -1052,6 +1146,7 @@
     {
         "title": "Beanie",
         "date": "2021-05",
+        "software": "Infinite Painter",
         "tags": [
             "characterdesign",
             "fullcolor",
@@ -1064,6 +1159,7 @@
     {
         "title": "Mascot Character",
         "date": "2021-01",
+        "software": "MediBang Paint Pro",
         "tags": [
             "characterdesign",
             "fullcolor",

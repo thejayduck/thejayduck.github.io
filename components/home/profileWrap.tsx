@@ -94,8 +94,8 @@ export default function ProfileWrap() {
           <Link // links
             href="/links"
             passHref
-            aria-label="links"
-            title="links"
+            aria-label="social links"
+            title="social links"
           >
             <i className="bx bx-dots-horizontal-rounded" />
           </Link>
