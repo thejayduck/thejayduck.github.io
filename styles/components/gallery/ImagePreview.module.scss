@@ -7,6 +7,14 @@
 
   z-index: var(--z-absolute);
 
+  hr {
+    width: 100%;
+  }
+
+  h3 {
+    margin-bottom: var(--spacing-small);
+  }
+
   .imagePreview {
     position: relative;
     display: flex;
@@ -43,6 +51,9 @@
       justify-content: center;
 
       will-change: transform, opacity;
+      // pointer-events: none;
+      // border-radius: var(--border);
+      // overflow: hidden;
 
       img,
       video {
@@ -72,6 +83,31 @@
     overflow-x: hidden;
     position: relative;
     padding: var(--spacing-normal);
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-normal);
+
+      .navButton {
+        padding: var(--spacing-small) var(--spacing-normal);
+        background: var(--tertiary);
+        border: none;
+        border-radius: var(--border);
+        cursor: pointer;
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    .title {
+      font-weight: var(--font-bold);
+      font-size: var(--font-medium);
+    }
 
     .imageStats {
       ul {
@@ -122,7 +158,6 @@
         }
 
         img {
-          border-radius: var(--border);
           object-fit: cover;
           cursor: pointer;
           transition: opacity 255ms;
@@ -134,24 +169,20 @@
       }
     }
 
-    hr {
-      width: 100%;
-    }
-
-    h3 {
-      margin-bottom: var(--spacing-small);
-    }
-
-    .title {
-      font-weight: var(--font-bold);
-      font-size: var(--font-medium);
-    }
-
     .links {
       a {
         color: var(--font-default);
+        transition: color 255ms;
+
         i {
+          background-color: var(--tertiary);
+          border-radius: var(--border);
+          padding: var(--spacing-small);
           font-size: var(--font-large);
+        }
+
+        &:hover {
+          color: var(--primary);
         }
       }
     }
@@ -173,6 +204,7 @@
   }
 }
 
+// Mobile View
 @media screen and (max-width: 1024px) {
   .imagePreviewWrapper {
     .imagePreview {

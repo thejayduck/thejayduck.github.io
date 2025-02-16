@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion, wrap } from "framer-motion";
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { dragHandler, formatDate, getImageUrl } from "../../lib/helper";
 import { placeholderImage } from "../imageShimmer";
@@ -14,13 +14,13 @@ import IImagePreview from "./IImagePreview";
 
 const variants = {
   initial: (direction: number) => ({
-    x: direction > 0 ? "100%" : "-100%",
+    x: direction > 0 ? "50%" : "-50%",
     scale: 1,
     opacity: 0,
   }),
   animate: { x: 0, scale: 1, opacity: 1 },
   exit: (direction: number) => ({
-    x: direction > 0 ? "-100%" : "100%",
+    x: direction > 0 ? "-50%" : "50%",
     scale: 0.8,
     opacity: 0,
   }),
@@ -75,7 +75,7 @@ export function ImagePreview({
     };
   }, [onOutsideClick, updateImageIndex]);
 
-  const [isHidden, setIsHidden] = useState(false);
+  // const [isHidden, setIsHidden] = useState(false);
 
   return (
     <motion.div
@@ -88,23 +88,24 @@ export function ImagePreview({
     >
       {/* Preview */}
       <div className={styles.imagePreview}>
-        <div className={styles.imageSection}>
-          <AnimatePresence initial={false} custom={direction}>
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.div
+            className={styles.imageSection}
+            key={currentImage.id}
+            // ? Fix transition animations
+            // Animation
+            variants={variants}
+            custom={direction}
+            initial="initial"
+            animate="animate"
+            // exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+            }}
+          >
             <motion.div
-              className={styles.image}
-              key={currentImage.id}
-              // ? Fix transition animations
-              // Animation
-              // variants={variants}
-              // custom={direction}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              // transition={{
-              //   x: { type: "spring", stiffness: 300, damping: 30 },
-              //   opacity: { duration: 0.2 },
-              // }}
-              // Drag Event
+              className={styles.image} // Drag Event
               drag="x"
               dragSnapToOrigin
               onDragEnd={(_, info) => {
@@ -119,7 +120,7 @@ export function ImagePreview({
                 height={currentImage.height}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setIsHidden(!isHidden);
+                  // setIsHidden(!isHidden);
                 }}
                 placeholder={placeholderImage(
                   currentImage.width,
@@ -128,14 +129,33 @@ export function ImagePreview({
                 priority={false}
               />
             </motion.div>
-          </AnimatePresence>
-        </div>
+          </motion.div>
+        </AnimatePresence>
 
         {/* Preview Information */}
         <div
           className={styles.previewInformationWrapper}
           onClick={(e) => e.stopPropagation()}
         >
+          <div className={styles.navigation}>
+            <button
+              onClick={() => updateImageIndex(-1)}
+              disabled={imageIndex === 0}
+              className={styles.navButton}
+            >
+              <i className="bx bxs-left-arrow" />
+            </button>
+            <span>
+              {imageIndex + 1} / {images.length}
+            </span>
+            <button
+              onClick={() => updateImageIndex(1)}
+              disabled={imageIndex === images.length - 1}
+              className={styles.navButton}
+            >
+              <i className="bx bxs-right-arrow" />
+            </button>
+          </div>
           <span>@thejayduck</span>
           <hr />
           <span className={styles.title}>{currentImage?.title}</span>
@@ -186,6 +206,7 @@ export function ImagePreview({
                       width={110}
                       height={100}
                       quality={40}
+                      placeholder={placeholderImage(110, 100)}
                       onClick={() =>
                         updateImageIndex(images.indexOf(img) - imageIndex)
                       }
