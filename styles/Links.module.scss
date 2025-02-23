@@ -40,15 +40,8 @@
         box-shadow: none;
         background-color: hsla(var(--primary-hsla), 0.08);
         border: 1.7px solid var(--border-skillbar);
-        // color: var(--primary);
         color: var(--font-skillbar);
       }
-
-      // a:not(:last-child) {
-      //   background-color: hsla(var(--primary-hsla), 0.08);
-      //   border: 1.7px solid var(--border-skillbar);
-      //   color: var(--primary);
-      // }
 
       // Elements more than 1 child get this style e.g. links with a copy button
       &:has(> :nth-child(2)) {

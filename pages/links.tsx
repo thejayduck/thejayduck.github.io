@@ -125,10 +125,9 @@ export default function Links() {
                 />
               </li>
             ))}
-            <hr />
             <h3>Homepage Redirects</h3>
 
-            <li>
+            <li className={styles.highlight}>
               <Button // blog
                 icon="bx bxs-box"
                 label="blog"
@@ -137,7 +136,7 @@ export default function Links() {
                 newPage={false}
               />
             </li>
-            <li>
+            <li className={styles.highlight}>
               <Button // projects
                 icon="bx bxs-bulb"
                 label="projects"
@@ -146,7 +145,7 @@ export default function Links() {
                 newPage={false}
               />
             </li>
-            <li>
+            <li className={styles.highlight}>
               <Button // gallery
                 icon="bx bxs-image"
                 label="gallery"
