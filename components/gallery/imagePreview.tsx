@@ -118,10 +118,7 @@ export function ImagePreview({
                 alt={currentImage.title}
                 width={currentImage.width}
                 height={currentImage.height}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  // setIsHidden(!isHidden);
-                }}
+                onClick={(e) => e.stopPropagation()}
                 placeholder={placeholderImage(
                   currentImage.width,
                   currentImage.height
