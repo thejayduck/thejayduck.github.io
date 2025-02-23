@@ -15,6 +15,53 @@
     padding: 0;
     margin: var(--spacing-normal) 0 0 0;
     color: var(--font-default);
+
+    li {
+      list-style: none;
+
+      // Hover Animation
+      a {
+        transition: all 255ms ease;
+
+        i {
+          transition: transform 255ms ease;
+        }
+
+        &:hover {
+          transform: scale(1.02);
+
+          i {
+            transform: rotate(360deg);
+          }
+        }
+      }
+
+      &.highlight a {
+        box-shadow: none;
+        background-color: hsla(var(--primary-hsla), 0.08);
+        border: 1.7px solid var(--border-skillbar);
+        // color: var(--primary);
+        color: var(--font-skillbar);
+      }
+
+      // a:not(:last-child) {
+      //   background-color: hsla(var(--primary-hsla), 0.08);
+      //   border: 1.7px solid var(--border-skillbar);
+      //   color: var(--primary);
+      // }
+
+      // Elements more than 1 child get this style e.g. links with a copy button
+      &:has(> :nth-child(2)) {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+
+        a:not(:last-child) {
+          flex: 0.98;
+          width: 100%;
+        }
+      }
+    }
   }
 
   .picture {
