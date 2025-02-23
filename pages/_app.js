@@ -3,13 +3,16 @@ import "../styles/variables.scss";
 
 import ScrollManager from "../components/scrollManager";
 import ThemeToggle from "../components/themeToggle";
+import { ToastHandler } from "../components/toashHandler";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <ThemeToggle />
       <ScrollManager />
-      <Component {...pageProps} />
+      <ToastHandler>
+        <Component {...pageProps} />
+      </ToastHandler>
     </>
   );
 }
