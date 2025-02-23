@@ -93,9 +93,14 @@
       .navButton {
         padding: var(--spacing-small) var(--spacing-normal);
         background: var(--tertiary);
+        box-shadow: var(--box-shadow);
         border: none;
         border-radius: var(--border);
         cursor: pointer;
+
+        i {
+          color: var(--font-default);
+        }
 
         &:disabled {
           opacity: 0.5;
@@ -155,6 +160,10 @@
           z-index: var(--z-normal);
           pointer-events: none;
           transition: 255ms;
+
+          i {
+            color: white;
+          }
         }
 
         img {
@@ -175,6 +184,8 @@
         transition: color 255ms;
 
         i {
+          box-shadow: var(--box-shadow);
+
           background-color: var(--tertiary);
           border-radius: var(--border);
           padding: var(--spacing-small);
