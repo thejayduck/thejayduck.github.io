@@ -9,6 +9,7 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import { dragHandler, formatDate, getImageUrl } from "../../lib/helper";
 import { placeholderImage } from "../imageShimmer";
+import { useToast } from "../toashHandler";
 
 import IImagePreview from "./IImagePreview";
 
@@ -31,6 +32,8 @@ export function ImagePreview({
   onOutsideClick,
   activeIndex,
 }: IImagePreview) {
+  const { showToast } = useToast();
+
   const router = useRouter();
   const [[imageIndex, direction], setImageIndex] = useState([activeIndex, 0]);
   const currentImage = images[imageIndex];
@@ -75,8 +78,6 @@ export function ImagePreview({
     };
   }, [onOutsideClick, updateImageIndex]);
 
-  // const [isHidden, setIsHidden] = useState(false);
-
   return (
     <motion.div
       key="preview"
@@ -92,7 +93,6 @@ export function ImagePreview({
           <motion.div
             className={styles.imageSection}
             key={currentImage.id}
-            // ? Fix transition animations
             // Animation
             variants={variants}
             custom={direction}
@@ -227,7 +227,13 @@ export function ImagePreview({
                   post && (
                     <Link
                       key={post.alt}
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        showToast(
+                          "Link Opened!",
+                          `The link to "${post.alt}" has been opened in a new tab.`
+                        );
+                      }}
                       title={`View on ${post.alt}`}
                       aria-label={`View on ${post.alt}`}
                       href={post.url}
@@ -242,6 +248,10 @@ export function ImagePreview({
               onClick={(e) => {
                 e.stopPropagation();
                 navigator.clipboard.writeText(window.location.href);
+                showToast(
+                  "Image Link Copied!",
+                  "The image link has been copied to your clipboard."
+                );
               }}
               title="Copy Link"
               aria-label="Copy Link"
