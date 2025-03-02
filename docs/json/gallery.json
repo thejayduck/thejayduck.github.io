@@ -1,5 +1,25 @@
 [
     {
+        "title": "Random Character",
+        "date": "2025-03",
+        "software": "Infinite Painter",
+        "external": [
+            {
+                "url": "https://cara.app/post/2a90f8b7-e5df-4eff-b000-b59493b1ac92",
+                "alt": "Cara",
+                "icon": "bx bxs-copyright"
+            }
+        ],
+        "tags": [
+            "characterdesign",
+            "fullcolor",
+            "fanart"
+        ],
+        "width": 1780,
+        "height": 3590,
+        "id": "tzMdx3pvN1orHSuXyvUwgLFDyRjaUVZ47qOfvT0XBNiPJY1k"
+    },
+    {
         "title": "Mion in Barcelona",
         "date": "2025-02",
         "software": "Infinite Painter",
