@@ -44,6 +44,13 @@ export default function Gallery({ id }: { id: string }) {
     [router]
   );
 
+  useEffect(() => {
+    document.body.style.overflow = id ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [id]);
+
   // Handler for closing image preview
   const handleClosePreview = () => {
     router.replace("/gallery", undefined, { scroll: false });
