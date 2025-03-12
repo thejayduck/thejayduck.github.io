@@ -4,6 +4,13 @@ interface IExternal {
   icon: string;
 }
 
+interface IImage {
+  alt?: string;
+  width: number;
+  height: number;
+  id: string;
+}
+
 export default interface IGalleryEntry {
   title: string;
   date: string;
@@ -12,7 +19,5 @@ export default interface IGalleryEntry {
   process?: string;
   mature?: boolean;
   tags: string[];
-  width: number;
-  height: number;
-  id: string;
+  images: IImage[];
 }

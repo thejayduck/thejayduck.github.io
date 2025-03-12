@@ -22,7 +22,7 @@ export const GalleryGrid: React.FC<IGalleryGridProps> = ({
             key={index}
             entry={galleryEntry}
             index={index}
-            handleImageClick={() => handleImageClick(galleryEntry.id)}
+            handleImageClick={() => handleImageClick(galleryEntry.images[0].id)}
           />
         ))}
       </div>

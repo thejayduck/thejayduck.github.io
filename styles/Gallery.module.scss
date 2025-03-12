@@ -105,10 +105,16 @@
         }
       }
 
-      .processIndicator {
+      .indicators {
+        // speedpainting and image stack
+        list-style: none;
+        margin: 0;
+        padding: 0;
         position: absolute;
         top: 0;
-        text-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
+        .indicator {
+          text-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
+        }
       }
 
       .processVideo {

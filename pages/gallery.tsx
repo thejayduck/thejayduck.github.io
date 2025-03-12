@@ -60,7 +60,7 @@ export default function Gallery({ id }: { id: string }) {
 
       galleryItems.forEach((element, index) => {
         const galleryItem = element as HTMLElement;
-        const item = filteredGallery[index];
+        const item = filteredGallery[index].images[0]; // Main image is the first in the array
 
         // Calculate the ratio and apply styles
         const ratio = item.width / item.height;
@@ -124,8 +124,11 @@ export default function Gallery({ id }: { id: string }) {
                 are downscaled and compressed! <strong>DO NOT</strong>{" "}
                 redistribute, print, or use without explicit permission.
                 <br />
-                <i className="bx bxs-video-recording" /> Some drawings also play
-                a process video when hovered.
+                <i className="bx bxs-video-recording" /> Some drawings play a
+                process video when hovered.
+                <br />
+                <i className="bx bx-layer" /> Some drawings contain multiple
+                images.
                 <br />
                 <i className="bx bxs-hand" /> Blurred posts are mature
                 (sensitive or suggestive), hovering will reveal it.
@@ -148,7 +151,7 @@ export default function Gallery({ id }: { id: string }) {
               <ImagePreview
                 key={"imagePreviewModal"}
                 activeIndex={filteredGallery.findIndex(
-                  (image) => image.id == id
+                  (image) => image.images[0].id == id
                 )}
                 images={filteredGallery}
                 onOutsideClick={handleClosePreview}

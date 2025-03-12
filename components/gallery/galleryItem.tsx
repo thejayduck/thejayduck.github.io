@@ -41,7 +41,9 @@ export default function GalleryItem({
   return (
     <div
       className={`${styles.galleryItem}`}
-      title="Click to view image"
+      title={
+        entry.images.length > 1 ? "Click to view images" : "Click to view image"
+      }
       onClick={() => handleImageClick(index)}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={handleMouseLeave}
@@ -57,14 +59,14 @@ export default function GalleryItem({
       )}
       <figure>
         <Image
-          src={getImageUrl(entry.id)}
+          src={getImageUrl(entry.images[0].id)}
           alt={`Drawing ${entry.title}`}
-          width={entry.width}
+          width={entry.images[0].width}
           loading="lazy"
-          height={entry.height}
+          height={entry.images[0].height}
           quality={65}
           placeholder={`data:image/svg+xml;base64,${toBase64(
-            shimmer(entry.width, entry.height)
+            shimmer(entry.images[0].width, entry.images[0].height)
           )}`}
         />
         <figcaption>
@@ -72,29 +74,35 @@ export default function GalleryItem({
           <br />
           {entry.title}
         </figcaption>
+        <ul className={styles.indicators}>
+          {entry.images.length > 1 && (
+            <li>
+              <i className={`${styles.indicator} bx bx-layer`} />
+            </li>
+          )}
+          {entry.process && (
+            <i className={`${styles.indicator} bx bxs-video-recording`} />
+          )}
+        </ul>
+
         {entry.process && (
-          <>
-            <i
-              className={`${styles.processIndicator} bx bxs-video-recording`}
-            />
-            <AnimatePresence>
-              {hoveredImage === index && (
-                <motion.video
-                  className={styles.processVideo}
-                  autoPlay
-                  muted
-                  loop
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <source src={getProcessUrl(entry.process)} type="video/mp4" />
-                  The video tag is not supported in your browser.
-                </motion.video>
-              )}
-            </AnimatePresence>
-          </>
+          <AnimatePresence>
+            {hoveredImage === index && (
+              <motion.video
+                className={styles.processVideo}
+                autoPlay
+                muted
+                loop
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <source src={getProcessUrl(entry.process)} type="video/mp4" />
+                The video tag is not supported in your browser.
+              </motion.video>
+            )}
+          </AnimatePresence>
         )}
       </figure>
     </div>

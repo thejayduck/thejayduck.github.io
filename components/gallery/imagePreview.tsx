@@ -43,7 +43,7 @@ export function ImagePreview({
       const wrappedImageIndex = wrap(0, images.length, imageIndex + direction);
       setImageIndex([wrappedImageIndex, direction]);
       router.replace(
-        `/gallery/?id=${images[wrappedImageIndex].id}`,
+        `/gallery/?id=${images[wrappedImageIndex].images[0].id}`,
         undefined,
         { scroll: false }
       );
@@ -90,9 +90,9 @@ export function ImagePreview({
       {/* Preview */}
       <div className={styles.imagePreview}>
         <AnimatePresence initial={false} custom={direction}>
-          <motion.div
+          <motion.ul
             className={styles.imageSection}
-            key={currentImage.id}
+            key={currentImage.title}
             // Animation
             variants={variants}
             custom={direction}
@@ -104,29 +104,31 @@ export function ImagePreview({
               opacity: { duration: 0.2 },
             }}
           >
-            <motion.div
-              className={styles.image} // Drag Event
-              drag="x"
-              dragSnapToOrigin
-              onDragEnd={(_, info) => {
-                dragHandler(_, info, updateImageIndex);
-              }}
-            >
-              <Image
-                key={"Image"}
-                src={getImageUrl(currentImage.id)}
-                alt={currentImage.title}
-                width={currentImage.width}
-                height={currentImage.height}
-                onClick={(e) => e.stopPropagation()}
-                placeholder={placeholderImage(
-                  currentImage.width,
-                  currentImage.height
+            {currentImage.images?.map((image, index) => (
+              <motion.li
+                key={index}
+                className={styles.image}
+                drag="x"
+                dragSnapToOrigin
+                onDragEnd={(_, info) => {
+                  dragHandler(_, info, updateImageIndex);
+                }}
+              >
+                <Image
+                  src={getImageUrl(image.id)}
+                  alt={image.alt ?? "Image"}
+                  width={image.width}
+                  height={image.height}
+                  onClick={(e) => e.stopPropagation()}
+                  placeholder={placeholderImage(image.width, image.height)}
+                  priority={false}
+                />
+                {image.alt && (
+                  <span className={styles.imageAlt}>{image.alt}</span>
                 )}
-                priority={false}
-              />
-            </motion.div>
-          </motion.div>
+              </motion.li>
+            ))}
+          </motion.ul>
         </AnimatePresence>
 
         {/* Preview Information */}
@@ -160,10 +162,10 @@ export function ImagePreview({
           {/* Stats */}
           <div className={styles.imageStats}>
             <ul>
-              <li>
+              {/* <li>
                 <i className="bx bx-ruler" /> {currentImage?.width}x
                 {currentImage?.height}px (Downscaled)
-              </li>
+              </li> */}
               <li>
                 <i className="bx bx-calendar" /> Created:{" "}
                 {formatDate(currentImage?.date)}
@@ -180,36 +182,39 @@ export function ImagePreview({
           {/* Related Images */}
           <div className={styles.relatedImages}>
             <h3>
-              <i className="bx bx-images" /> Related
+              <i className="bx bx-images" /> Related (WIP)
             </h3>
             <div className={styles.thumbnailGrid}>
               {images
                 .filter(
                   (img) =>
-                    img.id !== currentImage.id &&
+                    img.images[0].id !== currentImage.images[0].id &&
                     img.tags.some((tag) => currentImage.tags.includes(tag))
                 )
                 .slice(0, 9)
-                .map((img) => (
-                  <div key={img.id} className={styles.thumbnail}>
-                    {img?.mature && (
-                      <div className={styles.matureWarning}>
-                        <i className="bx bx-low-vision" />
-                      </div>
-                    )}
-                    <Image
-                      src={getImageUrl(img.id)}
-                      alt={img.title}
-                      width={110}
-                      height={100}
-                      quality={40}
-                      placeholder={placeholderImage(110, 100)}
-                      onClick={() =>
-                        updateImageIndex(images.indexOf(img) - imageIndex)
-                      }
-                    />
-                  </div>
-                ))}
+                .map((img) => {
+                  const mainImage = img.images[0];
+                  return (
+                    <div key={mainImage.id} className={styles.thumbnail}>
+                      {img?.mature && (
+                        <div className={styles.matureWarning}>
+                          <i className="bx bx-low-vision" />
+                        </div>
+                      )}
+                      <Image
+                        src={getImageUrl(mainImage.id)}
+                        alt={img.title}
+                        width={110}
+                        height={100}
+                        quality={40}
+                        placeholder={placeholderImage(110, 100)}
+                        onClick={() =>
+                          updateImageIndex(images.indexOf(img) - imageIndex)
+                        }
+                      />
+                    </div>
+                  );
+                })}
             </div>
           </div>
 
