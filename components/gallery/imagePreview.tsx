@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion, wrap } from "framer-motion";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import { dragHandler, formatDate, getImageUrl } from "../../lib/helper";
 import { placeholderImage } from "../imageShimmer";
@@ -50,6 +50,28 @@ export function ImagePreview({
     },
     [images, router, imageIndex]
   );
+
+  const shuffleArray = (array: any[]) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+
+    return array;
+  };
+
+  const currentImageId = currentImage.images[0].id;
+  const relatedImages = useMemo(() => {
+    const shuffledImages = shuffleArray([...images]);
+
+    return shuffledImages
+      .filter(
+        (img) =>
+          img.images[0].id !== currentImageId &&
+          img.tags.some((tag: string) => currentImage.tags.includes(tag))
+      )
+      .slice(0, 9);
+  }, [images, currentImageId, currentImage.tags]);
 
   // Keyboard Navigation
   useEffect(() => {
@@ -182,39 +204,32 @@ export function ImagePreview({
           {/* Related Images */}
           <div className={styles.relatedImages}>
             <h3>
-              <i className="bx bx-images" /> Related (WIP)
+              <i className="bx bx-images" /> More
             </h3>
             <div className={styles.thumbnailGrid}>
-              {images
-                .filter(
-                  (img) =>
-                    img.images[0].id !== currentImage.images[0].id &&
-                    img.tags.some((tag) => currentImage.tags.includes(tag))
-                )
-                .slice(0, 9)
-                .map((img) => {
-                  const mainImage = img.images[0];
-                  return (
-                    <div key={mainImage.id} className={styles.thumbnail}>
-                      {img?.mature && (
-                        <div className={styles.matureWarning}>
-                          <i className="bx bx-low-vision" />
-                        </div>
-                      )}
-                      <Image
-                        src={getImageUrl(mainImage.id)}
-                        alt={img.title}
-                        width={110}
-                        height={100}
-                        quality={40}
-                        placeholder={placeholderImage(110, 100)}
-                        onClick={() =>
-                          updateImageIndex(images.indexOf(img) - imageIndex)
-                        }
-                      />
-                    </div>
-                  );
-                })}
+              {relatedImages.map((img) => {
+                const mainImage = img.images[0];
+                return (
+                  <div key={mainImage.id} className={styles.thumbnail}>
+                    {img?.mature && (
+                      <div className={styles.matureWarning}>
+                        <i className="bx bx-low-vision" />
+                      </div>
+                    )}
+                    <Image
+                      src={getImageUrl(mainImage.id)}
+                      alt={img.title}
+                      width={110}
+                      height={100}
+                      quality={40}
+                      placeholder={placeholderImage(110, 100)}
+                      onClick={() =>
+                        updateImageIndex(images.indexOf(img) - imageIndex)
+                      }
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
 

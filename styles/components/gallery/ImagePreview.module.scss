@@ -55,20 +55,12 @@
 
       height: 100%;
       width: 100%;
-      // height: max-content;
-      // height: -moz-max-content;
-      // width: max-content;
-      // height: -moz-max-content;
-      // min-height: 100%;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
       will-change: transform, opacity;
-      // pointer-events: none;
-      // border-radius: var(--border);
-      // overflow: hidden;
 
       .imageAlt {
         background-color: var(--secondary-opaque);

@@ -51,7 +51,6 @@ export default function ImageThumbnail({
     const scrollSpeed = 0.5; // Adjusts Horizontal Scroll Speed
 
     if (thumbnailsContainerRef.current) {
-      // e.preventDefault(); //* Prevent vertical scroll (disabled due to errors)
       thumbnailsContainerRef.current.scrollLeft += e.deltaY * scrollSpeed;
     }
   };
