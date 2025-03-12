@@ -7,10 +7,13 @@ import { motion } from "framer-motion";
 import React from "react";
 
 import { countWords, readTime } from "../../lib/helper";
+import { useToast } from "../toashHandler";
 
 import IBlogProps from "./IBlogProps";
 
 export default function BlogItem(blog: IBlogProps) {
+  const { showToast } = useToast();
+
   const wordCount = countWords(blog.content);
   const avgTime = readTime(wordCount);
 
@@ -50,14 +53,33 @@ export default function BlogItem(blog: IBlogProps) {
             ))}
           </div>
           <p className={styles.summary}>{blog.summary}</p>
-          <Link href={`/blog/${blog.slug}`} passHref>
-            <p
-              className={styles.readMore}
-              title={`Click to read more about ${blog.title}`}
+          <div className={styles.buttons}>
+            <Link // read more button
+              href={`/blog/${blog.slug}`}
+              passHref
+              className={`${styles.button} ${styles.readmore}`}
             >
-              Click to Read More <i className="bx bx-right-arrow-alt" />
-            </p>
-          </Link>
+              <p title={`Click to read more about ${blog.title}`}>
+                Click to Read More <i className="bx bx-right-arrow-alt" />
+              </p>
+            </Link>
+            <a // copy link button
+              className={`${styles.button} ${styles.copylink}`}
+              onClick={(e) => {
+                navigator.clipboard.writeText(
+                  `${window.location.href}/${blog.slug}`
+                );
+                showToast(
+                  "Post Link Copied!",
+                  "The post link has been copied to your clipboard."
+                );
+              }}
+            >
+              <p title={`Click copy link to ${blog.title} blog post.`}>
+                <i className="bx bx-link" />
+              </p>
+            </a>
+          </div>
           <hr />
           <span className={styles.stats}>
             {blog.date} | {wordCount} Words | ~{avgTime} Minutes
