@@ -121,7 +121,7 @@ export default function ImageThumbnail({
             )}
             <Image
               className={`${styles.thumbnail}`}
-              src={getImageUrl(thumbnail.id)}
+              src={getImageUrl(thumbnail.images[0].id)}
               alt={`Thumbnail ${index + 1}`}
               style={{ objectFit: "cover", objectPosition: "top" }}
               quality={35}
