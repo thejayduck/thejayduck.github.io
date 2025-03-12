@@ -78,6 +78,7 @@ export default function GalleryItem({
           {entry.images.length > 1 && (
             <li>
               <i className={`${styles.indicator} bx bx-layer`} />
+              {entry.images.length > 2 && <span>{entry.images.length}</span>}
             </li>
           )}
           {entry.process && (
