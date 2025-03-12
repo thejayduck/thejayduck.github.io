@@ -135,7 +135,7 @@
   ],
   "others": [
     {
-      "title": "Postgresql",
+      "title": "PostgreSQL",
       "icon": "devicon-postgresql-plain",
       "href": "https://www.postgresql.org/"
     },

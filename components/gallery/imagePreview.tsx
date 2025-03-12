@@ -210,7 +210,11 @@ export function ImagePreview({
               {relatedImages.map((img) => {
                 const mainImage = img.images[0];
                 return (
-                  <div key={mainImage.id} className={styles.thumbnail}>
+                  <div
+                    key={mainImage.id}
+                    className={styles.thumbnail}
+                    title={"Click to view image"}
+                  >
                     {img?.mature && (
                       <div className={styles.matureWarning}>
                         <i className="bx bx-low-vision" />
