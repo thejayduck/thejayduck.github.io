@@ -131,6 +131,11 @@
       "title": "GitHub",
       "icon": "devicon-github-plain",
       "href": "https://github.com/"
+    },
+    {
+      "title": "Processing",
+      "icon": "devicon-processing-plain",
+      "href": "https://processing.org/"
     }
   ],
   "others": [
