@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 
 import BlogItem from "../components/blog/blogItem";
 import IBlogProps, { IBlogPostProps } from "../components/blog/IBlogProps";
-import Button from "../components/button";
 import PageBase from "../components/pageBase";
 import GetPosts from "../lib/getPosts";
 
@@ -35,17 +34,7 @@ export default function Blog({ posts }: IBlogPostProps) {
           content="https://ardarmutcu.com/api/og?title=blog"
         />
       </Head>
-      <PageBase>
-        <ul className={"flex flexRight backButton"}>
-          <Button
-            icon="bx bx-undo"
-            label="back to homepage"
-            title="Back to Homepage"
-            href="/"
-            newPage={false}
-          />
-        </ul>
-
+      <PageBase backPath="/" label="Back to Homepage">
         <section>
           <motion.ul
             className={styles.posts}

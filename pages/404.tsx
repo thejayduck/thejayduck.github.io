@@ -2,21 +2,11 @@ import styles from "../styles/Error.module.scss";
 
 import Image from "next/image";
 
-import Button from "../components/button";
 import PageBase from "../components/pageBase";
 
 export default function Error404() {
   return (
-    <PageBase>
-      <ul className={"flex flexRight backButton"}>
-        <Button
-          icon="bx bx-undo"
-          label="back to homepage"
-          title="Back to Homepage"
-          href="/"
-          newPage={false}
-        />
-      </ul>
+    <PageBase backPath="/" label="Back to Homepage">
       <div className={`${styles.mainSection} cardItem`}>
         <h1>
           <i className="bx bx-error" /> Error 404 - Page Not Found{" "}

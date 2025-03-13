@@ -15,7 +15,6 @@ import Markdown from "react-markdown";
 
 import { IBlogPostProps } from "../../components/blog/IBlogProps";
 import TableOfContentToggle from "../../components/blog/tableOfContentToggle";
-import Button from "../../components/button";
 import PageBase from "../../components/pageBase";
 import GetPosts from "../../lib/getPosts";
 import { countWords, readTime } from "../../lib/helper";
@@ -49,7 +48,7 @@ export default function Blog({ posts }: IBlogPostProps) {
   if (!post) throw new Error("Unable to find post.");
 
   const wordCount = countWords(post.content);
-  const avgTime = readTime(wordCount);
+  // const avgTime = readTime(wordCount);
 
   return (
     <>
@@ -62,16 +61,7 @@ export default function Blog({ posts }: IBlogPostProps) {
         />
       </Head>
 
-      <PageBase>
-        <ul className={"flex flexRight backButton"}>
-          <Button
-            icon="bx bx-undo"
-            label="back to posts"
-            title="Back to Posts"
-            href="/blog"
-            newPage={false}
-          />
-        </ul>
+      <PageBase backPath="/blog" label="Back to Posts">
         <section className={`${styles.mainSection}`}>
           <div className={`cardItem ${styles.post}`}>
             {/* <div className={styles.stats}>

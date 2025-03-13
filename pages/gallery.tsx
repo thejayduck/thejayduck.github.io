@@ -7,7 +7,6 @@ import { AnimatePresence } from "framer-motion";
 
 import React, { useCallback, useEffect, useRef } from "react";
 
-import Button from "../components/button";
 import CardPanel from "../components/cardPanel";
 import { GalleryGrid } from "../components/gallery/galleryGrid";
 import { ImagePreview } from "../components/gallery/imagePreview";
@@ -103,18 +102,7 @@ export default function Gallery({ id }: { id: string }) {
         />
       </Head>
 
-      <PageBase>
-        {/* Back to Homepage button */}
-        <ul className={"flex flexRight backButton"}>
-          <Button
-            icon="bx bx-undo"
-            label="back to homepage"
-            title="Back to Homepage"
-            href="/"
-            newPage={false}
-          />
-        </ul>
-
+      <PageBase backPath="/" label="Back to Homepage">
         {/* Main Gallery Section */}
         <section className={`${styles.mainSection} flex flexColumn`}>
           <CardPanel title={"Gallery 🖌️"}>

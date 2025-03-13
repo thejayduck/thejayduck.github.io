@@ -3,7 +3,6 @@ import styles from "../styles/Projects.module.scss";
 import Head from "next/head";
 import Link from "next/link";
 
-import Button from "../components/button";
 import CardPanel from "../components/cardPanel";
 import PageBase from "../components/pageBase";
 import IProjectItem from "../components/projects/IProjectItem";
@@ -39,16 +38,7 @@ export default function Projects() {
           content="https://ardarmutcu.com/api/og?title=projects"
         />
       </Head>
-      <PageBase>
-        <ul className={"flex flexRight backButton"}>
-          <Button
-            icon="bx bx-undo"
-            label="back to homepage"
-            title="Back to Homepage"
-            href="/"
-            newPage={false}
-          />
-        </ul>
+      <PageBase backPath="/" label="Back to Homepage">
         <section className={`${styles.mainSection}`}>
           <CardPanel title={"Projects 💡"}>
             <p>
