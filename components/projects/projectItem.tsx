@@ -29,18 +29,20 @@ export default function ProjectItem(project: IProjectItem) {
             <Link href={project.links[0].url} passHref>
               <h2>{project.title}</h2>
             </Link>
-            {project.links.map((link) => (
-              <Link
-                className={styles.link}
-                key={link.title}
-                href={link.url}
-                title={link.title}
-                aria-label={link.title}
-                passHref
-              >
-                <i className={`${link.icon} bx-tada-hover`}></i>
-              </Link>
-            ))}
+            <div className={styles.links}>
+              {project.links.map((link) => (
+                <Link
+                  className={styles.link}
+                  key={link.title}
+                  href={link.url}
+                  title={link.title}
+                  aria-label={link.title}
+                  passHref
+                >
+                  <i className={`${link.icon} bx-tada-hover`}></i>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div className={styles.tags}>

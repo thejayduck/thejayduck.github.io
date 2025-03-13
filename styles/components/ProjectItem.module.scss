@@ -27,6 +27,8 @@
     }
   }
   .postContainer {
+    width: 100%;
+
     .tag {
       display: inline-block;
       font-size: var(--font-small);
@@ -43,6 +45,8 @@
       transition: color 0.3s;
     }
     .header {
+      display: flex;
+      justify-content: space-between;
       .link {
         color: var(--primary);
       }
