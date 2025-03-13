@@ -44,9 +44,14 @@ export default function Gallery({ id }: { id: string }) {
   );
 
   useEffect(() => {
-    document.body.style.overflow = id ? "hidden" : "auto";
+    if (typeof window !== "undefined") {
+      document.body.style.overflow = id ? "hidden" : "auto";
+    }
+
     return () => {
-      document.body.style.overflow = "auto";
+      if (typeof window !== "undefined") {
+        document.body.style.overflow = "auto";
+      }
     };
   }, [id]);
 

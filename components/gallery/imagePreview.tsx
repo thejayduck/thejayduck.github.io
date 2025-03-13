@@ -8,6 +8,7 @@ import { AnimatePresence, motion, wrap } from "framer-motion";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import { dragHandler, formatDate, getImageUrl } from "../../lib/helper";
+import Button from "../button";
 import { placeholderImage } from "../imageShimmer";
 import { useToast } from "../toashHandler";
 
@@ -37,6 +38,7 @@ export function ImagePreview({
   const router = useRouter();
   const [[imageIndex, direction], setImageIndex] = useState([activeIndex, 0]);
   const currentImage = images[imageIndex];
+  const currentImageId = currentImage.images[0].id;
 
   const updateImageIndex = useCallback(
     (direction: number) => {
@@ -51,27 +53,38 @@ export function ImagePreview({
     [images, router, imageIndex]
   );
 
-  const shuffleArray = (array: any[]) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+  const getSeedHash = (seed: string) => {
+    let hash = 0;
+    for (let i = 0; i < seed.length; i++) {
+      hash = (hash << 5) - hash + seed.charCodeAt(i);
+      hash |= 0;
     }
-
-    return array;
+    return hash;
   };
 
-  const currentImageId = currentImage.images[0].id;
+  const shuffleArray = useCallback((array: any[], seed: string) => {
+    const random = getSeedHash(seed);
+    const shuffled: any[] = [...array];
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.abs(random) % (i + 1);
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled;
+  }, []);
+
   const relatedImages = useMemo(() => {
-    const shuffledImages = shuffleArray([...images]);
+    const shuffledImages = shuffleArray([...images], currentImageId);
 
     return shuffledImages
       .filter(
-        (img) =>
+        (img: any) =>
           img.images[0].id !== currentImageId &&
           img.tags.some((tag: string) => currentImage.tags.includes(tag))
       )
       .slice(0, 9);
-  }, [images, currentImageId, currentImage.tags]);
+  }, [images, currentImageId, currentImage, shuffleArray]);
 
   // Keyboard Navigation
   useEffect(() => {
@@ -109,6 +122,16 @@ export function ImagePreview({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
+      {/* Close Button */}
+      <div className={styles.exitButton}>
+        <Button
+          icon="bx bx-x"
+          label="close preview"
+          onClick={onOutsideClick}
+          newPage={false}
+        />
+      </div>
+
       {/* Preview */}
       <div className={styles.imagePreview}>
         <AnimatePresence initial={false} custom={direction}>

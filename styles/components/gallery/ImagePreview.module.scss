@@ -7,6 +7,16 @@
 
   z-index: var(--z-absolute);
 
+  .exitButton {
+    a {
+      position: absolute;
+      top: var(--spacing-normal);
+      left: var(--spacing-normal);
+      z-index: var(--z-absolute);
+      padding: var(--spacing-small);
+    }
+  }
+
   hr {
     width: 100%;
   }
