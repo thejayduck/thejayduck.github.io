@@ -96,7 +96,8 @@ export default function Links() {
                   navigator.clipboard.writeText(window.location.href);
                   showToast(
                     "Page Link Copied!",
-                    "The page link has been copied to your clipboard."
+                    "The page link has been copied to your clipboard.",
+                    "bx bx-link"
                   );
                 }}
               />
@@ -118,7 +119,8 @@ export default function Links() {
                     navigator.clipboard.writeText(link.href);
                     showToast(
                       "Link Copied!",
-                      `The link to "${link.title}" has been copied to your clipboard.`
+                      `The link to "${link.title}" has been copied to your clipboard.`,
+                      "bx bx-link"
                     );
                   }}
                   newPage={false}

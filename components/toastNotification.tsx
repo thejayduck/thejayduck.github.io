@@ -1,5 +1,7 @@
 import styles from "../styles/components/ToastNotification.module.scss";
 
+import { motion } from "framer-motion";
+
 export default function ToastNotifaction({
   title,
   summary,
@@ -12,7 +14,14 @@ export default function ToastNotifaction({
   urgency?: "low" | "normal" | "critical";
 }) {
   return (
-    <div className={`${styles.toast} ${styles[urgency]}`}>
+    <motion.div
+      className={`${styles.toast} ${styles[urgency]}`}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.2 }}
+      layout
+    >
       <div className={styles.progressBar}>
         <div className={styles.progress} />
       </div>
@@ -21,6 +30,6 @@ export default function ToastNotifaction({
         <span>{title}</span>
       </h4>
       <p>{summary}</p>
-    </div>
+    </motion.div>
   );
 }

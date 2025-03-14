@@ -1,5 +1,7 @@
 import styles from "../styles/components/ToastNotification.module.scss";
 
+import { AnimatePresence } from "framer-motion";
+
 import { createContext, useContext, useState } from "react";
 
 import ToastNotifaction from "./toastNotification";
@@ -45,15 +47,17 @@ export function ToastHandler({ children }: { children: React.ReactNode }) {
     <ToastContext.Provider value={{ showToast }}>
       {children}
       <div className={styles.toastContainer}>
-        {toasts.map((toast) => (
-          <ToastNotifaction
-            key={toast.id}
-            title={toast.title}
-            summary={toast.summary}
-            icon={toast.icon}
-            urgency={toast.urgency}
-          />
-        ))}
+        <AnimatePresence>
+          {toasts.map((toast, index) => (
+            <ToastNotifaction
+              key={toast.id}
+              title={toast.title}
+              summary={toast.summary}
+              icon={toast.icon}
+              urgency={toast.urgency}
+            />
+          ))}
+        </AnimatePresence>
       </div>
     </ToastContext.Provider>
   );

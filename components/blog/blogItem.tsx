@@ -71,7 +71,8 @@ export default function BlogItem(blog: IBlogProps) {
                 );
                 showToast(
                   "Post Link Copied!",
-                  "The post link has been copied to your clipboard."
+                  "The post link has been copied to your clipboard.",
+                  "bx bx-link"
                 );
               }}
             >

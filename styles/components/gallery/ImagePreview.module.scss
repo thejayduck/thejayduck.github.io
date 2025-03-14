@@ -74,6 +74,7 @@
 
       .imageAlt {
         background-color: var(--secondary-opaque);
+        opacity: 0.8;
         position: absolute;
         bottom: 0;
         margin-bottom: var(--spacing-normal);
@@ -252,9 +253,11 @@
         // ul
         // overflow: initial;
         min-height: min-content;
+        // min-height: max-content;
         overflow: visible;
 
         img {
+          // height: 500px;
           width: 100%;
         }
       }

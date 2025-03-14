@@ -148,17 +148,14 @@ export function ImagePreview({
               x: { type: "spring", stiffness: 300, damping: 30 },
               opacity: { duration: 0.2 },
             }}
+            drag="x"
+            dragSnapToOrigin
+            onDragEnd={(_, info) => {
+              dragHandler(_, info, updateImageIndex);
+            }}
           >
             {currentImage.images?.map((image, index) => (
-              <motion.li
-                key={index}
-                className={styles.image}
-                drag="x"
-                dragSnapToOrigin
-                onDragEnd={(_, info) => {
-                  dragHandler(_, info, updateImageIndex);
-                }}
-              >
+              <motion.li key={index} className={styles.image}>
                 <Image
                   src={getImageUrl(image.id)}
                   alt={image.alt ?? "Image"}
@@ -275,7 +272,8 @@ export function ImagePreview({
                         e.stopPropagation();
                         showToast(
                           "Link Opened!",
-                          `The link to "${post.alt}" has been opened in a new tab.`
+                          `The link to "${post.alt}" has been opened in a new tab.`,
+                          "bx bx-link-external"
                         );
                       }}
                       title={`View on ${post.alt}`}
@@ -294,7 +292,8 @@ export function ImagePreview({
                 navigator.clipboard.writeText(window.location.href);
                 showToast(
                   "Image Link Copied!",
-                  "The image link has been copied to your clipboard."
+                  "The image link has been copied to your clipboard.",
+                  "bx bx-image-alt"
                 );
               }}
               title="Copy Link"
