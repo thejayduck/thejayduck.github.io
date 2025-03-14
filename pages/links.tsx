@@ -40,12 +40,12 @@ const socialLinks: SocialLink[] = [
     title: "Cara",
     href: "https://cara.app/thejayduck",
   },
-  // {
-  //   icon: "bx bxl-deviantart",
-  //   label: "deviantart",
-  //   title: "DeviantArt",
-  //   href: "https://www.deviantart.com/thejayduck",
-  // },
+  {
+    icon: "ri-image-fill",
+    label: "deviantart",
+    title: "DeviantArt",
+    href: "https://www.deviantart.com/thejayduck",
+  },
   {
     icon: "ri-instagram-fill",
     label: "instagram",

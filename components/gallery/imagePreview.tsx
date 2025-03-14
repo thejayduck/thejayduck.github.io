@@ -207,10 +207,6 @@ export function ImagePreview({
           {/* Stats */}
           <div className={styles.imageStats}>
             <ul>
-              {/* <li>
-                <i className="bx bx-ruler" /> {currentImage?.width}x
-                {currentImage?.height}px (Downscaled)
-              </li> */}
               <li>
                 <i className="ri-calendar-fill" /> Created:{" "}
                 {formatDate(currentImage?.date)}

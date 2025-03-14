@@ -64,17 +64,6 @@ export default function Blog({ posts }: IBlogPostProps) {
       <PageBase backPath="/blog" label="Back to Posts">
         <section className={`${styles.mainSection}`}>
           <div className={`cardItem ${styles.post}`}>
-            {/* <div className={styles.stats}>
-              <span>
-                {post.date} <i className="bx bxs-calendar" />
-              </span>
-              <span>
-                {wordCount} Words <i className="bx bxs-book" />
-              </span>
-              <span>
-                ~{avgTime} Minutes <i className="bx bxs-stopwatch" />
-              </span>
-            </div> */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

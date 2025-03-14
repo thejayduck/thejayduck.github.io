@@ -42,13 +42,6 @@ export default function ProfileWrap() {
             href="/gallery"
             newPage={false}
           />
-          {/* <Button // links
-            icon="bx bx-link"
-            label="links"
-            title="Links"
-            href="/links"
-            newPage={false}
-          /> */}
         </ul>
         <ul className={`cardItem ${styles.externalLinks}`}>
           <Link // github
@@ -67,22 +60,6 @@ export default function ProfileWrap() {
           >
             <i className="ri-store-2-fill" />
           </Link>
-          {/* <Link // deviantart
-            href="https://www.deviantart.com/thejayduck/"
-            passHref
-            aria-label="deviantart"
-            title="deviantart"
-          >
-            <i className="bx bxl-deviantart" />
-          </Link> */}
-          {/* <Link // instagram
-            href="https://www.instagram.com/ardafevzi.armutcu/"
-            passHref
-            aria-label="instagram"
-            title="instagram"
-          >
-            <i className="bx bxl-instagram-alt" />
-          </Link> */}
           <Link // gmail
             href="mailto:portfolio.remember014@slmail.me"
             passHref
