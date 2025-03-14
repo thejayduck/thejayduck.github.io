@@ -206,18 +206,20 @@
     }
 
     .links {
+      margin-top: var(--spacing-small);
+      margin-bottom: var(--spacing-small);
+
       a {
+        &:not(:last-child) {
+          margin-right: var(--spacing-small);
+        }
+
         color: var(--font-default);
         transition: color 255ms;
-
-        i {
-          box-shadow: var(--box-shadow);
-
-          background-color: var(--tertiary);
-          border-radius: var(--border);
-          padding: var(--spacing-small);
-          font-size: var(--font-large);
-        }
+        background-color: var(--tertiary);
+        border-radius: var(--border);
+        padding: var(--spacing-small);
+        box-shadow: var(--box-shadow);
 
         &:hover {
           color: var(--primary);
@@ -236,7 +238,8 @@
         color: rgba(255, 255, 255, 0.75);
         background-color: var(--tertiary);
         border-radius: var(--border);
-        padding: var(--spacing-mini) var(--spacing-small);
+        padding: var(--spacing-small);
+        padding-right: var(--spacing-normal);
       }
     }
   }

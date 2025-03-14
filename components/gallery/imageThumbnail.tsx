@@ -81,7 +81,7 @@ export default function ImageThumbnail({
             e.stopPropagation();
           }}
         >
-          <i className="bx bx-left-arrow-alt" />
+          <i className="ri-arrow-left-fill" />
         </div>
         <div
           className={`${styles.arrow} ${styles.rightArrow}`}
@@ -90,7 +90,7 @@ export default function ImageThumbnail({
             e.stopPropagation();
           }}
         >
-          <i className="bx bx-right-arrow-alt" />
+          <i className="ri-arrow-right-fill" />
         </div>
       </div>
       <div
@@ -115,7 +115,7 @@ export default function ImageThumbnail({
           >
             {thumbnail?.mature && (
               <div className={styles.matureWarning}>
-                <i className="bx bx-low-vision" />
+                <i className="ri-eye-off-fill" />
               </div>
             )}
             <Image

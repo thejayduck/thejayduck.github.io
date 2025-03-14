@@ -66,7 +66,9 @@ export default function ThemeToggle() {
               variants={iconVariants}
             >
               <i
-                className={`${theme === "dark" ? "bx bxs-sun" : "bx bxs-moon"}`}
+                className={`${
+                  theme === "dark" ? "ri-sun-fill" : "ri-moon-fill"
+                }`}
               />
             </motion.div>
           </AnimatePresence>

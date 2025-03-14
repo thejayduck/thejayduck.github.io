@@ -13,7 +13,11 @@ export const TableOfContent = ({ anchors }: { anchors: AnchorItemProps[] }) => (
           style={{ paddingLeft: `${15 * anchor.level}px` }}
           href={`#user-content-${anchor.id}`}
         >
-          {anchor.level > 1 ? "- " : "◯ "}
+          {anchor.level > 1 ? (
+            <i className="ri-circle-line ri-xs" />
+          ) : (
+            <i className="ri-circle-fill ri-xs" />
+          )}
           {anchor.content}
         </a>
         {anchor.children && <TableOfContent anchors={anchor.children} />}

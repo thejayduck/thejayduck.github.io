@@ -39,7 +39,7 @@ export default function ProjectItem(project: IProjectItem) {
                   aria-label={link.title}
                   passHref
                 >
-                  <i className={`${link.icon} bx-tada-hover`}></i>
+                  <i className={`${link.icon}`}></i>
                 </Link>
               ))}
             </div>

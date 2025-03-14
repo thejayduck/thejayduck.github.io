@@ -8,7 +8,7 @@ interface SubtitleProps {
 export default function Subtitle({ text, icon }: SubtitleProps) {
   return (
     <h2 className={styles.subtitle}>
-      {text} <i className={`bx-pull-right ${icon}`} />
+      {text} <i className={`${icon}`} />
     </h2>
   );
 }

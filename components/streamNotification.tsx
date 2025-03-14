@@ -17,7 +17,7 @@ export default function StreamNotification(stream: IStreamItem) {
         }}
         className={styles.streamNotification}
       >
-        <i className="bx bxs-video-recording" />
+        <i className="ri-video-on-fill" />
         <span>{stream.stream_title} Live!</span>
         <Link
           href="https://livestream.ardarmutcu.com"

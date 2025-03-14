@@ -30,7 +30,7 @@ export const GalleryGrid: React.FC<IGalleryGridProps> = ({
       <center className={styles.endNotice}>
         <span>You&apos;ve reached the end </span>
 
-        <i className="bx bxs-sad"></i>
+        <i className="ri-emotion-sad-fill"></i>
       </center>
     </>
   );

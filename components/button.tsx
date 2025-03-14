@@ -33,7 +33,7 @@ export default function Button({
       className={`cardItem ${styles.button}`}
     >
       <i className={icon} />
-      {title}
+      {title && <span>{title}</span>}
     </Link>
   );
 }

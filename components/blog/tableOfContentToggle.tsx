@@ -67,7 +67,7 @@ export default function TableOfContentToggle({ content }: { content: string }) {
         onClick={() => setAnchorToggle((prev) => !prev)}
         title={"Table of Content"}
       >
-        <i className={anchorToggle ? "bx bx-x" : "bx bx-menu"} />
+        <i className={anchorToggle ? "ri-close-fill" : "ri-menu-fill"} />
       </div>
     </div>
   );

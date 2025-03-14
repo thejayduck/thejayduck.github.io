@@ -112,7 +112,7 @@ export default function Gallery({ id }: { id: string }) {
         <section className={`${styles.mainSection} flex flexColumn`}>
           <CardPanel title={"Gallery 🖌️"}>
             <p>
-              <i className="bx bx-image-alt" />
+              <i className="ri-image-2-fill" />
               <b>{gallery.length} </b> Posts{" "}
               {selectedTags.length > 0
                 ? `(Filtered: ${filteredGallery.length})`
@@ -120,18 +120,18 @@ export default function Gallery({ id }: { id: string }) {
             </p>
             <blockquote>
               <p>
-                <i className="bx bxs-error" /> All of the drawings down below
-                are downscaled and compressed! <strong>DO NOT</strong>{" "}
+                <i className="ri-error-warning-fill" /> All of the drawings down
+                below are downscaled and compressed! <strong>DO NOT</strong>{" "}
                 redistribute, print, or use without explicit permission.
                 <br />
-                <i className="bx bxs-video-recording" /> Some drawings play a
-                process video when hovered.
+                <i className="ri-video-on-fill" /> Some drawings play a process
+                video when hovered.
                 <br />
-                <i className="bx bx-layer" /> Some drawings contain multiple
+                <i className="ri-stack-fill" /> Some drawings contain multiple
                 images.
                 <br />
-                <i className="bx bxs-hand" /> Blurred posts are mature
-                (sensitive or suggestive), hovering will reveal it.
+                <i className="ri-hand" /> Blurred posts are mature (sensitive or
+                suggestive), hovering will reveal it.
               </p>
             </blockquote>
 

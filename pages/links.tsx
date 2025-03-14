@@ -17,37 +17,37 @@ interface SocialLink {
 
 const socialLinks: SocialLink[] = [
   {
-    icon: "bx bxl-linkedin-square",
+    icon: "ri-linkedin-box-fill",
     label: "linkedin",
     title: "LinkedIn",
     href: "https://linkedin.com/in/armutcu",
   },
   {
-    icon: "bx bxl-github",
+    icon: "ri-github-fill",
     label: "github",
     title: "Github",
     href: "https://github.com/thejayduck/",
   },
   {
-    icon: "bx bxs-store",
+    icon: "ri-store-2-fill",
     label: "itchio",
     title: "Itch.io",
     href: "https://thejayduck.itch.io/",
   },
   {
-    icon: "bx bxs-copyright",
+    icon: "ri-copyright-fill",
     label: "cara",
     title: "Cara",
     href: "https://cara.app/thejayduck",
   },
+  // {
+  //   icon: "bx bxl-deviantart",
+  //   label: "deviantart",
+  //   title: "DeviantArt",
+  //   href: "https://www.deviantart.com/thejayduck",
+  // },
   {
-    icon: "bx bxl-deviantart",
-    label: "deviantart",
-    title: "DeviantArt",
-    href: "https://www.deviantart.com/thejayduck",
-  },
-  {
-    icon: "bx bxl-instagram-alt",
+    icon: "ri-instagram-fill",
     label: "instagram",
     title: "Instagram",
     href: "https://www.instagram.com/ardafevzi.armutcu/",
@@ -83,12 +83,15 @@ export default function Links() {
               height={128}
               quality={85}
             />
-            <h1>@thejayduck</h1>
+            <h1>
+              <i className="ri-at-line" />
+              thejayduck
+            </h1>
           </div>
           <ul className={`${styles.linkList}`}>
             <li>
               <Button
-                icon="bx bx-link"
+                icon="ri-link"
                 label="copy"
                 title="Copy Link to Page"
                 newPage={false}
@@ -97,7 +100,7 @@ export default function Links() {
                   showToast(
                     "Page Link Copied!",
                     "The page link has been copied to your clipboard.",
-                    "bx bx-link"
+                    "ri-link"
                   );
                 }}
               />
@@ -113,14 +116,14 @@ export default function Links() {
                   newPage={true}
                 />
                 <Button
-                  icon="bx bx-link"
+                  icon="ri-link"
                   label={`Copy link to ${link.label}`}
                   onClick={() => {
                     navigator.clipboard.writeText(link.href);
                     showToast(
                       "Link Copied!",
                       `The link to "${link.title}" has been copied to your clipboard.`,
-                      "bx bx-link"
+                      "ri-link"
                     );
                   }}
                   newPage={false}
@@ -131,7 +134,7 @@ export default function Links() {
 
             <li className={styles.highlight}>
               <Button // blog
-                icon="bx bxs-box"
+                icon="ri-news-fill"
                 label="blog"
                 title="Blog"
                 href="/blog"
@@ -140,7 +143,7 @@ export default function Links() {
             </li>
             <li className={styles.highlight}>
               <Button // projects
-                icon="bx bxs-bulb"
+                icon="ri-lightbulb-fill"
                 label="projects"
                 title="Projects"
                 href="/projects"
@@ -149,7 +152,7 @@ export default function Links() {
             </li>
             <li className={styles.highlight}>
               <Button // gallery
-                icon="bx bxs-image"
+                icon="ri-gallery-fill"
                 label="gallery"
                 title="Gallery"
                 href="/gallery"

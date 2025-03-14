@@ -16,7 +16,7 @@ export default function PageBase({
       {backPath && (
         <div className={"flex flexRight backButton"}>
           <Button
-            icon="bx bx-undo"
+            icon="ri-arrow-go-back-fill ri-fw"
             label={label?.toLowerCase()}
             title={label}
             href={backPath}

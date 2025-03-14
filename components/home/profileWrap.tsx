@@ -22,21 +22,21 @@ export default function ProfileWrap() {
       <div className={styles.navigation}>
         <ul className={`${styles.pageList}`}>
           <Button // blog
-            icon="bx bxs-box"
+            icon="ri-news-fill"
             label="blog"
             title="Blog"
             href="/blog"
             newPage={false}
           />
           <Button // projects
-            icon="bx bxs-bulb"
+            icon="ri-lightbulb-fill"
             label="projects"
             title="Projects"
             href="/projects"
             newPage={false}
           />
           <Button // gallery
-            icon="bx bxs-image"
+            icon="ri-gallery-fill"
             label="gallery"
             title="Gallery"
             href="/gallery"
@@ -57,7 +57,7 @@ export default function ProfileWrap() {
             aria-label="github"
             title="github"
           >
-            <i className="bx bxl-github" />
+            <i className="ri-github-fill" />
           </Link>
           <Link // itch.io
             href="https://thejayduck.itch.io/"
@@ -65,7 +65,7 @@ export default function ProfileWrap() {
             aria-label="itch.io"
             title="itch.io"
           >
-            <i className="bx bxs-store" />
+            <i className="ri-store-2-fill" />
           </Link>
           {/* <Link // deviantart
             href="https://www.deviantart.com/thejayduck/"
@@ -89,7 +89,7 @@ export default function ProfileWrap() {
             aria-label="gmail (alias)"
             title="gmail (alias)"
           >
-            <i className="bx bxl-gmail" />
+            <i className="ri-mail-fill" />
           </Link>
           <Link // links
             href="/links"
@@ -97,7 +97,7 @@ export default function ProfileWrap() {
             aria-label="social links"
             title="social links"
           >
-            <i className="bx bx-dots-horizontal-rounded" />
+            <i className="ri-more-fill" />
           </Link>
         </ul>
       </div>

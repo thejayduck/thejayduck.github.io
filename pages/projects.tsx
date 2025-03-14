@@ -42,15 +42,15 @@ export default function Projects() {
         <section className={`${styles.mainSection}`}>
           <CardPanel title={"Projects 💡"}>
             <p>
-              <i className="bx bxs-briefcase" />
+              <i className="ri-briefcase-fill" />
               <b>{projects.length} </b> Projects
             </p>
             <blockquote>
               <p>
-                <i className="bx bxs-error" /> As the name suggests, this page
-                is dedicated to my released projects.
+                <i className="ri-error-warning-fill" /> As the name suggests,
+                this page is dedicated to my released projects.
                 <br />
-                <i className="bx bxs-lock-open-alt" /> Majority of them are
+                <i className="ri-open-source-fill" /> Majority of them are
                 open-source, and can be found on my{" "}
                 <Link
                   href="https://github.com/thejayduck/"

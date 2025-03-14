@@ -60,7 +60,7 @@ export default function BlogItem(blog: IBlogProps) {
               className={`${styles.button} ${styles.readmore}`}
             >
               <p title={`Click to read more about ${blog.title}`}>
-                Click to Read More <i className="bx bx-right-arrow-alt" />
+                Click to Read More <i className="ri-arrow-right-fill" />
               </p>
             </Link>
             <a // copy link button
@@ -72,12 +72,12 @@ export default function BlogItem(blog: IBlogProps) {
                 showToast(
                   "Post Link Copied!",
                   "The post link has been copied to your clipboard.",
-                  "bx bx-link"
+                  "ri-link"
                 );
               }}
             >
               <p title={`Click copy link to ${blog.title} blog post.`}>
-                <i className="bx bx-link" />
+                <i className="ri-link ri-fw" />
               </p>
             </a>
           </div>

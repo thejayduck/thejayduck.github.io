@@ -54,9 +54,17 @@ blockquote {
   }
 }
 
-.bx {
+.bx,
+[class^="ri-"] {
+  font-size: 1.2rem;
+
+  // font-size: var(--font-regular);
   margin: 5px;
-  font-size: var(--font-medium);
+
+  line-height: 1;
+  text-rendering: auto;
+  display: inline-block;
+  text-transform: none;
 }
 
 // Card Item

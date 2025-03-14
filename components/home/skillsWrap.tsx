@@ -8,18 +8,18 @@ import Subtitle from "../subtitle";
 export default function SkillsWrap() {
   return (
     <CardPanel title="Toolbox 🧰">
-      <Subtitle text="Hobbies" icon="bx bx-hive" />
+      <Subtitle text="Hobbies" icon="ri-archive-stack-fill" />
       <div className={`${styles.skills} grid`}>
-        <SkillBar title="Programming" icon="bx bx-code-curly" />
-        <SkillBar title="Drawing" icon="bx bxs-pencil" />
-        <SkillBar title="Writing" icon="bx bxs-pen" />
-        <SkillBar title="Cooking" icon="bx bxs-bowl-hot" />
-        <SkillBar title="Reading" icon="bx bxs-book" />
+        <SkillBar title="Programming" icon="ri-braces-fill" />
+        <SkillBar title="Drawing" icon="ri-pen-nib-fill" />
+        <SkillBar title="Writing" icon="ri-quill-pen-fill" />
+        <SkillBar title="Cooking" icon="ri-bowl-fill" />
+        <SkillBar title="Reading" icon="ri-book-fill" />
       </div>
 
       <hr />
 
-      <Subtitle text="Languages" icon="bx bx-code-alt" />
+      <Subtitle text="Languages" icon="ri-code-s-slash-fill" />
       <div className={`${styles.skills} grid`}>
         {toolbox.languages.map((language) => (
           <SkillBar
@@ -33,7 +33,7 @@ export default function SkillsWrap() {
 
       <hr />
 
-      <Subtitle text="Software" icon="bx bx-terminal" />
+      <Subtitle text="Software" icon="ri-terminal-box-fill" />
       <div className={`${styles.skills} grid`}>
         {toolbox.software.map((software) => (
           <SkillBar
@@ -47,7 +47,7 @@ export default function SkillsWrap() {
 
       <hr />
 
-      <Subtitle text="Others" icon="bx bx-box" />
+      <Subtitle text="Others" icon="ri-archive-fill" />
       <div className={`${styles.skills} grid`}>
         {toolbox.others.map((other) => (
           <SkillBar

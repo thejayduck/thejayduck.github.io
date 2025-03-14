@@ -38,7 +38,7 @@ export default function ScrollManager() {
               }}
               className={styles.progressWrap}
             >
-              <i className={`${styles.icon} bx bxs-upvote`} />
+              <i className={`${styles.icon} ri-arrow-up-fill ri-xl`} />
 
               <svg
                 id="progress"

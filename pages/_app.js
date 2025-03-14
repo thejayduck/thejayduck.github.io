@@ -1,5 +1,6 @@
 import "../styles/globals.scss";
 import "../styles/variables.scss";
+import "remixicon/fonts/remixicon.css";
 
 import ScrollManager from "../components/scrollManager";
 import ThemeToggle from "../components/themeToggle";

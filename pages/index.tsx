@@ -38,7 +38,7 @@ export default function Home() {
                 </>
               }
             >
-              <Subtitle text="About Me" icon="bx bx-detail" />
+              <Subtitle text="About Me" icon="ri-file-text-fill" />
               <p>
                 I am a student at the <span>University of Bremen</span>,
                 studying linguistics and computer science. I&apos;m always on

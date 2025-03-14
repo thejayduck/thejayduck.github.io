@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function ToastNotifaction({
   title,
   summary,
-  icon = "bx bxs-bell",
+  icon = "ri-notification-3-fill",
   urgency = "normal",
 }: {
   title: string;

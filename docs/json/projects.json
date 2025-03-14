@@ -22,12 +22,12 @@
             {
                 "title": "Itch.io",
                 "url": "https://thejayduck.itch.io/fractured-divergence",
-                "icon": "bx bxs-store"
+                "icon": "ri-store-2-fill"
             },
             {
                 "title": "Github",
                 "url": "https://github.com/thejayduck/acerola-0-jam/",
-                "icon": "bx bxl-github"
+                "icon": "ri-github-fill"
             }
         ]
     },
@@ -55,7 +55,7 @@
             {
                 "title": "Website",
                 "url": "https://livestream.ardarmutcu.com",
-                "icon": "bx bx-globe"
+                "icon": "ri-global-fill"
             }
         ]
     },
@@ -84,7 +84,7 @@
             {
                 "title": "Itch.io",
                 "url": "https://thejayduck.itch.io/a-noble-pursuit",
-                "icon": "bx bxs-store"
+                "icon": "ri-store-2-fill"
             }
         ]
     },
@@ -113,7 +113,7 @@
             {
                 "title": "Itch.io",
                 "url": "https://thejayduck.itch.io/night-time-visit",
-                "icon": "bx bxs-store"
+                "icon": "ri-store-2-fill"
             }
         ]
     },
@@ -140,7 +140,7 @@
             {
                 "title": "Itch.io",
                 "url": "https://semikoder.itch.io/project-biobot",
-                "icon": "bx bxs-store"
+                "icon": "ri-store-2-fill"
             }
         ]
     },
@@ -165,7 +165,7 @@
             {
                 "title": "Github",
                 "url": "https://github.com/thejayduck/tamagochi",
-                "icon": "bx bxl-github"
+                "icon": "ri-github-fill"
             }
         ]
     },
@@ -188,7 +188,7 @@
             {
                 "title": "Github",
                 "url": "https://github.com/thejayduck/thejayduck.github.io",
-                "icon": "bx bxl-github"
+                "icon": "ri-github-fill"
             }
         ]
     },
@@ -210,12 +210,12 @@
             {
                 "title": "Github",
                 "url": "https://github.com/thejayduck/novel-tracker",
-                "icon": "bx bxl-github"
+                "icon": "ri-github-fill"
             },
             {
                 "title": "Trello",
                 "url": "https://trello.com/b/dPv92vJW/novel-tracker",
-                "icon": "bx bxl-trello"
+                "icon": "ri-trello-fill"
             }
         ]
     },
@@ -239,7 +239,7 @@
             {
                 "title": "Itch.io",
                 "url": "https://thejayduck.itch.io/lunar-lander-remake",
-                "icon": "bx bxs-store"
+                "icon": "ri-store-2-fill"
             }
         ]
     }

@@ -51,7 +51,7 @@ export const TagButtons = () => {
               onClick={() => setSelectedTags([])}
               title="Clear Filter"
             >
-              <i className="bx bx-x" />
+              <i className="ri-close-fill" />
               <span>Clear Filter</span>
             </button>
           )}

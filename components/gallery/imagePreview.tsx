@@ -125,7 +125,7 @@ export function ImagePreview({
       {/* Close Button */}
       <div className={styles.exitButton}>
         <Button
-          icon="bx bx-x"
+          icon="ri-close-fill"
           label="close preview"
           onClick={onOutsideClick}
           newPage={false}
@@ -184,7 +184,7 @@ export function ImagePreview({
               disabled={imageIndex === 0}
               className={styles.navButton}
             >
-              <i className="bx bxs-left-arrow" />
+              <i className="ri-arrow-left-fill" />
             </button>
             <span>
               {imageIndex + 1} / {images.length}
@@ -194,10 +194,13 @@ export function ImagePreview({
               disabled={imageIndex === images.length - 1}
               className={styles.navButton}
             >
-              <i className="bx bxs-right-arrow" />
+              <i className="ri-arrow-right-fill" />
             </button>
           </div>
-          <span>@thejayduck</span>
+          <span>
+            <i className="ri-at-line" />
+            thejayduck
+          </span>
           <hr />
           <span className={styles.title}>{currentImage?.title}</span>
 
@@ -209,12 +212,12 @@ export function ImagePreview({
                 {currentImage?.height}px (Downscaled)
               </li> */}
               <li>
-                <i className="bx bx-calendar" /> Created:{" "}
+                <i className="ri-calendar-fill" /> Created:{" "}
                 {formatDate(currentImage?.date)}
               </li>
               {currentImage?.software && (
                 <li>
-                  <i className="bx bx-paint" /> Software:{" "}
+                  <i className="ri-pen-nib-fill" /> Software:{" "}
                   {currentImage.software}
                 </li>
               )}
@@ -224,7 +227,7 @@ export function ImagePreview({
           {/* Related Images */}
           <div className={styles.relatedImages}>
             <h3>
-              <i className="bx bx-images" /> More
+              <i className="ri-multi-image-fill" /> More
             </h3>
             <div className={styles.thumbnailGrid}>
               {relatedImages.map((img) => {
@@ -237,7 +240,7 @@ export function ImagePreview({
                   >
                     {img?.mature && (
                       <div className={styles.matureWarning}>
-                        <i className="bx bx-low-vision" />
+                        <i className="ri-eye-off-fill" />
                       </div>
                     )}
                     <Image
@@ -260,8 +263,8 @@ export function ImagePreview({
           <br />
 
           {/* Links */}
+          <hr />
           <div className={styles.links}>
-            <hr />
             {currentImage.external &&
               currentImage.external.map(
                 (post) =>
@@ -273,7 +276,7 @@ export function ImagePreview({
                         showToast(
                           "Link Opened!",
                           `The link to "${post.alt}" has been opened in a new tab.`,
-                          "bx bx-link-external"
+                          "ri-external-link-fill"
                         );
                       }}
                       title={`View on ${post.alt}`}
@@ -282,7 +285,7 @@ export function ImagePreview({
                       passHref
                       target="_blank"
                     >
-                      <i className={post.icon} />
+                      <i className={`${post.icon} ri-lg ri-fw`} />
                     </Link>
                   )
               )}
@@ -293,7 +296,7 @@ export function ImagePreview({
                 showToast(
                   "Image Link Copied!",
                   "The image link has been copied to your clipboard.",
-                  "bx bx-image-alt"
+                  "ri-file-image-fill"
                 );
               }}
               title="Copy Link"
@@ -301,7 +304,7 @@ export function ImagePreview({
               href="#"
               passHref
             >
-              <i className="bx bx-link" />
+              <i className="ri-link ri-lg ri-fw" />
             </Link>
           </div>
           <hr />
@@ -311,7 +314,8 @@ export function ImagePreview({
           <div className={styles.tags}>
             {currentImage.tags.map((tag, index) => (
               <span key={index} className={styles.tag}>
-                #{tag}
+                <i className="ri-hashtag ri-1x ri-fw" />
+                {tag}
               </span>
             ))}
           </div>
