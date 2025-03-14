@@ -1,5 +1,29 @@
 [
     {
+        "title": "Doll in a dress",
+        "date": "2025-03",
+        "software": "Infinite Painter",
+        "external": [
+            {
+                "url": "https://cara.app/post/9723a882-db1f-4eb2-a366-4f75aab71c53",
+                "alt": "Cara",
+                "icon": "bx bxs-copyright"
+            }
+        ],
+        "tags": [
+            "characterdesign",
+            "sketch",
+            "oc"
+        ],
+        "images": [
+            {
+                "width": 1500,
+                "height": 2000,
+                "id": "tzMdx3pvN1ortMgaS1pvN1orMdXpi82RQIauYHUADJ3wqGZn"
+            }
+        ]
+    },
+    {
         "title": "Doll",
         "date": "2025-03",
         "software": "Infinite Painter",
