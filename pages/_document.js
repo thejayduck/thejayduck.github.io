@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <html lang="en" />
 
-        <link href='https://unpkg.com/boxicons@latest/css/boxicons.min.css' rel='stylesheet' />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
         {/* <link rel="preload" as="font" /> */}
