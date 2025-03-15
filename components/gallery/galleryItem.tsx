@@ -10,6 +10,7 @@ import {
   getIcon,
   getImageUrl,
   getProcessUrl,
+  isNewTimestamp,
 } from "../../lib/helper";
 import { shimmer, toBase64 } from "../imageShimmer";
 
@@ -80,9 +81,20 @@ export default function GalleryItem({
           {entry.title}
         </figcaption>
         <ul className={styles.indicators}>
+          {entry.timestamp && isNewTimestamp(entry.timestamp) && (
+            <li>
+              <i
+                title="New"
+                className={`${styles.indicator} ${styles.new} ${getIcon(
+                  "newIndicator"
+                )} ri-fw ri-lg`}
+              />
+            </li>
+          )}
           {entry.images.length > 1 && (
             <li>
               <i
+                title={`${entry.images.length} Images`}
                 className={`${styles.indicator} ${getIcon(
                   "stack"
                 )} ri-fw ri-lg`}
@@ -91,11 +103,14 @@ export default function GalleryItem({
             </li>
           )}
           {entry.process && (
-            <i
-              className={`${styles.indicator} ${getIcon(
-                "recording"
-              )} ri-fw ri-lg`}
-            />
+            <li>
+              <i
+                title="Process Available"
+                className={`${styles.indicator} ${getIcon(
+                  "recording"
+                )} ri-fw ri-lg`}
+              />
+            </li>
           )}
         </ul>
 

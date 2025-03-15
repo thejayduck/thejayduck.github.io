@@ -14,6 +14,7 @@ interface IImage {
 export default interface IGalleryEntry {
   title: string;
   date: string;
+  timestamp?: number;
   software?: string;
   external?: IExternal[];
   process?: string;

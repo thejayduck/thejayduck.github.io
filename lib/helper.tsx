@@ -123,6 +123,13 @@ export function getProcessUrl(id: string) {
   return `${BASE_URL}${id}`;
 }
 
+export function isNewTimestamp(timestamp: number) {
+  const currentTime = Math.floor(Date.now() / 1000);
+  const threshold = 259200; // 3 days in seconds
+
+  return currentTime - timestamp < threshold;
+}
+
 const iconList: Record<string, string> = {
   close: "ri-close-fill",
   lightMode: "ri-sun-fill",
@@ -145,6 +152,7 @@ const iconList: Record<string, string> = {
   notification: "ri-notification-3-fill",
   imageFile: "ri-file-image-fill",
   textFile: "ri-file-text-fill",
+  newIndicator: "ri-sparkling-2-fill",
   // Pages
   blog: "ri-news-fill",
   projects: "ri-lightbulb-fill",
