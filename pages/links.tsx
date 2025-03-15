@@ -82,7 +82,7 @@ export default function Links() {
               placeholder={placeholderImage(96, 128)}
               width={96}
               height={128}
-              quality={85}
+              quality={75}
             />
             <h1>
               <i className={getIcon("at")} />

@@ -249,7 +249,7 @@ export function ImagePreview({
                       alt={img.title}
                       width={110}
                       height={100}
-                      quality={40}
+                      quality={35}
                       placeholder={placeholderImage(110, 100)}
                       onClick={() =>
                         updateImageIndex(images.indexOf(img) - imageIndex)

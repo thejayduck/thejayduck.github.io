@@ -70,7 +70,7 @@ export default function GalleryItem({
           width={entry.images[0].width}
           loading="lazy"
           height={entry.images[0].height}
-          quality={65}
+          quality={75}
           placeholder={`data:image/svg+xml;base64,${toBase64(
             shimmer(entry.images[0].width, entry.images[0].height)
           )}`}

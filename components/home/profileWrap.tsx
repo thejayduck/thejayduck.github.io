@@ -18,7 +18,7 @@ export default function ProfileWrap() {
         placeholder={placeholderImage(256, 446)}
         width={256}
         height={446}
-        quality={85}
+        quality={75}
       />
       <div className={styles.navigation}>
         <ul className={`${styles.pageList}`}>

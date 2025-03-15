@@ -4,6 +4,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
+    minimumCacheTTL: 2678400,
+    qualities: [25, 35, 50, 75],
+    deviceSizes: [480, 768, 1024, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96],
+
     remotePatterns: [
       {
         protocol: "https",
