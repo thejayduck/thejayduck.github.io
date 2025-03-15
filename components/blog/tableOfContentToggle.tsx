@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useEffect, useRef, useState } from "react";
 
-import { getAnchors, groupTreeBy } from "../../lib/helper";
+import { getAnchors, getIcon, groupTreeBy } from "../../lib/helper";
 
 import { AnchorItemProps, TableOfContent } from "./tableOfContent";
 
@@ -67,7 +67,9 @@ export default function TableOfContentToggle({ content }: { content: string }) {
         onClick={() => setAnchorToggle((prev) => !prev)}
         title={"Table of Content"}
       >
-        <i className={anchorToggle ? "ri-close-fill" : "ri-menu-fill"} />
+        <i
+          className={anchorToggle ? getIcon("close") : getIcon("burgerMenu")}
+        />
       </div>
     </div>
   );

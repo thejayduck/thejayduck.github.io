@@ -8,6 +8,7 @@ import PageBase from "../components/pageBase";
 import IProjectItem from "../components/projects/IProjectItem";
 import ProjectItem from "../components/projects/projectItem";
 import projects from "../docs/json/projects.json";
+import { getIcon } from "../lib/helper";
 
 export default function Projects() {
   const groupByYear: { [year: number]: IProjectItem[] } = projects.reduce(
@@ -42,15 +43,15 @@ export default function Projects() {
         <section className={`${styles.mainSection}`}>
           <CardPanel title={"Projects 💡"}>
             <p>
-              <i className="ri-briefcase-fill" />
+              <i className={getIcon("projectPosts")} />
               <b>{projects.length} </b> Projects
             </p>
             <blockquote>
               <p>
-                <i className="ri-error-warning-fill" /> As the name suggests,
-                this page is dedicated to my released projects.
+                <i className={getIcon("error")} /> As the name suggests, this
+                page is dedicated to my released projects.
                 <br />
-                <i className="ri-open-source-fill" /> Majority of them are
+                <i className={getIcon("opensource")} /> Majority of them are
                 open-source, and can be found on my{" "}
                 <Link
                   href="https://github.com/thejayduck/"

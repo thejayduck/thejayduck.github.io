@@ -3,6 +3,7 @@ import styles from "../../styles/Gallery.module.scss";
 import { useState } from "react";
 
 import gallery from "../../docs/json/gallery.json";
+import { getIcon } from "../../lib/helper";
 
 export const TagButtons = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -51,7 +52,7 @@ export const TagButtons = () => {
               onClick={() => setSelectedTags([])}
               title="Clear Filter"
             >
-              <i className="ri-close-fill" />
+              <i className={getIcon("close")} />
               <span>Clear Filter</span>
             </button>
           )}

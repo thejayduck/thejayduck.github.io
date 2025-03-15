@@ -3,6 +3,8 @@ import styles from "../styles/components/StreamNotification.module.scss";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { getIcon } from "../lib/helper";
+
 import IStreamItem from "./home/IStreamItem";
 
 export default function StreamNotification(stream: IStreamItem) {
@@ -17,7 +19,7 @@ export default function StreamNotification(stream: IStreamItem) {
         }}
         className={styles.streamNotification}
       >
-        <i className="ri-video-on-fill" />
+        <i className={getIcon("recording")} />
         <span>{stream.stream_title} Live!</span>
         <Link
           href="https://livestream.ardarmutcu.com"

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
 
-import { getImageUrl } from "../../lib/helper";
+import { getIcon, getImageUrl } from "../../lib/helper";
 import { placeholderImage } from "../imageShimmer";
 
 import IImagePreview from "./IImagePreview";
@@ -81,7 +81,7 @@ export default function ImageThumbnail({
             e.stopPropagation();
           }}
         >
-          <i className="ri-arrow-left-fill" />
+          <i className={getIcon("leftArrow")} />
         </div>
         <div
           className={`${styles.arrow} ${styles.rightArrow}`}
@@ -90,7 +90,7 @@ export default function ImageThumbnail({
             e.stopPropagation();
           }}
         >
-          <i className="ri-arrow-right-fill" />
+          <i className={getIcon("rightArrow")} />
         </div>
       </div>
       <div
@@ -115,7 +115,7 @@ export default function ImageThumbnail({
           >
             {thumbnail?.mature && (
               <div className={styles.matureWarning}>
-                <i className="ri-eye-off-fill" />
+                <i className={getIcon("censorship")} />
               </div>
             )}
             <Image

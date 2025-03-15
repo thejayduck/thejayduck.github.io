@@ -3,6 +3,7 @@ import styles from "../../styles/Home.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
+import { getIcon } from "../../lib/helper";
 import Button from "../button";
 import { placeholderImage } from "../imageShimmer";
 
@@ -22,21 +23,21 @@ export default function ProfileWrap() {
       <div className={styles.navigation}>
         <ul className={`${styles.pageList}`}>
           <Button // blog
-            icon="ri-news-fill"
+            icon={getIcon("blog")}
             label="blog"
             title="Blog"
             href="/blog"
             newPage={false}
           />
           <Button // projects
-            icon="ri-lightbulb-fill"
+            icon={getIcon("projects")}
             label="projects"
             title="Projects"
             href="/projects"
             newPage={false}
           />
           <Button // gallery
-            icon="ri-gallery-fill"
+            icon={getIcon("gallery")}
             label="gallery"
             title="Gallery"
             href="/gallery"
@@ -50,7 +51,7 @@ export default function ProfileWrap() {
             aria-label="github"
             title="github"
           >
-            <i className="ri-github-fill" />
+            <i className={getIcon("github")} />
           </Link>
           <Link // itch.io
             href="https://thejayduck.itch.io/"
@@ -58,7 +59,7 @@ export default function ProfileWrap() {
             aria-label="itch.io"
             title="itch.io"
           >
-            <i className="ri-store-2-fill" />
+            <i className={getIcon("itchio")} />
           </Link>
           <Link // gmail
             href="mailto:portfolio.remember014@slmail.me"
@@ -66,7 +67,7 @@ export default function ProfileWrap() {
             aria-label="gmail (alias)"
             title="gmail (alias)"
           >
-            <i className="ri-mail-fill" />
+            <i className={getIcon("mail")} />
           </Link>
           <Link // links
             href="/links"
@@ -74,7 +75,7 @@ export default function ProfileWrap() {
             aria-label="social links"
             title="social links"
           >
-            <i className="ri-more-fill" />
+            <i className={getIcon("dots")} />
           </Link>
         </ul>
       </div>

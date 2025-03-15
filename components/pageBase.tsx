@@ -1,5 +1,7 @@
 import styles from "../styles/PageBase.module.scss";
 
+import { getIcon } from "../lib/helper";
+
 import Button from "./button";
 
 export default function PageBase({
@@ -16,7 +18,7 @@ export default function PageBase({
       {backPath && (
         <div className={"flex flexRight backButton"}>
           <Button
-            icon="ri-arrow-go-back-fill ri-fw"
+            icon={`${getIcon("back")} ri-fw`}
             label={label?.toLowerCase()}
             title={label}
             href={backPath}

@@ -1,5 +1,7 @@
 import styles from "../../styles/Gallery.module.scss";
 
+import { getIcon } from "../../lib/helper";
+
 import GalleryItem from "./galleryItem";
 import IGalleryEntry from "./IGalleryEntry";
 
@@ -30,7 +32,7 @@ export const GalleryGrid: React.FC<IGalleryGridProps> = ({
       <center className={styles.endNotice}>
         <span>You&apos;ve reached the end </span>
 
-        <i className="ri-emotion-sad-fill"></i>
+        <i className={getIcon("emojiSad")}></i>
       </center>
     </>
   );

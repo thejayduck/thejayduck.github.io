@@ -1,6 +1,7 @@
 import styles from "../../styles/Home.module.scss";
 
 import toolbox from "../../docs/json/toolbox.json";
+import { getIcon } from "../../lib/helper";
 import CardPanel from "../cardPanel";
 import SkillBar from "../skillBar";
 import Subtitle from "../subtitle";
@@ -8,18 +9,18 @@ import Subtitle from "../subtitle";
 export default function SkillsWrap() {
   return (
     <CardPanel title="Toolbox 🧰">
-      <Subtitle text="Hobbies" icon="ri-archive-stack-fill" />
+      <Subtitle text="Hobbies" icon={getIcon("hobbies")} />
       <div className={`${styles.skills} grid`}>
-        <SkillBar title="Programming" icon="ri-braces-fill" />
-        <SkillBar title="Drawing" icon="ri-pen-nib-fill" />
-        <SkillBar title="Writing" icon="ri-quill-pen-fill" />
-        <SkillBar title="Cooking" icon="ri-bowl-fill" />
-        <SkillBar title="Reading" icon="ri-book-fill" />
+        <SkillBar title="Programming" icon={getIcon("programming")} />
+        <SkillBar title="Drawing" icon={getIcon("drawing")} />
+        <SkillBar title="Writing" icon={getIcon("writing")} />
+        <SkillBar title="Cooking" icon={getIcon("cooking")} />
+        <SkillBar title="Reading" icon={getIcon("reading")} />
       </div>
 
       <hr />
 
-      <Subtitle text="Languages" icon="ri-code-s-slash-fill" />
+      <Subtitle text="Languages" icon={getIcon("languages")} />
       <div className={`${styles.skills} grid`}>
         {toolbox.languages.map((language) => (
           <SkillBar
@@ -33,7 +34,7 @@ export default function SkillsWrap() {
 
       <hr />
 
-      <Subtitle text="Software" icon="ri-terminal-box-fill" />
+      <Subtitle text="Software" icon={getIcon("software")} />
       <div className={`${styles.skills} grid`}>
         {toolbox.software.map((software) => (
           <SkillBar
@@ -47,7 +48,7 @@ export default function SkillsWrap() {
 
       <hr />
 
-      <Subtitle text="Others" icon="ri-archive-fill" />
+      <Subtitle text="Others" icon={getIcon("others")} />
       <div className={`${styles.skills} grid`}>
         {toolbox.others.map((other) => (
           <SkillBar

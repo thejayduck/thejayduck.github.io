@@ -1,3 +1,5 @@
+import { getIcon } from "../../lib/helper";
+
 export interface AnchorItemProps {
   level: number;
   id: string;
@@ -14,9 +16,9 @@ export const TableOfContent = ({ anchors }: { anchors: AnchorItemProps[] }) => (
           href={`#user-content-${anchor.id}`}
         >
           {anchor.level > 1 ? (
-            <i className="ri-circle-line ri-xs" />
+            <i className={`${getIcon("dotEmpty")} ri-xs`} />
           ) : (
-            <i className="ri-circle-fill ri-xs" />
+            <i className={`${getIcon("dotFilled")} ri-xs`} />
           )}
           {anchor.content}
         </a>

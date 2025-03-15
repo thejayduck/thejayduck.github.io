@@ -7,7 +7,12 @@ import { AnimatePresence, motion, wrap } from "framer-motion";
 
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
-import { dragHandler, formatDate, getImageUrl } from "../../lib/helper";
+import {
+  dragHandler,
+  formatDate,
+  getIcon,
+  getImageUrl,
+} from "../../lib/helper";
 import Button from "../button";
 import { placeholderImage } from "../imageShimmer";
 import { useToast } from "../toashHandler";
@@ -125,7 +130,7 @@ export function ImagePreview({
       {/* Close Button */}
       <div className={styles.exitButton}>
         <Button
-          icon="ri-close-fill"
+          icon={getIcon("close")}
           label="close preview"
           onClick={onOutsideClick}
           newPage={false}
@@ -184,7 +189,7 @@ export function ImagePreview({
               disabled={imageIndex === 0}
               className={styles.navButton}
             >
-              <i className="ri-arrow-left-fill" />
+              <i className={getIcon("leftArrow")} />
             </button>
             <span>
               {imageIndex + 1} / {images.length}
@@ -194,11 +199,11 @@ export function ImagePreview({
               disabled={imageIndex === images.length - 1}
               className={styles.navButton}
             >
-              <i className="ri-arrow-right-fill" />
+              <i className={getIcon("rightArrow")} />
             </button>
           </div>
           <span>
-            <i className="ri-at-line" />
+            <i className={getIcon("at")} />
             thejayduck
           </span>
           <hr />
@@ -208,12 +213,12 @@ export function ImagePreview({
           <div className={styles.imageStats}>
             <ul>
               <li>
-                <i className="ri-calendar-fill" /> Created:{" "}
+                <i className={getIcon("createdDate")} /> Created:{" "}
                 {formatDate(currentImage?.date)}
               </li>
               {currentImage?.software && (
                 <li>
-                  <i className="ri-pen-nib-fill" /> Software:{" "}
+                  <i className={getIcon("softwareUsed")} /> Software:{" "}
                   {currentImage.software}
                 </li>
               )}
@@ -223,7 +228,7 @@ export function ImagePreview({
           {/* Related Images */}
           <div className={styles.relatedImages}>
             <h3>
-              <i className="ri-multi-image-fill" /> More
+              <i className={getIcon("moreImages")} /> More
             </h3>
             <div className={styles.thumbnailGrid}>
               {relatedImages.map((img) => {
@@ -236,7 +241,7 @@ export function ImagePreview({
                   >
                     {img?.mature && (
                       <div className={styles.matureWarning}>
-                        <i className="ri-eye-off-fill" />
+                        <i className={getIcon("censorship")} />
                       </div>
                     )}
                     <Image
@@ -272,7 +277,7 @@ export function ImagePreview({
                         showToast(
                           "Link Opened!",
                           `The link to "${post.alt}" has been opened in a new tab.`,
-                          "ri-external-link-fill"
+                          getIcon("external")
                         );
                       }}
                       title={`View on ${post.alt}`}
@@ -292,7 +297,7 @@ export function ImagePreview({
                 showToast(
                   "Image Link Copied!",
                   "The image link has been copied to your clipboard.",
-                  "ri-file-image-fill"
+                  getIcon("imageFile")
                 );
               }}
               title="Copy Link"
@@ -300,7 +305,7 @@ export function ImagePreview({
               href="#"
               passHref
             >
-              <i className="ri-link ri-lg ri-fw" />
+              <i className={`${getIcon("link")} ri-lg ri-fw`} />
             </Link>
           </div>
           <hr />
@@ -310,7 +315,7 @@ export function ImagePreview({
           <div className={styles.tags}>
             {currentImage.tags.map((tag, index) => (
               <span key={index} className={styles.tag}>
-                <i className="ri-hashtag ri-1x ri-fw" />
+                <i className={`${getIcon("tag")} ri-1x ri-fw`} />
                 {tag}
               </span>
             ))}

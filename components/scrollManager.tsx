@@ -9,6 +9,8 @@ import {
 
 import { useState } from "react";
 
+import { getIcon } from "../lib/helper";
+
 export default function ScrollManager() {
   const { scrollYProgress } = useScroll();
   const [isVisible, setVisibility] = useState(false);
@@ -38,7 +40,7 @@ export default function ScrollManager() {
               }}
               className={styles.progressWrap}
             >
-              <i className={`${styles.icon} ri-arrow-up-fill ri-xl`} />
+              <i className={`${styles.icon} ${getIcon("upArrow")} ri-xl`} />
 
               <svg
                 id="progress"

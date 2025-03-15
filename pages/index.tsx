@@ -8,6 +8,7 @@ import ProfileWrap from "../components/home/profileWrap";
 import SkillsWrap from "../components/home/skillsWrap";
 import PageBase from "../components/pageBase";
 import Subtitle from "../components/subtitle";
+import { getIcon } from "../lib/helper";
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
                 </>
               }
             >
-              <Subtitle text="About Me" icon="ri-file-text-fill" />
+              <Subtitle text="About Me" icon={getIcon("textFile")} />
               <p>
                 I am a student at the <span>University of Bremen</span>,
                 studying linguistics and computer science. I&apos;m always on

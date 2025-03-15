@@ -13,6 +13,7 @@ import { ImagePreview } from "../components/gallery/imagePreview";
 import { TagButtons } from "../components/gallery/tagButtons";
 import PageBase from "../components/pageBase";
 import gallery from "../docs/json/gallery.json";
+import { getIcon } from "../lib/helper";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const id = context.query.id;
@@ -112,7 +113,7 @@ export default function Gallery({ id }: { id: string }) {
         <section className={`${styles.mainSection} flex flexColumn`}>
           <CardPanel title={"Gallery 🖌️"}>
             <p>
-              <i className="ri-image-2-fill" />
+              <i className={getIcon("imagePosts")} />
               <b>{gallery.length} </b> Posts{" "}
               {selectedTags.length > 0
                 ? `(Filtered: ${filteredGallery.length})`
@@ -120,18 +121,18 @@ export default function Gallery({ id }: { id: string }) {
             </p>
             <blockquote>
               <p>
-                <i className="ri-error-warning-fill" /> All of the drawings down
+                <i className={getIcon("error")} /> All of the drawings down
                 below are downscaled and compressed! <strong>DO NOT</strong>{" "}
                 redistribute, print, or use without explicit permission.
                 <br />
-                <i className="ri-video-on-fill" /> Some drawings play a process
-                video when hovered.
+                <i className={getIcon("recording")} /> Some drawings play a
+                process video when hovered.
                 <br />
-                <i className="ri-stack-fill" /> Some drawings contain multiple
-                images.
+                <i className={getIcon("stack")} /> Some drawings contain
+                multiple images.
                 <br />
-                <i className="ri-hand" /> Blurred posts are mature (sensitive or
-                suggestive), hovering will reveal it.
+                <i className={getIcon("hand")} /> Blurred posts are mature
+                (sensitive or suggestive), hovering will reveal it.
               </p>
             </blockquote>
 

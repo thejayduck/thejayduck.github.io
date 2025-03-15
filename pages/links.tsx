@@ -7,6 +7,7 @@ import Button from "../components/button";
 import { placeholderImage } from "../components/imageShimmer";
 import PageBase from "../components/pageBase";
 import { useToast } from "../components/toashHandler";
+import { getIcon } from "../lib/helper";
 
 interface SocialLink {
   icon: string;
@@ -17,37 +18,37 @@ interface SocialLink {
 
 const socialLinks: SocialLink[] = [
   {
-    icon: "ri-linkedin-box-fill",
+    icon: getIcon("linkedin"),
     label: "linkedin",
     title: "LinkedIn",
     href: "https://linkedin.com/in/armutcu",
   },
   {
-    icon: "ri-github-fill",
+    icon: getIcon("github"),
     label: "github",
     title: "Github",
     href: "https://github.com/thejayduck/",
   },
   {
-    icon: "ri-store-2-fill",
+    icon: getIcon("itchio"),
     label: "itchio",
     title: "Itch.io",
     href: "https://thejayduck.itch.io/",
   },
   {
-    icon: "ri-copyright-fill",
+    icon: getIcon("cara"),
     label: "cara",
     title: "Cara",
     href: "https://cara.app/thejayduck",
   },
   {
-    icon: "ri-image-fill",
+    icon: getIcon("deviantart"),
     label: "deviantart",
     title: "DeviantArt",
     href: "https://www.deviantart.com/thejayduck",
   },
   {
-    icon: "ri-instagram-fill",
+    icon: getIcon("instagram"),
     label: "instagram",
     title: "Instagram",
     href: "https://www.instagram.com/ardafevzi.armutcu/",
@@ -84,14 +85,14 @@ export default function Links() {
               quality={85}
             />
             <h1>
-              <i className="ri-at-line" />
+              <i className={getIcon("at")} />
               thejayduck
             </h1>
           </div>
           <ul className={`${styles.linkList}`}>
             <li>
               <Button
-                icon="ri-link"
+                icon={getIcon("link")}
                 label="copy"
                 title="Copy Link to Page"
                 newPage={false}
@@ -100,7 +101,7 @@ export default function Links() {
                   showToast(
                     "Page Link Copied!",
                     "The page link has been copied to your clipboard.",
-                    "ri-link"
+                    getIcon("link")
                   );
                 }}
               />
@@ -116,14 +117,14 @@ export default function Links() {
                   newPage={true}
                 />
                 <Button
-                  icon="ri-link"
+                  icon={getIcon("link")}
                   label={`Copy link to ${link.label}`}
                   onClick={() => {
                     navigator.clipboard.writeText(link.href);
                     showToast(
                       "Link Copied!",
                       `The link to "${link.title}" has been copied to your clipboard.`,
-                      "ri-link"
+                      getIcon("link")
                     );
                   }}
                   newPage={false}
@@ -134,7 +135,7 @@ export default function Links() {
 
             <li className={styles.highlight}>
               <Button // blog
-                icon="ri-news-fill"
+                icon={getIcon("blog")}
                 label="blog"
                 title="Blog"
                 href="/blog"
@@ -143,7 +144,7 @@ export default function Links() {
             </li>
             <li className={styles.highlight}>
               <Button // projects
-                icon="ri-lightbulb-fill"
+                icon={getIcon("projects")}
                 label="projects"
                 title="Projects"
                 href="/projects"
@@ -152,7 +153,7 @@ export default function Links() {
             </li>
             <li className={styles.highlight}>
               <Button // gallery
-                icon="ri-gallery-fill"
+                icon={getIcon("gallery")}
                 label="gallery"
                 title="Gallery"
                 href="/gallery"

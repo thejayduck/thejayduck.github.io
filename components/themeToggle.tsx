@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useEffect, useState } from "react";
 
+import { getIcon } from "../lib/helper";
+
 const iconVariants = {
   initial: {
     y: -20,
@@ -67,7 +69,7 @@ export default function ThemeToggle() {
             >
               <i
                 className={`${
-                  theme === "dark" ? "ri-sun-fill" : "ri-moon-fill"
+                  theme === "dark" ? getIcon("lightMode") : getIcon("darkMode")
                 }`}
               />
             </motion.div>

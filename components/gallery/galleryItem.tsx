@@ -5,7 +5,12 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useState } from "react";
 
-import { formatDate, getImageUrl, getProcessUrl } from "../../lib/helper";
+import {
+  formatDate,
+  getIcon,
+  getImageUrl,
+  getProcessUrl,
+} from "../../lib/helper";
 import { shimmer, toBase64 } from "../imageShimmer";
 
 import IGalleryEntry from "./IGalleryEntry";
@@ -51,7 +56,7 @@ export default function GalleryItem({
     >
       {entry?.mature && (
         <div className={styles.matureWarning}>
-          <i className="ri-eye-off-fill ri-lg" />
+          <i className={getIcon("censorship")} />
           Content Warning
           <br />
           Hover to View
@@ -77,12 +82,20 @@ export default function GalleryItem({
         <ul className={styles.indicators}>
           {entry.images.length > 1 && (
             <li>
-              <i className={`${styles.indicator} ri-stack-fill ri-fw ri-lg`} />
+              <i
+                className={`${styles.indicator} ${getIcon(
+                  "stack"
+                )} ri-fw ri-lg`}
+              />
               {entry.images.length > 2 && <span>{entry.images.length}</span>}
             </li>
           )}
           {entry.process && (
-            <i className={`${styles.indicator} ri-video-on-fill ri-fw ri-lg`} />
+            <i
+              className={`${styles.indicator} ${getIcon(
+                "recording"
+              )} ri-fw ri-lg`}
+            />
           )}
         </ul>
 

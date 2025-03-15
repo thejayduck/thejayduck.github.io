@@ -122,3 +122,64 @@ export function getProcessUrl(id: string) {
 
   return `${BASE_URL}${id}`;
 }
+
+const iconList: Record<string, string> = {
+  close: "ri-close-fill",
+  lightMode: "ri-sun-fill",
+  darkMode: "ri-moon-fill",
+  link: "ri-link",
+  external: "ri-external-link-fill",
+  leftArrow: "ri-arrow-left-fill",
+  rightArrow: "ri-arrow-right-fill",
+  upArrow: "ri-arrow-up-fill",
+  burgerMenu: "ri-menu-fill",
+  recording: "ri-video-on-fill",
+  stack: "ri-stack-fill",
+  censorship: "ri-eye-off-fill",
+  emojiSad: "ri-emotion-sad-fill",
+  dotFilled: "ri-circle-fill", // table of content
+  dotEmpty: "ri-circle-line", // table of content
+  at: "ri-at-line",
+  error: "ri-error-warning-fill",
+  back: "ri-arrow-go-back-fill",
+  notification: "ri-notification-3-fill",
+  imageFile: "ri-file-image-fill",
+  textFile: "ri-file-text-fill",
+  // Pages
+  blog: "ri-news-fill",
+  projects: "ri-lightbulb-fill",
+  gallery: "ri-gallery-fill",
+  dots: "ri-more-fill",
+  // Links
+  github: "ri-github-fill",
+  itchio: "ri-store-2-fill",
+  mail: "ri-mail-fill",
+  cara: "ri-copyright-fill",
+  deviantart: "ri-image-fill",
+  linkedin: "ri-linkedin-box-fill",
+  instagram: "ri-instagram-fill",
+  // Profile Wrap
+  hobbies: "ri-archive-stack-fill",
+  programming: "ri-braces-fill",
+  drawing: "ri-pen-nib-fill",
+  writing: "ri-quill-pen-fill",
+  cooking: "ri-bowl-fill",
+  reading: "ri-book-fill",
+  languages: "ri-code-s-slash-fill",
+  software: "ri-terminal-box-fill",
+  others: "ri-archive-fill",
+  // Gallery
+  imagePosts: "ri-image-2-fill",
+  hand: "ri-hand",
+  createdDate: "ri-calendar-fill",
+  softwareUsed: "ri-pen-nib-fill",
+  moreImages: "ri-multi-image-fill",
+  tag: "ri-hashtag",
+  // Projects
+  projectPosts: "ri-briefcase-fill",
+  opensource: "ri-open-source-fill",
+};
+
+export function getIcon(icon: keyof typeof iconList) {
+  return iconList[icon];
+}

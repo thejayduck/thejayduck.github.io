@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 import React from "react";
 
-import { countWords, readTime } from "../../lib/helper";
+import { countWords, getIcon, readTime } from "../../lib/helper";
 import { useToast } from "../toashHandler";
 
 import IBlogProps from "./IBlogProps";
@@ -60,7 +60,7 @@ export default function BlogItem(blog: IBlogProps) {
               className={`${styles.button} ${styles.readmore}`}
             >
               <p title={`Click to read more about ${blog.title}`}>
-                Click to Read More <i className="ri-arrow-right-fill" />
+                Click to Read More <i className={getIcon("rightArrow")} />
               </p>
             </Link>
             <a // copy link button
@@ -72,12 +72,12 @@ export default function BlogItem(blog: IBlogProps) {
                 showToast(
                   "Post Link Copied!",
                   "The post link has been copied to your clipboard.",
-                  "ri-link"
+                  getIcon("link")
                 );
               }}
             >
               <p title={`Click copy link to ${blog.title} blog post.`}>
-                <i className="ri-link ri-fw" />
+                <i className={`${getIcon("link")} ri-fw`} />
               </p>
             </a>
           </div>
