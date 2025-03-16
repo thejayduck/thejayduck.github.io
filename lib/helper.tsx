@@ -183,6 +183,7 @@ const iconList: Record<string, string> = {
   softwareUsed: "ri-pen-nib-fill",
   moreImages: "ri-multi-image-fill",
   tag: "ri-hashtag",
+  clearFilter: "ri-filter-off-fill",
   // Projects
   projectPosts: "ri-briefcase-fill",
   opensource: "ri-open-source-fill",

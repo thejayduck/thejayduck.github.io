@@ -124,7 +124,8 @@ export default function Gallery({ id }: { id: string }) {
                 <i className={getIcon("error")} /> All of the drawings down
                 below are downscaled and compressed! <strong>DO NOT</strong>{" "}
                 redistribute, print, or use without explicit permission.
-                <hr />
+              </p>
+              <p>
                 <i className={getIcon("newIndicator")} /> Recently added
                 drawings
                 <br />

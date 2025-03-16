@@ -25,6 +25,22 @@ export const TagButtons = () => {
 
   const filteredTags = new Set(filteredGallery.flatMap((item) => item.tags)); // Used to disable unavailable tags.
 
+  //? Move to helper.tsx ?
+  const tagList: Record<string, string> = {
+    animal: "ri-leaf-fill",
+    cg: "ri-computer-fill",
+    characterdesign: "ri-compasses-2-fill",
+    commission: "ri-shake-hands-fill",
+    fanart: "ri-heart-fill",
+    fullcolor: "ri-rainbow-fill",
+    gamejam: "ri-gamepad-fill",
+    lineart: "ri-draft-fill",
+    mature: "ri-eye-off-fill",
+    oc: "ri-user-fill",
+    process: "ri-loader-2-fill",
+    sketch: "ri-sketching",
+  };
+
   return {
     filteredGallery,
     selectedTags,
@@ -43,6 +59,9 @@ export const TagButtons = () => {
                 disabled={!filteredTags.has(tag)}
                 title={`Filter by ${tag}`}
               >
+                <i
+                  className={`${tagList[tag] ?? getIcon("tag")} ri-1x ri-fw`}
+                />
                 <span>{tag}</span>
               </button>
             ))}
@@ -52,7 +71,7 @@ export const TagButtons = () => {
               onClick={() => setSelectedTags([])}
               title="Clear Filter"
             >
-              <i className={getIcon("close")} />
+              <i className={`${getIcon("clearFilter")} ri-1x ri-fw`} />
               <span>Clear Filter</span>
             </button>
           )}

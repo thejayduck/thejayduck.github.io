@@ -33,6 +33,9 @@
 
       transition: all 0.3s;
 
+      padding: var(--spacing-small);
+      padding-right: var(--spacing-normal);
+
       span {
         vertical-align: middle;
       }
@@ -53,15 +56,9 @@
     .clearTags {
       background-color: var(--notification);
       color: white;
-      span {
-        text-align: center;
-        vertical-align: middle;
-      }
-      i {
-        vertical-align: middle;
-        margin: 0;
-        font-size: var(--font-regular);
-      }
+
+      padding: var(--spacing-small);
+      padding-right: var(--spacing-normal);
     }
   }
   .gallery {
