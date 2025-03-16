@@ -24,7 +24,10 @@ export default function Button({
     <Link
       href={href}
       passHref
-      onClick={onClick}
+      onClick={(e) => {
+        onClick?.();
+        if (href === "#") e.preventDefault();
+      }}
       aria-label={label}
       target={newPage ? "_blank" : "_self"}
       title={label}
