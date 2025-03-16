@@ -14,11 +14,19 @@ export const TableOfContent = ({ anchors }: { anchors: AnchorItemProps[] }) => (
         <a
           style={{ paddingLeft: `${15 * anchor.level}px` }}
           href={`#user-content-${anchor.id}`}
+          onClick={(e) => {
+            e.preventDefault();
+            document
+              .querySelector(`#user-content-${anchor.id}`)
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
         >
-          {anchor.level > 1 ? (
-            <i className={`${getIcon("dotEmpty")} ri-xs`} />
+          {anchor.level === 1 ? (
+            <i className={`${getIcon("level1")} ri-xs`} />
+          ) : anchor.level === 2 ? (
+            <i className={`${getIcon("level2")} ri-xs`} />
           ) : (
-            <i className={`${getIcon("dotFilled")} ri-xs`} />
+            <i className={`${getIcon("level3")} ri-xs`} />
           )}
           {anchor.content}
         </a>
