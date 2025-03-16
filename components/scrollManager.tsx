@@ -32,6 +32,7 @@ export default function ScrollManager() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={styles.scrollTop}
+          title="Scroll to Top"
           style={
             {
               "--progress": scrollYProgress,
