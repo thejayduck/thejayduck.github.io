@@ -179,7 +179,6 @@ const iconList: Record<string, string> = {
   others: "ri-archive-fill",
   // Gallery
   imagePosts: "ri-image-2-fill",
-  hand: "ri-hand",
   createdDate: "ri-calendar-fill",
   softwareUsed: "ri-pen-nib-fill",
   moreImages: "ri-multi-image-fill",

@@ -52,6 +52,10 @@ blockquote {
     padding: 10px;
     color: var(--font-default);
   }
+
+  hr {
+    border: 2px solid var(--secondary-opaque);
+  }
 }
 
 .bx,

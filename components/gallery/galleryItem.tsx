@@ -36,7 +36,7 @@ export default function GalleryItem({
     setTimer(
       setTimeout(() => {
         setHoveredImage(index);
-      }, 2000)
+      }, 500)
     );
   };
 

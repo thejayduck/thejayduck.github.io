@@ -124,15 +124,17 @@ export default function Gallery({ id }: { id: string }) {
                 <i className={getIcon("error")} /> All of the drawings down
                 below are downscaled and compressed! <strong>DO NOT</strong>{" "}
                 redistribute, print, or use without explicit permission.
+                <hr />
+                <i className={getIcon("newIndicator")} /> Recently added
+                drawings
                 <br />
-                <i className={getIcon("recording")} /> Some drawings play a
-                process video when hovered.
+                <i className={getIcon("recording")} /> Hover to play process
+                video
                 <br />
-                <i className={getIcon("stack")} /> Some drawings contain
-                multiple images.
+                <i className={getIcon("stack")} /> Multiple images available
                 <br />
-                <i className={getIcon("hand")} /> Blurred posts are mature
-                (sensitive or suggestive), hovering will reveal it.
+                <i className={getIcon("censorship")} /> Mature content (hover to
+                reveal)
               </p>
             </blockquote>
 
