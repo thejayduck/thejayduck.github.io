@@ -10,18 +10,6 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96],
 
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "i.imgur.com"
-      },
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com"
-      },
-      {
-        protocol: "https",
-        hostname: "livestream.ardarmutcu.com"
-      },
       { // assets
         protocol: "https",
         hostname: "utfs.io",
