@@ -9,7 +9,7 @@ export default function ToastNotifaction({
   urgency = "normal",
 }: {
   title: string;
-  summary: string;
+  summary?: string;
   icon?: string;
   urgency?: "low" | "normal" | "critical";
 }) {
@@ -29,7 +29,7 @@ export default function ToastNotifaction({
         <i className={icon} />
         <span>{title}</span>
       </h4>
-      <p>{summary}</p>
+      {summary && <p className={styles.summary}>{summary}</p>}
     </motion.div>
   );
 }

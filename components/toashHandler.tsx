@@ -9,9 +9,9 @@ import ToastNotifaction from "./toastNotification";
 interface ToastContextType {
   showToast: (
     title: string,
-    summary: string,
+    summary?: string,
     icon?: string,
-    priority?: "low" | "normal" | "critical"
+    urgency?: "low" | "normal" | "critical"
   ) => void;
 }
 
@@ -22,7 +22,7 @@ export function ToastHandler({ children }: { children: React.ReactNode }) {
     Array<{
       id: number;
       title: string;
-      summary: string;
+      summary?: string;
       icon?: string;
       urgency?: "low" | "normal" | "critical";
     }>
@@ -30,7 +30,7 @@ export function ToastHandler({ children }: { children: React.ReactNode }) {
 
   const showToast = (
     title: string,
-    summary: string,
+    summary?: string,
     icon?: string,
     urgency?: "low" | "normal" | "critical"
   ) => {
