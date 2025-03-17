@@ -210,16 +210,23 @@
       margin-bottom: var(--spacing-small);
 
       a {
-        &:not(:last-child) {
-          margin-right: var(--spacing-small);
-        }
+        text-decoration: none;
 
         color: var(--font-default);
         transition: color 255ms;
         background-color: var(--tertiary);
         border-radius: var(--border);
         padding: var(--spacing-small);
+
         box-shadow: var(--box-shadow);
+
+        &:not(:last-child) {
+          margin-right: var(--spacing-small);
+        }
+
+        &.copyLink {
+          padding-right: var(--spacing-normal);
+        }
 
         &:hover {
           color: var(--primary);

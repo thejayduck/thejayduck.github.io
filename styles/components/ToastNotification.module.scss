@@ -40,7 +40,8 @@
 
   h4 {
     margin-top: 0;
-    margin-bottom: var(--spacing-small);
+    // margin-bottom: var(--spacing-small);
+    margin-bottom: 0;
 
     span,
     i {
@@ -48,10 +49,16 @@
     }
   }
 
+  .summary {
+    margin: 0 var(--spacing-small);
+  }
+
   // priority colors
   &.low {
-    background-color: var(--secondary);
-    color: black;
+    // background-color: var(--secondary);
+    background-color: hsla(var(--primary-hsla), 0.2);
+    color: var(--font-default);
+
     h4,
     p {
       opacity: 0.5;

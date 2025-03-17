@@ -304,8 +304,10 @@ export function ImagePreview({
               aria-label="Copy Link"
               href="#"
               passHref
+              className={styles.copyLink}
             >
               <i className={`${getIcon("link")} ri-lg ri-fw`} />
+              <span>Copy Link</span>
             </Link>
           </div>
           <hr />
