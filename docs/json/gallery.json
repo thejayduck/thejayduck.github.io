@@ -1,5 +1,30 @@
 [
     {
+        "title": "Rintaro Okabe",
+        "date": "2025-03",
+        "timestamp": 1742338608,
+        "software": "Infinite Painter",
+        "external": [
+            {
+                "url": "https://cara.app/post/b340768f-7e4a-4211-abae-4f10b6352a76",
+                "alt": "Cara",
+                "icon": "ri-copyright-fill"
+            }
+        ],
+        "tags": [
+            "characterdesign",
+            "sketch",
+            "fanart"
+        ],
+        "images": [
+            {
+                "width": 1150,
+                "height": 1500,
+                "id": "tzMdx3pvN1oraVJusLQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
+            }
+        ]
+    },
+    {
         "title": "Doll - Fullbody",
         "date": "2025-03",
         "timestamp": 1742232919,
