@@ -62,6 +62,10 @@ export default function Gallery({ id }: { id: string }) {
     document.body.style.overflow = "auto";
   };
 
+  const imageCount: number = gallery.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.images.length;
+  }, 0);
+
   // Effect to calculate and update column span on window resize
   //? Move to galleryGrid.tsx
   useEffect(() => {
@@ -118,6 +122,9 @@ export default function Gallery({ id }: { id: string }) {
               {selectedTags.length > 0
                 ? `(Filtered: ${filteredGallery.length})`
                 : ""}
+              <br />
+              <i className={getIcon("moreImages")} />
+              <b>{imageCount} </b> Images
             </p>
             <blockquote>
               <p>
