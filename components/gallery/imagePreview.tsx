@@ -10,6 +10,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   dragHandler,
   formatDate,
+  formatUnixTimestamp,
   getIcon,
   getImageUrl,
 } from "../../lib/helper";
@@ -214,7 +215,9 @@ export function ImagePreview({
             <ul>
               <li>
                 <i className={getIcon("createdDate")} /> Created:{" "}
-                {formatDate(currentImage?.date)}
+                {currentImage?.timestamp
+                  ? formatUnixTimestamp(currentImage.timestamp)
+                  : formatDate(currentImage?.date)}
               </li>
               {currentImage?.software && (
                 <li>

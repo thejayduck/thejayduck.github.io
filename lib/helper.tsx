@@ -91,6 +91,11 @@ export function formatDate(str: string): string {
   return new Intl.DateTimeFormat("en-US", options).format(date);
 }
 
+export function formatUnixTimestamp(timestamp: number): string {
+  const convertedDate = new Date(timestamp * 1000);
+  return convertedDate.toLocaleString("de-DE", { hour12: false });
+}
+
 export function dragHandler(
   _: MouseEvent | TouchEvent | PointerEvent,
   info: PanInfo,
@@ -123,7 +128,7 @@ export function getProcessUrl(id: string) {
   return `${BASE_URL}${id}`;
 }
 
-export function isNewTimestamp(timestamp: number) {
+export function isNewImage(timestamp: number): boolean {
   const currentTime = Math.floor(Date.now() / 1000);
   const threshold = 259200; // 3 days in seconds
 

@@ -10,7 +10,7 @@ import {
   getIcon,
   getImageUrl,
   getProcessUrl,
-  isNewTimestamp,
+  isNewImage,
 } from "../../lib/helper";
 import { shimmer, toBase64 } from "../imageShimmer";
 
@@ -81,7 +81,7 @@ export default function GalleryItem({
           {entry.title}
         </figcaption>
         <ul className={styles.indicators}>
-          {entry.timestamp && isNewTimestamp(entry.timestamp) && (
+          {entry.timestamp && isNewImage(entry.timestamp) && (
             <li>
               <i
                 title="New"
