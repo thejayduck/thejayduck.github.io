@@ -139,7 +139,7 @@
         }
 
         .indicator {
-          text-shadow: 0 4px 10px rgba(14, 36, 49, 0.15);
+          text-shadow: 0 4px 10px rgba(14, 36, 49, 0.5); // previously 0.15 opacity
 
           &.new {
             color: hsl(28, 100%, 73%);
