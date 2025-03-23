@@ -209,6 +209,11 @@ export function ImagePreview({
           </span>
           <hr />
           <span className={styles.title}>{currentImage?.title}</span>
+          {currentImage.description && (
+            <blockquote>
+              <p>{currentImage?.description}</p>
+            </blockquote>
+          )}
 
           {/* Stats */}
           <div className={styles.imageStats}>
@@ -296,6 +301,7 @@ export function ImagePreview({
             <Link
               onClick={(e) => {
                 e.stopPropagation();
+                e.preventDefault();
                 navigator.clipboard.writeText(window.location.href);
                 showToast(
                   "Image Link Copied!",

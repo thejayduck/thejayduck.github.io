@@ -42,7 +42,7 @@ hr {
 }
 
 blockquote {
-  color: #5c5c5c;
+  color: var(--font-default);
   background-color: hsla(var(--primary-hsla), 0.2);
   border-left: 4px solid var(--primary);
   margin-left: 0;
