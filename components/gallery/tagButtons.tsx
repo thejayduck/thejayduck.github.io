@@ -41,19 +41,19 @@ export const TagButtons = () => {
   const filteredTags = new Set(filteredGallery.flatMap((item) => item.tags)); // Used to disable unavailable tags.
 
   //? Move to helper.tsx ?
-  const tagList: Record<string, string> = {
-    animal: "ri-leaf-fill",
-    cg: "ri-computer-fill",
-    characterdesign: "ri-compasses-2-fill",
-    commission: "ri-shake-hands-fill",
-    fanart: "ri-heart-fill",
-    fullcolor: "ri-rainbow-fill",
-    gamejam: "ri-gamepad-fill",
-    lineart: "ri-draft-fill",
-    mature: "ri-eye-off-fill",
-    oc: "ri-user-fill",
-    process: "ri-loader-2-fill",
-    sketch: "ri-sketching",
+  const tagList: Record<string, [string, string]> = {
+    animal: ["Animal", "ri-leaf-fill"],
+    cg: ["CG", "ri-computer-fill"],
+    characterdesign: ["Character Design", "ri-compasses-2-fill"],
+    commission: ["Commission", "ri-shake-hands-fill"],
+    fanart: ["Fan Art", "ri-heart-fill"],
+    fullcolor: ["Full Color", "ri-rainbow-fill"],
+    gamejam: ["Game Jam", "ri-gamepad-fill"],
+    lineart: ["Line Art", "ri-draft-fill"],
+    mature: ["Mature", "ri-eye-off-fill"],
+    oc: ["Original Character", "ri-user-fill"],
+    process: ["Process", "ri-loader-2-fill"],
+    sketch: ["Sketch", "ri-sketching"],
   };
 
   return {
@@ -90,12 +90,14 @@ export const TagButtons = () => {
               disabled={!filteredTags.has(tag)}
               title={
                 filteredTags.has(tag)
-                  ? `Filter by ${tag}`
-                  : `No images with ${tag} tag available`
+                  ? `Filter by ${tagList[tag][0]}`
+                  : `No images with ${tagList[tag][0]} tag available`
               }
             >
-              <i className={`${tagList[tag] ?? getIcon("tag")} ri-1x ri-fw`} />
-              <span>{tag}</span>
+              <i
+                className={`${tagList[tag][1] ?? getIcon("tag")} ri-1x ri-fw`}
+              />
+              <span>{tagList[tag][0]}</span>
             </button>
           ))}
       </div>
