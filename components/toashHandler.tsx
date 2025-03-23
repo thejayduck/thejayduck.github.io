@@ -40,7 +40,7 @@ export function ToastHandler({ children }: { children: React.ReactNode }) {
     // Auto remove after 5 seconds
     setTimeout(() => {
       setToasts((prev) => prev.filter((toast) => toast.id !== id));
-    }, 5000);
+    }, 3000);
   };
 
   return (
