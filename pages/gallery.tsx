@@ -9,6 +9,7 @@ import React, { useCallback, useEffect, useRef } from "react";
 
 import CardPanel from "../components/cardPanel";
 import { GalleryGrid } from "../components/gallery/galleryGrid";
+import IGalleryEntry from "../components/gallery/IGalleryEntry";
 import { ImagePreview } from "../components/gallery/imagePreview";
 import { TagButtons } from "../components/gallery/tagButtons";
 import PageBase from "../components/pageBase";
@@ -62,9 +63,11 @@ export default function Gallery({ id }: { id: string }) {
     document.body.style.overflow = "auto";
   };
 
-  const imageCount: number = gallery.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue.images.length;
-  }, 0);
+  function getCount(target: IGalleryEntry[]): number {
+    return target.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue.images.length;
+    }, 0);
+  }
 
   // Effect to calculate and update column span on window resize
   //? Move to galleryGrid.tsx
@@ -124,7 +127,10 @@ export default function Gallery({ id }: { id: string }) {
                 : ""}
               <br />
               <i className={getIcon("moreImages")} />
-              <b>{imageCount} </b> Images
+              <b>{getCount(gallery)} </b> Images{" "}
+              {selectedTags.length > 0
+                ? `(Filtered: ${getCount(filteredGallery)})`
+                : ""}
             </p>
             <blockquote>
               <p>
