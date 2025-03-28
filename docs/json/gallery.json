@@ -1,5 +1,55 @@
 [
     {
+        "title": "Landmine 2",
+        "date": "2025-03",
+        "timestamp": 1743198659,
+        "software": "Infinite Painter",
+        "external": [
+            {
+                "url": "https://cara.app/post/8f813a57-162a-475a-ae00-abc4aa7dacb6",
+                "alt": "Cara",
+                "icon": "ri-copyright-fill"
+            }
+        ],
+        "tags": [
+            "characterdesign",
+            "sketch",
+            "oc"
+        ],
+        "images": [
+            {
+                "width": 950,
+                "height": 950,
+                "id": "tzMdx3pvN1orYk1mKduxCPzR1oWSVlyLftIBncZTq3UGuwjh"
+            }
+        ]
+    },
+    {
+        "title": "Carolina (SDV)",
+        "date": "2025-03",
+        "timestamp": 1743067760,
+        "software": "Infinite Painter",
+        "external": [
+            {
+                "url": "https://cara.app/post/8f813a57-162a-475a-ae00-abc4aa7dacb6",
+                "alt": "Cara",
+                "icon": "ri-copyright-fill"
+            }
+        ],
+        "tags": [
+            "characterdesign",
+            "fullcolor",
+            "fanart"
+        ],
+        "images": [
+            {
+                "width": 1500,
+                "height": 2000,
+                "id": "tzMdx3pvN1or9Wi2Ubz3auW18eTAHymbKZ5s60NokIQi7rLw"
+            }
+        ]
+    },
+    {
         "title": "Landmine",
         "date": "2025-03",
         "timestamp": 1742659463,
