@@ -164,6 +164,7 @@ export function ImagePreview({
             {currentImage.images.map((image, index) => (
               <CanvasImage
                 key={image.id}
+                imageId={image.id}
                 imageUrl={getImageUrl(image.id)}
                 imageAlt={image.alt}
                 width={image.width}

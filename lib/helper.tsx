@@ -193,6 +193,8 @@ const iconList: Record<string, string> = {
   flipY: "ri-arrow-up-down-line",
   rotateLeft: "ri-anticlockwise-fill",
   rotateRight: "ri-clockwise-fill",
+  pixelated: "ri-color-filter-fill",
+  grayscale: "ri-contrast-fill",
   // Projects
   projectPosts: "ri-briefcase-fill",
   opensource: "ri-open-source-fill",

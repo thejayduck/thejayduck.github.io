@@ -15,29 +15,35 @@
   justify-content: center;
 
   .canvasItem {
-    position: relative;
+    max-height: calc(-85px + 100vh);
 
-    height: 100%;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    will-change: transform, opacity;
-
-    img {
-      pointer-events: none;
-      width: max-content;
-      // height: max-content;
-      // height: 100%;
-      position: relative;
-      max-height: calc(-85px + 100vh);
-      max-width: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
+    transition: filter 255ms;
   }
+
+  // .canvasItem {
+  //   position: relative;
+
+  //   height: 100%;
+  //   width: 100%;
+
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+
+  //   will-change: transform, opacity;
+
+  //   img {
+  //     pointer-events: none;
+  //     width: max-content;
+  //     // height: max-content;
+  //     // height: 100%;
+  //     position: relative;
+  //     max-height: calc(-85px + 100vh);
+  //     max-width: 100%;
+  //     object-fit: contain;
+  //     object-position: center;
+  //   }
+  // }
 }
 
 .imageAlt {
@@ -55,8 +61,12 @@
   display: flex;
   gap: var(--spacing-small);
   bottom: 1rem;
+  transition: all 255ms;
+  opacity: 0.5;
+  transform: translateY(20);
 
-  &.zoom {
-    opacity: 0.5;
+  &:hover {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

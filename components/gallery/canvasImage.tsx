@@ -1,6 +1,5 @@
 import styles from "../../styles/components/gallery/CanvasItem.module.scss";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { useEffect, useRef, useState } from "react";
@@ -9,6 +8,7 @@ import { getIcon } from "../../lib/helper";
 import Button from "../button";
 
 interface CanvasItemProps {
+  imageId: string;
   imageUrl: string;
   imageAlt?: string;
   width: number;
@@ -16,6 +16,7 @@ interface CanvasItemProps {
 }
 
 export function CanvasImage({
+  imageId,
   imageUrl,
   imageAlt,
   width,
@@ -28,7 +29,9 @@ export function CanvasImage({
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [rotation, setRotation] = useState(0);
-  const [imageLoaded, setImageLoaded] = useState(true);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [pixelated, setPixelated] = useState(false);
+  const [grayscale, setGrayscale] = useState(false);
 
   // Keyboard Navigation
   useEffect(() => {
@@ -38,14 +41,15 @@ export function CanvasImage({
       KeyQ: () => setRotation((prev) => prev - 1), // Rotate Left
       KeyE: () => setRotation((prev) => prev + 1), // Rotate Right
       KeyR: () => resetTransform(), // Reset
+      KeyC: () => setGrayscale((prev) => !prev), // Grayscale
+      KeyP: () => setPixelated((prev) => !prev), // Pixelated
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.defaultPrevented) return;
-      // Check if the pressed key is in the shortcuts object
       if (shortcuts[e.code]) {
-        e.preventDefault(); // Prevent default browser behavior
-        shortcuts[e.code](); // Execute the corresponding function
+        e.preventDefault();
+        shortcuts[e.code]();
         return;
       }
     };
@@ -63,52 +67,55 @@ export function CanvasImage({
     setFlipX(false);
     setFlipY(false);
     setRotation(0);
+    setPixelated(false);
+    setGrayscale(false);
   }
 
-  // useEffect(() => {
-  //   const canvas = canvasElementRef.current;
-  //   if (!canvas) return;
+  useEffect(() => {
+    const canvas = canvasElementRef.current;
+    if (!canvas) return;
 
-  //   const ctx = canvas.getContext("2d");
-  //   if (!ctx) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-  //   const image = new window.Image();
-  //   image.src = imageUrl;
-  //   image.crossOrigin = "anonymous";
+    const image = new window.Image();
+    image.src = imageUrl;
+    image.crossOrigin = "anonymous";
 
-  //   // Image Placeholder
-  //   canvas.width = width;
-  //   canvas.height = height;
+    // Image Placeholder
+    canvas.width = width;
+    canvas.height = height;
+    // Background
+    ctx.fillStyle = "hsl(251, 17%, 25%)";
+    const gradient = ctx.createLinearGradient(0, 0, 0, height);
+    gradient.addColorStop(0, "hsl(251, 17%, 35%)");
+    gradient.addColorStop(1, "hsl(251, 17%, 15%)");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
+    // Text
+    ctx.fillStyle = "rgb(255, 255, 255)";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${Math.min(width, height) * 0.05}px Nunito, sans-serif`;
+    ctx.fillText("Loading Image", width / 2, height / 2);
 
-  //   // Background
-  //   ctx.fillStyle = "hsl(251, 17%, 25%)";
-  //   const gradient = ctx.createLinearGradient(0, 0, 0, height);
-  //   gradient.addColorStop(0, "hsl(251, 17%, 35%)");
-  //   gradient.addColorStop(1, "hsl(251, 17%, 15%)");
-  //   ctx.fillStyle = gradient;
-  //   ctx.fillRect(0, 0, width, height);
-  //   // Text
-  //   ctx.fillStyle = "rgb(255, 255, 255)";
-  //   ctx.textBaseline = "middle";
-  //   ctx.textAlign = "center";
-  //   ctx.font = `${Math.min(width, height) * 0.05}px Nunito, sans-serif`;
-  //   ctx.fillText("Loading Image", width / 2, height / 2);
-
-  //   image.onload = () => {
-  //     ctx.drawImage(image, 0, 0, width, height);
-  //     setImageLoaded(true);
-  //   };
-  // }, [imageUrl, width, height]);
+    image.onload = () => {
+      ctx.drawImage(image, 0, 0, width, height);
+      setImageLoaded(true);
+    };
+  }, [imageUrl, width, height]);
 
   return (
     <li className={styles.canvasWrapper}>
-      <motion.div
+      <motion.canvas
+        id={imageId}
+        ref={canvasElementRef}
         className={styles.canvasItem}
         drag={zoom}
-        // style={{
-        //   width,
-        //   height,
-        // }}
+        style={{
+          imageRendering: pixelated ? "pixelated" : "auto",
+          filter: grayscale ? "grayscale(100%)" : "none",
+        }}
         dragMomentum={false}
         whileDrag={{ cursor: "grabbing" }}
         dragConstraints={{
@@ -145,59 +152,76 @@ export function CanvasImage({
           rotate: rotation * 90,
         }}
         transition={{ duration: 0.3 }}
-      >
-        <Image
-          src={imageUrl}
-          alt={imageAlt || ""}
-          width={width}
-          height={height}
-          priority
-        />
-      </motion.div>
-      <div className={`${styles.controls} ${zoom ? styles.zoom : ""}`}>
-        <Button
-          icon={getIcon("back")}
-          label="Reset"
-          onClick={(e) => {
-            e.stopPropagation();
-            resetTransform();
-          }}
-        />
-        <Button
-          icon={getIcon("flipX")}
-          label="Flip Horizontal"
-          onClick={(e) => {
-            e.stopPropagation();
-            setFlipX(!flipX);
-          }}
-        />
-        <Button
-          icon={getIcon("flipY")}
-          label="Flip Vertical"
-          onClick={(e) => {
-            e.stopPropagation();
-            setFlipY(!flipY);
-          }}
-        />
-        <Button
-          icon={getIcon("rotateLeft")}
-          label="Rotate Left"
-          onClick={(e) => {
-            e.stopPropagation();
-            setRotation((prev) => prev - (flipX != flipY ? -1 : 1));
-            //? setRotation((prev) => (prev - 1) % 4); ?
-          }}
-        />
-        <Button
-          icon={getIcon("rotateRight")}
-          label="Rotate Right"
-          onClick={(e) => {
-            e.stopPropagation();
-            setRotation((prev) => prev - (flipX != flipY ? 1 : -1));
-            //? setRotation((prev) => (prev + 1) % 4); ?
-          }}
-        />
-      </div>
+      ></motion.canvas>
+      {imageLoaded && (
+        <>
+          {imageAlt && !zoom && (
+            <span className={styles.imageAlt}>
+              {imageAlt} ({width}x{height})
+            </span>
+          )}
+          <div className={styles.controls}>
+            <Button
+              icon={getIcon("back")}
+              label="Reset (R)"
+              onClick={(e) => {
+                e.stopPropagation();
+                resetTransform();
+              }}
+            />
+            <Button
+              icon={getIcon("flipX")}
+              label="Flip Horizontal (H)"
+              onClick={(e) => {
+                e.stopPropagation();
+                setFlipX(!flipX);
+              }}
+            />
+            <Button
+              icon={getIcon("flipY")}
+              label="Flip Vertical (V)"
+              onClick={(e) => {
+                e.stopPropagation();
+                setFlipY(!flipY);
+              }}
+            />
+            <Button
+              icon={getIcon("rotateLeft")}
+              label="Rotate Left (Q)"
+              onClick={(e) => {
+                e.stopPropagation();
+                setRotation((prev) => prev - (flipX != flipY ? -1 : 1));
+                //? setRotation((prev) => (prev - 1) % 4); ?
+              }}
+            />
+            <Button
+              icon={getIcon("rotateRight")}
+              label="Rotate Right (E)"
+              onClick={(e) => {
+                e.stopPropagation();
+                setRotation((prev) => prev - (flipX != flipY ? 1 : -1));
+                //? setRotation((prev) => (prev + 1) % 4); ?
+              }}
+            />
+            <Button
+              icon={getIcon("pixelated")}
+              label={`${pixelated ? "Smooth" : "Pixelated"} (P)`}
+              onClick={(e) => {
+                e.stopPropagation();
+                setPixelated(!pixelated);
+              }}
+            />
+            <Button
+              icon={getIcon("grayscale")}
+              label="Toggle Grayscale (C)"
+              onClick={(e) => {
+                e.stopPropagation();
+                setGrayscale(!grayscale);
+              }}
+            />
+          </div>
+        </>
+      )}
     </li>
   );
 }
