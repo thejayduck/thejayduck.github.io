@@ -18,6 +18,7 @@ import Button from "../button";
 import { placeholderImage } from "../imageShimmer";
 import { useToast } from "../toashHandler";
 
+import { CanvasImage } from "./canvasImage";
 import IImagePreview from "./IImagePreview";
 
 const variants = {
@@ -140,43 +141,39 @@ export function ImagePreview({
 
       {/* Preview */}
       <div className={styles.imagePreview}>
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.ul
+        <AnimatePresence initial={false}>
+          <ul
             className={styles.imageSection}
-            key={currentImage.title}
+            // key={currentImage.timestamp}
             // Animation
-            variants={variants}
-            custom={direction}
-            initial="initial"
-            animate="animate"
-            // exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
-            }}
-            drag="x"
-            dragSnapToOrigin
-            onDragEnd={(_, info) => {
-              dragHandler(_, info, updateImageIndex);
-            }}
+            // variants={variants}
+            // custom={direction}
+            // initial="initial"
+            // animate="animate"
+            // // exit="exit"
+            // transition={{
+            //   x: { type: "spring", stiffness: 300, damping: 30 },
+            //   opacity: { duration: 0.2 },
+            // }}
+            // drag="x"
+            // dragSnapToOrigin
+            // onDragEnd={(_, info) => {
+            //   dragHandler(_, info, updateImageIndex);
+            // }}
           >
-            {currentImage.images?.map((image, index) => (
-              <motion.li key={index} className={styles.image}>
-                <Image
-                  src={getImageUrl(image.id)}
-                  alt={image.alt ?? "Image"}
-                  width={image.width}
-                  height={image.height}
-                  onClick={(e) => e.stopPropagation()}
-                  placeholder={placeholderImage(image.width, image.height)}
-                  priority={false}
-                />
-                {image.alt && (
-                  <span className={styles.imageAlt}>{image.alt}</span>
-                )}
-              </motion.li>
+            {currentImage.images.map((image, index) => (
+              <CanvasImage
+                key={image.id}
+                imageUrl={getImageUrl(image.id)}
+                imageAlt={image.alt}
+                width={image.width}
+                height={image.height}
+              />
+              // <motion.li key={index} className={styles.image}>
+
+              // </motion.li>
             ))}
-          </motion.ul>
+          </ul>
         </AnimatePresence>
 
         {/* Preview Information */}

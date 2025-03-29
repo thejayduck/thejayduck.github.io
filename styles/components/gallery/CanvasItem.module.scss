@@ -1,0 +1,62 @@
+.canvasWrapper {
+  scroll-snap-align: center;
+
+  // li
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+
+  will-change: transform, opacity;
+  overflow: clip;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .canvasItem {
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    will-change: transform, opacity;
+
+    img {
+      pointer-events: none;
+      width: max-content;
+      // height: max-content;
+      // height: 100%;
+      position: relative;
+      max-height: calc(-85px + 100vh);
+      max-width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
+
+.imageAlt {
+  background-color: var(--secondary-opaque);
+  opacity: 0.8;
+  position: absolute;
+  bottom: 4rem;
+  margin-bottom: var(--spacing-normal);
+  padding: var(--spacing-mini) var(--spacing-normal);
+  border-radius: var(--border);
+}
+
+.controls {
+  position: absolute;
+  display: flex;
+  gap: var(--spacing-small);
+  bottom: 1rem;
+
+  &.zoom {
+    opacity: 0.5;
+  }
+}

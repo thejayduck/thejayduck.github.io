@@ -7,7 +7,7 @@ interface ButtonProps {
   title?: string;
   label?: string;
   href?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent) => void;
   newPage?: boolean;
 }
 
@@ -25,7 +25,7 @@ export default function Button({
       href={href}
       passHref
       onClick={(e) => {
-        onClick?.();
+        onClick?.(e);
         if (href === "#") e.preventDefault();
       }}
       aria-label={label}

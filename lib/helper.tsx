@@ -189,6 +189,10 @@ const iconList: Record<string, string> = {
   moreImages: "ri-multi-image-fill",
   tag: "ri-hashtag",
   clearFilter: "ri-filter-off-fill",
+  flipX: "ri-arrow-left-right-line",
+  flipY: "ri-arrow-up-down-line",
+  rotateLeft: "ri-anticlockwise-fill",
+  rotateRight: "ri-clockwise-fill",
   // Projects
   projectPosts: "ri-briefcase-fill",
   opensource: "ri-open-source-fill",
