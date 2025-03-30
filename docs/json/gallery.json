@@ -4,6 +4,13 @@
         "date": "2025-03",
         "timestamp": 1743285464,
         "software": "Infinite Painter",
+        "external": [
+            {
+                "url": "https://cara.app/post/d0066629-5991-4359-8ab3-0f2f66878069",
+                "alt": "Cara",
+                "icon": "ri-copyright-fill"
+            }
+        ],
         "tags": [
             "characterdesign",
             "sketch",
