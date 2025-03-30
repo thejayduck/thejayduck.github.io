@@ -195,6 +195,9 @@ const iconList: Record<string, string> = {
   rotateRight: "ri-clockwise-fill",
   pixelated: "ri-color-filter-fill",
   grayscale: "ri-contrast-fill",
+  resetZoom: "ri-fullscreen-fill",
+  zoomIn: "ri-zoom-in-fill",
+  zoomOut: "ri-zoom-out-fill",
   // Projects
   projectPosts: "ri-briefcase-fill",
   opensource: "ri-open-source-fill",

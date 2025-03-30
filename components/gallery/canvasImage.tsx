@@ -2,10 +2,11 @@ import styles from "../../styles/components/gallery/CanvasItem.module.scss";
 
 import { motion } from "framer-motion";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { getIcon } from "../../lib/helper";
 import Button from "../button";
+import { useToast } from "../toashHandler";
 
 interface CanvasItemProps {
   imageId: string;
@@ -13,6 +14,16 @@ interface CanvasItemProps {
   imageAlt?: string;
   width: number;
   height: number;
+  scrollZoom: boolean; // Toggle to disable shortcuts when multiple images are available // TODO rename to shortcuts or something similar
+}
+
+interface CanvasFunctionProps {
+  icon: string;
+  shortcut?: string | number;
+  meta?: string;
+  action: () => void;
+  title?: string;
+  label: string;
 }
 
 export function CanvasImage({
@@ -21,9 +32,13 @@ export function CanvasImage({
   imageAlt,
   width,
   height,
+  scrollZoom,
 }: CanvasItemProps) {
+  const { showToast } = useToast();
+
+  const zoomFactor: number = 0.15;
   const canvasElementRef = useRef<HTMLCanvasElement>(null);
-  const [zoom, setZoom] = useState(false);
+  const [zoomIndex, setZoomIndex] = useState(0);
   const [flipX, setFlipX] = useState(false); // horizontal
   const [flipY, setFlipY] = useState(false); // vertical
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -33,24 +48,136 @@ export function CanvasImage({
   const [pixelated, setPixelated] = useState(false);
   const [grayscale, setGrayscale] = useState(false);
 
+  const resetTransform = useCallback(() => {
+    setPosition({ x: 0, y: 0 });
+    setFlipX(false);
+    setFlipY(false);
+    setRotation(0);
+    setPixelated(false);
+    setGrayscale(false);
+    setZoomIndex(0);
+  }, [
+    setPosition,
+    setFlipX,
+    setFlipY,
+    setRotation,
+    setPixelated,
+    setGrayscale,
+    setZoomIndex,
+  ]);
+
+  const actions = useMemo<Record<string, CanvasFunctionProps>>(
+    () => ({
+      Reset: {
+        icon: getIcon("back"),
+        action: () => resetTransform(),
+        shortcut: "KeyR",
+        label: "Reset",
+      },
+      ResetZoom: {
+        icon: getIcon("resetZoom"),
+        action: () => {
+          setZoomIndex(0);
+          setPosition({ x: 0, y: 0 });
+        },
+        label: "Reset Zoom and Position",
+        title: `${Math.ceil((1 + zoomIndex * zoomFactor) * 100)}%`,
+      },
+      ZoomIn: {
+        icon: getIcon("zoomIn"),
+        shortcut: "NumpadAdd",
+        meta: "Shift",
+        action: () =>
+          setZoomIndex((prev) => Math.min(Math.max(prev + 1, -4), 10)),
+        label: "Zoom In",
+      },
+      ZoomOut: {
+        icon: getIcon("zoomOut"),
+        shortcut: "NumpadSubtract",
+        meta: "Shift",
+        action: () =>
+          setZoomIndex((prev) => Math.min(Math.max(prev - 1, -4), 10)),
+        label: "Zoom Out",
+      },
+      FlipX: {
+        icon: getIcon("flipX"),
+        shortcut: "KeyH",
+        action: () => setFlipX((prev) => !prev),
+        label: "Flip Horizontal",
+      },
+      FlipY: {
+        icon: getIcon("flipY"),
+        shortcut: "KeyV",
+        action: () => setFlipY((prev) => !prev),
+        label: "Flip Vertical",
+      },
+      RotateLeft: {
+        icon: getIcon("rotateLeft"),
+        shortcut: "KeyQ",
+        action: () => setRotation((prev) => prev - 1),
+        label: "Rotate Left",
+      },
+      RotateRight: {
+        icon: getIcon("rotateRight"),
+        shortcut: "KeyE",
+        action: () => setRotation((prev) => prev + 1),
+        label: "Rotate Right",
+      },
+      Grayscale: {
+        icon: getIcon("grayscale"),
+        shortcut: "KeyC",
+        action: () => setGrayscale((prev) => !prev),
+        label: "Toggle Grayscale",
+      },
+      Rendering: {
+        icon: getIcon("pixelated"),
+        shortcut: "KeyP",
+        action: () => setPixelated((prev) => !prev),
+        label: `${pixelated ? "Smooth" : "Pixelated"}`,
+      },
+    }),
+    [
+      zoomIndex,
+      pixelated,
+      resetTransform,
+      setZoomIndex,
+      setPosition,
+      setFlipX,
+      setFlipY,
+      setRotation,
+      setGrayscale,
+      setPixelated,
+    ]
+  );
+
   // Keyboard Navigation
   useEffect(() => {
-    const shortcuts: Record<string, () => void> = {
-      KeyH: () => setFlipX((prev) => !prev), // Horizontal Flip
-      KeyV: () => setFlipY((prev) => !prev), // Vertical Flip
-      KeyQ: () => setRotation((prev) => prev - 1), // Rotate Left
-      KeyE: () => setRotation((prev) => prev + 1), // Rotate Right
-      KeyR: () => resetTransform(), // Reset
-      KeyC: () => setGrayscale((prev) => !prev), // Grayscale
-      KeyP: () => setPixelated((prev) => !prev), // Pixelated
-    };
-
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.defaultPrevented) return;
-      if (shortcuts[e.code]) {
-        e.preventDefault();
-        shortcuts[e.code]();
+      if (!scrollZoom) {
+        showToast(
+          "Warning",
+          "Keyboard shortcuts are disabled when there are multiple images."
+        );
         return;
+      }
+
+      for (const key in actions) {
+        if (actions.hasOwnProperty(key)) {
+          const action = actions[key];
+          if (
+            action.shortcut &&
+            action.shortcut === e.code &&
+            (!action.meta ||
+              (action.meta === "Shift" && e.shiftKey) ||
+              (action.meta === "Control" && e.ctrlKey) ||
+              (action.meta === "Alt" && e.altKey))
+          ) {
+            e.preventDefault();
+            action.action();
+            break;
+          }
+        }
       }
     };
 
@@ -59,17 +186,7 @@ export function CanvasImage({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
-
-  function resetTransform() {
-    setPosition({ x: 0, y: 0 });
-    setZoom(false);
-    setFlipX(false);
-    setFlipY(false);
-    setRotation(0);
-    setPixelated(false);
-    setGrayscale(false);
-  }
+  }, [actions, scrollZoom, showToast]);
 
   useEffect(() => {
     const canvas = canvasElementRef.current;
@@ -82,26 +199,63 @@ export function CanvasImage({
     image.src = imageUrl;
     image.crossOrigin = "anonymous";
 
-    // Image Placeholder
-    canvas.width = width;
-    canvas.height = height;
-    // Background
+    // Aspect ratio // TODO recalculate on resize
+    const calculateRatio = () => {
+      const maxWidth = window.innerWidth;
+      const maxHeight = window.innerHeight;
+      let newWidth = Math.min(width, maxWidth);
+      let newHeight = Math.min(height, maxHeight);
+      const aspectRatio = width / height;
+      if (newWidth / newHeight > aspectRatio) {
+        newWidth = newHeight * aspectRatio;
+      } else {
+        newHeight = newWidth / aspectRatio;
+      }
+      return { width: newWidth, height: newHeight };
+    };
+
+    canvas.width = calculateRatio().width;
+    canvas.height = calculateRatio().height;
+
+    // Placeholder Background
     ctx.fillStyle = "hsl(251, 17%, 25%)";
     const gradient = ctx.createLinearGradient(0, 0, 0, height);
     gradient.addColorStop(0, "hsl(251, 17%, 35%)");
     gradient.addColorStop(1, "hsl(251, 17%, 15%)");
     ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, width, height);
-    // Text
+    ctx.fillRect(0, 0, calculateRatio().width, calculateRatio().height);
+    // Placeholder Text
     ctx.fillStyle = "rgb(255, 255, 255)";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
-    ctx.font = `${Math.min(width, height) * 0.05}px Nunito, sans-serif`;
-    ctx.fillText("Loading Image", width / 2, height / 2);
+    ctx.font = `${
+      Math.min(calculateRatio().width, calculateRatio().height) * 0.05
+    }px Nunito, sans-serif`;
+    ctx.fillText(
+      "Loading Image",
+      calculateRatio().width / 2,
+      calculateRatio().height / 2
+    );
 
     image.onload = () => {
-      ctx.drawImage(image, 0, 0, width, height);
+      ctx.drawImage(
+        image,
+        0,
+        0,
+        calculateRatio().width,
+        calculateRatio().height
+      );
       setImageLoaded(true);
+    };
+
+    // Recalculate on resize
+    calculateRatio();
+    window.addEventListener("resize", calculateRatio);
+    window.addEventListener("load", calculateRatio);
+
+    return () => {
+      window.removeEventListener("resize", calculateRatio);
+      window.addEventListener("load", calculateRatio);
     };
   }, [imageUrl, width, height]);
 
@@ -111,11 +265,12 @@ export function CanvasImage({
         id={imageId}
         ref={canvasElementRef}
         className={styles.canvasItem}
-        drag={zoom}
         style={{
           imageRendering: pixelated ? "pixelated" : "auto",
           filter: grayscale ? "grayscale(100%)" : "none",
         }}
+        // Drag
+        drag
         dragMomentum={false}
         whileDrag={{ cursor: "grabbing" }}
         dragConstraints={{
@@ -137,88 +292,55 @@ export function CanvasImage({
         onClick={(e) => {
           e.stopPropagation();
           if (isDragging) return;
-          if (zoom) {
-            setPosition({ x: 0, y: 0 });
+        }}
+        onDoubleClick={() => {
+          setZoomIndex(0);
+          setPosition({ x: 0, y: 0 });
+        }}
+        onWheel={(e) => {
+          if (e.shiftKey && scrollZoom) {
+            e.preventDefault();
+            setZoomIndex((prev) =>
+              Math.min(Math.max(prev - Math.sign(e.deltaY), -4), 10)
+            );
+            return;
           }
-          setZoom(!zoom);
+
+          // showToast("Shift + Scroll to Zoom");
         }}
         animate={{
-          scale: zoom ? 1.5 : 1,
+          scale: 1 + zoomIndex * zoomFactor,
           scaleX: flipX ? -1 : 1,
           scaleY: flipY ? -1 : 1,
-          cursor: zoom ? "grab" : "zoom-in",
-          x: zoom ? position.x : 0,
-          y: zoom ? position.y : 0,
+          cursor: "grab",
+          x: position.x,
+          y: position.y,
           rotate: rotation * 90,
         }}
         transition={{ duration: 0.3 }}
       ></motion.canvas>
-      {imageLoaded && (
+      {imageLoaded && !isDragging && (
         <>
-          {imageAlt && !zoom && (
+          {imageAlt && zoomIndex == 0 && (
             <span className={styles.imageAlt}>
               {imageAlt} ({width}x{height})
             </span>
           )}
           <div className={styles.controls}>
-            <Button
-              icon={getIcon("back")}
-              label="Reset (R)"
-              onClick={(e) => {
-                e.stopPropagation();
-                resetTransform();
-              }}
-            />
-            <Button
-              icon={getIcon("flipX")}
-              label="Flip Horizontal (H)"
-              onClick={(e) => {
-                e.stopPropagation();
-                setFlipX(!flipX);
-              }}
-            />
-            <Button
-              icon={getIcon("flipY")}
-              label="Flip Vertical (V)"
-              onClick={(e) => {
-                e.stopPropagation();
-                setFlipY(!flipY);
-              }}
-            />
-            <Button
-              icon={getIcon("rotateLeft")}
-              label="Rotate Left (Q)"
-              onClick={(e) => {
-                e.stopPropagation();
-                setRotation((prev) => prev - (flipX != flipY ? -1 : 1));
-                //? setRotation((prev) => (prev - 1) % 4); ?
-              }}
-            />
-            <Button
-              icon={getIcon("rotateRight")}
-              label="Rotate Right (E)"
-              onClick={(e) => {
-                e.stopPropagation();
-                setRotation((prev) => prev - (flipX != flipY ? 1 : -1));
-                //? setRotation((prev) => (prev + 1) % 4); ?
-              }}
-            />
-            <Button
-              icon={getIcon("pixelated")}
-              label={`${pixelated ? "Smooth" : "Pixelated"} (P)`}
-              onClick={(e) => {
-                e.stopPropagation();
-                setPixelated(!pixelated);
-              }}
-            />
-            <Button
-              icon={getIcon("grayscale")}
-              label="Toggle Grayscale (C)"
-              onClick={(e) => {
-                e.stopPropagation();
-                setGrayscale(!grayscale);
-              }}
-            />
+            {Object.entries(actions).map(([key, action]) => (
+              <Button
+                key={key}
+                title={action.title || ""}
+                icon={action.icon}
+                label={`${action.label} (${
+                  action.meta ? `${action.meta} + ` : ""
+                }${action.shortcut})`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  action.action();
+                }}
+              />
+            ))}
           </div>
         </>
       )}

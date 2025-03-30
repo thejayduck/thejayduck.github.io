@@ -133,7 +133,7 @@ export function ImagePreview({
       <div className={styles.exitButton}>
         <Button
           icon={getIcon("close")}
-          label="close preview"
+          label="Close Preview (Escape)"
           onClick={onOutsideClick}
           newPage={false}
         />
@@ -169,6 +169,7 @@ export function ImagePreview({
                 imageAlt={image.alt}
                 width={image.width}
                 height={image.height}
+                scrollZoom={currentImage.images.length === 1}
               />
               // <motion.li key={index} className={styles.image}>
 
