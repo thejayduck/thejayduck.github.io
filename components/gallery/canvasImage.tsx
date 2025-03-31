@@ -291,11 +291,15 @@ export function CanvasImage({
         }}
         onClick={(e) => {
           e.stopPropagation();
-          if (isDragging) return;
+          // if (isDragging) return;
         }}
         onDoubleClick={() => {
-          setZoomIndex(0);
-          setPosition({ x: 0, y: 0 });
+          if (zoomIndex != 0) {
+            setZoomIndex(0);
+            setPosition({ x: 0, y: 0 });
+          } else {
+            setZoomIndex(2);
+          }
         }}
         onWheel={(e) => {
           if (e.shiftKey && scrollZoom) {
@@ -332,9 +336,13 @@ export function CanvasImage({
                 key={key}
                 title={action.title || ""}
                 icon={action.icon}
-                label={`${action.label} (${
-                  action.meta ? `${action.meta} + ` : ""
-                }${action.shortcut})`}
+                label={`${action.label}${
+                  action.shortcut
+                    ? ` (${action.meta ? `${action.meta} + ` : ""}${
+                        action.shortcut
+                      })`
+                    : ""
+                }`}
                 onClick={(e) => {
                   e.stopPropagation();
                   action.action();
