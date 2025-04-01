@@ -13,6 +13,8 @@
   i {
     color: var(--font-skillbar);
     font-size: var(--font-medium);
+    margin: 0;
+    margin-left: var(--spacing-small);
 
     transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   }
