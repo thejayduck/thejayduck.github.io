@@ -238,6 +238,7 @@ export function CanvasImage({
     );
 
     image.onload = () => {
+      // ctx.imageSmoothingQuality = "high";
       ctx.drawImage(
         image,
         0,
@@ -303,11 +304,22 @@ export function CanvasImage({
         }}
         onWheel={(e) => {
           if (e.shiftKey && scrollZoom) {
-            e.preventDefault();
             setZoomIndex((prev) =>
-              Math.min(Math.max(prev - Math.sign(e.deltaY), -4), 10)
+              Math.min(
+                Math.max(
+                  prev -
+                    Math.sign(
+                      navigator.userAgent.toUpperCase().indexOf("APPLEWEBKIT") >
+                        -1
+                        ? e.deltaX // Damn you webkit
+                        : e.deltaY
+                    ),
+                  -4
+                ),
+                10
+              )
             );
-            return;
+            return true;
           }
 
           // showToast("Shift + Scroll to Zoom");
