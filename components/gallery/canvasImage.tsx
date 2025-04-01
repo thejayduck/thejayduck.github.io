@@ -163,6 +163,8 @@ export function CanvasImage({
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.defaultPrevented) return;
       if (!scrollZoom) {
+        //! For some reason also disables arrow keys even when executed inside for loop.
+        // TODO custom image scroller?
         showToast(
           "Warning",
           "Keyboard shortcuts are disabled when there are multiple images."
@@ -331,8 +333,6 @@ export function CanvasImage({
             );
             return true;
           }
-
-          // showToast("Shift + Scroll to Zoom");
         }}
         animate={{
           scale: 1 + zoomIndex * zoomFactor,

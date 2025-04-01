@@ -8,7 +8,6 @@ import { AnimatePresence, motion, wrap } from "framer-motion";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import {
-  dragHandler,
   formatDate,
   formatUnixTimestamp,
   getIcon,
@@ -28,11 +27,6 @@ const variants = {
     opacity: 0,
   }),
   animate: { x: 0, scale: 1, opacity: 1 },
-  exit: (direction: number) => ({
-    x: direction > 0 ? "-50%" : "50%",
-    scale: 0.8,
-    opacity: 0,
-  }),
 };
 
 export function ImagePreview({
@@ -145,24 +139,18 @@ export function ImagePreview({
       {/* Preview */}
       <div className={styles.imagePreview}>
         <AnimatePresence initial={false}>
-          <ul
+          <motion.ul
             className={styles.imageSection}
-            // key={currentImage.timestamp}
+            key={currentImage.images[0].id}
             // Animation
-            // variants={variants}
-            // custom={direction}
-            // initial="initial"
-            // animate="animate"
-            // // exit="exit"
-            // transition={{
-            //   x: { type: "spring", stiffness: 300, damping: 30 },
-            //   opacity: { duration: 0.2 },
-            // }}
-            // drag="x"
-            // dragSnapToOrigin
-            // onDragEnd={(_, info) => {
-            //   dragHandler(_, info, updateImageIndex);
-            // }}
+            variants={variants}
+            custom={direction}
+            initial="initial"
+            animate="animate"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+            }}
           >
             {currentImage.images.map((image, index) => (
               <CanvasImage
@@ -175,11 +163,8 @@ export function ImagePreview({
                 scrollZoom={currentImage.images.length === 1}
                 setIsDraggingPreview={setIsDraggingPreview}
               />
-              // <motion.li key={index} className={styles.image}>
-
-              // </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </AnimatePresence>
 
         {/* Preview Information */}
