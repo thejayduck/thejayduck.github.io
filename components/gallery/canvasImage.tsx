@@ -1,6 +1,6 @@
 import styles from "../../styles/components/gallery/CanvasItem.module.scss";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import React, {
   useCallback,
@@ -15,12 +15,13 @@ import Button from "../button";
 import { useToast } from "../toashHandler";
 
 interface CanvasItemProps {
+  index: number;
   imageId: string;
   imageUrl: string;
   imageAlt?: string;
   width: number;
   height: number;
-  scrollZoom: boolean; // Toggle to disable shortcuts when multiple images are available // TODO rename to shortcuts or something similar
+  shortcuts: boolean;
   setIsDraggingPreview: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -34,12 +35,13 @@ interface CanvasFunctionProps {
 }
 
 export function CanvasImage({
+  index,
   imageId,
   imageUrl,
   imageAlt,
   width,
   height,
-  scrollZoom,
+  shortcuts,
   setIsDraggingPreview,
 }: CanvasItemProps) {
   const { showToast } = useToast();
@@ -162,15 +164,8 @@ export function CanvasImage({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.defaultPrevented) return;
-      if (!scrollZoom) {
-        //! For some reason also disables arrow keys even when executed inside for loop.
-        // TODO custom image scroller?
-        showToast(
-          "Warning",
-          "Keyboard shortcuts are disabled when there are multiple images."
-        );
-        return;
-      }
+      if (!shortcuts) return;
+      if (!imageLoaded) return;
 
       for (const key in actions) {
         if (actions.hasOwnProperty(key)) {
@@ -196,7 +191,7 @@ export function CanvasImage({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [actions, scrollZoom, showToast]);
+  }, [actions, shortcuts, showToast, imageLoaded]);
 
   useEffect(() => {
     const canvas = canvasElementRef.current;
@@ -209,7 +204,7 @@ export function CanvasImage({
     image.src = imageUrl;
     image.crossOrigin = "anonymous";
 
-    // Aspect ratio // TODO recalculate on resize
+    // Aspect ratio
     const calculateRatio = () => {
       const maxWidth = window.innerWidth;
       const maxHeight = window.innerHeight;
@@ -271,7 +266,7 @@ export function CanvasImage({
   }, [imageUrl, width, height]);
 
   return (
-    <li className={styles.canvasWrapper}>
+    <li className={styles.canvasWrapper} data-index={index}>
       <motion.canvas
         id={imageId}
         ref={canvasElementRef}
@@ -315,7 +310,7 @@ export function CanvasImage({
           }
         }}
         onWheel={(e) => {
-          if (e.shiftKey && scrollZoom) {
+          if (e.shiftKey && shortcuts) {
             setZoomIndex((prev) =>
               Math.min(
                 Math.max(
@@ -346,33 +341,42 @@ export function CanvasImage({
         transition={{ duration: 0.3 }}
       ></motion.canvas>
       {imageLoaded && !isDragging && (
-        <>
-          {imageAlt && zoomIndex == 0 && (
-            <span className={styles.imageAlt}>
-              {imageAlt} ({width}x{height})
-            </span>
+        <AnimatePresence>
+          {shortcuts && (
+            <>
+              {imageAlt && zoomIndex == 0 && (
+                <span className={styles.imageAlt}>
+                  {imageAlt} ({width}x{height})
+                </span>
+              )}
+              <motion.div
+                className={styles.controls}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                {Object.entries(actions).map(([key, action]) => (
+                  <Button
+                    key={key}
+                    title={action.title || ""}
+                    icon={action.icon}
+                    label={`${action.label}${
+                      action.shortcut
+                        ? ` (${action.meta ? `${action.meta} + ` : ""}${
+                            action.shortcut
+                          })`
+                        : ""
+                    }`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      action.action();
+                    }}
+                  />
+                ))}
+              </motion.div>
+            </>
           )}
-          <div className={styles.controls}>
-            {Object.entries(actions).map(([key, action]) => (
-              <Button
-                key={key}
-                title={action.title || ""}
-                icon={action.icon}
-                label={`${action.label}${
-                  action.shortcut
-                    ? ` (${action.meta ? `${action.meta} + ` : ""}${
-                        action.shortcut
-                      })`
-                    : ""
-                }`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  action.action();
-                }}
-              />
-            ))}
-          </div>
-        </>
+        </AnimatePresence>
       )}
     </li>
   );

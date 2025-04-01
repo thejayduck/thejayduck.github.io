@@ -5,7 +5,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion, wrap } from "framer-motion";
 
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import {
   formatDate,
@@ -42,6 +48,50 @@ export function ImagePreview({
   const currentImageId = currentImage.images[0].id;
   const [isDraggingPreview, setIsDraggingPreview] = useState(false);
 
+  const [scrollIndex, setScrollIndex] = useState(0);
+  const scrollContainerRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    if (currentImage.images.length <= 1) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.length === 0) return;
+
+        const active = entries.reduce((accumulator, currentValue) => {
+          return currentValue.intersectionRatio > accumulator.intersectionRatio
+            ? currentValue
+            : accumulator;
+        }, entries[0]);
+        if (active.intersectionRatio > 0) {
+          const index = Number(active.target.getAttribute("data-index"));
+          setScrollIndex(index);
+          console.log(index, scrollIndex);
+        }
+      },
+      {
+        root: scrollContainerRef.current,
+        threshold: 1.0,
+      }
+    );
+    const imageElements = scrollContainerRef.current?.querySelectorAll("li");
+    if (imageElements) {
+      imageElements.forEach((element, index) => {
+        element.setAttribute("data-index", index.toString());
+        observer.observe(element);
+      });
+    }
+
+    return () => {
+      if (imageElements) {
+        imageElements.forEach((element) => {
+          element.removeAttribute("data-index");
+          observer.unobserve(element);
+        });
+      }
+    };
+  }, [currentImage.images.length, scrollContainerRef, scrollIndex]);
+
   const updateImageIndex = useCallback(
     (direction: number) => {
       const wrappedImageIndex = wrap(0, images.length, imageIndex + direction);
@@ -54,6 +104,26 @@ export function ImagePreview({
     },
     [images, router, imageIndex]
   );
+  const updateScrollIndex = useCallback(
+    (direction: number) => {
+      const targetIndex = wrap(
+        0,
+        currentImage.images.length,
+        scrollIndex + direction
+      );
+      const element = scrollContainerRef.current?.querySelector(
+        `[data-index="${targetIndex}"]`
+      );
+      console.log(`Scrolling to ${targetIndex} - ${scrollContainerRef}`);
+      element?.scrollIntoView({ behavior: "smooth" });
+    },
+    [currentImage.images.length, scrollIndex]
+  );
+
+  useEffect(() => {
+    setScrollIndex(0);
+    console.log("Resetting Index");
+  }, [currentImage]);
 
   const getSeedHash = (seed: string) => {
     let hash = 0;
@@ -105,6 +175,14 @@ export function ImagePreview({
         case "ArrowRight":
           updateImageIndex(1);
           break;
+        case "KeyW":
+        case "ArrowUp":
+          updateScrollIndex(-1);
+          break;
+        case "KeyS":
+        case "ArrowDown":
+          updateScrollIndex(1);
+          break;
       }
     };
 
@@ -113,7 +191,7 @@ export function ImagePreview({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [onOutsideClick, updateImageIndex]);
+  }, [onOutsideClick, updateImageIndex, updateScrollIndex]);
 
   return (
     <motion.div
@@ -139,32 +217,62 @@ export function ImagePreview({
       {/* Preview */}
       <div className={styles.imagePreview}>
         <AnimatePresence initial={false}>
-          <motion.ul
-            className={styles.imageSection}
-            key={currentImage.images[0].id}
-            // Animation
-            variants={variants}
-            custom={direction}
-            initial="initial"
-            animate="animate"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
-            }}
+          <motion.div
+            //! Key seems to break ref used in UL, animations are disabled until this issue is solved
+            // key={currentImage.images[0].id}
+            // // Animation
+            // variants={variants}
+            // custom={direction}
+            // initial="initial"
+            // animate="animate"
+            // transition={{
+            //   x: { type: "spring", stiffness: 300, damping: 30 },
+            //   opacity: { duration: 0.2 },
+            // }}
+            className={styles.imageSectionWrapper}
           >
-            {currentImage.images.map((image) => (
-              <CanvasImage
-                key={image.id}
-                imageId={image.id}
-                imageUrl={getImageUrl(image.id)}
-                imageAlt={image.alt}
-                width={image.width}
-                height={image.height}
-                scrollZoom={currentImage.images.length === 1}
-                setIsDraggingPreview={setIsDraggingPreview}
-              />
-            ))}
-          </motion.ul>
+            {/* Indicator Dots */}
+            <AnimatePresence>
+              {currentImage.images.length > 1 && !isDraggingPreview && (
+                <motion.div
+                  className={styles.scrollIndexDots}
+                  onClick={(e) => e.stopPropagation()}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  {currentImage.images.map((_, index) => (
+                    <span
+                      key={index}
+                      className={`${styles.dot} ${
+                        index === scrollIndex ? styles.activeDot : ""
+                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        updateScrollIndex(index - scrollIndex);
+                      }}
+                    />
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+            <ul ref={scrollContainerRef} className={styles.imageSection}>
+              {/* Image Canvas */}
+              {currentImage.images.map((image, index) => (
+                <CanvasImage
+                  index={index}
+                  key={image.id}
+                  imageId={image.id}
+                  imageUrl={getImageUrl(image.id)}
+                  imageAlt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  shortcuts={index === scrollIndex}
+                  setIsDraggingPreview={setIsDraggingPreview}
+                />
+              ))}
+            </ul>
+          </motion.div>
         </AnimatePresence>
 
         {/* Preview Information */}

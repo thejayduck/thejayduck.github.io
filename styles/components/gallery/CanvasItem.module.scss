@@ -37,20 +37,20 @@
   position: absolute;
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: scroll;
-  overflow-y: visible;
+  // overflow-x: scroll;
+  // overflow-y: visible;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   touch-action: pan-x;
   gap: var(--spacing-small);
   bottom: 0.7rem;
-  transition: opacity 255ms;
-  opacity: 0.5;
+  // transition: opacity 255ms;
+  // opacity: 0.5;
 
-  &:hover {
-    opacity: 1;
-  }
+  // &:hover {
+  //   opacity: 1;
+  // }
 }
 
 @media screen and (max-width: 1024px) {

@@ -37,9 +37,59 @@
     // overflow: scroll;
   }
 
+  .imageSectionWrapper {
+    position: relative;
+
+    // height: 100%;
+    // height: max-content;
+    width: 100%;
+    overflow-y: scroll;
+
+    display: flex;
+    flex: 1;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+  }
+
+  .scrollIndexDots {
+    background-color: hsl(251, 17%, 25%, 50%);
+    // height: 28px;
+    height: 100%;
+    padding: 0 var(--spacing-small);
+    // border-radius: var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    right: 0;
+    position: absolute;
+    z-index: 100;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: var(--border);
+      background-color: var(--secondary);
+      cursor: pointer;
+      transition: all 255ms;
+
+      &.activeDot {
+        height: 20px;
+        background-color: white;
+      }
+    }
+  }
+
   .imageSection {
     // ul
     position: relative;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     // height: 100%;
     // height: max-content;
@@ -253,16 +303,22 @@
       flex-direction: column;
       overflow: auto;
 
-      .imageSection {
+      .imageSectionWrapper {
         // ul
         // overflow: initial;
         min-height: min-content;
         // min-height: max-content;
         overflow: visible;
 
-        img {
-          // height: 500px;
-          width: 100%;
+        .scrollIndexDots {
+          display: none;
+        }
+
+        .imageSection {
+          img {
+            // height: 500px;
+            width: 100%;
+          }
         }
       }
 
