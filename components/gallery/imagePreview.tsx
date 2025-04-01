@@ -152,7 +152,7 @@ export function ImagePreview({
               opacity: { duration: 0.2 },
             }}
           >
-            {currentImage.images.map((image, index) => (
+            {currentImage.images.map((image) => (
               <CanvasImage
                 key={image.id}
                 imageId={image.id}
