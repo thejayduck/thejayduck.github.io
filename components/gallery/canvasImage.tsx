@@ -2,7 +2,13 @@ import styles from "../../styles/components/gallery/CanvasItem.module.scss";
 
 import { motion } from "framer-motion";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import { getIcon } from "../../lib/helper";
 import Button from "../button";
@@ -15,6 +21,7 @@ interface CanvasItemProps {
   width: number;
   height: number;
   scrollZoom: boolean; // Toggle to disable shortcuts when multiple images are available // TODO rename to shortcuts or something similar
+  setIsDraggingPreview: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface CanvasFunctionProps {
@@ -33,6 +40,7 @@ export function CanvasImage({
   width,
   height,
   scrollZoom,
+  setIsDraggingPreview,
 }: CanvasItemProps) {
   const { showToast } = useToast();
 
@@ -274,13 +282,17 @@ export function CanvasImage({
         drag
         dragMomentum={false}
         whileDrag={{ cursor: "grabbing" }}
+        // dragConstraints={draggableAreaRef}
         dragConstraints={{
           top: -height / 2,
           right: width / 2,
           bottom: height / 2,
           left: -width / 2,
         }}
-        onDragStart={() => setIsDragging(true)}
+        onDragStart={() => {
+          setIsDragging(true);
+          setIsDraggingPreview(true);
+        }}
         onDragEnd={(_, info) => {
           setPosition({
             x: position.x + info.offset.x,
@@ -288,12 +300,10 @@ export function CanvasImage({
           });
           setTimeout(() => {
             setIsDragging(false);
+            setIsDraggingPreview(false);
           }, 192);
         }}
-        onClick={(e) => {
-          e.stopPropagation();
-          // if (isDragging) return;
-        }}
+        onClick={(e) => e.stopPropagation()}
         onDoubleClick={() => {
           if (zoomIndex != 0) {
             setZoomIndex(0);

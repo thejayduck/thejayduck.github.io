@@ -46,6 +46,7 @@ export function ImagePreview({
   const [[imageIndex, direction], setImageIndex] = useState([activeIndex, 0]);
   const currentImage = images[imageIndex];
   const currentImageId = currentImage.images[0].id;
+  const [isDraggingPreview, setIsDraggingPreview] = useState(false);
 
   const updateImageIndex = useCallback(
     (direction: number) => {
@@ -124,7 +125,9 @@ export function ImagePreview({
     <motion.div
       key="preview"
       className={styles.imagePreviewWrapper}
-      onClick={onOutsideClick}
+      onClick={() => {
+        if (!isDraggingPreview) onOutsideClick && onOutsideClick();
+      }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -170,6 +173,7 @@ export function ImagePreview({
                 width={image.width}
                 height={image.height}
                 scrollZoom={currentImage.images.length === 1}
+                setIsDraggingPreview={setIsDraggingPreview}
               />
               // <motion.li key={index} className={styles.image}>
 
