@@ -2,12 +2,17 @@
     {
         "title": "Landmine 3",
         "date": "2025-04",
-        "timestamp": 1743544982,
+        "timestamp": 1743585036,
         "software": "Infinite Painter",
         "external": [
             {
+                "url": "https://cara.app/post/b5e4a820-d373-4adb-889d-a6a8c104e8d9",
+                "alt": "Cara - Lineart",
+                "icon": "ri-copyright-fill"
+            },
+            {
                 "url": "https://cara.app/post/40474137-d2d5-4779-bfea-aa2faa65d586",
-                "alt": "Cara",
+                "alt": "Cara - Sketch",
                 "icon": "ri-copyright-fill"
             }
         ],
@@ -18,6 +23,13 @@
         ],
         "images": [
             {
+                "alt": "Lineart",
+                "width": 1500,
+                "height": 2000,
+                "id": "tzMdx3pvN1orweI3rcAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
+            },
+            {
+                "alt": "Sketch",
                 "width": 850,
                 "height": 1265,
                 "id": "tzMdx3pvN1orSxSnhNtY14h3wv27AukRFeyBQjlpM968Iart"
