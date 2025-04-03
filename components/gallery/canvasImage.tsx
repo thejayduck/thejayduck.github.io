@@ -276,10 +276,9 @@ export function CanvasImage({
           filter: grayscale ? "grayscale(100%)" : "none",
         }}
         // Drag
-        drag
+        drag={shortcuts}
         dragMomentum={false}
         whileDrag={{ cursor: "grabbing" }}
-        // dragConstraints={draggableAreaRef}
         dragConstraints={{
           top: -height / 2,
           right: width / 2,

@@ -34,8 +34,6 @@ export default function Gallery({ id }: { id: string }) {
     component: TagButtonsComponent,
   } = TagButtons();
 
-  const containerRef = useRef<HTMLDivElement>(null); // Reference to the gallery container
-
   // Handler for image click
   const handleImageClick = useCallback(
     (id: string) => {
@@ -69,36 +67,6 @@ export default function Gallery({ id }: { id: string }) {
     }, 0);
   }
 
-  // Effect to calculate and update column span on window resize
-  //? Move to galleryGrid.tsx
-  useEffect(() => {
-    const calculateColumnSpan = () => {
-      const galleryItems = Array.from(
-        containerRef.current?.querySelectorAll(`.${styles.galleryItem}`) || []
-      );
-
-      galleryItems.forEach((element, index) => {
-        const galleryItem = element as HTMLElement;
-        const item = filteredGallery[index].images[0]; // Main image is the first in the array
-
-        // Calculate the ratio and apply styles
-        const ratio = item.width / item.height;
-        const baseSize = 15; // em
-        galleryItem.style.flexBasis = `calc(${ratio} * ${baseSize}em)`;
-        galleryItem.style.flexGrow = `${ratio * 100}`;
-      });
-    };
-
-    calculateColumnSpan();
-    window.addEventListener("resize", calculateColumnSpan);
-    window.addEventListener("load", calculateColumnSpan);
-
-    return () => {
-      window.removeEventListener("resize", calculateColumnSpan);
-      window.addEventListener("load", calculateColumnSpan);
-    };
-  }, [filteredGallery]);
-
   return (
     <>
       <Head>
@@ -118,6 +86,7 @@ export default function Gallery({ id }: { id: string }) {
       <PageBase backPath="/" label="Back to Homepage">
         {/* Main Gallery Section */}
         <section className={`${styles.mainSection} flex flexColumn`}>
+          {/* Description */}
           <CardPanel title={"Gallery 🖌️"}>
             <p>
               <i className={getIcon("imagePosts")} />
@@ -152,11 +121,11 @@ export default function Gallery({ id }: { id: string }) {
               </p>
             </blockquote>
 
+            {/* Gallery Content */}
             <hr />
             {TagButtonsComponent}
             <br />
             <GalleryGrid
-              containerRef={containerRef}
               handleImageClick={handleImageClick}
               gallery={filteredGallery}
             />
