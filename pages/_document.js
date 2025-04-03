@@ -10,6 +10,7 @@ export default function Document() {
 
         {/* <link rel="preload" as="font" /> */}
         <link rel="icon" href="/favicon.ico" />
+        <meta property="robots" content="noai,noimageai" />
 
         {/* <meta property="og:type" content="website" />
         <meta key='title' property="og:title" content="Arda Fevzi Armutcu's Portfolio" />
