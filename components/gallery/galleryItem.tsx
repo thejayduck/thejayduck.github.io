@@ -3,7 +3,7 @@ import styles from "../../styles/Gallery.module.scss";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import {
   formatDate,
@@ -27,20 +27,30 @@ export default function GalleryItem({
   index,
   handleImageClick,
 }: GalleryItemProps) {
+  //? Improve process video handling ?
+
   const [hoveredImage, setHoveredImage] = useState<number | null>(null); // Index of the hovered image
+  const processTooltipRef = useRef<HTMLDivElement>(null);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
 
   // Handler for hover
   const handleMouseEnter = (index: number) => {
     setHoveredImage(null);
-    setTimer(
-      setTimeout(() => {
-        setHoveredImage(index);
-      }, 500)
-    );
+
+    if (entry.process)
+      setTimer(
+        setTimeout(() => {
+          setHoveredImage(index);
+          processTooltipRef.current?.removeAttribute("title");
+        }, 500)
+      );
   };
 
   const handleMouseLeave = () => {
+    processTooltipRef.current?.setAttribute(
+      "title",
+      entry.images.length > 1 ? "Click to view images" : "Click to view image"
+    );
     clearTimeout(timer as NodeJS.Timeout);
     setHoveredImage(null);
   };
@@ -50,6 +60,7 @@ export default function GalleryItem({
       title={
         entry.images.length > 1 ? "Click to view images" : "Click to view image"
       }
+      ref={processTooltipRef}
       onClick={() => handleImageClick(index)}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={handleMouseLeave}
