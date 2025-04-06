@@ -2,22 +2,37 @@
     {
         "title": "Landmine 4",
         "date": "2025-04",
-        "timestamp": 1743812280,
+        "timestamp": 1743895164,
         "software": "Infinite Painter",
+        "process": "hVqhIiDgTUsmkI4Ek13zGEh4rFZdSOeBJjlyoMRYiDNxwCLn",
         "external": [
             {
+                "url": "https://cara.app/post/c286dcfc-81db-42ca-875d-4046738631f7",
+                "alt": "Cara - Color",
+                "icon": "ri-copyright-fill"
+            },
+            {
                 "url": "https://cara.app/post/5280d834-d494-4e14-9e04-d69bd5498707",
-                "alt": "Cara",
+                "alt": "Cara - Lineart",
                 "icon": "ri-copyright-fill"
             }
         ],
         "tags": [
             "characterdesign",
             "sketch",
-            "oc"
+            "fullcolor",
+            "oc",
+            "process"
         ],
         "images": [
             {
+                "alt": "Colored",
+                "width": 630,
+                "height": 630,
+                "id": "tzMdx3pvN1orvYCSxsMTyObBPzitVLZcd916YHhUKsJofup3"
+            },
+            {
+                "alt": "Lineart",
                 "width": 690,
                 "height": 1285,
                 "id": "tzMdx3pvN1orzgIHb58c0oQ3OSMb5gU4FG8sWVJhxZpIae7z"
