@@ -1,5 +1,33 @@
 [
     {
+        "title": "Landmine Rotate",
+        "date": "2025-04",
+        "timestamp": 1743945315,
+        "software": "CLIP STUDIO PAINT",
+        "process": "hVqhIiDgTUsmx2HDjQJgzRbMJcpKoiBP3TOyDSk2ql0GIXtj",
+        "external": [
+            {
+                "url": "https://cara.app/post/97eae741-92bf-4d9a-8e7a-3436206ca847",
+                "alt": "Cara",
+                "icon": "ri-copyright-fill"
+            }
+        ],
+        "tags": [
+            "characterdesign",
+            "sketch",
+            "oc",
+            "process"
+        ],
+        "images": [
+            {
+                "alt": "Colored",
+                "width": 1080,
+                "height": 1080,
+                "id": "tzMdx3pvN1orBuahHwb6XijcL0lJmKQZ8PMf46eARhsND1vG"
+            }
+        ]
+    },
+    {
         "title": "Landmine 4",
         "date": "2025-04",
         "timestamp": 1743895164,
@@ -1088,7 +1116,7 @@
     {
         "title": "Clip Studio Practice #2",
         "date": "2023-07",
-        "software": "Clip Studio Paint",
+        "software": "CLIP STUDIO PAINT",
         "tags": [
             "sketch",
             "oc",
@@ -1105,7 +1133,7 @@
     {
         "title": "Clip Studio Practice #1",
         "date": "2023-07",
-        "software": "Clip Studio Paint",
+        "software": "CLIP STUDIO PAINT",
         "tags": [
             "sketch",
             "oc",
