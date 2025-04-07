@@ -42,6 +42,7 @@ export const TagButtons = () => {
 
   //? Move to helper.tsx ?
   const tagList: Record<string, [string, string]> = {
+    animation: ["Animation", "ri-film-fill"],
     animal: ["Animal", "ri-leaf-fill"],
     cg: ["CG", "ri-computer-fill"],
     characterdesign: ["Character Design", "ri-compasses-2-fill"],

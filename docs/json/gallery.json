@@ -1,5 +1,33 @@
 [
     {
+        "title": "Landmine Selfie",
+        "date": "2025-04",
+        "timestamp": 1744034701,
+        "software": "CLIP STUDIO PAINT",
+        "process": "hVqhIiDgTUsmtrgzybUlyvL8HYQkftGSaz75JsBxEK2XAdiN",
+        "external": [
+            {
+                "url": "https://cara.app/post/3a10c908-5cfd-43ba-ac55-54c7d91e7517",
+                "alt": "Cara",
+                "icon": "ri-copyright-fill"
+            }
+        ],
+        "tags": [
+            "characterdesign",
+            "sketch",
+            "oc",
+            "process",
+            "animation"
+        ],
+        "images": [
+            {
+                "width": 1280,
+                "height": 1280,
+                "id": "tzMdx3pvN1orAhiGpXCohdiwm5QsVNXF2YIbk834MyglrPGp"
+            }
+        ]
+    },
+    {
         "title": "Landmine Rotate",
         "date": "2025-04",
         "timestamp": 1743945315,
@@ -16,7 +44,8 @@
             "characterdesign",
             "sketch",
             "oc",
-            "process"
+            "process",
+            "animation"
         ],
         "images": [
             {
