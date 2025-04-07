@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion, wrap } from "framer-motion";
+import { useDebouncedCallback } from "use-debounce";
 
 import React, {
   useCallback,
@@ -16,6 +17,7 @@ import React, {
 import {
   formatDate,
   formatUnixTimestamp,
+  galleryRouterSet,
   getIcon,
   getImageUrl,
 } from "../../lib/helper";
@@ -39,24 +41,31 @@ export function ImagePreview({
   images,
   onOutsideClick,
   activeIndex,
+  imageScrollIndex, // Index on a image post with multiple images
 }: IImagePreview) {
   const { showToast } = useToast();
 
   const router = useRouter();
+  const [firstLoad, setFirstLoad] = useState(true);
   const [[imageIndex, direction], setImageIndex] = useState([activeIndex, 0]);
   const currentImage = images[imageIndex];
   const currentImageId = currentImage.images[0].id;
   const [isDraggingPreview, setIsDraggingPreview] = useState(false);
 
-  const [scrollIndex, setScrollIndex] = useState(0);
+  const [scrollIndex, setScrollIndex] = useState(imageScrollIndex || 0);
   const scrollContainerRef = useRef<HTMLUListElement>(null);
+
+  const debounceRouter = useDebouncedCallback((index: number) => {
+    const imageRouter = galleryRouterSet(currentImageId, index);
+    imageRouter.navigateTo("gallery", router);
+  }, 300);
 
   useEffect(() => {
     if (currentImage.images.length <= 1) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries.length === 0) return;
+        if (entries.length === 0 || firstLoad) return;
 
         const active = entries.reduce((accumulator, currentValue) => {
           return currentValue.intersectionRatio > accumulator.intersectionRatio
@@ -66,6 +75,8 @@ export function ImagePreview({
         if (active.intersectionRatio > 0) {
           const index = Number(active.target.getAttribute("data-index"));
           setScrollIndex(index);
+          debounceRouter(index);
+
           console.log(index, scrollIndex);
         }
       },
@@ -90,19 +101,21 @@ export function ImagePreview({
         });
       }
     };
-  }, [currentImage.images.length, scrollContainerRef, scrollIndex]);
+  }, [
+    currentImage.images.length,
+    scrollContainerRef,
+    scrollIndex,
+    firstLoad,
+    debounceRouter,
+  ]);
 
   const updateImageIndex = useCallback(
     (direction: number) => {
       const wrappedImageIndex = wrap(0, images.length, imageIndex + direction);
       setImageIndex([wrappedImageIndex, direction]);
-      router.replace(
-        `/gallery/?id=${images[wrappedImageIndex].images[0].id}`,
-        undefined,
-        { scroll: false }
-      );
+      debounceRouter(0);
     },
-    [images, router, imageIndex]
+    [images, imageIndex, debounceRouter]
   );
   const updateScrollIndex = useCallback(
     (direction: number) => {
@@ -116,14 +129,29 @@ export function ImagePreview({
       );
       console.log(`Scrolling to ${targetIndex} - ${scrollContainerRef}`);
       element?.scrollIntoView({ behavior: "smooth" });
+      debounceRouter(targetIndex);
     },
-    [currentImage.images.length, scrollIndex]
+    [currentImage.images.length, scrollIndex, debounceRouter]
   );
 
   useEffect(() => {
-    setScrollIndex(0);
-    console.log("Resetting Index");
-  }, [currentImage]);
+    if (firstLoad && imageScrollIndex) {
+      const element = scrollContainerRef.current?.querySelector(
+        `[data-index="${imageScrollIndex}"]`
+      );
+      element?.scrollIntoView({ behavior: "instant" });
+      setScrollIndex(imageScrollIndex);
+      setFirstLoad(false);
+    } else {
+      setScrollIndex(0);
+    }
+  }, [imageScrollIndex, firstLoad, currentImage]);
+
+  useEffect(() => {
+    return () => {
+      debounceRouter.cancel();
+    };
+  }, [debounceRouter]);
 
   const getSeedHash = (seed: string) => {
     let hash = 0;

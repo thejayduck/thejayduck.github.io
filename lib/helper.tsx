@@ -135,6 +135,42 @@ export function isNewImage(timestamp: number): boolean {
   return currentTime - timestamp < threshold;
 }
 
+export function galleryRouterSet(id: string, index: number) {
+  const routes = {
+    gallery: {
+      path: "/gallery/",
+      param: "id",
+      indexParam: "index",
+    },
+  };
+
+  return {
+    navigate: (
+      page: keyof typeof routes,
+      router: any,
+      options = { scroll: false }
+    ) => {
+      router.replace(routes[page].path, undefined, options);
+    },
+    navigateTo: (
+      page: keyof typeof routes,
+      router: any,
+      options = { scroll: false }
+    ) => {
+      const route = routes[page];
+      let url = `${route.path}?${route.param}=${id}`;
+
+      if (route.indexParam) {
+        url += `&${route.indexParam}=${index}`;
+      }
+      router.replace(url, undefined, options);
+    },
+    setIndex: (newIndex: number) => galleryRouterSet(id, newIndex),
+    getIndex: (): number => index,
+    getId: () => id,
+  };
+}
+
 const iconList: Record<string, string> = {
   close: "ri-close-fill",
   lightMode: "ri-sun-fill",

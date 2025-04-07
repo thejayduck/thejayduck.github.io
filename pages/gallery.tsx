@@ -14,19 +14,22 @@ import { ImagePreview } from "../components/gallery/imagePreview";
 import { TagButtons } from "../components/gallery/tagButtons";
 import PageBase from "../components/pageBase";
 import gallery from "../docs/json/gallery.json";
-import { getIcon } from "../lib/helper";
+import { galleryRouterSet, getIcon } from "../lib/helper";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const id = context.query.id;
+  const index = context.query.index;
   return {
     props: {
       id: id || null,
+      index: index || null,
     },
   };
 };
 
-export default function Gallery({ id }: { id: string }) {
+export default function Gallery({ id, index }: { id: string; index: number }) {
   const router = useRouter();
+  const galleryRouter = galleryRouterSet(id || "", 0);
 
   const {
     filteredGallery,
@@ -37,7 +40,8 @@ export default function Gallery({ id }: { id: string }) {
   // Handler for image click
   const handleImageClick = useCallback(
     (id: string) => {
-      router.replace(`/gallery/?id=${id}`, undefined, { scroll: false });
+      const imageRouter = galleryRouterSet(id, 0);
+      imageRouter.navigateTo("gallery", router);
       document.body.style.overflow = "hidden";
     },
     [router]
@@ -57,7 +61,7 @@ export default function Gallery({ id }: { id: string }) {
 
   // Handler for closing image preview
   const handleClosePreview = () => {
-    router.replace("/gallery", undefined, { scroll: false });
+    galleryRouter.navigate("gallery", router);
     document.body.style.overflow = "auto";
   };
 
@@ -139,6 +143,7 @@ export default function Gallery({ id }: { id: string }) {
                 activeIndex={filteredGallery.findIndex(
                   (image) => image.images[0].id == id
                 )}
+                imageScrollIndex={index}
                 images={filteredGallery}
                 onOutsideClick={handleClosePreview}
               />
