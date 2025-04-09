@@ -10,7 +10,7 @@ import React, {
   useState,
 } from "react";
 
-import { getIcon } from "../../lib/helper";
+import { decodeFrames, getIcon } from "../../lib/helper";
 import Button from "../button";
 import { useToast } from "../toashHandler";
 
@@ -19,6 +19,7 @@ interface CanvasItemProps {
   imageId: string;
   imageUrl: string;
   imageAlt?: string;
+  animated?: boolean;
   width: number;
   height: number;
   shortcuts: boolean;
@@ -39,6 +40,7 @@ export function CanvasImage({
   imageId,
   imageUrl,
   imageAlt,
+  animated,
   width,
   height,
   shortcuts,
@@ -264,6 +266,47 @@ export function CanvasImage({
       window.addEventListener("load", calculateRatio);
     };
   }, [imageUrl, width, height]);
+
+  // Video Frame Renderer
+  useEffect(() => {
+    if (!animated) return;
+
+    let isMounted = true;
+    let frameIndex = 0;
+    let animationFrameId: number;
+
+    const renderGIF = async () => {
+      const canvas = canvasElementRef.current;
+      if (!canvas) return;
+
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      const frames = await decodeFrames(imageUrl);
+      const drawFrame = () => {
+        if (!isMounted || frames.length == 0) return;
+
+        const frame = frames[frameIndex];
+        const duration: number | null = frame.duration;
+        ctx.drawImage(frame, 0, 0, canvas.width, canvas.height);
+
+        frameIndex = (frameIndex + 1) % frames.length;
+        animationFrameId = window.setTimeout(
+          drawFrame,
+          typeof duration == "number" ? duration / 1000.0 : 0
+        );
+      };
+
+      drawFrame();
+    };
+
+    renderGIF();
+
+    return () => {
+      isMounted = false;
+      if (animationFrameId) clearTimeout(animationFrameId);
+    };
+  }, [imageUrl, animated]);
 
   return (
     <li className={styles.canvasWrapper} data-index={index}>

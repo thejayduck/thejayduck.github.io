@@ -5,6 +5,7 @@ interface IExternal {
 }
 
 interface IImage {
+  animated?: boolean;
   alt?: string;
   width: number;
   height: number;

@@ -293,6 +293,7 @@ export function ImagePreview({
                   imageId={image.id}
                   imageUrl={getImageUrl(image.id)}
                   imageAlt={image.alt}
+                  animated={image.animated || false}
                   width={image.width}
                   height={image.height}
                   shortcuts={index === scrollIndex}

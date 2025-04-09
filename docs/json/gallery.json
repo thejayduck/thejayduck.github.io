@@ -21,6 +21,7 @@
         ],
         "images": [
             {
+                "animated": true,
                 "width": 1280,
                 "height": 1280,
                 "id": "tzMdx3pvN1orAhiGpXCohdiwm5QsVNXF2YIbk834MyglrPGp"
@@ -49,6 +50,7 @@
         ],
         "images": [
             {
+                "animated": true,
                 "alt": "Colored",
                 "width": 1080,
                 "height": 1080,

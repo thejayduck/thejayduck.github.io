@@ -242,3 +242,29 @@ const iconList: Record<string, string> = {
 export function getIcon(icon: keyof typeof iconList) {
   return iconList[icon];
 }
+
+export async function decodeFrames(path: string): Promise<VideoFrame[]> {
+  const response = await fetch(path);
+  const contentType = response.headers.get("Content-Type");
+  const blob = await response.arrayBuffer();
+
+  const decoder = new ImageDecoder({
+    data: blob,
+    type: contentType ?? "image/gif",
+  });
+
+  await decoder.tracks.ready;
+
+  const track = decoder.tracks.selectedTrack;
+  const frameCount = track?.frameCount ?? 1;
+
+  const frames = [];
+
+  if (frameCount != undefined) {
+    for (let i = 0; i < frameCount; i++) {
+      const { image } = await decoder.decode({ frameIndex: i });
+      frames.push(image);
+    }
+  }
+  return frames;
+}
