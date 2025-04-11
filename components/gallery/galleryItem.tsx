@@ -81,16 +81,36 @@ export default function GalleryItem({
           width={entry.images[0].width}
           loading="lazy"
           height={entry.images[0].height}
-          quality={75}
+          quality={50}
           placeholder={`data:image/svg+xml;base64,${toBase64(
             shimmer(entry.images[0].width, entry.images[0].height)
           )}`}
         />
+        {entry.images.length > 2 && (
+          <ul className={styles.stackPreviewWrapper}>
+            {entry.images.slice(1, 4).map((image, i) => (
+              <li key={i} className={styles.stackPreview}>
+                <Image
+                  src={getImageUrl(image.id)}
+                  alt={`Drawing ${entry.title} - Image ${i + 2}`}
+                  width={24}
+                  height={24}
+                  loading="lazy"
+                  quality={25}
+                  placeholder={`data:image/svg+xml;base64,${toBase64(
+                    shimmer(24, 24)
+                  )}`}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
         <figcaption>
           [{formatDate(entry.date)}]
           <br />
           {entry.title}
         </figcaption>
+        {/* Indicators */}
         <ul className={styles.indicators}>
           {entry.timestamp && isNewImage(entry.timestamp) && (
             <li>

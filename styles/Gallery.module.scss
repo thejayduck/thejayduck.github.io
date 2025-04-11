@@ -95,8 +95,41 @@
 
       &:hover,
       &:focus {
+        .stackPreviewWrapper {
+          opacity: 1;
+        }
         .matureWarning {
           opacity: 0;
+        }
+      }
+
+      .stackPreviewWrapper {
+        pointer-events: none;
+        user-select: none;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        list-style: none;
+        margin: 0;
+        background-color: var(--secondary-opaque);
+        padding: 5px;
+        border-radius: 0 0 0 var(--border);
+
+        transition: opacity 255ms;
+
+        .stackPreview {
+          width: 24px;
+          height: 24px;
+
+          &:not(:first-child) {
+            margin-top: 10px;
+          }
+
+          img {
+            object-fit: cover;
+            border-radius: var(--border);
+          }
         }
       }
 

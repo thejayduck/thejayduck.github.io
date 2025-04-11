@@ -234,6 +234,8 @@ const iconList: Record<string, string> = {
   resetZoom: "ri-fullscreen-fill",
   zoomIn: "ri-zoom-in-fill",
   zoomOut: "ri-zoom-out-fill",
+  play: "ri-play-fill",
+  pause: "ri-pause-fill",
   // Projects
   projectPosts: "ri-briefcase-fill",
   opensource: "ri-open-source-fill",

@@ -33,6 +33,7 @@ interface CanvasFunctionProps {
   action: () => void;
   title?: string;
   label: string;
+  condition?: boolean;
 }
 
 export function CanvasImage({
@@ -59,6 +60,9 @@ export function CanvasImage({
   const [imageLoaded, setImageLoaded] = useState(false);
   const [pixelated, setPixelated] = useState(false);
   const [grayscale, setGrayscale] = useState(false);
+  // Animation
+  const [isPlaying, setIsPlaying] = useState(true);
+  const frameIndexRef = useRef<number>(0);
 
   const resetTransform = useCallback(() => {
     setPosition({ x: 0, y: 0 });
@@ -85,6 +89,7 @@ export function CanvasImage({
         action: () => resetTransform(),
         shortcut: "KeyR",
         label: "Reset",
+        condition: true,
       },
       ResetZoom: {
         icon: getIcon("resetZoom"),
@@ -94,6 +99,7 @@ export function CanvasImage({
         },
         label: "Reset Zoom and Position",
         title: `${Math.ceil((1 + zoomIndex * zoomFactor) * 100)}%`,
+        condition: true,
       },
       ZoomIn: {
         icon: getIcon("zoomIn"),
@@ -102,6 +108,7 @@ export function CanvasImage({
         action: () =>
           setZoomIndex((prev) => Math.min(Math.max(prev + 1, -4), 10)),
         label: "Zoom In",
+        condition: true,
       },
       ZoomOut: {
         icon: getIcon("zoomOut"),
@@ -110,47 +117,62 @@ export function CanvasImage({
         action: () =>
           setZoomIndex((prev) => Math.min(Math.max(prev - 1, -4), 10)),
         label: "Zoom Out",
+        condition: true,
       },
       FlipX: {
         icon: getIcon("flipX"),
         shortcut: "KeyH",
         action: () => setFlipX((prev) => !prev),
         label: "Flip Horizontal",
+        condition: true,
       },
       FlipY: {
         icon: getIcon("flipY"),
         shortcut: "KeyV",
         action: () => setFlipY((prev) => !prev),
         label: "Flip Vertical",
+        condition: true,
       },
       RotateLeft: {
         icon: getIcon("rotateLeft"),
         shortcut: "KeyQ",
         action: () => setRotation((prev) => prev - 1),
         label: "Rotate Left",
+        condition: true,
       },
       RotateRight: {
         icon: getIcon("rotateRight"),
         shortcut: "KeyE",
         action: () => setRotation((prev) => prev + 1),
         label: "Rotate Right",
+        condition: true,
       },
       Grayscale: {
         icon: getIcon("grayscale"),
         shortcut: "KeyC",
         action: () => setGrayscale((prev) => !prev),
         label: "Toggle Grayscale",
+        condition: true,
       },
       Rendering: {
         icon: getIcon("pixelated"),
         shortcut: "KeyP",
         action: () => setPixelated((prev) => !prev),
         label: `${pixelated ? "Smooth" : "Pixelated"}`,
+        condition: true,
+      },
+      Playback: {
+        icon: `${isPlaying ? getIcon("pause") : getIcon("play")}`,
+        shortcut: "Space",
+        action: () => setIsPlaying((prev) => !prev),
+        label: `${isPlaying ? "Pause" : "Play"}`,
+        condition: !!animated,
       },
     }),
     [
       zoomIndex,
       pixelated,
+      isPlaying,
       resetTransform,
       setZoomIndex,
       setPosition,
@@ -159,6 +181,8 @@ export function CanvasImage({
       setRotation,
       setGrayscale,
       setPixelated,
+      setIsPlaying,
+      animated,
     ]
   );
 
@@ -272,7 +296,6 @@ export function CanvasImage({
     if (!animated) return;
 
     let isMounted = true;
-    let frameIndex = 0;
     let animationFrameId: number;
 
     const renderGIF = async () => {
@@ -283,18 +306,21 @@ export function CanvasImage({
       if (!ctx) return;
 
       const frames = await decodeFrames(imageUrl);
+
       const drawFrame = () => {
         if (!isMounted || frames.length == 0) return;
-
-        const frame = frames[frameIndex];
+        const frame = frames[frameIndexRef.current];
         const duration: number | null = frame.duration;
+
         ctx.drawImage(frame, 0, 0, canvas.width, canvas.height);
 
-        frameIndex = (frameIndex + 1) % frames.length;
-        animationFrameId = window.setTimeout(
-          drawFrame,
-          typeof duration == "number" ? duration / 1000.0 : 0
-        );
+        if (isPlaying) {
+          frameIndexRef.current = (frameIndexRef.current + 1) % frames.length;
+          animationFrameId = window.setTimeout(
+            drawFrame,
+            typeof duration == "number" ? duration / 1000.0 : 0
+          );
+        }
       };
 
       drawFrame();
@@ -306,7 +332,7 @@ export function CanvasImage({
       isMounted = false;
       if (animationFrameId) clearTimeout(animationFrameId);
     };
-  }, [imageUrl, animated]);
+  }, [imageUrl, animated, isPlaying]);
 
   return (
     <li className={styles.canvasWrapper} data-index={index}>
@@ -397,24 +423,26 @@ export function CanvasImage({
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                {Object.entries(actions).map(([key, action]) => (
-                  <Button
-                    key={key}
-                    title={action.title || ""}
-                    icon={action.icon}
-                    label={`${action.label}${
-                      action.shortcut
-                        ? ` (${action.meta ? `${action.meta} + ` : ""}${
-                            action.shortcut
-                          })`
-                        : ""
-                    }`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      action.action();
-                    }}
-                  />
-                ))}
+                {Object.entries(actions)
+                  .filter(([_, action]) => action.condition == true)
+                  .map(([key, action]) => (
+                    <Button
+                      key={key}
+                      title={action.title || ""}
+                      icon={action.icon}
+                      label={`${action.label}${
+                        action.shortcut
+                          ? ` (${action.meta ? `${action.meta} + ` : ""}${
+                              action.shortcut
+                            })`
+                          : ""
+                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        action.action();
+                      }}
+                    />
+                  ))}
               </motion.div>
             </>
           )}
