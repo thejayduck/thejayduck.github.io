@@ -14,7 +14,7 @@
         ],
         "tags": [
             "characterdesign",
-            "lineart",
+            "fullcolor",
             "oc",
             "process"
         ],
@@ -28,6 +28,30 @@
                 "width": 2000,
                 "height": 1500,
                 "id": "tzMdx3pvN1ornZCJzmEHJyt3SXIUTVu5BcmiQgqR0kLFalCx"
+            }
+        ]
+    },
+    {
+        "title": "Standing Girl",
+        "date": "2025-04",
+        "software": "Infinite Painter",
+        "external": [
+            {
+                "url": "https://cara.app/post/7e8ff1af-db48-4b05-b972-3948b6bb4210",
+                "alt": "Cara",
+                "icon": "ri-copyright-fill"
+            }
+        ],
+        "tags": [
+            "characterdesign",
+            "lineart",
+            "oc"
+        ],
+        "images": [
+            {
+                "width": 1500,
+                "height": 2000,
+                "id": "tzMdx3pvN1orl7XR32Pvibc4SB30g5CzvFJUs9T26Wepdy7t"
             }
         ]
     },
