@@ -2,12 +2,12 @@
     {
         "title": "Earbuds",
         "date": "2025-05",
-        "timestamp": 1746392559,
+        "timestamp": 1746565078,
         "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmZQPjcn6hQNRM7mLYqupVPAJn4HZlEdokK60x",
+        "process": "hVqhIiDgTUsms8XlLbcyQmrMpklL0dYG8iwcAhSZqt6OXK5U",
         "external": [
             {
-                "url": "https://cara.app/post/80e880c6-fed1-455a-8e22-ecbf7a47082d",
+                "url": "https://cara.app/post/8ae3e279-f3af-4c0f-89b1-539da9ab506e",
                 "alt": "Cara",
                 "icon": "ri-copyright-fill"
             }
@@ -16,10 +16,18 @@
             "characterdesign",
             "lineart",
             "oc",
-            "process"
+            "process",
+            "fullcolor"
         ],
         "images": [
             {
+                "alt": "Full Color",
+                "width": 1500,
+                "height": 2000,
+                "id": "tzMdx3pvN1orxIkNMBPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
+            },
+            {
+                "alt": "Lineart",
                 "width": 1500,
                 "height": 2000,
                 "id": "tzMdx3pvN1orS0p6vMTtY14h3wv27AukRFeyBQjlpM968Iar"
