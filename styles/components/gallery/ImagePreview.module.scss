@@ -250,7 +250,9 @@
 
     .links {
       margin-top: var(--spacing-small);
-      margin-bottom: var(--spacing-small);
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 8px;
 
       a {
         text-decoration: none;

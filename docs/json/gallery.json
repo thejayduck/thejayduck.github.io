@@ -2,18 +2,28 @@
     {
         "title": "Tachibana Nozomi - Blue Archive",
         "date": "2025-05",
-        "timestamp": 1747068796,
+        "timestamp": 1747257683,
         "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmKlOAmAZkCpHrahN5sEGSi2vPub6TtcBUA1ML",
+        "process": "hVqhIiDgTUsmObAAgwT9nm3iC4STVB5kN1FlPvIgLy2je6UJ",
         "external": [
             {
-                "url": "https://cara.app/post/ec2e25b4-b8cf-445a-a3cd-856f63031bc5",
-                "alt": "Cara",
+                "url": "https://cara.app/post/7dba7e7f-7913-4573-a85e-bc61a2412a76",
+                "alt": "Cara - Flat",
                 "icon": "ri-copyright-fill"
             },
             {
+                "url": "https://cara.app/post/ec2e25b4-b8cf-445a-a3cd-856f63031bc5",
+                "alt": "Cara - Sketch",
+                "icon": "ri-copyright-fill"
+            },
+            {
+                "url": "https://www.youtube.com/live/bgoy6YRUS20?si=7M0Tjbm0BbNilW-n",
+                "alt": "Youtube - Flat",
+                "icon": "ri-youtube-fill"
+            },
+            {
                 "url": "https://www.youtube.com/watch?v=sf9WRbaiWbQ",
-                "alt": "Youtube - Full-Length",
+                "alt": "Youtube - Sketch",
                 "icon": "ri-youtube-fill"
             }
         ],
@@ -24,6 +34,11 @@
             "process"
         ],
         "images": [
+            {
+                "width": 1570,
+                "height": 2549,
+                "id": "tzMdx3pvN1orNaluHT7kNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0"
+            },
             {
                 "width": 1570,
                 "height": 2549,
