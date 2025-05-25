@@ -58,6 +58,13 @@ export default function Projects() {
                   aria-label="Github profile link"
                 >
                   GitHub profile
+                </Link>{" "}
+                or{" "}
+                <Link
+                  href="https://codeberg.org/TheJayDuck"
+                  aria-label="Codeberg profile link"
+                >
+                  Codeberg profile
                 </Link>
                 . Feel free to check them out!
               </p>

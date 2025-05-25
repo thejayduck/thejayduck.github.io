@@ -166,6 +166,7 @@ export function CanvasImage({
         shortcut: "Space",
         action: () => setIsPlaying((prev) => !prev),
         label: `${isPlaying ? "Pause" : "Play"}`,
+        title: `${isPlaying ? "Pause" : "Play"}`,
         condition: !!animated,
       },
     }),

@@ -24,6 +24,12 @@ const socialLinks: SocialLink[] = [
     href: "https://linkedin.com/in/armutcu",
   },
   {
+    icon: getIcon("opensource"),
+    label: "codeberg (migration in progress)",
+    title: "Codeberg",
+    href: "https://codeberg.org/TheJayDuck",
+  },
+  {
     icon: getIcon("github"),
     label: "github",
     title: "Github",
@@ -41,18 +47,18 @@ const socialLinks: SocialLink[] = [
     title: "Cara",
     href: "https://cara.app/thejayduck",
   },
-  {
-    icon: getIcon("deviantart"),
-    label: "deviantart",
-    title: "DeviantArt",
-    href: "https://www.deviantart.com/thejayduck",
-  },
-  {
-    icon: getIcon("instagram"),
-    label: "instagram",
-    title: "Instagram",
-    href: "https://www.instagram.com/ardafevzi.armutcu/",
-  },
+  // {
+  //   icon: getIcon("deviantart"),
+  //   label: "deviantart (inactive)",
+  //   title: "DeviantArt (inactive)",
+  //   href: "https://www.deviantart.com/thejayduck",
+  // },
+  // {
+  //   icon: getIcon("instagram"),
+  //   label: "instagram (inactive)",
+  //   title: "Instagram (inactive)",
+  //   href: "https://www.instagram.com/ardafevzi.armutcu/",
+  // },
 ];
 
 export default function Links() {

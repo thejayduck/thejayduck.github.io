@@ -1,5 +1,28 @@
 [
     {
+        "title": "Media Timer Extension (Firefox)",
+        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCUBwzNqGQC0jINqc5k4XVZtmEKGBbohYweHpd",
+        "description": "A simple extension that automatically skips media after a set time.",
+        "type": "Extension",
+        "tags": [
+            "JavaScript",
+            "Firefox",
+            "Timer",
+            "HTML",
+            "Extension",
+            "CSS",
+            "Open-Source"
+        ],
+        "year": 2025,
+        "links": [
+            {
+                "title": "Codeberg",
+                "url": "https://codeberg.org/TheJayDuck/media-timer-extension",
+                "icon": "ri-open-source-fill"
+            }
+        ]
+    },
+    {
         "title": "Fractured Divergence",
         "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPC7CnQSW0aQfbyHIn91KvR4ht3WGxpzD6C5gwm",
         "description": "Submission to Acerola Jam 0. I tried to go out of my comfort zone in this project as much as possible. Be it, drawing backgrounds, a lot of CGs and writing a different genre of story.",
@@ -186,9 +209,9 @@
         "year": 2021,
         "links": [
             {
-                "title": "Github",
-                "url": "https://github.com/thejayduck/thejayduck.github.io",
-                "icon": "ri-github-fill"
+                "title": "Codeberg",
+                "url": "https://codeberg.org/TheJayDuck/portfolio",
+                "icon": "ri-opensource-fill"
             }
         ]
     },
