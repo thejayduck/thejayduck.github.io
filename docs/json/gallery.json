@@ -1,4 +1,62 @@
 [
+        {
+        "title": "Nagisa - Blue Archive",
+        "date": "2025-06",
+        "timestamp": 1749255433,
+        "software": "Infinite Painter",
+        "process": "hVqhIiDgTUsm67fTLZuEAKeWhCnck4gus0xpXUbyvIiL1r83",
+        "external": [
+            {
+                "url": "https://cara.app/post/44b12166-76ee-483b-b0f0-de1715e9f3b4",
+                "alt": "Cara",
+                "icon": "ri-copyright-fill"
+            }
+        ],
+        "tags": [
+            "characterdesign",
+            "lineart",
+            "fanart",
+            "process"
+        ],
+        "images": [
+            {
+                "width": 1500,
+                "height": 1500,
+                "id": "tzMdx3pvN1orNNA3XckNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+            }
+        ]
+    },
+    {
+        "title": "Hina - Blue Archive",
+        "date": "2025-05",
+        "timestamp": 1748644727,
+        "software": "Infinite Painter",
+        "external": [
+            {
+                "url": "https://cara.app/post/0d2213ff-f36a-4f12-b08c-fc44dfd4cd84",
+                "alt": "Cara",
+                "icon": "ri-copyright-fill"
+            }
+        ],
+        "tags": [
+            "characterdesign",
+            "lineart",
+            "fanart",
+            "process"
+        ],
+        "images": [
+            {
+                "width": 2000,
+                "height": 2000,
+                "id": "tzMdx3pvN1orpbKUzg0lMkqWoswmzSIg8diEXKYvnaxCVbAf"
+            },
+            {
+                "width": 2000,
+                "height": 2000,
+                "id": "tzMdx3pvN1orvt95DRMTyObBPzitVLZcd916YHhUKsJofup3"
+            }
+        ]
+    },
     {
         "title": "Satsuki - Blue Archive",
         "date": "2025-05",
