@@ -23,6 +23,26 @@
         ]
     },
     {
+        "title": "Brutal Mayhem",
+        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCP3h5OgtViTJQmR8YDtbldnucsLOqSfW0jx2Z",
+        "description": "A 1v1 fighting game developed in two weeks as part of a university assignment.",
+        "type": "Game",
+        "genre": "Fighting",
+        "tags": [
+            "Processing",
+            "2D",
+            "Open-Source"
+        ],
+        "year": 2024,
+        "links": [
+            {
+                "title": "Codeberg",
+                "url": "https://codeberg.org/TheJayDuck/Brutal-Mayhem",
+                "icon": "ri-open-source-fill"
+            }
+        ]
+    },
+    {
         "title": "Fractured Divergence",
         "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPC7CnQSW0aQfbyHIn91KvR4ht3WGxpzD6C5gwm",
         "description": "Submission to Acerola Jam 0. I tried to go out of my comfort zone in this project as much as possible. Be it, drawing backgrounds, a lot of CGs and writing a different genre of story.",
@@ -211,7 +231,7 @@
             {
                 "title": "Codeberg",
                 "url": "https://codeberg.org/TheJayDuck/portfolio",
-                "icon": "ri-opensource-fill"
+                "icon": "ri-open-source-fill"
             }
         ]
     },
