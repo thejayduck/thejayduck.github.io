@@ -1,173 +1,173 @@
 {
-  "languages": [
-    {
-      "title": "C#",
-      "icon": "devicon-csharp-plain",
-      "href": "https://www.w3schools.com/cs/index.php"
-    },
-    {
-      "title": "JavaScript",
-      "icon": "devicon-javascript-plain",
-      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-    },
-    {
-      "title": "TypeScript",
-      "icon": "devicon-typescript-plain",
-      "href": "https://www.typescriptlang.org/"
-    },
-    {
-      "title": "Rust",
-      "icon": "devicon-rust-plain",
-      "href": "https://www.rust-lang.org/"
-    },
-    {
-      "title": "HTML",
-      "icon": "devicon-html5-plain",
-      "href": "https://www.w3.org/html/"
-    },
-    {
-      "title": "CSS",
-      "icon": "devicon-css3-plain",
-      "href": "https://www.w3schools.com/css/"
-    },
-    {
-      "title": "SASS",
-      "icon": "devicon-sass-plain",
-      "href": "https://sass-lang.com/"
-    },
-    {
-      "title": "PHP",
-      "icon": "devicon-php-plain",
-      "href": "https://www.php.net/"
-    },
-    {
-      "title": "Node.js",
-      "icon": "devicon-nodejs-plain",
-      "href": "https://nodejs.org/en/"
-    },
-    {
-      "title": "Next.js",
-      "icon": "devicon-nextjs-plain",
-      "href": "https://nextjs.org/"
-    },
-    {
-      "title": "Bash",
-      "icon": "devicon-bash-plain",
-      "href": "https://www.gnu.org/software/bash/"
-    },
-    {
-      "title": "Java",
-      "icon": "devicon-java-plain",
-      "href": "https://www.java.com/"
-    },
-    {
-      "title": "LaTeX",
-      "icon": "devicon-latex-plain",
-      "href": "https://www.latex-project.org/"
-    },
-    {
-      "title": "GDScript",
-      "icon": "devicon-godot-plain",
-      "href": "https://godotengine.org/"
-    }
-  ],
-  "software": [
-    {
-      "title": "Visual Studio Code",
-      "icon": "devicon-vscode-plain",
-      "href": "https://code.visualstudio.com/"
-    },
-    {
-      "title": "Unity Engine",
-      "icon": "devicon-unity-plain",
-      "href": "https://unity.com/"
-    },
-    {
-      "title": "Godot Engine",
-      "icon": "devicon-godot-plain",
-      "href": "https://godotengine.org/"
-    },
-    {
-      "title": "Ren'Py",
-      "icon": "devicon-renpy-plain",
-      "href": "https://www.renpy.org/"
-    },
-    {
-      "title": "Figma",
-      "icon": "devicon-figma-plain",
-      "href": "https://www.figma.com/"
-    },
-    {
-      "title": "Blender",
-      "icon": "devicon-blender-original",
-      "href": "https://www.blender.org/"
-    },
-    {
-      "title": "Premiere Pro",
-      "icon": "devicon-premierepro-plain",
-      "href": "https://www.adobe.com/products/premiere.html"
-    },
-    {
-      "title": "Linux (Arch Linux)",
-      "icon": "devicon-archlinux-plain",
-      "href": "https://archlinux.org/"
-    },
-    {
-      "title": "Infinite Painter",
-      "icon": "ri-palette-fill",
-      "href": "https://infinitestudio.art/"
-    },
-    {
-      "title": "Notion",
-      "icon": "devicon-notion-plain",
-      "href": "https://www.notion.so/"
-    },
-    {
-      "title": "Git",
-      "icon": "devicon-git-plain",
-      "href": "https://git-scm.com/"
-    },
-    {
-      "title": "GitHub",
-      "icon": "devicon-github-plain",
-      "href": "https://github.com/"
-    },
-    {
-      "title": "Processing",
-      "icon": "devicon-processing-plain",
-      "href": "https://processing.org/"
-    }
-  ],
-  "others": [
-    {
-      "title": "PostgreSQL",
-      "icon": "devicon-postgresql-plain",
-      "href": "https://www.postgresql.org/"
-    },
-    {
-      "title": "MongoDB",
-      "icon": "devicon-mongodb-plain-wordmark",
-      "href": "https://www.mongodb.com/"
-    },
-    {
-      "title": "Heroku",
-      "icon": "devicon-heroku-original",
-      "href": "https://heroku.com/"
-    },
-    {
-      "title": "Vercel",
-      "icon": "devicon-vercel-original",
-      "href": "https://vercel.com/"
-    },
-    {
-      "title": "nginx",
-      "icon": "devicon-nginx-original",
-      "href": "https://nginx.org/"
-    },
-    {
-      "title": "Apache",
-      "icon": "devicon-apache-plain",
-      "href": "https://apache.org/"
-    }
-  ]
+	"languages": [
+		{
+			"title": "C#",
+			"icon": "devicon-csharp-plain",
+			"href": "https://www.w3schools.com/cs/index.php"
+		},
+		{
+			"title": "JavaScript",
+			"icon": "devicon-javascript-plain",
+			"href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+		},
+		{
+			"title": "TypeScript",
+			"icon": "devicon-typescript-plain",
+			"href": "https://www.typescriptlang.org/"
+		},
+		{
+			"title": "Rust",
+			"icon": "devicon-rust-plain",
+			"href": "https://www.rust-lang.org/"
+		},
+		{
+			"title": "HTML",
+			"icon": "devicon-html5-plain",
+			"href": "https://www.w3.org/html/"
+		},
+		{
+			"title": "CSS",
+			"icon": "devicon-css3-plain",
+			"href": "https://www.w3schools.com/css/"
+		},
+		{
+			"title": "SASS",
+			"icon": "devicon-sass-plain",
+			"href": "https://sass-lang.com/"
+		},
+		{
+			"title": "PHP",
+			"icon": "devicon-php-plain",
+			"href": "https://www.php.net/"
+		},
+		{
+			"title": "Node.js",
+			"icon": "devicon-nodejs-plain",
+			"href": "https://nodejs.org/en/"
+		},
+		{
+			"title": "Next.js",
+			"icon": "devicon-nextjs-plain",
+			"href": "https://nextjs.org/"
+		},
+		{
+			"title": "Bash",
+			"icon": "devicon-bash-plain",
+			"href": "https://www.gnu.org/software/bash/"
+		},
+		{
+			"title": "Java",
+			"icon": "devicon-java-plain",
+			"href": "https://www.java.com/"
+		},
+		{
+			"title": "LaTeX",
+			"icon": "devicon-latex-plain",
+			"href": "https://www.latex-project.org/"
+		},
+		{
+			"title": "GDScript",
+			"icon": "devicon-godot-plain",
+			"href": "https://godotengine.org/"
+		}
+	],
+	"software": [
+		{
+			"title": "Visual Studio Code",
+			"icon": "devicon-vscode-plain",
+			"href": "https://code.visualstudio.com/"
+		},
+		{
+			"title": "Unity Engine",
+			"icon": "devicon-unity-plain",
+			"href": "https://unity.com/"
+		},
+		{
+			"title": "Godot Engine",
+			"icon": "devicon-godot-plain",
+			"href": "https://godotengine.org/"
+		},
+		{
+			"title": "Ren'Py",
+			"icon": "devicon-renpy-plain",
+			"href": "https://www.renpy.org/"
+		},
+		{
+			"title": "Figma",
+			"icon": "devicon-figma-plain",
+			"href": "https://www.figma.com/"
+		},
+		{
+			"title": "Blender",
+			"icon": "devicon-blender-original",
+			"href": "https://www.blender.org/"
+		},
+		{
+			"title": "Premiere Pro",
+			"icon": "devicon-premierepro-plain",
+			"href": "https://www.adobe.com/products/premiere.html"
+		},
+		{
+			"title": "Linux (Arch Linux)",
+			"icon": "devicon-archlinux-plain",
+			"href": "https://archlinux.org/"
+		},
+		{
+			"title": "Infinite Painter",
+			"icon": "ri-palette-fill",
+			"href": "https://infinitestudio.art/"
+		},
+		{
+			"title": "Notion",
+			"icon": "devicon-notion-plain",
+			"href": "https://www.notion.so/"
+		},
+		{
+			"title": "Git",
+			"icon": "devicon-git-plain",
+			"href": "https://git-scm.com/"
+		},
+		{
+			"title": "GitHub",
+			"icon": "devicon-github-plain",
+			"href": "https://github.com/"
+		},
+		{
+			"title": "Processing",
+			"icon": "devicon-processing-plain",
+			"href": "https://processing.org/"
+		}
+	],
+	"others": [
+		{
+			"title": "PostgreSQL",
+			"icon": "devicon-postgresql-plain",
+			"href": "https://www.postgresql.org/"
+		},
+		{
+			"title": "MongoDB",
+			"icon": "devicon-mongodb-plain-wordmark",
+			"href": "https://www.mongodb.com/"
+		},
+		{
+			"title": "Heroku",
+			"icon": "devicon-heroku-original",
+			"href": "https://heroku.com/"
+		},
+		{
+			"title": "Vercel",
+			"icon": "devicon-vercel-original",
+			"href": "https://vercel.com/"
+		},
+		{
+			"title": "nginx",
+			"icon": "devicon-nginx-original",
+			"href": "https://nginx.org/"
+		},
+		{
+			"title": "Apache",
+			"icon": "devicon-apache-plain",
+			"href": "https://apache.org/"
+		}
+	]
 }

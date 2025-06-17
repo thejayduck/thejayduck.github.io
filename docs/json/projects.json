@@ -1,289 +1,277 @@
 [
-    {
-        "title": "Media Timer Extension (Firefox)",
-        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCUBwzNqGQC0jINqc5k4XVZtmEKGBbohYweHpd",
-        "description": "A simple extension that automatically skips media after a set time.",
-        "type": "Extension",
-        "tags": [
-            "JavaScript",
-            "Firefox",
-            "Timer",
-            "HTML",
-            "Extension",
-            "CSS",
-            "Open-Source"
-        ],
-        "year": 2025,
-        "links": [
-            {
-                "title": "Codeberg",
-                "url": "https://codeberg.org/TheJayDuck/media-timer-extension",
-                "icon": "ri-open-source-fill"
-            }
-        ]
-    },
-    {
-        "title": "Brutal Mayhem",
-        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCP3h5OgtViTJQmR8YDtbldnucsLOqSfW0jx2Z",
-        "description": "A 1v1 fighting game developed in two weeks as part of a university assignment.",
-        "type": "Game",
-        "genre": "Fighting",
-        "tags": [
-            "Processing",
-            "2D",
-            "Open-Source"
-        ],
-        "year": 2024,
-        "links": [
-            {
-                "title": "Codeberg",
-                "url": "https://codeberg.org/TheJayDuck/Brutal-Mayhem",
-                "icon": "ri-open-source-fill"
-            }
-        ]
-    },
-    {
-        "title": "Fractured Divergence",
-        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPC7CnQSW0aQfbyHIn91KvR4ht3WGxpzD6C5gwm",
-        "description": "Submission to Acerola Jam 0. I tried to go out of my comfort zone in this project as much as possible. Be it, drawing backgrounds, a lot of CGs and writing a different genre of story.",
-        "type": "Game",
-        "genre": "Visual Novel",
-        "tags": [
-            "Acerola Jam 0",
-            "Visual Novel",
-            "Ren'Py",
-            "Python",
-            "Game Jam",
-            "Multiple Endings",
-            "Story Rich",
-            "2D",
-            "Surreal",
-            "Open-Source"
-        ],
-        "year": 2024,
-        "links": [
-            {
-                "title": "Itch.io",
-                "url": "https://thejayduck.itch.io/fractured-divergence",
-                "icon": "ri-store-2-fill"
-            },
-            {
-                "title": "Github",
-                "url": "https://github.com/thejayduck/acerola-0-jam/",
-                "icon": "ri-github-fill"
-            }
-        ]
-    },
-    {
-        "title": "Streaming Website",
-        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCf8KOhwL5ZN4v8rDxaXtG1cd3PgbM7TSoIOl9",
-        "description": "A livestreaming website/server for occasional programming and drawing streams.",
-        "type": "Website",
-        "genre": "Server",
-        "tags": [
-            "Bash",
-            "Apache",
-            "PHP",
-            "HTML",
-            "CSS",
-            "RTMP",
-            "JavaScript",
-            "Website",
-            "Livestream",
-            "Server",
-            "Abandoned"
-        ],
-        "year": 2024,
-        "links": [
-            {
-                "title": "Website",
-                "url": "https://livestream.ardarmutcu.com",
-                "icon": "ri-global-fill"
-            }
-        ]
-    },
-    {
-        "title": "A Noble Pursuit",
-        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCxFHa4WNPCp3VlGU7mvZK92IwYjMhcQfWngEy",
-        "description": "Submission to Winter VN Jam '22",
-        "type": "Game",
-        "genre": "Visual Novel",
-        "tags": [
-            "2D",
-            "Coming of Age",
-            "Cozy",
-            "Drama",
-            "Kinetic Novel",
-            "Medieval",
-            "Narrative",
-            "Singleplayer",
-            "Story Rich",
-            "GameJam",
-            "Ren'Py",
-            "Python"
-        ],
-        "year": 2022,
-        "links": [
-            {
-                "title": "Itch.io",
-                "url": "https://thejayduck.itch.io/a-noble-pursuit",
-                "icon": "ri-store-2-fill"
-            }
-        ]
-    },
-    {
-        "title": "Night Time Visit",
-        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCbYO7e65PQtHOGCqirRB8y5cjUxnwfNazeusp",
-        "description": "Submission to Spooky 2D Jam '22",
-        "type": "Game",
-        "genre": "Horror",
-        "tags": [
-            "2D",
-            "Atmospheric",
-            "Creepy",
-            "Exploration",
-            "Halloween",
-            "Horror",
-            "Monsters",
-            "Mystery",
-            "Pixel-Art",
-            "GameJam",
-            "Unity",
-            "C Sharp"
-        ],
-        "year": 2022,
-        "links": [
-            {
-                "title": "Itch.io",
-                "url": "https://thejayduck.itch.io/night-time-visit",
-                "icon": "ri-store-2-fill"
-            }
-        ]
-    },
-    {
-        "title": "Project BioBot",
-        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCWIfJeX20eV8QnUXkaqR6pzfECAcBGmNtY1Zy",
-        "description": "Submission to GoedWare Game Jam #5",
-        "type": "Game",
-        "genre": "Puzzle",
-        "tags": [
-            "3D",
-            "First-Person",
-            "fps-platformer",
-            "Robots",
-            "Short",
-            "Singleplayer",
-            "Unity",
-            "GameJam",
-            "Unity",
-            "C Sharp"
-        ],
-        "year": 2022,
-        "links": [
-            {
-                "title": "Itch.io",
-                "url": "https://semikoder.itch.io/project-biobot",
-                "icon": "ri-store-2-fill"
-            }
-        ]
-    },
-    {
-        "title": "Tamagochi",
-        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCEBkHbofoDQJ95EHyvPIluespOS1kZ8VFKWf6",
-        "description": "A Tamagochi game as a birthday present for my friend.",
-        "type": "Game",
-        "genre": "Strategy",
-        "tags": [
-            "2D",
-            "Pet",
-            "Simulator",
-            "Idle",
-            "Minigames",
-            "Unity",
-            "Open-Source",
-            "C Sharp"
-        ],
-        "year": 2022,
-        "links": [
-            {
-                "title": "Github",
-                "url": "https://github.com/thejayduck/tamagochi",
-                "icon": "ri-github-fill"
-            }
-        ]
-    },
-    {
-        "title": "Portfolio",
-        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCsJIvuAPV58ANXPcjtyJGTH4YgUSQWLCBRxdq",
-        "description": "My Portfolio. You are looking at it right now!",
-        "type": "Website",
-        "genre": null,
-        "tags": [
-            "NextJS",
-            "TypeScript",
-            "Sass",
-            "Portfolio",
-            "Website",
-            "Open-Source"
-        ],
-        "year": 2021,
-        "links": [
-            {
-                "title": "Codeberg",
-                "url": "https://codeberg.org/TheJayDuck/portfolio",
-                "icon": "ri-open-source-fill"
-            }
-        ]
-    },
-    {
-        "title": "Novel Tracker",
-        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPC7D6gxq0aQfbyHIn91KvR4ht3WGxpzD6C5gwm",
-        "description": "Novel Tracker is a simple novel and light novel tracker.",
-        "type": "Website",
-        "genre": null,
-        "tags": [
-            "Book Tracker",
-            "Light Novel",
-            "NextJS",
-            "Abandoned",
-            "Open-Source"
-        ],
-        "year": 2021,
-        "links": [
-            {
-                "title": "Github",
-                "url": "https://github.com/thejayduck/novel-tracker",
-                "icon": "ri-github-fill"
-            },
-            {
-                "title": "Trello",
-                "url": "https://trello.com/b/dPv92vJW/novel-tracker",
-                "icon": "ri-trello-fill"
-            }
-        ]
-    },
-    {
-        "title": "Lunar Lander",
-        "image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPC5qJUUz3gHzeNPmTXkMaOow2QlfLqFvErxKcy",
-        "description": "A simple remake of Lunar Lander for Polyrealm Game Jam.",
-        "type": "Game",
-        "genre": "Platformer",
-        "tags": [
-            "2D",
-            "Space",
-            "GameJam",
-            "Arcade",
-            "Remake",
-            "Unity",
-            "C Sharp"
-        ],
-        "year": 2019,
-        "links": [
-            {
-                "title": "Itch.io",
-                "url": "https://thejayduck.itch.io/lunar-lander-remake",
-                "icon": "ri-store-2-fill"
-            }
-        ]
-    }
+	{
+		"title": "Media Timer Extension (Firefox)",
+		"image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCUBwzNqGQC0jINqc5k4XVZtmEKGBbohYweHpd",
+		"description": "A simple extension that automatically skips media after a set time.",
+		"type": "Extension",
+		"tags": [
+			"JavaScript",
+			"Firefox",
+			"Timer",
+			"HTML",
+			"Extension",
+			"CSS",
+			"Open-Source"
+		],
+		"year": 2025,
+		"links": [
+			{
+				"title": "Codeberg",
+				"url": "https://codeberg.org/TheJayDuck/media-timer-extension",
+				"icon": "ri-open-source-fill"
+			}
+		]
+	},
+	{
+		"title": "Brutal Mayhem",
+		"image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCP3h5OgtViTJQmR8YDtbldnucsLOqSfW0jx2Z",
+		"description": "A 1v1 fighting game developed in two weeks as part of a university assignment.",
+		"type": "Game",
+		"genre": "Fighting",
+		"tags": ["Processing", "2D", "Open-Source"],
+		"year": 2024,
+		"links": [
+			{
+				"title": "Codeberg",
+				"url": "https://codeberg.org/TheJayDuck/Brutal-Mayhem",
+				"icon": "ri-open-source-fill"
+			}
+		]
+	},
+	{
+		"title": "Fractured Divergence",
+		"image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPC7CnQSW0aQfbyHIn91KvR4ht3WGxpzD6C5gwm",
+		"description": "Submission to Acerola Jam 0. I tried to go out of my comfort zone in this project as much as possible. Be it, drawing backgrounds, a lot of CGs and writing a different genre of story.",
+		"type": "Game",
+		"genre": "Visual Novel",
+		"tags": [
+			"Acerola Jam 0",
+			"Visual Novel",
+			"Ren'Py",
+			"Python",
+			"Game Jam",
+			"Multiple Endings",
+			"Story Rich",
+			"2D",
+			"Surreal",
+			"Open-Source"
+		],
+		"year": 2024,
+		"links": [
+			{
+				"title": "Itch.io",
+				"url": "https://thejayduck.itch.io/fractured-divergence",
+				"icon": "ri-store-2-fill"
+			},
+			{
+				"title": "Github",
+				"url": "https://github.com/thejayduck/acerola-0-jam/",
+				"icon": "ri-github-fill"
+			}
+		]
+	},
+	{
+		"title": "Streaming Website",
+		"image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCf8KOhwL5ZN4v8rDxaXtG1cd3PgbM7TSoIOl9",
+		"description": "A livestreaming website/server for occasional programming and drawing streams.",
+		"type": "Website",
+		"genre": "Server",
+		"tags": [
+			"Bash",
+			"Apache",
+			"PHP",
+			"HTML",
+			"CSS",
+			"RTMP",
+			"JavaScript",
+			"Website",
+			"Livestream",
+			"Server",
+			"Abandoned"
+		],
+		"year": 2024,
+		"links": [
+			{
+				"title": "Website",
+				"url": "https://livestream.ardarmutcu.com",
+				"icon": "ri-global-fill"
+			}
+		]
+	},
+	{
+		"title": "A Noble Pursuit",
+		"image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCxFHa4WNPCp3VlGU7mvZK92IwYjMhcQfWngEy",
+		"description": "Submission to Winter VN Jam '22",
+		"type": "Game",
+		"genre": "Visual Novel",
+		"tags": [
+			"2D",
+			"Coming of Age",
+			"Cozy",
+			"Drama",
+			"Kinetic Novel",
+			"Medieval",
+			"Narrative",
+			"Singleplayer",
+			"Story Rich",
+			"GameJam",
+			"Ren'Py",
+			"Python"
+		],
+		"year": 2022,
+		"links": [
+			{
+				"title": "Itch.io",
+				"url": "https://thejayduck.itch.io/a-noble-pursuit",
+				"icon": "ri-store-2-fill"
+			}
+		]
+	},
+	{
+		"title": "Night Time Visit",
+		"image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCbYO7e65PQtHOGCqirRB8y5cjUxnwfNazeusp",
+		"description": "Submission to Spooky 2D Jam '22",
+		"type": "Game",
+		"genre": "Horror",
+		"tags": [
+			"2D",
+			"Atmospheric",
+			"Creepy",
+			"Exploration",
+			"Halloween",
+			"Horror",
+			"Monsters",
+			"Mystery",
+			"Pixel-Art",
+			"GameJam",
+			"Unity",
+			"C Sharp"
+		],
+		"year": 2022,
+		"links": [
+			{
+				"title": "Itch.io",
+				"url": "https://thejayduck.itch.io/night-time-visit",
+				"icon": "ri-store-2-fill"
+			}
+		]
+	},
+	{
+		"title": "Project BioBot",
+		"image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCWIfJeX20eV8QnUXkaqR6pzfECAcBGmNtY1Zy",
+		"description": "Submission to GoedWare Game Jam #5",
+		"type": "Game",
+		"genre": "Puzzle",
+		"tags": [
+			"3D",
+			"First-Person",
+			"fps-platformer",
+			"Robots",
+			"Short",
+			"Singleplayer",
+			"Unity",
+			"GameJam",
+			"Unity",
+			"C Sharp"
+		],
+		"year": 2022,
+		"links": [
+			{
+				"title": "Itch.io",
+				"url": "https://semikoder.itch.io/project-biobot",
+				"icon": "ri-store-2-fill"
+			}
+		]
+	},
+	{
+		"title": "Tamagochi",
+		"image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCEBkHbofoDQJ95EHyvPIluespOS1kZ8VFKWf6",
+		"description": "A Tamagochi game as a birthday present for my friend.",
+		"type": "Game",
+		"genre": "Strategy",
+		"tags": [
+			"2D",
+			"Pet",
+			"Simulator",
+			"Idle",
+			"Minigames",
+			"Unity",
+			"Open-Source",
+			"C Sharp"
+		],
+		"year": 2022,
+		"links": [
+			{
+				"title": "Github",
+				"url": "https://github.com/thejayduck/tamagochi",
+				"icon": "ri-github-fill"
+			}
+		]
+	},
+	{
+		"title": "Portfolio",
+		"image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPCsJIvuAPV58ANXPcjtyJGTH4YgUSQWLCBRxdq",
+		"description": "My Portfolio. You are looking at it right now!",
+		"type": "Website",
+		"genre": null,
+		"tags": [
+			"NextJS",
+			"TypeScript",
+			"Sass",
+			"Portfolio",
+			"Website",
+			"Open-Source"
+		],
+		"year": 2021,
+		"links": [
+			{
+				"title": "Codeberg",
+				"url": "https://codeberg.org/TheJayDuck/portfolio",
+				"icon": "ri-open-source-fill"
+			}
+		]
+	},
+	{
+		"title": "Novel Tracker",
+		"image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPC7D6gxq0aQfbyHIn91KvR4ht3WGxpzD6C5gwm",
+		"description": "Novel Tracker is a simple novel and light novel tracker.",
+		"type": "Website",
+		"genre": null,
+		"tags": [
+			"Book Tracker",
+			"Light Novel",
+			"NextJS",
+			"Abandoned",
+			"Open-Source"
+		],
+		"year": 2021,
+		"links": [
+			{
+				"title": "Github",
+				"url": "https://github.com/thejayduck/novel-tracker",
+				"icon": "ri-github-fill"
+			},
+			{
+				"title": "Trello",
+				"url": "https://trello.com/b/dPv92vJW/novel-tracker",
+				"icon": "ri-trello-fill"
+			}
+		]
+	},
+	{
+		"title": "Lunar Lander",
+		"image": "https://utfs.io/a/hj5xs4m6pg/qeLXJUQ9GpPC5qJUUz3gHzeNPmTXkMaOow2QlfLqFvErxKcy",
+		"description": "A simple remake of Lunar Lander for Polyrealm Game Jam.",
+		"type": "Game",
+		"genre": "Platformer",
+		"tags": ["2D", "Space", "GameJam", "Arcade", "Remake", "Unity", "C Sharp"],
+		"year": 2019,
+		"links": [
+			{
+				"title": "Itch.io",
+				"url": "https://thejayduck.itch.io/lunar-lander-remake",
+				"icon": "ri-store-2-fill"
+			}
+		]
+	}
 ]

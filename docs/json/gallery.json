@@ -1,2538 +1,2118 @@
 [
-        {
-        "title": "Nagisa - Blue Archive",
-        "date": "2025-06",
-        "timestamp": 1749255433,
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsm67fTLZuEAKeWhCnck4gus0xpXUbyvIiL1r83",
-        "external": [
-            {
-                "url": "https://cara.app/post/44b12166-76ee-483b-b0f0-de1715e9f3b4",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "fanart",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1500,
-                "height": 1500,
-                "id": "tzMdx3pvN1orNNA3XckNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
-            }
-        ]
-    },
-    {
-        "title": "Hina - Blue Archive",
-        "date": "2025-05",
-        "timestamp": 1748644727,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/0d2213ff-f36a-4f12-b08c-fc44dfd4cd84",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "fanart",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 2000,
-                "height": 2000,
-                "id": "tzMdx3pvN1orpbKUzg0lMkqWoswmzSIg8diEXKYvnaxCVbAf"
-            },
-            {
-                "width": 2000,
-                "height": 2000,
-                "id": "tzMdx3pvN1orvt95DRMTyObBPzitVLZcd916YHhUKsJofup3"
-            }
-        ]
-    },
-    {
-        "title": "Satsuki - Blue Archive",
-        "date": "2025-05",
-        "timestamp": 1748295083,
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsm3ZAvT2riWVwzhkHmpAqrjytgBeno4058GYsF",
-        "external": [
-            {
-                "url": "https://cara.app/post/8c7995d9-9dc6-451e-99b6-bf28cafa1329",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "fanart",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1570,
-                "height": 2549,
-                "id": "tzMdx3pvN1orzrE1ZW8c0oQ3OSMb5gU4FG8sWVJhxZpIae7z"
-            }
-        ]
-    },
-    {
-        "title": "Tachibana Nozomi Army - Blue Archive [WIP]",
-        "date": "2025-05",
-        "timestamp": 1748109713,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.youtube.com/watch?v=DsrMcsN99-A",
-                "alt": "Youtube - Timelapse",
-                "icon": "ri-youtube-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "fanart",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 2000,
-                "height": 2000,
-                "id": "tzMdx3pvN1or50UaPCJzDvMidtYkhVLRbN1Ha6IKE9rqOn42"
-            }
-        ]
-    },
-    {
-        "title": "Tachibana Nozomi - Blue Archive",
-        "date": "2025-05",
-        "timestamp": 1747257683,
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmObAAgwT9nm3iC4STVB5kN1FlPvIgLy2je6UJ",
-        "external": [
-            {
-                "url": "https://cara.app/post/7dba7e7f-7913-4573-a85e-bc61a2412a76",
-                "alt": "Cara - Flat",
-                "icon": "ri-copyright-fill"
-            },
-            {
-                "url": "https://cara.app/post/ec2e25b4-b8cf-445a-a3cd-856f63031bc5",
-                "alt": "Cara - Sketch",
-                "icon": "ri-copyright-fill"
-            },
-            {
-                "url": "https://www.youtube.com/live/bgoy6YRUS20?si=7M0Tjbm0BbNilW-n",
-                "alt": "Youtube - Flat",
-                "icon": "ri-youtube-fill"
-            },
-            {
-                "url": "https://www.youtube.com/watch?v=sf9WRbaiWbQ",
-                "alt": "Youtube - Sketch",
-                "icon": "ri-youtube-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fullcolor",
-            "fanart",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1570,
-                "height": 2549,
-                "id": "tzMdx3pvN1orNaluHT7kNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0"
-            },
-            {
-                "width": 1570,
-                "height": 2549,
-                "id": "tzMdx3pvN1or2mZSPtNQ6fISvmysFdqaKr7nXVtLujAhkb5o"
-            }
-        ]
-    },
-    {
-        "title": "Exhausted",
-        "date": "2025-05",
-        "timestamp": 1746964312,
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "oc",
-            "fullcolor"
-        ],
-        "images": [
-            {
-                "width": 1732,
-                "height": 1732,
-                "id": "tzMdx3pvN1orTVMHXHyGPA9x2paoO0efYzwFKUcQTm4hNBry"
-            }
-        ]
-    },
-    {
-        "title": "Earbuds",
-        "date": "2025-05",
-        "timestamp": 1746565078,
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsms8XlLbcyQmrMpklL0dYG8iwcAhSZqt6OXK5U",
-        "external": [
-            {
-                "url": "https://cara.app/post/8ae3e279-f3af-4c0f-89b1-539da9ab506e",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "oc",
-            "process",
-            "fullcolor"
-        ],
-        "images": [
-            {
-                "alt": "Full Color",
-                "width": 1500,
-                "height": 2000,
-                "id": "tzMdx3pvN1orxIkNMBPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
-            },
-            {
-                "alt": "Lineart",
-                "width": 1500,
-                "height": 2000,
-                "id": "tzMdx3pvN1orS0p6vMTtY14h3wv27AukRFeyBQjlpM968Iar"
-            }
-        ]
-    },
-    {
-        "title": "Scarred Face",
-        "date": "2025-05",
-        "timestamp": 1746097128,
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmLFhqQhzEzmIQNwC51etgO3LoPA7Zk4yWu8cU",
-        "external": [
-            {
-                "url": "https://cara.app/post/2750513a-b4c4-4e63-a994-ea1b5a9101f0",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "oc",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1500,
-                "height": 2000,
-                "id": "tzMdx3pvN1or2Zb4G5NQ6fISvmysFdqaKr7nXVtLujAhkb5o"
-            }
-        ]
-    },
-    {
-        "title": "Yandere",
-        "date": "2025-04",
-        "timestamp": 1745614031,
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmIyEzCO5pJcL6mtaUWzrhyjP4OxuBfwKEN90F",
-        "external": [
-            {
-                "url": "https://cara.app/post/60d278c5-174b-49a2-bf04-23523e937114",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 2000,
-                "height": 1500,
-                "id": "tzMdx3pvN1or9DuEiGz3auW18eTAHymbKZ5s60NokIQi7rLw"
-            },
-            {
-                "width": 2000,
-                "height": 1500,
-                "id": "tzMdx3pvN1ornZCJzmEHJyt3SXIUTVu5BcmiQgqR0kLFalCx"
-            }
-        ]
-    },
-    {
-        "title": "Standing Girl",
-        "date": "2025-04",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/7e8ff1af-db48-4b05-b972-3948b6bb4210",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1500,
-                "height": 2000,
-                "id": "tzMdx3pvN1orl7XR32Pvibc4SB30g5CzvFJUs9T26Wepdy7t"
-            }
-        ]
-    },
-    {
-        "title": "Sleeping Landmine",
-        "date": "2025-04",
-        "timestamp": 1744573503,
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmhUyL2MeDgTUsmHBufaAxwR0V4r8Wl9Ki6kPC",
-        "external": [
-            {
-                "url": "https://cara.app/post/8ae92854-644e-49a6-afb1-5d8318d6693e",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "oc",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1685,
-                "height": 1727,
-                "id": "tzMdx3pvN1orH5FNsbUwgLFDyRjaUVZ47qOfvT0XBNiPJY1k"
-            }
-        ]
-    },
-    {
-        "title": "Landmine 6",
-        "date": "2025-04",
-        "timestamp": 1744470374,
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmEsFmcLeYfKCLoF2ch6P10jzsQgJWlwXTNDS4",
-        "external": [
-            {
-                "url": "https://cara.app/post/684b2e17-4c98-4c66-91e7-724749dffb9e",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "oc",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 680,
-                "height": 1100,
-                "id": "tzMdx3pvN1ormoduHRekrLAxdD5vwS0ZGWBayl3V2qMXcnNU"
-            }
-        ]
-    },
-    {
-        "title": "Landmine Rotate Around",
-        "date": "2025-04",
-        "timestamp": 1744230816,
-        "software": "CLIP STUDIO PAINT",
-        "process": "hVqhIiDgTUsm71Wb4o2p47TdVjXxGn2IO9ZyHuW3oRQD6PBE",
-        "external": [
-            {
-                "url": "https://cara.app/post/fb43aed2-1138-4d90-b016-9715c1b6d98a",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc",
-            "process",
-            "animation"
-        ],
-        "images": [
-            {
-                "animated": true,
-                "width": 850,
-                "height": 850,
-                "id": "tzMdx3pvN1orGWHjsu2IBjyTmVkl0w89XOpUQH3e2YLhCcGt"
-            }
-        ]
-    },
-    {
-        "title": "Landmine Selfie",
-        "date": "2025-04",
-        "timestamp": 1744034701,
-        "software": "CLIP STUDIO PAINT",
-        "process": "hVqhIiDgTUsmtrgzybUlyvL8HYQkftGSaz75JsBxEK2XAdiN",
-        "external": [
-            {
-                "url": "https://cara.app/post/3a10c908-5cfd-43ba-ac55-54c7d91e7517",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc",
-            "process",
-            "animation"
-        ],
-        "images": [
-            {
-                "animated": true,
-                "width": 1280,
-                "height": 1280,
-                "id": "tzMdx3pvN1orAhiGpXCohdiwm5QsVNXF2YIbk834MyglrPGp"
-            }
-        ]
-    },
-    {
-        "title": "Landmine Rotate",
-        "date": "2025-04",
-        "timestamp": 1743945315,
-        "software": "CLIP STUDIO PAINT",
-        "process": "hVqhIiDgTUsmx2HDjQJgzRbMJcpKoiBP3TOyDSk2ql0GIXtj",
-        "external": [
-            {
-                "url": "https://cara.app/post/97eae741-92bf-4d9a-8e7a-3436206ca847",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc",
-            "process",
-            "animation"
-        ],
-        "images": [
-            {
-                "animated": true,
-                "alt": "Colored",
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orBuahHwb6XijcL0lJmKQZ8PMf46eARhsND1vG"
-            }
-        ]
-    },
-    {
-        "title": "Landmine 4",
-        "date": "2025-04",
-        "timestamp": 1743895164,
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmkI4Ek13zGEh4rFZdSOeBJjlyoMRYiDNxwCLn",
-        "external": [
-            {
-                "url": "https://cara.app/post/c286dcfc-81db-42ca-875d-4046738631f7",
-                "alt": "Cara - Color",
-                "icon": "ri-copyright-fill"
-            },
-            {
-                "url": "https://cara.app/post/5280d834-d494-4e14-9e04-d69bd5498707",
-                "alt": "Cara - Lineart",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "fullcolor",
-            "oc",
-            "process"
-        ],
-        "images": [
-            {
-                "alt": "Colored",
-                "width": 630,
-                "height": 630,
-                "id": "tzMdx3pvN1orvYCSxsMTyObBPzitVLZcd916YHhUKsJofup3"
-            },
-            {
-                "alt": "Lineart",
-                "width": 690,
-                "height": 1285,
-                "id": "tzMdx3pvN1orzgIHb58c0oQ3OSMb5gU4FG8sWVJhxZpIae7z"
-            }
-        ]
-    },
-    {
-        "title": "Landmine 3",
-        "date": "2025-04",
-        "timestamp": 1743585036,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/b5e4a820-d373-4adb-889d-a6a8c104e8d9",
-                "alt": "Cara - Lineart",
-                "icon": "ri-copyright-fill"
-            },
-            {
-                "url": "https://cara.app/post/40474137-d2d5-4779-bfea-aa2faa65d586",
-                "alt": "Cara - Sketch",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "lineart",
-            "oc"
-        ],
-        "images": [
-            {
-                "alt": "Lineart",
-                "width": 1500,
-                "height": 2000,
-                "id": "tzMdx3pvN1orweI3rcAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
-            },
-            {
-                "alt": "Sketch",
-                "width": 850,
-                "height": 1265,
-                "id": "tzMdx3pvN1orSxSnhNtY14h3wv27AukRFeyBQjlpM968Iart"
-            }
-        ]
-    },
-    {
-        "title": "Some Girl",
-        "date": "2025-03",
-        "timestamp": 1743373575,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/519fdbce-ffae-4687-9ecc-a9ecf582a899",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1323,
-                "height": 1323,
-                "id": "tzMdx3pvN1ortIJOhEpvN1orMdXpi82RQIauYHUADJ3wqGZn"
-            }
-        ]
-    },
-    {
-        "title": "Jeanne d'Arc (Alter) and a random dude",
-        "date": "2025-03",
-        "timestamp": 1743285464,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/d0066629-5991-4359-8ab3-0f2f66878069",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 2000,
-                "height": 1500,
-                "id": "tzMdx3pvN1orwu2PwIAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
-            }
-        ]
-    },
-    {
-        "title": "Landmine 2",
-        "date": "2025-03",
-        "timestamp": 1743198659,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/8f813a57-162a-475a-ae00-abc4aa7dacb6",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 950,
-                "height": 950,
-                "id": "tzMdx3pvN1orYk1mKduxCPzR1oWSVlyLftIBncZTq3UGuwjh"
-            }
-        ]
-    },
-    {
-        "title": "Caroline (SDV)",
-        "description": "A fanart of Caroline from Stardew Valley.",
-        "date": "2025-03",
-        "timestamp": 1743067760,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/8f813a57-162a-475a-ae00-abc4aa7dacb6",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 1500,
-                "height": 2000,
-                "id": "tzMdx3pvN1or9Wi2Ubz3auW18eTAHymbKZ5s60NokIQi7rLw"
-            }
-        ]
-    },
-    {
-        "title": "Landmine",
-        "date": "2025-03",
-        "timestamp": 1742659463,
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsm3qIg4driWVwzhkHmpAqrjytgBeno4058GYsF",
-        "external": [
-            {
-                "url": "https://cara.app/post/257f95b0-acc4-428c-b1e3-90f3980deb23",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "process",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1211,
-                "height": 1211,
-                "id": "tzMdx3pvN1orlkYzcCvibc4SB30g5CzvFJUs9T26Wepdy7tn"
-            }
-        ]
-    },
-    {
-        "title": "Rintaro Okabe",
-        "date": "2025-03",
-        "timestamp": 1742338608,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/b340768f-7e4a-4211-abae-4f10b6352a76",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 1150,
-                "height": 1500,
-                "id": "tzMdx3pvN1oraVJusLQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
-            }
-        ]
-    },
-    {
-        "title": "Doll - Fullbody",
-        "date": "2025-03",
-        "timestamp": 1742236339,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/41da881e-fed1-42f3-89a6-a619e7d1d221",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1503,
-                "height": 3000,
-                "id": "tzMdx3pvN1or4MIXO9dLAQEVXuNTq1YMhcsRkdtWe7bzgBmG"
-            }
-        ]
-    },
-    {
-        "title": "Doll in a dress",
-        "date": "2025-03",
-        "timestamp": 1741971558,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/9723a882-db1f-4eb2-a366-4f75aab71c53",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1500,
-                "height": 2000,
-                "id": "tzMdx3pvN1ortMgaS1pvN1orMdXpi82RQIauYHUADJ3wqGZn"
-            }
-        ]
-    },
-    {
-        "title": "Doll",
-        "date": "2025-03",
-        "timestamp": 1741776840,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/891d7e1a-0634-4c5a-91be-1feb27e11210",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "lineart",
-            "oc"
-        ],
-        "images": [
-            {
-                "alt": "Lineart",
-                "width": 1311,
-                "height": 1500,
-                "id": "tzMdx3pvN1orIoeFr1a8mdt3bYGKWcLHOnwaTv9PU7pSBqEk"
-            },
-            {
-                "alt": "Sketch",
-                "width": 1368,
-                "height": 1500,
-                "id": "tzMdx3pvN1ork4h4xXI4QPgKGFaViSByLUYmCsuk8oINnAeO"
-            }
-        ]
-    },
-    {
-        "title": "Random Character",
-        "date": "2025-03",
-        "timestamp": 1740939422,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/2a90f8b7-e5df-4eff-b000-b59493b1ac92",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1780,
-                "height": 3590,
-                "id": "tzMdx3pvN1orHSuXyvUwgLFDyRjaUVZ47qOfvT0XBNiPJY1k"
-            }
-        ]
-    },
-    {
-        "title": "Mion Different Hairstyles",
-        "date": "2025-03",
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmJkfB79QWbDkcLdFwP2pfK8enm4UQgANH6jhi",
-        "tags": [
-            "fanart",
-            "sketch",
-            "characterdesign",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 2000,
-                "height": 1500,
-                "id": "tzMdx3pvN1orbrXHXKS9a1yngA5sJ6NWpwoF2RYZx3GPbSQO"
-            }
-        ]
-    },
-    {
-        "title": "Mion Doll Gift",
-        "date": "2025-02",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/569217ba-cbce-4e17-b021-8b99d7812221",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "fanart",
-            "sketch",
-            "characterdesign"
-        ],
-        "images": [
-            {
-                "width": 1250,
-                "height": 1525,
-                "id": "tzMdx3pvN1orvsxyl6iMTyObBPzitVLZcd916YHhUKsJofup"
-            }
-        ]
-    },
-    {
-        "title": "Mion in Barcelona",
-        "date": "2025-02",
-        "timestamp": 1740336896,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://cara.app/post/36cce6f3-021d-47d8-a8b9-f7a81827314e",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 1359,
-                "height": 520,
-                "id": "tzMdx3pvN1orZJu5vxEiqO37avS20UgbE9Qmtj6lHJupnXTs"
-            }
-        ]
-    },
-    {
-        "title": "Mion Character Sheet - Sketch",
-        "date": "2025-02",
-        "timestamp": 1739397803,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/1158821248",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            },
-            {
-                "url": "https://cara.app/post/ca1fa75c-9601-441e-8054-cd0d4d6bb1f2",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 2000,
-                "height": 1500,
-                "id": "tzMdx3pvN1oraIoNtVQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
-            }
-        ]
-    },
-    {
-        "title": "Succubus",
-        "date": "2024-12",
-        "software": "Infinite Painter",
-        "mature": true,
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc",
-            "mature"
-        ],
-        "images": [
-            {
-                "width": 1413,
-                "height": 1267,
-                "id": "tzMdx3pvN1orkoBaZRI4QPgKGFaViSByLUYmCsuk8oINnAeO"
-            }
-        ]
-    },
-    {
-        "title": "Office Lady",
-        "date": "2024-12",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1300,
-                "height": 1500,
-                "id": "tzMdx3pvN1oraiZXmFQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
-            }
-        ]
-    },
-    {
-        "title": "How I Attended an All-Guy's Mixer - Male Ver.",
-        "date": "2024-10",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/1115078943",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 1500,
-                "height": 2000,
-                "id": "tzMdx3pvN1orRXTTGcbxF8zySVIoG5mnA4YlMuDUaWZrep0t"
-            }
-        ]
-    },
-    {
-        "title": "How I Attended an All-Guy's Mixer - Female Ver.",
-        "date": "2024-10",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/1113979209",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "lineart",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 1500,
-                "height": 2000,
-                "id": "tzMdx3pvN1oraRqmdKQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
-            }
-        ]
-    },
-    {
-        "title": "Ranma 1/2",
-        "date": "2024-10",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/Ranma-1-2-1111031594",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 1616,
-                "height": 1333,
-                "id": "tzMdx3pvN1oravRmZ05Q4dKFf8TY2riwNlJIM7DgoyX5bZEU"
-            }
-        ]
-    },
-    {
-        "title": "Okita Souji - Kimono",
-        "date": "2024-10",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 1485,
-                "height": 1100,
-                "id": "tzMdx3pvN1oravTj0ffQ4dKFf8TY2riwNlJIM7DgoyX5bZEU"
-            }
-        ]
-    },
-    {
-        "title": "Mion Sonozaki x Yu-Gi-Oh!",
-        "date": "2024-07",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 1475,
-                "height": 1475,
-                "id": "tzMdx3pvN1orKDylJebLoSsurWAChcITlEaiwv1gPUYM2bdB"
-            }
-        ]
-    },
-    {
-        "title": "Mion Sonozaki (Birthday) - Higurashi",
-        "date": "2024-07",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/Happy-Birthday-Mion-July-10-2024-1073311034",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            },
-            {
-                "url": "https://cara.app/post/7a7f0e28-1abe-4486-b574-87983407becf",
-                "alt": "Cara",
-                "icon": "ri-copyright-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orvEVpdzMTyObBPzitVLZcd916YHhUKsJofup3"
-            }
-        ]
-    },
-    {
-        "title": "Kita Ikuyo - Bocchi the Rock",
-        "date": "2024-07",
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsm79Jsz2p47TdVjXxGn2IO9ZyHuW3oRQD6PBEs",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 960,
-                "id": "tzMdx3pvN1orNtsTHLkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
-            }
-        ]
-    },
-    {
-        "title": "Kita Ikuyo - Bocchi the Rock",
-        "date": "2024-06",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/Ikuyo-Kita-Bocchi-the-Rock-Lineart-1069145665",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "process": "hVqhIiDgTUsmYOvl4Daa2Cfm7iQdsKVgMcOSbpRh8vwtlzFk",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "lineart",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 960,
-                "id": "tzMdx3pvN1orQ82UYkl7yKvuxbHaMi3jPztSTY5GcoW4n2Ed"
-            }
-        ]
-    },
-    {
-        "title": "Angel",
-        "date": "2024-06",
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsme3t6tP047NSJniZUo3FACTK2X85Lmx0DBWtP",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 960,
-                "id": "tzMdx3pvN1orvycP4GMTyObBPzitVLZcd916YHhUKsJofup3"
-            }
-        ]
-    },
-    {
-        "title": "Mion Sonozaki - Higurashi",
-        "date": "2024-06",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/Mion-Sonozaki-1064170364",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "process": "hVqhIiDgTUsmuQ81mPQxfOjhZCK6a9UwXxqn5QJTBpld438k",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 960,
-                "id": "tzMdx3pvN1or4ybLU8dLAQEVXuNTq1YMhcsRkdtWe7bzgBmG"
-            }
-        ]
-    },
-    {
-        "title": "More Random Characters",
-        "date": "2024-05",
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmcRtu1rOeB80koQa3g5if6IYtS7wHPRcEz1lv",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1200,
-                "id": "tzMdx3pvN1orO8pPgLL9roz9sRbFP8dkiIMBV3tynpeLuaWc"
-            }
-        ]
-    },
-    {
-        "title": "Rose - The Wrong Way to Use Healing Magic",
-        "date": "2024-05",
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsm5WBwBkjWj70YgDBLdqUVxXPsnwCNQSo8Eeav",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orxobQrLPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
-            }
-        ]
-    },
-    {
-        "title": "May Warmup",
-        "date": "2024-05",
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmPvgfYVHQxTuRhg5jyIY093SorcmvaLUEGpBn",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orSey1HEtY14h3wv27AukRFeyBQjlpM968Iart"
-            }
-        ]
-    },
-    {
-        "title": "Cute Piercings",
-        "date": "2024-04",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orx9RXBdPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
-            }
-        ]
-    },
-    {
-        "title": "Face Practice",
-        "date": "2024-04",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orwb7sLFAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
-            }
-        ]
-    },
-    {
-        "title": "Okita Souji (Lying) - Fate/Grand Order",
-        "date": "2024-04",
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmoobeGLCET8PwM3Ht96xWZGrgNzApm1JiODe7",
-        "mature": true,
-        "tags": [
-            "characterdesign",
-            "fanart",
-            "sketch",
-            "mature",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1oro7WzOn1HafuSt8OUIsphTQjnmBDNygVzZPGR"
-            }
-        ]
-    },
-    {
-        "title": "Okita Souji (Sitting) - Fate/Grand Order",
-        "date": "2024-04",
-        "software": "Infinite Painter",
-        "process": "hVqhIiDgTUsmcjJpTkOeB80koQa3g5if6IYtS7wHPRcEz1lv",
-        "mature": true,
-        "tags": [
-            "characterdesign",
-            "fanart",
-            "sketch",
-            "mature",
-            "process"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orFPT7A8wRS4XrnzCJRBM5W0ljcyEZ7bv8gP9a"
-            }
-        ]
-    },
-    {
-        "title": "Character Practice",
-        "date": "2024-03",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "oc",
-            "sketch"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orS01Ow3ctY14h3wv27AukRFeyBQjlpM968Iar"
-            }
-        ]
-    },
-    {
-        "title": "Lara Sketch - Rune Factory",
-        "date": "2024-03",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fanart",
-            "sketch"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1or2G2h8RNQ6fISvmysFdqaKr7nXVtLujAhkb5o"
-            }
-        ]
-    },
-    {
-        "title": "Mion Sonozaki - Higurashi",
-        "date": "2024-03",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fanart",
-            "lineart"
-        ],
-        "images": [
-            {
-                "width": 782,
-                "height": 1073,
-                "id": "tzMdx3pvN1orSI8OfAtY14h3wv27AukRFeyBQjlpM968Iart"
-            }
-        ]
-    },
-    {
-        "title": "Mion Sonozaki - Higurashi",
-        "date": "2024-03",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fanart",
-            "lineart"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1or2IROlkfNQ6fISvmysFdqaKr7nXVtLujAhkb5"
-            }
-        ]
-    },
-    {
-        "title": "Maike - Fractured Divergence",
-        "date": "2024-03",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc",
-            "gamejam"
-        ],
-        "images": [
-            {
-                "width": 680,
-                "height": 1080,
-                "id": "tzMdx3pvN1orNulzIakNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
-            }
-        ]
-    },
-    {
-        "title": "Franz - Fractured Divergence",
-        "date": "2024-03",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc",
-            "gamejam"
-        ],
-        "images": [
-            {
-                "width": 680,
-                "height": 1080,
-                "id": "tzMdx3pvN1orvS1NnJMTyObBPzitVLZcd916YHhUKsJofup3"
-            }
-        ]
-    },
-    {
-        "title": " CG #3 - Fractured Divergence",
-        "date": "2024-03",
-        "software": "Infinite Painter",
-        "tags": [
-            "cg",
-            "oc",
-            "gamejam"
-        ],
-        "images": [
-            {
-                "width": 960,
-                "height": 540,
-                "id": "tzMdx3pvN1orYat3iRuxCPzR1oWSVlyLftIBncZTq3UGuwjh"
-            }
-        ]
-    },
-    {
-        "title": "CG #2 - Fractured Divergence",
-        "date": "2024-03",
-        "software": "Infinite Painter",
-        "tags": [
-            "cg",
-            "oc",
-            "gamejam"
-        ],
-        "images": [
-            {
-                "width": 960,
-                "height": 540,
-                "id": "tzMdx3pvN1orXPRWX0VaYRvPrUjnfxe4JNABy6gzpq05StIO"
-            }
-        ]
-    },
-    {
-        "title": "CG #1 - Fractured Divergence",
-        "date": "2024-03",
-        "software": "Infinite Painter",
-        "tags": [
-            "cg",
-            "oc",
-            "gamejam"
-        ],
-        "images": [
-            {
-                "width": 960,
-                "height": 540,
-                "id": "tzMdx3pvN1orHEcTrM6UwgLFDyRjaUVZ47qOfvT0XBNiPJY1"
-            }
-        ]
-    },
-    {
-        "title": "Kurisu Makise - Steins;Gate",
-        "date": "2024-02",
-        "software": "Infinite Painter",
-        "tags": [
-            "fullcolor",
-            "fanart",
-            "characterdesign"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orppSoDL0lMkqWoswmzSIg8diEXKYvnaxCVbAf"
-            }
-        ]
-    },
-    {
-        "title": "Kita Ikuyo",
-        "date": "2024-01",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/Ikuyo-Kita-Fanart-1009265067",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "tags": [
-            "fullcolor",
-            "fanart",
-            "characterdesign"
-        ],
-        "images": [
-            {
-                "width": 902,
-                "height": 1080,
-                "id": "tzMdx3pvN1orA289upohdiwm5QsVNXF2YIbk834MyglrPGpa"
-            }
-        ]
-    },
-    {
-        "title": "Marin Kitagawa - Commission",
-        "date": "2024-01",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/My-Dress-Up-Darling-Fanart-1007491907",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "tags": [
-            "fullcolor",
-            "fanart",
-            "characterdesign"
-        ],
-        "images": [
-            {
-                "width": 1200,
-                "height": 860,
-                "id": "tzMdx3pvN1ormvvAaYekrLAxdD5vwS0ZGWBayl3V2qMXcnNU"
-            }
-        ]
-    },
-    {
-        "title": "Mion with Qin F21 Pro",
-        "date": "2023-12",
-        "software": "Infinite Painter",
-        "tags": [
-            "fullcolor",
-            "fanart",
-            "characterdesign"
-        ],
-        "images": [
-            {
-                "width": 960,
-                "height": 1280,
-                "id": "tzMdx3pvN1ort8AqdnpvN1orMdXpi82RQIauYHUADJ3wqGZn"
-            }
-        ]
-    },
-    {
-        "title": "Mion with Qin F21 Pro Sketch/Lineart",
-        "date": "2023-12",
-        "software": "Infinite Painter",
-        "tags": [
-            "sketch",
-            "lineart",
-            "fanart",
-            "characterdesign"
-        ],
-        "images": [
-            {
-                "width": 1440,
-                "height": 960,
-                "id": "tzMdx3pvN1orxR8cUNPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
-            }
-        ]
-    },
-    {
-        "title": "Clip Studio Practice #2",
-        "date": "2023-07",
-        "software": "CLIP STUDIO PAINT",
-        "tags": [
-            "sketch",
-            "oc",
-            "characterdesign"
-        ],
-        "images": [
-            {
-                "width": 500,
-                "height": 500,
-                "id": "tzMdx3pvN1orN3LjgfkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
-            }
-        ]
-    },
-    {
-        "title": "Clip Studio Practice #1",
-        "date": "2023-07",
-        "software": "CLIP STUDIO PAINT",
-        "tags": [
-            "sketch",
-            "oc",
-            "characterdesign"
-        ],
-        "images": [
-            {
-                "width": 500,
-                "height": 500,
-                "id": "tzMdx3pvN1ora4aHrzQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
-            }
-        ]
-    },
-    {
-        "title": "A Noble Pursuit - CG",
-        "date": "2022-12",
-        "software": "Infinite Painter",
-        "tags": [
-            "cg",
-            "fullcolor",
-            "oc",
-            "gamejam"
-        ],
-        "images": [
-            {
-                "width": 960,
-                "height": 540,
-                "id": "tzMdx3pvN1orA6Ekw2ohdiwm5QsVNXF2YIbk834MyglrPGpa"
-            }
-        ]
-    },
-    {
-        "title": "Benjamin",
-        "date": "2022-12",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc",
-            "gamejam"
-        ],
-        "images": [
-            {
-                "width": 590,
-                "height": 1000,
-                "id": "tzMdx3pvN1orvlcoxRMTyObBPzitVLZcd916YHhUKsJofup3"
-            }
-        ]
-    },
-    {
-        "title": "Ubel",
-        "date": "2022-12",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc",
-            "gamejam"
-        ],
-        "images": [
-            {
-                "width": 590,
-                "height": 1000,
-                "id": "tzMdx3pvN1or2WXB2WNQ6fISvmysFdqaKr7nXVtLujAhkb5o"
-            }
-        ]
-    },
-    {
-        "title": "Alexandra",
-        "date": "2022-12",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc",
-            "gamejam"
-        ],
-        "images": [
-            {
-                "width": 590,
-                "height": 1000,
-                "id": "tzMdx3pvN1orQsDeGFl7yKvuxbHaMi3jPztSTY5GcoW4n2Ed"
-            }
-        ]
-    },
-    {
-        "title": "Hulderic",
-        "date": "2022-12",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc",
-            "gamejam"
-        ],
-        "images": [
-            {
-                "width": 590,
-                "height": 1000,
-                "id": "tzMdx3pvN1ormJzu8LDekrLAxdD5vwS0ZGWBayl3V2qMXcnN"
-            }
-        ]
-    },
-    {
-        "title": "Carolina",
-        "date": "2022-12",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc",
-            "gamejam"
-        ],
-        "images": [
-            {
-                "width": 590,
-                "height": 1000,
-                "id": "tzMdx3pvN1orc5fBNcpmOW4z8Sl0eAh6kgX9ivIpZPbNVfw5"
-            }
-        ]
-    },
-    {
-        "title": "Irie Color",
-        "date": "2022-10",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1orZlzzS1EiqO37avS20UgbE9Qmtj6lHJupnXTs"
-            }
-        ]
-    },
-    {
-        "title": "Ducks",
-        "date": "2022-09",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "animal"
-        ],
-        "images": [
-            {
-                "width": 1000,
-                "height": 590,
-                "id": "tzMdx3pvN1orkcsNoHI4QPgKGFaViSByLUYmCsuk8oINnAeO"
-            }
-        ]
-    },
-    {
-        "title": "Keiichi Color",
-        "date": "2022-09",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1or8ac7VuKOdA9KwNQxfuegjSapr5bWYmc416ql"
-            }
-        ]
-    },
-    {
-        "title": "Oryou Color",
-        "date": "2022-09",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1orwWM20HAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
-            }
-        ]
-    },
-    {
-        "title": "Takano Color",
-        "date": "2022-09",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1ortcZ7X8pvN1orMdXpi82RQIauYHUADJ3wqGZn"
-            }
-        ]
-    },
-    {
-        "title": "Rena Color",
-        "date": "2022-08",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/Ryuugu-Rena-color-9314569060",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "mature": true,
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "mature",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1or59SOQ3hJzDvMidtYkhVLRbN1Ha6IKE9rqOn4"
-            }
-        ]
-    },
-    {
-        "title": "Shion Color",
-        "date": "2022-08",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1orey8It75vIyBpKt5lowOLfug0RbC6iqEYZa8c"
-            }
-        ]
-    },
-    {
-        "title": "Chie Color",
-        "date": "2022-08",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1orNuCeG6kNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
-            }
-        ]
-    },
-    {
-        "title": "Rika Color",
-        "date": "2022-08",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1or2MJEBTNQ6fISvmysFdqaKr7nXVtLujAhkb5o"
-            }
-        ]
-    },
-    {
-        "title": "Hanyuu Color",
-        "date": "2022-08",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1or7KNJVOsWBVwjtRUnz0qioHduM2ZcJgFDm93Y"
-            }
-        ]
-    },
-    {
-        "title": "Satoko Color",
-        "date": "2022-08",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/Houjou-Satoko-color-931166747",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1orSiiwRetY14h3wv27AukRFeyBQjlpM968Iart"
-            }
-        ]
-    },
-    {
-        "title": "Mion Color",
-        "date": "2022-08",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 617,
-                "height": 1000,
-                "id": "tzMdx3pvN1orNqQxiPkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
-            }
-        ]
-    },
-    {
-        "title": "Satoshi Sketch",
-        "date": "2022-08",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 990,
-                "id": "tzMdx3pvN1orHEe0Au7UwgLFDyRjaUVZ47qOfvT0XBNiPJY1"
-            }
-        ]
-    },
-    {
-        "title": "Ooishi Sketch",
-        "date": "2022-08",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 990,
-                "id": "tzMdx3pvN1or8p4XIqKOdA9KwNQxfuegjSapr5bWYmc416ql"
-            }
-        ]
-    },
-    {
-        "title": "Tomitake Sketch",
-        "date": "2022-08",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1orsxTta4iFPEVsNiLaABOdCZRxU6Tyhq2zmGe3"
-            }
-        ]
-    },
-    {
-        "title": "Irie Sketch",
-        "date": "2022-08",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1orALE7sDohdiwm5QsVNXF2YIbk834MyglrPGpa"
-            }
-        ]
-    },
-    {
-        "title": "Keiichi Sketch",
-        "date": "2022-07",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1orNhCEo6kNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
-            }
-        ]
-    },
-    {
-        "title": "Mion's Birthday",
-        "date": "2022-07",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/Mion-Sonozaki-Birthday-923781589",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1or42sBV5ydLAQEVXuNTq1YMhcsRkdtWe7bzgBm"
-            }
-        ]
-    },
-    {
-        "title": "Rena Sketch",
-        "date": "2022-07",
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/Rena-Sketch-921637601",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "mature": true,
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "mature",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 600,
-                "height": 971,
-                "id": "tzMdx3pvN1or1GnXt7hHWdGIrxvn7oUQXhjzyCV0PKELqpcD"
-            }
-        ]
-    },
-    {
-        "title": "Oryou Sketch",
-        "date": "2022-06",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 450,
-                "height": 728,
-                "id": "tzMdx3pvN1orkeTdZNI4QPgKGFaViSByLUYmCsuk8oINnAeO"
-            }
-        ]
-    },
-    {
-        "title": "Takano Sketch",
-        "date": "2022-06",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 450,
-                "height": 728,
-                "id": "tzMdx3pvN1orJaibFtON06xkHrg8wtXTEG1zC5a7pWF9ePYS"
-            }
-        ]
-    },
-    {
-        "title": "Shion Sketch",
-        "date": "2022-06",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 450,
-                "height": 728,
-                "id": "tzMdx3pvN1ornFbhZyHJyt3SXIUTVu5BcmiQgqR0kLFalCx7"
-            }
-        ]
-    },
-    {
-        "title": "Mion | Catch the Beat",
-        "date": "2022-06",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 1238,
-                "height": 1942,
-                "id": "tzMdx3pvN1or4jQqFfdLAQEVXuNTq1YMhcsRkdtWe7bzgBmG"
-            }
-        ]
-    },
-    {
-        "title": "Chie Sketch",
-        "date": "2022-05",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 450,
-                "height": 728,
-                "id": "tzMdx3pvN1orRsWQZ7xF8zySVIoG5mnA4YlMuDUaWZrep0tE"
-            }
-        ]
-    },
-    {
-        "title": "Rika Sketch",
-        "date": "2022-05",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 450,
-                "height": 729,
-                "id": "tzMdx3pvN1orPKdbmcXTcmMk1ujYgZdsSJalXPUBy5ixFfn6"
-            }
-        ]
-    },
-    {
-        "title": "Hanyuu Sketch",
-        "date": "2022-05",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 450,
-                "height": 729,
-                "id": "tzMdx3pvN1orzpnW2b8c0oQ3OSMb5gU4FG8sWVJhxZpIae7z"
-            }
-        ]
-    },
-    {
-        "title": "Satoko Sketch",
-        "date": "2022-05",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 450,
-                "height": 729,
-                "id": "tzMdx3pvN1or9KovRSIz3auW18eTAHymbKZ5s60NokIQi7rL"
-            }
-        ]
-    },
-    {
-        "title": "Mion Sketch",
-        "date": "2022-04",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "sketch",
-            "fanart"
-        ],
-        "images": [
-            {
-                "width": 450,
-                "height": 729,
-                "id": "tzMdx3pvN1or8She91nKOdA9KwNQxfuegjSapr5bWYmc416q"
-            }
-        ]
-    },
-    {
-        "title": "Shiba Inu",
-        "date": "2022-04",
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "animal"
-        ],
-        "images": [
-            {
-                "width": 2160,
-                "height": 2160,
-                "id": "tzMdx3pvN1or6m6R5pYfG6eMTDA328Bkz1vsXpVKw5SqtUgh"
-            }
-        ]
-    },
-    {
-        "title": "Sculpture",
-        "date": "2022-02",
-        "software": "Infinite Painter",
-        "tags": [
-            "fullcolor"
-        ],
-        "images": [
-            {
-                "width": 2160,
-                "height": 2160,
-                "id": "tzMdx3pvN1orRY56P7xF8zySVIoG5mnA4YlMuDUaWZrep0tE"
-            }
-        ]
-    },
-    {
-        "title": "Dread",
-        "date": "2021-10",
-        "timestamp": 1634653726,
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orpy6mTY0lMkqWoswmzSIg8diEXKYvnaxCVbAf"
-            }
-        ]
-    },
-    {
-        "title": "Subway",
-        "date": "2021-09",
-        "timestamp": 1632847184,
-        "software": "Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1000,
-                "height": 600,
-                "id": "tzMdx3pvN1orJzpZX1eON06xkHrg8wtXTEG1zC5a7pWF9ePY"
-            }
-        ]
-    },
-    {
-        "title": "Some Character",
-        "date": "2021-05",
-        "timestamp": 1622114323,
-        "software": "Infinite Painter",
-        "external": [
-            {
-                "url": "https://www.deviantart.com/thejayduck/art/Some-Character-1-881177115",
-                "alt": "DeviantArt",
-                "icon": "ri-image-fill"
-            }
-        ],
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc"
-        ],
-        "images": [
-            {
-                "width": 1280,
-                "height": 1280,
-                "id": "tzMdx3pvN1orMFCaTyN7TYrOdMZuEqLy0XpNjw5vcbthQkVi"
-            }
-        ]
-    },
-    {
-        "title": "Archive",
-        "description": "Collection of mostly unfinished / old drawings starting from 2019.",
-        "date": "2019",
-        "software": "MediBang Paint Pro, Infinite Painter",
-        "tags": [
-            "characterdesign",
-            "fullcolor",
-            "oc",
-            "fanart",
-            "sketch",
-            "lineart",
-            "animal"
-        ],
-        "images": [
-            {
-                "alt": "Random Character 1",
-                "width": 2297,
-                "height": 2893,
-                "id": "tzMdx3pvN1ord10PmoG58BARDI0NlkeVypPLSYQUOcTCbgXM"
-            },
-            {
-                "alt": "Random Character 2",
-                "width": 1005,
-                "height": 1080,
-                "id": "tzMdx3pvN1orl7HI33Zvibc4SB30g5CzvFJUs9T26Wepdy7t"
-            },
-            {
-                "alt": "Charlotte",
-                "width": 1920,
-                "height": 1080,
-                "id": "tzMdx3pvN1orQM7NHIfl7yKvuxbHaMi3jPztSTY5GcoW4n2E"
-            },
-            {
-                "alt": "Random Character 3",
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orBM70MY6XijcL0lJmKQZ8PMf46eARhsND1vG2"
-            },
-            {
-                "alt": "Chibi Self",
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1or59DIX5RJzDvMidtYkhVLRbN1Ha6IKE9rqOn4"
-            },
-            {
-                "alt": "Random Character 4",
-                "width": 720,
-                "height": 1280,
-                "id": "tzMdx3pvN1oreQQnwp5vIyBpKt5lowOLfug0RbC6iqEYZa8c"
-            },
-            {
-                "alt": "Goat Character",
-                "width": 490,
-                "height": 542,
-                "id": "tzMdx3pvN1oroB2o3jL1HafuSt8OUIsphTQjnmBDNygVzZPG"
-            },
-            {
-                "alt": "Duck",
-                "width": 512,
-                "height": 512,
-                "id": "tzMdx3pvN1orBW09mM6XijcL0lJmKQZ8PMf46eARhsND1vG2"
-            },
-            {
-                "alt": "Elf",
-                "width": 708,
-                "height": 718,
-                "id": "tzMdx3pvN1orHj7FziUwgLFDyRjaUVZ47qOfvT0XBNiPJY1k"
-            },
-            {
-                "alt": "Random Character 5",
-                "width": 934,
-                "height": 1120,
-                "id": "tzMdx3pvN1orlI99ACvibc4SB30g5CzvFJUs9T26Wepdy7tn"
-            },
-            {
-                "alt": "Random Character 6",
-                "width": 1920,
-                "height": 1920,
-                "id": "tzMdx3pvN1orM9E0Iq7TYrOdMZuEqLy0XpNjw5vcbthQkViB"
-            },
-            {
-                "alt": "Miku",
-                "width": 720,
-                "height": 1280,
-                "id": "tzMdx3pvN1ortMB2tGpvN1orMdXpi82RQIauYHUADJ3wqGZn"
-            },
-            {
-                "alt": "Random Characters",
-                "width": 923,
-                "height": 496,
-                "id": "tzMdx3pvN1oroJVEej1HafuSt8OUIsphTQjnmBDNygVzZPGR"
-            },
-            {
-                "alt": "Random Character 7",
-                "width": 1360,
-                "height": 2043,
-                "id": "tzMdx3pvN1orTCL6AmyGPA9x2paoO0efYzwFKUcQTm4hNBry"
-            },
-            {
-                "alt": "Random Character 8",
-                "width": 1280,
-                "height": 720,
-                "id": "tzMdx3pvN1orKttlYm9bLoSsurWAChcITlEaiwv1gPUYM2bd"
-            },
-            {
-                "alt": "Random Character 9",
-                "width": 1280,
-                "height": 720,
-                "id": "tzMdx3pvN1orVnHm87xT5KXFd30k24YNUEnbjwvhOAIiWgfQ"
-            },
-            {
-                "alt": "Bunch of Doodles",
-                "width": 1820,
-                "height": 1920,
-                "id": "tzMdx3pvN1oravsJ1lOQ4dKFf8TY2riwNlJIM7DgoyX5bZEU"
-            },
-            {
-                "alt": "Robot Character",
-                "width": 559,
-                "height": 540,
-                "id": "tzMdx3pvN1or2XegvkNQ6fISvmysFdqaKr7nXVtLujAhkb5o"
-            },
-            {
-                "alt": "Witch",
-                "width": 1460,
-                "height": 2370,
-                "id": "tzMdx3pvN1orzbpMEHH8c0oQ3OSMb5gU4FG8sWVJhxZpIae7"
-            },
-            {
-                "alt": "Mascot Character (Jan 2021)",
-                "width": 1350,
-                "height": 955,
-                "id": "tzMdx3pvN1or1AR8PqhHWdGIrxvn7oUQXhjzyCV0PKELqpcD"
-            },
-            {
-                "alt": "Random Bald Character (May 2021)",
-                "width": 599,
-                "height": 999,
-                "id": "tzMdx3pvN1orDtUTX1geTGnWwlr6K2HvgQ9xItOZFiapzcsS"
-            },
-            {
-                "alt": "Robot (May 2021)",
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orKgCzqNbLoSsurWAChcITlEaiwv1gPUYM2bdB"
-            },
-            {
-                "alt": "Doodles (Jul 2021)",
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1oroBkWrJQ1HafuSt8OUIsphTQjnmBDNygVzZPG"
-            },
-            {
-                "alt": "Character (Nov 2021)",
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orNGRAnKkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
-            },
-            {
-                "alt": "Character (Nov 2021)",
-                "width": 1000,
-                "height": 571,
-                "id": "tzMdx3pvN1orIxHqbqa8mdt3bYGKWcLHOnwaTv9PU7pSBqEk"
-            },
-            {
-                "alt": "Beanie",
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orNaQ6AUPkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0"
-            },
-            {
-                "alt": "Smoke",
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orvsVSlQcMTyObBPzitVLZcd916YHhUKsJofup"
-            },
-            {
-                "alt": "Nun",
-                "width": 1080,
-                "height": 1080,
-                "id": "tzMdx3pvN1orZShIveEiqO37avS20UgbE9Qmtj6lHJupnXTs"
-            },
-            {
-                "alt": "Random Character 10 (Aug 2022)",
-                "width": 630,
-                "height": 529,
-                "id": "tzMdx3pvN1ordruVPzG58BARDI0NlkeVypPLSYQUOcTCbgXM"
-            },
-            {
-                "alt": "Random Character 11 (Jan 2023)",
-                "width": 1024,
-                "height": 1024,
-                "id": "tzMdx3pvN1orNqHgVVkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
-            },
-            {
-                "alt": "Random Character 12 (Feb 2023)",
-                "width": 695,
-                "height": 1024,
-                "id": "tzMdx3pvN1orl7HOroAvibc4SB30g5CzvFJUs9T26Wepdy7t"
-            },
-            {
-                "alt": "Random Characters 13 (Feb 2023)",
-                "width": 1024,
-                "height": 1024,
-                "id": "tzMdx3pvN1ortSVoE1pvN1orMdXpi82RQIauYHUADJ3wqGZn"
-            },
-            {
-                "alt": "Random Characters 14 (Apr 2023)",
-                "width": 568,
-                "height": 1000,
-                "id": "tzMdx3pvN1orKJesXObLoSsurWAChcITlEaiwv1gPUYM2bdB"
-            },
-            {
-                "alt": "Random Characters 15 (May 2024)",
-                "width": 1395,
-                "height": 837,
-                "id": "tzMdx3pvN1or7lKBjrsWBVwjtRUnz0qioHduM2ZcJgFDm93Y"
-            },
-            {
-                "alt": "Random Characters 15 (Jul 2024)",
-                "width": 852,
-                "height": 1500,
-                "id": "tzMdx3pvN1orNaF5UKekNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0"
-            },
-            {
-                "alt": "Random Characters 16 (Jul 2024)",
-                "width": 1189,
-                "height": 746,
-                "id": "tzMdx3pvN1or1S3AGEhHWdGIrxvn7oUQXhjzyCV0PKELqpcD"
-            },
-            {
-                "alt": "Characters (Jul 2024)",
-                "width": 1038,
-                "height": 656,
-                "id": "tzMdx3pvN1oreDbX0z5vIyBpKt5lowOLfug0RbC6iqEYZa8c"
-            },
-            {
-                "alt": "Soldier (Aug 2024)",
-                "width": 930,
-                "height": 1050,
-                "id": "tzMdx3pvN1orAh2ymE4ohdiwm5QsVNXF2YIbk834MyglrPGp"
-            },
-            {
-                "alt": "Vampire (Aug 2024)",
-                "width": 2000,
-                "height": 2000,
-                "id": "tzMdx3pvN1orZxhttYEiqO37avS20UgbE9Qmtj6lHJupnXTs"
-            },
-            {
-                "alt": "Scar (Aug 2024)",
-                "width": 2000,
-                "height": 2000,
-                "id": "tzMdx3pvN1or7Sd67LsWBVwjtRUnz0qioHduM2ZcJgFDm93Y"
-            },
-            {
-                "alt": "Blushing Girl (Nov 2024)",
-                "width": 1732,
-                "height": 1732,
-                "id": "tzMdx3pvN1orOA2tt39roz9sRbFP8dkiIMBV3tynpeLuaWcO"
-            },
-            {
-                "alt": "Spider-Man (Feb 2025)",
-                "width": 2000,
-                "height": 1500,
-                "id": "tzMdx3pvN1or6Ux9aZYfG6eMTDA328Bkz1vsXpVKw5SqtUgh"
-            }
-        ]
-    }
+	{
+		"title": "[WIP] Yuuka Run - Blue Archive",
+		"date": "2025-06",
+		"description": "Trying out more motion heavy animations.",
+		"timestamp": 1750186320,
+		"software": "Callipeg",
+		"external": [
+			{
+				"url": "https://cara.app/post/54d55f96-7ea1-446b-a0d9-909011e3816c",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "fanart", "animation"],
+		"images": [
+			{
+				"animated": true,
+				"width": 1726,
+				"height": 1080,
+				"id": "tzMdx3pvN1orx09TNZPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
+			}
+		]
+	},
+	{
+		"title": "Tachibana Nozomi Turn - Blue Archive",
+		"date": "2025-06",
+		"description": "Getting into more animating once again..",
+		"timestamp": 1749942308,
+		"software": "Callipeg",
+		"external": [
+			{
+				"url": "https://cara.app/post/20c3012f-413b-462d-95dc-e147967ca4a6",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "fanart", "animation"],
+		"images": [
+			{
+				"animated": true,
+				"width": 1726,
+				"height": 1080,
+				"id": "tzMdx3pvN1orXeDstvVaYRvPrUjnfxe4JNABy6gzpq05StIO"
+			}
+		]
+	},
+	{
+		"title": "Nagisa - Blue Archive",
+		"date": "2025-06",
+		"timestamp": 1749255433,
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsm67fTLZuEAKeWhCnck4gus0xpXUbyvIiL1r83",
+		"external": [
+			{
+				"url": "https://cara.app/post/44b12166-76ee-483b-b0f0-de1715e9f3b4",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "fanart", "process"],
+		"images": [
+			{
+				"width": 1500,
+				"height": 1500,
+				"id": "tzMdx3pvN1orNNA3XckNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+			}
+		]
+	},
+	{
+		"title": "Hina - Blue Archive",
+		"date": "2025-05",
+		"timestamp": 1748644727,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/0d2213ff-f36a-4f12-b08c-fc44dfd4cd84",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "fanart", "process"],
+		"images": [
+			{
+				"width": 2000,
+				"height": 2000,
+				"id": "tzMdx3pvN1orpbKUzg0lMkqWoswmzSIg8diEXKYvnaxCVbAf"
+			},
+			{
+				"width": 2000,
+				"height": 2000,
+				"id": "tzMdx3pvN1orvt95DRMTyObBPzitVLZcd916YHhUKsJofup3"
+			}
+		]
+	},
+	{
+		"title": "Satsuki - Blue Archive",
+		"date": "2025-05",
+		"timestamp": 1748295083,
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsm3ZAvT2riWVwzhkHmpAqrjytgBeno4058GYsF",
+		"external": [
+			{
+				"url": "https://cara.app/post/8c7995d9-9dc6-451e-99b6-bf28cafa1329",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "fanart", "process"],
+		"images": [
+			{
+				"width": 1570,
+				"height": 2549,
+				"id": "tzMdx3pvN1orzrE1ZW8c0oQ3OSMb5gU4FG8sWVJhxZpIae7z"
+			}
+		]
+	},
+	{
+		"title": "Tachibana Nozomi Army - Blue Archive [WIP]",
+		"date": "2025-05",
+		"timestamp": 1748109713,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.youtube.com/watch?v=DsrMcsN99-A",
+				"alt": "Youtube - Timelapse",
+				"icon": "ri-youtube-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "fanart", "process"],
+		"images": [
+			{
+				"width": 2000,
+				"height": 2000,
+				"id": "tzMdx3pvN1or50UaPCJzDvMidtYkhVLRbN1Ha6IKE9rqOn42"
+			}
+		]
+	},
+	{
+		"title": "Tachibana Nozomi - Blue Archive",
+		"date": "2025-05",
+		"timestamp": 1747257683,
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmObAAgwT9nm3iC4STVB5kN1FlPvIgLy2je6UJ",
+		"external": [
+			{
+				"url": "https://cara.app/post/7dba7e7f-7913-4573-a85e-bc61a2412a76",
+				"alt": "Cara - Flat",
+				"icon": "ri-copyright-fill"
+			},
+			{
+				"url": "https://cara.app/post/ec2e25b4-b8cf-445a-a3cd-856f63031bc5",
+				"alt": "Cara - Sketch",
+				"icon": "ri-copyright-fill"
+			},
+			{
+				"url": "https://www.youtube.com/live/bgoy6YRUS20?si=7M0Tjbm0BbNilW-n",
+				"alt": "Youtube - Flat",
+				"icon": "ri-youtube-fill"
+			},
+			{
+				"url": "https://www.youtube.com/watch?v=sf9WRbaiWbQ",
+				"alt": "Youtube - Sketch",
+				"icon": "ri-youtube-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "fullcolor", "fanart", "process"],
+		"images": [
+			{
+				"width": 1570,
+				"height": 2549,
+				"id": "tzMdx3pvN1orNaluHT7kNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0"
+			},
+			{
+				"width": 1570,
+				"height": 2549,
+				"id": "tzMdx3pvN1or2mZSPtNQ6fISvmysFdqaKr7nXVtLujAhkb5o"
+			}
+		]
+	},
+	{
+		"title": "Exhausted",
+		"date": "2025-05",
+		"timestamp": 1746964312,
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "oc", "fullcolor"],
+		"images": [
+			{
+				"width": 1732,
+				"height": 1732,
+				"id": "tzMdx3pvN1orTVMHXHyGPA9x2paoO0efYzwFKUcQTm4hNBry"
+			}
+		]
+	},
+	{
+		"title": "Earbuds",
+		"date": "2025-05",
+		"timestamp": 1746565078,
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsms8XlLbcyQmrMpklL0dYG8iwcAhSZqt6OXK5U",
+		"external": [
+			{
+				"url": "https://cara.app/post/8ae3e279-f3af-4c0f-89b1-539da9ab506e",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "oc", "process", "fullcolor"],
+		"images": [
+			{
+				"alt": "Full Color",
+				"width": 1500,
+				"height": 2000,
+				"id": "tzMdx3pvN1orxIkNMBPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
+			},
+			{
+				"alt": "Lineart",
+				"width": 1500,
+				"height": 2000,
+				"id": "tzMdx3pvN1orS0p6vMTtY14h3wv27AukRFeyBQjlpM968Iar"
+			}
+		]
+	},
+	{
+		"title": "Scarred Face",
+		"date": "2025-05",
+		"timestamp": 1746097128,
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmLFhqQhzEzmIQNwC51etgO3LoPA7Zk4yWu8cU",
+		"external": [
+			{
+				"url": "https://cara.app/post/2750513a-b4c4-4e63-a994-ea1b5a9101f0",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "oc", "process"],
+		"images": [
+			{
+				"width": 1500,
+				"height": 2000,
+				"id": "tzMdx3pvN1or2Zb4G5NQ6fISvmysFdqaKr7nXVtLujAhkb5o"
+			}
+		]
+	},
+	{
+		"title": "Yandere",
+		"date": "2025-04",
+		"timestamp": 1745614031,
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmIyEzCO5pJcL6mtaUWzrhyjP4OxuBfwKEN90F",
+		"external": [
+			{
+				"url": "https://cara.app/post/60d278c5-174b-49a2-bf04-23523e937114",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "fullcolor", "oc", "process"],
+		"images": [
+			{
+				"width": 2000,
+				"height": 1500,
+				"id": "tzMdx3pvN1or9DuEiGz3auW18eTAHymbKZ5s60NokIQi7rLw"
+			},
+			{
+				"width": 2000,
+				"height": 1500,
+				"id": "tzMdx3pvN1ornZCJzmEHJyt3SXIUTVu5BcmiQgqR0kLFalCx"
+			}
+		]
+	},
+	{
+		"title": "Standing Girl",
+		"date": "2025-04",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/7e8ff1af-db48-4b05-b972-3948b6bb4210",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "oc"],
+		"images": [
+			{
+				"width": 1500,
+				"height": 2000,
+				"id": "tzMdx3pvN1orl7XR32Pvibc4SB30g5CzvFJUs9T26Wepdy7t"
+			}
+		]
+	},
+	{
+		"title": "Sleeping Landmine",
+		"date": "2025-04",
+		"timestamp": 1744573503,
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmhUyL2MeDgTUsmHBufaAxwR0V4r8Wl9Ki6kPC",
+		"external": [
+			{
+				"url": "https://cara.app/post/8ae92854-644e-49a6-afb1-5d8318d6693e",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "oc", "process"],
+		"images": [
+			{
+				"width": 1685,
+				"height": 1727,
+				"id": "tzMdx3pvN1orH5FNsbUwgLFDyRjaUVZ47qOfvT0XBNiPJY1k"
+			}
+		]
+	},
+	{
+		"title": "Landmine 6",
+		"date": "2025-04",
+		"timestamp": 1744470374,
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmEsFmcLeYfKCLoF2ch6P10jzsQgJWlwXTNDS4",
+		"external": [
+			{
+				"url": "https://cara.app/post/684b2e17-4c98-4c66-91e7-724749dffb9e",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "oc", "process"],
+		"images": [
+			{
+				"width": 680,
+				"height": 1100,
+				"id": "tzMdx3pvN1ormoduHRekrLAxdD5vwS0ZGWBayl3V2qMXcnNU"
+			}
+		]
+	},
+	{
+		"title": "Landmine Rotate Around",
+		"date": "2025-04",
+		"timestamp": 1744230816,
+		"software": "CLIP STUDIO PAINT",
+		"process": "hVqhIiDgTUsm71Wb4o2p47TdVjXxGn2IO9ZyHuW3oRQD6PBE",
+		"external": [
+			{
+				"url": "https://cara.app/post/fb43aed2-1138-4d90-b016-9715c1b6d98a",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "oc", "process", "animation"],
+		"images": [
+			{
+				"animated": true,
+				"width": 850,
+				"height": 850,
+				"id": "tzMdx3pvN1orGWHjsu2IBjyTmVkl0w89XOpUQH3e2YLhCcGt"
+			}
+		]
+	},
+	{
+		"title": "Landmine Selfie",
+		"date": "2025-04",
+		"timestamp": 1744034701,
+		"software": "CLIP STUDIO PAINT",
+		"process": "hVqhIiDgTUsmtrgzybUlyvL8HYQkftGSaz75JsBxEK2XAdiN",
+		"external": [
+			{
+				"url": "https://cara.app/post/3a10c908-5cfd-43ba-ac55-54c7d91e7517",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "oc", "process", "animation"],
+		"images": [
+			{
+				"animated": true,
+				"width": 1280,
+				"height": 1280,
+				"id": "tzMdx3pvN1orAhiGpXCohdiwm5QsVNXF2YIbk834MyglrPGp"
+			}
+		]
+	},
+	{
+		"title": "Landmine Rotate",
+		"date": "2025-04",
+		"timestamp": 1743945315,
+		"software": "CLIP STUDIO PAINT",
+		"process": "hVqhIiDgTUsmx2HDjQJgzRbMJcpKoiBP3TOyDSk2ql0GIXtj",
+		"external": [
+			{
+				"url": "https://cara.app/post/97eae741-92bf-4d9a-8e7a-3436206ca847",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "oc", "process", "animation"],
+		"images": [
+			{
+				"animated": true,
+				"alt": "Colored",
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orBuahHwb6XijcL0lJmKQZ8PMf46eARhsND1vG"
+			}
+		]
+	},
+	{
+		"title": "Landmine 4",
+		"date": "2025-04",
+		"timestamp": 1743895164,
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmkI4Ek13zGEh4rFZdSOeBJjlyoMRYiDNxwCLn",
+		"external": [
+			{
+				"url": "https://cara.app/post/c286dcfc-81db-42ca-875d-4046738631f7",
+				"alt": "Cara - Color",
+				"icon": "ri-copyright-fill"
+			},
+			{
+				"url": "https://cara.app/post/5280d834-d494-4e14-9e04-d69bd5498707",
+				"alt": "Cara - Lineart",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "fullcolor", "oc", "process"],
+		"images": [
+			{
+				"alt": "Colored",
+				"width": 630,
+				"height": 630,
+				"id": "tzMdx3pvN1orvYCSxsMTyObBPzitVLZcd916YHhUKsJofup3"
+			},
+			{
+				"alt": "Lineart",
+				"width": 690,
+				"height": 1285,
+				"id": "tzMdx3pvN1orzgIHb58c0oQ3OSMb5gU4FG8sWVJhxZpIae7z"
+			}
+		]
+	},
+	{
+		"title": "Landmine 3",
+		"date": "2025-04",
+		"timestamp": 1743585036,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/b5e4a820-d373-4adb-889d-a6a8c104e8d9",
+				"alt": "Cara - Lineart",
+				"icon": "ri-copyright-fill"
+			},
+			{
+				"url": "https://cara.app/post/40474137-d2d5-4779-bfea-aa2faa65d586",
+				"alt": "Cara - Sketch",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "lineart", "oc"],
+		"images": [
+			{
+				"alt": "Lineart",
+				"width": 1500,
+				"height": 2000,
+				"id": "tzMdx3pvN1orweI3rcAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
+			},
+			{
+				"alt": "Sketch",
+				"width": 850,
+				"height": 1265,
+				"id": "tzMdx3pvN1orSxSnhNtY14h3wv27AukRFeyBQjlpM968Iart"
+			}
+		]
+	},
+	{
+		"title": "Some Girl",
+		"date": "2025-03",
+		"timestamp": 1743373575,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/519fdbce-ffae-4687-9ecc-a9ecf582a899",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "oc"],
+		"images": [
+			{
+				"width": 1323,
+				"height": 1323,
+				"id": "tzMdx3pvN1ortIJOhEpvN1orMdXpi82RQIauYHUADJ3wqGZn"
+			}
+		]
+	},
+	{
+		"title": "Jeanne d'Arc (Alter) and a random dude",
+		"date": "2025-03",
+		"timestamp": 1743285464,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/d0066629-5991-4359-8ab3-0f2f66878069",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "oc", "fanart"],
+		"images": [
+			{
+				"width": 2000,
+				"height": 1500,
+				"id": "tzMdx3pvN1orwu2PwIAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
+			}
+		]
+	},
+	{
+		"title": "Landmine 2",
+		"date": "2025-03",
+		"timestamp": 1743198659,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/8f813a57-162a-475a-ae00-abc4aa7dacb6",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "oc"],
+		"images": [
+			{
+				"width": 950,
+				"height": 950,
+				"id": "tzMdx3pvN1orYk1mKduxCPzR1oWSVlyLftIBncZTq3UGuwjh"
+			}
+		]
+	},
+	{
+		"title": "Caroline (SDV)",
+		"description": "A fanart of Caroline from Stardew Valley.",
+		"date": "2025-03",
+		"timestamp": 1743067760,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/8f813a57-162a-475a-ae00-abc4aa7dacb6",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 1500,
+				"height": 2000,
+				"id": "tzMdx3pvN1or9Wi2Ubz3auW18eTAHymbKZ5s60NokIQi7rLw"
+			}
+		]
+	},
+	{
+		"title": "Landmine",
+		"date": "2025-03",
+		"timestamp": 1742659463,
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsm3qIg4driWVwzhkHmpAqrjytgBeno4058GYsF",
+		"external": [
+			{
+				"url": "https://cara.app/post/257f95b0-acc4-428c-b1e3-90f3980deb23",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "fullcolor", "process", "oc"],
+		"images": [
+			{
+				"width": 1211,
+				"height": 1211,
+				"id": "tzMdx3pvN1orlkYzcCvibc4SB30g5CzvFJUs9T26Wepdy7tn"
+			}
+		]
+	},
+	{
+		"title": "Rintaro Okabe",
+		"date": "2025-03",
+		"timestamp": 1742338608,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/b340768f-7e4a-4211-abae-4f10b6352a76",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "fanart"],
+		"images": [
+			{
+				"width": 1150,
+				"height": 1500,
+				"id": "tzMdx3pvN1oraVJusLQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
+			}
+		]
+	},
+	{
+		"title": "Doll - Fullbody",
+		"date": "2025-03",
+		"timestamp": 1742236339,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/41da881e-fed1-42f3-89a6-a619e7d1d221",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "oc"],
+		"images": [
+			{
+				"width": 1503,
+				"height": 3000,
+				"id": "tzMdx3pvN1or4MIXO9dLAQEVXuNTq1YMhcsRkdtWe7bzgBmG"
+			}
+		]
+	},
+	{
+		"title": "Doll in a dress",
+		"date": "2025-03",
+		"timestamp": 1741971558,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/9723a882-db1f-4eb2-a366-4f75aab71c53",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "oc"],
+		"images": [
+			{
+				"width": 1500,
+				"height": 2000,
+				"id": "tzMdx3pvN1ortMgaS1pvN1orMdXpi82RQIauYHUADJ3wqGZn"
+			}
+		]
+	},
+	{
+		"title": "Doll",
+		"date": "2025-03",
+		"timestamp": 1741776840,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/891d7e1a-0634-4c5a-91be-1feb27e11210",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "lineart", "oc"],
+		"images": [
+			{
+				"alt": "Lineart",
+				"width": 1311,
+				"height": 1500,
+				"id": "tzMdx3pvN1orIoeFr1a8mdt3bYGKWcLHOnwaTv9PU7pSBqEk"
+			},
+			{
+				"alt": "Sketch",
+				"width": 1368,
+				"height": 1500,
+				"id": "tzMdx3pvN1ork4h4xXI4QPgKGFaViSByLUYmCsuk8oINnAeO"
+			}
+		]
+	},
+	{
+		"title": "Random Character",
+		"date": "2025-03",
+		"timestamp": 1740939422,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/2a90f8b7-e5df-4eff-b000-b59493b1ac92",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "oc"],
+		"images": [
+			{
+				"width": 1780,
+				"height": 3590,
+				"id": "tzMdx3pvN1orHSuXyvUwgLFDyRjaUVZ47qOfvT0XBNiPJY1k"
+			}
+		]
+	},
+	{
+		"title": "Mion Different Hairstyles",
+		"date": "2025-03",
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmJkfB79QWbDkcLdFwP2pfK8enm4UQgANH6jhi",
+		"tags": ["fanart", "sketch", "characterdesign", "process"],
+		"images": [
+			{
+				"width": 2000,
+				"height": 1500,
+				"id": "tzMdx3pvN1orbrXHXKS9a1yngA5sJ6NWpwoF2RYZx3GPbSQO"
+			}
+		]
+	},
+	{
+		"title": "Mion Doll Gift",
+		"date": "2025-02",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/569217ba-cbce-4e17-b021-8b99d7812221",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["fanart", "sketch", "characterdesign"],
+		"images": [
+			{
+				"width": 1250,
+				"height": 1525,
+				"id": "tzMdx3pvN1orvsxyl6iMTyObBPzitVLZcd916YHhUKsJofup"
+			}
+		]
+	},
+	{
+		"title": "Mion in Barcelona",
+		"date": "2025-02",
+		"timestamp": 1740336896,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://cara.app/post/36cce6f3-021d-47d8-a8b9-f7a81827314e",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 1359,
+				"height": 520,
+				"id": "tzMdx3pvN1orZJu5vxEiqO37avS20UgbE9Qmtj6lHJupnXTs"
+			}
+		]
+	},
+	{
+		"title": "Mion Character Sheet - Sketch",
+		"date": "2025-02",
+		"timestamp": 1739397803,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/1158821248",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			},
+			{
+				"url": "https://cara.app/post/ca1fa75c-9601-441e-8054-cd0d4d6bb1f2",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 2000,
+				"height": 1500,
+				"id": "tzMdx3pvN1oraIoNtVQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
+			}
+		]
+	},
+	{
+		"title": "Succubus",
+		"date": "2024-12",
+		"software": "Infinite Painter",
+		"mature": true,
+		"tags": ["characterdesign", "sketch", "oc", "mature"],
+		"images": [
+			{
+				"width": 1413,
+				"height": 1267,
+				"id": "tzMdx3pvN1orkoBaZRI4QPgKGFaViSByLUYmCsuk8oINnAeO"
+			}
+		]
+	},
+	{
+		"title": "Office Lady",
+		"date": "2024-12",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "oc"],
+		"images": [
+			{
+				"width": 1300,
+				"height": 1500,
+				"id": "tzMdx3pvN1oraiZXmFQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
+			}
+		]
+	},
+	{
+		"title": "How I Attended an All-Guy's Mixer - Male Ver.",
+		"date": "2024-10",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/1115078943",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "fanart"],
+		"images": [
+			{
+				"width": 1500,
+				"height": 2000,
+				"id": "tzMdx3pvN1orRXTTGcbxF8zySVIoG5mnA4YlMuDUaWZrep0t"
+			}
+		]
+	},
+	{
+		"title": "How I Attended an All-Guy's Mixer - Female Ver.",
+		"date": "2024-10",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/1113979209",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"tags": ["characterdesign", "lineart", "fanart"],
+		"images": [
+			{
+				"width": 1500,
+				"height": 2000,
+				"id": "tzMdx3pvN1oraRqmdKQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
+			}
+		]
+	},
+	{
+		"title": "Ranma 1/2",
+		"date": "2024-10",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/Ranma-1-2-1111031594",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 1616,
+				"height": 1333,
+				"id": "tzMdx3pvN1oravRmZ05Q4dKFf8TY2riwNlJIM7DgoyX5bZEU"
+			}
+		]
+	},
+	{
+		"title": "Okita Souji - Kimono",
+		"date": "2024-10",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 1485,
+				"height": 1100,
+				"id": "tzMdx3pvN1oravTj0ffQ4dKFf8TY2riwNlJIM7DgoyX5bZEU"
+			}
+		]
+	},
+	{
+		"title": "Mion Sonozaki x Yu-Gi-Oh!",
+		"date": "2024-07",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 1475,
+				"height": 1475,
+				"id": "tzMdx3pvN1orKDylJebLoSsurWAChcITlEaiwv1gPUYM2bdB"
+			}
+		]
+	},
+	{
+		"title": "Mion Sonozaki (Birthday) - Higurashi",
+		"date": "2024-07",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/Happy-Birthday-Mion-July-10-2024-1073311034",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			},
+			{
+				"url": "https://cara.app/post/7a7f0e28-1abe-4486-b574-87983407becf",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orvEVpdzMTyObBPzitVLZcd916YHhUKsJofup3"
+			}
+		]
+	},
+	{
+		"title": "Kita Ikuyo - Bocchi the Rock",
+		"date": "2024-07",
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsm79Jsz2p47TdVjXxGn2IO9ZyHuW3oRQD6PBEs",
+		"tags": ["characterdesign", "fullcolor", "fanart", "process"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 960,
+				"id": "tzMdx3pvN1orNtsTHLkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+			}
+		]
+	},
+	{
+		"title": "Kita Ikuyo - Bocchi the Rock",
+		"date": "2024-06",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/Ikuyo-Kita-Bocchi-the-Rock-Lineart-1069145665",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"process": "hVqhIiDgTUsmYOvl4Daa2Cfm7iQdsKVgMcOSbpRh8vwtlzFk",
+		"tags": ["characterdesign", "sketch", "lineart", "process"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 960,
+				"id": "tzMdx3pvN1orQ82UYkl7yKvuxbHaMi3jPztSTY5GcoW4n2Ed"
+			}
+		]
+	},
+	{
+		"title": "Angel",
+		"date": "2024-06",
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsme3t6tP047NSJniZUo3FACTK2X85Lmx0DBWtP",
+		"tags": ["characterdesign", "sketch", "oc", "process"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 960,
+				"id": "tzMdx3pvN1orvycP4GMTyObBPzitVLZcd916YHhUKsJofup3"
+			}
+		]
+	},
+	{
+		"title": "Mion Sonozaki - Higurashi",
+		"date": "2024-06",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/Mion-Sonozaki-1064170364",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"process": "hVqhIiDgTUsmuQ81mPQxfOjhZCK6a9UwXxqn5QJTBpld438k",
+		"tags": ["characterdesign", "sketch", "fanart", "process"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 960,
+				"id": "tzMdx3pvN1or4ybLU8dLAQEVXuNTq1YMhcsRkdtWe7bzgBmG"
+			}
+		]
+	},
+	{
+		"title": "More Random Characters",
+		"date": "2024-05",
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmcRtu1rOeB80koQa3g5if6IYtS7wHPRcEz1lv",
+		"tags": ["characterdesign", "sketch", "oc", "process"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1200,
+				"id": "tzMdx3pvN1orO8pPgLL9roz9sRbFP8dkiIMBV3tynpeLuaWc"
+			}
+		]
+	},
+	{
+		"title": "Rose - The Wrong Way to Use Healing Magic",
+		"date": "2024-05",
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsm5WBwBkjWj70YgDBLdqUVxXPsnwCNQSo8Eeav",
+		"tags": ["characterdesign", "sketch", "fanart", "process"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orxobQrLPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
+			}
+		]
+	},
+	{
+		"title": "May Warmup",
+		"date": "2024-05",
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmPvgfYVHQxTuRhg5jyIY093SorcmvaLUEGpBn",
+		"tags": ["characterdesign", "sketch", "oc", "process"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orSey1HEtY14h3wv27AukRFeyBQjlpM968Iart"
+			}
+		]
+	},
+	{
+		"title": "Cute Piercings",
+		"date": "2024-04",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "oc"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orx9RXBdPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
+			}
+		]
+	},
+	{
+		"title": "Face Practice",
+		"date": "2024-04",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "oc"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orwb7sLFAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
+			}
+		]
+	},
+	{
+		"title": "Okita Souji (Lying) - Fate/Grand Order",
+		"date": "2024-04",
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmoobeGLCET8PwM3Ht96xWZGrgNzApm1JiODe7",
+		"mature": true,
+		"tags": ["characterdesign", "fanart", "sketch", "mature", "process"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1oro7WzOn1HafuSt8OUIsphTQjnmBDNygVzZPGR"
+			}
+		]
+	},
+	{
+		"title": "Okita Souji (Sitting) - Fate/Grand Order",
+		"date": "2024-04",
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmcjJpTkOeB80koQa3g5if6IYtS7wHPRcEz1lv",
+		"mature": true,
+		"tags": ["characterdesign", "fanart", "sketch", "mature", "process"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orFPT7A8wRS4XrnzCJRBM5W0ljcyEZ7bv8gP9a"
+			}
+		]
+	},
+	{
+		"title": "Character Practice",
+		"date": "2024-03",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "oc", "sketch"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orS01Ow3ctY14h3wv27AukRFeyBQjlpM968Iar"
+			}
+		]
+	},
+	{
+		"title": "Lara Sketch - Rune Factory",
+		"date": "2024-03",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fanart", "sketch"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1or2G2h8RNQ6fISvmysFdqaKr7nXVtLujAhkb5o"
+			}
+		]
+	},
+	{
+		"title": "Mion Sonozaki - Higurashi",
+		"date": "2024-03",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fanart", "lineart"],
+		"images": [
+			{
+				"width": 782,
+				"height": 1073,
+				"id": "tzMdx3pvN1orSI8OfAtY14h3wv27AukRFeyBQjlpM968Iart"
+			}
+		]
+	},
+	{
+		"title": "Mion Sonozaki - Higurashi",
+		"date": "2024-03",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fanart", "lineart"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1or2IROlkfNQ6fISvmysFdqaKr7nXVtLujAhkb5"
+			}
+		]
+	},
+	{
+		"title": "Maike - Fractured Divergence",
+		"date": "2024-03",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "oc", "gamejam"],
+		"images": [
+			{
+				"width": 680,
+				"height": 1080,
+				"id": "tzMdx3pvN1orNulzIakNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+			}
+		]
+	},
+	{
+		"title": "Franz - Fractured Divergence",
+		"date": "2024-03",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "oc", "gamejam"],
+		"images": [
+			{
+				"width": 680,
+				"height": 1080,
+				"id": "tzMdx3pvN1orvS1NnJMTyObBPzitVLZcd916YHhUKsJofup3"
+			}
+		]
+	},
+	{
+		"title": " CG #3 - Fractured Divergence",
+		"date": "2024-03",
+		"software": "Infinite Painter",
+		"tags": ["cg", "oc", "gamejam"],
+		"images": [
+			{
+				"width": 960,
+				"height": 540,
+				"id": "tzMdx3pvN1orYat3iRuxCPzR1oWSVlyLftIBncZTq3UGuwjh"
+			}
+		]
+	},
+	{
+		"title": "CG #2 - Fractured Divergence",
+		"date": "2024-03",
+		"software": "Infinite Painter",
+		"tags": ["cg", "oc", "gamejam"],
+		"images": [
+			{
+				"width": 960,
+				"height": 540,
+				"id": "tzMdx3pvN1orXPRWX0VaYRvPrUjnfxe4JNABy6gzpq05StIO"
+			}
+		]
+	},
+	{
+		"title": "CG #1 - Fractured Divergence",
+		"date": "2024-03",
+		"software": "Infinite Painter",
+		"tags": ["cg", "oc", "gamejam"],
+		"images": [
+			{
+				"width": 960,
+				"height": 540,
+				"id": "tzMdx3pvN1orHEcTrM6UwgLFDyRjaUVZ47qOfvT0XBNiPJY1"
+			}
+		]
+	},
+	{
+		"title": "Kurisu Makise - Steins;Gate",
+		"date": "2024-02",
+		"software": "Infinite Painter",
+		"tags": ["fullcolor", "fanart", "characterdesign"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orppSoDL0lMkqWoswmzSIg8diEXKYvnaxCVbAf"
+			}
+		]
+	},
+	{
+		"title": "Kita Ikuyo",
+		"date": "2024-01",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/Ikuyo-Kita-Fanart-1009265067",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"tags": ["fullcolor", "fanart", "characterdesign"],
+		"images": [
+			{
+				"width": 902,
+				"height": 1080,
+				"id": "tzMdx3pvN1orA289upohdiwm5QsVNXF2YIbk834MyglrPGpa"
+			}
+		]
+	},
+	{
+		"title": "Marin Kitagawa - Commission",
+		"date": "2024-01",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/My-Dress-Up-Darling-Fanart-1007491907",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"tags": ["fullcolor", "fanart", "characterdesign"],
+		"images": [
+			{
+				"width": 1200,
+				"height": 860,
+				"id": "tzMdx3pvN1ormvvAaYekrLAxdD5vwS0ZGWBayl3V2qMXcnNU"
+			}
+		]
+	},
+	{
+		"title": "Mion with Qin F21 Pro",
+		"date": "2023-12",
+		"software": "Infinite Painter",
+		"tags": ["fullcolor", "fanart", "characterdesign"],
+		"images": [
+			{
+				"width": 960,
+				"height": 1280,
+				"id": "tzMdx3pvN1ort8AqdnpvN1orMdXpi82RQIauYHUADJ3wqGZn"
+			}
+		]
+	},
+	{
+		"title": "Mion with Qin F21 Pro Sketch/Lineart",
+		"date": "2023-12",
+		"software": "Infinite Painter",
+		"tags": ["sketch", "lineart", "fanart", "characterdesign"],
+		"images": [
+			{
+				"width": 1440,
+				"height": 960,
+				"id": "tzMdx3pvN1orxR8cUNPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
+			}
+		]
+	},
+	{
+		"title": "Clip Studio Practice #2",
+		"date": "2023-07",
+		"software": "CLIP STUDIO PAINT",
+		"tags": ["sketch", "oc", "characterdesign"],
+		"images": [
+			{
+				"width": 500,
+				"height": 500,
+				"id": "tzMdx3pvN1orN3LjgfkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+			}
+		]
+	},
+	{
+		"title": "Clip Studio Practice #1",
+		"date": "2023-07",
+		"software": "CLIP STUDIO PAINT",
+		"tags": ["sketch", "oc", "characterdesign"],
+		"images": [
+			{
+				"width": 500,
+				"height": 500,
+				"id": "tzMdx3pvN1ora4aHrzQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
+			}
+		]
+	},
+	{
+		"title": "A Noble Pursuit - CG",
+		"date": "2022-12",
+		"software": "Infinite Painter",
+		"tags": ["cg", "fullcolor", "oc", "gamejam"],
+		"images": [
+			{
+				"width": 960,
+				"height": 540,
+				"id": "tzMdx3pvN1orA6Ekw2ohdiwm5QsVNXF2YIbk834MyglrPGpa"
+			}
+		]
+	},
+	{
+		"title": "Benjamin",
+		"date": "2022-12",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "oc", "gamejam"],
+		"images": [
+			{
+				"width": 590,
+				"height": 1000,
+				"id": "tzMdx3pvN1orvlcoxRMTyObBPzitVLZcd916YHhUKsJofup3"
+			}
+		]
+	},
+	{
+		"title": "Ubel",
+		"date": "2022-12",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "oc", "gamejam"],
+		"images": [
+			{
+				"width": 590,
+				"height": 1000,
+				"id": "tzMdx3pvN1or2WXB2WNQ6fISvmysFdqaKr7nXVtLujAhkb5o"
+			}
+		]
+	},
+	{
+		"title": "Alexandra",
+		"date": "2022-12",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "oc", "gamejam"],
+		"images": [
+			{
+				"width": 590,
+				"height": 1000,
+				"id": "tzMdx3pvN1orQsDeGFl7yKvuxbHaMi3jPztSTY5GcoW4n2Ed"
+			}
+		]
+	},
+	{
+		"title": "Hulderic",
+		"date": "2022-12",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "oc", "gamejam"],
+		"images": [
+			{
+				"width": 590,
+				"height": 1000,
+				"id": "tzMdx3pvN1ormJzu8LDekrLAxdD5vwS0ZGWBayl3V2qMXcnN"
+			}
+		]
+	},
+	{
+		"title": "Carolina",
+		"date": "2022-12",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "oc", "gamejam"],
+		"images": [
+			{
+				"width": 590,
+				"height": 1000,
+				"id": "tzMdx3pvN1orc5fBNcpmOW4z8Sl0eAh6kgX9ivIpZPbNVfw5"
+			}
+		]
+	},
+	{
+		"title": "Irie Color",
+		"date": "2022-10",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1orZlzzS1EiqO37avS20UgbE9Qmtj6lHJupnXTs"
+			}
+		]
+	},
+	{
+		"title": "Ducks",
+		"date": "2022-09",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "animal"],
+		"images": [
+			{
+				"width": 1000,
+				"height": 590,
+				"id": "tzMdx3pvN1orkcsNoHI4QPgKGFaViSByLUYmCsuk8oINnAeO"
+			}
+		]
+	},
+	{
+		"title": "Keiichi Color",
+		"date": "2022-09",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1or8ac7VuKOdA9KwNQxfuegjSapr5bWYmc416ql"
+			}
+		]
+	},
+	{
+		"title": "Oryou Color",
+		"date": "2022-09",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1orwWM20HAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
+			}
+		]
+	},
+	{
+		"title": "Takano Color",
+		"date": "2022-09",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1ortcZ7X8pvN1orMdXpi82RQIauYHUADJ3wqGZn"
+			}
+		]
+	},
+	{
+		"title": "Rena Color",
+		"date": "2022-08",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/Ryuugu-Rena-color-9314569060",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"mature": true,
+		"tags": ["characterdesign", "fullcolor", "mature", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1or59SOQ3hJzDvMidtYkhVLRbN1Ha6IKE9rqOn4"
+			}
+		]
+	},
+	{
+		"title": "Shion Color",
+		"date": "2022-08",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1orey8It75vIyBpKt5lowOLfug0RbC6iqEYZa8c"
+			}
+		]
+	},
+	{
+		"title": "Chie Color",
+		"date": "2022-08",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1orNuCeG6kNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+			}
+		]
+	},
+	{
+		"title": "Rika Color",
+		"date": "2022-08",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1or2MJEBTNQ6fISvmysFdqaKr7nXVtLujAhkb5o"
+			}
+		]
+	},
+	{
+		"title": "Hanyuu Color",
+		"date": "2022-08",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1or7KNJVOsWBVwjtRUnz0qioHduM2ZcJgFDm93Y"
+			}
+		]
+	},
+	{
+		"title": "Satoko Color",
+		"date": "2022-08",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/Houjou-Satoko-color-931166747",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1orSiiwRetY14h3wv27AukRFeyBQjlpM968Iart"
+			}
+		]
+	},
+	{
+		"title": "Mion Color",
+		"date": "2022-08",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 617,
+				"height": 1000,
+				"id": "tzMdx3pvN1orNqQxiPkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+			}
+		]
+	},
+	{
+		"title": "Satoshi Sketch",
+		"date": "2022-08",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 990,
+				"id": "tzMdx3pvN1orHEe0Au7UwgLFDyRjaUVZ47qOfvT0XBNiPJY1"
+			}
+		]
+	},
+	{
+		"title": "Ooishi Sketch",
+		"date": "2022-08",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 990,
+				"id": "tzMdx3pvN1or8p4XIqKOdA9KwNQxfuegjSapr5bWYmc416ql"
+			}
+		]
+	},
+	{
+		"title": "Tomitake Sketch",
+		"date": "2022-08",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1orsxTta4iFPEVsNiLaABOdCZRxU6Tyhq2zmGe3"
+			}
+		]
+	},
+	{
+		"title": "Irie Sketch",
+		"date": "2022-08",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1orALE7sDohdiwm5QsVNXF2YIbk834MyglrPGpa"
+			}
+		]
+	},
+	{
+		"title": "Keiichi Sketch",
+		"date": "2022-07",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1orNhCEo6kNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+			}
+		]
+	},
+	{
+		"title": "Mion's Birthday",
+		"date": "2022-07",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/Mion-Sonozaki-Birthday-923781589",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1or42sBV5ydLAQEVXuNTq1YMhcsRkdtWe7bzgBm"
+			}
+		]
+	},
+	{
+		"title": "Rena Sketch",
+		"date": "2022-07",
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/Rena-Sketch-921637601",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"mature": true,
+		"tags": ["characterdesign", "sketch", "mature", "fanart"],
+		"images": [
+			{
+				"width": 600,
+				"height": 971,
+				"id": "tzMdx3pvN1or1GnXt7hHWdGIrxvn7oUQXhjzyCV0PKELqpcD"
+			}
+		]
+	},
+	{
+		"title": "Oryou Sketch",
+		"date": "2022-06",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 450,
+				"height": 728,
+				"id": "tzMdx3pvN1orkeTdZNI4QPgKGFaViSByLUYmCsuk8oINnAeO"
+			}
+		]
+	},
+	{
+		"title": "Takano Sketch",
+		"date": "2022-06",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 450,
+				"height": 728,
+				"id": "tzMdx3pvN1orJaibFtON06xkHrg8wtXTEG1zC5a7pWF9ePYS"
+			}
+		]
+	},
+	{
+		"title": "Shion Sketch",
+		"date": "2022-06",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 450,
+				"height": 728,
+				"id": "tzMdx3pvN1ornFbhZyHJyt3SXIUTVu5BcmiQgqR0kLFalCx7"
+			}
+		]
+	},
+	{
+		"title": "Mion | Catch the Beat",
+		"date": "2022-06",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "fanart"],
+		"images": [
+			{
+				"width": 1238,
+				"height": 1942,
+				"id": "tzMdx3pvN1or4jQqFfdLAQEVXuNTq1YMhcsRkdtWe7bzgBmG"
+			}
+		]
+	},
+	{
+		"title": "Chie Sketch",
+		"date": "2022-05",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 450,
+				"height": 728,
+				"id": "tzMdx3pvN1orRsWQZ7xF8zySVIoG5mnA4YlMuDUaWZrep0tE"
+			}
+		]
+	},
+	{
+		"title": "Rika Sketch",
+		"date": "2022-05",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 450,
+				"height": 729,
+				"id": "tzMdx3pvN1orPKdbmcXTcmMk1ujYgZdsSJalXPUBy5ixFfn6"
+			}
+		]
+	},
+	{
+		"title": "Hanyuu Sketch",
+		"date": "2022-05",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 450,
+				"height": 729,
+				"id": "tzMdx3pvN1orzpnW2b8c0oQ3OSMb5gU4FG8sWVJhxZpIae7z"
+			}
+		]
+	},
+	{
+		"title": "Satoko Sketch",
+		"date": "2022-05",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 450,
+				"height": 729,
+				"id": "tzMdx3pvN1or9KovRSIz3auW18eTAHymbKZ5s60NokIQi7rL"
+			}
+		]
+	},
+	{
+		"title": "Mion Sketch",
+		"date": "2022-04",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "sketch", "fanart"],
+		"images": [
+			{
+				"width": 450,
+				"height": 729,
+				"id": "tzMdx3pvN1or8She91nKOdA9KwNQxfuegjSapr5bWYmc416q"
+			}
+		]
+	},
+	{
+		"title": "Shiba Inu",
+		"date": "2022-04",
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "animal"],
+		"images": [
+			{
+				"width": 2160,
+				"height": 2160,
+				"id": "tzMdx3pvN1or6m6R5pYfG6eMTDA328Bkz1vsXpVKw5SqtUgh"
+			}
+		]
+	},
+	{
+		"title": "Sculpture",
+		"date": "2022-02",
+		"software": "Infinite Painter",
+		"tags": ["fullcolor"],
+		"images": [
+			{
+				"width": 2160,
+				"height": 2160,
+				"id": "tzMdx3pvN1orRY56P7xF8zySVIoG5mnA4YlMuDUaWZrep0tE"
+			}
+		]
+	},
+	{
+		"title": "Dread",
+		"date": "2021-10",
+		"timestamp": 1634653726,
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "oc"],
+		"images": [
+			{
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orpy6mTY0lMkqWoswmzSIg8diEXKYvnaxCVbAf"
+			}
+		]
+	},
+	{
+		"title": "Subway",
+		"date": "2021-09",
+		"timestamp": 1632847184,
+		"software": "Infinite Painter",
+		"tags": ["characterdesign", "fullcolor", "oc"],
+		"images": [
+			{
+				"width": 1000,
+				"height": 600,
+				"id": "tzMdx3pvN1orJzpZX1eON06xkHrg8wtXTEG1zC5a7pWF9ePY"
+			}
+		]
+	},
+	{
+		"title": "Some Character",
+		"date": "2021-05",
+		"timestamp": 1622114323,
+		"software": "Infinite Painter",
+		"external": [
+			{
+				"url": "https://www.deviantart.com/thejayduck/art/Some-Character-1-881177115",
+				"alt": "DeviantArt",
+				"icon": "ri-image-fill"
+			}
+		],
+		"tags": ["characterdesign", "fullcolor", "oc"],
+		"images": [
+			{
+				"width": 1280,
+				"height": 1280,
+				"id": "tzMdx3pvN1orMFCaTyN7TYrOdMZuEqLy0XpNjw5vcbthQkVi"
+			}
+		]
+	},
+	{
+		"title": "Archive",
+		"description": "Collection of mostly unfinished / old drawings starting from 2019.",
+		"date": "2019",
+		"software": "MediBang Paint Pro, Infinite Painter",
+		"tags": [
+			"characterdesign",
+			"fullcolor",
+			"oc",
+			"fanart",
+			"sketch",
+			"lineart",
+			"animal"
+		],
+		"images": [
+			{
+				"alt": "Random Character 1",
+				"width": 2297,
+				"height": 2893,
+				"id": "tzMdx3pvN1ord10PmoG58BARDI0NlkeVypPLSYQUOcTCbgXM"
+			},
+			{
+				"alt": "Random Character 2",
+				"width": 1005,
+				"height": 1080,
+				"id": "tzMdx3pvN1orl7HI33Zvibc4SB30g5CzvFJUs9T26Wepdy7t"
+			},
+			{
+				"alt": "Charlotte",
+				"width": 1920,
+				"height": 1080,
+				"id": "tzMdx3pvN1orQM7NHIfl7yKvuxbHaMi3jPztSTY5GcoW4n2E"
+			},
+			{
+				"alt": "Random Character 3",
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orBM70MY6XijcL0lJmKQZ8PMf46eARhsND1vG2"
+			},
+			{
+				"alt": "Chibi Self",
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1or59DIX5RJzDvMidtYkhVLRbN1Ha6IKE9rqOn4"
+			},
+			{
+				"alt": "Random Character 4",
+				"width": 720,
+				"height": 1280,
+				"id": "tzMdx3pvN1oreQQnwp5vIyBpKt5lowOLfug0RbC6iqEYZa8c"
+			},
+			{
+				"alt": "Goat Character",
+				"width": 490,
+				"height": 542,
+				"id": "tzMdx3pvN1oroB2o3jL1HafuSt8OUIsphTQjnmBDNygVzZPG"
+			},
+			{
+				"alt": "Duck",
+				"width": 512,
+				"height": 512,
+				"id": "tzMdx3pvN1orBW09mM6XijcL0lJmKQZ8PMf46eARhsND1vG2"
+			},
+			{
+				"alt": "Elf",
+				"width": 708,
+				"height": 718,
+				"id": "tzMdx3pvN1orHj7FziUwgLFDyRjaUVZ47qOfvT0XBNiPJY1k"
+			},
+			{
+				"alt": "Random Character 5",
+				"width": 934,
+				"height": 1120,
+				"id": "tzMdx3pvN1orlI99ACvibc4SB30g5CzvFJUs9T26Wepdy7tn"
+			},
+			{
+				"alt": "Random Character 6",
+				"width": 1920,
+				"height": 1920,
+				"id": "tzMdx3pvN1orM9E0Iq7TYrOdMZuEqLy0XpNjw5vcbthQkViB"
+			},
+			{
+				"alt": "Miku",
+				"width": 720,
+				"height": 1280,
+				"id": "tzMdx3pvN1ortMB2tGpvN1orMdXpi82RQIauYHUADJ3wqGZn"
+			},
+			{
+				"alt": "Random Characters",
+				"width": 923,
+				"height": 496,
+				"id": "tzMdx3pvN1oroJVEej1HafuSt8OUIsphTQjnmBDNygVzZPGR"
+			},
+			{
+				"alt": "Random Character 7",
+				"width": 1360,
+				"height": 2043,
+				"id": "tzMdx3pvN1orTCL6AmyGPA9x2paoO0efYzwFKUcQTm4hNBry"
+			},
+			{
+				"alt": "Random Character 8",
+				"width": 1280,
+				"height": 720,
+				"id": "tzMdx3pvN1orKttlYm9bLoSsurWAChcITlEaiwv1gPUYM2bd"
+			},
+			{
+				"alt": "Random Character 9",
+				"width": 1280,
+				"height": 720,
+				"id": "tzMdx3pvN1orVnHm87xT5KXFd30k24YNUEnbjwvhOAIiWgfQ"
+			},
+			{
+				"alt": "Bunch of Doodles",
+				"width": 1820,
+				"height": 1920,
+				"id": "tzMdx3pvN1oravsJ1lOQ4dKFf8TY2riwNlJIM7DgoyX5bZEU"
+			},
+			{
+				"alt": "Robot Character",
+				"width": 559,
+				"height": 540,
+				"id": "tzMdx3pvN1or2XegvkNQ6fISvmysFdqaKr7nXVtLujAhkb5o"
+			},
+			{
+				"alt": "Witch",
+				"width": 1460,
+				"height": 2370,
+				"id": "tzMdx3pvN1orzbpMEHH8c0oQ3OSMb5gU4FG8sWVJhxZpIae7"
+			},
+			{
+				"alt": "Mascot Character (Jan 2021)",
+				"width": 1350,
+				"height": 955,
+				"id": "tzMdx3pvN1or1AR8PqhHWdGIrxvn7oUQXhjzyCV0PKELqpcD"
+			},
+			{
+				"alt": "Random Bald Character (May 2021)",
+				"width": 599,
+				"height": 999,
+				"id": "tzMdx3pvN1orDtUTX1geTGnWwlr6K2HvgQ9xItOZFiapzcsS"
+			},
+			{
+				"alt": "Robot (May 2021)",
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orKgCzqNbLoSsurWAChcITlEaiwv1gPUYM2bdB"
+			},
+			{
+				"alt": "Doodles (Jul 2021)",
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1oroBkWrJQ1HafuSt8OUIsphTQjnmBDNygVzZPG"
+			},
+			{
+				"alt": "Character (Nov 2021)",
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orNGRAnKkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+			},
+			{
+				"alt": "Character (Nov 2021)",
+				"width": 1000,
+				"height": 571,
+				"id": "tzMdx3pvN1orIxHqbqa8mdt3bYGKWcLHOnwaTv9PU7pSBqEk"
+			},
+			{
+				"alt": "Beanie",
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orNaQ6AUPkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0"
+			},
+			{
+				"alt": "Smoke",
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orvsVSlQcMTyObBPzitVLZcd916YHhUKsJofup"
+			},
+			{
+				"alt": "Nun",
+				"width": 1080,
+				"height": 1080,
+				"id": "tzMdx3pvN1orZShIveEiqO37avS20UgbE9Qmtj6lHJupnXTs"
+			},
+			{
+				"alt": "Random Character 10 (Aug 2022)",
+				"width": 630,
+				"height": 529,
+				"id": "tzMdx3pvN1ordruVPzG58BARDI0NlkeVypPLSYQUOcTCbgXM"
+			},
+			{
+				"alt": "Random Character 11 (Jan 2023)",
+				"width": 1024,
+				"height": 1024,
+				"id": "tzMdx3pvN1orNqHgVVkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+			},
+			{
+				"alt": "Random Character 12 (Feb 2023)",
+				"width": 695,
+				"height": 1024,
+				"id": "tzMdx3pvN1orl7HOroAvibc4SB30g5CzvFJUs9T26Wepdy7t"
+			},
+			{
+				"alt": "Random Characters 13 (Feb 2023)",
+				"width": 1024,
+				"height": 1024,
+				"id": "tzMdx3pvN1ortSVoE1pvN1orMdXpi82RQIauYHUADJ3wqGZn"
+			},
+			{
+				"alt": "Random Characters 14 (Apr 2023)",
+				"width": 568,
+				"height": 1000,
+				"id": "tzMdx3pvN1orKJesXObLoSsurWAChcITlEaiwv1gPUYM2bdB"
+			},
+			{
+				"alt": "Random Characters 15 (May 2024)",
+				"width": 1395,
+				"height": 837,
+				"id": "tzMdx3pvN1or7lKBjrsWBVwjtRUnz0qioHduM2ZcJgFDm93Y"
+			},
+			{
+				"alt": "Random Characters 15 (Jul 2024)",
+				"width": 852,
+				"height": 1500,
+				"id": "tzMdx3pvN1orNaF5UKekNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0"
+			},
+			{
+				"alt": "Random Characters 16 (Jul 2024)",
+				"width": 1189,
+				"height": 746,
+				"id": "tzMdx3pvN1or1S3AGEhHWdGIrxvn7oUQXhjzyCV0PKELqpcD"
+			},
+			{
+				"alt": "Characters (Jul 2024)",
+				"width": 1038,
+				"height": 656,
+				"id": "tzMdx3pvN1oreDbX0z5vIyBpKt5lowOLfug0RbC6iqEYZa8c"
+			},
+			{
+				"alt": "Soldier (Aug 2024)",
+				"width": 930,
+				"height": 1050,
+				"id": "tzMdx3pvN1orAh2ymE4ohdiwm5QsVNXF2YIbk834MyglrPGp"
+			},
+			{
+				"alt": "Vampire (Aug 2024)",
+				"width": 2000,
+				"height": 2000,
+				"id": "tzMdx3pvN1orZxhttYEiqO37avS20UgbE9Qmtj6lHJupnXTs"
+			},
+			{
+				"alt": "Scar (Aug 2024)",
+				"width": 2000,
+				"height": 2000,
+				"id": "tzMdx3pvN1or7Sd67LsWBVwjtRUnz0qioHduM2ZcJgFDm93Y"
+			},
+			{
+				"alt": "Blushing Girl (Nov 2024)",
+				"width": 1732,
+				"height": 1732,
+				"id": "tzMdx3pvN1orOA2tt39roz9sRbFP8dkiIMBV3tynpeLuaWcO"
+			},
+			{
+				"alt": "Spider-Man (Feb 2025)",
+				"width": 2000,
+				"height": 1500,
+				"id": "tzMdx3pvN1or6Ux9aZYfG6eMTDA328Bkz1vsXpVKw5SqtUgh"
+			}
+		]
+	}
 ]
