@@ -1,5 +1,27 @@
 [
 	{
+		"title": "Random Character Sketch",
+		"date": "2025-06",
+		"timestamp": 1750798896,
+		"software": "Infinite Painter",
+		"process": "hVqhIiDgTUsmokDb0IfCET8PwM3Ht96xWZGrgNzApm1JiODe",
+		"external": [
+			{
+				"url": "https://cara.app/post/90eb6ee4-4fe1-4c2c-a3e3-811a92c61048",
+				"alt": "Cara",
+				"icon": "ri-copyright-fill"
+			}
+		],
+		"tags": ["characterdesign", "oc", "sketch"],
+		"images": [
+			{
+				"width": 2048,
+				"height": 2048,
+				"id": "tzMdx3pvN1orojC4Mf1HafuSt8OUIsphTQjnmBDNygVzZPGR"
+			}
+		]
+	},
+	{
 		"title": "[WIP] Yuuka Run - Blue Archive",
 		"date": "2025-06",
 		"description": "Trying out more motion heavy animations.",
