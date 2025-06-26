@@ -12,7 +12,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "oc", "sketch", "process"],
+		"tags": ["characterdesign", "oc", "sketch"],
 		"images": [
 			{
 				"width": 2048,
@@ -61,9 +61,9 @@
 		"images": [
 			{
 				"animated": true,
-				"width": 1726,
-				"height": 1080,
-				"id": "tzMdx3pvN1orXeDstvVaYRvPrUjnfxe4JNABy6gzpq05StIO"
+				"width": 2048,
+				"height": 2048,
+				"id": "tzMdx3pvN1orMIqXVf7TYrOdMZuEqLy0XpNjw5vcbthQkViB"
 			}
 		]
 	},
@@ -80,7 +80,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "lineart", "fanart", "process"],
+		"tags": ["characterdesign", "lineart", "fanart"],
 		"images": [
 			{
 				"width": 1500,
@@ -101,7 +101,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "lineart", "fanart", "process"],
+		"tags": ["characterdesign", "lineart", "fanart"],
 		"images": [
 			{
 				"width": 2000,
@@ -128,7 +128,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "lineart", "fanart", "process"],
+		"tags": ["characterdesign", "lineart", "fanart"],
 		"images": [
 			{
 				"width": 1570,
@@ -149,7 +149,7 @@
 				"icon": "ri-youtube-fill"
 			}
 		],
-		"tags": ["characterdesign", "lineart", "fanart", "process"],
+		"tags": ["characterdesign", "lineart", "fanart"],
 		"images": [
 			{
 				"width": 2000,
@@ -186,7 +186,7 @@
 				"icon": "ri-youtube-fill"
 			}
 		],
-		"tags": ["characterdesign", "sketch", "fullcolor", "fanart", "process"],
+		"tags": ["characterdesign", "sketch", "fullcolor", "fanart"],
 		"images": [
 			{
 				"width": 1570,
@@ -227,7 +227,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "lineart", "oc", "process", "fullcolor"],
+		"tags": ["characterdesign", "lineart", "oc", "fullcolor"],
 		"images": [
 			{
 				"alt": "Full Color",
@@ -256,7 +256,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "lineart", "oc", "process"],
+		"tags": ["characterdesign", "lineart", "oc"],
 		"images": [
 			{
 				"width": 1500,
@@ -278,7 +278,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "fullcolor", "oc", "process"],
+		"tags": ["characterdesign", "fullcolor", "oc"],
 		"images": [
 			{
 				"width": 2000,
@@ -325,7 +325,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "lineart", "oc", "process"],
+		"tags": ["characterdesign", "lineart", "oc"],
 		"images": [
 			{
 				"width": 1685,
@@ -347,7 +347,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "lineart", "oc", "process"],
+		"tags": ["characterdesign", "lineart", "oc"],
 		"images": [
 			{
 				"width": 680,
@@ -369,7 +369,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "sketch", "oc", "process", "animation"],
+		"tags": ["characterdesign", "sketch", "oc", "animation"],
 		"images": [
 			{
 				"animated": true,
@@ -392,7 +392,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "sketch", "oc", "process", "animation"],
+		"tags": ["characterdesign", "sketch", "oc", "animation"],
 		"images": [
 			{
 				"animated": true,
@@ -415,7 +415,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "sketch", "oc", "process", "animation"],
+		"tags": ["characterdesign", "sketch", "oc", "animation"],
 		"images": [
 			{
 				"animated": true,
@@ -444,7 +444,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "lineart", "fullcolor", "oc", "process"],
+		"tags": ["characterdesign", "lineart", "fullcolor", "oc"],
 		"images": [
 			{
 				"alt": "Colored",
@@ -591,7 +591,7 @@
 				"icon": "ri-copyright-fill"
 			}
 		],
-		"tags": ["characterdesign", "fullcolor", "process", "oc"],
+		"tags": ["characterdesign", "fullcolor", "oc"],
 		"images": [
 			{
 				"width": 1211,
@@ -717,7 +717,7 @@
 		"date": "2025-03",
 		"software": "Infinite Painter",
 		"process": "hVqhIiDgTUsmJkfB79QWbDkcLdFwP2pfK8enm4UQgANH6jhi",
-		"tags": ["fanart", "sketch", "characterdesign", "process"],
+		"tags": ["fanart", "sketch", "characterdesign"],
 		"images": [
 			{
 				"width": 2000,
@@ -798,7 +798,7 @@
 		"date": "2024-12",
 		"software": "Infinite Painter",
 		"mature": true,
-		"tags": ["characterdesign", "sketch", "oc", "mature"],
+		"tags": ["characterdesign", "sketch", "oc"],
 		"images": [
 			{
 				"width": 1413,
@@ -936,7 +936,7 @@
 		"date": "2024-07",
 		"software": "Infinite Painter",
 		"process": "hVqhIiDgTUsm79Jsz2p47TdVjXxGn2IO9ZyHuW3oRQD6PBEs",
-		"tags": ["characterdesign", "fullcolor", "fanart", "process"],
+		"tags": ["characterdesign", "fullcolor", "fanart"],
 		"images": [
 			{
 				"width": 1080,
@@ -957,7 +957,7 @@
 			}
 		],
 		"process": "hVqhIiDgTUsmYOvl4Daa2Cfm7iQdsKVgMcOSbpRh8vwtlzFk",
-		"tags": ["characterdesign", "sketch", "lineart", "process"],
+		"tags": ["characterdesign", "sketch", "lineart"],
 		"images": [
 			{
 				"width": 1080,
@@ -971,7 +971,7 @@
 		"date": "2024-06",
 		"software": "Infinite Painter",
 		"process": "hVqhIiDgTUsme3t6tP047NSJniZUo3FACTK2X85Lmx0DBWtP",
-		"tags": ["characterdesign", "sketch", "oc", "process"],
+		"tags": ["characterdesign", "sketch", "oc"],
 		"images": [
 			{
 				"width": 1080,
@@ -992,7 +992,7 @@
 			}
 		],
 		"process": "hVqhIiDgTUsmuQ81mPQxfOjhZCK6a9UwXxqn5QJTBpld438k",
-		"tags": ["characterdesign", "sketch", "fanart", "process"],
+		"tags": ["characterdesign", "sketch", "fanart"],
 		"images": [
 			{
 				"width": 1080,
@@ -1006,7 +1006,7 @@
 		"date": "2024-05",
 		"software": "Infinite Painter",
 		"process": "hVqhIiDgTUsmcRtu1rOeB80koQa3g5if6IYtS7wHPRcEz1lv",
-		"tags": ["characterdesign", "sketch", "oc", "process"],
+		"tags": ["characterdesign", "sketch", "oc"],
 		"images": [
 			{
 				"width": 1080,
@@ -1020,7 +1020,7 @@
 		"date": "2024-05",
 		"software": "Infinite Painter",
 		"process": "hVqhIiDgTUsm5WBwBkjWj70YgDBLdqUVxXPsnwCNQSo8Eeav",
-		"tags": ["characterdesign", "sketch", "fanart", "process"],
+		"tags": ["characterdesign", "sketch", "fanart"],
 		"images": [
 			{
 				"width": 1080,
@@ -1034,7 +1034,7 @@
 		"date": "2024-05",
 		"software": "Infinite Painter",
 		"process": "hVqhIiDgTUsmPvgfYVHQxTuRhg5jyIY093SorcmvaLUEGpBn",
-		"tags": ["characterdesign", "sketch", "oc", "process"],
+		"tags": ["characterdesign", "sketch", "oc"],
 		"images": [
 			{
 				"width": 1080,
@@ -1075,7 +1075,7 @@
 		"software": "Infinite Painter",
 		"process": "hVqhIiDgTUsmoobeGLCET8PwM3Ht96xWZGrgNzApm1JiODe7",
 		"mature": true,
-		"tags": ["characterdesign", "fanart", "sketch", "mature", "process"],
+		"tags": ["characterdesign", "fanart", "sketch"],
 		"images": [
 			{
 				"width": 1080,
@@ -1090,7 +1090,7 @@
 		"software": "Infinite Painter",
 		"process": "hVqhIiDgTUsmcjJpTkOeB80koQa3g5if6IYtS7wHPRcEz1lv",
 		"mature": true,
-		"tags": ["characterdesign", "fanart", "sketch", "mature", "process"],
+		"tags": ["characterdesign", "fanart", "sketch"],
 		"images": [
 			{
 				"width": 1080,
@@ -1476,7 +1476,7 @@
 			}
 		],
 		"mature": true,
-		"tags": ["characterdesign", "fullcolor", "mature", "fanart"],
+		"tags": ["characterdesign", "fullcolor", "fanart"],
 		"images": [
 			{
 				"width": 600,
@@ -1667,7 +1667,7 @@
 			}
 		],
 		"mature": true,
-		"tags": ["characterdesign", "sketch", "mature", "fanart"],
+		"tags": ["characterdesign", "sketch", "fanart"],
 		"images": [
 			{
 				"width": 600,
