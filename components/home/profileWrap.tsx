@@ -72,8 +72,8 @@ export default function ProfileWrap() {
           <Link // links
             href="/links"
             passHref
-            aria-label="social links"
-            title="social links"
+            aria-label="additional links"
+            title="additional links"
           >
             <i className={getIcon("dots")} />
           </Link>
