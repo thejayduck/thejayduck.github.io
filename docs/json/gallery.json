@@ -1,5 +1,31 @@
 [
   {
+    "title": "Miyu - Blue Archive",
+    "date": "2025-08",
+    "timestamp": 1754487719,
+    "software": "Infinite Painter",
+    "external": [
+      {
+        "url": "https://cara.app/post/3881765a-2fdf-4847-b95f-e4c083625146",
+        "alt": "Cara",
+        "icon": "ri-copyright-fill"
+      },
+      {
+        "url": "https://youtu.be/e2-_RAtiVpE",
+        "alt": "Youtube - Timelapse",
+        "icon": "ri-youtube-fill"
+      }
+    ],
+    "tags": ["characterdesign", "lineart", "fanart"],
+    "images": [
+      {
+        "width": 1548,
+        "height": 1548,
+        "id": "tzMdx3pvN1oraLSqHdQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
+      }
+    ]
+  },
+  {
     "title": "Stretching Tomboy",
     "date": "2025-07",
     "timestamp": 1753710062,
