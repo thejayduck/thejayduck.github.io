@@ -1,5 +1,31 @@
 [
   {
+    "title": "Students of Abydos - Blue Archive",
+    "date": "2025-08",
+    "timestamp": 1755193347,
+    "software": "Infinite Painter",
+    "external": [
+      {
+        "url": "https://cara.app/post/67560daf-f1de-4f95-a8f1-0864dcb0bc83",
+        "alt": "Cara",
+        "icon": "ri-copyright-fill"
+      },
+      {
+        "url": "https://youtu.be/2g2q30-GLs4",
+        "alt": "Youtube - Timelapse",
+        "icon": "ri-youtube-fill"
+      }
+    ],
+    "tags": ["characterdesign", "lineart", "fanart"],
+    "images": [
+      {
+        "width": 1975,
+        "height": 1500,
+        "id": "tzMdx3pvN1orOjIepd9roz9sRbFP8dkiIMBV3tynpeLuaWcO"
+      }
+    ]
+  },
+  {
     "title": "Miyu - Blue Archive",
     "date": "2025-08",
     "timestamp": 1754487719,
