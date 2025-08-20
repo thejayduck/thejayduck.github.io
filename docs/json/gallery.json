@@ -1,5 +1,48 @@
 [
   {
+    "title": "Hina - Blue Archive",
+    "date": "2025-08",
+    "description": "Perspective Practice",
+    "timestamp": 1755649647,
+    "software": "Infinite Painter",
+    "external": [
+      {
+        "url": "https://cara.app/post/e09b5d1f-019a-4b32-86af-4e3ec302090e",
+        "alt": "Cara",
+        "icon": "ri-copyright-fill"
+      }
+    ],
+    "tags": ["characterdesign", "sketch", "fanart"],
+    "images": [
+      {
+        "width": 1975,
+        "height": 1500,
+        "id": "tzMdx3pvN1ory5A2Dgnlo5GcZKTfVtb0qNiz8JmBM7I1URa6"
+      }
+    ]
+  },
+  {
+    "title": "Sleeping Character",
+    "date": "2025-08",
+    "timestamp": 1755380407,
+    "software": "Infinite Painter",
+    "external": [
+      {
+        "url": "https://cara.app/post/82944a2c-c025-4b5c-bf8e-68f5d628167d",
+        "alt": "Cara",
+        "icon": "ri-copyright-fill"
+      }
+    ],
+    "tags": ["characterdesign", "sketch", "oc"],
+    "images": [
+      {
+        "width": 1975,
+        "height": 1500,
+        "id": "tzMdx3pvN1orKG0iRcbLoSsurWAChcITlEaiwv1gPUYM2bdB"
+      }
+    ]
+  },
+  {
     "title": "Students of Abydos - Blue Archive",
     "date": "2025-08",
     "timestamp": 1755193347,
