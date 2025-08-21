@@ -57,16 +57,16 @@ export default function Projects() {
                   href="https://github.com/thejayduck/"
                   aria-label="Github profile link"
                 >
-                  GitHub profile
+                  GitHub
                 </Link>{" "}
                 or{" "}
                 <Link
                   href="https://codeberg.org/TheJayDuck"
                   aria-label="Codeberg profile link"
                 >
-                  Codeberg profile
-                </Link>
-                . Feel free to check them out!
+                  Codeberg
+                </Link>{" "}
+                profile. Feel free to check them out!
               </p>
             </blockquote>
           </CardPanel>

@@ -2,6 +2,7 @@ import styles from "../styles/Gallery.module.scss";
 
 import { GetServerSideProps } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 
@@ -110,6 +111,19 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
                 <i className={getIcon("error")} /> All of the drawings down
                 below are downscaled and compressed! <strong>DO NOT</strong>{" "}
                 redistribute, print, or use without explicit permission.
+                <br />
+                <i className={getIcon("error")} /> I do not actively post my art
+                outside of this page,{" "}
+                <Link target="_blank" href="https://cara.app/thejayduck">
+                  Cara
+                </Link>{" "}
+                and{" "}
+                <Link
+                  target="_blank"
+                  href="https://www.youtube.com/@therealjayduck"
+                >
+                  YouTube.
+                </Link>
               </p>
               <p>
                 <i className={getIcon("newIndicator")} /> Recently added

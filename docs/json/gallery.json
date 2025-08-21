@@ -1,5 +1,26 @@
 [
   {
+    "title": "Tachibana Nozomi - Blue Archive",
+    "date": "2025-08",
+    "timestamp": 1755727579,
+    "software": "Infinite Painter",
+    "external": [
+      {
+        "url": "https://cara.app/post/14b7ec3d-110a-4b79-8754-9260a9de35c8",
+        "alt": "Cara",
+        "icon": "ri-copyright-fill"
+      }
+    ],
+    "tags": ["characterdesign", "sketch", "fanart"],
+    "images": [
+      {
+        "width": 1975,
+        "height": 1500,
+        "id": "tzMdx3pvN1orkNrZpQI4QPgKGFaViSByLUYmCsuk8oINnAeO"
+      }
+    ]
+  },
+  {
     "title": "Hina - Blue Archive",
     "date": "2025-08",
     "description": "Perspective Practice",
@@ -2045,7 +2066,7 @@
   },
   {
     "title": "Archive",
-    "description": "Collection of mostly unfinished / old drawings starting from 2019.",
+    "description": "Collection of mostly scrapped / old drawings starting from 2019.",
     "date": "2019",
     "software": "MediBang Paint Pro, Infinite Painter",
     "tags": [
@@ -2303,6 +2324,12 @@
         "width": 1732,
         "height": 1732,
         "id": "tzMdx3pvN1orOA2tt39roz9sRbFP8dkiIMBV3tynpeLuaWcO"
+      },
+      {
+        "alt": "Spider-Man (Feb 2025)",
+        "width": 2000,
+        "height": 1500,
+        "id": "tzMdx3pvN1or6Ux9aZYfG6eMTDA328Bkz1vsXpVKw5SqtUgh"
       },
       {
         "alt": "Spider-Man (Feb 2025)",

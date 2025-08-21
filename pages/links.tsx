@@ -14,6 +14,7 @@ interface SocialLink {
   label: string;
   title: string;
   href: string;
+  old?: boolean;
 }
 
 const socialLinks: SocialLink[] = [
@@ -25,15 +26,9 @@ const socialLinks: SocialLink[] = [
   },
   {
     icon: getIcon("opensource"),
-    label: "codeberg (migration in progress)",
+    label: "codeberg",
     title: "Codeberg",
     href: "https://codeberg.org/TheJayDuck",
-  },
-  {
-    icon: getIcon("github"),
-    label: "github",
-    title: "Github",
-    href: "https://github.com/thejayduck/",
   },
   {
     icon: getIcon("itchio"),
@@ -47,12 +42,20 @@ const socialLinks: SocialLink[] = [
     title: "Cara",
     href: "https://cara.app/thejayduck",
   },
-  // {
-  //   icon: getIcon("deviantart"),
-  //   label: "deviantart (inactive)",
-  //   title: "DeviantArt (inactive)",
-  //   href: "https://www.deviantart.com/thejayduck",
-  // },
+  {
+    icon: getIcon("github"),
+    label: "github",
+    title: "Github",
+    href: "https://github.com/thejayduck/",
+    old: true,
+  },
+  {
+    icon: getIcon("deviantart"),
+    label: "deviantart",
+    title: "DeviantArt",
+    href: "https://www.deviantart.com/thejayduck",
+    old: true,
+  },
   // {
   //   icon: getIcon("instagram"),
   //   label: "instagram (inactive)",
@@ -63,6 +66,31 @@ const socialLinks: SocialLink[] = [
 
 export default function Links() {
   const { showToast } = useToast();
+  const linkMap = (links: SocialLink[]) =>
+    links.map((link) => (
+      <li key={link.label} className={styles.highlight}>
+        <Button
+          icon={link.icon}
+          label={link.label}
+          title={link.title}
+          href={link.href}
+          newPage={true}
+        />
+        <Button
+          icon={getIcon("link")}
+          label={`Copy link to ${link.label}`}
+          onClick={() => {
+            navigator.clipboard.writeText(link.href);
+            showToast(
+              "Link Copied!",
+              `The link to "${link.title}" has been copied to your clipboard.`,
+              getIcon("link")
+            );
+          }}
+          newPage={false}
+        />
+      </li>
+    ));
 
   return (
     <>
@@ -113,30 +141,11 @@ export default function Links() {
               />
             </li>
             <hr />
-            {socialLinks.map((link) => (
-              <li key={link.label} className={styles.highlight}>
-                <Button
-                  icon={link.icon}
-                  label={link.label}
-                  title={link.title}
-                  href={link.href}
-                  newPage={true}
-                />
-                <Button
-                  icon={getIcon("link")}
-                  label={`Copy link to ${link.label}`}
-                  onClick={() => {
-                    navigator.clipboard.writeText(link.href);
-                    showToast(
-                      "Link Copied!",
-                      `The link to "${link.title}" has been copied to your clipboard.`,
-                      getIcon("link")
-                    );
-                  }}
-                  newPage={false}
-                />
-              </li>
-            ))}
+            {linkMap(socialLinks.filter((link) => !link.old))}
+
+            <h3>Inactive Socials</h3>
+            {linkMap(socialLinks.filter((link) => link.old))}
+
             <h3>Homepage Redirects</h3>
 
             <li className={styles.highlight}>
