@@ -133,7 +133,7 @@ export default function GalleryItem({
               {entry.images.length > 2 && <span>{entry.images.length}</span>}
             </li>
           )}
-          {entry.process && (
+          {/* {entry.process && (
             <li>
               <i
                 title="Process Available"
@@ -142,10 +142,10 @@ export default function GalleryItem({
                 )} ri-fw ri-lg`}
               />
             </li>
-          )}
+          )} */}
         </ul>
 
-        {entry.process && (
+        {/* {entry.process && (
           <AnimatePresence>
             {hoveredImage === index && (
               <motion.video
@@ -163,7 +163,7 @@ export default function GalleryItem({
               </motion.video>
             )}
           </AnimatePresence>
-        )}
+        )} */}
       </figure>
     </div>
   );

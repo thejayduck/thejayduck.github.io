@@ -129,9 +129,9 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
                 <i className={getIcon("newIndicator")} /> Recently added
                 drawings
                 <br />
-                <i className={getIcon("recording")} /> Hover to play process
-                video
-                <br />
+                {/* <i className={getIcon("recording")} /> Hover to play process */}
+                {/* video */}
+                {/* <br /> */}
                 <i className={getIcon("stack")} /> Multiple images available
                 <br />
                 <i className={getIcon("censorship")} /> Sensitive content (hover
