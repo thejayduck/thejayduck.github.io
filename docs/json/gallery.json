@@ -1027,39 +1027,31 @@
     ]
   },
   {
-    "title": "How I Attended an All-Guy's Mixer - Male Ver.",
+    "title": "How I Attended an All-Guy's Mixer",
     "date": "2024-10",
     "software": "Infinite Painter",
     "external": [
       {
         "url": "https://www.deviantart.com/thejayduck/art/1115078943",
-        "alt": "DeviantArt",
+        "alt": "DeviantArt - Male Version",
+        "icon": "ri-image-fill"
+      },
+      {
+        "url": "https://www.deviantart.com/thejayduck/art/1113979209",
+        "alt": "DeviantArt - Female Version",
         "icon": "ri-image-fill"
       }
     ],
     "tags": ["characterdesign", "lineart", "fanart"],
     "images": [
       {
+        "alt": "Male Version",
         "width": 1500,
         "height": 2000,
         "id": "tzMdx3pvN1orRXTTGcbxF8zySVIoG5mnA4YlMuDUaWZrep0t"
-      }
-    ]
-  },
-  {
-    "title": "How I Attended an All-Guy's Mixer - Female Ver.",
-    "date": "2024-10",
-    "software": "Infinite Painter",
-    "external": [
+      },
       {
-        "url": "https://www.deviantart.com/thejayduck/art/1113979209",
-        "alt": "DeviantArt",
-        "icon": "ri-image-fill"
-      }
-    ],
-    "tags": ["characterdesign", "lineart", "fanart"],
-    "images": [
-      {
+        "alt": "Female Version",
         "width": 1500,
         "height": 2000,
         "id": "tzMdx3pvN1oraRqmdKQ4dKFf8TY2riwNlJIM7DgoyX5bZEUc"
@@ -1134,6 +1126,12 @@
         "width": 1080,
         "height": 1080,
         "id": "tzMdx3pvN1orvEVpdzMTyObBPzitVLZcd916YHhUKsJofup3"
+      },
+      {
+        "alt": "Sketch - 2022-03",
+        "width": 1080,
+        "height": 1080,
+        "id": "tzMdx3pvN1or2IROlkfNQ6fISvmysFdqaKr7nXVtLujAhkb5"
       }
     ]
   },
@@ -1148,24 +1146,9 @@
         "width": 1080,
         "height": 960,
         "id": "tzMdx3pvN1orNtsTHLkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
-      }
-    ]
-  },
-  {
-    "title": "Kita Ikuyo - Bocchi the Rock",
-    "date": "2024-06",
-    "software": "Infinite Painter",
-    "external": [
+      },
       {
-        "url": "https://www.deviantart.com/thejayduck/art/Ikuyo-Kita-Bocchi-the-Rock-Lineart-1069145665",
-        "alt": "DeviantArt",
-        "icon": "ri-image-fill"
-      }
-    ],
-    "process": "hVqhIiDgTUsmYOvl4Daa2Cfm7iQdsKVgMcOSbpRh8vwtlzFk",
-    "tags": ["characterdesign", "sketch", "lineart"],
-    "images": [
-      {
+        "alt": "Sketch (2024-06)",
         "width": 1080,
         "height": 960,
         "id": "tzMdx3pvN1orQ82UYkl7yKvuxbHaMi3jPztSTY5GcoW4n2Ed"
@@ -1345,19 +1328,6 @@
     ]
   },
   {
-    "title": "Mion Sonozaki - Higurashi",
-    "date": "2024-03",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "fanart", "lineart"],
-    "images": [
-      {
-        "width": 1080,
-        "height": 1080,
-        "id": "tzMdx3pvN1or2IROlkfNQ6fISvmysFdqaKr7nXVtLujAhkb5"
-      }
-    ]
-  },
-  {
     "title": "Maike - Fractured Divergence",
     "date": "2024-03",
     "software": "Infinite Painter",
@@ -1384,41 +1354,28 @@
     ]
   },
   {
-    "title": " CG #3 - Fractured Divergence",
+    "title": "CGs - Fractured Divergence",
     "date": "2024-03",
     "software": "Infinite Painter",
     "tags": ["cg", "oc", "gamejam"],
     "images": [
       {
-        "width": 960,
-        "height": 540,
-        "id": "tzMdx3pvN1orYat3iRuxCPzR1oWSVlyLftIBncZTq3UGuwjh"
-      }
-    ]
-  },
-  {
-    "title": "CG #2 - Fractured Divergence",
-    "date": "2024-03",
-    "software": "Infinite Painter",
-    "tags": ["cg", "oc", "gamejam"],
-    "images": [
-      {
-        "width": 960,
-        "height": 540,
-        "id": "tzMdx3pvN1orXPRWX0VaYRvPrUjnfxe4JNABy6gzpq05StIO"
-      }
-    ]
-  },
-  {
-    "title": "CG #1 - Fractured Divergence",
-    "date": "2024-03",
-    "software": "Infinite Painter",
-    "tags": ["cg", "oc", "gamejam"],
-    "images": [
-      {
+        "alt": "CG #1",
         "width": 960,
         "height": 540,
         "id": "tzMdx3pvN1orHEcTrM6UwgLFDyRjaUVZ47qOfvT0XBNiPJY1"
+      },
+      {
+        "alt": "CG #2",
+        "width": 960,
+        "height": 540,
+        "id": "tzMdx3pvN1orXPRWX0VaYRvPrUjnfxe4JNABy6gzpq05StIO"
+      },
+      {
+        "alt": "CG #3",
+        "width": 960,
+        "height": 540,
+        "id": "tzMdx3pvN1orYat3iRuxCPzR1oWSVlyLftIBncZTq3UGuwjh"
       }
     ]
   },
@@ -1479,21 +1436,13 @@
     "title": "Mion with Qin F21 Pro",
     "date": "2023-12",
     "software": "Infinite Painter",
-    "tags": ["fullcolor", "fanart", "characterdesign"],
+    "tags": ["fullcolor", "fanart", "characterdesign", "lineart", "sketch"],
     "images": [
       {
         "width": 960,
         "height": 1280,
         "id": "tzMdx3pvN1ort8AqdnpvN1orMdXpi82RQIauYHUADJ3wqGZn"
-      }
-    ]
-  },
-  {
-    "title": "Mion with Qin F21 Pro Sketch/Lineart",
-    "date": "2023-12",
-    "software": "Infinite Painter",
-    "tags": ["sketch", "lineart", "fanart", "characterdesign"],
-    "images": [
+      },
       {
         "width": 1440,
         "height": 960,
@@ -1609,12 +1558,18 @@
     "title": "Irie Color",
     "date": "2022-10",
     "software": "Infinite Painter",
-    "tags": ["characterdesign", "fullcolor", "fanart"],
+    "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {
         "width": 600,
         "height": 971,
         "id": "tzMdx3pvN1orZlzzS1EiqO37avS20UgbE9Qmtj6lHJupnXTs"
+      },
+      {
+        "alt": "Sketch (2022-08)",
+        "width": 600,
+        "height": 971,
+        "id": "tzMdx3pvN1orALE7sDohdiwm5QsVNXF2YIbk834MyglrPGpa"
       }
     ]
   },
@@ -1632,119 +1587,172 @@
     ]
   },
   {
-    "title": "Keiichi Color",
+    "title": "Keiichi",
     "date": "2022-09",
     "software": "Infinite Painter",
-    "tags": ["characterdesign", "fullcolor", "fanart"],
+    "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {
         "width": 600,
         "height": 971,
         "id": "tzMdx3pvN1or8ac7VuKOdA9KwNQxfuegjSapr5bWYmc416ql"
+      },
+      {
+        "alt": "Sketch (2022-07)",
+        "width": 600,
+        "height": 971,
+        "id": "tzMdx3pvN1orNhCEo6kNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
       }
     ]
   },
   {
-    "title": "Oryou Color",
+    "title": "Oryou",
     "date": "2022-09",
     "software": "Infinite Painter",
-    "tags": ["characterdesign", "fullcolor", "fanart"],
+    "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {
         "width": 600,
         "height": 971,
         "id": "tzMdx3pvN1orwWM20HAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
+      },
+      {
+        "alt": "Sketch (2022-06)",
+        "width": 450,
+        "height": 728,
+        "id": "tzMdx3pvN1orkeTdZNI4QPgKGFaViSByLUYmCsuk8oINnAeO"
       }
     ]
   },
   {
-    "title": "Takano Color",
+    "title": "Takano",
     "date": "2022-09",
     "software": "Infinite Painter",
-    "tags": ["characterdesign", "fullcolor", "fanart"],
+    "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {
         "width": 600,
         "height": 971,
         "id": "tzMdx3pvN1ortcZ7X8pvN1orMdXpi82RQIauYHUADJ3wqGZn"
+      },
+      {
+        "alt": "Sketch (2022-06)",
+        "width": 450,
+        "height": 728,
+        "id": "tzMdx3pvN1orJaibFtON06xkHrg8wtXTEG1zC5a7pWF9ePYS"
       }
     ]
   },
   {
-    "title": "Rena Color",
+    "title": "Rena",
     "date": "2022-08",
     "software": "Infinite Painter",
     "external": [
       {
         "url": "https://www.deviantart.com/thejayduck/art/Ryuugu-Rena-color-9314569060",
-        "alt": "DeviantArt",
+        "alt": "DeviantArt - Color",
+        "icon": "ri-image-fill"
+      },
+      {
+        "url": "https://www.deviantart.com/thejayduck/art/Rena-Sketch-921637601",
+        "alt": "DeviantArt - Sketch",
         "icon": "ri-image-fill"
       }
     ],
     "mature": true,
-    "tags": ["characterdesign", "fullcolor", "fanart"],
+    "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {
         "width": 600,
         "height": 971,
         "id": "tzMdx3pvN1or59SOQ3hJzDvMidtYkhVLRbN1Ha6IKE9rqOn4"
+      },
+      {
+        "alt": "Sketch (2022-07)",
+        "width": 600,
+        "height": 971,
+        "id": "tzMdx3pvN1or1GnXt7hHWdGIrxvn7oUQXhjzyCV0PKELqpcD"
       }
     ]
   },
   {
-    "title": "Shion Color",
+    "title": "Shion",
     "date": "2022-08",
     "software": "Infinite Painter",
-    "tags": ["characterdesign", "fullcolor", "fanart"],
+    "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {
         "width": 600,
         "height": 971,
         "id": "tzMdx3pvN1orey8It75vIyBpKt5lowOLfug0RbC6iqEYZa8c"
+      },
+      {
+        "alt": "Sketch (2022-06)",
+        "width": 450,
+        "height": 728,
+        "id": "tzMdx3pvN1ornFbhZyHJyt3SXIUTVu5BcmiQgqR0kLFalCx7"
       }
     ]
   },
   {
-    "title": "Chie Color",
+    "title": "Chie",
     "date": "2022-08",
     "software": "Infinite Painter",
-    "tags": ["characterdesign", "fullcolor", "fanart"],
+    "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {
         "width": 600,
         "height": 971,
         "id": "tzMdx3pvN1orNuCeG6kNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+      },
+      {
+        "alt": "Sketch (2022-05)",
+        "width": 450,
+        "height": 728,
+        "id": "tzMdx3pvN1orRsWQZ7xF8zySVIoG5mnA4YlMuDUaWZrep0tE"
       }
     ]
   },
   {
-    "title": "Rika Color",
+    "title": "Rika",
     "date": "2022-08",
     "software": "Infinite Painter",
-    "tags": ["characterdesign", "fullcolor", "fanart"],
+    "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {
         "width": 600,
         "height": 971,
         "id": "tzMdx3pvN1or2MJEBTNQ6fISvmysFdqaKr7nXVtLujAhkb5o"
+      },
+      {
+        "alt": "Sketch (2022-05)",
+        "width": 450,
+        "height": 729,
+        "id": "tzMdx3pvN1orPKdbmcXTcmMk1ujYgZdsSJalXPUBy5ixFfn6"
       }
     ]
   },
   {
-    "title": "Hanyuu Color",
+    "title": "Hanyuu",
     "date": "2022-08",
     "software": "Infinite Painter",
-    "tags": ["characterdesign", "fullcolor", "fanart"],
+    "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {
         "width": 600,
         "height": 971,
         "id": "tzMdx3pvN1or7KNJVOsWBVwjtRUnz0qioHduM2ZcJgFDm93Y"
+      },
+      {
+        "alt": "Sketch (2022-05)",
+        "width": 450,
+        "height": 729,
+        "id": "tzMdx3pvN1orzpnW2b8c0oQ3OSMb5gU4FG8sWVJhxZpIae7z"
       }
     ]
   },
   {
-    "title": "Satoko Color",
+    "title": "Satoko",
     "date": "2022-08",
     "software": "Infinite Painter",
     "external": [
@@ -1754,25 +1762,37 @@
         "icon": "ri-image-fill"
       }
     ],
-    "tags": ["characterdesign", "fullcolor", "fanart"],
+    "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {
         "width": 600,
         "height": 971,
         "id": "tzMdx3pvN1orSiiwRetY14h3wv27AukRFeyBQjlpM968Iart"
+      },
+      {
+        "alt": "Sketch (2022-05)",
+        "width": 450,
+        "height": 729,
+        "id": "tzMdx3pvN1or9KovRSIz3auW18eTAHymbKZ5s60NokIQi7rL"
       }
     ]
   },
   {
-    "title": "Mion Color",
+    "title": "Mion",
     "date": "2022-08",
     "software": "Infinite Painter",
-    "tags": ["characterdesign", "fullcolor", "fanart"],
+    "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {
         "width": 617,
         "height": 1000,
         "id": "tzMdx3pvN1orNqQxiPkNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
+      },
+      {
+        "alt": "Sketch (2022-04)",
+        "width": 450,
+        "height": 729,
+        "id": "tzMdx3pvN1or8She91nKOdA9KwNQxfuegjSapr5bWYmc416q"
       }
     ]
   },
@@ -1816,32 +1836,6 @@
     ]
   },
   {
-    "title": "Irie Sketch",
-    "date": "2022-08",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 600,
-        "height": 971,
-        "id": "tzMdx3pvN1orALE7sDohdiwm5QsVNXF2YIbk834MyglrPGpa"
-      }
-    ]
-  },
-  {
-    "title": "Keiichi Sketch",
-    "date": "2022-07",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 600,
-        "height": 971,
-        "id": "tzMdx3pvN1orNhCEo6kNGZ5y7iJLXqOmnTu3dlrDhQc8Yp0z"
-      }
-    ]
-  },
-  {
     "title": "Mion's Birthday",
     "date": "2022-07",
     "software": "Infinite Painter",
@@ -1862,66 +1856,6 @@
     ]
   },
   {
-    "title": "Rena Sketch",
-    "date": "2022-07",
-    "software": "Infinite Painter",
-    "external": [
-      {
-        "url": "https://www.deviantart.com/thejayduck/art/Rena-Sketch-921637601",
-        "alt": "DeviantArt",
-        "icon": "ri-image-fill"
-      }
-    ],
-    "mature": true,
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 600,
-        "height": 971,
-        "id": "tzMdx3pvN1or1GnXt7hHWdGIrxvn7oUQXhjzyCV0PKELqpcD"
-      }
-    ]
-  },
-  {
-    "title": "Oryou Sketch",
-    "date": "2022-06",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 450,
-        "height": 728,
-        "id": "tzMdx3pvN1orkeTdZNI4QPgKGFaViSByLUYmCsuk8oINnAeO"
-      }
-    ]
-  },
-  {
-    "title": "Takano Sketch",
-    "date": "2022-06",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 450,
-        "height": 728,
-        "id": "tzMdx3pvN1orJaibFtON06xkHrg8wtXTEG1zC5a7pWF9ePYS"
-      }
-    ]
-  },
-  {
-    "title": "Shion Sketch",
-    "date": "2022-06",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 450,
-        "height": 728,
-        "id": "tzMdx3pvN1ornFbhZyHJyt3SXIUTVu5BcmiQgqR0kLFalCx7"
-      }
-    ]
-  },
-  {
     "title": "Mion | Catch the Beat",
     "date": "2022-06",
     "software": "Infinite Painter",
@@ -1931,71 +1865,6 @@
         "width": 1238,
         "height": 1942,
         "id": "tzMdx3pvN1or4jQqFfdLAQEVXuNTq1YMhcsRkdtWe7bzgBmG"
-      }
-    ]
-  },
-  {
-    "title": "Chie Sketch",
-    "date": "2022-05",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 450,
-        "height": 728,
-        "id": "tzMdx3pvN1orRsWQZ7xF8zySVIoG5mnA4YlMuDUaWZrep0tE"
-      }
-    ]
-  },
-  {
-    "title": "Rika Sketch",
-    "date": "2022-05",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 450,
-        "height": 729,
-        "id": "tzMdx3pvN1orPKdbmcXTcmMk1ujYgZdsSJalXPUBy5ixFfn6"
-      }
-    ]
-  },
-  {
-    "title": "Hanyuu Sketch",
-    "date": "2022-05",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 450,
-        "height": 729,
-        "id": "tzMdx3pvN1orzpnW2b8c0oQ3OSMb5gU4FG8sWVJhxZpIae7z"
-      }
-    ]
-  },
-  {
-    "title": "Satoko Sketch",
-    "date": "2022-05",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 450,
-        "height": 729,
-        "id": "tzMdx3pvN1or9KovRSIz3auW18eTAHymbKZ5s60NokIQi7rL"
-      }
-    ]
-  },
-  {
-    "title": "Mion Sketch",
-    "date": "2022-04",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 450,
-        "height": 729,
-        "id": "tzMdx3pvN1or8She91nKOdA9KwNQxfuegjSapr5bWYmc416q"
       }
     ]
   },

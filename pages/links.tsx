@@ -56,12 +56,6 @@ const socialLinks: SocialLink[] = [
     href: "https://www.deviantart.com/thejayduck",
     old: true,
   },
-  // {
-  //   icon: getIcon("instagram"),
-  //   label: "instagram (inactive)",
-  //   title: "Instagram (inactive)",
-  //   href: "https://www.instagram.com/ardafevzi.armutcu/",
-  // },
 ];
 
 export default function Links() {
