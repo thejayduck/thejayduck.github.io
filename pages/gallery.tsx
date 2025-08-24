@@ -134,8 +134,8 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
                 <br />
                 <i className={getIcon("stack")} /> Multiple images available
                 <br />
-                <i className={getIcon("censorship")} /> Mature content (hover to
-                reveal)
+                <i className={getIcon("censorship")} /> Sensitive content (hover
+                to reveal)
               </p>
             </blockquote>
 
