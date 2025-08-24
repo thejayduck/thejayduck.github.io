@@ -97,9 +97,9 @@ export default function GalleryItem({
                   height={24}
                   loading="lazy"
                   quality={25}
-                  placeholder={`data:image/svg+xml;base64,${toBase64(
-                    shimmer(24, 24)
-                  )}`}
+                  // placeholder={`data:image/svg+xml;base64,${toBase64(
+                  //   shimmer(24, 24)
+                  // )}`}
                 />
               </li>
             ))}
