@@ -46,6 +46,7 @@ export function ImagePreview({
   const { showToast } = useToast();
 
   const router = useRouter();
+  const [debounceActive, setDebounceActive] = useState(true);
   const [firstLoad, setFirstLoad] = useState(true);
   const [[imageIndex, direction], setImageIndex] = useState([activeIndex, 0]);
   const currentImage = images[imageIndex];
@@ -56,9 +57,16 @@ export function ImagePreview({
   const scrollContainerRef = useRef<HTMLUListElement>(null);
 
   const debounceRouter = useDebouncedCallback((index: number) => {
+    if (!debounceActive) return;
     const imageRouter = galleryRouterSet(currentImageId, index);
     imageRouter.navigateTo("gallery", router);
   }, 300);
+
+  const outsideClickHandler = () => {
+    setDebounceActive(false);
+    debounceRouter.cancel();
+    onOutsideClick && onOutsideClick();
+  };
 
   useEffect(() => {
     if (currentImage.images.length <= 1) return;
@@ -226,7 +234,7 @@ export function ImagePreview({
       key="preview"
       className={styles.imagePreviewWrapper}
       onClick={() => {
-        if (!isDraggingPreview) onOutsideClick && onOutsideClick();
+        if (!isDraggingPreview) outsideClickHandler();
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -237,7 +245,7 @@ export function ImagePreview({
         <Button
           icon={getIcon("close")}
           label="Close Preview (Escape)"
-          onClick={onOutsideClick}
+          onClick={outsideClickHandler}
           newPage={false}
         />
       </div>
