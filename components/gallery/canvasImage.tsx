@@ -48,7 +48,7 @@ export function CanvasImage({
   setIsDraggingPreview,
 }: CanvasItemProps) {
   const { showToast } = useToast();
-
+  //? retain previous zoom value for double click
   const zoomFactor: number = 0.15;
   const canvasElementRef = useRef<HTMLCanvasElement>(null);
   const [zoomIndex, setZoomIndex] = useState(0);
