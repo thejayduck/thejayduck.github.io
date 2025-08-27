@@ -349,12 +349,12 @@ export function CanvasImage({
         drag={shortcuts}
         dragMomentum={false}
         whileDrag={{ cursor: "grabbing" }}
-        dragConstraints={{
-          top: -height / 2,
-          right: width / 2,
-          bottom: height / 2,
-          left: -width / 2,
-        }}
+        // dragConstraints={{
+        //   top: -height / 2,
+        //   right: width / 2,
+        //   bottom: height / 2,
+        //   left: -width / 2,
+        // }}
         onDragStart={() => {
           setIsDragging(true);
           setIsDraggingPreview(true);
@@ -373,7 +373,7 @@ export function CanvasImage({
         onDoubleClick={() => {
           if (zoomIndex != 0) {
             setZoomIndex(0);
-            setPosition({ x: 0, y: 0 });
+            // setPosition({ x: 0, y: 0 });
           } else {
             setZoomIndex(2);
           }
@@ -407,7 +407,7 @@ export function CanvasImage({
           y: position.y,
           rotate: rotation * 90,
         }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.15, ease: "linear" }}
       ></motion.canvas>
       {imageLoaded && !isDragging && (
         <AnimatePresence>
