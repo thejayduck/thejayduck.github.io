@@ -102,6 +102,7 @@ export default function GalleryItem({
               aspectRatio: `${entry.images[0].width} / ${entry.images[0].height}`, // used to keep consistent size when slideshow happens.
               position: "relative",
               width: "100%",
+              backgroundColor: "var(--tertiary)",
             }}
             key={hoveredImage}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -124,7 +125,7 @@ export default function GalleryItem({
             />
           </motion.div>
         </AnimatePresence>
-        {entry.images.length > 2 && (
+        {/* {entry.images.length > 2 && (
           <ul className={styles.stackPreviewWrapper}>
             {entry.images.slice(1, 4).map((image, i) => (
               <li key={i} className={styles.stackPreview}>
@@ -139,7 +140,7 @@ export default function GalleryItem({
               </li>
             ))}
           </ul>
-        )}
+        )} */}
         <figcaption>
           [{formatDate(entry.date)}]
           <br />
