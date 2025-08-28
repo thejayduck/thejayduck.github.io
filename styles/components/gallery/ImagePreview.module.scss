@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  cursor: not-allowed;
+  // cursor: not-allowed;
 
   z-index: var(--z-absolute);
 
@@ -318,6 +318,12 @@
         }
 
         .imageSection {
+          display: flex !important;
+          flex-direction: row;
+          overflow-x: auto;
+          overflow-y: hidden;
+          white-space: nowrap;
+          scroll-snap-type: x mandatory; // horizontal snapping
           img {
             // height: 500px;
             width: 100%;

@@ -65,6 +65,13 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .canvasWrapper {
+    height: 100%;
+    .canvasItem {
+      max-height: calc(-150px + 100vh);
+      margin: 0 !important;
+    }
+  }
   //! Disabled on smaller screens temporarily
   .controls {
     display: none;

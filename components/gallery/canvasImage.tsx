@@ -49,6 +49,7 @@ export function CanvasImage({
 }: CanvasItemProps) {
   const { showToast } = useToast();
   //? retain previous zoom value for double click
+  const isMobile = /iPhone|Android/i.test(navigator.userAgent);
   const zoomFactor: number = 0.15;
   const canvasElementRef = useRef<HTMLCanvasElement>(null);
   const [zoomIndex, setZoomIndex] = useState(0);
@@ -346,7 +347,7 @@ export function CanvasImage({
           filter: grayscale ? "grayscale(100%)" : "none",
         }}
         // Drag
-        drag={shortcuts}
+        drag={isMobile ? false : shortcuts}
         dragMomentum={false}
         whileDrag={{ cursor: "grabbing" }}
         // dragConstraints={{
@@ -371,6 +372,7 @@ export function CanvasImage({
         }}
         onClick={(e) => e.stopPropagation()}
         onDoubleClick={() => {
+          if (isMobile) return;
           if (zoomIndex != 0) {
             setZoomIndex(0);
             // setPosition({ x: 0, y: 0 });
