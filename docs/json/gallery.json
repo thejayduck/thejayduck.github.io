@@ -1,5 +1,26 @@
 [
   {
+    "title": "Hina - Blue Archive",
+    "date": "2025-09",
+    "timestamp": 1756924220,
+    "software": "Infinite Painter",
+    "external": [
+      {
+        "url": "https://cara.app/post/0a5eb6e0-98de-43a5-ae9e-020a24d8f1b9",
+        "alt": "Cara",
+        "icon": "ri-copyright-fill"
+      }
+    ],
+    "tags": ["characterdesign", "sketch", "fanart"],
+    "images": [
+      {
+        "width": 1500,
+        "height": 1975,
+        "id": "tzMdx3pvN1or54n6ztJzDvMidtYkhVLRbN1Ha6IKE9rqOn42"
+      }
+    ]
+  },
+  {
     "title": "Nozomi & Hikari Tachibana - Blue Archive",
     "date": "2025-08",
     "timestamp": 1756237837,
