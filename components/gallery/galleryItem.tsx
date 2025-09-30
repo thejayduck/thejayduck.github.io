@@ -30,6 +30,8 @@ export default function GalleryItem({
   const [hoveredImage, setHoveredImage] = useState<number>(0); // Index of the hovered image
   const processTooltipRef = useRef<HTMLDivElement>(null);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+  const [showMatureContent, setShowMatureContent] = useState(entry.mature);
+
   useEffect(() => {
     return () => {
       if (timer) clearInterval(timer as NodeJS.Timeout);
@@ -81,18 +83,18 @@ export default function GalleryItem({
         entry.images.length > 1 ? "Click to view images" : "Click to view image"
       }
       ref={processTooltipRef}
-      onClick={() => handleImageClick(index)}
+      onClick={() => (showMatureContent ? null : handleImageClick(index))}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={handleMouseLeave}
       onTouchStart={() => handleMouseEnter(index)}
     >
       {/* Sensitive Content Warning */}
-      {entry?.mature && (
+      {entry?.mature && showMatureContent == true && (
         <div className={styles.matureWarning}>
           <i className={getIcon("censorship")} />
           Content Warning
           <br />
-          Hover to View
+          <button onClick={() => setShowMatureContent(false)}>Show</button>
         </div>
       )}
       <figure>
@@ -125,22 +127,6 @@ export default function GalleryItem({
             />
           </motion.div>
         </AnimatePresence>
-        {/* {entry.images.length > 2 && (
-          <ul className={styles.stackPreviewWrapper}>
-            {entry.images.slice(1, 4).map((image, i) => (
-              <li key={i} className={styles.stackPreview}>
-                <Image
-                  src={getImageUrl(image.id)}
-                  alt={`Drawing ${entry.title} - Image ${i + 2}`}
-                  width={24}
-                  height={24}
-                  loading="lazy"
-                  quality={25}
-                />
-              </li>
-            ))}
-          </ul>
-        )} */}
         <figcaption>
           [{formatDate(entry.date)}]
           <br />
@@ -164,26 +150,6 @@ export default function GalleryItem({
             `${entry.images.length > 2 ? entry.images.length : ""}`
           )}
         </ul>
-
-        {/* {entry.process && (
-          <AnimatePresence>
-            {hoveredImage === index && (
-              <motion.video
-                className={styles.processVideo}
-                autoPlay
-                muted
-                loop
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <source src={getProcessUrl(entry.process)} type="video/mp4" />
-                The video tag is not supported in your browser.
-              </motion.video>
-            )}
-          </AnimatePresence>
-        )} */}
       </figure>
     </div>
   );
