@@ -46,12 +46,12 @@ export default function ProfileWrap() {
         </ul>
         <ul className={`cardItem ${styles.externalLinks}`}>
           <Link // github
-            href="https://github.com/thejayduck"
+            href="https://codeberg.org/TheJayDuck"
             passHref
-            aria-label="github"
-            title="github"
+            aria-label="codeberg"
+            title="codeberg"
           >
-            <i className={getIcon("github")} />
+            <i className={getIcon("opensource")} />
           </Link>
           <Link // itch.io
             href="https://thejayduck.itch.io/"
