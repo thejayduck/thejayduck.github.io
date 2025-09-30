@@ -113,7 +113,7 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
                 redistribute, print, or use without explicit permission.
                 <br />
                 <i className={getIcon("error")} /> I do not actively post my art
-                outside of this page,{" "}
+                outside of this <u>page</u>,{" "}
                 <Link target="_blank" href="https://cara.app/thejayduck">
                   Cara
                 </Link>{" "}
@@ -134,8 +134,9 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
                 {/* <br /> */}
                 <i className={getIcon("stack")} /> Multiple images available
                 <br />
-                <i className={getIcon("censorship")} /> Sensitive content (hover
-                to reveal)
+                <i className={getIcon("censorship")} /> Sensitive content
+                (work-in-progress, implementation might have inconsistencies
+                until finished)
               </p>
             </blockquote>
 

@@ -93,15 +93,15 @@
       border-radius: var(--border);
       overflow: hidden;
 
-      &:hover,
-      &:focus {
-        .stackPreviewWrapper {
-          opacity: 1;
-        }
-        .matureWarning {
-          opacity: 0;
-        }
-      }
+      // &:hover,
+      // &:focus {
+      //   .stackPreviewWrapper {
+      //     opacity: 1;
+      //   }
+      //   .matureWarning {
+      //     opacity: 0;
+      //   }
+      // }
 
       .stackPreviewWrapper {
         pointer-events: none;
@@ -147,7 +147,15 @@
         text-align: center;
         transition: 255ms;
 
-        pointer-events: none;
+        button {
+          cursor: pointer;
+          margin-top: var(--spacing-small);
+          border-radius: var(--border);
+          border: 0;
+          padding: var(--spacing-small) var(--spacing-normal);
+        }
+
+        // pointer-events: none;
 
         @supports (-webkit-appearance: none) {
           // for chromium
