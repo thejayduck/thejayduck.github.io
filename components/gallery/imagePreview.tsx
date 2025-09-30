@@ -28,14 +28,7 @@ import { useToast } from "../toashHandler";
 import { CanvasImage } from "./canvasImage";
 import IImagePreview from "./IImagePreview";
 
-const variants = {
-  initial: (direction: number) => ({
-    x: direction > 0 ? "50%" : "-50%",
-    scale: 1,
-    opacity: 0,
-  }),
-  animate: { x: 0, scale: 1, opacity: 1 },
-};
+// TODO improve image content warning management
 
 export function ImagePreview({
   images,
@@ -253,21 +246,9 @@ export function ImagePreview({
       {/* Preview */}
       <div className={styles.imagePreview}>
         <AnimatePresence initial={false}>
-          <motion.div
-            //! Key seems to break ref used in UL, animations are disabled until this issue is solved
-            // key={currentImage.images[0].id}
-            // // Animation
-            // variants={variants}
-            // custom={direction}
-            // initial="initial"
-            // animate="animate"
-            // transition={{
-            //   x: { type: "spring", stiffness: 300, damping: 30 },
-            //   opacity: { duration: 0.2 },
-            // }}
-            className={styles.imageSectionWrapper}
-          >
+          <motion.div className={styles.imageSectionWrapper}>
             {/* Indicator Dots */}
+            {/* // TODO improve indicator dots to fit different screen sizes, and overflowed posts. */}
             <AnimatePresence>
               {currentImage.images.length > 1 && !isDraggingPreview && (
                 <motion.div
@@ -353,14 +334,16 @@ export function ImagePreview({
             <ul>
               <li>
                 <i className={getIcon("createdDate")} /> Created:{" "}
-                {currentImage?.timestamp
-                  ? formatUnixTimestamp(currentImage.timestamp)
-                  : formatDate(currentImage?.date)}
+                <strong>
+                  {currentImage?.timestamp
+                    ? formatUnixTimestamp(currentImage.timestamp)
+                    : formatDate(currentImage?.date)}
+                </strong>
               </li>
               {currentImage?.software && (
                 <li>
                   <i className={getIcon("softwareUsed")} /> Software:{" "}
-                  {currentImage.software}
+                  <strong>{currentImage.software}</strong>
                 </li>
               )}
             </ul>
