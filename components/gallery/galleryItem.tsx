@@ -5,13 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useEffect, useRef, useState } from "react";
 
-import {
-  formatDate,
-  getIcon,
-  getImageUrl,
-  getProcessUrl,
-  isNewImage,
-} from "../../lib/helper";
+import { formatDate, getIcon, getImageUrl, isNewImage } from "../../lib/helper";
 import { shimmer, toBase64 } from "../imageShimmer";
 
 import IGalleryEntry from "./IGalleryEntry";
@@ -28,7 +22,6 @@ export default function GalleryItem({
   handleImageClick,
 }: GalleryItemProps) {
   const [hoveredImage, setHoveredImage] = useState<number>(0); // Index of the hovered image
-  const processTooltipRef = useRef<HTMLDivElement>(null);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
   const [showMatureContent, setShowMatureContent] = useState(entry.mature);
 
@@ -82,7 +75,6 @@ export default function GalleryItem({
       title={
         entry.images.length > 1 ? "Click to view images" : "Click to view image"
       }
-      ref={processTooltipRef}
       onClick={() => (showMatureContent ? null : handleImageClick(index))}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={handleMouseLeave}

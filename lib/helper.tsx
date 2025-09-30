@@ -122,12 +122,6 @@ export function getImageUrl(id: string) {
   return `${BASE_URL}${id}`;
 }
 
-export function getProcessUrl(id: string) {
-  const BASE_URL = "https://utfs.io/a/fal25h328h/";
-
-  return `${BASE_URL}${id}`;
-}
-
 export function isNewImage(timestamp: number): boolean {
   const currentTime = Math.floor(Date.now() / 1000);
   const threshold = 259200; // 3 days in seconds

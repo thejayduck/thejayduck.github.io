@@ -12,11 +12,9 @@ export const TagButtons = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const tagCollection = (item: (typeof gallery)[number]): string[] => {
-    return [
-      ...(item.tags ?? []),
-      // item.process ? "process" : null,
-      item.mature ? "mature" : null,
-    ].filter((tag) => typeof tag == "string");
+    return [...(item.tags ?? []), item.mature ? "mature" : null].filter(
+      (tag) => typeof tag == "string"
+    );
   };
 
   const toggleTag = (tag: string) => {
@@ -63,7 +61,6 @@ export const TagButtons = () => {
     lineart: ["Line Art", "ri-draft-fill"],
     mature: ["Mature", "ri-eye-off-fill"],
     oc: ["Original Character", "ri-user-fill"],
-    process: ["Process", "ri-loader-2-fill"],
     sketch: ["Sketch", "ri-sketching"],
   };
 

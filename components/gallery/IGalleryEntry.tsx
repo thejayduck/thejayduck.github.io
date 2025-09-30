@@ -19,7 +19,6 @@ export default interface IGalleryEntry {
   timestamp?: number;
   software?: string;
   external?: IExternal[];
-  process?: string;
   mature?: boolean;
   tags: string[];
   images: IImage[];
