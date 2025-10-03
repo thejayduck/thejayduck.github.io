@@ -1,6 +1,33 @@
 [
   {
     "title": "Tachibana Nozomi - Blue Archive",
+    "date": "2025-10",
+    "timestamp": 1759504833,
+    "software": "Infinite Painter",
+    "external": [
+      {
+        "url": "https://cara.app/post/f221de19-68a1-4b22-a35e-5239502cc333",
+        "alt": "Cara",
+        "icon": "ri-copyright-fill"
+      }
+    ],
+    "tags": ["characterdesign", "sketch", "fanart", "animation"],
+    "images": [
+      {
+        "animated": true,
+        "width": 1024,
+        "height": 1024,
+        "id": "tzMdx3pvN1ordZtWBuG58BARDI0NlkeVypPLSYQUOcTCbgXM"
+      },
+      {
+        "width": 1024,
+        "height": 1024,
+        "id": "tzMdx3pvN1orx6LElkPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
+      }
+    ]
+  },
+  {
+    "title": "Tachibana Nozomi - Blue Archive",
     "date": "2025-09",
     "timestamp": 1759006260,
     "software": "Infinite Painter",
