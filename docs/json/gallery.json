@@ -1,9 +1,30 @@
 [
   {
+    "title": "Bunny Girl",
+    "date": "2025-10",
+    "timestamp": 1760266746,
+    "software": "Infinite Painter",
+    "external": [
+      {
+        "url": "https://cara.app/post/7da9e2a8-068e-47c1-8582-2a9d3827d681",
+        "alt": "Cara",
+        "icon": "ri-copyright-fill"
+      }
+    ],
+    "tags": ["characterdesign", "sketch", "oc"],
+    "images": [
+      {
+        "width": 1500,
+        "height": 1975,
+        "id": "tzMdx3pvN1orxQusWyPqySONEKbhrf5R1Yjcu3oHMWXivVpk"
+      }
+    ]
+  },
+  {
     "title": "Tachibana Nozomi - Blue Archive",
     "date": "2025-10",
     "timestamp": 1759504833,
-    "software": "Infinite Painter",
+    "software": "Callipeg",
     "external": [
       {
         "url": "https://cara.app/post/f221de19-68a1-4b22-a35e-5239502cc333",
