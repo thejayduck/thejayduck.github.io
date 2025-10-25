@@ -64,21 +64,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 2px;
     right: 0;
     position: absolute;
     z-index: 100;
 
     .dot {
+      flex: 1;
       width: 8px;
       height: 8px;
-      border-radius: var(--border);
+      // border-radius: var(--border);
       background-color: var(--secondary);
+      opacity: 0.7;
       cursor: pointer;
       transition: all 255ms;
 
       &.activeDot {
-        height: 20px;
+        // height: 20px;
+        opacity: 1;
         background-color: white;
       }
     }

@@ -570,27 +570,6 @@
     ]
   },
   {
-    "title": "Tachibana Nozomi Army - Blue Archive [WIP]",
-    "date": "2025-05",
-    "timestamp": 1748109713,
-    "software": "Infinite Painter",
-    "external": [
-      {
-        "url": "https://www.youtube.com/watch?v=DsrMcsN99-A",
-        "alt": "Youtube - Timelapse",
-        "icon": "ri-youtube-fill"
-      }
-    ],
-    "tags": ["characterdesign", "lineart", "fanart"],
-    "images": [
-      {
-        "width": 2000,
-        "height": 2000,
-        "id": "tzMdx3pvN1or50UaPCJzDvMidtYkhVLRbN1Ha6IKE9rqOn42"
-      }
-    ]
-  },
-  {
     "title": "Tachibana Nozomi - Blue Archive",
     "date": "2025-05",
     "timestamp": 1747257683,
@@ -2003,45 +1982,6 @@
     ]
   },
   {
-    "title": "Satoshi Sketch",
-    "date": "2022-08",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 600,
-        "height": 990,
-        "id": "tzMdx3pvN1orHEe0Au7UwgLFDyRjaUVZ47qOfvT0XBNiPJY1"
-      }
-    ]
-  },
-  {
-    "title": "Ooishi Sketch",
-    "date": "2022-08",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 600,
-        "height": 990,
-        "id": "tzMdx3pvN1or8p4XIqKOdA9KwNQxfuegjSapr5bWYmc416ql"
-      }
-    ]
-  },
-  {
-    "title": "Tomitake Sketch",
-    "date": "2022-08",
-    "software": "Infinite Painter",
-    "tags": ["characterdesign", "sketch", "fanart"],
-    "images": [
-      {
-        "width": 600,
-        "height": 971,
-        "id": "tzMdx3pvN1orsxTta4iFPEVsNiLaABOdCZRxU6Tyhq2zmGe3"
-      }
-    ]
-  },
-  {
     "title": "Mion's Birthday",
     "date": "2022-07",
     "software": "Infinite Painter",
@@ -2340,6 +2280,24 @@
         "id": "tzMdx3pvN1ordruVPzG58BARDI0NlkeVypPLSYQUOcTCbgXM"
       },
       {
+        "alt": "Tomitake (Aug 2022)",
+        "width": 600,
+        "height": 971,
+        "id": "tzMdx3pvN1orsxTta4iFPEVsNiLaABOdCZRxU6Tyhq2zmGe3"
+      },
+      {
+        "alt": "Ooishi (Aug 2022)",
+        "width": 600,
+        "height": 990,
+        "id": "tzMdx3pvN1or8p4XIqKOdA9KwNQxfuegjSapr5bWYmc416ql"
+      },
+      {
+        "alt": "Satoshi (Aug 2022)",
+        "width": 600,
+        "height": 990,
+        "id": "tzMdx3pvN1orHEe0Au7UwgLFDyRjaUVZ47qOfvT0XBNiPJY1"
+      },
+      {
         "alt": "Random Character (Jan 2023)",
         "width": 1024,
         "height": 1024,
@@ -2448,6 +2406,12 @@
         "id": "tzMdx3pvN1orOA2tt39roz9sRbFP8dkiIMBV3tynpeLuaWcO"
       },
       {
+        "alt": "Colphne (Feb 2025)",
+        "width": 2000,
+        "height": 1500,
+        "id": "tzMdx3pvN1orexbAIr5vIyBpKt5lowOLfug0RbC6iqEYZa8c"
+      },
+      {
         "alt": "Spider-Man (Feb 2025)",
         "width": 2000,
         "height": 1500,
@@ -2466,10 +2430,34 @@
         "id": "tzMdx3pvN1orACwjbHohdiwm5QsVNXF2YIbk834MyglrPGpa"
       },
       {
+        "alt": "Teto (May 2025)",
+        "width": 2000,
+        "height": 2000,
+        "id": "tzMdx3pvN1or9y1avhz3auW18eTAHymbKZ5s60NokIQi7rLw"
+      },
+      {
         "alt": "Some Elf Character (May 2025)",
         "width": 1937,
         "height": 1937,
         "id": "tzMdx3pvN1orZj15ZcEiqO37avS20UgbE9Qmtj6lHJupnXTs"
+      },
+      {
+        "alt": "Nozomi Army (May 2025)",
+        "width": 2000,
+        "height": 2000,
+        "id": "tzMdx3pvN1or50UaPCJzDvMidtYkhVLRbN1Ha6IKE9rqOn42"
+      },
+      {
+        "alt": "Nozomi Outfit (Sep 2025)",
+        "width": 1500,
+        "height": 1975,
+        "id": "tzMdx3pvN1orOU5pag9roz9sRbFP8dkiIMBV3tynpeLuaWcO"
+      },
+      {
+        "alt": "Nozomi Bundle + Practice (Oct 2025)",
+        "width": 1548,
+        "height": 1548,
+        "id": "tzMdx3pvN1orGLYWzY2IBjyTmVkl0w89XOpUQH3e2YLhCcGt"
       }
     ]
   }
