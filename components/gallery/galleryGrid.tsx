@@ -1,6 +1,6 @@
 import styles from "../../styles/Gallery.module.scss";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { getIcon } from "../../lib/helper";
 
@@ -9,12 +9,16 @@ import IGalleryEntry from "./IGalleryEntry";
 
 interface IGalleryGridProps {
   handleImageClick: (id: string) => void;
+  handleRevealClick: (id: string) => void;
   gallery: IGalleryEntry[];
+  revealedImages: Record<string, boolean>;
 }
 
 export const GalleryGrid: React.FC<IGalleryGridProps> = ({
+  handleRevealClick,
   handleImageClick,
   gallery,
+  revealedImages,
 }) => {
   const galleryContainerRef = useRef<HTMLDivElement>(null);
 
@@ -58,6 +62,11 @@ export const GalleryGrid: React.FC<IGalleryGridProps> = ({
             entry={galleryEntry}
             index={index}
             handleImageClick={() => handleImageClick(galleryEntry.images[0].id)}
+            // Content Warning Filter
+            isMatureRevealed={!!revealedImages[galleryEntry.images[0].id]}
+            handleRevealClick={() =>
+              handleRevealClick(galleryEntry.images[0].id)
+            }
           />
         ))}
       </div>

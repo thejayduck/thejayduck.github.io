@@ -215,31 +215,6 @@
         height: 100px;
         border-radius: var(--border);
 
-        .matureWarning {
-          // TODO make a global style
-          position: absolute;
-
-          width: 100%;
-          height: 100%;
-
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-
-          font-weight: var(--font-bold);
-          text-align: center;
-
-          backdrop-filter: blur(16px) brightness(60%);
-          z-index: var(--z-normal);
-          pointer-events: none;
-          transition: 255ms;
-
-          i {
-            color: white;
-          }
-        }
-
         img {
           object-fit: cover;
           cursor: pointer;

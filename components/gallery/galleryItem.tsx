@@ -8,22 +8,28 @@ import { useEffect, useRef, useState } from "react";
 import { formatDate, getIcon, getImageUrl, isNewImage } from "../../lib/helper";
 import { shimmer, toBase64 } from "../imageShimmer";
 
+import ContentWarningOverlay from "./contentWarningOverlay";
 import IGalleryEntry from "./IGalleryEntry";
 
 interface GalleryItemProps {
   entry: IGalleryEntry;
   index: number;
-  handleImageClick: (index: number) => void;
+  handleImageClick: () => void;
+  // Content Warning related props
+  isMatureRevealed: boolean;
+  handleRevealClick: () => void;
 }
 
 export default function GalleryItem({
   entry,
   index,
   handleImageClick,
+  // Content Warning related props
+  isMatureRevealed,
+  handleRevealClick,
 }: GalleryItemProps) {
   const [hoveredImage, setHoveredImage] = useState<number>(0); // Index of the hovered image
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
-  const [showMatureContent, setShowMatureContent] = useState(entry.mature);
 
   useEffect(() => {
     return () => {
@@ -75,19 +81,16 @@ export default function GalleryItem({
       title={
         entry.images.length > 1 ? "Click to view images" : "Click to view image"
       }
-      onClick={() => (showMatureContent ? null : handleImageClick(index))}
+      onClick={(e) => {
+        handleImageClick();
+      }}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={handleMouseLeave}
       onTouchStart={() => handleMouseEnter(index)}
     >
       {/* Sensitive Content Warning */}
-      {entry?.mature && showMatureContent == true && (
-        <div className={styles.matureWarning}>
-          <i className={getIcon("censorship")} />
-          Content Warning
-          <br />
-          <button onClick={() => setShowMatureContent(false)}>Show</button>
-        </div>
+      {entry?.mature && !isMatureRevealed && (
+        <ContentWarningOverlay onReveal={() => handleRevealClick()} />
       )}
       <figure>
         <AnimatePresence mode="wait">
@@ -104,18 +107,20 @@ export default function GalleryItem({
             exit={{ opacity: 0, scale: 1.05 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
+            {/* TODO fix lazy loading  */}
             <Image
               // src={getImageUrl(entry.images[0].id)}
               src={getImageUrl(entry.images[hoveredImage].id)}
               alt={`Drawing ${entry.title}`}
               width={entry.images[0].width}
               height={entry.images[0].height}
-              loading="lazy"
               quality={50}
               style={{ objectFit: "contain" }} // ? use cover instead
               placeholder={`data:image/svg+xml;base64,${toBase64(
                 shimmer(entry.images[0].width, entry.images[0].height)
               )}`}
+              loading="lazy"
+              priority={false}
             />
           </motion.div>
         </AnimatePresence>

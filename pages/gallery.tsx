@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import CardPanel from "../components/cardPanel";
 import { GalleryGrid } from "../components/gallery/galleryGrid";
@@ -31,6 +31,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 export default function Gallery({ id, index }: { id: string; index: number }) {
   const router = useRouter();
   const galleryRouter = galleryRouterSet(id || "", 0);
+
+  // Contains IDs of revealed image posts marked as "Mature"
+  const [revealedImages, setRevealedImages] = useState<Record<string, boolean>>(
+    {}
+  );
+
+  const handleRevealClick = (id: string) => {
+    setRevealedImages((prev) => ({ ...prev, [id]: true }));
+  };
 
   const {
     filteredGallery,
@@ -129,11 +138,9 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
                 <i className={getIcon("newIndicator")} /> Recently added
                 drawings
                 <br />
-                <i className={getIcon("stack")} /> Multiple images available
+                <i className={getIcon("stack")} /> Post with multiple images
                 <br />
                 <i className={getIcon("censorship")} /> Sensitive content
-                (work-in-progress, implementation might have inconsistencies
-                until finished)
               </p>
             </blockquote>
 
@@ -144,6 +151,8 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
             <GalleryGrid
               handleImageClick={handleImageClick}
               gallery={filteredGallery}
+              revealedImages={revealedImages}
+              handleRevealClick={handleRevealClick}
             />
           </CardPanel>
 
@@ -158,6 +167,9 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
                 imageScrollIndex={index}
                 images={filteredGallery}
                 onOutsideClick={handleClosePreview}
+                // Content warning properties
+                revealedImages={revealedImages}
+                onRevealClick={handleRevealClick}
               />
             )}
           </AnimatePresence>

@@ -14,6 +14,8 @@ import { decodeFrames, getIcon } from "../../lib/helper";
 import Button from "../button";
 import { useToast } from "../toashHandler";
 
+import ContentWarningOverlay from "./contentWarningOverlay";
+
 interface CanvasItemProps {
   index: number;
   imageId: string;
@@ -23,6 +25,9 @@ interface CanvasItemProps {
   width: number;
   height: number;
   shortcuts: boolean;
+  mature?: boolean;
+  isMatureRevealed: boolean; // for content warning
+  onReveal?: () => void;
   setIsDraggingPreview: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -45,6 +50,9 @@ export function CanvasImage({
   width,
   height,
   shortcuts,
+  isMatureRevealed, // for content warning
+  mature,
+  onReveal,
   setIsDraggingPreview,
 }: CanvasItemProps) {
   const { showToast } = useToast();
@@ -194,6 +202,7 @@ export function CanvasImage({
       if (e.defaultPrevented) return;
       if (!shortcuts) return;
       if (!imageLoaded) return;
+      if (mature && !isMatureRevealed) return;
 
       for (const key in actions) {
         if (actions.hasOwnProperty(key)) {
@@ -219,7 +228,7 @@ export function CanvasImage({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [actions, shortcuts, showToast, imageLoaded]);
+  }, [actions, shortcuts, showToast, imageLoaded, mature, isMatureRevealed]);
 
   useEffect(() => {
     const canvas = canvasElementRef.current;
@@ -338,6 +347,15 @@ export function CanvasImage({
 
   return (
     <li className={styles.canvasWrapper} data-index={index}>
+      {!isMatureRevealed && mature && (
+        <ContentWarningOverlay
+          onReveal={() => onReveal?.()}
+          dimensions={{
+            width: canvasElementRef.current?.width,
+            height: canvasElementRef.current?.height,
+          }}
+        />
+      )}
       <motion.canvas
         id={imageId}
         ref={canvasElementRef}

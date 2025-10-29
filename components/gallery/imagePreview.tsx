@@ -26,13 +26,16 @@ import { placeholderImage } from "../imageShimmer";
 import { useToast } from "../toashHandler";
 
 import { CanvasImage } from "./canvasImage";
+import ContentWarningOverlay from "./contentWarningOverlay";
 import IImagePreview from "./IImagePreview";
 
 // TODO improve image content warning management
 
 export function ImagePreview({
   images,
+  revealedImages,
   onOutsideClick,
+  onRevealClick,
   activeIndex,
   imageScrollIndex, // Index on a image post with multiple images
 }: IImagePreview) {
@@ -286,6 +289,9 @@ export function ImagePreview({
                   width={image.width}
                   height={image.height}
                   shortcuts={index === scrollIndex}
+                  mature={currentImage.mature}
+                  isMatureRevealed={!!revealedImages[currentImageId]}
+                  onReveal={() => onRevealClick(currentImageId)}
                   setIsDraggingPreview={setIsDraggingPreview}
                 />
               ))}
@@ -363,10 +369,11 @@ export function ImagePreview({
                     className={styles.thumbnail}
                     title={"Click to view image"}
                   >
-                    {img?.mature && (
-                      <div className={styles.matureWarning}>
-                        <i className={getIcon("censorship")} />
-                      </div>
+                    {img?.mature && !revealedImages[mainImage.id] && (
+                      <ContentWarningOverlay
+                        onReveal={() => onRevealClick(mainImage.id)}
+                        noIcon
+                      />
                     )}
                     <Image
                       src={getImageUrl(mainImage.id)}

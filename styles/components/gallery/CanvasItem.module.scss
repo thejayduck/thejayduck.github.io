@@ -8,10 +8,10 @@
   height: 100vh;
   flex: 0 0 100%;
   width: 100%;
-  padding: var(--spacing-medium) var(--spacing-medium);
+  // padding: var(--spacing-medium) var(--spacing-medium);
 
   will-change: transform, opacity;
-  overflow: clip;
+  overflow: hidden;
   margin: auto;
   display: flex;
   align-items: center;

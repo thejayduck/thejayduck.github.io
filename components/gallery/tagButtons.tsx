@@ -86,6 +86,7 @@ export const TagButtons = () => {
           <i className={`${getIcon("clearFilter")} ri-1x ri-fw`} />
           {/* <span>Clear Filter</span> */}
         </button>
+
         {Array.from(new Set(gallery.flatMap(tagCollection)))
           .sort((a, b) => a.localeCompare(b))
           .map((tag) => (
