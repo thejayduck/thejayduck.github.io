@@ -1,6 +1,6 @@
 import styles from "../../styles/Gallery.module.scss";
 
-import React, { useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 
 import gallery from "../../docs/json/gallery.json";
 import { getIcon } from "../../lib/helper";
@@ -37,14 +37,15 @@ export const TagButtons = () => {
     }
   };
 
-  const filteredGallery =
-    selectedTags.length > 0
-      ? gallery.filter((item) =>
-          selectedTags.every((selectedTag) =>
-            tagCollection(item).includes(selectedTag)
-          )
-        )
-      : gallery;
+  const filteredGallery = useMemo(() => {
+    if (selectedTags.length == 0) return gallery;
+
+    return gallery.filter((item) =>
+      selectedTags.every((selectedTag) =>
+        tagCollection(item).includes(selectedTag)
+      )
+    );
+  }, [selectedTags]);
 
   const filteredTags = new Set(filteredGallery.flatMap(tagCollection)); // Used to disable unavailable tags.
 

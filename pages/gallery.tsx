@@ -17,6 +17,8 @@ import PageBase from "../components/pageBase";
 import gallery from "../docs/json/gallery.json";
 import { galleryRouterSet, getIcon } from "../lib/helper";
 
+const PER_PAGE = 12;
+
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const id = context.query.id;
   const index = context.query.index;
@@ -32,6 +34,10 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
   const router = useRouter();
   const galleryRouter = galleryRouterSet(id || "", 0);
 
+  // Paging
+  const [page, setPage] = useState(1);
+  const pageLoaderRef = useRef<HTMLDivElement>(null);
+
   // Contains IDs of revealed image posts marked as "Mature"
   const [revealedImages, setRevealedImages] = useState<Record<string, boolean>>(
     {}
@@ -46,6 +52,46 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
     selectedTags,
     component: TagButtonsComponent,
   } = TagButtons();
+
+  const [displayedGallery, setDisplayedGallery] = useState<IGalleryEntry[]>([]);
+
+  useEffect(() => {
+    setPage(1); // Reset page back to one after tag selection
+    setDisplayedGallery(filteredGallery.slice(0, PER_PAGE));
+  }, [filteredGallery]);
+
+  useEffect(() => {
+    if (page == 0) return;
+
+    const newImages = filteredGallery.slice(0, page * PER_PAGE);
+    setDisplayedGallery(newImages);
+  }, [page]);
+
+  // Page Observer for infinite scroll
+  useEffect(() => {
+    const currentLoader = pageLoaderRef.current;
+    if (!currentLoader) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const firstEntry = entries[0];
+
+        if (
+          firstEntry.isIntersecting &&
+          displayedGallery.length < filteredGallery.length
+        ) {
+          setPage((prev) => (prev += 1));
+        }
+      },
+      { threshold: 1.0 }
+    );
+
+    observer.observe(currentLoader);
+
+    return () => {
+      observer.unobserve(currentLoader);
+    };
+  }, [displayedGallery.length, filteredGallery.length]);
 
   // Handler for image click
   const handleImageClick = useCallback(
@@ -150,10 +196,30 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
             <br />
             <GalleryGrid
               handleImageClick={handleImageClick}
-              gallery={filteredGallery}
+              gallery={displayedGallery}
               revealedImages={revealedImages}
               handleRevealClick={handleRevealClick}
             />
+            {/* Infinite Loader Ref */}
+            {displayedGallery.length < filteredGallery.length ? (
+              <>
+                <hr />
+                <center ref={pageLoaderRef} className={styles.endNotice}>
+                  <span>Loading more content... </span>
+                  <i className={getIcon("loading")}></i>
+                </center>
+              </>
+            ) : (
+              displayedGallery.length > 0 && (
+                <>
+                  <hr />
+                  <center className={styles.endNotice}>
+                    <span>You&apos;ve reached the end </span>
+                    <i className={getIcon("emojiSad")}></i>
+                  </center>
+                </>
+              )
+            )}
           </CardPanel>
 
           {/* Image Preview Component */}

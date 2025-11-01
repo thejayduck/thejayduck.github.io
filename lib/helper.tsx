@@ -179,6 +179,7 @@ const iconList: Record<string, string> = {
   stack: "ri-stack-fill",
   censorship: "ri-eye-off-fill",
   emojiSad: "ri-emotion-sad-fill",
+  loading: "ri-refresh-fill",
   level1: "ri-circle-fill", // table of content
   level2: "ri-circle-line", // table of content
   level3: "ri-subtract-fill", // table of content

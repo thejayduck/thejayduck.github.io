@@ -29,7 +29,7 @@ import { CanvasImage } from "./canvasImage";
 import ContentWarningOverlay from "./contentWarningOverlay";
 import IImagePreview from "./IImagePreview";
 
-// TODO improve image content warning management
+// TODO implement better image loading to avoid loading all images at once.
 
 export function ImagePreview({
   images,

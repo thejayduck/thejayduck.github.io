@@ -2,8 +2,6 @@ import styles from "../../styles/Gallery.module.scss";
 
 import { useEffect, useRef, useState } from "react";
 
-import { getIcon } from "../../lib/helper";
-
 import GalleryItem from "./galleryItem";
 import IGalleryEntry from "./IGalleryEntry";
 
@@ -29,13 +27,14 @@ export const GalleryGrid: React.FC<IGalleryGridProps> = ({
         galleryContainerRef.current?.querySelectorAll(
           `.${styles.galleryItem}`
         ) || []
-      );
+      ) as HTMLElement[];
 
-      galleryItems.forEach((element, index) => {
-        const galleryItem = element as HTMLElement;
-        const item = gallery[index].images[0]; // Main image is the first in the array
+      gallery.forEach((entry, index) => {
+        const galleryItem = galleryItems[index];
 
-        // Calculate the ratio and apply styles
+        if (!galleryItem || !entry?.images?.[0]) return;
+
+        const item = entry.images[0];
         const ratio = item.width / item.height;
         const baseSize = 15; // em
         galleryItem.style.flexBasis = `calc(${ratio} * ${baseSize}em)`;
@@ -54,28 +53,18 @@ export const GalleryGrid: React.FC<IGalleryGridProps> = ({
   }, [gallery]);
 
   return (
-    <>
-      <div className={styles.gallery} ref={galleryContainerRef}>
-        {gallery.map((galleryEntry: IGalleryEntry, index: number) => (
-          <GalleryItem
-            key={index}
-            entry={galleryEntry}
-            index={index}
-            handleImageClick={() => handleImageClick(galleryEntry.images[0].id)}
-            // Content Warning Filter
-            isMatureRevealed={!!revealedImages[galleryEntry.images[0].id]}
-            handleRevealClick={() =>
-              handleRevealClick(galleryEntry.images[0].id)
-            }
-          />
-        ))}
-      </div>
-      <hr />
-      <center className={styles.endNotice}>
-        <span>You&apos;ve reached the end </span>
-
-        <i className={getIcon("emojiSad")}></i>
-      </center>
-    </>
+    <div className={styles.gallery} ref={galleryContainerRef}>
+      {gallery.map((galleryEntry: IGalleryEntry, index: number) => (
+        <GalleryItem
+          key={index}
+          entry={galleryEntry}
+          index={index}
+          handleImageClick={() => handleImageClick(galleryEntry.images[0].id)}
+          // Content Warning Filter
+          isMatureRevealed={!!revealedImages[galleryEntry.images[0].id]}
+          handleRevealClick={() => handleRevealClick(galleryEntry.images[0].id)}
+        />
+      ))}
+    </div>
   );
 };
