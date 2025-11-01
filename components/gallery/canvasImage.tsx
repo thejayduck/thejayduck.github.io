@@ -1,6 +1,6 @@
 import styles from "../../styles/components/gallery/CanvasItem.module.scss";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 
 import React, {
   useCallback,
@@ -29,6 +29,7 @@ interface CanvasItemProps {
   isSensitiveContentVisible: boolean; // for content warning
   onReveal?: () => void;
   setIsDraggingPreview: React.Dispatch<React.SetStateAction<boolean>>;
+  scrollContainerRef: React.RefObject<HTMLUListElement>;
 }
 
 interface CanvasFunctionProps {
@@ -54,6 +55,7 @@ export function CanvasImage({
   isSensitive,
   onReveal,
   setIsDraggingPreview,
+  scrollContainerRef,
 }: CanvasItemProps) {
   const { showToast } = useToast();
   //? retain previous zoom value for double click
@@ -72,6 +74,10 @@ export function CanvasImage({
   // Animation
   const [isPlaying, setIsPlaying] = useState(true);
   const frameIndexRef = useRef<number>(0);
+
+  // useInView Handler
+  const liRef = useRef<HTMLLIElement>(null);
+  const isInView = useInView(liRef, { root: scrollContainerRef, once: true });
 
   const resetTransform = useCallback(() => {
     setPosition({ x: 0, y: 0 });
@@ -238,6 +244,8 @@ export function CanvasImage({
   ]);
 
   useEffect(() => {
+    if (!isInView) return;
+
     const canvas = canvasElementRef.current;
     if (!canvas) return;
 
@@ -263,8 +271,10 @@ export function CanvasImage({
       return { width: newWidth, height: newHeight };
     };
 
-    canvas.width = calculateRatio().width;
-    canvas.height = calculateRatio().height;
+    const { width: canvasWidth, height: canvasHeight } = calculateRatio();
+
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
 
     // Placeholder Background
     ctx.fillStyle = "hsl(251, 17%, 25%)";
@@ -272,29 +282,19 @@ export function CanvasImage({
     gradient.addColorStop(0, "hsl(251, 17%, 35%)");
     gradient.addColorStop(1, "hsl(251, 17%, 15%)");
     ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, calculateRatio().width, calculateRatio().height);
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     // Placeholder Text
     ctx.fillStyle = "rgb(255, 255, 255)";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${
-      Math.min(calculateRatio().width, calculateRatio().height) * 0.05
+      Math.min(canvasWidth, canvasHeight) * 0.05
     }px Nunito, sans-serif`;
-    ctx.fillText(
-      "Loading Image",
-      calculateRatio().width / 2,
-      calculateRatio().height / 2
-    );
+    ctx.fillText("Loading Image", canvasWidth / 2, canvasHeight / 2);
 
     image.onload = () => {
       // ctx.imageSmoothingQuality = "high";
-      ctx.drawImage(
-        image,
-        0,
-        0,
-        calculateRatio().width,
-        calculateRatio().height
-      );
+      ctx.drawImage(image, 0, 0, canvasWidth, canvasHeight);
       setImageLoaded(true);
     };
 
@@ -307,7 +307,7 @@ export function CanvasImage({
       window.removeEventListener("resize", calculateRatio);
       window.addEventListener("load", calculateRatio);
     };
-  }, [imageUrl, width, height]);
+  }, [imageUrl, width, height, isInView]);
 
   // Video Frame Renderer
   useEffect(() => {
@@ -353,7 +353,7 @@ export function CanvasImage({
   }, [imageUrl, animated, isPlaying]);
 
   return (
-    <li className={styles.canvasWrapper} data-index={index}>
+    <li className={styles.canvasWrapper} data-index={index} ref={liRef}>
       {!isSensitiveContentVisible && isSensitive && (
         <ContentWarningOverlay
           onReveal={() => onReveal?.()}

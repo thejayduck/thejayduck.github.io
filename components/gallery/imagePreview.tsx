@@ -29,8 +29,6 @@ import { CanvasImage } from "./canvasImage";
 import ContentWarningOverlay from "./contentWarningOverlay";
 import IImagePreview from "./IImagePreview";
 
-// TODO implement better image loading to avoid loading all images at once.
-
 export function ImagePreview({
   images,
   visibleSensitiveImages,
@@ -295,6 +293,7 @@ export function ImagePreview({
                   }
                   onReveal={() => onRevealClick(currentImageId)}
                   setIsDraggingPreview={setIsDraggingPreview}
+                  scrollContainerRef={scrollContainerRef}
                 />
               ))}
             </ul>
