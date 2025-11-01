@@ -38,13 +38,13 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
   const [page, setPage] = useState(1);
   const pageLoaderRef = useRef<HTMLDivElement>(null);
 
-  // Contains IDs of revealed image posts marked as "Mature"
-  const [revealedImages, setRevealedImages] = useState<Record<string, boolean>>(
-    {}
-  );
+  // Contains IDs of revealed sensitive image posts
+  const [visibleSensitiveImages, setVisibleSensitiveImages] = useState<
+    Record<string, boolean>
+  >({});
 
   const handleRevealClick = (id: string) => {
-    setRevealedImages((prev) => ({ ...prev, [id]: true }));
+    setVisibleSensitiveImages((prev) => ({ ...prev, [id]: true }));
   };
 
   const {
@@ -197,7 +197,7 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
             <GalleryGrid
               handleImageClick={handleImageClick}
               gallery={displayedGallery}
-              revealedImages={revealedImages}
+              visibleSensitiveImages={visibleSensitiveImages}
               handleRevealClick={handleRevealClick}
             />
             {/* Infinite Loader Ref */}
@@ -234,7 +234,7 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
                 images={filteredGallery}
                 onOutsideClick={handleClosePreview}
                 // Content warning properties
-                revealedImages={revealedImages}
+                visibleSensitiveImages={visibleSensitiveImages}
                 onRevealClick={handleRevealClick}
               />
             )}

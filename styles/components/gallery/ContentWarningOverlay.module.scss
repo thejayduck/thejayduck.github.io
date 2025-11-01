@@ -9,10 +9,14 @@
   justify-content: center;
   z-index: var(--z-normal);
   // background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(16px) brightness(60%);
+  backdrop-filter: blur(16px) brightness(60%) grayscale(100%);
   overflow: hidden;
   text-align: center;
   transition: 255ms;
+
+  span {
+    font-weight: bolder;
+  }
 
   button {
     cursor: pointer;

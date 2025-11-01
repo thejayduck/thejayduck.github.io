@@ -33,7 +33,7 @@ import IImagePreview from "./IImagePreview";
 
 export function ImagePreview({
   images,
-  revealedImages,
+  visibleSensitiveImages,
   onOutsideClick,
   onRevealClick,
   activeIndex,
@@ -289,8 +289,10 @@ export function ImagePreview({
                   width={image.width}
                   height={image.height}
                   shortcuts={index === scrollIndex}
-                  mature={currentImage.mature}
-                  isMatureRevealed={!!revealedImages[currentImageId]}
+                  isSensitive={currentImage.sensitive}
+                  isSensitiveContentVisible={
+                    !!visibleSensitiveImages[currentImageId]
+                  }
                   onReveal={() => onRevealClick(currentImageId)}
                   setIsDraggingPreview={setIsDraggingPreview}
                 />
@@ -369,12 +371,13 @@ export function ImagePreview({
                     className={styles.thumbnail}
                     title={"Click to view image"}
                   >
-                    {img?.mature && !revealedImages[mainImage.id] && (
-                      <ContentWarningOverlay
-                        onReveal={() => onRevealClick(mainImage.id)}
-                        noIcon
-                      />
-                    )}
+                    {img?.sensitive &&
+                      !visibleSensitiveImages[mainImage.id] && (
+                        <ContentWarningOverlay
+                          onReveal={() => onRevealClick(mainImage.id)}
+                          noIcon
+                        />
+                      )}
                     <Image
                       src={getImageUrl(mainImage.id)}
                       alt={img.title}

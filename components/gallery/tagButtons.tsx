@@ -12,7 +12,7 @@ export const TagButtons = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const tagCollection = (item: (typeof gallery)[number]): string[] => {
-    return [...(item.tags ?? []), item.mature ? "mature" : null].filter(
+    return [...(item.tags ?? []), item.sensitive ? "sensitive" : null].filter(
       (tag) => typeof tag == "string"
     );
   };
@@ -60,7 +60,7 @@ export const TagButtons = () => {
     fullcolor: ["Full Color", "ri-rainbow-fill"],
     gamejam: ["Game Jam", "ri-gamepad-fill"],
     lineart: ["Line Art", "ri-draft-fill"],
-    mature: ["Mature", "ri-eye-off-fill"],
+    sensitive: ["Sensitive", "ri-eye-off-fill"],
     oc: ["Original Character", "ri-user-fill"],
     sketch: ["Sketch", "ri-sketching"],
   };

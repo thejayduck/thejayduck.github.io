@@ -1175,7 +1175,8 @@
     "title": "Succubus",
     "date": "2024-12",
     "software": "Infinite Painter",
-    "mature": true,
+    "sensitive": true,
+    "sensitive_description": "Partial nudity",
     "tags": ["characterdesign", "sketch", "oc"],
     "images": [
       {
@@ -1428,7 +1429,8 @@
     "title": "Okita Souji (Lying) - Fate/Grand Order",
     "date": "2024-04",
     "software": "Infinite Painter",
-    "mature": true,
+    "sensitive": true,
+    "sensitive_description": "Revealing pose",
     "tags": ["characterdesign", "fanart", "sketch"],
     "images": [
       {
@@ -1442,7 +1444,8 @@
     "title": "Okita Souji (Sitting) - Fate/Grand Order",
     "date": "2024-04",
     "software": "Infinite Painter",
-    "mature": true,
+    "sensitive": true,
+    "sensitive_description": "Revealing pose",
     "tags": ["characterdesign", "fanart", "sketch"],
     "images": [
       {
@@ -1823,7 +1826,8 @@
         "icon": "ri-image-fill"
       }
     ],
-    "mature": true,
+    "sensitive": true,
+    "sensitive_description": "Blood",
     "tags": ["characterdesign", "fullcolor", "fanart", "sketch"],
     "images": [
       {

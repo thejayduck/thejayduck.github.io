@@ -25,8 +25,8 @@ interface CanvasItemProps {
   width: number;
   height: number;
   shortcuts: boolean;
-  mature?: boolean;
-  isMatureRevealed: boolean; // for content warning
+  isSensitive?: boolean;
+  isSensitiveContentVisible: boolean; // for content warning
   onReveal?: () => void;
   setIsDraggingPreview: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -50,8 +50,8 @@ export function CanvasImage({
   width,
   height,
   shortcuts,
-  isMatureRevealed, // for content warning
-  mature,
+  isSensitiveContentVisible, // for content warning
+  isSensitive,
   onReveal,
   setIsDraggingPreview,
 }: CanvasItemProps) {
@@ -202,7 +202,7 @@ export function CanvasImage({
       if (e.defaultPrevented) return;
       if (!shortcuts) return;
       if (!imageLoaded) return;
-      if (mature && !isMatureRevealed) return;
+      if (isSensitive && !isSensitiveContentVisible) return;
 
       for (const key in actions) {
         if (actions.hasOwnProperty(key)) {
@@ -228,7 +228,14 @@ export function CanvasImage({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [actions, shortcuts, showToast, imageLoaded, mature, isMatureRevealed]);
+  }, [
+    actions,
+    shortcuts,
+    showToast,
+    imageLoaded,
+    isSensitive,
+    isSensitiveContentVisible,
+  ]);
 
   useEffect(() => {
     const canvas = canvasElementRef.current;
@@ -347,7 +354,7 @@ export function CanvasImage({
 
   return (
     <li className={styles.canvasWrapper} data-index={index}>
-      {!isMatureRevealed && mature && (
+      {!isSensitiveContentVisible && isSensitive && (
         <ContentWarningOverlay
           onReveal={() => onReveal?.()}
           dimensions={{

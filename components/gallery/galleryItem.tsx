@@ -3,7 +3,7 @@ import styles from "../../styles/Gallery.module.scss";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { formatDate, getIcon, getImageUrl, isNewImage } from "../../lib/helper";
 import { shimmer, toBase64 } from "../imageShimmer";
@@ -16,7 +16,7 @@ interface GalleryItemProps {
   index: number;
   handleImageClick: () => void;
   // Content Warning related props
-  isMatureRevealed: boolean;
+  isSensitiveContentVisible: boolean;
   handleRevealClick: () => void;
 }
 
@@ -25,7 +25,7 @@ export default function GalleryItem({
   index,
   handleImageClick,
   // Content Warning related props
-  isMatureRevealed,
+  isSensitiveContentVisible,
   handleRevealClick,
 }: GalleryItemProps) {
   const [hoveredImage, setHoveredImage] = useState<number>(0); // Index of the hovered image
@@ -89,8 +89,11 @@ export default function GalleryItem({
       onTouchStart={() => handleMouseEnter(index)}
     >
       {/* Sensitive Content Warning */}
-      {entry?.mature && !isMatureRevealed && (
-        <ContentWarningOverlay onReveal={() => handleRevealClick()} />
+      {entry?.sensitive && !isSensitiveContentVisible && (
+        <ContentWarningOverlay
+          onReveal={() => handleRevealClick()}
+          text={entry.sensitive_description}
+        />
       )}
       <figure>
         <AnimatePresence mode="wait">

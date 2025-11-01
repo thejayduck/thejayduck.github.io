@@ -5,14 +5,14 @@ import { getIcon } from "../../lib/helper";
 interface IContentWarningOverlayProps {
   onReveal: () => void;
   noIcon?: boolean;
+  text?: string;
   dimensions?: { width: number | undefined; height: number | undefined };
 }
 
-// TODO add custom warning text
-// TODO rename variable names from 'mature' to 'contentWarning' or similar
 export default function ContentWarningOverlay({
   onReveal,
   noIcon,
+  text,
   dimensions,
 }: IContentWarningOverlayProps) {
   return (
@@ -25,7 +25,13 @@ export default function ContentWarningOverlay({
       }}
     >
       {!noIcon && <i className={getIcon("censorship")} />}
-      Content Warning
+      <span>Content Warning</span>
+      {text && (
+        <>
+          <br />
+          {text}
+        </>
+      )}
       <br />
       <button
         title="Click to Reveal Image"

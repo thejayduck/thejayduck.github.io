@@ -9,14 +9,14 @@ interface IGalleryGridProps {
   handleImageClick: (id: string) => void;
   handleRevealClick: (id: string) => void;
   gallery: IGalleryEntry[];
-  revealedImages: Record<string, boolean>;
+  visibleSensitiveImages: Record<string, boolean>;
 }
 
 export const GalleryGrid: React.FC<IGalleryGridProps> = ({
   handleRevealClick,
   handleImageClick,
   gallery,
-  revealedImages,
+  visibleSensitiveImages,
 }) => {
   const galleryContainerRef = useRef<HTMLDivElement>(null);
 
@@ -61,7 +61,9 @@ export const GalleryGrid: React.FC<IGalleryGridProps> = ({
           index={index}
           handleImageClick={() => handleImageClick(galleryEntry.images[0].id)}
           // Content Warning Filter
-          isMatureRevealed={!!revealedImages[galleryEntry.images[0].id]}
+          isSensitiveContentVisible={
+            !!visibleSensitiveImages[galleryEntry.images[0].id]
+          }
           handleRevealClick={() => handleRevealClick(galleryEntry.images[0].id)}
         />
       ))}
