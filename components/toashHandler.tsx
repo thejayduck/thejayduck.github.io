@@ -1,6 +1,7 @@
+"use client";
 import styles from "../styles/components/ToastNotification.module.scss";
 
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 
 import { createContext, useContext, useState } from "react";
 

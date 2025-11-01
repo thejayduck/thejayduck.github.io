@@ -3,7 +3,7 @@ import styles from "../../styles/components/gallery/ImagePreview.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { AnimatePresence, motion, wrap } from "framer-motion";
+import { AnimatePresence, motion, wrap } from "motion/react";
 import { useDebouncedCallback } from "use-debounce";
 
 import React, {

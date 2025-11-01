@@ -2,7 +2,7 @@ import styles from "../../styles/components/BlogItem.module.scss";
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import React from "react";
 

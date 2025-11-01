@@ -25,7 +25,7 @@ export default function Home() {
       </Head>
 
       <PageBase>
-        <div className={`${styles.mainSection} flex`}>
+        <div className={`${styles.mainSection}`}>
           <ProfileWrap />
 
           <section className={`${styles.panelsWrap}`}>

@@ -9,9 +9,9 @@ import { ToastHandler } from "../components/toashHandler";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <ThemeToggle />
-      <ScrollManager />
       <ToastHandler>
+        <ThemeToggle />
+        <ScrollManager />
         <Component {...pageProps} />
       </ToastHandler>
     </>

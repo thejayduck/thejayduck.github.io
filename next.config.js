@@ -10,22 +10,19 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96],
 
     remotePatterns: [
-      { // assets
+      {
+        // assets
         protocol: "https",
         hostname: "utfs.io",
         pathname: "/a/hj5xs4m6pg/*",
       },
-      { // gallery
+      {
+        // gallery
         protocol: "https",
         hostname: "utfs.io",
         pathname: "/a/41l64ami3u/*",
       },
-      { // speedpaints
-        protocol: "https",
-        hostname: "utfs.io",
-        pathname: "/a/fal25h328h/*",
-      }
-    ]
+    ],
   },
   // webpack: (config, { isServer }) => {
   //   if (!isServer) config.resolve.fallback.fs = false;

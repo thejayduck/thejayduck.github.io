@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticPropsResult } from "next/types";
 // @ts-ignore
 import rehypeFigure from "@microflash/rehype-figure";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 import rehypeSlug from "rehype-slug";

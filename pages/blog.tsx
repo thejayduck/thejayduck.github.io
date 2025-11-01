@@ -2,7 +2,7 @@ import styles from "../styles/Blog.module.scss";
 
 import Head from "next/head";
 import { GetStaticPropsResult } from "next/types";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import BlogItem from "../components/blog/blogItem";
 import IBlogProps, { IBlogPostProps } from "../components/blog/IBlogProps";

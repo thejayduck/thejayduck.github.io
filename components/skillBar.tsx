@@ -1,6 +1,6 @@
 import styles from "../styles/components/Skillbar.module.scss";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 interface SkillBarProps {
   title: string;

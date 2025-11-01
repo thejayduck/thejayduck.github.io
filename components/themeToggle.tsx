@@ -1,26 +1,20 @@
+"use client";
 import styles from "../styles/components/ThemeToggle.module.scss";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, TargetAndTransition } from "motion/react";
 
 import { useEffect, useState } from "react";
 
 import { getIcon } from "../lib/helper";
 
-const iconVariants = {
-  initial: {
-    y: -20,
-    opacity: 0,
-  },
+const iconVariants: Record<string, TargetAndTransition> = {
+  initial: { y: -20, opacity: 0 },
   animate: {
     y: 0,
     opacity: 1,
     transition: { type: "spring", stiffness: 260, damping: 20 },
   },
-  exit: {
-    y: 20,
-    opacity: 0,
-    transition: { duration: 0.2 },
-  },
+  exit: { y: 20, opacity: 0, transition: { duration: 0.2 } },
 };
 
 export default function ThemeToggle() {

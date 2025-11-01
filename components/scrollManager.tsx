@@ -1,3 +1,4 @@
+"use client";
 import styles from "../styles/components/ScrollManager.module.scss";
 
 import {
@@ -5,7 +6,7 @@ import {
   motion,
   useMotionValueEvent,
   useScroll,
-} from "framer-motion";
+} from "motion/react";
 
 import { useState } from "react";
 

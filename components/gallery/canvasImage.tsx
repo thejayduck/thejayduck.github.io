@@ -1,6 +1,6 @@
 import styles from "../../styles/components/gallery/CanvasItem.module.scss";
 
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "motion/react";
 
 import React, {
   useCallback,

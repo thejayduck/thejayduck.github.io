@@ -1,6 +1,6 @@
 import styles from "../../styles/components/TableOfContent.module.scss";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
 import { useEffect, useRef, useState } from "react";
 

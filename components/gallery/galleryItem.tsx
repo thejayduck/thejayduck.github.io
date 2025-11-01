@@ -1,7 +1,7 @@
 import styles from "../../styles/Gallery.module.scss";
 
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
 import { useEffect, useState } from "react";
 
@@ -110,7 +110,6 @@ export default function GalleryItem({
             exit={{ opacity: 0, scale: 1.05 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
-            {/* TODO fix lazy loading  */}
             <Image
               // src={getImageUrl(entry.images[0].id)}
               src={getImageUrl(entry.images[hoveredImage].id)}
@@ -124,6 +123,7 @@ export default function GalleryItem({
               )}`}
               loading="lazy"
               priority={false}
+              unoptimized={entry.images[0].animated}
             />
           </motion.div>
         </AnimatePresence>

@@ -1,6 +1,8 @@
 .mainSection {
-  justify-content: stretch;
+  justify-content: start;
   align-items: flex-start;
+  gap: 10px;
+  display: flex;
 
   img {
     border-radius: var(--border);
@@ -12,6 +14,7 @@
   }
 
   .profileWrap {
+    width: 256px;
     position: sticky;
     position: -webkit-sticky;
     padding: 10px 0;

@@ -2,11 +2,15 @@ import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html>
+    <Html data-scroll-behavior="smooth">
       <Head>
         <html lang="en" />
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
 
         {/* <link rel="preload" as="font" /> */}
         <link rel="icon" href="/favicon.ico" />
@@ -30,7 +34,6 @@ export default function Document() {
         <meta key="twTitle" property="twitter:title" content="Arda Fevzi Armutcu's Portfolio" />
         <meta key="twDescription" property="twitter:description" content="Personal Website" />
         <meta key="twImage" property="twitter:image" content="/icon.png" /> */}
-
       </Head>
       <body>
         <Main />

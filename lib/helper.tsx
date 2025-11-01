@@ -1,4 +1,4 @@
-import { PanInfo } from "framer-motion";
+import { PanInfo } from "motion/react";
 
 export function countWords(str: string): number {
   str = str.replace(/<[^>]*>/g, " ");
