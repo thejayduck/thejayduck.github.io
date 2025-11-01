@@ -916,27 +916,6 @@
     ]
   },
   {
-    "title": "Jeanne d'Arc (Alter) and a random dude",
-    "date": "2025-03",
-    "timestamp": 1743285464,
-    "software": "Infinite Painter",
-    "external": [
-      {
-        "url": "https://cara.app/post/d0066629-5991-4359-8ab3-0f2f66878069",
-        "alt": "Cara",
-        "icon": "ri-copyright-fill"
-      }
-    ],
-    "tags": ["characterdesign", "sketch", "oc", "fanart"],
-    "images": [
-      {
-        "width": 2000,
-        "height": 1500,
-        "id": "tzMdx3pvN1orwu2PwIAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
-      }
-    ]
-  },
-  {
     "title": "Landmine 2",
     "date": "2025-03",
     "timestamp": 1743198659,
@@ -2091,7 +2070,7 @@
   },
   {
     "title": "Archive",
-    "description": "Collection of scrapped / old drawings starting from 2019.",
+    "description": "A collection of sketches, scraps and old drawings since 2019.",
     "date": "2019",
     "software": "MediBang Paint Pro, Infinite Painter",
     "tags": [
@@ -2418,6 +2397,12 @@
         "id": "tzMdx3pvN1or6Ux9aZYfG6eMTDA328Bkz1vsXpVKw5SqtUgh"
       },
       {
+        "alt": "Jeanne d'Arc (Alter) and a random dude",
+        "width": 2000,
+        "height": 1500,
+        "id": "tzMdx3pvN1orwu2PwIAQu9WxdFl3P8TEV2bAgZctzjR0n1pk"
+      },
+      {
         "alt": "Some Character (Apr 2025)",
         "width": 1300,
         "height": 1300,
@@ -2458,6 +2443,12 @@
         "width": 1548,
         "height": 1548,
         "id": "tzMdx3pvN1orGLYWzY2IBjyTmVkl0w89XOpUQH3e2YLhCcGt"
+      },
+      {
+        "alt": "Doodles (Nov 2025)",
+        "width": 1548,
+        "height": 1548,
+        "id": "tzMdx3pvN1orl8uybXvibc4SB30g5CzvFJUs9T26Wepdy7tn"
       }
     ]
   }
