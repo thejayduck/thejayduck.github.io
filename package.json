@@ -2,7 +2,7 @@
   "name": "new-portfolio",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "export": "next export",
@@ -25,16 +25,18 @@
     "use-debounce": "^10.0.4"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.0",
     "@next/eslint-plugin-next": "^14.2.3",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
-    "@typescript-eslint/parser": "^7.7.1",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
     "eslint": "^9.39.0",
     "eslint-config-next": "^16.0.1",
     "eslint-plugin-simple-import-sort": "^12.1.0",
-    "eslint-plugin-unused-imports": "^3.1.0",
+    "eslint-plugin-unused-imports": "^4.3.0",
     "raw-loader": "^4.0.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2"
   }
 }

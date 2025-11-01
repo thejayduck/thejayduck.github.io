@@ -2,22 +2,19 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: "module"
+    sourceType: "module",
   },
   settings: {
     react: {
-      version: "detect"
-    }
+      version: "detect",
+    },
   },
   extends: [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
   ],
-  plugins: [
-    "simple-import-sort",
-    "import"
-  ],
+  plugins: ["simple-import-sort", "import"],
   rules: {
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/ban-ts-comment": "off",
@@ -32,45 +29,23 @@ module.exports = {
       "error",
       {
         groups: [
-          [
-            "^.+\\.s?css$"
-          ], // styles
-          [
-            "^next",
-            "^@?\\w"
-          ], // next
-          [
-            "^react",
-            "^@?\\w"
-          ], // react
-          [
-            "^(components)(/.*|$)"
-          ], // components
-          [
-            "^\\.\\.(?!/?$)",
-            "^\\.\\./?$"
-          ], // Parent
-          [
-            "^\\./(?=.*/)(?!/?$)",
-            "^\\.(?!/?$)",
-            "^\\./?$"
-          ], // Relative
-        ]
-      }
+          ["^.+\\.s?css$"], // styles
+          ["^next", "^@?\\w"], // next
+          ["^react", "^@?\\w"], // react
+          ["^(components)(/.*|$)"], // components
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"], // Parent
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"], // Relative
+        ],
+      },
     ],
-    "semi": 0,
-    "quotes": [
-      "error",
-      "double"
-    ],
+    semi: 0,
+    quotes: ["error", "double"],
     "react/no-multi-comp": "warn",
     "semi-spacing": "error",
     "prefer-template": "error",
     "prefer-arrow-callback": "error",
     "object-shorthand": "error",
-    "indent": "off"
+    indent: "off",
   },
-  ignorePatterns: [
-    "public/**/*.js"
-  ],
+  ignorePatterns: ["public/**/*.js"],
 };
