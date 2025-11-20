@@ -9,6 +9,7 @@ import { useToast } from "../toashHandler";
 export const TagButtons = () => {
   const { showToast } = useToast();
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [selectedYear, setSelectedYear] = useState("all");
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const tagCollection = (item: (typeof gallery)[number]): string[] => {
@@ -38,14 +39,17 @@ export const TagButtons = () => {
   };
 
   const filteredGallery = useMemo(() => {
-    if (selectedTags.length == 0) return gallery;
+    return gallery.filter((item) => {
+      const itemYear = item.date?.split("-")[0]; // Date format uses YYYY-MM
+      const year = selectedYear == "all" || itemYear == selectedYear;
 
-    return gallery.filter((item) =>
-      selectedTags.every((selectedTag) =>
-        tagCollection(item).includes(selectedTag)
-      )
-    );
-  }, [selectedTags]);
+      const tags =
+        selectedTags.length == 0 ||
+        selectedTags.every((tag) => tagCollection(item).includes(tag));
+
+      return year && tags;
+    });
+  }, [selectedTags, selectedYear]);
 
   const filteredTags = new Set(filteredGallery.flatMap(tagCollection)); // Used to disable unavailable tags.
 
@@ -68,25 +72,40 @@ export const TagButtons = () => {
   return {
     filteredGallery,
     selectedTags,
+    selectedYear,
     component: (
       <div ref={scrollRef} className={styles.filterTags} onWheel={handleWheel}>
         <button
           className={`${styles.tagButton} ${styles.clearTags}`}
-          disabled={selectedTags.length <= 0}
+          disabled={selectedTags.length <= 0 && selectedYear == "all"}
           onClick={() => {
             setSelectedTags([]);
-            showToast(
-              "Cleared Filters!",
-              undefined,
-              getIcon("clearFilter"),
-              "low"
-            );
+            setSelectedYear("all");
+            // showToast(
+            //   "Cleared Filters!",
+            //   undefined,
+            //   getIcon("clearFilter"),
+            //   "low"
+            // );
           }}
           title="Clear Filter"
         >
           <i className={`${getIcon("clearFilter")} ri-1x ri-fw`} />
           {/* <span>Clear Filter</span> */}
         </button>
+        <select
+          name="selectedYear"
+          value={selectedYear}
+          onChange={(e) => setSelectedYear(e.target.value)}
+        >
+          <option value="all">All</option>
+          {Array.from(new Set(gallery.map((item) => item.date.split("-")[0])))
+            .sort((a, b) => a.localeCompare(b))
+            .reverse()
+            .map((year) => (
+              <option value={year}>{year}</option>
+            ))}
+        </select>
 
         {Array.from(new Set(gallery.flatMap(tagCollection)))
           .sort((a, b) => a.localeCompare(b))

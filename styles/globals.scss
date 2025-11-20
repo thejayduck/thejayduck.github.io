@@ -58,6 +58,21 @@ blockquote {
   }
 }
 
+select {
+  border-radius: var(--border);
+  white-space: nowrap;
+  text-decoration: none;
+  padding-left: var(--spacing-small);
+  background-color: hsla(var(--primary-hsla), 0.2);
+  color: var(--font-default);
+  border: none;
+
+  option {
+    background-color: var(--secondary-opaque);
+    color: var(--font-default);
+  }
+}
+
 .bx,
 [class^="ri-"] {
   font-size: 1.2rem;

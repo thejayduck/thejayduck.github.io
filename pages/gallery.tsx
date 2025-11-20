@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "motion/react";
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import CardPanel from "../components/cardPanel";
 import { GalleryGrid } from "../components/gallery/galleryGrid";
@@ -14,7 +14,6 @@ import IGalleryEntry from "../components/gallery/IGalleryEntry";
 import { ImagePreview } from "../components/gallery/imagePreview";
 import { TagButtons } from "../components/gallery/tagButtons";
 import PageBase from "../components/pageBase";
-import gallery from "../docs/json/gallery.json";
 import { galleryRouterSet, getIcon } from "../lib/helper";
 
 const PER_PAGE = 12;
@@ -47,11 +46,7 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
     setVisibleSensitiveImages((prev) => ({ ...prev, [id]: true }));
   };
 
-  const {
-    filteredGallery,
-    selectedTags,
-    component: TagButtonsComponent,
-  } = TagButtons();
+  const { filteredGallery, component: TagButtonsComponent } = TagButtons();
 
   const [displayedGallery, setDisplayedGallery] = useState<IGalleryEntry[]>([]);
 
@@ -150,16 +145,10 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
           <CardPanel title={"Gallery 🖌️"}>
             <p>
               <i className={getIcon("imagePosts")} />
-              <b>{gallery.length} </b> Posts{" "}
-              {selectedTags.length > 0
-                ? `(Filtered: ${filteredGallery.length})`
-                : ""}
+              <b>{filteredGallery.length} </b> Posts
               <br />
               <i className={getIcon("moreImages")} />
-              <b>{getCount(gallery)} </b> Images{" "}
-              {selectedTags.length > 0
-                ? `(Filtered: ${getCount(filteredGallery)})`
-                : ""}
+              <b>{getCount(filteredGallery)} </b> Images
             </p>
             <blockquote>
               <p>
