@@ -10,6 +10,7 @@ interface IGalleryGridProps {
   handleRevealClick: (id: string) => void;
   gallery: IGalleryEntry[];
   visibleSensitiveImages: Record<string, boolean>;
+  layoutView: string;
 }
 
 export const GalleryGrid: React.FC<IGalleryGridProps> = ({
@@ -17,11 +18,14 @@ export const GalleryGrid: React.FC<IGalleryGridProps> = ({
   handleImageClick,
   gallery,
   visibleSensitiveImages,
+  layoutView,
 }) => {
   const galleryContainerRef = useRef<HTMLDivElement>(null);
 
   // Effect to calculate and update column span on window resize
   useEffect(() => {
+    if (layoutView !== "custom") return;
+
     const calculateColumnSpan = () => {
       const galleryItems = Array.from(
         galleryContainerRef.current?.querySelectorAll(
@@ -50,10 +54,15 @@ export const GalleryGrid: React.FC<IGalleryGridProps> = ({
       window.removeEventListener("resize", calculateColumnSpan);
       window.addEventListener("load", calculateColumnSpan);
     };
-  }, [gallery]);
+  }, [gallery, layoutView]);
 
   return (
-    <div className={styles.gallery} ref={galleryContainerRef}>
+    <div
+      className={`${
+        layoutView === "custom" ? styles.customLayout : styles.gridLayout
+      } ${styles.gallery}`}
+      ref={galleryContainerRef}
+    >
       {gallery.map((galleryEntry: IGalleryEntry, index: number) => (
         <GalleryItem
           key={index}

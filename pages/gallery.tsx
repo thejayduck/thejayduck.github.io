@@ -12,7 +12,7 @@ import CardPanel from "../components/cardPanel";
 import { GalleryGrid } from "../components/gallery/galleryGrid";
 import IGalleryEntry from "../components/gallery/IGalleryEntry";
 import { ImagePreview } from "../components/gallery/imagePreview";
-import { TagButtons } from "../components/gallery/tagButtons";
+import { GalleryToolbar } from "../components/gallery/galleryToolbar";
 import PageBase from "../components/pageBase";
 import { galleryRouterSet, getIcon } from "../lib/helper";
 
@@ -46,7 +46,11 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
     setVisibleSensitiveImages((prev) => ({ ...prev, [id]: true }));
   };
 
-  const { filteredGallery, component: TagButtonsComponent } = TagButtons();
+  const {
+    filteredGallery,
+    layoutView,
+    component: TagButtonsComponent,
+  } = GalleryToolbar();
 
   const [displayedGallery, setDisplayedGallery] = useState<IGalleryEntry[]>([]);
 
@@ -188,6 +192,7 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
               gallery={displayedGallery}
               visibleSensitiveImages={visibleSensitiveImages}
               handleRevealClick={handleRevealClick}
+              layoutView={layoutView}
             />
             {/* Infinite Loader Ref */}
             {displayedGallery.length < filteredGallery.length ? (

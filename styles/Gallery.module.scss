@@ -85,8 +85,31 @@
     }
   }
   .gallery {
-    display: flex;
-    flex-wrap: wrap;
+    &.customLayout {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &.gridLayout {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+      // gap: 1rem;
+
+      .galleryItem {
+        border-radius: 0;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        padding: 0;
+        margin: 0;
+
+        img,
+        figure {
+          width: 100%;
+          height: 100%;
+          object-fit: cover !important;
+        }
+      }
+    }
 
     .galleryItem {
       margin: 0 0.3em 0.45em 0.3em;
@@ -95,36 +118,6 @@
       color: white;
       border-radius: var(--border);
       overflow: hidden;
-
-      .stackPreviewWrapper {
-        pointer-events: none;
-        user-select: none;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        right: 0;
-        list-style: none;
-        margin: 0;
-        background-color: var(--secondary-opaque);
-        padding: 5px;
-        border-radius: 0 0 0 var(--border);
-
-        transition: opacity 255ms;
-
-        .stackPreview {
-          width: 24px;
-          height: 24px;
-
-          &:not(:first-child) {
-            margin-top: 10px;
-          }
-
-          img {
-            object-fit: cover;
-            border-radius: var(--border);
-          }
-        }
-      }
 
       .indicators {
         // speedpainting and image stack

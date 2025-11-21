@@ -28,32 +28,6 @@ export default function GalleryItem({
   isSensitiveContentVisible,
   handleRevealClick,
 }: GalleryItemProps) {
-  const [hoveredImage, setHoveredImage] = useState<number>(0); // Index of the hovered image
-  const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (timer) clearInterval(timer as NodeJS.Timeout);
-    };
-  }, [timer]);
-  // Handler for hover
-  const handleMouseEnter = (index: number) => {
-    if (entry.images.length > 1) {
-      let i = 0;
-      setTimer(
-        setInterval(() => {
-          i = (i + 1) % entry.images.length;
-          setHoveredImage(i);
-        }, 2500)
-      );
-    }
-  };
-
-  const handleMouseLeave = () => {
-    clearInterval(timer as NodeJS.Timeout);
-    setHoveredImage(0);
-  };
-
   const indicator = (
     condition: boolean,
     title: string,
@@ -84,9 +58,6 @@ export default function GalleryItem({
       onClick={(e) => {
         handleImageClick();
       }}
-      onMouseEnter={() => handleMouseEnter(index)}
-      onMouseLeave={handleMouseLeave}
-      onTouchStart={() => handleMouseEnter(index)}
     >
       {/* Sensitive Content Warning */}
       {entry?.sensitive && !isSensitiveContentVisible && (
@@ -102,9 +73,10 @@ export default function GalleryItem({
               aspectRatio: `${entry.images[0].width} / ${entry.images[0].height}`, // used to keep consistent size when slideshow happens.
               position: "relative",
               width: "100%",
+              height: "100%",
               backgroundColor: "var(--tertiary)",
             }}
-            key={hoveredImage}
+            // key={hoveredImage}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
@@ -112,7 +84,7 @@ export default function GalleryItem({
           >
             <Image
               // src={getImageUrl(entry.images[0].id)}
-              src={getImageUrl(entry.images[hoveredImage].id)}
+              src={getImageUrl(entry.images[0].id)}
               alt={`Drawing ${entry.title}`}
               width={entry.images[0].width}
               height={entry.images[0].height}

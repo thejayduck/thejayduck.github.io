@@ -18,9 +18,9 @@
   justify-content: center;
 
   .canvasItem {
-    // max-height: calc(-85px + 100vh);
     max-width: 100%;
-    max-height: 100%;
+    // max-height: 100%;
+    max-height: calc(-85px + 100vh); //? Forgot why I had to disable this
     height: auto;
     width: auto;
     object-fit: contain;
@@ -31,8 +31,10 @@
 .imageAlt {
   user-select: none;
   pointer-events: none;
-  background-color: var(--secondary-opaque);
-  opacity: 0.8;
+  background: hsla(var(--secondary-opaque-hsla), 0.6);
+
+  // background-color: var(--secondary-opaque);
+  // opacity: 0.8;
   position: absolute;
   bottom: 4rem;
   margin-bottom: var(--spacing-normal);
@@ -60,7 +62,7 @@
   // }
 
   a {
-    background-color: hsla(var(--secondary-opaque-hsla), 0.5);
+    background: hsla(var(--secondary-opaque-hsla), 0.6);
   }
 }
 

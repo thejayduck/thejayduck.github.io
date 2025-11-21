@@ -1,15 +1,29 @@
 import styles from "../../styles/Gallery.module.scss";
 
-import React, { useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import gallery from "../../docs/json/gallery.json";
 import { getIcon } from "../../lib/helper";
-import { useToast } from "../toashHandler";
 
-export const TagButtons = () => {
-  const { showToast } = useToast();
+export function GalleryToolbar() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedYear, setSelectedYear] = useState("all");
+
+  const [layoutView, setLayoutView] = useState<"custom" | "grid">("custom");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("galleryLayout");
+    if (saved == "custom" || saved == "grid") {
+      setLayoutView(saved);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("galleryLayout", layoutView);
+    }
+  }, [layoutView]);
+
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const tagCollection = (item: (typeof gallery)[number]): string[] => {
@@ -73,25 +87,35 @@ export const TagButtons = () => {
     filteredGallery,
     selectedTags,
     selectedYear,
+    layoutView,
     component: (
       <div ref={scrollRef} className={styles.filterTags} onWheel={handleWheel}>
+        <button
+          className={styles.tagButton}
+          onClick={() =>
+            setLayoutView((prev) => (prev === "custom" ? "grid" : "custom"))
+          }
+          title="Toggle Layout"
+        >
+          <i
+            className={`${
+              layoutView === "grid"
+                ? getIcon("customLayout")
+                : getIcon("gridLayout")
+            } ri-1x ri-fw`}
+          />
+        </button>
+
         <button
           className={`${styles.tagButton} ${styles.clearTags}`}
           disabled={selectedTags.length <= 0 && selectedYear == "all"}
           onClick={() => {
             setSelectedTags([]);
             setSelectedYear("all");
-            // showToast(
-            //   "Cleared Filters!",
-            //   undefined,
-            //   getIcon("clearFilter"),
-            //   "low"
-            // );
           }}
-          title="Clear Filter"
+          title="Clear Filter(s)"
         >
           <i className={`${getIcon("clearFilter")} ri-1x ri-fw`} />
-          {/* <span>Clear Filter</span> */}
         </button>
         <select
           name="selectedYear"
@@ -103,7 +127,9 @@ export const TagButtons = () => {
             .sort((a, b) => a.localeCompare(b))
             .reverse()
             .map((year) => (
-              <option value={year}>{year}</option>
+              <option key={year} value={year}>
+                {year}
+              </option>
             ))}
         </select>
 
@@ -132,4 +158,4 @@ export const TagButtons = () => {
       </div>
     ),
   };
-};
+}

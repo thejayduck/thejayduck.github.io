@@ -341,16 +341,16 @@ export function ImagePreview({
             <ul>
               <li>
                 <i className={getIcon("createdDate")} /> Created:{" "}
-                <strong>
+                <span>
                   {currentImage?.timestamp
                     ? formatUnixTimestamp(currentImage.timestamp)
                     : formatDate(currentImage?.date)}
-                </strong>
+                </span>
               </li>
               {currentImage?.software && (
                 <li>
                   <i className={getIcon("softwareUsed")} /> Software:{" "}
-                  <strong>{currentImage.software}</strong>
+                  <span>{currentImage.software}</span>
                 </li>
               )}
             </ul>
@@ -397,7 +397,7 @@ export function ImagePreview({
           <br />
 
           {/* Links */}
-          <hr />
+          <h3>Links</h3>
           <div className={styles.links}>
             {currentImage.external &&
               currentImage.external.map(
@@ -444,7 +444,7 @@ export function ImagePreview({
               <span>Copy Link</span>
             </Link>
           </div>
-          <hr />
+          {/* <hr /> */}
 
           {/* Tags */}
           <h3>Tags</h3>
