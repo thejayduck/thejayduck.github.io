@@ -446,8 +446,7 @@ export function CanvasImage({
       {/* Canvas Controller Bar */}
       {imageLoaded &&
         !isDragging &&
-        isSensitive &&
-        isSensitiveContentVisible && (
+        (!isSensitive || isSensitiveContentVisible) && (
           <AnimatePresence>
             {shortcuts && (
               <>
