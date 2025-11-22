@@ -19,20 +19,27 @@ const iconVariants: Record<string, TargetAndTransition> = {
 
 export default function ThemeToggle() {
   const [mount, setMount] = useState(false);
+  const themes = ["light", "dark", "gruvbox"];
+
   const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme");
-      const systemPreference = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-      return savedTheme || systemPreference;
+      return savedTheme || themes[0];
     }
-    return "light";
+    return themes[0];
   });
 
+  const themeIcon: Record<string, string> = {
+    light: getIcon("lightTheme"),
+    dark: getIcon("darkTheme"),
+    gruvbox: getIcon("gruvboxTheme"),
+  };
+
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
+    setTheme((prev) => {
+      const index = themes.indexOf(prev);
+      return themes[(index + 1) % themes.length];
+    });
   };
 
   useEffect(() => {
@@ -51,7 +58,9 @@ export default function ThemeToggle() {
           key="themeToggle"
           onClick={toggleTheme}
           data-theme={theme}
-          title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          title={`Switch to next theme: ${
+            themes[(themes.indexOf(theme) + 1) % themes.length]
+          }`}
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -61,11 +70,7 @@ export default function ThemeToggle() {
               exit="exit"
               variants={iconVariants}
             >
-              <i
-                className={`${
-                  theme === "dark" ? getIcon("lightMode") : getIcon("darkMode")
-                }`}
-              />
+              <i className={themeIcon[theme]} />
             </motion.div>
           </AnimatePresence>
         </button>

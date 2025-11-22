@@ -69,6 +69,32 @@
   --hr-color: var(--tertiary);
 }
 
+:root[data-theme="gruvbox"] {
+  // Colors
+  --primary-hsla: 333, 34%, 54%;
+  --primary: hsl(333, 34%, 54%);
+
+  --secondary: rgba(41, 41, 41, 0.5);
+  --secondary-opaque: hsl(0, 0%, 16%);
+  --secondary-opaque-hsla: 0, 0%, 16%;
+
+  --tertiary: hsl(195, 6%, 12%);
+  --notification: hsl(6, 96%, 59%);
+
+  --font-default: #ebdbb2;
+  --font-skillbar: var(--primary);
+
+  // Shadows
+  --box-shadow: 0 4px 10px hsla(48, 87%, 88%, 0.15);
+  --card-box-shadow: 0 4px 25px hsla(48, 87%, 88%, 0.15);
+
+  //  Others
+  --border-skillbar: var(--primary);
+  --hr-color: hsl(20, 5%, 22%);
+
+  color-scheme: dark;
+}
+
 html[data-theme="light"],
 body[data-theme="light"] {
   background-image: url("/background-light.svg");
@@ -85,4 +111,11 @@ body[data-theme="dark"] {
   background: hsl(248, 8%, 17%);
 
   color-scheme: dark;
+}
+
+html[data-theme="gruvbox"],
+body[data-theme="gruvbox"] {
+  background-color: #282828;
+  background-image: radial-gradient(#3c3836 1px, transparent 1px);
+  background-size: 20px 20px;
 }

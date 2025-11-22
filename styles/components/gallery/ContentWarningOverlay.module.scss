@@ -24,6 +24,7 @@
     border-radius: var(--border);
     border: 0;
     padding: var(--spacing-small) var(--spacing-normal);
+    background-color: hsla(var(--primary-hsla), 0.2);
   }
 
   // pointer-events: none;

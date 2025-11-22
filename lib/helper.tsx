@@ -167,8 +167,9 @@ export function galleryRouterSet(id: string, index: number) {
 
 const iconList: Record<string, string> = {
   close: "ri-close-fill",
-  lightMode: "ri-sun-fill",
-  darkMode: "ri-moon-fill",
+  lightTheme: "ri-sun-fill",
+  darkTheme: "ri-moon-fill",
+  gruvboxTheme: "ri-atom-fill",
   link: "ri-link",
   external: "ri-external-link-fill",
   leftArrow: "ri-arrow-left-fill",

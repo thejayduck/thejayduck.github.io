@@ -55,7 +55,7 @@
   }
 
   .scrollIndexDots {
-    background-color: hsl(251, 17%, 25%, 50%);
+    background-color: var(--secondary-opaque);
     // height: 28px;
     height: 100%;
     padding: 0 var(--spacing-small);
@@ -74,7 +74,7 @@
       width: 8px;
       height: 8px;
       // border-radius: var(--border);
-      background-color: var(--secondary);
+      background-color: var(--hr-color);
       opacity: 0.7;
       cursor: pointer;
       transition: all 255ms;
@@ -82,7 +82,7 @@
       &.activeDot {
         // height: 20px;
         opacity: 1;
-        background-color: white;
+        background-color: var(--font-default);
       }
     }
   }
