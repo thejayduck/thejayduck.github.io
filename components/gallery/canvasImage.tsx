@@ -60,6 +60,8 @@ export function CanvasImage({
   const { showToast } = useToast();
   //? retain previous zoom value for double click
   const isMobile = /iPhone|Android/i.test(navigator.userAgent);
+  // const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 }); // used for content warning overlay
+
   const zoomFactor: number = 0.15;
   const canvasElementRef = useRef<HTMLCanvasElement>(null);
   const [zoomIndex, setZoomIndex] = useState(0);
@@ -276,6 +278,10 @@ export function CanvasImage({
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
 
+    //Canvas size for content warning overlay // ? Disabled due to weird sizing effect
+    // const rect = canvasElementRef.current?.getBoundingClientRect();
+    // setCanvasSize({ width: rect.width, height: rect.height });
+
     // Placeholder Background
     ctx.fillStyle = "hsl(251, 17%, 25%)";
     const gradient = ctx.createLinearGradient(0, 0, 0, height);
@@ -358,8 +364,8 @@ export function CanvasImage({
         <ContentWarningOverlay
           onReveal={() => onReveal?.()}
           dimensions={{
-            width: canvasElementRef.current?.width,
-            height: canvasElementRef.current?.height,
+            width: canvasElementRef.current?.getBoundingClientRect().width,
+            height: canvasElementRef.current?.getBoundingClientRect().height,
           }}
         />
       )}
@@ -436,46 +442,51 @@ export function CanvasImage({
         }}
         transition={{ duration: 0.15, ease: "linear" }}
       ></motion.canvas>
-      {imageLoaded && !isDragging && (
-        <AnimatePresence>
-          {shortcuts && (
-            <>
-              {imageAlt && zoomIndex == 0 && (
-                <span className={styles.imageAlt}>
-                  {imageAlt} ({width}x{height})
-                </span>
-              )}
-              <motion.div
-                className={styles.controls}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                {Object.entries(actions)
-                  .filter(([_, action]) => action.condition == true)
-                  .map(([key, action]) => (
-                    <Button
-                      key={key}
-                      title={action.title || ""}
-                      icon={action.icon}
-                      label={`${action.label}${
-                        action.shortcut
-                          ? ` (${action.meta ? `${action.meta} + ` : ""}${
-                              action.shortcut
-                            })`
-                          : ""
-                      }`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        action.action();
-                      }}
-                    />
-                  ))}
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
-      )}
+
+      {/* Canvas Controller Bar */}
+      {imageLoaded &&
+        !isDragging &&
+        isSensitive &&
+        isSensitiveContentVisible && (
+          <AnimatePresence>
+            {shortcuts && (
+              <>
+                {imageAlt && zoomIndex == 0 && (
+                  <span className={styles.imageAlt}>
+                    {imageAlt} ({width}x{height})
+                  </span>
+                )}
+                <motion.div
+                  className={styles.controls}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  {Object.entries(actions)
+                    .filter(([_, action]) => action.condition == true)
+                    .map(([key, action]) => (
+                      <Button
+                        key={key}
+                        title={action.title || ""}
+                        icon={action.icon}
+                        label={`${action.label}${
+                          action.shortcut
+                            ? ` (${action.meta ? `${action.meta} + ` : ""}${
+                                action.shortcut
+                              })`
+                            : ""
+                        }`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          action.action();
+                        }}
+                      />
+                    ))}
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+        )}
     </li>
   );
 }
