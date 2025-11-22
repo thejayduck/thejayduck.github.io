@@ -6,13 +6,7 @@ import { useRouter } from "next/router";
 import { AnimatePresence, motion, wrap } from "motion/react";
 import { useDebouncedCallback } from "use-debounce";
 
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
   formatDate,
@@ -44,7 +38,7 @@ export function ImagePreview({
   const [firstLoad, setFirstLoad] = useState(true);
   const [[imageIndex, direction], setImageIndex] = useState([activeIndex, 0]);
   const currentImage = images[imageIndex];
-  const currentImageId = currentImage.images[0].id;
+  const currentImageId = currentImage._id;
   const [isDraggingPreview, setIsDraggingPreview] = useState(false);
 
   const [scrollIndex, setScrollIndex] = useState(imageScrollIndex || 0);
@@ -182,7 +176,7 @@ export function ImagePreview({
     return shuffledImages
       .filter(
         (img: any) =>
-          img.images[0].id !== currentImageId &&
+          img._id !== currentImageId &&
           img.tags.some((tag: string) => currentImage.tags.includes(tag))
       )
       .slice(0, 9);
@@ -339,8 +333,8 @@ export function ImagePreview({
           {/* Stats */}
           <div className={styles.imageStats}>
             <ul>
-              <li>
-                <i className={getIcon("createdDate")} /> Created:{" "}
+              <li title="Creation Date">
+                <i className={getIcon("createdDate")} />
                 <span>
                   {currentImage?.timestamp
                     ? formatUnixTimestamp(currentImage.timestamp)
@@ -348,9 +342,15 @@ export function ImagePreview({
                 </span>
               </li>
               {currentImage?.software && (
-                <li>
-                  <i className={getIcon("softwareUsed")} /> Software:{" "}
+                <li title="Software">
+                  <i className={getIcon("softwareUsed")} />
                   <span>{currentImage.software}</span>
+                </li>
+              )}
+              {currentImage?.attribution && (
+                <li title="Attribution">
+                  <i className={getIcon("attribution")} />
+                  <span>{currentImage?.attribution}</span>
                 </li>
               )}
             </ul>
@@ -366,17 +366,16 @@ export function ImagePreview({
                 const mainImage = img.images[0];
                 return (
                   <div
-                    key={mainImage.id}
+                    key={img._id}
                     className={styles.thumbnail}
                     title={"Click to view image"}
                   >
-                    {img?.sensitive &&
-                      !visibleSensitiveImages[mainImage.id] && (
-                        <ContentWarningOverlay
-                          onReveal={() => onRevealClick(mainImage.id)}
-                          noIcon
-                        />
-                      )}
+                    {img?.sensitive && !visibleSensitiveImages[img._id] && (
+                      <ContentWarningOverlay
+                        onReveal={() => onRevealClick(img._id)}
+                        noIcon
+                      />
+                    )}
                     <Image
                       src={getImageUrl(mainImage.id)}
                       alt={img.title}

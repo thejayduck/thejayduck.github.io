@@ -13,8 +13,10 @@ interface IImage {
 }
 
 export default interface IGalleryEntry {
+  _id: string;
   title: string;
   description?: string;
+  attribution?: string;
   date: string;
   timestamp?: number;
   software?: string;

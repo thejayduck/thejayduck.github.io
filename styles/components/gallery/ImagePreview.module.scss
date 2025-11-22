@@ -193,11 +193,21 @@
         list-style: none;
         padding: 0;
 
+        margin: var(--spacing-small) 0;
+
         li {
+          border: 1px solid var(--primary);
+          border-radius: var(--border);
+          background-color: hsla(var(--primary-hsla), 0.2);
+          padding: var(--spacing-mini) var(--spacing-small);
           margin: var(--spacing-small) 0;
 
+          // &:first-child {
+          //   margin-bottom: var(--spacing-small);
+          // }
+
           span {
-            font-weight: bolder;
+            font-weight: var(--font-bold);
           }
           i {
             margin-right: var(--spacing-small);

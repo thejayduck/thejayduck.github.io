@@ -2,13 +2,12 @@ import styles from "../../styles/Gallery.module.scss";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-import gallery from "../../docs/json/gallery.json";
 import { getIcon } from "../../lib/helper";
+import IGalleryEntry from "./IGalleryEntry";
 
-export function GalleryToolbar() {
+export function GalleryToolbar(galleryData: IGalleryEntry[]) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedYear, setSelectedYear] = useState("all");
-
   const [layoutView, setLayoutView] = useState<"custom" | "grid">("custom");
 
   useEffect(() => {
@@ -26,7 +25,7 @@ export function GalleryToolbar() {
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const tagCollection = (item: (typeof gallery)[number]): string[] => {
+  const tagCollection = (item: IGalleryEntry): string[] => {
     return [...(item.tags ?? []), item.sensitive ? "sensitive" : null].filter(
       (tag) => typeof tag == "string"
     );
@@ -53,7 +52,7 @@ export function GalleryToolbar() {
   };
 
   const filteredGallery = useMemo(() => {
-    return gallery.filter((item) => {
+    return galleryData.filter((item) => {
       const itemYear = item.date?.split("-")[0]; // Date format uses YYYY-MM
       const year = selectedYear == "all" || itemYear == selectedYear;
 
@@ -63,7 +62,7 @@ export function GalleryToolbar() {
 
       return year && tags;
     });
-  }, [selectedTags, selectedYear]);
+  }, [selectedTags, selectedYear, galleryData]);
 
   const filteredTags = new Set(filteredGallery.flatMap(tagCollection)); // Used to disable unavailable tags.
 
@@ -123,7 +122,9 @@ export function GalleryToolbar() {
           onChange={(e) => setSelectedYear(e.target.value)}
         >
           <option value="all">All</option>
-          {Array.from(new Set(gallery.map((item) => item.date.split("-")[0])))
+          {Array.from(
+            new Set(galleryData.map((item) => item.date.split("-")[0]))
+          )
             .sort((a, b) => a.localeCompare(b))
             .reverse()
             .map((year) => (
@@ -133,7 +134,7 @@ export function GalleryToolbar() {
             ))}
         </select>
 
-        {Array.from(new Set(gallery.flatMap(tagCollection)))
+        {Array.from(new Set(galleryData.flatMap(tagCollection)))
           .sort((a, b) => a.localeCompare(b))
           .map((tag) => (
             <button

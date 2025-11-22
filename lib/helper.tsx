@@ -218,6 +218,7 @@ const iconList: Record<string, string> = {
   imagePosts: "ri-image-2-fill",
   createdDate: "ri-calendar-fill",
   softwareUsed: "ri-pen-nib-fill",
+  attribution: "ri-creative-commons-by-fill",
   moreImages: "ri-multi-image-fill",
   tag: "ri-hashtag",
   clearFilter: "ri-filter-off-fill",
@@ -267,4 +268,36 @@ export async function decodeFrames(path: string): Promise<VideoFrame[]> {
     }
   }
   return frames;
+}
+
+export async function getGallery(onSucces?: (data: any) => void) {
+  const res = await fetch("/api/gallery");
+
+  if (res.status != 200) {
+    if (res.status == 500) {
+      const json = await res.json();
+      console.log(json.message);
+      // showToast(
+      //   "Server Error",
+      //   `${json.message}`,
+      //   getIcon("error"),
+      //   "critical"
+      // );
+    } else {
+      // showToast(
+      //   "Server Error",
+      //   `API Request returned ${res.status}`,
+      //   getIcon("error"),
+      //   "critical"
+      // );
+      console.log(res.status);
+    }
+    return;
+  }
+
+  const json = await res.json();
+  if (onSucces) {
+    onSucces?.(json.entries);
+  }
+  return json.entries;
 }

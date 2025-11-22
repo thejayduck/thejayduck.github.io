@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "motion/react";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import CardPanel from "../components/cardPanel";
 import { GalleryGrid } from "../components/gallery/galleryGrid";
@@ -14,7 +14,8 @@ import IGalleryEntry from "../components/gallery/IGalleryEntry";
 import { ImagePreview } from "../components/gallery/imagePreview";
 import { GalleryToolbar } from "../components/gallery/galleryToolbar";
 import PageBase from "../components/pageBase";
-import { galleryRouterSet, getIcon } from "../lib/helper";
+import { galleryRouterSet, getGallery, getIcon } from "../lib/helper";
+import { useToast } from "../components/toashHandler";
 
 const PER_PAGE = 12;
 
@@ -32,6 +33,20 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 export default function Gallery({ id, index }: { id: string; index: number }) {
   const router = useRouter();
   const galleryRouter = galleryRouterSet(id || "", 0);
+  const { showToast } = useToast();
+
+  // Gallery Data from MongoDB
+  const [galleryData, setGalleryData] = useState<IGalleryEntry[]>([]);
+
+  useEffect(() => {
+    const fetchGallery = async () => {
+      await getGallery((res) => {
+        setGalleryData(res);
+      });
+    };
+
+    fetchGallery();
+  }, []);
 
   // Paging
   const [page, setPage] = useState(1);
@@ -50,7 +65,7 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
     filteredGallery,
     layoutView,
     component: TagButtonsComponent,
-  } = GalleryToolbar();
+  } = GalleryToolbar(galleryData);
 
   const [displayedGallery, setDisplayedGallery] = useState<IGalleryEntry[]>([]);
 
@@ -125,6 +140,15 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
       return accumulator + currentValue.images.length;
     }, 0);
   }
+
+  const activeIndex = useMemo(() => {
+    if (!id || filteredGallery.length == 0) return -1;
+
+    return filteredGallery.findIndex((entry) => {
+      if (entry._id == id) return true;
+      return entry.images.some((img) => img.id == id);
+    });
+  }, [id, filteredGallery]);
 
   return (
     <>
@@ -218,12 +242,10 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
 
           {/* Image Preview Component */}
           <AnimatePresence>
-            {id != undefined && (
+            {activeIndex != -1 && (
               <ImagePreview
                 key={"imagePreviewModal"}
-                activeIndex={filteredGallery.findIndex(
-                  (image) => image.images[0].id == id
-                )}
+                activeIndex={activeIndex}
                 imageScrollIndex={index}
                 images={filteredGallery}
                 onOutsideClick={handleClosePreview}

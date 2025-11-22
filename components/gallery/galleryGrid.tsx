@@ -65,15 +65,13 @@ export const GalleryGrid: React.FC<IGalleryGridProps> = ({
     >
       {gallery.map((galleryEntry: IGalleryEntry, index: number) => (
         <GalleryItem
-          key={index}
+          key={galleryEntry._id}
           entry={galleryEntry}
           index={index}
-          handleImageClick={() => handleImageClick(galleryEntry.images[0].id)}
+          handleImageClick={() => handleImageClick(galleryEntry._id)}
           // Content Warning Filter
-          isSensitiveContentVisible={
-            !!visibleSensitiveImages[galleryEntry.images[0].id]
-          }
-          handleRevealClick={() => handleRevealClick(galleryEntry.images[0].id)}
+          isSensitiveContentVisible={!!visibleSensitiveImages[galleryEntry._id]}
+          handleRevealClick={() => handleRevealClick(galleryEntry._id)}
         />
       ))}
     </div>
