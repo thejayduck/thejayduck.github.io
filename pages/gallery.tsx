@@ -19,6 +19,8 @@ import { useToast } from "../components/toashHandler";
 
 const PER_PAGE = 12;
 
+// TODO add loading text or animation
+
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const id = context.query.id;
   const index = context.query.index;
