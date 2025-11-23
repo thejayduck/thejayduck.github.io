@@ -503,9 +503,9 @@ export function CanvasImage({
                         icon={action.icon}
                         label={`${action.label}${
                           action.shortcut
-                            ? ` (${action.meta ? `${action.meta}, ` : ""}${
+                            ? ` [${action.meta ? `${action.meta}, ` : ""}${
                                 action.shortcut.label
-                              })`
+                              }]`
                             : ""
                         }`}
                         onClick={(e) => {
