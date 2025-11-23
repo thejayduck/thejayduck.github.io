@@ -1,14 +1,14 @@
-import styles from "../styles/Projects.module.scss";
+import styles from "@/styles/Projects.module.scss";
 
 import Head from "next/head";
 import Link from "next/link";
 
-import CardPanel from "../components/cardPanel";
-import PageBase from "../components/pageBase";
-import IProjectItem from "../components/projects/IProjectItem";
-import ProjectItem from "../components/projects/projectItem";
-import projects from "../docs/json/projects.json";
-import { getIcon } from "../lib/helper";
+import CardPanel from "@/components/cardPanel";
+import PageBase from "@/components/pageBase";
+import IProjectItem from "@/components/projects/IProjectItem";
+import ProjectItem from "@/components/projects/projectItem";
+import projects from "@/docs/json/projects.json";
+import { getIcon } from "@/lib/helper";
 
 export default function Projects() {
   const groupByYear: { [year: number]: IProjectItem[] } = projects.reduce(

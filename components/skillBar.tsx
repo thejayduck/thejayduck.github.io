@@ -1,4 +1,4 @@
-import styles from "../styles/components/Skillbar.module.scss";
+import styles from "@/styles/components/Skillbar.module.scss";
 
 import { motion } from "motion/react";
 

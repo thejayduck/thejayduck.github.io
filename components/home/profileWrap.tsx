@@ -1,9 +1,9 @@
-import styles from "../../styles/Home.module.scss";
+import styles from "@/styles/Home.module.scss";
 
 import Image from "next/image";
 import Link from "next/link";
 
-import { getIcon } from "../../lib/helper";
+import { getIcon } from "@/lib/helper";
 import Button from "../button";
 import { placeholderImage } from "../imageShimmer";
 

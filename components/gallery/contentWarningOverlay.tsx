@@ -1,6 +1,6 @@
-import styles from "../../styles/components/gallery/ContentWarningOverlay.module.scss";
+import styles from "@/styles/components/gallery/ContentWarningOverlay.module.scss";
 
-import { getIcon } from "../../lib/helper";
+import { getIcon } from "@/lib/helper";
 
 interface IContentWarningOverlayProps {
   onReveal: () => void;

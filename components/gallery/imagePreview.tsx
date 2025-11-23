@@ -1,4 +1,4 @@
-import styles from "../../styles/components/gallery/ImagePreview.module.scss";
+import styles from "@/styles/components/gallery/ImagePreview.module.scss";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +14,7 @@ import {
   galleryRouterSet,
   getIcon,
   getImageUrl,
-} from "../../lib/helper";
+} from "@/lib/helper";
 import Button from "../button";
 import { placeholderImage } from "../imageShimmer";
 import { useToast } from "../toashHandler";

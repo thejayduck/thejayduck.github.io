@@ -1,5 +1,5 @@
 "use client";
-import styles from "../styles/components/ToastNotification.module.scss";
+import styles from "@/styles/components/ToastNotification.module.scss";
 
 import { AnimatePresence } from "motion/react";
 

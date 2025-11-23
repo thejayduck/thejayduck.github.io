@@ -1,5 +1,5 @@
 "use client";
-import styles from "../styles/components/ScrollManager.module.scss";
+import styles from "@/styles/components/ScrollManager.module.scss";
 
 import {
   AnimatePresence,
@@ -10,7 +10,7 @@ import {
 
 import { useState } from "react";
 
-import { getIcon } from "../lib/helper";
+import { getIcon } from "@/lib/helper";
 
 export default function ScrollManager() {
   const { scrollYProgress } = useScroll();

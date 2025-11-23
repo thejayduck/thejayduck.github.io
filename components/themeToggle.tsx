@@ -1,11 +1,11 @@
 "use client";
-import styles from "../styles/components/ThemeToggle.module.scss";
+import styles from "@/styles/components/ThemeToggle.module.scss";
 
 import { AnimatePresence, motion, TargetAndTransition } from "motion/react";
 
 import { useEffect, useState } from "react";
 
-import { getIcon } from "../lib/helper";
+import { getIcon } from "@/lib/helper";
 
 const iconVariants: Record<string, TargetAndTransition> = {
   initial: { y: -20, opacity: 0 },

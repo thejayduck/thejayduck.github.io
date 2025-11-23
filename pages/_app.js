@@ -1,10 +1,10 @@
-import "../styles/globals.scss";
-import "../styles/variables.scss";
+import "@/styles/globals.scss";
+import "@/styles/variables.scss";
 import "remixicon/fonts/remixicon.css";
 
-import ScrollManager from "../components/scrollManager";
-import ThemeToggle from "../components/themeToggle";
-import { ToastHandler } from "../components/toashHandler";
+import ScrollManager from "@/components/scrollManager";
+import ThemeToggle from "@/components/themeToggle";
+import { ToastHandler } from "@/components/toashHandler";
 
 function MyApp({ Component, pageProps }) {
   return (

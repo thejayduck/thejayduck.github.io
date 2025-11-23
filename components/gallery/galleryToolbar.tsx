@@ -1,8 +1,8 @@
-import styles from "../../styles/Gallery.module.scss";
+import styles from "@/styles/Gallery.module.scss";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-import { getIcon } from "../../lib/helper";
+import { getIcon } from "@/lib/helper";
 import IGalleryEntry from "./IGalleryEntry";
 
 export function GalleryToolbar(galleryData: IGalleryEntry[]) {

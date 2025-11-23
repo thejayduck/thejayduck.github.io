@@ -1,6 +1,6 @@
-import styles from "../styles/PageBase.module.scss";
+import styles from "@/styles/PageBase.module.scss";
 
-import { getIcon } from "../lib/helper";
+import { getIcon } from "@/lib/helper";
 
 import Button from "./button";
 

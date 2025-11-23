@@ -1,10 +1,10 @@
-import styles from "../../styles/components/TableOfContent.module.scss";
+import styles from "@/styles/components/TableOfContent.module.scss";
 
 import { AnimatePresence, motion } from "motion/react";
 
 import { useEffect, useRef, useState } from "react";
 
-import { getAnchors, getIcon, groupTreeBy } from "../../lib/helper";
+import { getAnchors, getIcon, groupTreeBy } from "@/lib/helper";
 
 import { AnchorItemProps, TableOfContent } from "./tableOfContent";
 

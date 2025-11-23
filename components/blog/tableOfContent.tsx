@@ -1,4 +1,4 @@
-import { getIcon } from "../../lib/helper";
+import { getIcon } from "@/lib/helper";
 
 export interface AnchorItemProps {
   level: number;

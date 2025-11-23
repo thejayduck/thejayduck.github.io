@@ -1,4 +1,4 @@
-import styles from "../../styles/components/gallery/CanvasItem.module.scss";
+import styles from "@/styles/components/gallery/CanvasItem.module.scss";
 
 import { AnimatePresence, motion, useInView } from "motion/react";
 
@@ -10,7 +10,7 @@ import React, {
   useState,
 } from "react";
 
-import { decodeFrames, getIcon } from "../../lib/helper";
+import { decodeFrames, getIcon } from "@/lib/helper";
 import Button from "../button";
 import { useToast } from "../toashHandler";
 

@@ -1,4 +1,4 @@
-import styles from "../../styles/Gallery.module.scss";
+import styles from "@/styles/Gallery.module.scss";
 
 import { useEffect, useRef, useState } from "react";
 

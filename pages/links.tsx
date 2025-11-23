@@ -1,13 +1,13 @@
-import styles from "../styles/Links.module.scss";
+import styles from "@/styles/Links.module.scss";
 
 import Head from "next/head";
 import Image from "next/image";
 
-import Button from "../components/button";
-import { placeholderImage } from "../components/imageShimmer";
-import PageBase from "../components/pageBase";
-import { useToast } from "../components/toashHandler";
-import { getIcon } from "../lib/helper";
+import Button from "@/components/button";
+import { placeholderImage } from "@/components/imageShimmer";
+import PageBase from "@/components/pageBase";
+import { useToast } from "@/components/toashHandler";
+import { getIcon } from "@/lib/helper";
 
 interface SocialLink {
   icon: string;

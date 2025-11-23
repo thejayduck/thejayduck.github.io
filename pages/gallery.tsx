@@ -1,4 +1,4 @@
-import styles from "../styles/Gallery.module.scss";
+import styles from "@/styles/Gallery.module.scss";
 
 import { GetServerSideProps } from "next";
 import Head from "next/head";
@@ -8,14 +8,15 @@ import { AnimatePresence } from "motion/react";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-import CardPanel from "../components/cardPanel";
-import { GalleryGrid } from "../components/gallery/galleryGrid";
-import IGalleryEntry from "../components/gallery/IGalleryEntry";
-import { ImagePreview } from "../components/gallery/imagePreview";
-import { GalleryToolbar } from "../components/gallery/galleryToolbar";
-import PageBase from "../components/pageBase";
-import { galleryRouterSet, getGallery, getIcon } from "../lib/helper";
-import { useToast } from "../components/toashHandler";
+import CardPanel from "@/components/cardPanel";
+import { GalleryGrid } from "@/components/gallery/galleryGrid";
+import IGalleryEntry from "@/components/gallery/IGalleryEntry";
+import { ImagePreview } from "@/components/gallery/imagePreview";
+import { GalleryToolbar } from "@/components/gallery/galleryToolbar";
+import PageBase from "@/components/pageBase";
+import { galleryRouterSet, getGallery, getIcon } from "@/lib/helper";
+import { useToast } from "@/components/toashHandler";
+import KaomojiLoader from "@/components/kaomojiLoader";
 
 const PER_PAGE = 12;
 
@@ -39,11 +40,13 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
 
   // Gallery Data from MongoDB
   const [galleryData, setGalleryData] = useState<IGalleryEntry[]>([]);
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
     const fetchGallery = async () => {
       await getGallery((res) => {
         setGalleryData(res);
+        setHasLoaded(true);
       });
     };
 
@@ -213,13 +216,17 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
             <hr />
             {TagButtonsComponent}
             <br />
-            <GalleryGrid
-              handleImageClick={handleImageClick}
-              gallery={displayedGallery}
-              visibleSensitiveImages={visibleSensitiveImages}
-              handleRevealClick={handleRevealClick}
-              layoutView={layoutView}
-            />
+            {hasLoaded ? (
+              <GalleryGrid
+                handleImageClick={handleImageClick}
+                gallery={displayedGallery}
+                visibleSensitiveImages={visibleSensitiveImages}
+                handleRevealClick={handleRevealClick}
+                layoutView={layoutView}
+              />
+            ) : (
+              <KaomojiLoader />
+            )}
             {/* Infinite Loader Ref */}
             {displayedGallery.length < filteredGallery.length ? (
               <>

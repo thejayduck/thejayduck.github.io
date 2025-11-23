@@ -1,13 +1,13 @@
-import styles from "../styles/Blog.module.scss";
+import styles from "@/styles/Blog.module.scss";
 
 import Head from "next/head";
 import { GetStaticPropsResult } from "next/types";
 import { motion } from "motion/react";
 
-import BlogItem from "../components/blog/blogItem";
-import IBlogProps, { IBlogPostProps } from "../components/blog/IBlogProps";
-import PageBase from "../components/pageBase";
-import GetPosts from "../lib/getPosts";
+import BlogItem from "@/components/blog/blogItem";
+import IBlogProps, { IBlogPostProps } from "@/components/blog/IBlogProps";
+import PageBase from "@/components/pageBase";
+import GetPosts from "@/lib/getPosts";
 
 export async function getStaticProps(): Promise<
   GetStaticPropsResult<IBlogPostProps>

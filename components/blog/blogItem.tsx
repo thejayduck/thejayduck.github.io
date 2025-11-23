@@ -1,4 +1,4 @@
-import styles from "../../styles/components/BlogItem.module.scss";
+import styles from "@/styles/components/BlogItem.module.scss";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 import React from "react";
 
-import { countWords, getIcon, readTime } from "../../lib/helper";
+import { countWords, getIcon, readTime } from "@/lib/helper";
 import { useToast } from "../toashHandler";
 
 import IBlogProps from "./IBlogProps";

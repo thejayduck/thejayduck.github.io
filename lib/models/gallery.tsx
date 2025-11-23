@@ -1,5 +1,5 @@
 import mongoose, { Model, Schema } from "mongoose";
-import IGalleryEntry from "../../components/gallery/IGalleryEntry";
+import IGalleryEntry from "@/components/gallery/IGalleryEntry";
 
 // TODO rename file
 

@@ -1,4 +1,4 @@
-import styles from "../../styles/BlogPost.module.scss";
+import styles from "@/styles/BlogPost.module.scss";
 
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -13,11 +13,11 @@ import remarkGfm from "remark-gfm";
 
 import Markdown from "react-markdown";
 
-import { IBlogPostProps } from "../../components/blog/IBlogProps";
-import TableOfContentToggle from "../../components/blog/tableOfContentToggle";
-import PageBase from "../../components/pageBase";
-import GetPosts from "../../lib/getPosts";
-import { countWords, readTime } from "../../lib/helper";
+import { IBlogPostProps } from "@/components/blog/IBlogProps";
+import TableOfContentToggle from "@/components/blog/tableOfContentToggle";
+import PageBase from "@/components/pageBase";
+import GetPosts from "@/lib/getPosts";
+import { countWords, readTime } from "@/lib/helper";
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   return {

@@ -1,8 +1,8 @@
-import styles from "../styles/Error.module.scss";
+import styles from "@/styles/Error.module.scss";
 
 import Image from "next/image";
 
-import PageBase from "../components/pageBase";
+import PageBase from "@/components/pageBase";
 
 export default function Error404() {
   return (

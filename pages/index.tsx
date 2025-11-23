@@ -1,14 +1,14 @@
-import styles from "../styles/Home.module.scss";
+import styles from "@/styles/Home.module.scss";
 
 import Head from "next/head";
 import Link from "next/link";
 
-import CardPanel from "../components/cardPanel";
-import ProfileWrap from "../components/home/profileWrap";
-import SkillsWrap from "../components/home/skillsWrap";
-import PageBase from "../components/pageBase";
-import Subtitle from "../components/subtitle";
-import { getIcon } from "../lib/helper";
+import CardPanel from "@/components/cardPanel";
+import ProfileWrap from "@/components/home/profileWrap";
+import SkillsWrap from "@/components/home/skillsWrap";
+import PageBase from "@/components/pageBase";
+import Subtitle from "@/components/subtitle";
+import { getIcon } from "@/lib/helper";
 
 export default function Home() {
   return (

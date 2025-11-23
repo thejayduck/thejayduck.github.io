@@ -1,4 +1,4 @@
-import styles from "../../styles/components/ProjectItem.module.scss";
+import styles from "@/styles/components/ProjectItem.module.scss";
 
 import Image from "next/image";
 import Link from "next/link";

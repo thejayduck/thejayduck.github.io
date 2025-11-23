@@ -1,7 +1,7 @@
-import styles from "../../styles/Home.module.scss";
+import styles from "@/styles/Home.module.scss";
 
-import toolbox from "../../docs/json/toolbox.json";
-import { getIcon } from "../../lib/helper";
+import toolbox from "@/docs/json/toolbox.json";
+import { getIcon } from "@/lib/helper";
 import CardPanel from "../cardPanel";
 import SkillBar from "../skillBar";
 import Subtitle from "../subtitle";

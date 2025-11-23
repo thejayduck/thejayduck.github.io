@@ -1,11 +1,11 @@
-import styles from "../../styles/Gallery.module.scss";
+import styles from "@/styles/Gallery.module.scss";
 
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 
 import { useEffect, useState } from "react";
 
-import { formatDate, getIcon, getImageUrl, isNewImage } from "../../lib/helper";
+import { formatDate, getIcon, getImageUrl, isNewImage } from "@/lib/helper";
 import { shimmer, toBase64 } from "../imageShimmer";
 
 import ContentWarningOverlay from "./contentWarningOverlay";

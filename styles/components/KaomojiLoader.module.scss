@@ -1,0 +1,31 @@
+.kaomojiWrapper {
+  padding: var(--spacing-medium);
+  text-align: center;
+  font-size: var(--font-large);
+  opacity: 0.8;
+  overflow: hidden;
+  user-select: none;
+
+  .kaomoji {
+    overflow: hidden;
+    margin-top: var(--spacing-medium);
+    animation: spin 4s linear infinite;
+
+    white-space: nowrap;
+  }
+
+  p {
+    margin-top: var(--spacing-large);
+    font-size: var(--font-regular);
+    font-weight: bold;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
