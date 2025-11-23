@@ -34,7 +34,10 @@ interface CanvasItemProps {
 
 interface CanvasFunctionProps {
   icon: string;
-  shortcut?: string | number;
+  shortcut?: {
+    key: string | number;
+    label: string;
+  };
   meta?: string;
   action: () => void;
   title?: string;
@@ -104,7 +107,10 @@ export function CanvasImage({
       Reset: {
         icon: getIcon("back"),
         action: () => resetTransform(),
-        shortcut: "KeyR",
+        shortcut: {
+          key: "KeyR",
+          label: "R",
+        },
         label: "Reset",
         condition: true,
       },
@@ -120,7 +126,10 @@ export function CanvasImage({
       },
       ZoomIn: {
         icon: getIcon("zoomIn"),
-        shortcut: "NumpadAdd",
+        shortcut: {
+          key: "NumpadAdd",
+          label: "+",
+        },
         meta: "Shift",
         action: () =>
           setZoomIndex((prev) => Math.min(Math.max(prev + 1, -4), 10)),
@@ -129,7 +138,10 @@ export function CanvasImage({
       },
       ZoomOut: {
         icon: getIcon("zoomOut"),
-        shortcut: "NumpadSubtract",
+        shortcut: {
+          key: "NumpadSubtract",
+          label: "-",
+        },
         meta: "Shift",
         action: () =>
           setZoomIndex((prev) => Math.min(Math.max(prev - 1, -4), 10)),
@@ -138,49 +150,70 @@ export function CanvasImage({
       },
       FlipX: {
         icon: getIcon("flipX"),
-        shortcut: "KeyH",
+        shortcut: {
+          key: "KeyH",
+          label: "H",
+        },
         action: () => setFlipX((prev) => !prev),
         label: "Flip Horizontal",
         condition: true,
       },
       FlipY: {
         icon: getIcon("flipY"),
-        shortcut: "KeyV",
+        shortcut: {
+          key: "KeyV",
+          label: "V",
+        },
         action: () => setFlipY((prev) => !prev),
         label: "Flip Vertical",
         condition: true,
       },
       RotateLeft: {
         icon: getIcon("rotateLeft"),
-        shortcut: "KeyQ",
+        shortcut: {
+          key: "KeyQ",
+          label: "Q",
+        },
         action: () => setRotation((prev) => prev - 1),
         label: "Rotate Left",
         condition: true,
       },
       RotateRight: {
         icon: getIcon("rotateRight"),
-        shortcut: "KeyE",
+        shortcut: {
+          key: "KeyE",
+          label: "E",
+        },
         action: () => setRotation((prev) => prev + 1),
         label: "Rotate Right",
         condition: true,
       },
       Grayscale: {
         icon: getIcon("grayscale"),
-        shortcut: "KeyC",
+        shortcut: {
+          key: "KeyC",
+          label: "C",
+        },
         action: () => setGrayscale((prev) => !prev),
         label: "Toggle Grayscale",
         condition: true,
       },
       Rendering: {
         icon: getIcon("pixelated"),
-        shortcut: "KeyP",
+        shortcut: {
+          key: "KeyP",
+          label: "P",
+        },
         action: () => setPixelated((prev) => !prev),
         label: `${pixelated ? "Smooth" : "Pixelated"}`,
         condition: true,
       },
       Playback: {
         icon: `${isPlaying ? getIcon("pause") : getIcon("play")}`,
-        shortcut: "Space",
+        shortcut: {
+          key: "Space",
+          label: "Space",
+        },
         action: () => setIsPlaying((prev) => !prev),
         label: `${isPlaying ? "Pause" : "Play"}`,
         title: `${isPlaying ? "Pause" : "Play"}`,
@@ -217,7 +250,7 @@ export function CanvasImage({
           const action = actions[key];
           if (
             action.shortcut &&
-            action.shortcut === e.code &&
+            action.shortcut.key === e.code &&
             (!action.meta ||
               (action.meta === "Shift" && e.shiftKey) ||
               (action.meta === "Control" && e.ctrlKey) ||
@@ -470,8 +503,8 @@ export function CanvasImage({
                         icon={action.icon}
                         label={`${action.label}${
                           action.shortcut
-                            ? ` (${action.meta ? `${action.meta} + ` : ""}${
-                                action.shortcut
+                            ? ` (${action.meta ? `${action.meta}, ` : ""}${
+                                action.shortcut.label
                               })`
                             : ""
                         }`}
