@@ -17,23 +17,49 @@ import PageBase from "@/components/pageBase";
 import { galleryRouterSet, getGallery, getIcon } from "@/lib/helper";
 import { useToast } from "@/components/toashHandler";
 import KaomojiLoader from "@/components/kaomojiLoader";
+import GalleryEntry from "@/lib/models/gallery";
 
 const PER_PAGE = 12;
-
-// TODO add loading text or animation
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const id = context.query.id;
   const index = context.query.index;
+  const ogParams = new URLSearchParams();
+
+  try {
+    const entry =
+      (await GalleryEntry.findById(id).lean()) ??
+      (await GalleryEntry.findOne().lean());
+    if (entry) {
+      ogParams.set("id", entry.images[0].id);
+      ogParams.set("title", entry.title);
+      if (entry.software) ogParams.set("software", entry.software);
+      if (entry.attribution) ogParams.set("attribution", entry.attribution);
+      if (entry.tags) ogParams.set("tags", entry.tags.join(", "));
+      if (entry.sensitive) ogParams.set("sensitive", "true");
+    }
+  } catch (error) {
+    console.error("Failed to fetch OG image data", error);
+  }
+
   return {
     props: {
       id: id || null,
       index: index || null,
+      ogParams: ogParams.toString(),
     },
   };
 };
 
-export default function Gallery({ id, index }: { id: string; index: number }) {
+export default function Gallery({
+  id,
+  index,
+  ogParams,
+}: {
+  id: string;
+  index: number;
+  ogParams: string;
+}) {
   const router = useRouter();
   const galleryRouter = galleryRouterSet(id || "", 0);
   const { showToast } = useToast();
@@ -165,9 +191,13 @@ export default function Gallery({ id, index }: { id: string; index: number }) {
 
         <meta
           property="og:image"
-          content={`https://ardarmutcu.com/api/ogGallery${
-            id ? `?id=${id}` : ""
-          }`}
+          content={`https://ardarmutcu.com/api/ogGallery${`?${ogParams}`}`}
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:image"
+          content={`https://ardarmutcu.com/api/ogGallery${`?${ogParams}`}`}
         />
       </Head>
 

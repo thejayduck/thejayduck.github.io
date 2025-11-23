@@ -15,29 +15,105 @@ export default async function handler(request: NextRequest) {
       <div
         style={{
           display: "flex",
-          fontSize: 60,
-          color: "black",
-          background: "#f6f6f6",
-          fontFamily: "Nunito, sans-serif",
           width: "100%",
           height: "100%",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          backgroundColor: "#1a1a1a",
+          backgroundImage:
+            "radial-gradient(circle at center, #3c3836, #29282f)",
+          padding: "35px",
+          fontFamily: "Nunito, sans-serif",
         }}
       >
-        <img
-          width="256"
-          height="256"
-          alt="Profile Picture"
-          src={"https://github.com/thejayduck.png"}
+        {/* Main Wrapper */}
+        <div
           style={{
-            boxShadow: "0 4px 10px hsla(202, 56%, 12%, 0.15)",
-            borderRadius: 128,
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "#29282f",
+            borderRadius: "24px",
+            overflow: "hidden",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+            border: "1px solid #3c3836",
+            alignItems: "center",
+            justifyContent: "center",
+            position: "relative",
           }}
-        />
+        >
+          {/* Background */}
+          <div
+            style={{
+              position: "absolute",
+              top: "-50%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "600px",
+              height: "600px",
+            }}
+          />
 
-        <p>Care to visit my {title}?</p>
+          <img
+            width="180"
+            height="180"
+            alt="Profile Picture"
+            src={
+              "https://hj5xs4m6pg.ufs.sh/f/qeLXJUQ9GpPCDwlCLU9CusgZKWj02Ilfn1Qo5Y43APEcJxkR"
+            }
+            style={{
+              borderRadius: "50%",
+              border: "4px solid #3c3836",
+              boxShadow: "0 8px 16px rgba(0,0,0,0.3)",
+              marginBottom: "40px",
+            }}
+          />
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "0px",
+              zIndex: 10,
+            }}
+          >
+            <span
+              style={{
+                fontSize: 28,
+                color: "#a0a0a0",
+                fontWeight: 600,
+                marginBottom: "8px",
+              }}
+            >
+              Care to visit my
+            </span>
+            <span
+              style={{
+                fontSize: 72,
+                fontWeight: 800,
+                background:
+                  "linear-gradient(to bottom right, #ffffff, #a5a5a5)",
+                backgroundClip: "text",
+                color: "transparent",
+                textAlign: "center",
+              }}
+            >
+              {title}
+            </span>
+          </div>
+
+          <div
+            style={{
+              position: "absolute",
+              bottom: "30px",
+              fontSize: 18,
+              color: "#5c5c5c",
+              fontWeight: 600,
+            }}
+          >
+            @thejayduck
+          </div>
+        </div>
       </div>
     ),
     {

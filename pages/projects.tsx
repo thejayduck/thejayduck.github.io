@@ -36,7 +36,13 @@ export default function Projects() {
         <meta name="description" content="Arda Fevzi Armutcu's Projects" />
         <meta
           property="og:image"
-          content="https://ardarmutcu.com/api/og?title=projects"
+          content="https://ardarmutcu.com/api/og?title=Projects"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:image"
+          content="https://ardarmutcu.com/api/og?title=Projects"
         />
       </Head>
       <PageBase backPath="/" label="Back to Homepage">

@@ -59,6 +59,12 @@ export default function Blog({ posts }: IBlogPostProps) {
           property="og:image"
           content={`https://ardarmutcu.com/api/ogPost?title=${post.title}&date=${post.date}&content=${post.summary}`}
         />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:image"
+          content={`https://ardarmutcu.com/api/ogPost?title=${post.title}&date=${post.date}&content=${post.summary}`}
+        />
       </Head>
 
       <PageBase backPath="/blog" label="Back to Posts">

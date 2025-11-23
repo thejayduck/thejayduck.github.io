@@ -95,7 +95,13 @@ export default function Links() {
         <meta name="description" content="Arda Fevzi Armutcu's Links" />
         <meta
           property="og:image"
-          content="https://ardarmutcu.com/api/og?title=portfolio"
+          content="https://ardarmutcu.com/api/og?title=Portfolio"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:image"
+          content="https://ardarmutcu.com/api/og?title=Portfolio"
         />
       </Head>
 

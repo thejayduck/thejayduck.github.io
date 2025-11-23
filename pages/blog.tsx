@@ -31,7 +31,13 @@ export default function Blog({ posts }: IBlogPostProps) {
         <meta name="description" content="Arda Fevzi Armutcu's Blog" />
         <meta
           property="og:image"
-          content="https://ardarmutcu.com/api/og?title=blog"
+          content="https://ardarmutcu.com/api/og?title=Blog"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:image"
+          content="https://ardarmutcu.com/api/og?title=Blog"
         />
       </Head>
       <PageBase backPath="/" label="Back to Homepage">
