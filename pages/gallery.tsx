@@ -18,6 +18,7 @@ import { galleryRouterSet, getGallery, getIcon } from "@/lib/helper";
 import { useToast } from "@/components/toashHandler";
 import KaomojiLoader from "@/components/kaomojiLoader";
 import GalleryEntry from "@/lib/models/gallery";
+import dbConnect from "@/lib/mongodb";
 
 const PER_PAGE = 12;
 
@@ -27,11 +28,22 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const ogParams = new URLSearchParams();
 
   try {
-    const entry =
-      (await GalleryEntry.findById(id).lean()) ??
-      (await GalleryEntry.findOne().lean());
+    await dbConnect();
+
+    let entry = null;
+
+    if (id) {
+      entry = await GalleryEntry.findById(id).lean();
+    }
+
+    if (!entry) {
+      entry = await GalleryEntry.findOne().lean();
+    }
+
     if (entry) {
-      ogParams.set("id", entry.images[0].id);
+      if (entry.images && entry.images.length > 0) {
+        ogParams.set("id", entry.images[0].id);
+      }
       ogParams.set("title", entry.title);
       if (entry.software) ogParams.set("software", entry.software);
       if (entry.attribution) ogParams.set("attribution", entry.attribution);
