@@ -97,13 +97,25 @@
 
 html[data-theme="light"],
 body[data-theme="light"] {
-  background-image: url("/background-light.svg");
-  background-repeat: repeat;
+  // background-image: url("/background-light.svg");
+  // background-repeat: repeat;
 
-  -webkit-background-size: auto;
-  -moz-background-size: auto;
-  -o-background-size: auto;
-  background-size: auto;
+  // -webkit-background-size: auto;
+  // -moz-background-size: auto;
+  // -o-background-size: auto;
+  // background-size: auto;
+
+  background: #ededed;
+  background-image: linear-gradient(
+    0deg,
+    rgba(237, 237, 237, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background-image: radial-gradient(
+    hsla(248, 85%, 66%, 0.2) 2px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
 }
 
 html[data-theme="dark"],
@@ -116,6 +128,9 @@ body[data-theme="dark"] {
 html[data-theme="gruvbox"],
 body[data-theme="gruvbox"] {
   background-color: #282828;
-  background-image: radial-gradient(#3c3836 1px, transparent 1px);
+  background-image: radial-gradient(
+    hsla(20, 5%, 22%, 0.6) 2px,
+    transparent 1px
+  );
   background-size: 20px 20px;
 }
