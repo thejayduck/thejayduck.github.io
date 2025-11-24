@@ -1,27 +1,44 @@
-import styles from "@/styles/Gallery.module.scss";
+import styles from "@/styles/components/GalleryToolbar.module.scss";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import { getIcon } from "@/lib/helper";
 import IGalleryEntry from "./IGalleryEntry";
+import { Dropdown } from "./galleryToolbarDropdown";
 
 export function GalleryToolbar(galleryData: IGalleryEntry[]) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedYear, setSelectedYear] = useState("all");
-  const [layoutView, setLayoutView] = useState<"custom" | "grid">("custom");
+  const [layoutView, setLayoutView] = useState<string>("custom");
+  const [sortOrder, setSortOrder] = useState<string>("recent");
+
+  // Local storage Stuff
+  const saveItem = <T,>(key: string, value: T) => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem(key, value as string);
+    }
+  };
 
   useEffect(() => {
-    const saved = localStorage.getItem("galleryLayout");
-    if (saved == "custom" || saved == "grid") {
-      setLayoutView(saved);
+    function getSavedItem<T>(
+      key: string,
+      setFunction: React.Dispatch<React.SetStateAction<T>>
+    ) {
+      const saved = localStorage.getItem(key);
+
+      if (saved) {
+        setFunction(saved as unknown as T);
+      }
     }
+
+    getSavedItem("galleryLayout", setLayoutView);
+    getSavedItem("sortOrder", setSortOrder);
   }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("galleryLayout", layoutView);
-    }
-  }, [layoutView]);
+    saveItem("sortOrder", sortOrder);
+    saveItem("galleryLayout", layoutView);
+  }, [sortOrder, layoutView]);
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
@@ -52,7 +69,7 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
   };
 
   const filteredGallery = useMemo(() => {
-    return galleryData.filter((item) => {
+    const filtered = galleryData.filter((item) => {
       const itemYear = item.date?.split("-")[0]; // Date format uses YYYY-MM
       const year = selectedYear == "all" || itemYear == selectedYear;
 
@@ -62,9 +79,23 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
 
       return year && tags;
     });
-  }, [selectedTags, selectedYear, galleryData]);
 
-  const filteredTags = new Set(filteredGallery.flatMap(tagCollection)); // Used to disable unavailable tags.
+    return sortOrder === "old" ? filtered.reverse() : filtered;
+  }, [selectedTags, selectedYear, galleryData, sortOrder]);
+
+  // Used to disable unavailable tags and years depending on filter choices..
+  const availableTags = useMemo(() => {
+    const tagsSet = new Set(filteredGallery.flatMap(tagCollection));
+    return tagsSet;
+  }, [filteredGallery]);
+
+  const availableYears = useMemo(() => {
+    const yearsSet = new Set(
+      filteredGallery.map((item) => item.date?.split("-")[0])
+    );
+
+    return yearsSet;
+  }, [filteredGallery]);
 
   //? Move to helper.tsx ?
   const tagList: Record<string, [string, string]> = {
@@ -87,9 +118,10 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
     selectedTags,
     selectedYear,
     layoutView,
+    sortOrder,
     component: (
       <div ref={scrollRef} className={styles.filterTags} onWheel={handleWheel}>
-        <button
+        <button // Layout Toggle // ? make a component
           className={styles.tagButton}
           onClick={() =>
             setLayoutView((prev) => (prev === "custom" ? "grid" : "custom"))
@@ -101,6 +133,19 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
               layoutView === "grid"
                 ? getIcon("customLayout")
                 : getIcon("gridLayout")
+            } ri-1x ri-fw`}
+          />
+        </button>
+        <button // Sort Order
+          className={styles.tagButton}
+          onClick={() =>
+            setSortOrder((prev) => (prev === "recent" ? "old" : "recent"))
+          }
+          title="Toggle Order"
+        >
+          <i
+            className={`${
+              sortOrder === "old" ? getIcon("recentSort") : getIcon("oldSort")
             } ri-1x ri-fw`}
           />
         </button>
@@ -116,23 +161,24 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
         >
           <i className={`${getIcon("clearFilter")} ri-1x ri-fw`} />
         </button>
-        <select
+        <Dropdown
           name="selectedYear"
-          value={selectedYear}
-          onChange={(e) => setSelectedYear(e.target.value)}
-        >
-          <option value="all">All</option>
-          {Array.from(
+          options={Array.from(
             new Set(galleryData.map((item) => item.date.split("-")[0]))
-          )
-            .sort((a, b) => a.localeCompare(b))
-            .reverse()
-            .map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
-            ))}
-        </select>
+          )}
+          value={selectedYear}
+          onChange={setSelectedYear}
+          disabledOptions={
+            selectedTags.length > 0
+              ? new Set(
+                  Array.from(
+                    new Set(galleryData.map((item) => item.date.split("-")[0]))
+                  ).filter((year) => !availableYears.has(year))
+                )
+              : new Set()
+          } // only enable years present in filteredGallery
+          placeholderLabel="Year"
+        />
 
         {Array.from(new Set(galleryData.flatMap(tagCollection)))
           .sort((a, b) => a.localeCompare(b))
@@ -143,9 +189,9 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
                 selectedTags.includes(tag) ? styles.selected : ""
               }`}
               onClick={() => toggleTag(tag)}
-              disabled={!filteredTags.has(tag)}
+              disabled={!availableTags.has(tag)}
               title={
-                filteredTags.has(tag)
+                availableTags.has(tag)
                   ? `Filter by ${tagList[tag]?.[0] ?? tag}`
                   : `No images with ${tagList[tag]?.[0] ?? tag} tag available`
               }

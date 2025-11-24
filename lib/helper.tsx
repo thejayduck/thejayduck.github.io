@@ -235,6 +235,8 @@ const iconList: Record<string, string> = {
   pause: "ri-pause-fill",
   gridLayout: "ri-layout-grid-fill",
   customLayout: "ri-layout-fill",
+  recentSort: "ri-sort-desc",
+  oldSort: "ri-sort-asc",
   // Projects
   projectPosts: "ri-briefcase-fill",
   opensource: "ri-open-source-fill",
