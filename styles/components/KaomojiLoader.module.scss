@@ -5,17 +5,22 @@
   opacity: 0.8;
   overflow: hidden;
   user-select: none;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--spacing-large);
 
   .kaomoji {
     overflow: hidden;
-    margin-top: var(--spacing-medium);
     animation: spin 4s linear infinite;
 
     white-space: nowrap;
   }
 
   p {
-    margin-top: var(--spacing-large);
     font-size: var(--font-regular);
     font-weight: bold;
   }

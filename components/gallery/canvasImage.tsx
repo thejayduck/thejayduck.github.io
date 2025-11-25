@@ -1,6 +1,6 @@
 import styles from "@/styles/components/gallery/CanvasItem.module.scss";
 
-import { AnimatePresence, motion, useInView } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 import React, {
   useCallback,
@@ -10,11 +10,10 @@ import React, {
   useState,
 } from "react";
 
-import { decodeFrames, getIcon } from "@/lib/helper";
+import { getIcon } from "@/lib/helper";
 import Button from "../button";
 import { useToast } from "../toashHandler";
-
-import ContentWarningOverlay from "./contentWarningOverlay";
+import KaomojiLoader from "../kaomojiLoader";
 
 interface CanvasItemProps {
   index: number;
@@ -27,9 +26,7 @@ interface CanvasItemProps {
   shortcuts: boolean;
   isSensitive?: boolean;
   isSensitiveContentVisible: boolean; // for content warning
-  onReveal?: () => void;
   setIsDraggingPreview: React.Dispatch<React.SetStateAction<boolean>>;
-  scrollContainerRef: React.RefObject<HTMLUListElement>;
 }
 
 interface CanvasFunctionProps {
@@ -56,17 +53,14 @@ export function CanvasImage({
   shortcuts,
   isSensitiveContentVisible, // for content warning
   isSensitive,
-  onReveal,
   setIsDraggingPreview,
-  scrollContainerRef,
 }: CanvasItemProps) {
   const { showToast } = useToast();
   //? retain previous zoom value for double click
   const isMobile = /iPhone|Android/i.test(navigator.userAgent);
-  // const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 }); // used for content warning overlay
 
   const zoomFactor: number = 0.15;
-  const canvasElementRef = useRef<HTMLCanvasElement>(null);
+  const canvasElementRef = useRef<HTMLImageElement>(null);
   const [zoomIndex, setZoomIndex] = useState(0);
   const [flipX, setFlipX] = useState(false); // horizontal
   const [flipY, setFlipY] = useState(false); // vertical
@@ -77,12 +71,6 @@ export function CanvasImage({
   const [pixelated, setPixelated] = useState(false);
   const [grayscale, setGrayscale] = useState(false);
   // Animation
-  const [isPlaying, setIsPlaying] = useState(true);
-  const frameIndexRef = useRef<number>(0);
-
-  // useInView Handler
-  const liRef = useRef<HTMLLIElement>(null);
-  const isInView = useInView(liRef, { root: scrollContainerRef, once: true });
 
   const resetTransform = useCallback(() => {
     setPosition({ x: 0, y: 0 });
@@ -208,22 +196,10 @@ export function CanvasImage({
         label: `${pixelated ? "Smooth" : "Pixelated"}`,
         condition: true,
       },
-      Playback: {
-        icon: `${isPlaying ? getIcon("pause") : getIcon("play")}`,
-        shortcut: {
-          key: "Space",
-          label: "Space",
-        },
-        action: () => setIsPlaying((prev) => !prev),
-        label: `${isPlaying ? "Pause" : "Play"}`,
-        title: `${isPlaying ? "Pause" : "Play"}`,
-        condition: !!animated,
-      },
     }),
     [
       zoomIndex,
       pixelated,
-      isPlaying,
       resetTransform,
       setZoomIndex,
       setPosition,
@@ -232,7 +208,6 @@ export function CanvasImage({
       setRotation,
       setGrayscale,
       setPixelated,
-      setIsPlaying,
       animated,
     ]
   );
@@ -278,148 +253,44 @@ export function CanvasImage({
     isSensitiveContentVisible,
   ]);
 
-  useEffect(() => {
-    if (!isInView) return;
-
-    const canvas = canvasElementRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const image = new window.Image();
-    image.src = imageUrl;
-    image.crossOrigin = "anonymous";
-
-    // Aspect ratio
-    const calculateRatio = () => {
-      const maxWidth = window.innerWidth;
-      const maxHeight = window.innerHeight;
-      let newWidth = Math.min(width, maxWidth);
-      let newHeight = Math.min(height, maxHeight);
-      const aspectRatio = width / height;
-      if (newWidth / newHeight > aspectRatio) {
-        newWidth = newHeight * aspectRatio;
-      } else {
-        newHeight = newWidth / aspectRatio;
-      }
-      return { width: newWidth, height: newHeight };
-    };
-
-    const { width: canvasWidth, height: canvasHeight } = calculateRatio();
-
-    canvas.width = canvasWidth;
-    canvas.height = canvasHeight;
-
-    //Canvas size for content warning overlay // ? Disabled due to weird sizing effect
-    // const rect = canvasElementRef.current?.getBoundingClientRect();
-    // setCanvasSize({ width: rect.width, height: rect.height });
-
-    // Placeholder Background
-    ctx.fillStyle = "hsl(251, 17%, 25%)";
-    const gradient = ctx.createLinearGradient(0, 0, 0, height);
-    gradient.addColorStop(0, "hsl(251, 17%, 35%)");
-    gradient.addColorStop(1, "hsl(251, 17%, 15%)");
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-    // Placeholder Text
-    ctx.fillStyle = "rgb(255, 255, 255)";
-    ctx.textBaseline = "middle";
-    ctx.textAlign = "center";
-    ctx.font = `${
-      Math.min(canvasWidth, canvasHeight) * 0.05
-    }px Nunito, sans-serif`;
-    ctx.fillText("Loading Image", canvasWidth / 2, canvasHeight / 2);
-
-    image.onload = () => {
-      // ctx.imageSmoothingQuality = "high";
-      ctx.drawImage(image, 0, 0, canvasWidth, canvasHeight);
-      setImageLoaded(true);
-    };
-
-    // Recalculate on resize
-    calculateRatio();
-    window.addEventListener("resize", calculateRatio);
-    window.addEventListener("load", calculateRatio);
-
-    return () => {
-      window.removeEventListener("resize", calculateRatio);
-      window.addEventListener("load", calculateRatio);
-    };
-  }, [imageUrl, width, height, isInView]);
-
-  // Video Frame Renderer
-  useEffect(() => {
-    if (!animated) return;
-
-    let isMounted = true;
-    let animationFrameId: number;
-
-    const renderGIF = async () => {
-      const canvas = canvasElementRef.current;
-      if (!canvas) return;
-
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
-
-      const frames = await decodeFrames(imageUrl);
-
-      const drawFrame = () => {
-        if (!isMounted || frames.length == 0) return;
-        const frame = frames[frameIndexRef.current];
-        const duration: number | null = frame.duration;
-
-        ctx.drawImage(frame, 0, 0, canvas.width, canvas.height);
-
-        if (isPlaying) {
-          frameIndexRef.current = (frameIndexRef.current + 1) % frames.length;
-          animationFrameId = window.setTimeout(
-            drawFrame,
-            typeof duration == "number" ? duration / 1000.0 : 0
-          );
-        }
-      };
-
-      drawFrame();
-    };
-
-    renderGIF();
-
-    return () => {
-      isMounted = false;
-      if (animationFrameId) clearTimeout(animationFrameId);
-    };
-  }, [imageUrl, animated, isPlaying]);
-
   return (
-    <li className={styles.canvasWrapper} data-index={index} ref={liRef}>
-      {!isSensitiveContentVisible && isSensitive && (
-        <ContentWarningOverlay
-          onReveal={() => onReveal?.()}
-          dimensions={{
-            width: canvasElementRef.current?.getBoundingClientRect().width,
-            height: canvasElementRef.current?.getBoundingClientRect().height,
-          }}
-        />
+    <li className={styles.canvasWrapper} data-index={index}>
+      {!imageLoaded && (
+        <div className={styles.loaderWrapper}>
+          <KaomojiLoader message="Loading Image..." />
+        </div>
       )}
-      <motion.canvas
+      <motion.img
+        loading="lazy"
+        decoding="async"
+        className={styles.canvasItem}
+        onLoad={() => {
+          setImageLoaded(true);
+        }}
         id={imageId}
         ref={canvasElementRef}
-        className={styles.canvasItem}
+        src={imageUrl}
+        alt={imageAlt}
+        draggable={false}
         style={{
           imageRendering: pixelated ? "pixelated" : "auto",
           filter: grayscale ? "grayscale(100%)" : "none",
+
+          userSelect: "none",
         }}
+        animate={{
+          x: position.x,
+          y: position.y,
+          scale: 1 + zoomIndex * 0.15,
+          rotate: rotation * 90,
+          scaleX: flipX ? -1 : 1,
+          scaleY: flipY ? -1 : 1,
+        }}
+        transition={{ duration: 0.15, ease: "linear" }}
         // Drag
         drag={isMobile ? false : shortcuts}
         dragMomentum={false}
         whileDrag={{ cursor: "grabbing" }}
-        // dragConstraints={{
-        //   top: -height / 2,
-        //   right: width / 2,
-        //   bottom: height / 2,
-        //   left: -width / 2,
-        // }}
         onDragStart={() => {
           setIsDragging(true);
           setIsDraggingPreview(true);
@@ -439,7 +310,6 @@ export function CanvasImage({
           if (isMobile) return;
           if (zoomIndex != 0) {
             setZoomIndex(0);
-            // setPosition({ x: 0, y: 0 });
           } else {
             setZoomIndex(2);
           }
@@ -464,17 +334,7 @@ export function CanvasImage({
             return true;
           }
         }}
-        animate={{
-          scale: 1 + zoomIndex * zoomFactor,
-          scaleX: flipX ? -1 : 1,
-          scaleY: flipY ? -1 : 1,
-          cursor: "grab",
-          x: position.x,
-          y: position.y,
-          rotate: rotation * 90,
-        }}
-        transition={{ duration: 0.15, ease: "linear" }}
-      ></motion.canvas>
+      />
 
       {/* Canvas Controller Bar */}
       {imageLoaded &&

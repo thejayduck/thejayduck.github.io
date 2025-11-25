@@ -13,6 +13,7 @@
   overflow: hidden;
   text-align: center;
   transition: 255ms;
+  color: white; // TODO add alternative high-contrast text color in variables.scss
 
   span {
     font-weight: bolder;

@@ -245,6 +245,12 @@ export function ImagePreview({
       <div className={styles.imagePreview}>
         <AnimatePresence initial={false}>
           <motion.div className={styles.imageSectionWrapper}>
+            {!visibleSensitiveImages[currentImageId] &&
+              currentImage.sensitive && (
+                <ContentWarningOverlay
+                  onReveal={() => onRevealClick(currentImageId)}
+                />
+              )}
             {/* Indicator Dots */}
             {/* // TODO improve indicator dots to fit different screen sizes, and overflowed posts. */}
             <AnimatePresence>
@@ -288,9 +294,7 @@ export function ImagePreview({
                   isSensitiveContentVisible={
                     !!visibleSensitiveImages[currentImageId]
                   }
-                  onReveal={() => onRevealClick(currentImageId)}
                   setIsDraggingPreview={setIsDraggingPreview}
-                  scrollContainerRef={scrollContainerRef}
                 />
               ))}
             </ul>
@@ -385,6 +389,7 @@ export function ImagePreview({
                       width={110}
                       height={100}
                       quality={35}
+                      unoptimized={mainImage.animated}
                       placeholder={placeholderImage(110, 100)}
                       onClick={() =>
                         updateImageIndex(images.indexOf(img) - imageIndex)

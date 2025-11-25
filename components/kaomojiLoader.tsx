@@ -17,7 +17,11 @@ const KAOMOJI = [
   "(˶ˆᗜˆ˵)",
 ];
 
-export default function KaomojiLoader() {
+interface KaomojiProps {
+  message?: string;
+}
+
+export default function KaomojiLoader({ message }: KaomojiProps) {
   const [face, setFace] = useState<string>("(＾▽＾)");
 
   useEffect(() => {
@@ -34,7 +38,7 @@ export default function KaomojiLoader() {
   return (
     <div className={styles.kaomojiWrapper}>
       <div className={styles.kaomoji}>{face}</div>
-      <p>Loading Database…</p>
+      <p>{message ?? "Loading..."}</p>
     </div>
   );
 }
