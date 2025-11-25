@@ -33,6 +33,9 @@ export function ImagePreview({
 }: IImagePreview) {
   const { showToast } = useToast();
 
+  // ! TODO scrolling vertically right after scrolling to new post using shortcut breaks the debouncer.
+  // ! TODO scrolling vertically using arrow-keys breaks the debouncer.
+
   const router = useRouter();
   const [debounceActive, setDebounceActive] = useState(true);
   const [firstLoad, setFirstLoad] = useState(true);

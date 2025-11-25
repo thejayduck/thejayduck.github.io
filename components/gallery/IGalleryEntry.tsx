@@ -14,6 +14,7 @@ interface IImage {
 
 export default interface IGalleryEntry {
   _id: string;
+  hidden?: boolean;
   title: string;
   description?: string;
   attribution?: string;

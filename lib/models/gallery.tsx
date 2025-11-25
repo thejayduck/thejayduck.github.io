@@ -6,6 +6,7 @@ import IGalleryEntry from "@/components/gallery/IGalleryEntry";
 type GalleryDocument = IGalleryEntry & Document;
 
 const GallerySchema = new Schema({
+  hidden: { type: Boolean, default: false },
   title: { type: String, required: true },
   date: { type: String, required: true },
   timestamp: Number,

@@ -82,8 +82,8 @@ export default function Gallery({
 
   useEffect(() => {
     const fetchGallery = async () => {
-      await getGallery((res) => {
-        setGalleryData(res);
+      await getGallery((res: IGalleryEntry[]) => {
+        setGalleryData(res.filter((i) => !i.hidden));
         setHasLoaded(true);
       });
     };
