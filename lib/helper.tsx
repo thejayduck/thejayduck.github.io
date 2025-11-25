@@ -248,12 +248,12 @@ export function getIcon(icon: keyof typeof iconList) {
 
 export async function decodeFrames(path: string): Promise<VideoFrame[]> {
   const response = await fetch(path);
-  const contentType = response.headers.get("Content-Type");
+  const contentType = response.headers.get("Content-Type") ?? "image/gif";
   const blob = await response.arrayBuffer();
 
   const decoder = new ImageDecoder({
     data: blob,
-    type: contentType ?? "image/gif",
+    type: contentType,
   });
 
   await decoder.tracks.ready;
@@ -261,7 +261,7 @@ export async function decodeFrames(path: string): Promise<VideoFrame[]> {
   const track = decoder.tracks.selectedTrack;
   const frameCount = track?.frameCount ?? 1;
 
-  const frames = [];
+  const frames: VideoFrame[] = [];
 
   if (frameCount != undefined) {
     for (let i = 0; i < frameCount; i++) {

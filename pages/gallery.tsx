@@ -37,7 +37,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
 
     if (!entry) {
-      entry = await GalleryEntry.findOne().lean();
+      entry = await GalleryEntry.findOne().sort({ _id: -1 }).lean();
     }
 
     if (entry) {
@@ -50,6 +50,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       if (entry.tags) ogParams.set("tags", entry.tags.join(", "));
       if (entry.sensitive) ogParams.set("sensitive", "true");
     }
+    // TODO add empty entry condition
   } catch (error) {
     console.error("Failed to fetch OG image data", error);
   }
