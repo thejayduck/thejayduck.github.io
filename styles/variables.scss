@@ -40,6 +40,7 @@
   --notification: hsl(350, 79%, 47%);
 
   --font-default: hsl(0, 0%, 0%);
+  --font-high-contrast: hsl(248, 100%, 41%);
   --font-skillbar: var(--primary);
 
   --box-shadow: 0 4px 10px hsla(202, 56%, 12%, 0.15);
@@ -61,6 +62,7 @@
   --notification: hsl(350, 79%, 47%);
 
   --font-default: hsl(247, 81%, 96%);
+  --font-high-contrast: #ddd7fe;
   --font-skillbar: var(--font-default);
 
   --box-shadow: 0 4px 10px hsla(291, 4%, 64%, 0.15);
@@ -82,6 +84,7 @@
   --notification: hsl(6, 96%, 59%);
 
   --font-default: #ebdbb2;
+  --font-high-contrast: #fabd2f;
   --font-skillbar: var(--primary);
 
   // Shadows

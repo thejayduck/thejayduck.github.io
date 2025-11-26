@@ -166,14 +166,16 @@
 
       .navButton {
         padding: var(--spacing-small) var(--spacing-normal);
-        background: var(--tertiary);
         box-shadow: var(--box-shadow);
         border: none;
         border-radius: var(--border);
         cursor: pointer;
 
+        background-color: hsla(var(--primary-hsla), 0.08);
+        border: 1.7px solid var(--border-skillbar);
+
         i {
-          color: var(--font-default);
+          color: var(--font-skillbar);
         }
 
         &:disabled {
@@ -202,12 +204,9 @@
           padding: var(--spacing-mini) var(--spacing-small);
           margin: var(--spacing-small) 0;
 
-          // &:first-child {
-          //   margin-bottom: var(--spacing-small);
-          // }
-
           span {
             font-weight: var(--font-bold);
+            vertical-align: middle;
           }
           i {
             margin-right: var(--spacing-small);

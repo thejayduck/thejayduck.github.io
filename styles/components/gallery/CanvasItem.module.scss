@@ -71,15 +71,14 @@
   touch-action: pan-x;
   gap: var(--spacing-small);
   bottom: 0.7rem;
-  // transition: opacity 255ms;
-  // opacity: 0.5;
-
-  // &:hover {
-  //   opacity: 1;
-  // }
 
   a {
     background: hsla(var(--secondary-opaque-hsla), 0.6);
+
+    &:hover {
+      background: hsla(var(--secondary-opaque-hsla), 1);
+      color: var(--font-high-contrast);
+    }
   }
 }
 

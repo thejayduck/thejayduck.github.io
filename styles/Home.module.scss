@@ -49,7 +49,8 @@
     flex: 1;
 
     span {
-      color: var(--primary);
+      font-weight: bold;
+      color: var(--font-high-contrast);
     }
 
     .wave {

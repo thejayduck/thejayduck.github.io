@@ -32,7 +32,9 @@ p {
 }
 
 a {
-  color: var(--primary);
+  // color: var(--primary);
+  color: var(--font-high-contrast);
+
   font-weight: var(--font-bold);
 }
 
@@ -42,7 +44,7 @@ hr {
 }
 
 blockquote {
-  color: var(--font-default);
+  color: var(--font-high-contrast);
   background-color: hsla(var(--primary-hsla), 0.2);
   border-left: 4px solid var(--primary);
   margin-left: 0;

@@ -124,7 +124,7 @@ export default function Links() {
             </h1>
           </div>
           <ul className={`${styles.linkList}`}>
-            <li>
+            <li className={styles.highlight}>
               <Button
                 icon={getIcon("link")}
                 label="copy"

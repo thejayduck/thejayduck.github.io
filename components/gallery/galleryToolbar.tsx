@@ -2,7 +2,7 @@ import styles from "@/styles/components/GalleryToolbar.module.scss";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-import { getIcon } from "@/lib/helper";
+import { getIcon, getLocalSavedItem, saveLocalItem } from "@/lib/helper";
 import IGalleryEntry from "./IGalleryEntry";
 import { Dropdown } from "./galleryToolbarDropdown";
 
@@ -12,32 +12,14 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
   const [layoutView, setLayoutView] = useState<string>("custom");
   const [sortOrder, setSortOrder] = useState<string>("recent");
 
-  // Local storage Stuff
-  const saveItem = <T,>(key: string, value: T) => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem(key, value as string);
-    }
-  };
-
   useEffect(() => {
-    function getSavedItem<T>(
-      key: string,
-      setFunction: React.Dispatch<React.SetStateAction<T>>
-    ) {
-      const saved = localStorage.getItem(key);
-
-      if (saved) {
-        setFunction(saved as unknown as T);
-      }
-    }
-
-    getSavedItem("galleryLayout", setLayoutView);
-    getSavedItem("sortOrder", setSortOrder);
+    getLocalSavedItem("galleryLayout", setLayoutView);
+    getLocalSavedItem("sortOrder", setSortOrder);
   }, []);
 
   useEffect(() => {
-    saveItem("sortOrder", sortOrder);
-    saveItem("galleryLayout", layoutView);
+    saveLocalItem("sortOrder", sortOrder);
+    saveLocalItem("galleryLayout", layoutView);
   }, [sortOrder, layoutView]);
 
   const scrollRef = useRef<HTMLDivElement | null>(null);

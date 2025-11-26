@@ -303,3 +303,20 @@ export async function getGallery(onSucces?: (data: any) => void) {
   }
   return json.entries;
 }
+
+export function saveLocalItem<T>(key: string, value: T) {
+  if (typeof window !== "undefined") {
+    localStorage.setItem(key, value as string);
+  }
+}
+
+export function getLocalSavedItem<T>(
+  key: string,
+  setFunction: React.Dispatch<React.SetStateAction<T>>
+) {
+  const saved = localStorage.getItem(key);
+
+  if (saved) {
+    setFunction(saved as unknown as T);
+  }
+}

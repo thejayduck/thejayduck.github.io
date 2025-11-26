@@ -5,7 +5,7 @@ import { AnimatePresence, motion, TargetAndTransition } from "motion/react";
 
 import { useEffect, useState } from "react";
 
-import { getIcon } from "@/lib/helper";
+import { getIcon, getLocalSavedItem, saveLocalItem } from "@/lib/helper";
 
 const iconVariants: Record<string, TargetAndTransition> = {
   initial: { y: -20, opacity: 0 },
@@ -20,14 +20,7 @@ const iconVariants: Record<string, TargetAndTransition> = {
 export default function ThemeToggle() {
   const [mount, setMount] = useState(false);
   const themes = ["light", "dark", "gruvbox"];
-
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem("theme");
-      return savedTheme || themes[0];
-    }
-    return themes[0];
-  });
+  const [theme, setTheme] = useState<string>(themes[0]);
 
   const themeIcon: Record<string, string> = {
     light: getIcon("lightTheme"),
@@ -43,9 +36,14 @@ export default function ThemeToggle() {
   };
 
   useEffect(() => {
+    getLocalSavedItem<string>("theme", setTheme);
+    setMount(true);
+  }, []);
+
+  useEffect(() => {
     if (typeof window !== "undefined") {
       document.documentElement.dataset.theme = theme;
-      localStorage.setItem("theme", theme);
+      saveLocalItem("theme", theme);
     }
     setMount(true);
   }, [theme]);
