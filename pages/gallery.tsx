@@ -33,10 +33,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     let entry = null;
 
     if (id) {
-      entry = await GalleryEntry.findById(id).lean();
-    }
-
-    if (!entry) {
+      try {
+        entry = await GalleryEntry.findById(id).lean();
+      } catch (e) {
+        entry = null;
+      }
+    } else {
       entry = await GalleryEntry.findOne().sort({ _id: -1 }).lean();
     }
 
@@ -49,8 +51,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       if (entry.attribution) ogParams.set("attribution", entry.attribution);
       if (entry.tags) ogParams.set("tags", entry.tags.join(", "));
       if (entry.sensitive) ogParams.set("sensitive", "true");
+    } else if (id) {
+      ogParams.set("notFound", "true");
+      ogParams.set("requestedId", Array.isArray(id) ? id[0] : id);
     }
-    // TODO add empty entry condition
   } catch (error) {
     console.error("Failed to fetch OG image data", error);
   }
