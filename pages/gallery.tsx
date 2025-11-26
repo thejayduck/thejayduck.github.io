@@ -84,7 +84,7 @@ export default function Gallery({
   useEffect(() => {
     const fetchGallery = async () => {
       await getGallery((res: IGalleryEntry[]) => {
-        setGalleryData(res.filter((i) => !i.hidden));
+        setGalleryData(res);
         setHasLoaded(true);
       });
     };
@@ -268,7 +268,7 @@ export default function Gallery({
                 layoutView={layoutView}
               />
             ) : (
-              <KaomojiLoader />
+              <KaomojiLoader message="Loading Database..." />
             )}
             {/* Infinite Loader Ref */}
             {displayedGallery.length < filteredGallery.length ? (

@@ -215,6 +215,7 @@ export function CanvasImage({
   // Keyboard Navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      // TODO fix shift key issue on chromium
       if (e.defaultPrevented) return;
       if (!shortcuts) return;
       if (!imageLoaded) return;

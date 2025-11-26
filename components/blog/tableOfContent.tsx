@@ -22,11 +22,11 @@ export const TableOfContent = ({ anchors }: { anchors: AnchorItemProps[] }) => (
           }}
         >
           {anchor.level === 1 ? (
-            <i className={`${getIcon("level1")} ri-xs`} />
+            <i className={`${getIcon("tocLevel1")} ri-xs`} />
           ) : anchor.level === 2 ? (
-            <i className={`${getIcon("level2")} ri-xs`} />
+            <i className={`${getIcon("tocLevel2")} ri-xs`} />
           ) : (
-            <i className={`${getIcon("level3")} ri-xs`} />
+            <i className={`${getIcon("tocLevel3")} ri-xs`} />
           )}
           {anchor.content}
         </a>

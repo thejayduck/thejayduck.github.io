@@ -181,9 +181,9 @@ const iconList: Record<string, string> = {
   censorship: "ri-eye-off-fill",
   emojiSad: "ri-emotion-sad-fill",
   loading: "ri-refresh-fill",
-  level1: "ri-circle-fill", // table of content
-  level2: "ri-circle-line", // table of content
-  level3: "ri-subtract-fill", // table of content
+  tocLevel1: "ri-circle-fill", // table of content
+  tocLevel2: "ri-circle-line", // table of content
+  tocLevel3: "ri-subtract-fill", // table of content
   at: "ri-at-line",
   error: "ri-error-warning-fill",
   back: "ri-arrow-go-back-fill",
