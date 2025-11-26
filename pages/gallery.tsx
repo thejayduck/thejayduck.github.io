@@ -228,9 +228,12 @@ export default function Gallery({
             </p>
             <blockquote>
               <p>
+                <i className={getIcon("error")} />
+                <strong>DO NOT</strong> redistribute, print, or use without
+                explicit permission!
+                <br />
                 <i className={getIcon("error")} /> All of the drawings down
-                below are downscaled and compressed! <strong>DO NOT</strong>{" "}
-                redistribute, print, or use without explicit permission.
+                below are downscaled and compressed!
                 <br />
                 <i className={getIcon("error")} /> I do not actively post my art
                 outside of this <u>page</u>,{" "}
