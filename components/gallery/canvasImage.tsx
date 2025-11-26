@@ -14,15 +14,15 @@ import { getIcon } from "@/lib/helper";
 import Button from "../button";
 import { useToast } from "../toashHandler";
 import KaomojiLoader from "../kaomojiLoader";
+import { IImage } from "./IGalleryEntry";
 
 interface CanvasItemProps {
   index: number;
-  imageId: string;
-  imageUrl: string;
-  imageAlt?: string;
-  animated?: boolean;
-  width: number;
-  height: number;
+  image: {
+    title: string;
+    url: string;
+    object: IImage;
+  };
   shortcuts: boolean;
   isSensitive?: boolean;
   isSensitiveContentVisible: boolean; // for content warning
@@ -44,12 +44,7 @@ interface CanvasFunctionProps {
 
 export function CanvasImage({
   index,
-  imageId,
-  imageUrl,
-  imageAlt,
-  animated,
-  width,
-  height,
+  image,
   shortcuts,
   isSensitiveContentVisible, // for content warning
   isSensitive,
@@ -208,7 +203,6 @@ export function CanvasImage({
       setRotation,
       setGrayscale,
       setPixelated,
-      animated,
     ]
   );
 
@@ -268,10 +262,10 @@ export function CanvasImage({
         onLoad={() => {
           setImageLoaded(true);
         }}
-        id={imageId}
+        id={image.object.id}
         ref={canvasElementRef}
-        src={imageUrl}
-        alt={imageAlt}
+        src={image.url}
+        alt={`${image.title} Drawing`}
         draggable={false}
         style={{
           imageRendering: pixelated ? "pixelated" : "auto",
@@ -344,9 +338,10 @@ export function CanvasImage({
           <AnimatePresence>
             {shortcuts && (
               <>
-                {imageAlt && zoomIndex == 0 && (
+                {image.object.alt && zoomIndex == 0 && (
                   <span className={styles.imageAlt}>
-                    {imageAlt} ({width}x{height})
+                    {image.object.alt} ({image.object.width}x
+                    {image.object.height})
                   </span>
                 )}
                 <motion.div

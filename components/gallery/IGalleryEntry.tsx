@@ -4,7 +4,7 @@ interface IExternal {
   icon: string;
 }
 
-interface IImage {
+export interface IImage {
   animated?: boolean;
   alt?: string;
   width: number;

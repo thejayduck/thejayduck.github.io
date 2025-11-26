@@ -24,6 +24,7 @@ export const Dropdown = ({
 
       <select
         name={name}
+        aria-label={`Filter by ${name}`}
         value={value}
         onChange={(e) => onChange(e.target.value)}
       >

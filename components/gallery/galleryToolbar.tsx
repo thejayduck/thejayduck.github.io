@@ -144,7 +144,7 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
           <i className={`${getIcon("clearFilter")} ri-1x ri-fw`} />
         </button>
         <Dropdown
-          name="selectedYear"
+          name="year"
           options={Array.from(
             new Set(galleryData.map((item) => item.date.split("-")[0]))
           )}

@@ -123,7 +123,12 @@ body[data-theme="light"] {
 
 html[data-theme="dark"],
 body[data-theme="dark"] {
-  background: hsl(248, 8%, 17%);
+  background-color: hsl(248, 8%, 17%);
+  background-image: radial-gradient(
+    hsla(251, 17%, 25%, 0.4) 2px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
 
   color-scheme: dark;
 }

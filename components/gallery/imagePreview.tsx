@@ -283,12 +283,11 @@ export function ImagePreview({
                 <CanvasImage
                   index={index}
                   key={image.id}
-                  imageId={image.id}
-                  imageUrl={getImageUrl(image.id)}
-                  imageAlt={image.alt}
-                  animated={image.animated || false}
-                  width={image.width}
-                  height={image.height}
+                  image={{
+                    title: currentImage.title,
+                    url: getImageUrl(image.id),
+                    object: image,
+                  }}
                   shortcuts={index === scrollIndex}
                   isSensitive={currentImage.sensitive}
                   isSensitiveContentVisible={
@@ -308,6 +307,7 @@ export function ImagePreview({
         >
           <div className={styles.navigation}>
             <button
+              title="Navigate Left"
               onClick={() => updateImageIndex(-1)}
               disabled={imageIndex === 0}
               className={styles.navButton}
@@ -318,6 +318,7 @@ export function ImagePreview({
               {imageIndex + 1} / {images.length}
             </span>
             <button
+              title="Navigate Right"
               onClick={() => updateImageIndex(1)}
               disabled={imageIndex === images.length - 1}
               className={styles.navButton}
