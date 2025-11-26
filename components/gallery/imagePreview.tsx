@@ -64,16 +64,20 @@ export function ImagePreview({
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries.length === 0 || firstLoad) return;
+        if (!entries || entries.length == 0) return;
 
         const active = entries.reduce((accumulator, currentValue) => {
           return currentValue.intersectionRatio > accumulator.intersectionRatio
             ? currentValue
             : accumulator;
         }, entries[0]);
-        if (active.intersectionRatio > 0) {
+
+        if (active.intersectionRatio > 0.5) {
           const index = Number(active.target.getAttribute("data-index"));
-          setScrollIndex(index);
+          setScrollIndex((prev) => {
+            if (prev == index) return prev;
+            return index;
+          });
           debounceRouter(index);
 
           console.log(index, scrollIndex);
@@ -81,16 +85,19 @@ export function ImagePreview({
       },
       {
         root: scrollContainerRef.current,
-        threshold: 1.0,
+        threshold: [0.5, 0.75, 1.0],
       }
     );
+
     const imageElements = scrollContainerRef.current?.querySelectorAll("li");
-    if (imageElements) {
+    if (imageElements && imageElements.length) {
       imageElements.forEach((element, index) => {
         element.setAttribute("data-index", index.toString());
         observer.observe(element);
       });
     }
+
+    setFirstLoad(false);
 
     return () => {
       if (imageElements) {
@@ -104,7 +111,6 @@ export function ImagePreview({
     currentImage.images.length,
     scrollContainerRef,
     scrollIndex,
-    firstLoad,
     debounceRouter,
   ]);
 
@@ -112,12 +118,14 @@ export function ImagePreview({
     (direction: number) => {
       const wrappedImageIndex = wrap(0, images.length, imageIndex + direction);
       setImageIndex([wrappedImageIndex, direction]);
+      setScrollIndex(0);
       debounceRouter(0);
     },
-    [images, imageIndex, debounceRouter]
+    [images, imageIndex, scrollIndex, debounceRouter]
   );
-  const updateScrollIndex = useCallback(
-    (direction: number) => {
+
+  const scrollToIndex = useCallback(
+    (direction: number, behavior: ScrollBehavior = "auto") => {
       const targetIndex = wrap(
         0,
         currentImage.images.length,
@@ -127,10 +135,24 @@ export function ImagePreview({
         `[data-index="${targetIndex}"]`
       );
       console.log(`Scrolling to ${targetIndex} - ${scrollContainerRef}`);
-      element?.scrollIntoView({ behavior: "smooth" });
+      element?.scrollIntoView({ behavior });
       debounceRouter(targetIndex);
     },
     [currentImage.images.length, scrollIndex, debounceRouter]
+  );
+
+  const scrollToAbsoluteIndex = useCallback(
+    (index: number, behavior: ScrollBehavior = "auto") => {
+      setScrollIndex(index);
+      debounceRouter(index);
+
+      const element = scrollContainerRef.current?.querySelector(
+        `[data-index="${index}"]`
+      );
+
+      element?.scrollIntoView({ behavior });
+    },
+    [debounceRouter]
   );
 
   useEffect(() => {
@@ -197,18 +219,20 @@ export function ImagePreview({
         case "KeyA":
         case "ArrowLeft":
           updateImageIndex(-1);
+          scrollToAbsoluteIndex(0, "auto");
           break;
         case "KeyD":
         case "ArrowRight":
           updateImageIndex(1);
+          scrollToAbsoluteIndex(0, "auto");
           break;
         case "KeyW":
         case "ArrowUp":
-          updateScrollIndex(-1);
+          scrollToIndex(-1);
           break;
         case "KeyS":
         case "ArrowDown":
-          updateScrollIndex(1);
+          scrollToIndex(1);
           break;
       }
     };
@@ -218,7 +242,7 @@ export function ImagePreview({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [onOutsideClick, updateImageIndex, updateScrollIndex]);
+  }, [onOutsideClick, updateImageIndex, scrollToIndex]);
 
   return (
     <motion.div
@@ -252,6 +276,7 @@ export function ImagePreview({
                 />
               )}
             {/* Indicator Dots */}
+            {/* // ? Maybe make something similar to scrollbar */}
             {/* // TODO improve indicator dots to fit different screen sizes, and overflowed posts. */}
             <AnimatePresence>
               {currentImage.images.length > 1 && !isDraggingPreview && (
@@ -270,7 +295,7 @@ export function ImagePreview({
                       }`}
                       onClick={(e) => {
                         e.stopPropagation();
-                        updateScrollIndex(index - scrollIndex);
+                        scrollToIndex(index - scrollIndex, "instant");
                       }}
                     />
                   ))}
