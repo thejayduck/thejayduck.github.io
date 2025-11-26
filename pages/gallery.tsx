@@ -165,18 +165,6 @@ export default function Gallery({
     [router]
   );
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      document.body.style.overflow = id ? "hidden" : "auto";
-    }
-
-    return () => {
-      if (typeof window !== "undefined") {
-        document.body.style.overflow = "auto";
-      }
-    };
-  }, [id]);
-
   // Handler for closing image preview
   const handleClosePreview = () => {
     galleryRouter.navigate("gallery", router);
@@ -197,6 +185,31 @@ export default function Gallery({
       return entry.images.some((img) => img.id == id);
     });
   }, [id, filteredGallery]);
+
+  useEffect(() => {
+    if (!hasLoaded) return;
+
+    if (id && activeIndex == -1) {
+      galleryRouter.navigate("gallery", router, {
+        scroll: false,
+        shallow: true,
+      });
+    }
+  }, [id, hasLoaded, activeIndex, router]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Enables scrolling if the router has invalid id and can't be used by imagePreviewer
+      document.body.style.overflow =
+        id && activeIndex != -1 ? "hidden" : "auto";
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        document.body.style.overflow = "auto";
+      }
+    };
+  }, [id, activeIndex]);
 
   return (
     <>

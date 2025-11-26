@@ -142,7 +142,7 @@ export function galleryRouterSet(id: string, index: number) {
     navigate: (
       page: keyof typeof routes,
       router: any,
-      options = { scroll: false }
+      options = { scroll: false, shallow: false }
     ) => {
       router.replace(routes[page].path, undefined, options);
     },
