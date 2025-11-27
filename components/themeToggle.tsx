@@ -7,6 +7,11 @@ import { useEffect, useState } from "react";
 
 import { getIcon, getLocalSavedItem, saveLocalItem } from "@/lib/helper";
 
+interface ThemeTypeProps {
+  name: string;
+  icon: string;
+}
+
 const iconVariants: Record<string, TargetAndTransition> = {
   initial: { y: -20, opacity: 0 },
   animate: {
@@ -19,21 +24,20 @@ const iconVariants: Record<string, TargetAndTransition> = {
 
 export default function ThemeToggle() {
   const [mount, setMount] = useState(false);
-  const themes = ["light", "dark", "gruvbox"];
-  const [theme, setTheme] = useState<string>(themes[0]);
 
-  const themeIcon: Record<string, string> = {
-    light: getIcon("lightTheme"),
-    dark: getIcon("darkTheme"),
-    gruvbox: getIcon("gruvboxTheme"),
+  const themeDict: Record<string, ThemeTypeProps> = {
+    light: { icon: getIcon("lightTheme"), name: "Bliss" },
+    dark: { icon: getIcon("darkTheme"), name: "Onyx" },
+    gruvbox: { icon: getIcon("gruvboxTheme"), name: "Gruvbox" },
   };
 
-  const toggleTheme = () => {
-    setTheme((prev) => {
-      const index = themes.indexOf(prev);
-      return themes[(index + 1) % themes.length];
-    });
-  };
+  const themeCollection = Object.keys(themeDict);
+  const [theme, setTheme] = useState<string>(themeCollection[0]);
+
+  const nextTheme =
+    themeCollection[
+      (themeCollection.indexOf(theme) + 1) % themeCollection.length
+    ];
 
   useEffect(() => {
     getLocalSavedItem<string>("theme", setTheme);
@@ -54,11 +58,9 @@ export default function ThemeToggle() {
         <button
           className={styles.toggle}
           key="themeToggle"
-          onClick={toggleTheme}
+          onClick={() => setTheme(nextTheme)}
           data-theme={theme}
-          title={`Switch to next theme: ${
-            themes[(themes.indexOf(theme) + 1) % themes.length]
-          }`}
+          title={`Switch to ${themeDict[nextTheme].name} Theme`}
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -68,7 +70,7 @@ export default function ThemeToggle() {
               exit="exit"
               variants={iconVariants}
             >
-              <i className={themeIcon[theme]} />
+              <i className={themeDict[theme].icon} />
             </motion.div>
           </AnimatePresence>
         </button>
