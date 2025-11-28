@@ -23,7 +23,15 @@ export default function ProjectItem(project: IProjectItem) {
       <div className={styles.postContainer}>
         <article>
           <span className={styles.stats}>
-            {project.type} {project.genre ? `| ${project.genre}` : ""}
+            {project.type}
+            {project.genre ? (
+              <>
+                <i className="ri-arrow-right-line ri-fw" />
+                {project.genre}
+              </>
+            ) : (
+              ""
+            )}
           </span>
           <div className={styles.header}>
             <Link href={project.links[0].url} passHref>

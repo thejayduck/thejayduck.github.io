@@ -208,6 +208,7 @@ const iconList: Record<string, string> = {
   hobbies: "ri-archive-stack-fill",
   programming: "ri-braces-fill",
   drawing: "ri-pen-nib-fill",
+  animating: "ri-file-gif-fill",
   writing: "ri-quill-pen-fill",
   cooking: "ri-bowl-fill",
   reading: "ri-book-fill",

@@ -41,8 +41,17 @@
     .stats {
       font-size: var(--font-small);
       user-select: none;
+      background-color: hsla(var(--primary-hsla), 0.2);
+      padding: var(--spacing-mini) var(--spacing-normal);
+      border-radius: var(--border);
       color: var(--font-default);
+      font-weight: 500;
       transition: color 0.3s;
+      text-align: center;
+
+      i {
+        margin: 0;
+      }
     }
     .header {
       display: flex;
