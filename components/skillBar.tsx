@@ -6,15 +6,21 @@ interface SkillBarProps {
   title: string;
   icon: string;
   href?: string;
+  target?: "_blank" | "_self";
 }
 
-export default function SkillBar({ title, icon, href }: SkillBarProps) {
+export default function SkillBar({
+  title,
+  icon,
+  href,
+  target = "_blank",
+}: SkillBarProps) {
   return (
     <motion.a
       className={`${styles.skillWrap} cardItem`}
       title={`${title}`}
       href={href}
-      target="_blank"
+      target={target}
       rel="noreferrer"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 0.5 } }}

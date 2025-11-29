@@ -11,9 +11,24 @@ export default function SkillsWrap() {
     <CardPanel title="Toolbox 🧰">
       <Subtitle text="Hobbies" icon={getIcon("hobbies")} />
       <div className={`${styles.skills} grid`}>
-        <SkillBar title="Programming" icon={getIcon("programming")} />
-        <SkillBar title="Drawing" icon={getIcon("drawing")} />
-        <SkillBar title="Animating" icon={getIcon("animating")} />
+        <SkillBar
+          title="Programming"
+          icon={getIcon("programming")}
+          href="/projects"
+          target="_self"
+        />
+        <SkillBar
+          title="Drawing"
+          icon={getIcon("drawing")}
+          href="/gallery"
+          target="_self"
+        />
+        <SkillBar
+          title="Animating"
+          icon={getIcon("animating")}
+          href="/gallery"
+          target="_self"
+        />
         <SkillBar title="Writing" icon={getIcon("writing")} />
         <SkillBar title="Cooking" icon={getIcon("cooking")} />
         <SkillBar title="Reading" icon={getIcon("reading")} />
