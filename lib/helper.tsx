@@ -82,18 +82,55 @@ export function groupTreeBy<T>(input: T[], key: (el: T) => number): Tree<T> {
   return children;
 }
 
-export function formatDate(str: string): string {
-  const date = new Date(`${str}-01`);
-  const options: Intl.DateTimeFormatOptions = {
-    month: "short",
-    year: "numeric",
-  };
-  return new Intl.DateTimeFormat("en-US", options).format(date);
+interface DateFormatterOptions {
+  type: "default" | "timestamp" | "title";
 }
 
-export function formatUnixTimestamp(timestamp: number): string {
-  const convertedDate = new Date(timestamp * 1000);
-  return convertedDate.toLocaleString("de-DE", { hour12: false });
+export function formatDate(
+  input: number | string,
+  options: DateFormatterOptions = {
+    type: "default",
+  }
+): string {
+  let date: Date;
+
+  if (typeof input === "number") {
+    date = new Date(input * 1000);
+  } else if (/^\d{4}-(0[1-9]|1[0-2])$/.test(input)) {
+    date = new Date(`${input}-01`);
+  } else {
+    date = new Date(input);
+  }
+
+  switch (options.type) {
+    case "default":
+      return date.toLocaleDateString("en-US", {
+        month: "short",
+        year: "numeric",
+      });
+    case "timestamp":
+      const now = Date.now();
+      const nowStamp = now - date.getTime();
+      const minutes = Math.floor(nowStamp / (1000 * 60 * 60));
+
+      if (minutes < 72) {
+        if (minutes < 1) {
+          const diffMinutes = Math.floor(minutes / (1000 * 60));
+          return diffMinutes <= 1
+            ? "1 minute ago"
+            : `${diffMinutes} minutes ago`;
+        }
+        return minutes == 1 ? "1 hour ago" : `${minutes} hours ago`;
+      }
+
+      return date.toLocaleString("de-DE", { hour12: false });
+    case "title":
+      return date.toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+      });
+  }
 }
 
 export function dragHandler(

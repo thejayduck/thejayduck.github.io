@@ -10,7 +10,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
   formatDate,
-  formatUnixTimestamp,
   galleryRouterSet,
   getIcon,
   getImageUrl,
@@ -366,12 +365,19 @@ export function ImagePreview({
           {/* Stats */}
           <div className={styles.imageStats}>
             <ul>
-              <li title="Creation Date">
+              <li
+                title={`Created on ${formatDate(
+                  currentImage?.timestamp ?? currentImage?.date,
+                  {
+                    type: "title",
+                  }
+                )}`}
+              >
                 <i className={getIcon("createdDate")} />
                 <span>
-                  {currentImage?.timestamp
-                    ? formatUnixTimestamp(currentImage.timestamp)
-                    : formatDate(currentImage?.date)}
+                  {formatDate(currentImage?.timestamp ?? currentImage?.date, {
+                    type: currentImage?.timestamp ? "timestamp" : "default",
+                  })}
                 </span>
               </li>
               {currentImage?.software && (
