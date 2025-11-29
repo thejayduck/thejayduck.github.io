@@ -18,7 +18,6 @@ export default function ContentWarningOverlay({
   return (
     <div
       className={styles.contentWarningWrapper}
-      onClick={(e) => e.stopPropagation()}
       style={{
         width: dimensions?.width,
         height: dimensions?.height,
