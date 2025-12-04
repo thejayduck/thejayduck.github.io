@@ -123,11 +123,13 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
           onClick={() =>
             setSortOrder((prev) => (prev === "recent" ? "old" : "recent"))
           }
-          title="Toggle Order"
+          title={`Order by ${
+            sortOrder === "recent" ? "oldest" : "most recent"
+          }`}
         >
           <i
             className={`${
-              sortOrder === "old" ? getIcon("recentSort") : getIcon("oldSort")
+              sortOrder === "old" ? getIcon("oldSort") : getIcon("recentSort")
             } ri-1x ri-fw`}
           />
         </button>
