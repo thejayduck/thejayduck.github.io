@@ -27,12 +27,12 @@ export default function KaomojiLoader({ message }: KaomojiProps) {
   useEffect(() => {
     setFace(KAOMOJI[Math.floor(Math.random() * KAOMOJI.length)]);
 
-    const interval = setInterval(() => {
-      const random = KAOMOJI[Math.floor(Math.random() * KAOMOJI.length)];
-      setFace(random);
-    }, 1000);
+    // const interval = setInterval(() => {
+    //   const random = KAOMOJI[Math.floor(Math.random() * KAOMOJI.length)];
+    //   setFace(random);
+    // }, 1000);
 
-    return () => clearInterval(interval);
+    // return () => clearInterval(interval);
   }, []);
 
   return (

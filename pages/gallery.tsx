@@ -17,7 +17,7 @@ import PageBase from "@/components/pageBase";
 import { galleryRouterSet, getGallery, getIcon } from "@/lib/helper";
 import { useToast } from "@/components/toashHandler";
 import KaomojiLoader from "@/components/kaomojiLoader";
-import GalleryEntry from "@/lib/models/gallery";
+import GalleryEntry from "@/lib/models/gallerySchema";
 import dbConnect from "@/lib/mongodb";
 
 const PER_PAGE = 12;

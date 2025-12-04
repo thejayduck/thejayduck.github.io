@@ -209,7 +209,6 @@ export function CanvasImage({
   // Keyboard Navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // TODO fix shift key issue on chromium
       if (e.defaultPrevented) return;
       if (!shortcuts) return;
       if (!imageLoaded) return;
@@ -218,6 +217,7 @@ export function CanvasImage({
       for (const key in actions) {
         if (actions.hasOwnProperty(key)) {
           const action = actions[key];
+
           if (
             action.shortcut &&
             action.shortcut.key === e.code &&
@@ -310,21 +310,13 @@ export function CanvasImage({
           }
         }}
         onWheel={(e) => {
+          console.log(e.shiftKey);
           if (e.shiftKey && shortcuts) {
+            const delta =
+              Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+
             setZoomIndex((prev) =>
-              Math.min(
-                Math.max(
-                  prev -
-                    Math.sign(
-                      navigator.userAgent.toUpperCase().indexOf("APPLEWEBKIT") >
-                        -1
-                        ? e.deltaX // Damn you webkit
-                        : e.deltaY
-                    ),
-                  -4
-                ),
-                10
-              )
+              Math.min(Math.max(prev - Math.sign(delta), -4), 10)
             );
             return true;
           }

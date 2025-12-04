@@ -1,8 +1,6 @@
 import mongoose, { Model, Schema } from "mongoose";
 import IGalleryEntry from "@/components/gallery/IGalleryEntry";
 
-// TODO rename file
-
 type GalleryDocument = IGalleryEntry & Document;
 
 const GallerySchema = new Schema({

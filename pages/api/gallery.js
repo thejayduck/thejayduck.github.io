@@ -1,6 +1,6 @@
 // app/api/users/route.js
 import dbConnect from "@/lib/mongodb";
-import GalleryEntry from "@/lib/models/gallery";
+import GalleryEntry from "@/lib/models/gallerySchema";
 
 export default async function handler(req, res) {
   await dbConnect();
