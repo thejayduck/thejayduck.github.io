@@ -9,7 +9,7 @@ import Subtitle from "../subtitle";
 export default function SkillsWrap() {
   return (
     <CardPanel title="Toolbox 🧰">
-      <Subtitle text="Hobbies" icon={getIcon("hobbies")} />
+      <Subtitle text="Hobbies" icon={`${getIcon("hobbies")} ri-fw`} />
       <div className={`${styles.skills} grid`}>
         <SkillBar
           title="Programming"
@@ -36,7 +36,7 @@ export default function SkillsWrap() {
 
       <hr />
 
-      <Subtitle text="Languages" icon={getIcon("languages")} />
+      <Subtitle text="Languages" icon={`${getIcon("languages")} ri-fw`} />
       <div className={`${styles.skills} grid`}>
         {toolbox.languages.map((language) => (
           <SkillBar
@@ -50,7 +50,7 @@ export default function SkillsWrap() {
 
       <hr />
 
-      <Subtitle text="Software" icon={getIcon("software")} />
+      <Subtitle text="Software" icon={`${getIcon("software")} ri-fw`} />
       <div className={`${styles.skills} grid`}>
         {toolbox.software.map((software) => (
           <SkillBar
@@ -64,7 +64,7 @@ export default function SkillsWrap() {
 
       <hr />
 
-      <Subtitle text="Others" icon={getIcon("others")} />
+      <Subtitle text="Others" icon={`${getIcon("others")} ri-fw`} />
       <div className={`${styles.skills} grid`}>
         {toolbox.others.map((other) => (
           <SkillBar

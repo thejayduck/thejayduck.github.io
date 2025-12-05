@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: var(--z-normal);
+  z-index: var(--z-front);
   // background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(16px) brightness(60%) grayscale(100%);
   overflow: hidden;

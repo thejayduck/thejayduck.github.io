@@ -53,6 +53,62 @@
       border-radius: var(--border);
       overflow: hidden;
 
+      &::before {
+        // dark gradient for a more legible text
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: multiply;
+        background: linear-gradient(
+          to top,
+          hsla(0, 0%, 28%, 0.85) 0%,
+          transparent 100%
+        );
+
+        // border-radius: var(--border); // TODO remove depending on layout
+        z-index: var(--z-normal);
+        pointer-events: none;
+
+        opacity: 0;
+        transition: 255ms;
+      }
+
+      &::after {
+        // TODO play around with colors
+        // Inset glow border shadow
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0 0 2em hsla(var(--high-contrast-hsla), 0.2);
+        opacity: 0;
+        z-index: 0;
+        pointer-events: none;
+
+        transition: 255ms;
+      }
+
+      &:hover {
+        &::after, // Gradients
+        &::before {
+          opacity: 1;
+        }
+
+        img {
+          transform: scale(1.05);
+        }
+
+        figcaption {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
       .indicators {
         // speedpainting and image stack
         list-style: none;
@@ -60,6 +116,7 @@
         padding: 0;
         position: absolute;
         top: 0;
+        z-index: var(--z-normal);
 
         span {
           font-weight: bold;
@@ -76,6 +133,15 @@
             color: hsl(28, 100%, 73%);
           }
         }
+      }
+
+      img {
+        display: block;
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%;
+        transition: 255ms;
       }
 
       figure {
@@ -95,32 +161,21 @@
           user-select: none;
           pointer-events: none;
 
-          font-size: 16px;
+          font-size: var(--font-regular);
           font-weight: bold;
 
           text-shadow: 1px 1px 5px #000000;
           background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.8) 0%,
-            rgba(255, 255, 255, 0) 100%
+            to top,
+            hsla(var(--high-contrast-hsla), 0.2) 0%,
+            transparent 100%
           );
           opacity: 0;
+          transform: translateY(20);
+          z-index: var(--z-normal);
 
           transition: 255ms;
         }
-
-        &:hover {
-          figcaption {
-            opacity: 1;
-          }
-        }
-      }
-      img {
-        display: block;
-        height: 100%;
-        max-height: 100%;
-        max-width: 100%;
-        width: 100%;
       }
     }
     &::after {
@@ -135,6 +190,7 @@
   .mainSection {
     .gallery .galleryItem figure {
       figcaption {
+        transform: translateY(0);
         opacity: 1;
       }
     }

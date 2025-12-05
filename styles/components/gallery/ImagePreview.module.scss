@@ -232,6 +232,8 @@
 
         img {
           object-fit: cover;
+          object-position: 20% 10%;
+          scale: 1.1;
           cursor: pointer;
           transition: opacity 255ms;
 

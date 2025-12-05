@@ -38,6 +38,7 @@
   --secondary-opaque-hsla: 0, 0%, 100%;
   --tertiary: hsl(0, 0%, 100%);
   --notification: hsl(350, 79%, 47%);
+  --high-contrast-hsla: 248, 100%, 41%;
 
   --font-default: hsl(0, 0%, 0%);
   --font-high-contrast: hsl(248, 100%, 41%);
@@ -60,6 +61,7 @@
   --secondary-opaque-hsla: 251, 17%, 12%;
   --tertiary: hsl(251, 17%, 25%);
   --notification: hsl(350, 79%, 47%);
+  --high-contrast-hsla: 248, 85%, 66%;
 
   --font-default: hsl(247, 81%, 96%);
   --font-high-contrast: #725ff2;
@@ -79,6 +81,8 @@
   --secondary: rgba(41, 41, 41, 0.5);
   --secondary-opaque: hsl(0, 0%, 16%);
   --secondary-opaque-hsla: 0, 0%, 16%;
+
+  --high-contrast-hsla: 42, 95%, 58%;
 
   --tertiary: hsl(195, 6%, 12%);
   --notification: hsl(6, 96%, 59%);

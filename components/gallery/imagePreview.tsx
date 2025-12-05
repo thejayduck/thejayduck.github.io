@@ -21,6 +21,7 @@ import { useToast } from "../toashHandler";
 import { CanvasImage } from "./canvasImage";
 import ContentWarningOverlay from "./contentWarningOverlay";
 import IImagePreview from "./IImagePreview";
+import { IImage } from "./IGalleryEntry";
 
 export function ImagePreview({
   images,
@@ -402,7 +403,8 @@ export function ImagePreview({
             </h3>
             <div className={styles.thumbnailGrid}>
               {relatedImages.map((img) => {
-                const mainImage = img.images[0];
+                const mainImage: IImage = img.images[0];
+
                 return (
                   <div
                     key={img._id}
