@@ -111,16 +111,16 @@ export function formatDate(
     case "timestamp":
       const now = Date.now();
       const nowStamp = now - date.getTime();
-      const minutes = Math.floor(nowStamp / (1000 * 60 * 60));
+      const hours = Math.floor(nowStamp / (1000 * 60 * 60));
 
-      if (minutes < 72) {
-        if (minutes < 1) {
-          const diffMinutes = Math.floor(minutes / (1000 * 60));
+      if (hours < 72) {
+        if (hours < 1) {
+          const diffMinutes = Math.floor(nowStamp / (1000 * 60));
           return diffMinutes <= 1
             ? "1 minute ago"
             : `${diffMinutes} minutes ago`;
         }
-        return minutes == 1 ? "1 hour ago" : `${minutes} hours ago`;
+        return hours == 1 ? "1 hour ago" : `${hours} hours ago`;
       }
 
       return date.toLocaleString("de-DE", { hour12: false });
