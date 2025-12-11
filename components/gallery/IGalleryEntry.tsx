@@ -25,5 +25,6 @@ export default interface IGalleryEntry {
   sensitive?: boolean;
   sensitive_description?: string;
   tags: string[];
+  descriptiveTags?: string[];
   images: IImage[];
 }

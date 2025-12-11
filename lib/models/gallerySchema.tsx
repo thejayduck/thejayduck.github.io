@@ -20,6 +20,7 @@ const GallerySchema = new Schema({
     },
   ],
   tags: [String],
+  descriptiveTags: [String],
   images: [
     {
       width: Number,

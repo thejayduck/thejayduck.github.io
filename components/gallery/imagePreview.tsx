@@ -497,6 +497,23 @@ export function ImagePreview({
               </span>
             ))}
           </div>
+
+          {/* Descriptive Tags */}
+          {currentImage.descriptiveTags && ( // TODO implement custom dropdown with multiselect functionality for descriptive tags
+            <>
+              <h3 title="Experimental Feature">
+                Descriptive Tags (Experimental)
+              </h3>
+              <div className={styles.tags}>
+                {currentImage.descriptiveTags.map((tag, index) => (
+                  <span key={index} className={styles.tag}>
+                    <i className={`${getIcon("tag")} ri-1x ri-fw`} />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </motion.div>
