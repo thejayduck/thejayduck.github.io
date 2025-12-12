@@ -1,0 +1,154 @@
+// TODO cleanup
+.dropDownWrapper {
+  width: max-content;
+  position: relative;
+  overflow: visible;
+  height: 100%;
+  font-weight: 500;
+  font-size: var(--font-small);
+
+  .toggleButton {
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--spacing-small);
+    border-radius: var(--border);
+    background: hsla(var(--primary-hsla), 0.2);
+    color: var(--font-default);
+    cursor: pointer;
+
+    &.active {
+      color: white;
+      background-color: var(--primary);
+
+      i {
+        color: white;
+      }
+    }
+
+    a {
+      color: var(--font-default);
+      i {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Rendered under #modal id in _document.js
+.multiDropdownList {
+  position: absolute;
+  background: var(--secondary-opaque);
+  border-radius: var(--border);
+  padding: var(--spacing-small) 0;
+  box-shadow: var(--box-shadow);
+  z-index: var(--z-front);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  max-height: 240px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  .inputWrapper {
+    margin: 0 var(--spacing-small) var(--spacing-normal) var(--spacing-small);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-small);
+    .input {
+      padding: var(--spacing-small);
+      border-radius: var(--border);
+      border: 1px solid hsla(var(--primary-hsla), 0.4);
+      background-color: hsla(var(--primary-hsla), 0.4);
+      color: var(--font-default);
+      outline: none;
+
+      span {
+        opacity: 0;
+      }
+    }
+
+    a {
+      padding: var(--spacing-small);
+      text-align: center;
+      border-radius: var(--border);
+
+      background-color: transparent;
+      color: var(--font-default);
+
+      transition: color 255ms, background-color 255ms;
+
+      i {
+        margin: 0;
+      }
+
+      &.disabled {
+        opacity: 0.5;
+      }
+
+      &:hover {
+        &.disabled {
+          cursor: not-allowed;
+          user-select: none;
+        }
+
+        &.active {
+          cursor: pointer;
+          color: white;
+          background-color: var(--notification);
+        }
+      }
+    }
+  }
+
+  li:nth-child(even) {
+    background-color: var(--tertiary);
+  }
+
+  .option {
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    user-select: none;
+    border-left: 0 solid var(--primary);
+    color: var(--font-default);
+
+    transition: border-left 255ms;
+
+    &.active {
+      font-weight: bolder;
+      border-left: 4px solid var(--primary);
+      background: hsla(var(--primary-hsla), 0.15);
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      background-color: transparent;
+      color: #888;
+
+      &:hover {
+        background-color: transparent; // Prevent hover highlight
+      }
+    }
+
+    &:hover {
+      background: hsla(var(--primary-hsla), 0.15);
+    }
+  }
+
+  .noResults {
+    text-align: center;
+    opacity: 0.5;
+    color: var(--font-default);
+
+    span,
+    i {
+      vertical-align: middle;
+      margin: 0;
+    }
+  }
+}

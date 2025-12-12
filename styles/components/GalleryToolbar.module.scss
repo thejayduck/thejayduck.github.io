@@ -1,45 +1,21 @@
 .filterTags {
   display: flex;
-  flex-wrap: nowrap;
   gap: var(--spacing-small);
-  overflow-x: scroll;
-  overflow-y: visible;
 
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-  touch-action: pan-x;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  .dropDownWrapper {
+  .scrollableArea {
     display: flex;
-    align-items: center;
-    border-radius: var(--border);
-    white-space: nowrap;
-    text-decoration: none;
-    background-color: hsla(var(--primary-hsla), 0.2);
-    color: var(--font-default);
-    padding-left: var(--spacing-mini);
-    border: none;
+    flex-wrap: nowrap;
+    gap: var(--spacing-small);
+    overflow-x: scroll;
+    overflow-y: hidden;
 
-    &:hover {
-      select {
-        background-color: hsla(var(--primary-hsla), 0.2);
-      }
-    }
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    touch-action: pan-x;
 
-    i {
-      text-align: center;
-    }
-
-    select {
-      cursor: pointer;
-      background-color: transparent;
-      height: 100%;
-      transition: background-color 255ms;
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 
@@ -81,6 +57,8 @@
       opacity: 0.5;
     }
   }
+
+  // Special button styling
 
   .clearTags {
     background-color: var(--notification);

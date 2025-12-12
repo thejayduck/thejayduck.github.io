@@ -1,17 +1,17 @@
 import styles from "@/styles/components/GalleryToolbar.module.scss";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { getIcon, getLocalSavedItem, saveLocalItem } from "@/lib/helper";
 import IGalleryEntry from "./IGalleryEntry";
-import { Dropdown } from "./galleryToolbarDropdown";
+import { MultiDropdown } from "../multiDropDown";
+import { GalleryFilters, TAG_METADATA } from "./filterManager";
 
 export function GalleryToolbar(galleryData: IGalleryEntry[]) {
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [selectedYear, setSelectedYear] = useState("all");
   const [layoutView, setLayoutView] = useState<string>("custom");
   const [sortOrder, setSortOrder] = useState<string>("recent");
 
+  // Local Storage
   useEffect(() => {
     getLocalSavedItem("galleryLayout", setLayoutView);
     getLocalSavedItem("sortOrder", setSortOrder);
@@ -22,21 +22,8 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
     saveLocalItem("galleryLayout", layoutView);
   }, [sortOrder, layoutView]);
 
+  // Horizontal Scroll Handler
   const scrollRef = useRef<HTMLDivElement | null>(null);
-
-  const tagCollection = (item: IGalleryEntry): string[] => {
-    return [...(item.tags ?? []), item.sensitive ? "sensitive" : null].filter(
-      (tag) => typeof tag == "string"
-    );
-  };
-
-  const toggleTag = (tag: string) => {
-    setSelectedTags((prevSelectedTags) =>
-      prevSelectedTags.includes(tag)
-        ? prevSelectedTags.filter((selectedTag) => selectedTag !== tag)
-        : [...prevSelectedTags, tag]
-    );
-  };
 
   const handleWheel = (e: React.WheelEvent) => {
     if (scrollRef.current) {
@@ -50,59 +37,28 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
     }
   };
 
-  const filteredGallery = useMemo(() => {
-    const filtered = galleryData.filter((item) => {
-      const itemYear = item.date?.split("-")[0]; // Date format uses YYYY-MM
-      const year = selectedYear == "all" || itemYear == selectedYear;
+  // Tag Management
 
-      const tags =
-        selectedTags.length == 0 ||
-        selectedTags.every((tag) => tagCollection(item).includes(tag));
+  const {
+    filteredGallery,
+    getAvailableFilters,
+    clearAllFilters,
+    clearFilterByKey,
+    activeFilters,
+    applyFilter,
+    configs,
+  } = GalleryFilters(galleryData, sortOrder);
 
-      return year && tags;
-    });
-
-    return sortOrder === "old" ? filtered.reverse() : filtered;
-  }, [selectedTags, selectedYear, galleryData, sortOrder]);
-
-  // Used to disable unavailable tags and years depending on filter choices..
-  const availableTags = useMemo(() => {
-    const tagsSet = new Set(filteredGallery.flatMap(tagCollection));
-    return tagsSet;
-  }, [filteredGallery]);
-
-  const availableYears = useMemo(() => {
-    const yearsSet = new Set(
-      filteredGallery.map((item) => item.date?.split("-")[0])
-    );
-
-    return yearsSet;
-  }, [filteredGallery]);
-
-  //? Move to helper.tsx ?
-  const tagList: Record<string, [string, string]> = {
-    animation: ["Animation", "ri-film-fill"],
-    animal: ["Animal", "ri-leaf-fill"],
-    cg: ["CG", "ri-computer-fill"],
-    characterdesign: ["Character Design", "ri-compasses-2-fill"],
-    commission: ["Commission", "ri-shake-hands-fill"],
-    fanart: ["Fan Art", "ri-heart-fill"],
-    fullcolor: ["Full Color", "ri-rainbow-fill"],
-    gamejam: ["Game Jam", "ri-gamepad-fill"],
-    lineart: ["Line Art", "ri-draft-fill"],
-    sensitive: ["Sensitive", "ri-eye-off-fill"],
-    oc: ["Original Character", "ri-user-fill"],
-    sketch: ["Sketch", "ri-sketching"],
-  };
+  const activeFilterList = Object.values(activeFilters).some(
+    (filter) => filter.length > 0
+  );
 
   return {
     filteredGallery,
-    selectedTags,
-    selectedYear,
     layoutView,
     sortOrder,
     component: (
-      <div ref={scrollRef} className={styles.filterTags} onWheel={handleWheel}>
+      <div className={styles.filterTags}>
         <button // Layout Toggle // ? make a component
           className={styles.tagButton}
           onClick={() =>
@@ -136,56 +92,71 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
 
         <button
           className={`${styles.tagButton} ${styles.clearTags}`}
-          disabled={selectedTags.length <= 0 && selectedYear == "all"}
-          onClick={() => {
-            setSelectedTags([]);
-            setSelectedYear("all");
-          }}
+          disabled={!activeFilterList}
+          onClick={clearAllFilters}
           title="Clear Filter(s)"
         >
           <i className={`${getIcon("clearFilter")} ri-1x ri-fw`} />
         </button>
-        <Dropdown
-          name="year"
-          options={Array.from(
-            new Set(galleryData.map((item) => item.date.split("-")[0]))
-          )}
-          value={selectedYear}
-          onChange={setSelectedYear}
-          disabledOptions={
-            selectedTags.length > 0
-              ? new Set(
-                  Array.from(
-                    new Set(galleryData.map((item) => item.date.split("-")[0]))
-                  ).filter((year) => !availableYears.has(year))
-                )
-              : new Set()
-          } // only enable years present in filteredGallery
-          placeholderLabel="Year"
-        />
 
-        {Array.from(new Set(galleryData.flatMap(tagCollection)))
-          .sort((a, b) => a.localeCompare(b))
-          .map((tag) => (
-            <button
-              key={tag}
-              className={`${styles.tagButton} ${
-                selectedTags.includes(tag) ? styles.selected : ""
-              }`}
-              onClick={() => toggleTag(tag)}
-              disabled={!availableTags.has(tag)}
-              title={
-                availableTags.has(tag)
-                  ? `Filter by ${tagList[tag]?.[0] ?? tag}`
-                  : `No images with ${tagList[tag]?.[0] ?? tag} tag available`
-              }
-            >
-              <i
-                className={`${tagList[tag]?.[1] ?? getIcon("tag")} ri-1x ri-fw`}
-              />
-              <span>{tagList[tag]?.[0] ?? tag}</span>
-            </button>
-          ))}
+        <div
+          className={styles.scrollableArea}
+          ref={scrollRef}
+          onWheel={handleWheel}
+        >
+          {configs.map((config) => {
+            const selectedValues = activeFilters[config.key] || [];
+            const options = config.getOptions(galleryData);
+
+            if (config.type == "dropdown") {
+              const isAvailable = getAvailableFilters[config.key];
+              const disabledOptions = options.filter(
+                (opt) => !isAvailable?.has(opt) && !selectedValues.includes(opt)
+              );
+
+              return (
+                <MultiDropdown
+                  key={config.key}
+                  title={config.title}
+                  alt={config.alt}
+                  icon={config.icon}
+                  searchInput={config.search}
+                  options={options}
+                  disableUnmatched={config.disableUnmatched}
+                  disabledOptions={disabledOptions}
+                  selectedOptions={selectedValues}
+                  showResetOption={true}
+                  multiSelect={config.multiSelect}
+                  onSelect={(s) => applyFilter(config.key, s, true)} // remove config.multiSelect bool parameter
+                  onClear={() => clearFilterByKey(config.key)}
+                />
+              );
+            }
+
+            if (config.type == "list") {
+              return options.map((tag) => {
+                const isSelected = selectedValues.includes(tag);
+                const isAvailable = getAvailableFilters[config.key]?.has(tag);
+                const [label, icon] = TAG_METADATA[tag]; // Tag specific icons
+
+                return (
+                  <button
+                    key={tag}
+                    className={`${styles.tagButton} ${
+                      isSelected ? styles.selected : ""
+                    }`}
+                    onClick={() => applyFilter(config.key, tag, true)}
+                    disabled={!isAvailable}
+                    title={`Filter by ${label}`}
+                  >
+                    <i className={`${icon} ri-1x ri-fw`} />
+                    <span>{label}</span>
+                  </button>
+                );
+              });
+            }
+          })}
+        </div>
       </div>
     ),
   };
