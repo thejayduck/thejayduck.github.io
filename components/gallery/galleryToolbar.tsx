@@ -125,6 +125,7 @@ export function GalleryToolbar(galleryData: IGalleryEntry[]) {
                   disableUnmatched={config.disableUnmatched}
                   disabledOptions={disabledOptions}
                   selectedOptions={selectedValues}
+                  groups={config.groups}
                   showResetOption={true}
                   multiSelect={config.multiSelect}
                   onSelect={(s) => applyFilter(config.key, s, true)} // remove config.multiSelect bool parameter

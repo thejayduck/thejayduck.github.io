@@ -58,6 +58,7 @@
     justify-content: center;
     align-items: center;
     gap: var(--spacing-small);
+
     .input {
       padding: var(--spacing-small);
       border-radius: var(--border);
@@ -104,12 +105,60 @@
     }
   }
 
-  li:nth-child(even) {
-    background-color: var(--tertiary);
+  // Grouped Elements only
+  .groupWrapper:has(.option) {
+    position: relative;
+
+    // // The thread looking line
+    // &:before {
+    //   content: "";
+    //   position: absolute;
+    //   inset-inline-start: 6px;
+    //   top: calc(1rem + 22px);
+    //   bottom: 30px;
+    //   width: 2px;
+    //   background: var(--font-high-contrast);
+
+    //   opacity: 0.5;
+    // }
+
+    // // End of the thread looking line
+    // &:after {
+    //   content: "";
+    //   position: absolute;
+    //   inset-inline-start: 6px;
+    //   bottom: 18px;
+
+    //   height: 10px;
+    //   width: 10px;
+    //   border-inline-start: 2px solid var(--font-high-contrast);
+    //   border-bottom: 2px solid var(--font-high-contrast);
+    //   background: transparent;
+    //   border-end-start-radius: 10px;
+
+    //   opacity: 0.5;
+    // }
+
+    .groupHeader {
+      padding: var(--spacing-small);
+      background: linear-gradient(
+        90deg,
+        hsla(var(--high-contrast-hsla), 0.4) 0%,
+        transparent 100%
+      );
+      font-weight: 500;
+      vertical-align: middle;
+      color: var(--font-default);
+    }
+
+    .option {
+      // margin-inline-start: 1.5rem; // Enable when :before and :after threads are active
+      position: relative;
+    }
   }
 
   .option {
-    padding: 0.4rem 0.8rem;
+    padding: var(--spacing-small) var(--spacing-normal);
     cursor: pointer;
     transition: background 0.15s ease;
     user-select: none;
@@ -117,6 +166,10 @@
     color: var(--font-default);
 
     transition: border-left 255ms;
+
+    // &:nth-child(even) {
+    //   background-color: var(--tertiary);
+    // }
 
     &.active {
       font-weight: bolder;

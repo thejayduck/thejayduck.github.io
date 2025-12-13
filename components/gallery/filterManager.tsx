@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import IGalleryEntry from "./IGalleryEntry";
 import { getIcon } from "@/lib/helper";
 
+// TODO Organize and separate interface and const to their own designated folder, alongside the filterManager.tsx
 export interface FilterProps {
   key: string;
   title: string;
@@ -20,6 +21,8 @@ export interface FilterProps {
   getValue: (value: IGalleryEntry) => string | string[];
   /** Get all tags from all elements from the specified property in the database */
   getOptions: (data: IGalleryEntry[]) => string[];
+
+  groups?: Record<string, { name: string; tags: string[] }>;
 }
 
 //? Move to helper.tsx ?
@@ -39,8 +42,7 @@ export const TAG_METADATA: Record<string, [string, string]> = {
   sketch: ["Sketch", "ri-sketching"],
 };
 
-// TODO implement descriptive tag grouping
-// ? Also implement renaming inside tags ?
+// ? Maybe implement renaming inside tags ?
 export const DESCRIPTIVE_TAG_GROUPS: Record<
   string, // group type
   { name: string; tags: string[] } // Group title and matching tags
@@ -92,6 +94,7 @@ const FILTERS: FilterProps[] = [
     getValue: (value) => value.descriptiveTags ?? [],
     getOptions: (data) =>
       Array.from(new Set(data.flatMap((i) => i.descriptiveTags ?? []))).sort(),
+    groups: DESCRIPTIVE_TAG_GROUPS,
   },
   {
     // Content type tags

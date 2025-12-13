@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { getIcon } from "@/lib/helper";
 
 // TODO add mobile view support for dropdown
+// TODO organize and separate interface to a new file
 interface MultiDropdownProps {
   icon?: string;
   title?: string;
@@ -23,6 +24,8 @@ interface MultiDropdownProps {
   disabledOptions?: string[];
   /** Array of selected options  */
   selectedOptions: string[];
+
+  groups?: Record<string, { name: string; tags: string[] }>;
 
   onSelect: (s: string) => void;
   onClear?: () => void;
@@ -54,6 +57,31 @@ export function MultiDropdown(props: MultiDropdownProps) {
       left: rect.left,
       width: rect.width,
     });
+  };
+
+  const groupedTags = useMemo(() => {
+    if (!props.groups) return new Set();
+    return new Set(Object.values(props.groups).flatMap((group) => group.tags));
+  }, [props.groups]);
+
+  const dropDownSelectElement = (option: string) => {
+    const isDisabled =
+      props.disableUnmatched && props.disabledOptions?.includes(option);
+
+    return (
+      <li
+        key={option}
+        className={`${styles.option} ${
+          props.selectedOptions.includes(option) ? styles.active : ""
+        } ${isDisabled ? styles.disabled : ""}`}
+        onClick={() => {
+          if (isDisabled) return;
+          selectHandler(option);
+        }}
+      >
+        {option}
+      </li>
+    );
   };
 
   useEffect(() => {
@@ -138,6 +166,8 @@ export function MultiDropdown(props: MultiDropdownProps) {
           />
         </a>
       </div>
+
+      {/* Dropdown Modal. Uses portals due to overflow conflict. */}
       <AnimatePresence>
         {focused && (
           <ClientOnlyPortal selector="#modal">
@@ -188,29 +218,45 @@ export function MultiDropdown(props: MultiDropdownProps) {
                   )}
                 </div>
               )}
-              {filtered.map((option) => {
-                const isDisabled =
-                  props.disableUnmatched &&
-                  props.disabledOptions?.includes(option);
 
-                return (
-                  <li
-                    key={option}
-                    className={`${styles.option} ${
-                      props.selectedOptions.includes(option)
-                        ? styles.active
-                        : ""
-                    } ${isDisabled ? styles.disabled : ""}`}
-                    onClick={() => {
-                      if (isDisabled) return;
-                      selectHandler(option);
-                    }}
-                  >
-                    {option}
-                  </li>
-                );
-              })}
+              {/* Grouped Options */}
+              {filtered.length > 0 && (
+                <>
+                  {props.groups &&
+                    Object.values(props.groups).map((group) => {
+                      // Find items in the current search results that belong to this group
+                      const matches = filtered.filter((option) =>
+                        group.tags.includes(option)
+                      );
 
+                      return (
+                        <div key={group.name} className={styles.groupWrapper}>
+                          <li className={styles.groupHeader}>{group.name}</li>
+                          {matches.map(dropDownSelectElement)}
+                        </div>
+                      );
+                    })}
+
+                  {(() => {
+                    const rest = filtered.filter(
+                      (option) => !groupedTags.has(option)
+                    );
+
+                    if (rest.length == 0) return null; // If not added an unnecessary space is added
+
+                    return (
+                      <>
+                        {props.groups && (
+                          <li className={styles.groupHeader}>Other</li>
+                        )}
+                        {rest.map(dropDownSelectElement)}
+                      </>
+                    );
+                  })()}
+                </>
+              )}
+
+              {/* Rest of the options */}
               {filtered.length == 0 && (
                 <li className={styles.noResults}>
                   <span>No matches</span> <i className={getIcon("emojiSad")} />
