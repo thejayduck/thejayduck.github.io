@@ -10,6 +10,8 @@ import ProjectItem from "@/components/projects/projectItem";
 import projects from "@/docs/json/projects.json";
 import { getIcon } from "@/lib/helper";
 
+// TODO improve ProjectItem
+
 export default function Projects() {
   const groupByYear: { [year: number]: IProjectItem[] } = projects.reduce(
     (acc, project) => {

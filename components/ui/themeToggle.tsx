@@ -1,5 +1,5 @@
 "use client";
-import styles from "@/styles/components/ThemeToggle.module.scss";
+import styles from "@/styles/components/ui/ThemeToggle.module.scss";
 
 import { AnimatePresence, motion, TargetAndTransition } from "motion/react";
 

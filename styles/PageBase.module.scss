@@ -7,7 +7,8 @@
   flex: 1 1 auto;
   min-height: 100vh;
 
-  padding: var(--spacing-normal) 15rem;
+  padding: var(--spacing-medium) 15rem;
+  // padding-bottom: var(--spacing-medium);
 }
 
 @media screen and (max-width: 1280px) {

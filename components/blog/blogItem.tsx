@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 import React from "react";
 
 import { countWords, getIcon, readTime } from "@/lib/helper";
-import { useToast } from "../toashHandler";
+import { useToast } from "../ui/toashHandler";
 
 import IBlogProps from "./IBlogProps";
 

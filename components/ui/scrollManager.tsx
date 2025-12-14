@@ -1,5 +1,5 @@
 "use client";
-import styles from "@/styles/components/ScrollManager.module.scss";
+import styles from "@/styles/components/ui/ScrollManager.module.scss";
 
 import {
   AnimatePresence,

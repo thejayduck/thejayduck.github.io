@@ -6,7 +6,7 @@ import Image from "next/image";
 import Button from "@/components/button";
 import { placeholderImage } from "@/components/imageShimmer";
 import PageBase from "@/components/pageBase";
-import { useToast } from "@/components/toashHandler";
+import { useToast } from "@/components/ui/toashHandler";
 import { getIcon } from "@/lib/helper";
 
 interface SocialLink {
@@ -118,10 +118,10 @@ export default function Links() {
               height={128}
               quality={75}
             />
-            <h1>
-              <i className={getIcon("at")} />
-              thejayduck
-            </h1>
+            <div>
+              <h1>Arda Fevzi Armutcu</h1>
+              {/* TODO Improve Header layout */}
+            </div>
           </div>
           <ul className={`${styles.linkList}`}>
             <li className={styles.highlight}>

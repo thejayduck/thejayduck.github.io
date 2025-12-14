@@ -15,8 +15,8 @@ import { ImagePreview } from "@/components/gallery/imagePreview";
 import { GalleryToolbar } from "@/components/gallery/galleryToolbar";
 import PageBase from "@/components/pageBase";
 import { galleryRouterSet, getGallery, getIcon } from "@/lib/helper";
-import { useToast } from "@/components/toashHandler";
-import KaomojiLoader from "@/components/kaomojiLoader";
+import { useToast } from "@/components/ui/toashHandler";
+import KaomojiLoader from "@/components/ui/kaomojiLoader";
 import GalleryEntry from "@/lib/models/gallerySchema";
 import dbConnect from "@/lib/mongodb";
 

@@ -1,4 +1,4 @@
-import styles from "@/styles/components/CustomDropdown.module.scss";
+import styles from "@/styles/components/ui/CustomDropdown.module.scss";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import ClientOnlyPortal from "@/lib/clientOnlyPortal";

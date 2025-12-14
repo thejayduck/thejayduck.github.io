@@ -1,10 +1,10 @@
-import styles from "@/styles/components/GalleryToolbar.module.scss";
+import styles from "@/styles/components/gallery/GalleryToolbar.module.scss";
 
 import React, { useEffect, useRef, useState } from "react";
 
 import { getIcon, getLocalSavedItem, saveLocalItem } from "@/lib/helper";
 import IGalleryEntry from "./IGalleryEntry";
-import { MultiDropdown } from "../multiDropDown";
+import { MultiDropdown } from "../ui/multiDropDown";
 import { GalleryFilters, TAG_METADATA } from "./filterManager";
 
 export function GalleryToolbar(galleryData: IGalleryEntry[]) {

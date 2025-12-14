@@ -3,6 +3,7 @@ import styles from "@/styles/PageBase.module.scss";
 import { getIcon } from "@/lib/helper";
 
 import Button from "./button";
+import Footer from "./footer";
 
 export default function PageBase({
   children,
@@ -14,19 +15,22 @@ export default function PageBase({
   label?: string;
 }) {
   return (
-    <main className={styles.container}>
-      {backPath && (
-        <div className={"flex flexRight backButton"}>
-          <Button
-            icon={`${getIcon("back")} ri-fw`}
-            label={label?.toLowerCase()}
-            title={label}
-            href={backPath}
-            newPage={false}
-          />
-        </div>
-      )}
-      {children}
-    </main>
+    <>
+      <main className={styles.container}>
+        {backPath && (
+          <div className={"flex flexRight backButton"}>
+            <Button
+              icon={`${getIcon("back")} ri-fw`}
+              label={label?.toLowerCase()}
+              title={label}
+              href={backPath}
+              newPage={false}
+            />
+          </div>
+        )}
+        {children}
+      </main>
+      <Footer />
+    </>
   );
 }

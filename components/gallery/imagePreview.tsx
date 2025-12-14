@@ -16,7 +16,7 @@ import {
 } from "@/lib/helper";
 import Button from "../button";
 import { placeholderImage } from "../imageShimmer";
-import { useToast } from "../toashHandler";
+import { useToast } from "../ui/toashHandler";
 
 import { CanvasImage } from "./canvasImage";
 import ContentWarningOverlay from "./contentWarningOverlay";

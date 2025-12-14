@@ -12,8 +12,8 @@ import React, {
 
 import { getIcon } from "@/lib/helper";
 import Button from "../button";
-import { useToast } from "../toashHandler";
-import KaomojiLoader from "../kaomojiLoader";
+import { useToast } from "../ui/toashHandler";
+import KaomojiLoader from "../ui/kaomojiLoader";
 import { IImage } from "./IGalleryEntry";
 
 interface CanvasItemProps {

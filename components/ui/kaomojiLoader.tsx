@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "@/styles/components/KaomojiLoader.module.scss";
+import styles from "@/styles/components/ui//KaomojiLoader.module.scss";
 
 const KAOMOJI = [
   "(＾▽＾)",
