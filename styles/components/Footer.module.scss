@@ -7,6 +7,10 @@
   color: var(--font-default);
   box-shadow: var(--card-box-shadow);
 
+  &.mobile {
+    padding: var(--spacing-normal) var(--spacing-medium);
+  }
+
   .blurb {
     max-width: 260px;
 

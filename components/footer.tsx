@@ -1,6 +1,7 @@
-import { getIcon } from "@/lib/helper";
+import { getIcon, isMobile } from "@/lib/helper";
 import styles from "@/styles/components/Footer.module.scss";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface RowElementProps {
   title: string;
@@ -49,6 +50,12 @@ const footerRows: RowElementProps[] = [
 ];
 
 export default function Footer() {
+  const [mobileClient, setMobileClient] = useState(false);
+
+  useEffect(() => {
+    setMobileClient(isMobile());
+  }, []);
+
   const rowElement = ({ title, content }: RowElementProps) => {
     return (
       <div className={styles.rowWrapper}>
@@ -72,11 +79,13 @@ export default function Footer() {
   };
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.blurb}>
-        <h3>Arda Fevzi Armutcu</h3>
-        <p>I do several things.</p>
-      </div>
+    <footer className={`${styles.footer} ${mobileClient ? styles.mobile : ""}`}>
+      {!mobileClient && (
+        <div className={styles.blurb}>
+          <h3>Arda Fevzi Armutcu</h3>
+          <p>I do several things.</p>
+        </div>
+      )}
       {footerRows.map((row) => (
         <nav key={row.title} aria-label={row.title}>
           {rowElement(row)}

@@ -1,5 +1,11 @@
 import { PanInfo } from "motion/react";
 
+export function isMobile(): boolean {
+  if (typeof navigator == "undefined") return false;
+
+  return /iPhone|Android/i.test(navigator.userAgent);
+}
+
 export function countWords(str: string): number {
   str = str.replace(/<[^>]*>/g, " ");
   const wordCount = str.match(/(?:http(?:s)?:\/\/[^\s]*|\w)+/g) || [];

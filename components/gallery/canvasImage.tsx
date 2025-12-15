@@ -10,7 +10,7 @@ import React, {
   useState,
 } from "react";
 
-import { getIcon } from "@/lib/helper";
+import { getIcon, isMobile } from "@/lib/helper";
 import Button from "../button";
 import { useToast } from "../ui/toashHandler";
 import KaomojiLoader from "../ui/kaomojiLoader";
@@ -52,7 +52,6 @@ export function CanvasImage({
 }: CanvasItemProps) {
   const { showToast } = useToast();
   //? retain previous zoom value for double click
-  const isMobile = /iPhone|Android/i.test(navigator.userAgent);
 
   const zoomFactor: number = 0.15;
   const canvasElementRef = useRef<HTMLImageElement>(null);
@@ -283,7 +282,7 @@ export function CanvasImage({
         }}
         transition={{ duration: 0.15, ease: "linear" }}
         // Drag
-        drag={isMobile ? false : shortcuts}
+        drag={isMobile() ? false : shortcuts}
         dragMomentum={false}
         whileDrag={{ cursor: "grabbing" }}
         onDragStart={() => {
@@ -302,7 +301,7 @@ export function CanvasImage({
         }}
         onClick={(e) => e.stopPropagation()}
         onDoubleClick={() => {
-          if (isMobile) return;
+          if (isMobile()) return;
           if (zoomIndex != 0) {
             setZoomIndex(0);
           } else {
