@@ -36,7 +36,7 @@ const footerRows: RowElementProps[] = [
       {
         label: "LinkedIn",
         icon: getIcon("linkedin"),
-        link: "https://linkedin.com",
+        link: "https://linkedin.com/in/armutcu",
         external: true,
       },
       {
@@ -80,12 +80,12 @@ export default function Footer() {
 
   return (
     <footer className={`${styles.footer} ${mobileClient ? styles.mobile : ""}`}>
-      {!mobileClient && (
+      {/* {!mobileClient && (
         <div className={styles.blurb}>
           <h3>Arda Fevzi Armutcu</h3>
           <p>I do several things.</p>
         </div>
-      )}
+      )} */}
       {footerRows.map((row) => (
         <nav key={row.title} aria-label={row.title}>
           {rowElement(row)}
